@@ -1,0 +1,379 @@
+<?php
+    // require_once 'includes/functions-inc.php';
+    // require_once 'dbh-inc.php';
+    // $count = new pendingCount($conn);
+    // $totalCount = $count->getTotalCount();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!--Bootstrap 5 Install-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <!--Google Material Icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--Bootstrap Masonry-->
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+    <!--Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+    <!--lightGallery CSS CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+    
+    <!--CSS Link-->
+    <link rel="stylesheet" href="dist\output.css">
+    <link  href="styling/admin-dashboard-styling.css" rel="stylesheet" type="text/css">
+    <title>Admin Dashboard - SwiftCare PH</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/admin-dashboard.js"></script>
+    <!-- <title>Homepage - SwiftCare PH</title> -->
+    <link rel="icon" href="assets/main-logo-line.png" type="image/x-icon">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark p-3">
+        <div class="container-fluid">
+            <ul class="notifications d-flex justify-content-start my-auto">
+                <div class="mx-3 text-success">
+                    <li><i class="bi bi-plus-circle"></i> New Requests: <b><?php require_once'includes/get-pending-count-inc.php'; ?></b></li>
+                </div>
+            </ul>
+            <a class="navbar-brand mx-5" href="index"> 
+                <img src="assets/main-logo-transparent.png" class="img-fluid" alt="" title="sample" style="pointer-events: none;" width="120px" height="120px"">
+            </a>
+            <!--Notifications-->
+            <ul class="notifications d-flex justify-content-end my-auto">
+                <div class="mx-5 text-danger">
+                    <li><i class="bi bi-hourglass-top"></i> Pending Request: <b>12</b></li>
+                </div>
+            </ul>  
+        </div>
+    </nav> 
+
+    <div class="container-fluid">     
+        <div class="d-flex flex-row justify-center space-x-4 justify-content-center text-Yellow">
+            <button class="pendingLink hover:underline" id="pending-button"><i class="bi bi-hourglass-top"></i> Pending</button>
+            <button class="pendingLink hover:underline" id="approved-button"><i class="bi bi-check-circle-fill"></i> Approved</button>
+            <button class="pendingLink hover:underline" id="rejected-button"><i class="bi bi-x-circle-fill"></i> Rejected</button>
+            <button class="pendingLink hover:underline" id="history-button"><i class="bi bi-clock-fill"></i> History</button>
+        </div>
+
+        <div class="cards-container" id="cards-container">
+            
+        </div>
+
+        <!--Tabs Panel-->
+        <ul class="nav nav-tabs d-flex justify-content-evenly mt-5" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active navtab" id="pills-pending-approval-tab" data-bs-toggle="pill" data-bs-target="#pills-pending-approval" type="button" role="tab" aria-controls="pills-pending-approval" aria-selected="true" style="width: ;">Pending Approval</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link navtab" id="pills-approved-requests-tab" data-bs-toggle="pill" data-bs-target="#pills-approved-requests" type="button" role="tab" aria-controls="pills-approved-requests" aria-selected="false">Approved Requests</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link navtab" id="pills-rejected-requests-tab" data-bs-toggle="pill" data-bs-target="#pills-rejected-requests" type="button" role="tab" aria-controls="pills-rejected-requests" aria-selected="false">Rejected Requests</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link navtab" id="pills-history-tab" data-bs-toggle="pill" data-bs-target="#pills-history" type="button" role="tab" aria-controls="pills-history" aria-selected="false">History</button>
+              </li>
+        </ul>
+
+        <!--Tabs Content-->
+        <div class="tab-content bg-light p-4 text-dark" id="pills-tabContent">
+            
+            <!--Pending Approval Tab-->
+            <div class="tab-pane fade show active pt-4 p-2" id="pills-pending-approval" role="tabpanel" aria-labelledby="pills-pending-approval-tab">
+                <div class="row">
+
+                    <!-- Pending Modal -->
+                    <div class="modal pending-modal" id="pending-modal" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered modal-md">
+                            <div class="modal-content">
+
+                                <div class="modal-header p-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-building hospital-name-icon"></i>
+                                        <h5 class="modal-title" id="hospital-name"></h5>
+                                        <button type="button" class="btn text-white bi bi-x-lg" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                </div>
+
+                                <div class="modal-body p-4">  
+
+                                    <div class="d-flex flex-row justify-content-between">
+                                        <label class="bi bi-clipboard-plus label-text"> Hospital ID:  &nbsp;</label>
+                                        <p id="modal-pending-id"> &nbsp;</p>
+                                    </div>
+
+                                    <div class="d-flex flex-row justify-content-between">
+                                        <label class="label-text">Pending Type: &nbsp;</label>
+                                        <p id="modal-pending-type">Private</p>
+                                        <label>PRIVATE</label>
+                                    </div>
+
+                                    <div class="d-flex flex-row justify-content-between">
+                                        <label class="label-text">Address: &nbsp;</label>
+                                        <p id="modal-pending-address"></p>
+                                    </div>
+
+                                    <div class="d-flex flex-row justify-content-between">
+                                        <label class="label-text">Representative: &nbsp;</label>
+                                        <p id="modal-pending-representative"></p>
+                                    </div>
+
+                                    <div class="d-flex flex-row justify-content-between">
+                                        <label class="label-text">Supervisor: &nbsp;</label>
+                                        <p id="modal-pending-supervisor"></p>
+                                    </div>
+
+                                    <div class="d-flex flex-row justify-content-between">
+                                        <label class="label-text">Phone Number: &nbsp;</label>
+                                        <p id="modal-pending-phone"></p>
+                                    </div>
+
+                                    <div class="d-flex flex-row justify-content-between">
+                                        <label class="label-text">Designation: &nbsp;</label>
+                                        <p id="modal-pending-designation"></p>
+                                    </div>
+
+                                    <div class="d-flex flex-row justify-content-between">
+                                        <label class="label-text">Email: &nbsp;</label>
+                                        <p id="modal-pending-email"></p>
+                                    </div>
+
+                                    <div class="d-flex flex-row">
+                                        <label class="label-text"></label>
+                                        <p hidden id="modal-pending-password"></p>
+                                    </div>
+
+                                    <div class="d-flex flex-row justify-content-between">
+                                        <label class="label-text">Timestamp: &nbsp;</label>
+                                        <p id="modal-pending-timestamp"></p>  
+                                    </div> 
+
+                                </div>
+
+                                <div class="modal-footer d-flex justify-content-center">
+                                    <button type="button" class="btn btn-success btn-accept" id="reject-pending" onclick="acceptPending()"><i class="bi bi-check"></i> Accept</button>
+                                    <button type="button" class="btn btn-outline-danger btn-reject" id="accept-pending" onclick="rejectPending()"><i class="bi bi-x"></i> Reject</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Accept Warning Modal -->
+                    <div class="modal text-danger" id="modal-accept" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title"><i class="bi bi-exclamation-diamond-fill"></i> Accept?</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                
+                                <div class="modal-body">
+                                    <p><b>Are you sure you want to ACCEPT this request?</b></p>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" id="accept-modal-yes"><i class="bi bi-check"></i> Yes</button>
+                                    <button type="button" class="btn btn-success" id="accept-modal-cancel"><i class="bi bi-x"></i> Cancel</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reject Warning Modal -->
+                    <div class="modal text-danger" id="modal-reject" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title"><i class="bi bi-exclamation-diamond-fill"></i> Reject?</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <p><b>Are you sure you want to REJECT this request?</b></p>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" id="reject-modal-yes"><i class="bi bi-check"></i> Yes</button>
+                                    <button type="button" class="btn btn-success" id="reject-modal-cancel"><i class="bi bi-x"></i> Cancel</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Pending Cards-->
+                    <div class="col-12 mb-4" id="pending-cards-container">
+                        <div class="spinner-border m-1" id="spinner" role="status" style="display: none;">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Approved Requests Tab-->
+            <div class="tab-pane fade" id="pills-approved-requests" role="tabpanel" aria-labelledby="pills-approved-requests-tab">
+                <div class="approved-requests-container">
+
+                    <!-- Approved Modal -->
+                    <div class="modal approved-modal" id="approved-modal" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                            <div class="modal-header bg-dark text-light p-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-building hospital-name-icon">Hospital Name: &nbsp;</i>
+                                    <h5 class="modal-title" id="hospital-name"></h5>
+                                </div>
+                                <button type="button" class="btn-close text-light" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body p-3">
+
+                                <p id="modal-approved-id" class="bi bi-clipboard-plus "></p>
+                                <p id="modal-approved-type"></p>
+                                <p id="modal-approved-address"></p>
+                                <p id="modal-approved-representative"></p>
+                                <p id="modal-approved-supervisors">Supervisor Name: &nbsp;</p>
+                                <p id="modal-approved-supervisor"></p>
+                                <p id="modal-approved-phone"></p>
+                                <p id="modal-approved-designation"></p>
+                                <p id="modal-approved-email"></p>
+                                <span hidden id="modal-approved-password"></span>
+                                <p id="modal-approved-timestamp"></p>   
+
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" id="undo" onclick="undoApproved()"><i class="bi bi-arrow-counterclockwise"></i> Undo</button>
+                            </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Approved Undo Warning Modal -->
+                    <div class="modal text-danger" id="modal-undo-approved" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title"><i class="bi bi-exclamation-diamond-fill"></i> Undo?</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <p><b>Are you sure you want to continue?</b></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" id="undo-modal-yes-approved"><i class="bi bi-check"></i> Yes</button>
+                                <button type="button" class="btn btn-success" id="undo-modal-cancel"><i class="bi bi-x"></i> Cancel</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Pending Cards-->
+                    <div class="col-12 mb-4" id="approved-cards-container">
+                        <div class="spinner-border m-1" id="spinner" role="status" style="display: none;">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Rejected Requests Tab-->
+            <div class="tab-pane fade" id="pills-rejected-requests" role="tabpanel" aria-labelledby="pills-rejected-requests-tab">
+                <div class="rejected-requests-container">
+
+                    <!-- Rejected Modal -->
+                    <div class="modal rejected-modal" id="rejected-modal" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg-dark text-light p-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-building hospital-name-icon">Hospital Name: &nbsp;</i>
+                                        <h5 class="modal-title" id="hospital-name"></h5>
+                                    </div>
+                                    <button type="button" class="btn-close text-light" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body p-3">
+                                    <p id="modal-rejected-id" class="bi bi-clipboard-plus "></p>
+                                    <p id="modal-rejected-type"></p>
+                                    <p id="modal-rejected-address"></p>
+                                    <p id="modal-rejected-representative"></p>
+
+                                    <div class=" d-flex flex-row">
+                                            <p id="modal-rejected-supervisors">Supervisor Name: &nbsp;</p>
+                                            <p id="modal-rejected-supervisor"></p>
+                                    </div>
+
+                                    <p id="modal-rejected-phone"></p>
+                                    <p id="modal-rejected-designation"></p>
+                                    <p id="modal-rejected-email"></p>
+                                    <span hidden id="modal-rejected-password"></span>
+                                    <p id="modal-rejected-timestamp"></p>    
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" id="undo" onclick="undoRejected()"><i class="bi bi-arrow-counterclockwise"></i> Undo</button>
+                                </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rejected Undo Warning Modal -->
+                        <div class="modal text-danger" id="modal-undo-rejected" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title"><i class="bi bi-exclamation-diamond-fill"></i> Undo?</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                
+                                <div class="modal-body">
+                                    <p><b>Are you sure you want to continue?</b></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" id="undo-modal-yes-rejected"><i class="bi bi-check"></i> Yes</button>
+                                    <button type="button" class="btn btn-success" id="undo-modal-cancel"><i class="bi bi-x"></i> Cancel</button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Rejected Cards-->
+                        <div class="col-12 mb-4" id="rejected-cards-container">
+                            <div class="spinner-border m-1" id="spinner" role="status" style="display: none;">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--History Tab-->
+            <div class="tab-pane fade" id="pills-history" role="tabpanel" aria-labelledby="pills-history-tab">
+                History adawdadawdadawd
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

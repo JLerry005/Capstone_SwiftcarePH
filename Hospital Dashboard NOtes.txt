@@ -1,0 +1,23 @@
+
+--Main Details
+Hospital Name - (Auto generated - Disabled)
+Description - short hospital description - Textfield
+Maps - Pin point landmark location (text field),  address in text
+
+--Listing Details
+Type - Hospital Type - Dropdown Disabled
+Available Space - Room / Bed / Others - Checkbox
+Available Slots - Drop Down - Total bookings to accept
+Time - Available time of the day - (9am - 8pm)
+Requirements - Docs needed for booking If any - CHECK box / radio button (Disabled by default)
+
+--Additional / Other Details
+Images - Hospital Images
+Website - Link website if any
+
+---
+
+add how to page - sidebar 
+Upload images - get images from db and display
+get all details from hospitallisting table and display
+room / bed checkbox - show slot input only when checkbox is checked.

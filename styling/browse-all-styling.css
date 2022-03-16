@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Mono:wght@300&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css");
+
+:root{
+  --whiteBGColor: #F2F7FF;
+  --yellow: #FDBE34;
+  --lighterYellow: #ffd884;
+  --navColor: #22577A;
+  --footerColor: #112D4E;
+  --fontPoppins: 'Poppins';
+  --PlainWhite: white;
+  --DarkYellow: #ffb006;
+
+  /*Syntax:   color: var(--whiteBGColor);*/
+}
+
+body{
+    background-color: var(--whiteBGColor);
+    font-family: 'Poppins';
+}
+
+
+/**Nav Bar**/
+.navbarContainer{
+    background-color: #22577A;
+    height: 10vh;
+    /*height: 64px;*/
+}
+
+.navLogo{
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.navLogo {
+    color: #FDBE34 !important;
+}
+
+.nav-link{
+    color: #FDBE34 !important;
+}
+
+
+.btn-nav-login{
+    width: 130px;
+    height: auto;
+    font-weight: 600;
+    background-color:  #FDBE34;
+    color: #22577A;
+    border-color: #000000;
+
+}
+
+.btn-nav-signup{
+    height: auto;
+    width: 130px;
+    border-radius: 50px;
+    border-color:   #FDBE34;
+    color: #FDBE34;
+    text-decoration: none;
+}
+
+.btn-nav-login:hover{
+    background-color: #FDBE34;
+    color: black;
+    border-color: #000000;
+    -webkit-box-shadow: 0px 8px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 8px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.75);  
+}
+
+.btn-nav-signup:hover{
+    background-color: #22577A;
+    border-color: #ffffff;
+    color: black;
+    -webkit-box-shadow: 0px 8px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 8px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.75);  
+}
+/**-------------------------------------------------------------**/
+
+.img-top{
+    margin-top: 2%;
+    width: 20%;
+    height: 20%;
+}
+
+.img-banner{
+    width: 40%;
+}
+
+/*--Search Bar--*/
+.searchBarDesc{
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+
+.searchBarDesc{
+    color: rgb(41, 41, 41);
+    font-style: 'poppins';
+    font-weight: 500;
+}
+
+.searchBar{
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    border-color: #22577A;
+    font-family: 'Poppins';
+    padding-left: 20px;
+}
+
+::placeholder{
+    text-transform: none;
+    font-weight: normal;
+}
+
+.btnSearch{
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: #ffffff;
+    border-left: none;
+
+}
+.btnSearch:hover{
+    background-color: #ffffff;
+    box-shadow: transparent;
+    border-left: none;
+}
+/**-------------------------------------------------------------**/
+
+/*Cards*/
+.cardsContainer{
+    height: 100vh;
+}
+
+.card-container{
+    background-color: white;
+    color: var(--footerColor);
+    font-family: var(--fontPoppins) !important;
+    transition: all .2s ease-in-out;
+    border-radius: 30px;
+    border: none !important;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.13);
+    -moz-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.13);
+    box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.13);
+}
+
+.card-container:hover{
+    transform: scale(1.05);
+    background-color: var(--navColor);
+    color: var(--whiteBGColor);
+    -webkit-box-shadow: 0px 7px 1px 0px rgba(0,0,0,0.13);
+    -moz-box-shadow: 0px 7px 1px 0px rgba(0,0,0,0.13);
+    box-shadow: 0px 7px 1px 0px rgba(0,0,0,0.13);
+}
+
+.card-container:hover .btnBook{
+    background-color: white !important;
+    color: var(--navColor);
+}
+
+.card-img-top{
+    border-radius: 15px;
+    max-height: 160px;
+}
+
+.card-block p,
+.card-block h6,
+.card-block h4{
+    margin: 8px 0;
+    font-size: small;
+}
+
+.card-block h4{
+    font-weight: 900;
+    font-size: large;
+}
+
+/*Book Button*/
+.btnBook{
+    width: 100%;
+    font-weight: 700;
+    background-color: var(--navColor);
+    color: white;
+    border: none;
+    transition: all .2s ease-in-out;
+}
+
+.btnBook:hover{
+    background-color: white;
+    color: white;
+    transform: scale(1.05);
+    -webkit-box-shadow: 0px 7px 1px 0px rgba(0,0,0,0.13);
+    -moz-box-shadow: 0px 7px 1px 0px rgba(0,0,0,0.13);
+    box-shadow: 0px 7px 1px 0px rgba(0,0,0,0.13);
+}
+/**-------------------------------------------------------------**/
+
+/*CScrollbar*/
+
+.cardsContainer::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #f5f5f593;
+}
+
+.cardsContainer::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #f5f5f580;
+}
+
+.cardsContainer::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	box-shadow: inset 0 1 2px rgba(0,0,0,.3);
+	background-color: #22577aa1;
+}
+
+.address-text{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Categories */
+.Main-categories-row{
+    height: 15vh;
+}
+
+.Sub-categories{
+    height: 15vh;
+    text-align: center;
+    position: static;
+    color: var(--footerColor);
+    margin-top: 20px;  
+}
+
+.btnCategories{
+    box-shadow: 0px 0px 5px 0.7px rgba(0,0,0,0.75);
+    text-align: center;
+}
+
+.btnCategories:hover{
+    box-shadow: 0px 0px 5px 0.7px rgba(0,0,0,0.75);
+    background-color: var(--yellow);
+}
+
+.text{
+    padding-top: 10px;
+    color: var(--navColor);
+    font-weight: 501;
+}
+
+.categories{
+    height: 15vh;
+    padding-top: 20px;
+    box-shadow: 0px 10px 2px -3px var(--footerColor);
+}
+
+.categories:hover{
+    box-shadow: 0px 10px 4px -3px var(--yellow);
+    transform: translateY(-4px);
+}
+
+/* Footer */
+
+.row4{
+    background-image: linear-gradient( #141e30,  #243b55);
+    border-image-slice: 7;
+    color: #F2F7FF;
+    height: 40vh;
+}
+
+
+.row6{
+    height: 3.8vh;
+    background-color: #ffb006;
+    color: black;
+}
+
+.social-media-button{
+    height: 15vh;
+}
+
+
+/* Footer-Social-Media-Icons*/
+
+#icons{
+    cursor: pointer;
+}

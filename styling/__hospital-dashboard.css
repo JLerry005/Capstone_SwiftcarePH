@@ -1,0 +1,33 @@
+.button-active{
+    background-color: #EFF6FF;
+    border-left: 4px solid rgb(212, 145, 0);
+}
+
+.btn:hover{
+    background-color: #22577a5b;
+}
+
+.text-dark{
+    color: #374151;
+}
+
+/* .sideBar{
+    width: 260px;
+} */
+
+.low-brightnes{
+    filter: brightness(.5);
+}
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.show {
+opacity: 1;
+}

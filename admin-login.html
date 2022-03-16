@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js\user-login.js"></script>
+    <!-- CSS Link -->
+    <link  href="styling/admin-login-styling.css" rel="stylesheet" type="text/css">
+    <title>Admin Login - SwiftCare PH</title>
+    <!-- <title>Homepage - SwiftCare PH</title> -->
+    <link rel="icon" href="assets/main-logo-line.png" type="image/x-icon">
+</head>
+<body>
+    <!--Header Container-->
+    <div class="container-fluid main-container">
+        <!-- Header-->
+        <div class="row row1">
+            <!-- 1st Column-->
+            <div class="col-xl-4">
+            </div>
+
+            <!-- 2nd Column - -->
+            <div class="col-xl-4 middle-column my-auto">
+                <div class="row loginFormRow">
+                    
+                    <!--Login Form Container-->
+                    <div class="col-lg-12 formContainer">   
+                        <div class="d-flex justify-content-center">
+                            <img src="assets/main-logo-transparent.png" class="img-fluid vectorLogin" alt="Responsive image" width="100px" height="100px">  
+                        </div>
+                        <div class="text-center titleLabel">  
+                            <h3>Admin Access</h3>                                  
+                        </div> 
+                        <br>
+
+                        <div class="d-flex align-items-center justify-content-center">
+                            <!--Login Form-->
+                            <form action="includes/user-login-inc" method="post" id="login-form">
+                                    
+                                <!--Email Input-->
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="userNam" id="userName" enterkeyhint="next" title="Invalid Username" class="form-control" id="floatingInput" placeholder="ex: Admin" required>
+                                    <label for="floatingInput" class="form-label">Username</label>
+                                </div>
+
+                                <!--Password Input-->
+                                <div class="form-floating">
+                                    <input type="password" name="userPassword" id="userPassword" class="form-control" id="floatingPassword" placeholder="Password" required>
+                                    <label for="floatingPassword" class="form-label">Password</label>
+                                </div>
+                                
+                                <!--Forgot Password-->
+                                <div class="text-end pt-1">
+                                    <a class="text-right" href="...">Forgot Password?</a>
+                                </div>                                
+                                <!--Remember Me Checkbox-->
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input rememberMeCheckBox" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                                </div>
+                                <!--Login Button-->
+                                <!-- <a href="/html/admin-dashboard.html"> -->
+                                <button type="submit" name="submit" id="submit" class="btn btnLogin">LOGIN
+                                    <div class="spinner-grow text-primary login-spinners" role="status" style="display: none;">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                    <div class="spinner-grow text-secondary login-spinners" role="status" style="display: none;">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                    <div class="spinner-grow text-success login-spinners" role="status" style="display: none;">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                </button></a>
+                                <div class="text-center pt-4 pb-3 orLabel">
+                                   <h5>━━━━━━━━━━━━━ OR ━━━━━━━━━━━━━━</h5>                        
+                                </div>                                
+                                <!--Signup Button-->
+                                <div class="signupContainer">
+                                   <a href="index" class="btn btn-outline-light btnBack" role="button">Back To Home</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            
+            <!-- 3rd Column-->
+            <div class="col-xl-4 my-auto">
+            </div>
+        </div>
+    </div>     
+
+</body>
+</html>

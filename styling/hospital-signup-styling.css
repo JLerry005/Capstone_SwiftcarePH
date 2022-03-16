@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Mono:wght@300&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root{
+    --whiteBGColor: #F2F7FF;
+    --yellow: #FDBE34;
+    --lighterYellow: #ffd884;
+    --navColor: #22577A;
+    --footerColor: #112D4E;
+    --fontPoppins: 'Poppins';
+    --DarkYellow: #ffb006;
+    --Black: #000000;
+    --GreenColor: #3a970e;
+
+
+    /*Syntax:   color: var(--whiteBGColor);*/
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+body{
+    font-family: var(--fontPoppins) !important;
+    animation: fadeInAnimation ease 2s;
+}
+
+.main-container{
+    background-color: var(--whiteBGColor);
+}
+
+.signupRow{
+    background-color: white; 
+    color: white;
+    background-color: var(--whiteBGColor);
+    padding-left: 10px;
+    padding: 12px;
+}
+
+.formContainer{
+    margin-top: 15px;
+    padding: 60px;
+}
+
+.signupForm{
+    border: 1px solid #00000015 !important;
+    box-sizing: border-box;
+    border-radius: 15px;
+    height: 100%;
+    background-color: var(--whiteBGColor);
+    padding: 23px;
+    font-family: 'Poppins';
+    color: var(--Black);
+}
+
+::placeholder{
+    font-family: 'Montserrat' !important;
+}
+
+.vectorContainer{
+    color: var(--footerColor);
+}
+
+
+.vectorContainer > p{
+    text-align: justify;
+}
+
+.login{
+    margin-top: 30px;
+}
+
+.btnLogin{
+    width: 50% !important;
+    background-color: var(--whiteBGColor) !important;
+    color: var(--footerColor);
+    font-family: var(--fontPoppins);
+    font-size: large !important;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 8px !important;
+    border: 2px solid var(--footerColor) !important;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 1.5s cubic-bezier(0.19, 0.89, 0.32, 1.28) !important;
+}
+
+.btnLogin:hover{
+    border: 2px solid var(--whiteBGColor) !important;
+    background-color: var(--footerColor) !important;
+    color: var(--whiteBGColor) !important;
+}
+
+.btnSignup{
+    width: 100% !important;
+    background-color: var(--footerColor) !important;
+    color: var(--whiteBGColor) !important;
+    font-family: var(--fontPoppins);
+    font-size: large !important;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 10px !important;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 1.5s cubic-bezier(0.19, 0.89, 0.32, 1.28) !important;
+}
+
+.btnSignup:hover{
+    background-color: var(--GreenColor) !important;
+    color: var() !important;
+}
+
+.form-label{
+    font-size: 80%;
+    color: #31353a;
+}
+
+.title-label{
+    font-size: 100%;
+    color: #31353a;
+}
+
+.form-text{
+    color: var(--Black) !important;
+}
+
+.form-text ul{
+    color: var(--Black) !important;
+}
+
+.form-control{
+    font-size: 16px !important;
+    padding: 10px !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 0.5rem !important;
+    background-color: var(--whiteBGColor) !important;
+    height: 45px !important;
+    color: var(--Black) !important;
+    font-family: var(--fontPoppins) !important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition-property: border-color, box-shadow;
+    transition-duration: 0.15s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
+}
+
+.form-control:focus{
+    padding-bottom: 6px;
+    font-weight: 500 !important;
+}
+
+.form-control{
+    font-size: large;
+    font-family: var(--fontPoppins);
+}
+
+.form-control::placeholder{
+    color: rgba(37, 37, 37, 0.541) !important;
+}
+
+.passwordInput{
+    width: 95% !important;
+    padding: 23px !important;
+    font-size: 1.5rem !important;
+    font-family: var(--fontPoppins) !important;
+}
+
+#passwordHelpBlock > ul{
+    color: white;
+}
+
+.repeatPasswordInput{
+    padding: 23px !important;
+    font-size: 1.5rem !important;
+    font-family: var(--fontPoppins) !important;
+}
+
+.first-input{
+    width: 95% !important;
+    padding: 23px !important;
+    font-size: 1.5rem !important;
+    font-family: var(--fontPoppins);
+}
+
+.second-input{
+    padding: 23px !important;
+    font-size: 1.5rem !important;
+    font-family: var(--fontPoppins);
+}
+
+.phoneInput{
+    width: 92% !important;
+    padding: 25px !important;
+    font-size: 1.5rem !important;
+    font-family: var(--fontPoppins) !important;
+}
+
+.rememberMeLabel{
+    font-size: 100%;
+    color: #31353a;
+}
+
+.phoneRow{
+    height: 100%;
+}
+
+.btnFinish{
+    width: 40%;
+    margin-top: 150px;
+    padding: 15px !important;
+    font-family: var(--fontPoppins) !important;
+    font-weight: 900 !important;
+    font-size: 1.8rem !important;
+}
+
+.modalContainerAttach{
+    margin-top: 240px;
+    align-items: center;
+    font-style: bold;
+}
+
+.btnTerms{
+    align-items: center;
+    float: center;
+    text-align: center;
+}
+
+.modal-header{
+    background-color: var(--navColor);
+    font-weight: 700;
+    color: var(--whiteBGColor);
+}
+
+.modal-body .modal-footer{
+    background-color: var(--whiteBGColor);
+}
+
+.form-check a{
+    color: var(--navColor);
+    accent-color: var(--DarkYellow);
+    cursor: pointer;
+}
+
+/* START SHOW & HIDE PASSWORD */
+
+/* Password Match Warning */
+.passwordWarning{
+    list-style: none;
+}
+
+#passwordWarning{
+    color: rgb(250, 65, 65);
+    font-size: 90%;
+    text-align: center;
+}
+
+.passwordWarningNotMatched{
+    color: rgb(250, 65, 65);
+    font-size: 90%;
+    text-align: center;
+}
+
+.passwordWarningNotMatched:before{
+    position: relative;
+    left: -10px;
+    content: "✖";
+}
+
+.passwordWarningMatched{
+    color: rgb(74, 168, 74) !important;
+    font-size: 90%;
+    text-align: center;
+}
+
+.passwordWarningMatched:before{
+    position: relative;
+    left: -10px;
+    content: "✔";
+}
+
+/* Check if password meets requirements */
+
+.validInput{
+    list-style: none;
+    color: rgb(74, 168, 74);
+    font-size: 90%;
+    text-align: center;
+}
+
+.validInput:before {
+    position: relative;
+    left: -10px;
+    content: "✔";
+     
+}
+
+.invalidInput{
+    list-style: none;
+    color: rgb(250, 65, 65);
+    font-size: 90%;
+    text-align: center;
+}
+
+.invalidInput:before {
+    position: relative;
+    left: -10px;
+    content: "✖";
+}
+
+#passwordHelpBlock > ul{
+    color: white;
+}
+
+.repeatPasswordHelper{
+    color: white;
+}
+
+.userPasswordRepeatValid{
+    outline: 2px solid rgb(93, 202, 93);
+    /* -webkit-box-shadow: 0px 0px 27px -3px rgba(255,0,0,1) !important;
+    -moz-box-shadow: 0px 0px 27px -3px rgba(255,0,0,1) !important;
+    box-shadow: 0px 0px 27px -3px rgba(255,0,0,1) !important; */
+}
+
+.userPasswordRepeatNotValid{
+    outline: 2px solid rgb(255, 49, 49);
+    /* -webkit-box-shadow: 0px 0px 27px -3px rgba(255,0,0,1) !important;
+    -moz-box-shadow: 0px 0px 27px -3px rgba(255,0,0,1) !important;
+    box-shadow: 0px 0px 27px -3px rgba(255,0,0,1) !important; */
+}
+
+.error-mobileNumber-used{
+    color: red;
+    /* border: 3px solid red;
+    border-radius: 4px; */
+    padding: 5px;
+    /* background-color: rgba(255, 0, 0, 0.185); */
+}
+
+/* END SHOW & HIDE PASSWORD */
+
+
+
+
+

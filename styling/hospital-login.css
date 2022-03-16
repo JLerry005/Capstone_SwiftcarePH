@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Mono:wght@300&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root{
+    --whiteBGColor: #F2F7FF;
+    --yellow: #FDBE34;
+    --lighterYellow: #ffd884;
+    --navColor: #22577A;
+    --footerColor: #112D4E;
+    --fontPoppins: 'Poppins';
+    --DarkYellow: #ffb006;
+    --Black: #000000;
+    --GreenColor: #3a970e;
+
+    /*Syntax:   color: var(--whiteBGColor);*/
+}
+
+body{
+    align-items: center;
+    font-family: 'Poppins';
+}
+
+.row1{  
+    height: 100vh;
+    
+}
+
+.row1{
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    background-image: url("../assets/hospital/design.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.loginFormRow{
+    border-radius: 15px;
+    min-height: 100px;
+    max-height: 700px;
+    -webkit-box-shadow: -7px 7px 9px 0px rgba(0,0,0,0.76);
+    -moz-box-shadow: -7px 7px 9px 0px rgba(0,0,0,0.76);
+    box-shadow: -7px 7px 9px 0px rgba(0,0,0,0.76);
+}
+
+/*Form Container*/
+.formContainer{ 
+    background-color: #ffff;
+    padding: 120px 70px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    color: rgba(0, 0, 0, 0.89);
+}
+
+.loginFormRow h1{
+    font-family: var(--fontPoppins);
+    font-weight: 900;
+}
+
+.rememberMeLabel{
+    color: rgba(0, 0, 0, 0.89);
+    font-size: 90%;
+}
+
+.form-check-label{
+    font-size: 100%;
+    font-family: var(--fontPoppins);
+    color: rgb(0, 0, 0) !important;
+}
+
+.form-floating{
+    opacity: .1s ease-in-out, transform .1s ease-in-out;
+}
+
+.form-floating.form-control{
+    height: 34px;
+    box-shadow: none;
+    border: 0;
+    border-radius: 0;
+}
+
+.form-control{
+    border: 0px !important;
+    border-bottom: 3px solid var(--footerColor)!important;
+    outline: 0 !important;
+    background-color: #ffff;
+    border-radius: 2px !important;
+    color: rgba(0, 0, 0, 0.89) !important;
+    height: 60px !important;
+    font-size: 16px !important;
+    font-weight: 550 !important;
+    padding-top: 35px !important;
+}
+
+.form-label{
+    text-align: center !important;
+    padding-top: 20px !important;
+    font-size: 100% !important;
+    color: rgba(0, 0, 0, 0.89) !important;
+}
+
+.texts{
+    font-weight: 500;
+    align-items: center;
+    font-size: 35px;
+    padding-bottom: 20px;
+}
+
+.titleLabel{
+    letter-spacing: 2px;
+    color: var(--footerColor);
+}
+
+button{
+    width: 100% !important;
+}
+
+.btnLogin{
+    background-color: var(--footerColor);
+    color: var(--whiteBGColor) !important;
+    font-family: var(--fontPoppins);
+    font-size: large !important;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 10px !important;
+    border: none !important;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 1.5s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.btnLogin:hover{
+    background-color: var(--GreenColor);
+    color: var(--whiteBGColor) !important;
+}
+
+.btnSignup{
+    width: 100%;
+    background-color: var(--footerColor);
+    color: var(--yellow);
+    font-family: var(--fontPoppins);
+    font-size: large;
+    letter-spacing: 2px;
+    padding: 10px ;
+    border: 2px solid var(--yellow);
+    border-radius: 8px;
+    transition: all 1.5s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.btnSignup:hover{
+    background-color: var(--yellow);
+    border: 2px solid var(--yellow);
+    color: var(--footerColor);
+}
+
+.btnBack{
+    font-weight: 500;
+    border: 2px solid var(--footerColor) !important;
+    border-radius: 8px;
+    width: 100%;
+    padding: 10px !important;
+    background-color: #ffff;
+    color: var(--footerColor) !important;
+    letter-spacing: 2px !important;
+    transition: all 1.5s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.btnBack:hover{
+    color: var(--whiteBGColor) !important;
+    border: 2px solid var(--footerColor) !important;
+    background-color: var(--footerColor);
+}
+
+/*Vecor illustration Container*/
+
+.vectorContainer{
+    text-align: justify;
+    background-color: var(--footerColor);
+    padding: 70px 70px;
+    font-size: clamp(.3em, 1em, 2em);
+    color: var(--whiteBGColor) !important;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.vectorLogin{
+    margin-top: -60px;
+}
+
+.signupContainer{
+    text-align: center;
+    color: black;
+}
+
+.text-right{
+    color: var(--footerColor);
+    font-size: 90%;
+}
+
+.text-right:hover{
+    color: var(--White);
+}
+
+/*
+.form-groups{
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 1%;
+}
+
+.form-field{
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid var(--footerColor);
+    outline: 0;
+    font-size: 16px;
+    color: var(--Black);
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form-field::placeholder{
+    color: transparent;
+}
+
+.form-label{
+    position: absolute;
+    top: 320px;
+    bottom: 20px;
+    display: block;
+    transition: 0.2s;
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+.form-field:placeholder-shown ~ .form-label{
+    font-size: 1.5rem;
+    cursor: text;
+    top: 340px;
+}
+
+.form-field:focus{
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #112D4E, #000000);
+    border-image-slice: 1;
+}
+
+.form-field:focus ~ .form-label{
+    position: absolute;
+    top: 315px;
+    display: block;
+    transition: 0.2s;
+    font-size: 1.5rem;
+    color: var(--footerColor);
+    font-weight: 700;
+}
+
+@media (min-width: 1200px) {  
+    .vectorContainer {
+        padding: 50px;
+    }
+    .vectorContainer > p{
+        font-size: .9em;
+    }
+  }
+
+
+@media (min-width: 1800px) {  
+    .vectorContainer {
+        padding: 70px;
+    }
+    .vectorContainer > p{
+        font-size: 1em;
+    }
+  }*/

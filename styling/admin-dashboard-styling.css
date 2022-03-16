@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Mono:wght@300&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css");
+
+:root{
+    --whiteBGColor: #F2F7FF;
+    --yellow: #FDBE34;
+    --lighterYellow: #ffd884;
+    --navColor: #22577A;
+    --footerColor: #112D4E;
+    --fontPoppins: 'Poppins';
+    --PlainWhite: white;
+    --GreenColor: #4E9F3D;
+    --HoverGreenColorText: #2c813d;
+    --HoverGreenColor: #1E5128;
+    --RedColor : #ff0000;
+    --HoverRedColor : #c00000;
+
+    /*Syntax:   color: var(--whiteBGColor);*/
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: var(--fontPoppins);
+    background-color: var(--footerColor);
+}
+
+.container{
+    padding: 40px;
+}
+
+.notifications{
+    list-style: none;
+}
+
+/* START STYLING CARDS*/
+
+/* START Pending Cards */
+
+.pending-cards{
+    cursor: pointer;
+    /* background-color: var(--yellow); */
+    height: 130px;
+    border-radius: 15px;
+    transition: all 1.3s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.pending-cards:hover{
+    background-color: var(--yellow);
+    transform: scale(1.02);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+    cursor: pointer;
+}
+
+/* END Pending Cards */
+
+/* START Approved Cards */
+
+.approved-cards{
+    cursor: pointer;
+    background-color: var(--GreenColor);
+    height: 130px;
+    border-radius: 15px;
+    transition: all 1.3s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.approved-cards:hover{
+    background-color: var(--HoverGreenColor);
+    transform: scale(1.02);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+    cursor: pointer;
+}
+
+/* END Approved Cards */
+
+.navtab{
+    letter-spacing: 1.5px;
+    margin-top: 50px;
+    height: 80px;
+    width: 473.5px;
+    color: var(--yellow);
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid var(--footerColor);
+    transition: all 0.6s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.navtab:hover{
+    color: var(--yellow);
+    cursor: pointer;
+}
+
+.btn-accept{
+    border-radius: 7px;
+    background-color: var(--GreenColor);
+    width: 170px;
+    transition: all 2s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.btn-accept:hover{
+    background-color: var(--HoverGreenColor);
+}
+
+.btn-reject{
+    border-radius: 7px;
+    width: 170px;
+    transition: all 2s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.btn-reject:hover{
+    color: white;
+    background-color: var(--HoverRedColor);
+}
+
+.btn-Yes{
+    margin-right: 10px;
+    height: 30px;
+    width: 100px;
+    color: var(--whiteBGColor);
+    border-radius: 7px;
+    background-color: var(--GreenColor);
+    transition: all 2s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.btn-Yes:hover{
+    color: white;
+    background-color: var(--HoverGreenColor);
+}
+
+.btn-Cancel{
+    color: var(--RedColor);
+    height: 30px;
+    border: 1px solid var(--RedColor);
+    border-radius: 7px;
+    width: 100px;
+    transition: all 2s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.btn-Cancel:hover{
+    color: white;
+    background-color: var(--HoverRedColor);
+}
+
+.btn-undo{
+    border-radius: 7px;
+    width: 170px;
+    transition: all 2s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.btn-undo:hover{
+    background-color: gray;
+}
+
+/* Style the tab content */
+.tabcontent{
+display: none;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+background-color: inherit;
+float: left;
+border: none;
+outline: none;
+cursor: pointer;
+padding: 14px 16px;
+transition: 0.3s;
+font-size: 17px;
+color: var(--yellow);
+}
+
+/* END STYLING CARDS */
+
+/* Change background color of buttons on hover */
+.tab button{
+font-size: 1.2rem;
+transition: all 2s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.tab button:hover {
+color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tablinks:focus {
+color: rgb(255, 255, 255);
+}
+
+/* START APPROVED BUTTON STYLE */
+.approved button{
+    transition: all 2s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.approved button:hover{
+    color: var(--HoverGreenColorText);
+}  
+
+.approved button:focus{
+    transition: all 1.8s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+    color: var(--GreenColor);
+}
+
+/* END APPROVED BUTTON STYLE */
+
+/* START REJECTED BUTTON STYLE */
+
+.rejected button{
+transition: all 2s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.rejected button:hover{
+    color: var(--HoverRedColor);
+}
+
+.rejected button:focus{
+    color: var(--RedColor);
+    transition: all 1.5s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+/* END REJECTED BUTTON STYLE */
+
+.uploaded-hospital-images >img {
+    border-radius: 15px !important;
+    transition: all .2s ease-in-out;
+}
+
+.uploaded-hospital-images > img:hover{
+    transform: scale(1.05);
+    -webkit-box-shadow: 0px 7px 1px 0px rgba(0,0,0,0.13);
+    -moz-box-shadow: 0px 7px 1px 0px rgba(0,0,0,0.13);
+    box-shadow: 0px 7px 1px 0px rgba(0,0,0,0.13);
+}

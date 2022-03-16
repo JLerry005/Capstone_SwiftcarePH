@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Mono:wght@300&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root{
+    --whiteBGColor: #F2F7FF;
+    --yellow: #FDBE34;
+    --lighterYellow: #ffd884;
+    --navColor: #22577A;
+    --footerColor: #112D4E;
+    --fontPoppins: 'Poppins';
+    --GreenColor: #3a970e;
+
+    /*Syntax:   color: var(--whiteBGColor);*/
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+body{
+    animation: fadeInAnimation ease 2s;
+}
+
+/* Password Match Warning */
+.passwordWarning{
+    list-style: none;
+}
+
+#passwordWarning{
+    color: rgb(250, 65, 65);
+    font-size: 90%;
+    text-align: center;
+    /* padding-top: -7px; */
+}
+
+.passwordWarningNotMatched{
+    color: rgb(250, 65, 65);
+    font-size: 90%;
+    text-align: center;
+}
+
+.passwordWarningNotMatched:before{
+    position: relative;
+    left: -10px;
+    content: "✖";
+}
+
+.passwordWarningMatched{
+    color: rgb(74, 168, 74) !important;
+    font-size: 90%;
+}
+
+.passwordWarningMatched:before{
+    position: relative;
+    left: -10px;
+    content: "✔";
+}
+
+/* Check if password meets requirements */
+
+.validInput{
+    list-style: none;
+    color: rgb(74, 168, 74);
+    font-size: 90%;
+}
+
+.validInput:before {
+    position: relative;
+    left: -10px;
+     content: "✔";
+}
+
+.invalidInput{
+    list-style: none;
+    color: rgb(250, 65, 65);
+    font-size: 90%;
+}
+
+.invalidInput:before {
+    position: relative;
+    left: -10px;
+    content: "✖";
+}
+
+#passwordHelpBlock > ul{
+    color: white;
+}
+
+.repeatPasswordHelper{
+    color: white;
+}
+
+.userPasswordRepeatValid{
+    outline: 2px solid rgb(93, 202, 93);
+    /* -webkit-box-shadow: 0px 0px 27px -3px rgba(255,0,0,1) !important;
+    -moz-box-shadow: 0px 0px 27px -3px rgba(255,0,0,1) !important;
+    box-shadow: 0px 0px 27px -3px rgba(255,0,0,1) !important; */
+}
+
+.userPasswordRepeatNotValid{
+    outline: 2px solid rgb(255, 49, 49);
+    /* -webkit-box-shadow: 0px 0px 27px -3px rgba(255,0,0,1) !important;
+    -moz-box-shadow: 0px 0px 27px -3px rgba(255,0,0,1) !important;
+    box-shadow: 0px 0px 27px -3px rgba(255,0,0,1) !important; */
+}
+
+.error-mobileNumber-used{
+    color: red;
+    /* border: 3px solid red;
+    border-radius: 4px; */
+    padding: 5px;
+    /* background-color: rgba(255, 0, 0, 0.185); */
+}
+

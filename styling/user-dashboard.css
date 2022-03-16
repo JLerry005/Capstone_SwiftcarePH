@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Mono:wght@300&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css");
+
+:root{
+    --whiteBGColor: #F2F7FF;
+    --yellow: #FDBE34;
+    --lighterYellow: #ffd884;
+    --navColor: #22577A;
+    --footerColor: #112D4E;
+    --fontPoppins: 'Poppins';
+    --PlainWhite: white;
+    --Pending: #155263;
+    --Confirmed: #FF6F3C;
+    --Rejected: #FF9A3C;
+    --History: #3A4750;
+  
+    /*Syntax:   color: var(--whiteBGColor);*/
+}
+
+body{
+    padding: 0 40px;
+    margin: 0;
+    font-family: 'Poppins';
+    background-color: var(--whiteBGColor);
+}
+
+.card-icon{
+    margin-right: 20px;
+}
+
+.card{
+    border-radius: 20px;
+    transition: all 0.6s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.card:hover{
+    transform: scale(1.005);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+    cursor: pointer;
+}
+
+.card-reservation{
+    background-color: var(--footerColor);
+}
+
+.card-account{
+    background-color: var(--yellow);
+}
+
+.account-title{
+    color: var(--footerColor);
+    font-weight: bold;
+}
+
+.card-pending{
+    background-color: var(--Pending);
+    transition: all 0.6s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.card-pending:hover{
+    transform: scale(1.01);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.card-confirmed{
+    background-color: var(--Confirmed);
+    transition: all 0.6s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.card-confirmed:hover{
+    transform: scale(1.01);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.card-rejected{
+    background-color: var(--Rejected);
+    transition: all 0.6s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.card-rejected:hover{
+    transform: scale(1.01);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.card-history{
+    background-color: var(--History);
+    transition: all 0.6s cubic-bezier(0.19, 0.89, 0.32, 1.28);
+}
+
+.card-history:hover{
+    transform: scale(1.01);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.account-setting{
+    /* background-color: gainsboro; */
+    padding: 10px;
+}
+
+.edit-phone-number{
+    position: relative;
+    /* z-index: 999 !important; */
+    float: right;
+    cursor: pointer;
+    margin-right: 25px;
+    margin-top: -63px;
+}
+
+.save-phone-number{
+    display: none;
+    position: relative;
+    float: right;
+    cursor: pointer;
+    margin-right: 25px;
+    margin-top: -63px;
+}
+
+.phone-success-message{
+    position: relative;
+    float: right;
+    display: none;
+    margin-right: 25px;
+    margin-top: -55px;
+}
+
+#result-toast{
+    display: inline-block;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+}
+
+.btn-pwd{
+    border: 2px solid var(--footerColor);
+    width: 100%;
+    padding: 12px;
+}
+
+.fadingOut{
+    animation: fadeOutAnimation ease 1s;
+}
+
+@keyframes fadeOutAnimation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* .fadingIn {
+    transition:opacity 0.6s linear;
+    opacity:1;
+} */
+
+.position{
+    position: absolute;
+}
+
+.fadeInAnimation{
+    animation: fadeInAnimation ease 1s;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* -------------- */
+.slide-right {
+    animation: 0.5s slide-right;
+  }
+  @keyframes slide-right {
+    from {
+      margin-left: -100%;
+    }
+    to {
+      margin-left: 0%;
+    }
+  }

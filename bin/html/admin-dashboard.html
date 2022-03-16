@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap 5 Install-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!--Google Material Icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel = "icon" href ="/assets/undraw_secure_login_pdn4.svg" type = "image/x-icon">
+    <script src="/clipboard.js-master/dist/clipboard.min.js"></script>
+    <script src="/js/user-dashboard.js" defer></script>
+
+    <link rel="stylesheet" href="/styling/user-dashboard.css">
+    <title>Admin Dashboard - SwiftCare PH</title>
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-light navbar-expand-lg navbarContainer">
+        <div class="container-fluid navItems mx-5 my-3">
+        <a class="navbar-brand navLogo" href="index.html"> SwiftCare PH</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon burger"></span>
+        </button>
+        <a class="nav-link active mx-3" aria-current="page" href="#">About</a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <!--Right Side Links and Button-->
+            <ul class="navbar-nav ms-auto">
+            <!--Notifications Dropdown-->
+            <li class="nav-item dropdown">
+                <a class="nav-link bi bi-bell-fill" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                    <span class="visually-hidden">New alerts</span>
+                </span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="navbarDropdown">
+                <li><h6 class="dropdown-header fw-bold">Notifications</h6></li>
+                <li><a class="dropdown-item" href="#">1 New Reservation(s)</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </li>
+            <!--Username Display Link-->
+            <li class="nav-item mr-4 username">
+                <a href="#" class="btn btn-nav-login" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Login as User"><i class="bi bi-person-fill"></i> John</a>   
+            </li>
+            <!--Logout Link-->
+            <li class="nav-item">
+                <a href="#" class="btn btn-outline-primary btn-nav-signup" role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sign up as User">Logout <i class="bi bi-box-arrow-right"></i></a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    
+    <!--Container-->        
+    <div class="container-fluid">
+        <!--Container Row-->        
+        <div class="row containter-row">
+            <!-- Start Column-->
+            <div class="col-xl-2">
+            </div>
+            
+            <!-- Center Column-->
+            <div class="col-xl-8">
+            <!--Reservations Tab Container-->
+            <div class="tab-pane reservations fade active show" id="v-pills-reservations" role="tabpanel" aria-labelledby="v-pills-reservations-tab">
+                <!--Reservations-->
+                <div class="reservations-content mt-5">
+                  <h1>Approval of Hospital Account Request</h1>
+                  <nav>
+                    <div class="nav nav-tabs mt-4" id="nav-tab" role="tablist">
+                      <button class="nav-link active" id="nav-pending-tab" data-bs-toggle="tab" data-bs-target="#nav-pending" type="button" role="tab" aria-controls="nav-pending" aria-selected="true"><i class="bi bi-hourglass-top"></i> Pending</button>
+                      <button class="nav-link" id="nav-confirmed-tab" data-bs-toggle="tab" data-bs-target="#nav-confirmed" type="button" role="tab" aria-controls="nav-confirmed" aria-selected="false"><i class="bi bi-check2-circle"></i> Confirmed</button>
+                      <button class="nav-link" id="nav-rejected-tab" data-bs-toggle="tab" data-bs-target="#nav-rejected" type="button" role="tab" aria-controls="nav-rejected" aria-selected="false"><i class="bi bi-x-circle"></i> Rejected</button>
+                      <button class="nav-link" id="nav-history-tab" data-bs-toggle="tab" data-bs-target="#nav-history" type="button" role="tab" aria-controls="nav-history" aria-selected="false"><i class="bi bi-clock-history"></i> History</button>
+                    </div>
+                  </nav>
+
+                  <!--Pending Resercations Tab-->
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active pt-4" id="nav-pending" role="tabpanel" aria-labelledby="nav-pending-tab">
+  
+                      <div class="row">
+                        <div class="col-xl-12 mb-3">
+                          <div class="card pending-card">
+                            <div class="card-header p-3">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title my-auto"><i class="bi bi-building"></i> Register As: Public Hospital</a></h5>
+                                <h5><i class="bi bi-clock-history"></i> 10/10/2021</h5>
+                              </div>
+                            </div>
+                            <div class="col-xl-6">
+                              <div class="card-body p-3">
+                                <h6 class="card-subtitle mb-2 text-light">
+                                  <i class="bi bi-card-heading"></i> Name of Hospital:<b id="reservation-code-SCPH2021001"> MCU Hospital</b>
+                                  <button class="copy-code" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy Reservation Code" data-clipboard-action="copy" data-clipboard-target="#reservation-code-SCPH2021001"><span aria-hidden="true" class="copy-icon bi bi-clipboard-plus"></span></button>
+                                </h6>
+                                <h6 class="mb-3"><i class="bi bi-geo-alt-fill"></i> Address: MCU Hospital, EDSA, Caloocan City, Metro Manila</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-person-fill"></i> Supervisor of Hospital: Juan Santos</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-telephone-fill"></i> Enter Valid Mobile Number: 092879423145</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-person-fill"></i> Position / Designation: Nurse</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-envelope-fill"></i> Enter Valid Email: sample@gmail.com</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-envelope-check-fill"></i> Confirm Email: sample@gmail.com</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-key-fill"></i> Password: **</h6>       
+                                <h6 class="card-text mb-2"><i class="bi bi-key-fill"></i> Confirm Pasword: **</h6>  
+                                <br>
+                                <div class="">
+                                  <h5> Attachments:</h5>
+                                  <ul>
+                                    <li><i class="bi bi-file-person"></i> Hospital ID <a href="#" class="text-decoration-none"> (photo1.jpg)</a></li>
+                                    <li><i class="bi bi-newspaper"></i> Hospital Permit <a href="#" class="text-decoration-none">(photo2.jpg)</a></li>
+                                    <li><i class="bi bi-file-medical-fill"></i> Doctor License <a href="#" class="text-decoration-none">(photo3.jpg)</a></li>
+                                  </ul>
+                                </div>
+                              </div>                              
+                            </div>
+                            
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12 mb-3">
+                          <div class="card pending-card">
+                            <div class="card-header p-3">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title my-auto"><i class="bi bi-building"></i> Register As: Public Hospital</a></h5>
+                                <h5><i class="bi bi-clock-history"></i> 10/10/2021</h5>
+                              </div>
+                            </div>
+                            <div class="col-xl-6">
+                              <div class="card-body p-3">
+                                <h6 class="card-subtitle mb-2 text-light">
+                                  <i class="bi bi-card-heading"></i> Name of Hospital:<b id="reservation-code-SCPH2021001"> MCU Hospital</b>
+                                  <button class="copy-code" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy Reservation Code" data-clipboard-action="copy" data-clipboard-target="#reservation-code-SCPH2021001"><span aria-hidden="true" class="copy-icon bi bi-clipboard-plus"></span></button>
+                                </h6>
+                                <h6 class="mb-3"><i class="bi bi-geo-alt-fill"></i> Address: MCU Hospital, EDSA, Caloocan City, Metro Manila</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-person-fill"></i> Supervisor of Hospital: Juan Santos</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-telephone-fill"></i> Enter Valid Mobile Number: 092879423145</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-person-fill"></i> Position / Designation: Nurse</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-envelope-fill"></i> Enter Valid Email: sample@gmail.com</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-envelope-check-fill"></i> Confirm Email: sample@gmail.com</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-key-fill"></i> Password: **</h6>       
+                                <h6 class="card-text mb-2"><i class="bi bi-key-fill"></i> Confirm Pasword: **</h6>  
+                                <br>
+                                <div class="">
+                                  <h5> Attachments:</h5>
+                                  <ul>
+                                    <li><i class="bi bi-file-person"></i> Hospital ID <a href="#" class="text-decoration-none"> (photo1.jpg)</a></li>
+                                    <li><i class="bi bi-newspaper"></i> Hospital Permit <a href="#" class="text-decoration-none">(photo2.jpg)</a></li>
+                                    <li><i class="bi bi-file-medical-fill"></i> Doctor License <a href="#" class="text-decoration-none">(photo3.jpg)</a></li>
+                                  </ul>
+                                </div>
+                              </div>                              
+                            </div>
+                            
+                          </div>
+                        </div>                        
+  
+                        <div class="col-xl-12 mb-3">
+                          <div class="card pending-card">
+                            <div class="card-header p-3">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title my-auto"><i class="bi bi-building"></i> Register As: Public Hospital</a></h5>
+                                <h5><i class="bi bi-clock-history"></i> 10/10/2021</h5>
+                              </div>
+                            </div>
+                            <div class="col-xl-6">
+                              <div class="card-body p-3">
+                                <h6 class="card-subtitle mb-2 text-light">
+                                  <i class="bi bi-card-heading"></i> Name of Hospital:<b id="reservation-code-SCPH2021001"> MCU Hospital</b>
+                                  <button class="copy-code" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy Reservation Code" data-clipboard-action="copy" data-clipboard-target="#reservation-code-SCPH2021001"><span aria-hidden="true" class="copy-icon bi bi-clipboard-plus"></span></button>
+                                </h6>
+                                <h6 class="mb-3"><i class="bi bi-geo-alt-fill"></i> Address: MCU Hospital, EDSA, Caloocan City, Metro Manila</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-person-fill"></i> Supervisor of Hospital: Juan Santos</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-telephone-fill"></i> Enter Valid Mobile Number: 092879423145</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-person-fill"></i> Position / Designation: Nurse</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-envelope-fill"></i> Enter Valid Email: sample@gmail.com</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-envelope-check-fill"></i> Confirm Email: sample@gmail.com</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-key-fill"></i> Password: **</h6>       
+                                <h6 class="card-text mb-2"><i class="bi bi-key-fill"></i> Confirm Pasword: **</h6>  
+                                <br>
+                                <div class="">
+                                  <h5> Attachments:</h5>
+                                  <ul>
+                                    <li><i class="bi bi-file-person"></i> Hospital ID <a href="#" class="text-decoration-none"> (photo1.jpg)</a></li>
+                                    <li><i class="bi bi-newspaper"></i> Hospital Permit <a href="#" class="text-decoration-none">(photo2.jpg)</a></li>
+                                    <li><i class="bi bi-file-medical-fill"></i> Doctor License <a href="#" class="text-decoration-none">(photo3.jpg)</a></li>
+                                  </ul>
+                                </div>
+                              </div>                              
+                            </div>
+                            
+                          </div>
+                        </div>
+
+                        <div class="col-xl-12 mb-3">
+                          <div class="card pending-card">
+                            <div class="card-header p-3">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title my-auto"><i class="bi bi-building"></i> Register As: Public Hospital</a></h5>
+                                <h5><i class="bi bi-clock-history"></i> 10/10/2021</h5>
+                              </div>
+                            </div>
+                            <div class="col-xl-6">
+                              <div class="card-body p-3">
+                                <h6 class="card-subtitle mb-2 text-light">
+                                  <i class="bi bi-card-heading"></i> Name of Hospital:<b id="reservation-code-SCPH2021001"> MCU Hospital</b>
+                                  <button class="copy-code" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy Reservation Code" data-clipboard-action="copy" data-clipboard-target="#reservation-code-SCPH2021001"><span aria-hidden="true" class="copy-icon bi bi-clipboard-plus"></span></button>
+                                </h6>
+                                <h6 class="mb-3"><i class="bi bi-geo-alt-fill"></i> Address: MCU Hospital, EDSA, Caloocan City, Metro Manila</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-person-fill"></i> Supervisor of Hospital: Juan Santos</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-telephone-fill"></i> Enter Valid Mobile Number: 092879423145</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-person-fill"></i> Position / Designation: Nurse</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-envelope-fill"></i> Enter Valid Email: sample@gmail.com</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-envelope-check-fill"></i> Confirm Email: sample@gmail.com</h6>
+                                <h6 class="card-text mb-2"><i class="bi bi-key-fill"></i> Password: **</h6>       
+                                <h6 class="card-text mb-2"><i class="bi bi-key-fill"></i> Confirm Pasword: **</h6>  
+                                <br>
+                                <div class="">
+                                  <h5> Attachments:</h5>
+                                  <ul>
+                                    <li><i class="bi bi-file-person"></i> Hospital ID <a href="#" class="text-decoration-none"> (photo1.jpg)</a></li>
+                                    <li><i class="bi bi-newspaper"></i> Hospital Permit <a href="#" class="text-decoration-none">(photo2.jpg)</a></li>
+                                    <li><i class="bi bi-file-medical-fill"></i> Doctor License <a href="#" class="text-decoration-none">(photo3.jpg)</a></li>
+                                  </ul>
+                                </div>
+                              </div>                              
+                            </div>
+                            
+                          </div>
+                        </div>                        
+
+                      </div>
+                    </div>
+ 
+                    <!--Confirmed Resercations Tab-->
+                    <div class="tab-pane fade pt-4" id="nav-confirmed" role="tabpanel" aria-labelledby="nav-confirmed-tab">
+                      <div class="row">
+                        <div class="col-12 mb-3">
+                          <div class="card confirmed-card">
+                            <div class="card-header p-3">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title"><a href="hospital-overview.html" class="text-decoration-none"><i class="bi bi-building"></i> Hospital: MCU Hospital</a></h5>
+                                <h5><i class="bi bi-clock-history"></i> 10/10/2021</h5>
+                              </div>
+                            </div>
+                            <div class="card-body p-3">
+                              <h6 class="card-subtitle mb-2 text-light">
+                                <i class="bi bi-card-heading"></i> Reservation Code: <b id="reservation-code-SCPH2021001">SCPH2021001</b>
+                                <button class="copy-code" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy Reservation Code" data-clipboard-action="copy" data-clipboard-target="#reservation-code-SCPH2021001"><span aria-hidden="true" class="copy-icon bi bi-clipboard-plus"></span></button>
+                              </h6>
+                              <a href="hospital-overview.html" class="text-decoration-none"><h6 class="mb-3"><i class="bi bi-geo-alt-fill"></i> Address: MCU Hospital, EDSA, Caloocan City, Metro Manila</h6></a>
+                              <h6 class="card-text mb-2"><i class="bi bi-person-fill"></i> Name: Sibley Thompson</h6>
+                              <h6 class="card-text mb-2"><i class="bi bi-calendar2-check-fill"></i> Date: 10/15/2021</h6>
+                              <h6 class="card-text mb-2"><i class="bi bi-clock-fill"></i> Time: 10:00 AM</h6>
+                              <h6 class="card-text mb-2"><i class="bi bi-list-check"></i> Concern: Covid</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="tab-pane fade pt-4" id="nav-rejected" role="tabpanel" aria-labelledby="nav-rejected-tab">
+                      <div class="row">
+                        <div class="col-12 mb-3">
+                          <div class="card rejected-card">
+                            <div class="card-header p-3">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title"><a href="hospital-overview.html" class="text-decoration-none"><i class="bi bi-building"></i> Hospital: MCU Hospital</a></h5>
+                                <h5><i class="bi bi-clock-history"></i> 10/10/2021</h5>
+                              </div>
+                            </div>
+                            <div class="card-body p-3">
+                              <h6 class="card-subtitle mb-2 text-light">
+                                <i class="bi bi-card-heading"></i> Reservation Code: <b id="reservation-code-SCPH2021001">SCPH2021001</b>
+                                <button class="copy-code" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy Reservation Code" data-clipboard-action="copy" data-clipboard-target="#reservation-code-SCPH2021001"><span aria-hidden="true" class="copy-icon bi bi-clipboard-plus"></span></button>
+                              </h6>
+                              <a href="hospital-overview.html" class="text-decoration-none"><h6 class="mb-3"><i class="bi bi-geo-alt-fill"></i> Address: MCU Hospital, EDSA, Caloocan City, Metro Manila</h6></a>
+                              <h6 class="card-text mb-2"><i class="bi bi-person-fill"></i> Name: Sibley Thompson</h6>
+                              <h6 class="card-text mb-2"><i class="bi bi-calendar2-check-fill"></i> Date: 10/15/2021</h6>
+                              <h6 class="card-text mb-2"><i class="bi bi-clock-fill"></i> Time: 10:00 AM</h6>
+                              <h6 class="card-text mb-2"><i class="bi bi-list-check"></i> Concern: Covid</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="tab-pane fade pt-4" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab">
+                      <div class="row">
+                        <div class="col-12 mb-3">
+                          <div class="card history-card">
+                            <div class="card-header p-3">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title"><a href="hospital-overview.html" class="text-decoration-none"><i class="bi bi-building"></i> Hospital: MCU Hospital</a></h5>
+                                <h5><i class="bi bi-clock-history"></i> 10/10/2021</h5>
+                              </div>
+                            </div>
+                            <div class="card-body p-3">
+                              <h6 class="card-subtitle mb-2 text-light">
+                                <i class="bi bi-card-heading"></i> Reservation Code: <b id="reservation-code-SCPH2021001">SCPH2021001</b>
+                                <button class="copy-code" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy Reservation Code" data-clipboard-action="copy" data-clipboard-target="#reservation-code-SCPH2021001"><span aria-hidden="true" class="copy-icon bi bi-clipboard-plus"></span></button>
+                              </h6>
+                              <a href="hospital-overview.html" class="text-decoration-none"><h6 class="mb-3"><i class="bi bi-geo-alt-fill"></i> Address: MCU Hospital, EDSA, Caloocan City, Metro Manila</h6></a>
+                              <h6 class="card-text mb-2"><i class="bi bi-person-fill"></i> Name: Sibley Thompson</h6>
+                              <h6 class="card-text mb-2"><i class="bi bi-calendar2-check-fill"></i> Date: 10/15/2021</h6>
+                              <h6 class="card-text mb-2"><i class="bi bi-clock-fill"></i> Time: 10:00 AM</h6>
+                              <h6 class="card-text mb-2"><i class="bi bi-list-check"></i> Concern: Covid</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>             
+              </div>
+
+            </div>
+
+            <!-- End Column-->
+            <div class="col-xl-2">
+            </div>
+        </div>
+    </div>    
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</body>
+</html>
