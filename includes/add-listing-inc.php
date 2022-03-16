@@ -29,6 +29,7 @@
         $hospitalID = $_SESSION["hospitalID"];
         $listing_id = $_SESSION["listing-id"];
         // $listing_id = $_SESSION["listing_id"];
+        $response ='';
 
         // $hospitalID = 177;
         
@@ -69,6 +70,7 @@
                         $file_ext = end($file_ext);
 
                         if (!in_array($file_ext, $extensions)) {
+                            echo "error";
                             ?>
                             <?php echo "{$file_array[$i]['name']} - Invalid file extension!" ?>
                             <?php
@@ -82,9 +84,11 @@
                             $insertImage = "INSERT IGNORE INTO listingimages (listing_idFK, image_name, image_dir) VALUES ('$listing_id', '$name', '$img_dir')";
                             $conn->query($insertImage) or die($conn->error);
 
+                            echo "Success";
                             ?>
                             <?php
-                                echo $file_array[$i]['name']. ' - '.$phpFileUploadErrors[$file_array[$i]['error']];
+                                // echo $file_array[$i]['name']. ' - '.$phpFileUploadErrors[$file_array[$i]['error']];
+                                
                                 ?>
                             <?php
                         }
@@ -93,7 +97,7 @@
             }
         }
 
-        header ("location: ../hospital-dashboard");
+        // header ("location: ../hospital-dashboard");
     }
 
     function reArrayFiles(&$file_post)

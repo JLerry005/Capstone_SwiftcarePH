@@ -55,7 +55,7 @@
         </div>
     </div>
 
-    <form method="POST" action="includes/add-listing-inc.php" enctype="multipart/form-data">
+    <form method="POST" id="details-form" enctype="multipart/form-data">
 
         <!-- Main Container -->
         <div class="mainContainer grid grid-cols-12 p-6 space-y-6 xl:space-y-0 gap-5 text-sm" id="main-container">
@@ -155,7 +155,7 @@
         </div>
     </form>
 
-    <!-- <div id="success-toast"> <i class="bi bi-check2-circle"></i> Successfully Updated!</div>     -->
+    <div id="success-toast"> <i class="bi bi-check2-circle"></i> Successfully Updated!</div>    
     
     <div class="col-span-12" >
     <!-- Imgae Gallery -->

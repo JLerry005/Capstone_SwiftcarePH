@@ -19,14 +19,6 @@
                 $("#skeleton-loader").hide();
                 let fetchedData = JSON.parse(data);
 
-                // function showToast() {
-
-                //     var x = document.getElementById("success-toast");
-                //     x.className = "show";
-                //     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-            
-                // }
-
                 (fetchedData);
 
                 $("#hospital-name").val(fetchedData.hospital_name);
@@ -72,7 +64,6 @@
             method: "GET",
             url: "includes/get-hospital-images-inc.php",
             success: function (data, status) {
-
                 let fetchedImages = JSON.parse(data);
 
                 for(var i = 0; i < fetchedImages.length; i++) {
@@ -88,15 +79,54 @@
                     // $('#modal-image').modal("show");
                 }, false);
                 lightGallery(lg);
-            }
+            },
         });
     }
 
+    // Refresh Button
     function refreshDetails() {
         get_details();
     }
 
+    // Save Changes
+    // Submit form data via Ajax
+    $("#details-form").on('submit', function(e){
+        alert("Working!");
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: 'includes/add-listing-inc.php',
+            data: new FormData(this),
+            dataType: 'json',
+            contentType: false,
+            cache: false,
+            processData:false,
+            // beforeSend: function(){
+            //     $('.submitBtn').attr("disabled","disabled");
+            //     $('#fupForm').css("opacity",".5");
+            // },
+            success: function(response){
+                if (response =="Success") {
+                    var x = document.getElementById("success-toast");
+                    x.className = "show";
+                    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+                }else{
+                    
+                }
+                // $('.statusMsg').html('');
+                // if(response.status == 1){
+                //     $('#fupForm')[0].reset();
+                //     $('.statusMsg').html('<p class="alert alert-success">'+response.message+'</p>');
+                // }else{
+                //     $('.statusMsg').html('<p class="alert alert-danger">'+response.message+'</p>');
+                // }
+                // $('#fupForm').css("opacity","");
+                // $(".submitBtn").removeAttr("disabled");
+            }
+        });
+    });
 
+        
 
 
 
