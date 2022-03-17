@@ -14,17 +14,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../dist\output.css">
+    <link rel="stylesheet" href="dist\output.css">
     <link rel="stylesheet" href="styling\__edit-details-styling.css">
-    <script src="js/\edit-details.js" defer></script>
-    <!-- Light Gallery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+    <script src="js\edit-details.js" defer></script>
     <title>Edit Details</title> 
+    <!--lightGallery CSS CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
 </head>
 <body class="bg-blue-50">
+
     <div class="flex flex-1 justify-end space-x-1 pr-6 text-xs">
         <div class="bg-gray-500 hover:bg-gray-700 drop-shadow-md rounded-3xl h-5 w-5 p-5 flex items-center justify-center text-gray-300 hover:rounded-xl transition-all">
-            <button class=""><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <button class="" onclick="toggle_edit_details()"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
               </svg></button>
         </div>
@@ -58,7 +59,7 @@
     <form method="POST" id="details-form" enctype="multipart/form-data">
 
         <!-- Main Container -->
-        <div class="mainContainer grid grid-cols-12 p-6 space-y-6 xl:space-y-0 gap-5 text-sm" id="main-container">
+        <div class="mainContainer grid grid-cols-12 sm:px-3 md:px-6 2xl:px-12 space-y-6 xl:space-y-0 gap-5 text-sm mb-6 text-gray-700" id="main-container">
            
             <!-- Main Details Content -->
             <div class="col-span-12 xl:col-span-12 p-6 mainDetailsContainer bg-white drop-shadow-md">
@@ -79,7 +80,7 @@
             </div>
 
             <!-- Listing Details Content -->
-            <div class="col-span-12 xl:col-span-8 p-6 listingDetailsContainer bg-white drop-shadow-md">
+            <div class="col-span-12 xl:col-span-12 p-6 listingDetailsContainer bg-white drop-shadow-md">
                 <h1 class="font-bold">Listing Details</h1>
                 
                 <div class="py-6">
@@ -119,48 +120,50 @@
                 <!-- Refferal or other documents -->
                 <div>
                     <input type="checkbox" class="focus:outline-none p-3 border border-blue-400" id="require-documents" name="require-documents" value="Yes">
-                    <label for="require-documents">Require Refferal or other documents related into hopsital.</label>
+                    <label for="require-documents">Require Referal or other documents related into hopsital.</label>
                 </div>
                 
-            </div>
-
-            <!-- Additional / Others Details Content -->
-            <div class="col-span-12 xl:col-span-4 p-6 othersDetailsContent bg-white drop-shadow-md">
-                
-                <h1 class="font-bold">Additional / Others Details</h1>
-
-                <div class="py-6">
-                    <hr class="border-gray-300">     
-                </div>
-                       
-                <!-- Images -->
-                <label for="#images">Insert here your hospital images.</label>
-                <span class="text-red-500">*</span>
-                <input type="file" class="focus:outline-none p-3 border border-blue-400" name="images[]" id="images" value="" multiple="" required>
-                
-
-
                 <!-- Website Link -->
                 <input type="text" class="focus:outline-none p-3 border border-blue-400" name="website-link" id="website-link" placeholder="www.sample.com" required>
+                <div class="text-sm flex justify-end p-6">
 
+                    <!-- Submit Button -->
+                    <button type="submit" name="submit" id="submit" class="bg-blue-600 text-white p-3 drop-shadow-md hover:bg-blue-700 rounded-xl hover:scale-105 hover:rounded-md transition-all">Save Changes<i class="bi bi-check-lg"></i></button>
+                    
+                </div>
             </div>
-
-
-            
-        </div>
-
-        <div class="text-sm flex justify-end p-6">
-            <!-- Submit Button -->
-            <button type="submit" name="submit" class="bg-blue-600 text-white p-3 drop-shadow-md hover:bg-blue-700 rounded-xl hover:scale-105 hover:rounded-md transition-all">Save Changes<i class="bi bi-check-lg"></i></button>
         </div>
     </form>
 
-    <div id="success-toast"> <i class="bi bi-check2-circle"></i> Successfully Updated!</div>    
-    
-    <div class="col-span-12" >
-    <!-- Imgae Gallery -->
-        <div class="image-gallery" id="image-gallery">
+    <form action="" id="images-form">
+        <!-- Additional / Others Details Content -->
+        <div class="p-6 sm:mx-3 md:mx-6 2xl:mx-12 othersDetailsContent bg-white drop-shadow-md text-gray-700">
+            <h1 class="font-bold">Images</h1>
+            <div class="py-6">
+                <hr class="border-gray-300">     
+            </div>
+            <div class="grid grid-cols-12 gap-4">
+                <div class="xl:col-span-4 border-r-2 border-gray-400">
+                    <!-- Images -->
+                    <label for="#images">Upload your images here.</label>
+                    <span class="text-red-500">*</span>
+                    <input type="file" class="mb-3 focus:outline-none p-3 border border-blue-400" name="images[]" id="images" value="" multiple="">
+                    
+                    <button class="p-2 bg-blue-600 text-white" id="submit-images">Upload Images</button>
+                </div>
+            </form>
+                <div class="xl:col-span-8">
+                    <!-- Imgae Gallery -->
+                    <div class="image-gallery xl:grid xl:grid-cols-6 gap-4" id="image-gallery">
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+
+    <div id="success-toast"> <i class="bi bi-check2-circle"></i> Successfully Updated!</div>    
+
+    <!-- Light Gallery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+    
 </body>
 </html>

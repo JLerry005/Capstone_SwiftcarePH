@@ -3,17 +3,20 @@
    
 
     // document.getElementById("content-container").innerHTML = show_dashboard();
-    document.getElementById("content-container").innerHTML = show_details();
+    document.getElementById("content-container").innerHTML = show_dashboard();
 
     function show_dashboard() {
+        $("#content-container").html("");
         $("#content-container").load("pages/reservations.php");
     }  
 
     function show_details() {
+        $("#content-container").html("");
         $("#content-container").load("pages/edit-details.php");
     }
 
     function show_account() {
+        $("#content-container").html("");
         $("#content-container").load("pages/account.php");
     }
 

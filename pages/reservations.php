@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <div class="mainContainer block text-gray-700 space-y-12 py-14">
+    <div class="mainContainer block text-gray-700 space-y-12">
         <div class="hidden lg:flex justify-between items-center lg:px-8 xl:px-8 2xl:px-16">
             <h1 class="text-2xl font-bold" id="user-name">Reservations</h1>
             <button class="hover:text-Yellow"><i class="bi bi-bell-fill"></i> Notifications</button>
@@ -56,35 +56,34 @@
                     <span class="absolute right-0 top-0 mt-3 mr-3 rounded-full bg-red-500 p-2"></span>
                 </div>
                 
-
-                <div>
+                <div class="hover:text-blue-500 transition duration-200 ease-in-out">
                     <h1 class="text-5xl font-bold">14</h1>
                     <h1>Pending Reservations</h1>
                 </div>
-                <div>
-                    <i class="bi bi-hourglass-top text-5xl"></i>
+                <div class="">
+                    <i class="bi bi-hourglass-top text-5xl hover:text-blue-500 transition duration-200 ease-in-out"></i>
                 </div>
             </div>
 
             <!-- Upcoming Reservations Banner -->
             <div id="upcoming-reservations" onclick="anchor_to_upcoming()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out flex items-center justify-between">
-                <div>
+                <div class="hover:text-blue-500 transition duration-200 ease-in-out">
                     <h1 class="text-5xl font-bold">20</h1>
                     <h1>Upcoming Reservations</h1>
                 </div>
                 <div>
-                    <i class="bi bi-calendar2-check-fill text-5xl"></i>
+                    <i class="bi bi-calendar2-check-fill text-5xl hover:text-blue-500 transition duration-200 ease-in-out"></i>
                 </div>
             </div>
 
             <!-- History Banner -->
             <div id="history-reservations" onclick="anchor_to_history()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out flex items-center justify-between">
-                <div>
+                <div class="hover:text-blue-500 transition duration-200 ease-in-out">
                     <h1 class="text-5xl font-bold">54</h1>
                     <h1>History</h1>
                 </div>
                 <div>
-                    <i class="bi bi-clock-history text-5xl"></i>
+                    <i class="bi bi-clock-history text-5xl hover:text-blue-500 transition duration-200 ease-in-out"></i>
                 </div>
             </div>
         </div>

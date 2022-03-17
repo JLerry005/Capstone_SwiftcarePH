@@ -594,14 +594,14 @@
                   <h4 class="mt-2"><b>Images</b></h4><br>
                   <div class="row">
                     <div class="row gallery mb-3">
-                      <a class="col-xl-3 mx-2 uploaded-hospital-images" href="assets/googleMaps.png">
-                        <img class="card-img" alt="..." src="assets/googleMaps.png" />
+                      <a class="col-xl-3 mx-2 uploaded-hospital-images" href="../assets/googleMaps.png">
+                        <img class="card-img" alt="..." src="../assets/googleMaps.png" />
                       </a>
-                      <a class="col-xl-3 mx-2 uploaded-hospital-images" href="assets/Kingdom_animated_illustrations_by_Icons8/Kingdom_animated_illustrations_by_Icons8/Kingdom_business_chart_overlook_by_Icons8.gif">
-                        <img class="card-img" alt="..." src="assets/Kingdom_animated_illustrations_by_Icons8/Kingdom_animated_illustrations_by_Icons8/Kingdom_business_chart_overlook_by_Icons8.gif" />
+                      <a class="col-xl-3 mx-2 uploaded-hospital-images" href="../assets/Kingdom_animated_illustrations_by_Icons8/Kingdom_animated_illustrations_by_Icons8/Kingdom_business_chart_overlook_by_Icons8.gif">
+                        <img class="card-img" alt="..." src="../assets/Kingdom_animated_illustrations_by_Icons8/Kingdom_animated_illustrations_by_Icons8/Kingdom_business_chart_overlook_by_Icons8.gif" />
                       </a>
-                      <a class="col-xl-3 mx-2 uploaded-hospital-images" href="assets/googleMaps.png">
-                        <img class="card-img" alt="..." src="assets/googleMaps.png" />
+                      <a class="col-xl-3 mx-2 uploaded-hospital-images" href="../assets/googleMaps.png">
+                        <img class="card-img" alt="..." src="../assets/googleMaps.png" />
                       </a>
                     </div>
 
@@ -776,7 +776,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
     <script src="js/isotope.pkgd.min.js"></script> 
-    <script src="js/script.js" defer></script>
+    <script src="../js/script.js" defer></script>
     <!--lightGallery JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
     

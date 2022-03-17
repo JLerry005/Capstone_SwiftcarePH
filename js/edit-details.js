@@ -1,13 +1,7 @@
     // alert('Working!');
 
-
-
     get_details();
-    disableForm();
-
-    function disableForm() {
-        document.getElementById("main-container").disabled = true;
-    }
+    // disableForm();
     function get_details() {
         $.ajax({
             method: "GET",
@@ -19,7 +13,7 @@
                 $("#skeleton-loader").hide();
                 let fetchedData = JSON.parse(data);
 
-                (fetchedData);
+                console.log (fetchedData);
 
                 $("#hospital-name").val(fetchedData.hospital_name);
                 $("#hospital-location").val(fetchedData.hospital_location);
@@ -54,11 +48,14 @@
                 }else if(requireDocs == "no"){
                     document.getElementById("require-documents").checked = false;
                 }
+
+                // if (document.getElementById("hospital-room").checked) {
+                //     alert("hospital Room is checke!");
+                // }
             }
         });
 
         $("#image-gallery").html("");
-
         // Get Images
         $.ajax({
             method: "GET",
@@ -69,65 +66,85 @@
                 for(var i = 0; i < fetchedImages.length; i++) {
                     var obj = fetchedImages[i];
                     console.log(obj);                
-                    $("#image-gallery").append('<a href="Capstone/'+(obj.image_dir)+'"> <img class="card-img" alt="..." src="Capstone/'+(obj.image_dir)+'" height="20%" width="20%"/>'+(obj.image_name)+'</a>');
+                    $("#image-gallery").append('<a href="'+(obj.image_dir)+'" class="xl:col-span-2 w-64 h-64 hover:scale-105 transition duration-200"> <img id="'+(obj.image_id)+'" class="card-img" alt="..." src="'+(obj.image_dir)+'"/>'+(obj.image_name)+'</a> ');
                 }
 
                 // lightGallery(document.getElementById("#image-gallery"));
                 let lg = document.getElementById('image-gallery');
 
-                lg.addEventListener('onCloseAfter', function(){
-                    // $('#modal-image').modal("show");
-                }, false);
+                // lg.addEventListener('onCloseAfter', function(){
+                //     // $('#modal-image').modal("show");
+                // }, false);
                 lightGallery(lg);
             },
-        });
+        });   
     }
-
     // Refresh Button
     function refreshDetails() {
         get_details();
     }
 
-    // Save Changes
-    // Submit form data via Ajax
-    $("#details-form").on('submit', function(e){
-        alert("Working!");
+    $("#submit").click(function (e) {
         e.preventDefault();
+
+        // alert("Working");
+        let location = $('#hospital-location').val();
+        let description = $('#hospital-description').val();
+        let room = $('#hospital-room').val();
+        let roomSlot = $('#room-slot').val();
+        let bed = $('#hospital-bed').val();
+        let bedSlot = $('#bed-slot').val();
+        let refferal = $('#require-documents').val();
+        let websiteLink = $('#website-link').val();
+
         $.ajax({
             type: 'POST',
             url: 'includes/add-listing-inc.php',
-            data: new FormData(this),
-            dataType: 'json',
-            contentType: false,
-            cache: false,
-            processData:false,
-            // beforeSend: function(){
-            //     $('.submitBtn').attr("disabled","disabled");
-            //     $('#fupForm').css("opacity",".5");
-            // },
-            success: function(response){
-                if (response =="Success") {
-                    var x = document.getElementById("success-toast");
-                    x.className = "show";
-                    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-                }else{
-                    
-                }
-                // $('.statusMsg').html('');
-                // if(response.status == 1){
-                //     $('#fupForm')[0].reset();
-                //     $('.statusMsg').html('<p class="alert alert-success">'+response.message+'</p>');
-                // }else{
-                //     $('.statusMsg').html('<p class="alert alert-danger">'+response.message+'</p>');
-                // }
-                // $('#fupForm').css("opacity","");
-                // $(".submitBtn").removeAttr("disabled");
+            data: {
+                location:location,
+                description:description,
+                roomSlot:roomSlot,
+                bedSlot:bedSlot,
+                websiteLink:websiteLink,
+                room:$('#hospital-room:checkbox:checked').val(),
+                bed:$('#hospital-bed:checkbox:checked').val(),
+                refferal:$('#require-documents:checkbox:checked').val()
+            },
+            beforeSend: function () {
+                document.getElementById("main-container").classList.add('cursor-not-allowed', 'disable-form');
+            },
+            success: function(data) {
+                var x = document.getElementById("success-toast");
+                x.className = "show";
+                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+            },
+            complete: function () {
+                document.getElementById("main-container").classList.remove('cursor-not-allowed', 'disable-form');
             }
         });
     });
 
+    // Check if File if empty
+    // $('input[type=file]').change(function(){
+    //     if($('input[type=file]').val()==''){
+    //         $('#submit-images').attr('disabled',true)
+    //     } 
+    //     else{
+    //       $('#submit-images').attr('disabled',false);
+    //     }
+    // });
+
+    $('#images:file').change(function(){
+            if ($(this).val()) {
+                $('#submit-images').attr('disabled',false);
+                // or, as has been pointed out elsewhere:
+                // $('input:submit').removeAttr('disabled'); 
+            } 
+        }
+    );
+
         
 
-
+   
 
     
