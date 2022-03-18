@@ -244,7 +244,7 @@
                         </div>
                         <form action="includes/userVerifyPassword-inc.php" method="POST" id="editPasswordForm">
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control userPassword" id="userPassword" name="userPassword"  placeholder="Ex. 09123456789" required>
+                                <input type="password" class="form-control userPassword" id="userPassword" name="userPassword" required>
                                 <label for="mobileNumber">Current Password</label>
                             </div>
 

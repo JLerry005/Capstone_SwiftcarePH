@@ -38,6 +38,7 @@ module.exports = {
       'GreenCards': '#FFE77AFF',
       'YellowCards' :'#2C5F2DFF',
       'DarkerYellow' :'#D49100',
+      'redColor' : '#E84545',
 
       inherit: colors.inherit,
       current: colors.current,

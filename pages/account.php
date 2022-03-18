@@ -121,9 +121,8 @@
         </div>
     </div>
 
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content ">
 
@@ -143,12 +142,9 @@
                     <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="hospital-phoneNumber" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light">
                 </div>
             </div>
-
-
-            </div>
-
         </div>
-
-</div>
+    </div>
+    </div>
+    
 </body>
 </html>

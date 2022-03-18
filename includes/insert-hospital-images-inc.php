@@ -18,54 +18,50 @@
     $listing_id = $_SESSION["listing-id"];
 
     // Insert Images
-    if (isset($_FILES['images'])) {
         $file_array = reArrayFiles($_FILES['images']);
 
-        if ($sql) {
-            for ($i=0; $i <count($file_array); $i++) { 
-                if ($file_array[$i]['error']) {
+        for ($i=0; $i <count($file_array); $i++) { 
+            if ($file_array[$i]['error']) {
+                ?>
+                <?php echo $file_array[$i]['name'].' - '.$phpFileUploadErrors[$file_array[$i]['error']];?>
+                <?php
+            }
+            else {
+                $extensions = array('jpg', 'png', 'gif', 'jpeg');
+                $file_ext = explode('.',$file_array[$i]['name']);
+                
+                $name = $file_ext[0];
+                $name = preg_replace("!-!", " ", $name);
+                $name = ucwords($name);
+
+                $file_ext = end($file_ext);
+
+                if (!in_array($file_ext, $extensions)) {
+                    echo "error";
                     ?>
-                    <?php echo $file_array[$i]['name'].' - '.$phpFileUploadErrors[$file_array[$i]['error']];?>
+                    <?php echo "{$file_array[$i]['name']} - Invalid file extension!" ?>
                     <?php
                 }
+
                 else {
-                    $extensions = array('jpg', 'png', 'gif', 'jpeg');
-                    $file_ext = explode('.',$file_array[$i]['name']);
-                    
-                    $name = $file_ext[0];
-                    $name = preg_replace("!-!", " ", $name);
-                    $name = ucwords($name);
-    
-                    $file_ext = end($file_ext);
+                    $img_dir = 'web/hospital-images/'.$file_array[$i]['name'];
 
-                    if (!in_array($file_ext, $extensions)) {
-                        echo "error";
+                    move_uploaded_file($file_array[$i]['tmp_name'], $img_dir);
+
+                    $insertImage = "INSERT IGNORE INTO listingimages (listing_idFK, image_name, image_dir) VALUES ('$listing_id', '$name', '$img_dir')";
+                    $conn->query($insertImage) or die($conn->error);
+
+                    // echo "Success";
+                    ?>
+                    <?php
+                        echo $file_array[$i]['name']. ' - '.$phpFileUploadErrors[$file_array[$i]['error']];
                         ?>
-                        <?php echo "{$file_array[$i]['name']} - Invalid file extension!" ?>
-                        <?php
-                    }
-
-                    else {
-                        $img_dir = 'web/hospital-images/'.$file_array[$i]['name'];
-    
-                        move_uploaded_file($file_array[$i]['tmp_name'], $img_dir);
-    
-                        $insertImage = "INSERT IGNORE INTO listingimages (listing_idFK, image_name, image_dir) VALUES ('$listing_id', '$name', '$img_dir')";
-                        $conn->query($insertImage) or die($conn->error);
-
-                        echo "Success";
-                        ?>
-                        <?php
-                            // echo $file_array[$i]['name']. ' - '.$phpFileUploadErrors[$file_array[$i]['error']];
-                            
-                            ?>
-                        <?php
-                    }
+                    <?php
                 }
             }
-        }   
+        }
         // header ("location: ../hospital-dashboard");
-    }
+
 
 
     function reArrayFiles(&$file_post)

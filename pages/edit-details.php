@@ -35,7 +35,6 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
               </svg></button>
         </div>
-        
     </div>
     <!-- Skeleton Loader -->
     <div class="h-screen" id="skeleton-loader">
@@ -57,15 +56,11 @@
     </div>
 
     <form method="POST" id="details-form" enctype="multipart/form-data">
-
         <!-- Main Container -->
         <div class="mainContainer grid grid-cols-12 sm:px-3 md:px-6 2xl:px-12 space-y-6 xl:space-y-0 gap-5 text-sm mb-6 text-gray-700" id="main-container">
-           
             <!-- Main Details Content -->
             <div class="col-span-12 xl:col-span-12 p-6 mainDetailsContainer bg-white drop-shadow-md">
-
                 <h1 class="font-bold">Main Details</h1>
-
                 <div class="py-6">
                     <hr class="border-gray-300">     
                 </div>
@@ -75,6 +70,7 @@
                     <iframe class="googleMap w-full rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.9926021403926!2d120.98714038020043!3d14.656361247977395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b429ca9143f7%3A0x7dc98ed31712fe49!2sMCU%20Hospital%20-%20Filemon%20D.%20Tanchoco%2C%20Sr.%20Medical%20Foundation%20Inc.!5e0!3m2!1sen!2sph!4v1637676790012!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
                 </div>
                 
+                <!-- Location -->
                 <input type="text" class="focus:outline-none p-3 border border-blue-400" id="hospital-location" name="hospital-location" required>
                 <button class="bg-green-500 p-2 drop-shadow-md rounded-md text-white">Get my Location</button>
             </div>
@@ -82,27 +78,23 @@
             <!-- Listing Details Content -->
             <div class="col-span-12 xl:col-span-12 p-6 listingDetailsContainer bg-white drop-shadow-md">
                 <h1 class="font-bold">Listing Details</h1>
-                
                 <div class="py-6">
                     <hr class="border-gray-300">     
                 </div>
 
                 <!-- Hospita Name & Type of Hospital -->
                 <div class="flex justify-between">
-                    
                     <!-- Hospita Name -->
                     <input type="text" class="focus:outline-none p-3 border border-blue-400" id="hospital-name" name="hospitalName" disabled>
-
                     <!-- Type of Hospital -->
                     <input class="bg-red-500 drop-shadow-md text-white p-2 focus:outline-none rounded-lg text-center" type="text" id="hospitalType" name="hospital-type" disabled>
-
                 </div>
+
+                <!-- Hospital Description -->
                 <div>
-                    <!-- Hospital Description -->
                     <input type="text" class="focus:outline-none p-3 border border-blue-400" id="hospital-description" name="hospitalDescription" value="Description" required>
                 </div>
                 
-
                 <!-- Rooms / Beds -->
                 <div>
                     <!-- Rooms -->
@@ -114,7 +106,6 @@
                     <input type="checkbox" class="focus:outline-none p-3 border border-blue-400" id="hospital-bed" name="bed" value="Bed">
                     <label for="hospital-bed"> Bed</label>
                     <input type="number" class="focus:outline-none p-3 border border-blue-400" id="bed-slot" name="bed-slot" min="1" max="99" placeholder="1 ~ 99">
-                    
                 </div>
                 
                 <!-- Refferal or other documents -->
@@ -125,11 +116,10 @@
                 
                 <!-- Website Link -->
                 <input type="text" class="focus:outline-none p-3 border border-blue-400" name="website-link" id="website-link" placeholder="www.sample.com" required>
+                
+                <!-- Submit Button -->
                 <div class="text-sm flex justify-end p-6">
-
-                    <!-- Submit Button -->
                     <button type="submit" name="submit" id="submit" class="bg-blue-600 text-white p-3 drop-shadow-md hover:bg-blue-700 rounded-xl hover:scale-105 hover:rounded-md transition-all">Save Changes<i class="bi bi-check-lg"></i></button>
-                    
                 </div>
             </div>
         </div>
@@ -151,7 +141,7 @@
                     
                     <button class="p-2 bg-blue-600 text-white" id="submit-images">Upload Images</button>
                 </div>
-            </form>
+    </form>
                 <div class="xl:col-span-8">
                     <!-- Imgae Gallery -->
                     <div class="image-gallery xl:grid xl:grid-cols-6 gap-4" id="image-gallery">
