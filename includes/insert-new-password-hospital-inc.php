@@ -4,7 +4,6 @@
 
     if (isset($_POST['saveChanges'])) {
 
-
         $newPasswordValue = $_POST['newPasswordValue'];
 
         require_once 'dbh-inc.php';

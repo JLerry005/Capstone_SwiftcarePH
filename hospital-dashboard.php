@@ -10,7 +10,7 @@
 <html lang="en">
 <head>        
     <!-- Flowbite minified stylesheet -->
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css" /> -->
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -91,466 +91,480 @@
                     <div class="animate-pulse col-span-12 h-16 bg-gray-300"></div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- DASHBOARD CONTENT -->
-    <div class="dashboardContent" id="dashboardContent" style="display: none;"> 
-        <div class="mainContainer block text-gray-700 space-y-12">
-            <div class="hidden lg:flex justify-between items-center lg:px-8 xl:px-8 2xl:px-16">
-                <h1 class="text-2xl font-bold" id="user-name">Reservations</h1>
+            <!-- DASHBOARD CONTENT -->
+            <div class="tab-contents mainContainer block text-gray-700 space-y-12" id="dashboardContent" style="display: none;">
+                <div class="hidden lg:flex justify-between items-center lg:px-8 xl:px-8 2xl:px-16">
+                    <h1 class="text-2xl font-bold" id="user-name">Reservations</h1>
 
-                <div class="flex items-center space-x-3">
-                    <div class="bg-gray-500 hover:bg-gray-700 drop-shadow-md rounded-3xl h-3 w-3 p-5 flex items-center justify-center text-gray-300 hover:rounded-xl transition-all">
-                        <button onclick="refreshDashboard()" class="text-sm"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-gray-500 hover:bg-gray-700 drop-shadow-md rounded-3xl h-3 w-3 p-5 flex items-center justify-center text-gray-300 hover:rounded-xl transition-all">
+                            <button onclick="refreshDashboard()" class="text-sm"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg></button>
+                        </div>
+                        <button class="hover:text-Yellow"><i class="bi bi-bell-fill"></i> Notifications</button>
+                    </div>
+                    
+                </div>
+                
+                <div class="grid grid-cols-12 gap-3 md:p-6 2xl:px-16 xl:gap-6">
+                    
+
+                    <!-- Pending Reservations Banner -->
+                    <div id="pending-reservations" onclick="anchor_to_pending()" class="bg-white p-5 md:p-8 col-span-12  lg:col-span-4 2xl:col-start-1 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out flex items-center justify-between relative">
+                        
+                        <!-- Notification Ping -->
+                        <div class="">
+                            <div class="animate-ping absolute right-0 top-0 mt-3 mr-3 rounded-full bg-red-500 p-2"></div>
+                            <span class="absolute right-0 top-0 mt-3 mr-3 rounded-full bg-red-500 p-2"></span>
+                        </div>
+                        
+                        <div class="hover:text-blue-500 transition duration-200 ease-in-out">
+                            <h1 class="text-5xl font-bold">14</h1>
+                            <h1>Pending Reservations</h1>
+                        </div>
+                        <div class="">
+                            <i class="bi bi-hourglass-top text-5xl hover:text-blue-500 transition duration-200 ease-in-out"></i>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Reservations Banner -->
+                    <div id="upcoming-reservations" onclick="anchor_to_upcoming()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out flex items-center justify-between">
+                        <div class="hover:text-blue-500 transition duration-200 ease-in-out">
+                            <h1 class="text-5xl font-bold">20</h1>
+                            <h1>Upcoming Reservations</h1>
+                        </div>
+                        <div>
+                            <i class="bi bi-calendar2-check-fill text-5xl hover:text-blue-500 transition duration-200 ease-in-out"></i>
+                        </div>
+                    </div>
+
+                    <!-- History Banner -->
+                    <div id="history-reservations" onclick="anchor_to_history()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out flex items-center justify-between">
+                        <div class="hover:text-blue-500 transition duration-200 ease-in-out">
+                            <h1 class="text-5xl font-bold">54</h1>
+                            <h1>History</h1>
+                        </div>
+                        <div>
+                            <i class="bi bi-clock-history text-5xl hover:text-blue-500 transition duration-200 ease-in-out"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contents -->
+                <!-- Pending Reservations Contents -->
+                <div id="pending-contents" class="bg-white p-5 2xl:mx-16 md:mx-6 lg:mx-6 rounded drop-shadow-md text-sm min-h-[450px] scroll-my-7">
+                    <!-- Header -->
+                    <div class="flex flex-col sm:flex-row justify-between items-center">
+                        <h1 class="text-lg font-bold"><i class="bi bi-hourglass-top"></i> Pending Reservations</h1>
+                        <div class="flex space-x-5">
+                            <div class="-space-x-1">
+                                <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Newest</button>
+                                <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Oldest</button>
+                            </div>
+                            
+                            <div class="-space-x-1">
+                                <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Covid</button>
+                                <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Non-Covid</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="border-slate-200 my-3">
+                    <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse beatae.</p>
+
+                    <!-- Cards go here -->
+                    <div class="px-5 lg:grid grid-cols-12 gap-3">
+                        <div class="col-span-6 p-4 bg-gray-700 rounded drop-shadow-lg text-white">
+                            <div class="flex justify-between"> 
+                                <div><i class="bi bi-person-fill"></i> Patient Name: <b>Nior Goods</b></div>
+                                <div><i class="bi bi-clock-history"></i> March 10, 2022 - 10:30PM</div>
+                            </div>
+                
+                            <div>
+                                <p><i class="bi bi-calendar2-check-fill"></i> Admission Date: March 20, 2022</p>
+                                <p><i class="bi bi-clock"></i> Time of the Day: March 20, 2022</p>
+                            </div>
+                        </div>
+
+                        <div class="col-span-6 p-4 bg-gray-700 rounded drop-shadow-lg text-white">
+                            <div class="flex justify-between"> 
+                                <div><i class="bi bi-person-fill"></i> Patient Name: <b>Nior Goods</b></div>
+                                <div><i class="bi bi-clock-history"></i> March 10, 2022 - 10:30PM</div>
+                            </div>
+                
+                            <div>
+                                <p><i class="bi bi-calendar2-check-fill"></i> Admission Date: March 20, 2022</p>
+                                <p><i class="bi bi-clock"></i> Time of the Day: March 20, 2022</p>
+                            </div>
+                        </div>               
+                    </div>
+                </div>
+
+                <!-- Upcoming Reservations Contents -->
+                <div id="upcoming-contents" class="bg-white p-5 2xl:mx-16 md:mx-6 rounded drop-shadow-md text-sm min-h-[450px] scroll-my-7">
+                    <!-- Header -->
+                    <div class="flex flex-col sm:flex-row justify-between items-center">
+                        <h1 class="text-lg font-bold"><i class="bi bi-hourglass-top"></i> Upcoming Reservations</h1>
+                        <div class="flex space-x-5">
+                            <div class="-space-x-1">
+                                <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Newest</button>
+                                <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Oldest</button>
+                            </div>
+                            
+                            <div class="-space-x-1">
+                                <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Covid</button>
+                                <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Non-Covid</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="border-slate-200 my-3">
+                    <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse beatae.</p>
+                </div>
+
+                <!-- History Reservations Contents -->
+                <div id="history-contents" class="bg-white p-5 2xl:mx-16 md:mx-6 rounded drop-shadow-md text-sm min-h-[450px] scroll-my-7">
+                    <!-- Header -->
+                    <div class="flex flex-col sm:flex-row justify-between items-center">
+                        <h1 class="text-lg font-bold"><i class="bi bi-hourglass-top"></i> History</h1>
+                        <div class="flex space-x-5">
+                            <div class="-space-x-1">
+                                <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Newest</button>
+                                <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Oldest</button>
+                            </div>
+                            
+                            <div class="-space-x-1">
+                                <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Covid</button>
+                                <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Non-Covid</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="border-slate-200 my-3">
+
+                    <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse beatae.</p>
+                </div>
+            </div>
+
+            <!-- Edit Details Contents -->
+            <div class=" editDetailsContent tab-contents" id="editDetailsContent" style="display: none;">
+                <!-- Refresh Button -->
+                <div class="flex flex-1 justify-end space-x-1 text-xs fixed z-10 right-0 mr-24">
+                    <div class="bg-gray-500 hover:bg-gray-700 drop-shadow-md rounded-3xl h-5 w-5 p-5 flex items-center justify-center text-gray-300 hover:rounded-xl transition-all">
+                        <button class="" onclick="toggle_edit_details()"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                            </svg></button>
+                    </div>
+                    
+                    <div class="bg-gray-500 hover:bg-gray-700 drop-shadow-md rounded-3xl h-5 w-5 p-5 flex items-center justify-center text-gray-300 hover:rounded-xl transition-all">
+                        <button onclick="refreshEditDetails()"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                          </svg></button>
-                    </div>
-                    <button class="hover:text-Yellow"><i class="bi bi-bell-fill"></i> Notifications</button>
-                </div>
-                
-            </div>
-            
-            <div class="grid grid-cols-12 gap-3 md:p-6 2xl:px-16 xl:gap-6">
-                <button id="sample-button">Hover me!</button>
-                <!-- Pending Reservations Banner -->
-                <div id="pending-reservations" onclick="anchor_to_pending()" class="bg-white p-5 md:p-8 col-span-12  lg:col-span-4 2xl:col-start-1 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out flex items-center justify-between relative">
-                    
-                    <!-- Notification Ping -->
-                    <div class="">
-                        <div class="animate-ping absolute right-0 top-0 mt-3 mr-3 rounded-full bg-red-500 p-2"></div>
-                        <span class="absolute right-0 top-0 mt-3 mr-3 rounded-full bg-red-500 p-2"></span>
-                    </div>
-                    
-                    <div class="hover:text-blue-500 transition duration-200 ease-in-out">
-                        <h1 class="text-5xl font-bold">14</h1>
-                        <h1>Pending Reservations</h1>
-                    </div>
-                    <div class="">
-                        <i class="bi bi-hourglass-top text-5xl hover:text-blue-500 transition duration-200 ease-in-out"></i>
-                    </div>
-                </div>
-
-                <!-- Upcoming Reservations Banner -->
-                <div id="upcoming-reservations" onclick="anchor_to_upcoming()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out flex items-center justify-between">
-                    <div class="hover:text-blue-500 transition duration-200 ease-in-out">
-                        <h1 class="text-5xl font-bold">20</h1>
-                        <h1>Upcoming Reservations</h1>
-                    </div>
-                    <div>
-                        <i class="bi bi-calendar2-check-fill text-5xl hover:text-blue-500 transition duration-200 ease-in-out"></i>
-                    </div>
-                </div>
-
-                <!-- History Banner -->
-                <div id="history-reservations" onclick="anchor_to_history()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out flex items-center justify-between">
-                    <div class="hover:text-blue-500 transition duration-200 ease-in-out">
-                        <h1 class="text-5xl font-bold">54</h1>
-                        <h1>History</h1>
-                    </div>
-                    <div>
-                        <i class="bi bi-clock-history text-5xl hover:text-blue-500 transition duration-200 ease-in-out"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contents -->
-            <!-- Pending Reservations Contents -->
-            <div id="pending-contents" class="bg-white p-5 2xl:mx-16 md:mx-6 lg:mx-6 rounded drop-shadow-md text-sm min-h-[450px] scroll-my-7">
-                <!-- Header -->
-                <div class="flex flex-col sm:flex-row justify-between items-center">
-                    <h1 class="text-lg font-bold"><i class="bi bi-hourglass-top"></i> Pending Reservations</h1>
-                    <div class="flex space-x-5">
-                        <div class="-space-x-1">
-                            <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Newest</button>
-                            <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Oldest</button>
-                        </div>
-                        
-                        <div class="-space-x-1">
-                            <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Covid</button>
-                            <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Non-Covid</button>
-                        </div>
+                            </svg></button>
                     </div>
                 </div>
                 
-                <hr class="border-slate-200 my-3">
-                <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse beatae.</p>
-
-                <!-- Cards go here -->
-                <div class="px-5 lg:grid grid-cols-12 gap-3">
-                    <div class="col-span-6 p-4 bg-gray-700 rounded drop-shadow-lg text-white">
-                        <div class="flex justify-between"> 
-                            <div><i class="bi bi-person-fill"></i> Patient Name: <b>Nior Goods</b></div>
-                            <div><i class="bi bi-clock-history"></i> March 10, 2022 - 10:30PM</div>
-                        </div>
+                <!--Listing Details Form -->
+                <form method="POST" id="details-form" enctype="multipart/form-data">
+                    <!-- Main Container -->
+                    <div class="mainContainer grid grid-cols-12 sm:px-3 md:px-6 2xl:px-12 space-y-6 xl:space-y-0 gap-5 text-sm mb-6 text-gray-700" id="main-container">
+                        <!-- Main Details Content -->
+                        <div class="col-span-12 xl:col-span-12 p-6 mainDetailsContainer bg-white drop-shadow-md">
+                            <h1 class="font-bold">Main Details</h1>
+                            <div class="py-6">
+                                <hr class="border-gray-300">     
+                            </div>
             
-                        <div>
-                            <p><i class="bi bi-calendar2-check-fill"></i> Admission Date: March 20, 2022</p>
-                            <p><i class="bi bi-clock"></i> Time of the Day: March 20, 2022</p>
-                        </div>
-                    </div>
-
-                    <div class="col-span-6 p-4 bg-gray-700 rounded drop-shadow-lg text-white">
-                        <div class="flex justify-between"> 
-                            <div><i class="bi bi-person-fill"></i> Patient Name: <b>Nior Goods</b></div>
-                            <div><i class="bi bi-clock-history"></i> March 10, 2022 - 10:30PM</div>
-                        </div>
-            
-                        <div>
-                            <p><i class="bi bi-calendar2-check-fill"></i> Admission Date: March 20, 2022</p>
-                            <p><i class="bi bi-clock"></i> Time of the Day: March 20, 2022</p>
-                        </div>
-                    </div>               
-                </div>
-            </div>
-
-            <!-- Upcoming Reservations Contents -->
-            <div id="upcoming-contents" class="bg-white p-5 2xl:mx-16 md:mx-6 rounded drop-shadow-md text-sm min-h-[450px] scroll-my-7">
-                <!-- Header -->
-                <div class="flex flex-col sm:flex-row justify-between items-center">
-                    <h1 class="text-lg font-bold"><i class="bi bi-hourglass-top"></i> Upcoming Reservations</h1>
-                    <div class="flex space-x-5">
-                        <div class="-space-x-1">
-                            <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Newest</button>
-                            <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Oldest</button>
-                        </div>
-                        
-                        <div class="-space-x-1">
-                            <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Covid</button>
-                            <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Non-Covid</button>
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="border-slate-200 my-3">
-                <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse beatae.</p>
-            </div>
-
-            <!-- History Reservations Contents -->
-            <div id="history-contents" class="bg-white p-5 2xl:mx-16 md:mx-6 rounded drop-shadow-md text-sm min-h-[450px] scroll-my-7">
-                <!-- Header -->
-                <div class="flex flex-col sm:flex-row justify-between items-center">
-                    <h1 class="text-lg font-bold"><i class="bi bi-hourglass-top"></i> History</h1>
-                    <div class="flex space-x-5">
-                        <div class="-space-x-1">
-                            <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Newest</button>
-                            <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Oldest</button>
-                        </div>
-                        
-                        <div class="-space-x-1">
-                            <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Covid</button>
-                            <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Non-Covid</button>
-                        </div>
-                    </div>
-                </div>
-                <hr class="border-slate-200 my-3">
-
-                <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse beatae.</p>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Edit Details Contents -->
-    <div class="editDetailsContent" id="editDetailsContent" style="display: none;">
-        <div class="" id="">
-            <!-- Refresh Button -->
-            <div class="flex flex-1 justify-end space-x-1 pr-6 text-xs">
-                <div class="bg-gray-500 hover:bg-gray-700 drop-shadow-md rounded-3xl h-5 w-5 p-5 flex items-center justify-center text-gray-300 hover:rounded-xl transition-all">
-                    <button class="" onclick="toggle_edit_details()"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                      </svg></button>
-                </div>
-                
-                <div class="bg-gray-500 hover:bg-gray-700 drop-shadow-md rounded-3xl h-5 w-5 p-5 flex items-center justify-center text-gray-300 hover:rounded-xl transition-all">
-                    <button onclick="refreshEditDetails()"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                      </svg></button>
-                </div>
-            </div>
-           
-            <!--Listing Details Form -->
-            <form method="POST" id="details-form" enctype="multipart/form-data">
-                <!-- Main Container -->
-                <div class="mainContainer grid grid-cols-12 sm:px-3 md:px-6 2xl:px-12 space-y-6 xl:space-y-0 gap-5 text-sm mb-6 text-gray-700" id="main-container">
-                    <!-- Main Details Content -->
-                    <div class="col-span-12 xl:col-span-12 p-6 mainDetailsContainer bg-white drop-shadow-md">
-                        <h1 class="font-bold">Main Details</h1>
-                        <div class="py-6">
-                            <hr class="border-gray-300">     
-                        </div>
-        
-                        <!-- Google Map -->
-                        <div class="map p-2 mb-5">
-                            <iframe class="googleMap w-full rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.9926021403926!2d120.98714038020043!3d14.656361247977395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b429ca9143f7%3A0x7dc98ed31712fe49!2sMCU%20Hospital%20-%20Filemon%20D.%20Tanchoco%2C%20Sr.%20Medical%20Foundation%20Inc.!5e0!3m2!1sen!2sph!4v1637676790012!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-                        
-                        <!-- Location -->
-                        <input type="text" class="focus:outline-none p-3 border border-blue-400" id="hospital-location" name="hospital-location" required>
-                        <button class="bg-green-500 p-2 drop-shadow-md rounded-md text-white">Get my Location</button>
-                    </div>
-        
-                    <!-- Listing Details Content -->
-                    <div class="col-span-12 xl:col-span-12 p-6 listingDetailsContainer bg-white drop-shadow-md">
-                        <h1 class="font-bold">Listing Details</h1>
-                        <div class="py-6">
-                            <hr class="border-gray-300">     
-                        </div>
-        
-                        <!-- Hospita Name & Type of Hospital -->
-                        <div class="flex justify-between">
-                            <!-- Hospita Name -->
-                            <input type="text" class="focus:outline-none p-3 border border-blue-400" id="hospital-name" name="hospitalName" disabled>
-                            <!-- Type of Hospital -->
-                            <input class="bg-red-500 drop-shadow-md text-white p-2 focus:outline-none rounded-lg text-center" type="text" id="hospitalType" name="hospital-type" disabled>
-                        </div>
-        
-                        <!-- Hospital Description -->
-                        <div>
-                            <input type="text" class="focus:outline-none p-3 border border-blue-400" id="hospital-description" name="hospitalDescription" value="Description" required>
-                        </div>
-                        
-                        <!-- Rooms / Beds -->
-                        <div>
-                            <!-- Rooms -->
-                            <input type="checkbox" class="focus:outline-none p-3 border border-blue-400" id="hospital-room" name="room" value="Room">
-                            <label for="hospital-room"> room</label>
-                            <input type="number" class="focus:outline-none p-3 border border-blue-400" id="room-slot" name="room-slot" min="1" max="99" placeholder="1 ~ 99">
+                            <!-- Google Map -->
+                            <div class="map p-2 mb-5">
+                                <iframe class="googleMap w-full rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.9926021403926!2d120.98714038020043!3d14.656361247977395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b429ca9143f7%3A0x7dc98ed31712fe49!2sMCU%20Hospital%20-%20Filemon%20D.%20Tanchoco%2C%20Sr.%20Medical%20Foundation%20Inc.!5e0!3m2!1sen!2sph!4v1637676790012!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
                             
-                            <!-- Beds -->
-                            <input type="checkbox" class="focus:outline-none p-3 border border-blue-400" id="hospital-bed" name="bed" value="Bed">
-                            <label for="hospital-bed"> Bed</label>
-                            <input type="number" class="focus:outline-none p-3 border border-blue-400" id="bed-slot" name="bed-slot" min="1" max="99" placeholder="1 ~ 99">
+                            <!-- Location -->
+                            <input type="text" class="focus:outline-none p-3 border border-blue-400" id="hospital-location" name="hospital-location" required>
+                            <button class="bg-green-500 p-2 drop-shadow-md rounded-md text-white">Get my Location</button>
                         </div>
-                        
-                        <!-- Refferal or other documents -->
-                        <div>
-                            <input type="checkbox" class="focus:outline-none p-3 border border-blue-400" id="require-documents" name="require-documents" value="Yes">
-                            <label for="require-documents">Require Referal or other documents related into hopsital.</label>
-                        </div>
-                        
-                        <!-- Website Link -->
-                        <input type="text" class="focus:outline-none p-3 border border-blue-400" name="website-link" id="website-link" placeholder="www.sample.com" required>
-                        
-                        <!-- Submit Button -->
-                        <div class="text-sm flex justify-end p-6">
-                            <button type="submit" name="submit" id="submit-details" onclick="submitDetails(event)" class="bg-blue-600 text-white p-3 drop-shadow-md hover:bg-blue-700 rounded-xl hover:scale-105 hover:rounded-md transition-all">Save Changes<i class="bi bi-check-lg"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-
-            <!-- Images Form -->
             
-                <!-- Additional / Others Details Content -->
-                <div class="p-6 sm:mx-3 md:mx-6 2xl:mx-12 othersDetailsContent bg-white drop-shadow-md text-gray-700">
-                    <h1 class="font-bold">Images</h1>
-                    <div class="py-6">
-                        <hr class="border-gray-300">     
-                    </div>
-                    <div class="grid grid-cols-12 gap-4">
-                        <div class="xl:col-span-4 border-r-2 border-gray-400">
-                            <!-- Images -->
-                            <form method="post" id="imagesForm" enctype="multipart/form-data"></form>
-                            <label for="#images">Upload your images here.</label>
-                            <span class="text-red-500">*</span>
-                            <input type="file" name="images[]" class="mb-3 focus:outline-none p-3 border border-blue-400" id="images" multiple>
+                        <!-- Listing Details Content -->
+                        <div class="col-span-12 xl:col-span-12 p-6 listingDetailsContainer bg-white drop-shadow-md">
+                            <h1 class="font-bold">Listing Details</h1>
+                            <div class="py-6">
+                                <hr class="border-gray-300">     
+                            </div>
+            
+                            <!-- Hospita Name & Type of Hospital -->
+                            <div class="flex justify-between">
+                                <!-- Hospita Name -->
+                                <input type="text" class="focus:outline-none p-3 border border-blue-400" id="hospital-name" name="hospitalName" disabled>
+                                <!-- Type of Hospital -->
+                                <input class="bg-red-500 drop-shadow-md text-white p-2 focus:outline-none rounded-lg text-center" type="text" id="hospitalType" name="hospital-type" disabled>
+                            </div>
+            
+                            <!-- Hospital Description -->
+                            <div>
+                                <input type="text" class="focus:outline-none p-3 border border-blue-400" id="hospital-description" name="hospitalDescription" value="Description" required>
+                            </div>
                             
-                            <button type="submit" name="submit" id="uploadIMages" onclick="uploadimages(event)" class="p-2 bg-blue-600 text-white">Upload Image</button>
-                            </form>
-                        </div>
-                
-                        <div class="xl:col-span-8">
-                            <!-- Imgae Gallery -->
-                            <div class="image-gallery xl:grid xl:grid-cols-6 gap-4" id="image-gallery">
+                            <!-- Rooms / Beds -->
+                            <div>
+                                <!-- Rooms -->
+                                <input type="checkbox" class="focus:outline-none p-3 border border-blue-400" id="hospital-room" name="room" value="Room">
+                                <label for="hospital-room"> room</label>
+                                <input type="number" class="focus:outline-none p-3 border border-blue-400" id="room-slot" name="room-slot" min="1" max="99" placeholder="1 ~ 99">
+                                
+                                <!-- Beds -->
+                                <input type="checkbox" class="focus:outline-none p-3 border border-blue-400" id="hospital-bed" name="bed" value="Bed">
+                                <label for="hospital-bed"> Bed</label>
+                                <input type="number" class="focus:outline-none p-3 border border-blue-400" id="bed-slot" name="bed-slot" min="1" max="99" placeholder="1 ~ 99">
+                            </div>
+                            
+                            <!-- Refferal or other documents -->
+                            <div>
+                                <input type="checkbox" class="focus:outline-none p-3 border border-blue-400" id="require-documents" name="require-documents" value="Yes">
+                                <label for="require-documents">Require Referal or other documents related into hopsital.</label>
+                            </div>
+                            
+                            <!-- Website Link -->
+                            <input type="text" class="focus:outline-none p-3 border border-blue-400" name="website-link" id="website-link" placeholder="www.sample.com" required>
+                            
+                            <!-- Submit Button -->
+                            <div class="text-sm flex justify-end p-6">
+                                <button type="submit" name="submit" id="submit-details" onclick="submitDetails(event)" class="bg-blue-600 text-white p-3 drop-shadow-md hover:bg-blue-700 rounded-xl hover:scale-105 hover:rounded-md transition-all">Save Changes<i class="bi bi-check-lg"></i></button>
                             </div>
                         </div>
                     </div>
-                </div>
-            
-            <div id="success-toast"> <i class="bi bi-check2-circle"></i> Successfully Updated!</div>    
-        </div>
-    </div>
+                </form>
 
-    <!-- Account Content -->
-    <div class="accountContent" id="accountContent" style="display: none;">
-  
-        <!-- Main Container -->
-        <div class="grid grid-cols-12 sm:px-3 md:px-6 2xl:px-12 space-y-6 xl:space-y-0 gap-5 text-sm mb-6 mt-10">
+                <!-- Images Form -->
+                <div class="grid grid-cols-12 gap-2 2xl:px-12">
+                    <!-- Form -->
+                    <div class="xl:col-span-4 p-6 othersDetailsContent bg-white drop-shadow-md text-gray-700">
+                        <h1 class="font-bold"><i class="bi bi-cloud-arrow-up-fill"></i> Upload an Image</h1>
+                        <div class="py-6">
+                            <hr class="border-gray-300">     
+                        </div>
+                        <div class="xl:col-span-4">
+                            <input type="file" id="fileInput" value="" class="border-2 w-full mb-3" multiple>
+                            <button id="upload" class="p-2 mb-3 bg-blue-600 rounded-md w-full text-center text-white"><i class="bi bi-cloud-upload-fill"></i> Upload Images</button>
 
-            <!-- Hospital Information Container -->
-            <div class="col-span-12 xl:col-span-12 p-6 bg-white drop-shadow-md mb-5">
-
-                <h1 class="font-bold">Hospital Informations</h1>
-
-                <div class="py-3 mb-3">
-                    <hr class="border-gray-500">     
-                </div>
-
-                <!-- Hospital Name -->
-                <div class="mb-6">
-                    <label class="block mb-2 text-sm font-medium dark:text-gray-900"> <i class="bi bi-building text-navColor"></i> Hospital Name</label>
-                    <input id="hospital-name" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
-                </div>
-
-                <!-- Email & Phone Number-->
-                <div class="grid xl:grid-cols-2 xl:gap-6">
-                    <!-- Email -->
-                    <div class="mb-6">
-                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-700"> <i class="bi bi-envelope text-navColor"></i> Email</label>
-                        <input type="text" id="hospital-email" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
+                            <div class="p-3 bg-red-600 text-white text-center rounded-md drop-shadow-lg" id="upload-messasge" style="display: none;">
+                            </div>
+                            <div class="flex flex-col justify-center items-center w-full" style="display: none;" id="upload-loader">   
+                                <p class="text-slate-400">Your Files are being uploaded..</p> 
+                                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                            </div>
+                            
+                            <p class="p-3 bg-green-600 text-white text-center rounded-md drop-shadow-lg transition duration-200 ease-in-out" style="display: none;" id="upload-success"><i class="bi bi-cloud-check-fill"></i> Your File was uploaded successfully!</p>
+                            <div id="upload-success-toast"><i class="bi bi-cloud-check-fill"></i> Your File was uploaded successfully!</div>
+                        </div>
                     </div>
-                    <!-- Phone Number -->
-                    <div class="mb-6">
-                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-900"> <i class="bi bi-telephone text-green-700"></i> Phone Number</label>
-                        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="hospital-phoneNumber" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
+
+                    <!-- Image Gallery -->
+                    <div class="xl:col-span-8 p-6 bg-white drop-shadow-md text-gray-700 text-sm">
+                        <div class="flex items-center justify-between">
+                            <h1 class="font-bold"><i class="bi bi-images"></i> Uploaded Images</h1>
+                            <button id="edit-images" class="p-2 bg-green-500 drop-shadow-lg text-white rounded-lg"><i class="bi bi-trash-fill"></i> Edit Images</button>
+                        </div>
+                        
+                        <div class="py-6">
+                            <hr class="border-gray-300">     
+                        </div>
+                        <div class="image-gallery xl:grid xl:grid-cols-6 gap-4" id="image-gallery">
+                        </div>
                     </div>
                 </div>
-
-                <!-- Modal toggle Edit Password -->
-                <div class="mb-6">
-                    <button id="btn-edit-password" type="button" class="shadow-sm border-gray-300 text-sm rounded-lg border-solid border-2 hover:border-black font-bold focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" onclick="ShowModal()"> Edit Password</button>
-                </div>       
-
-                <!-- Save Changes Button -->
-                <!-- <div class="grid justify-items-end">
-                    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save changes</button>
-                </div> -->
-            
+                
+                <div id="success-toast"> <i class="bi bi-check2-circle"></i> Successfully Updated!</div>    
             </div>
 
-            <!-- Other Details -->
-            <div class="col-span-12 xl:col-span-12 p-6 bg-white drop-shadow-md">
+            <!-- Account Content -->
+            <div id="accountContent" style="display: none;" class="tab-contents accountContent grid grid-cols-12 sm:px-3 md:px-6 2xl:px-12 space-y-6 xl:space-y-0 gap-5 text-sm mb-6 mt-10">
 
-                <h1 class="font-bold">Other Informations</h1>
+                <!-- Hospital Information Container -->
+                <div class="col-span-12 xl:col-span-12 p-6 bg-white drop-shadow-md mb-5">
 
-                <div class="py-3 mb-3">
-                    <hr class="border-gray-500"> 
-                </div>
+                    <h1 class="font-bold">Hospital Informations</h1>
 
-                <!-- Location -->
-                <div class="mb-6">
-                    <label class="block mb-2 text-sm font-medium dark:text-gray-900"> <i class="bi bi-geo-alt-fill text-red-700"></i> Location</label>
-                    <input id="hospital-location" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
-                </div>
-                <!-- Representative Name & Designation / Position -->
-                <div class="grid xl:grid-cols-2 xl:gap-6">
-                    <!-- Representative Name -->
-                    <div class="mb-6">
-                        <label class="block mb-2 text-sm font-medium dark:text-gray-900"> <i class="bi bi-person text-navColor"></i> Representative Name</label>
-                        <input id="hospital-representative" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
+                    <div class="py-3 mb-3">
+                        <hr class="border-gray-500">     
                     </div>
-                    <!-- Designation / Position -->
+
+                    <!-- Hospital Name -->
                     <div class="mb-6">
-                        <label class="block mb-2 text-sm font-medium dark:text-gray-900"> <i class="bi bi-briefcase text-green-400"></i> Designation / Position</label>
-                        <input id="hospital-designation" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
+                        <label class="block mb-2 text-sm font-medium dark:text-gray-900"> <i class="bi bi-building text-navColor"></i> Hospital Name</label>
+                        <input id="account-hospital-name" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
                     </div>
+
+                    <!-- Email & Phone Number-->
+                    <div class="grid xl:grid-cols-2 xl:gap-6">
+                        <!-- Email -->
+                        <div class="mb-6">
+                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-700"> <i class="bi bi-envelope text-navColor"></i> Email</label>
+                            <input type="text" id="hospital-email" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
+                        </div>
+                        <!-- Phone Number -->
+                        <div class="mb-6">
+                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-900"> <i class="bi bi-telephone text-green-700"></i> Phone Number</label>
+                            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="hospital-phoneNumber" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
+                        </div>
+                    </div>
+
+                    <!-- Modal toggle Edit Password -->
+                    <div class="mb-6">
+                        <button id="btn-edit-password" type="button" class="shadow-sm border-gray-300 text-sm rounded-lg border-solid border-2 hover:border-black font-bold focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" onclick="ShowModal()"> Edit Password</button>
+                    </div>       
+
+                    <!-- Save Changes Button -->
+                    <!-- <div class="grid justify-items-end">
+                        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save changes</button>
+                    </div> -->
+                
                 </div>
 
-                <!-- Supervisor Name -->
-                <div class="mb-6">
-                    <label class="block mb-2 text-sm font-medium dark:text-gray-900"> <i class="bi bi-person-fill"></i> Supervisor Name</label>
-                    <input id="hospital-supervisor" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
+                <!-- Other Details -->
+                <div class="col-span-12 xl:col-span-12 p-6 bg-white drop-shadow-md">
+
+                    <h1 class="font-bold">Other Informations</h1>
+
+                    <div class="py-3 mb-3">
+                        <hr class="border-gray-500"> 
+                    </div>
+
+                    <!-- Location -->
+                    <div class="mb-6">
+                        <label class="block mb-2 text-sm font-medium dark:text-gray-900"> <i class="bi bi-geo-alt-fill text-red-700"></i> Location</label>
+                        <input id="account-hospital-location" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
+                    </div>
+                    <!-- Representative Name & Designation / Position -->
+                    <div class="grid xl:grid-cols-2 xl:gap-6">
+                        <!-- Representative Name -->
+                        <div class="mb-6">
+                            <label class="block mb-2 text-sm font-medium dark:text-gray-900"> <i class="bi bi-person text-navColor"></i> Representative Name</label>
+                            <input id="hospital-representative" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
+                        </div>
+                        <!-- Designation / Position -->
+                        <div class="mb-6">
+                            <label class="block mb-2 text-sm font-medium dark:text-gray-900"> <i class="bi bi-briefcase text-green-400"></i> Designation / Position</label>
+                            <input id="hospital-designation" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
+                        </div>
+                    </div>
+
+                    <!-- Supervisor Name -->
+                    <div class="mb-6">
+                        <label class="block mb-2 text-sm font-medium dark:text-gray-900"> <i class="bi bi-person-fill"></i> Supervisor Name</label>
+                        <input id="hospital-supervisor" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Edit Passwrod Main modal -->
-        <div id="editPassModal" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0">
-            <div class="relative px-4 w-full max-w-2xl h-full md:h-auto">
-                <!-- Modal content -->
-                <div class="relative bg-white rounded-lg shadow dark:bg-gray-800">
-                    <!-- Modal header -->
-                    <div class="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600">
-                        <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-white">
-                            Edit Password
-                        </h3>
-                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="editPassModal" onclick="closeButton()">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
-                        </button>
-                    </div>
+            <!-- Edit Passwrod Main modal -->
+            <div id="editPassModal" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0">
+                <div class="relative px-4 w-full max-w-2xl h-full md:h-auto">
+                    <!-- Modal content -->
+                    <div class="relative bg-gray-900 rounded-lg shadow dark:bg-gray-900">
+                        <!-- Modal header -->
+                        <div class="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600">
+                            <h3 class="text-xl font-semibold text-gray-200 lg:text-2xl">
+                                Edit Password
+                            </h3>
+                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" onclick="closeButton()">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                            </button>
+                        </div>
 
-                    <!-- Modal body & Verify Password Form -->
-                    <form action="includes/hospitalVerifyPassword-inc.php" method="POST">
+                        <!-- Modal body & Verify Password Form -->
+                        <form action="includes/hospitalVerifyPassword-inc.php" method="POST">
+                            <div class="space-y-6">
+                                <!-- VerifyPassword Container -->
+                                <div id="verifyPassword-div" name="verifyPassword" class="p-6 ">
+                                    <!-- Verify Password-->
+                                    <div class="relative mb-6">
+                                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Verify your password</label>
+                                        <input type="password" id="hospitalPassword" name="hospitalPassword" aria-describedby="passwordHelpBlock" placeholder="Current password" enterkeyhint="Continue" class="hospitalPassword shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+                                        <i class="bi bi-eye-slash text-gray-300 absolute cursor-pointer 2xl:right-0 2xl:top-9 2xl:pr-5 xl:right-0 xl:top-16 xl:pr-5 lg:right-0 lg:top-9 lg:pr-5 md:right-0 md:top-16 md:pr-5 sm:right-0 sm:top-16 sm:pr-5 right-0" id="verifyTogglePass"></i>
+                                        <div id="passwordHelpBlock" class="form-text">
+                                        </div>
+                                    </div>
+                                    <!-- Result Message if working or not -->
+                                    <p id="resultMessage" class="text-center"></p> 
+                                    <!-- Button of Continue and Close  -->
+                                    <div class="flex justify-end space-x-3">
+                                        <button id="btnEditPasswordNext" name="btnEditPasswordNext" type="button" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:ring-cyan-800 dark:focus:ring-cyan-800">
+                                            <span class="relative px-5 py-2.5 transition-all ease-in-out duration-75 bg-gray-900 dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">  
+                                                Continue
+                                            </span>
+                                        </button>
+                                        <!-- <button type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600" onclick="closeButton()">Cancel</button> -->
+                                    </div>  
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Create new Password Form -->
                         <div class="space-y-6">
-                            <!-- VerifyPassword Container -->
-                            <div id="verifyPassword-div" name="verifyPassword" class="p-6 ">
-                                <!-- Verify Password-->
-                                <div class="mb-6">
-                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Verify your password</label>
-                                    <input type="password" id="hospitalPassword" name="hospitalPassword" placeholder="Current password" enterkeyhint="Continue" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
-                                </div>
-                                <!-- Result Message if working or not -->
-                                <p id="resultMessage" class="text-center"></p> 
-                                <!-- Button of Continue and Close  -->
-                                <div class="flex justify-end space-x-3">
-                                    <button id="btnEditPasswordNext" name="btnEditPasswordNext" data-modal-toggle="editPassModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Continue</button>
-                                    <button data-modal-toggle="editPassModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600" onclick="closeButton()">Cancel</button>
-                                </div>  
-                            </div>
+                            <div class="editPassword mb-3 p-6" id="editPassword-div" name="editPassword" style="display: none;">
+                                <h2 class="text-gray-300 mb-3">Create a new Password</h2>
+                                
+                                <p class="text-gray-500 mb-4"><i class="bi bi-info-circle-fill"></i> Type in your new password. (Minimum of 8 Characters)</p>
+
+                                <form action="includes/insert-new-password-hospital-inc.php" method="post" id="edit-new-password-form">
+                                    <!-- New password -->
+                                    <div class="relative mb-6">
+                                        <label for="newPassword" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">New password</label>
+                                        <input type="password" id="newPassword" name="newPassword" aria-describedby="passwordHelpBlock" placeholder="Type your new password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" class="newPassword shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+                                        <i class="bi bi-eye-slash text-gray-300 absolute cursor-pointer 2xl:right-0 2xl:top-9 2xl:pr-5 xl:right-0 xl:top-16 xl:pr-5 lg:right-0 lg:top-9 lg:pr-5 md:right-0 md:top-16 md:pr-5 sm:right-0 sm:top-16 sm:pr-5 right-0" id="newTogglePass"></i>
+                                        <div id="passwordHelpBlock" class="form-text">
+                                        </div>
+                                    </div>
+                                    <!-- Validate the new Password -->
+                                    <div class="relative mb-6" id="repeat-password-div" style="display: none;">
+                                        <label for="repeat-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Repeat your new password</label>
+                                        <input type="password" id="newPasswordRepeat" name="newPasswordRepeat" aria-describedby="passwordHelpBlock" placeholder="Repeat your new password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" class="newPasswordRepeat shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+                                        <i class="bi bi-eye-slash text-gray-300 absolute cursor-pointer 2xl:right-0 2xl:top-9 2xl:pr-5 xl:right-0 xl:top-16 xl:pr-5 lg:right-0 lg:top-9 lg:pr-5 md:right-0 md:top-16 md:pr-5 sm:right-0 sm:top-16 sm:pr-5 right-0" id="repeatTogglePass"></i>
+                                        <div id="passwordHelpBlock" class="form-text">
+                                        </div>
+                                    </div>
+                                    <p id="passMatchWarning"></p>
+                                    <p id="result-modal" style="display: none;"></p> 
+                                    <!-- Button of Save Changes and Close  -->
+                                    <div class="flex justify-end space-x-3">
+                                        <button id="btnSaveChanges" name="btnSaveChanges" type="submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800" disabled>
+                                            <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-900 dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">   
+                                                Save Changes
+                                            </span>
+                                        </button>
+                                        <!-- <button type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600" onclick="closeButton()">Cancel</button> -->
+                                    </div> 
+                                </form>                   
+                            </div> 
                         </div>
-                    </form>
-
-                    <!-- Create new Password Form -->
-                    <div class="space-y-6">
-                        <div class="editPassword mb-3 p-6" id="editPassword-div" name="editPassword" style="display: none;">
-                            <h2 class="text-gray-300 mb-3">Create a new Password</h2>
-                            
-                            <p class="text-gray-500 mb-4"><i class="bi bi-info-circle-fill"></i> Type in your new password. (Minimum of 8 Characters)</p>
-
-                            <form action="includes/insert-new-password-hospital-inc.php" method="post" id="edit-new-password-form">
-                                <!-- New password -->
-                                <div class="mb-6">
-                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your password</label>
-                                    <input type="password" id="new-password" name="new-password" placeholder="Type your new password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
-                                </div>
-                                <!-- Validate the new Password -->
-                                <div class="mb-6" id="repeat-password-div" style="display: none;">
-                                    <label for="repeat-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Repeat password</label>
-                                    <input type="password" id="new-password-repeat" name="new-password-repeat" placeholder="Repeat your new password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
-                                </div>
-
-                                <p id="result-modal"></p> 
-                                <!-- Button of Continue and Close  -->
-                                <div class="flex justify-end space-x-3">
-                                    <button id="btnSaveChanges" name="btnSaveChanges" type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" disabled>Save Changes</button>
-                                    <button type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600" onclick="closeButton()">Cancel</button>
-                                </div> 
-                            </form>    
-                            <div id="success-toasts"> <i class="bi bi-check2-circle"></i> Successfully Updated!</div>                
-                        </div> 
+                        <!-- Modal footer -->
                     </div>
-                    <!-- Modal footer -->
                 </div>
-            </div>
-        </div>  
-        
-        <!-- Delete Product Modal -->
-        <div class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="popup-modal">
-            <div class="relative px-4 w-full max-w-md h-full md:h-auto">
-                <!-- Modal content -->
-                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                    <!-- Modal header -->
-                    <div class="flex justify-end p-2">
-                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="popup-modal">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
-                        </button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="p-6 pt-0 text-center">
-                        <svg class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
-                        <button data-modal-toggle="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2" onclick="closeButtons()">
-                            Yes, I'm sure
-                        </button>
-                        <button data-modal-toggle="popup-modal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">No, cancel</button>
+            </div>  
+            
+            <!-- Successfull -->
+            <div class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="popup-modal">
+                <div class="relative px-4 w-full max-w-md h-full md:h-auto">
+                    <!-- Modal content -->
+                    <div class="relative bg-gray-900 rounded-lg shadow">
+                        <!-- Modal body -->
+                        <div class="p-6 pt-0 text-center">
+                            <!-- <i class="bi bi-check2-circle mx-auto mb-4 w-14 h-14 text-green-500"></i> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-4 w-14 h-14 text-green-500" stroke="currentColor" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                            <h3 class="mb-5 text-lg font-normal text-gray-200">Password has been updated <span class="text-green-500 font-medium">successfully</span>, Click the button below to reload the page.</h3>
+                            <button type="button" class="text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2" onclick="closeButtons()">
+                                Close
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
-
     </div>
 
+    <!-- Footer -->
     <div>   
         <footer class="p-4 bg-white sm:p-6 dark:bg-gray-800">
             <div class="md:flex md:justify-between">

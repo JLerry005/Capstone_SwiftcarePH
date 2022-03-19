@@ -20,7 +20,7 @@
             while ($row = mysqli_fetch_assoc($result)) {
                 if (password_verify($hospitalPassword, $row['hospitalPassword'])) {
                     // header("location: ../user-dashboard.php?correct-password");
-                    echo "<p style='color:#17B978;'>Correct Password!</p>";
+                    echo "<p style='color:#17B978;'> Correct Password!</p>";
                     $finalResult = true;
                     // $_SESSION["finalResult"] = $finalResult;
                         
@@ -28,7 +28,7 @@
                 }
                 else{
                     // header("location: ../user-dashboard.php?wrong-password");
-                    echo "<p style='color:#E84545;'>Wrong Password!</p>";
+                    echo "<p class='bi bi-x-circle-fill' style='color:#E84545;'> Wrong Password!</p>";
                     $finalResult = false;
                     // exit();
                 }

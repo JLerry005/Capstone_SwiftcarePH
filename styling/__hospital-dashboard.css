@@ -17,6 +17,13 @@
 
 .low-brightnes{
     filter: brightness(.5);
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.disable-button{
+  filter: contrast(.5);
+  pointer-events: none;
 }
 
 .stop-scrolling {
@@ -120,46 +127,140 @@ opacity: 1;
     to {bottom: 0; opacity: 0;}
   }
 
-  #success-toasts {
-    font-weight: bold;
-    visibility: hidden;
-    min-width: 250px;
-    margin-left: -125px;
-    background-color: rgb(62, 155, 63);
-    color: #fff;
-    text-align: center;
-    border-radius: 10px;
-    padding: 16px;
-    position: fixed;
-    z-index: 1;
-    left: 50%;
-    bottom: 30px;
-    font-size: 17px;
-  }
-  
-  #success-toasts.shows {
-    visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  }
-  @-webkit-keyframes fadein {
-    from {bottom: 0; opacity: 0;} 
-    to {bottom: 30px; opacity: 1;}
-  }
-  
-  @keyframes fadein {
-    from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
-  }
-  
-  @-webkit-keyframes fadeout {
-    from {bottom: 30px; opacity: 1;} 
-    to {bottom: 0; opacity: 0;}
-  }
-  
-  @keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
-    to {bottom: 0; opacity: 0;}
+
+#upload-success-toast {
+  font-weight: bold;
+  visibility: hidden;
+  /* margin-left: -125px; */
+  background-color: rgb(62, 155, 63);
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 8px;
+  position: fixed;
+  z-index: 1;
+  /* left: 50%; */
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#upload-success-toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {opacity: 1;} 
+  to {opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+    /* Password Match Warning */
+  .passwordWarning{
+    list-style: none;
   }
 
+  #passwordWarning{
+    color: rgb(250, 65, 65);
+    font-size: 90%;
+    text-align: center;
+  }
+
+  .passwordWarningNotMatched{
+    color: rgb(250, 65, 65);
+    font-size: 90%;
+    text-align: center;
+  }
+
+  .passwordWarningNotMatched:before{
+    position: relative;
+    left: -10px;
+    content: "✖";
+  }
+
+  .passwordWarningMatched{
+    color: rgb(74, 168, 74) !important;
+    font-size: 90%;
+    text-align: center;
+  }
+
+  .passwordWarningMatched:before{
+    position: relative;
+    left: -10px;
+    content: "✔";
+  }
+
+
+  /* -------------Loading Spinner-------------------- */
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: rgb(82, 136, 235);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
   

@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    include_once 'includes/dbh-inc.php';
+    include_once 'dbh-inc.php';
 
     $phpFileUploadErrors = array(
         0 => 'There is no error, The File is oploaded successfully!',
@@ -44,7 +44,7 @@
                 }
 
                 else {
-                    $img_dir = 'web/hospital-images/'.$file_array[$i]['name'];
+                    $img_dir = '../web/hospital-images/'.$file_array[$i]['name'];
 
                     move_uploaded_file($file_array[$i]['tmp_name'], $img_dir);
 
