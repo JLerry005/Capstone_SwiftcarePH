@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2022 at 05:08 PM
+-- Generation Time: Mar 19, 2022 at 03:07 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -110,9 +110,9 @@ INSERT INTO `hospitalaccount` (`hospitalID`, `infoID`, `hospitalName`, `hospital
 (5, 174, 'Asd Hospital', 'larrymabutipogi@gmail.com', '$2y$10$hoKoYcvTj4zp8Q71uG7CtucWdNC7AmNmslejqMBABvL.0H57gGTJi', 2147483647),
 (6, 175, 'Sample Hospital 1', 'r4gnar3210@gmail.com', '$2y$10$fFnASrB4R/24yhvaSuLVwuT14e5/YD.eMnf7.BOvLQA6IiHpmfnKC', 0),
 (7, 176, 'BAN KANA HOSPITAL', 'jlerry005@gmail.com', '$2y$10$8RL.dTw9HVS3.YTvadVvUegY1FicoE9I5dwrocB4Q1wIIh1j5ve0.', 0),
-(8, 177, 'Adventist Medical Center Manila', 'capstone692021@gmail.com', '$2y$10$vE2wg9VunL612BFoeLBVa.zjgzA0hsM00RiFWuLeyHShKAnXds7hW', 0),
+(8, 177, 'Adventist Medical Center Manila', 'capstone692021@gmail.com', '$2y$10$Y/uEJ57EzVL3WPlIvN9mdOYQoTx/IVhk4JCxmHh8os8x/umo0ByK2', 0),
 (10, 179, 'Caloocan Hospital', 'heheeksdi420@gmail.com', '$2y$10$E4jFNbYoYzeKNRzipGLOYeQyp7q4cKzXHZrZVgHo6H/UlKTKZHQua', 0),
-(11, 180, 'Nior Hospital', 'nior3210@gmail.com', '$2y$10$UncWva23qHM0FUh4EGj6nerDxyITzF/7vfmkTVTWRcqhJajEfESyq', 0);
+(11, 180, 'Kanto ng Tinio hospital', 'nior3210@gmail.com', '$2y$10$/lTNSXixSqS7A6nIgG.9Ju294JJDUkn84R3X3EOwnhB9ZpaiNvGAm', 0);
 
 -- --------------------------------------------------------
 
@@ -157,9 +157,9 @@ INSERT INTO `hospitalinformation` (`ID`, `hospitalType`, `hospitalName`, `hospit
 (174, 'Public Hospital', 'Asd Hospital', 'Asd Hospital', 'Asd Hospital', 'Asd Hospital', '+638768879688', 'Asd Hospital', 'larrymabutipogi@gmail.com', '$2y$10$hoKoYcvTj4zp8Q71uG7CtucWdNC7AmNmslejqMBABvL.0H57gGTJi', 0, '2022-03-13 12:46:59'),
 (175, 'Public Hospital', 'Sample Hospital 1', 'Caloocan', 'Nior', 'Sakalam', '+639857746577', 'CEO', 'r4gnar3210@gmail.com', '$2y$10$fFnASrB4R/24yhvaSuLVwuT14e5/YD.eMnf7.BOvLQA6IiHpmfnKC', 0, '2022-03-13 12:57:29'),
 (176, 'Private Hospital', 'BAN KANA HOSPITAL', 'KANTO TINIO ST', 'Mang Juan Martis', 'Fud G Bar', '+639056139681', 'PUSONG MAMON', 'jlerry005@gmail.com', '$2y$10$8RL.dTw9HVS3.YTvadVvUegY1FicoE9I5dwrocB4Q1wIIh1j5ve0.', 0, '2022-03-13 12:57:44'),
-(177, 'Public Hospital', 'Adventist Medical Center Manila', '1975 Corner Donada and, San Juan', 'LeBron James ', 'Kyrie Irving', '+639105030535', 'Sweet sweeper', 'capstone692021@gmail.com', '$2y$10$vE2wg9VunL612BFoeLBVa.zjgzA0hsM00RiFWuLeyHShKAnXds7hW', 0, '2022-03-15 09:51:32'),
+(177, 'Public Hospital', 'Adventist Medical Center Manila', '1975 Corner Donada and, San Juan', 'LeBron James ', 'Kyrie Irving', '+639105030535', 'Sweet sweeper', 'capstone692021@gmail.com', '$2y$10$Y/uEJ57EzVL3WPlIvN9mdOYQoTx/IVhk4JCxmHh8os8x/umo0ByK2', 0, '2022-03-19 12:31:32'),
 (179, 'Public Hospital', 'Caloocan Hospital', 'Metro Manila', 'Juan', 'Juanito', '+639096685486', 'CEO', 'heheeksdi420@gmail.com', '$2y$10$E4jFNbYoYzeKNRzipGLOYeQyp7q4cKzXHZrZVgHo6H/UlKTKZHQua', 0, '2022-03-15 09:51:52'),
-(180, 'Public Hospital', 'Nior Hospital', 'Tinio St', 'Nior Cubes', 'Nior Cubes', '+638767787878', 'CEO', 'nior3210@gmail.com', '$2y$10$UncWva23qHM0FUh4EGj6nerDxyITzF/7vfmkTVTWRcqhJajEfESyq', 0, '2022-03-15 10:55:55');
+(180, 'Public Hospital', 'Kanto Ng Tinio Hospital', 'Tinio St', 'Nior Cubes', 'Nior Cubes', '+638767787878', 'CEO', 'nior3210@gmail.com', '$2y$10$/lTNSXixSqS7A6nIgG.9Ju294JJDUkn84R3X3EOwnhB9ZpaiNvGAm', 0, '2022-03-19 04:33:10');
 
 -- --------------------------------------------------------
 
@@ -187,9 +187,9 @@ CREATE TABLE `hospitallisting` (
 --
 
 INSERT INTO `hospitallisting` (`listing_id`, `hospitalID`, `hospital_location`, `hospital_name`, `hospital_description`, `hospital_type`, `room`, `room_slot`, `bed`, `bed_slot`, `additional_docs`, `website_link`) VALUES
-(2, 177, 'Pasay City', 'Adventist Medical Center Manila', 'Healing Galing for everyone', 'Public Hospital', '', 12, '', 64, '', 'www.mcuhopsita.com'),
+(2, 177, 'Makati City', 'Adventist Medical Center Manila', 'Sample Description lorem lorem lorem', 'Public Hospital', 'Room', 5, '', 0, 'Yes', 'www.mcuhopsita.com'),
 (4, 179, 'Nag logout na ko lods', 'Caloocan Hospital', 'Nag logout na ko lods', 'Public Hospital', 'Room', 69, 'Bed', 69, 'yes', 'Nag logout na ko lods'),
-(5, 180, 'hayop lods', 'Nior Hospital', 'hayop lods', 'Public Hospital', 'Room', 11, 'Bed', 11, 'Yes', 'hayop lods');
+(5, 180, '12', 'Nior Hospital', '33', 'Public Hospital', '', 33, 'Bed', 33, '', '33');
 
 -- --------------------------------------------------------
 
@@ -225,18 +225,13 @@ CREATE TABLE `listingimages` (
 --
 
 INSERT INTO `listingimages` (`image_id`, `listing_idFK`, `image_name`, `image_dir`) VALUES
-(43, 5, 'Ajinomoto Ginisa', 'web/hospital-images/Ajinomoto Ginisa.jpg'),
-(46, 2, 'Black Panther', 'web/hospital-images/Black panther.jpg'),
-(47, 5, 'La La Fish Crackers', 'web/hospital-images/La La Fish Crackers.jpg'),
-(48, 2, '2022 02 25 (11)', 'web/hospital-images/2022-02-25 (11).png'),
-(49, 2, '2022 02 27 (2)', 'web/hospital-images/2022-02-27 (2).png'),
-(50, 2, '2022 02 27', 'web/hospital-images/2022-02-27.png'),
-(51, 5, 'Ajinomoto Ginisa', 'web/hospital-images/Ajinomoto Ginisa.jpg'),
-(52, 5, 'Alaska Condensada 216g', 'web/hospital-images/Alaska Condensada 216g.png'),
-(53, 5, 'La La Fish Crackers', 'web/hospital-images/La La Fish Crackers.jpg'),
-(54, 5, 'Nissin Ramen Seafood', 'web/hospital-images/Nissin Ramen Seafood.jpg'),
-(55, 5, 'Nova Big', 'web/hospital-images/nova big.jpg'),
-(56, 2, '2022 03 09 (4)', 'web/hospital-images/2022-03-09 (4).png');
+(237, 5, 'Nova Big', '../web/hospital-images/nova big.jpg'),
+(238, 2, 'Aaa', '../web/hospital-images/aaa.jpg'),
+(239, 2, 'Awdawd', '../web/hospital-images/awdawd.jpg'),
+(240, 5, 'La La Fish Crackers', '../web/hospital-images/La La Fish Crackers.jpg'),
+(241, 2, '155', '../web/hospital-images/155.jpg'),
+(242, 5, 'Nissin Ramen Seafood', '../web/hospital-images/Nissin Ramen Seafood.jpg'),
+(243, 2, '2022 02 25 (11)', '../web/hospital-images/2022-02-25 (11).png');
 
 -- --------------------------------------------------------
 
@@ -642,7 +637,7 @@ ALTER TABLE `hospitalsignuphistory`
 -- AUTO_INCREMENT for table `listingimages`
 --
 ALTER TABLE `listingimages`
-  MODIFY `image_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `image_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=244;
 
 --
 -- AUTO_INCREMENT for table `otpstorage`
