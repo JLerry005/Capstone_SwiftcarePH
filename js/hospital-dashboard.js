@@ -97,55 +97,91 @@
 
                 for(var i = 0; i < fetchedImages.length; i++) {
                     var obj = fetchedImages[i];             
-                    $("#image-gallery").append('<a href="Capstone/'+(obj.image_dir)+'" class="fetched-image xl:col-span-1 w-40 h-40 hover:scale-105 bg-green-400 transition duration-200"><img id="'+(obj.image_id)+'" class="card-img" alt="..." src="Capstone/'+(obj.image_dir)+'"/></a>');
+                    $("#image-gallery").append('<a href="Capstone/'+(obj.image_dir)+'" class="relative fetched-image xl:col-span-1 w-40 h-40 hover:scale-105 transition duration-200"><img id="'+(obj.image_id)+'" class="card-img" alt="..." src="Capstone/'+(obj.image_dir)+'"/></a>');
+                    // $("$image-gallery").append('<button id="'+(obj.image_id)+'" class="p-2 rounded bg-red-500 text-white absolut z-10">Delete</button>');
                 }
 
                 // Show delete button
-               
                 $("#edit-images").click(function () {
-                    $("#delete-button-container").html("");
-                    
-                    for (let i = 0; i < fetchedImages.length; i++) {
-                        let obj = fetchedImages[i];
-                        // Get only the Image ID
-                        let imageId = (obj.image_id);
-                        let imageDir = (obj.image_dir);
+                    $("#image-modal-body").html("");
+                    toggleModal('editImagesModal', true);
 
-                        // Delete Image Function
-                        function deleteImage(imageID) {
-                            // console.log(imageId);
+                    for (let i = 0; i < fetchedImages.length; i++) {
+                        let data = fetchedImages[i];
+                        let imageId = (data.image_id);
+                        let imageDir = (data.image_dir);
+                        
+                        function deleteImage(imageId) {
                             $.ajax({
                                 type: 'POST',
                                 url: 'includes/delete-hospital-image-inc.php',
                                 data: {imageId:imageId, imageDir:imageDir},
                                 beforeSend: function () {
-
+                                
                                 },
                                 success: function(data, textStatus, xhr) {
                                     console.log(xhr.status);
+                                    // toggleModal('editImagesModal', false);
+                                    location.reload();
+                                },
+                                complete: function () {
+                                    // toggleModal('editImagesModal', true);
                                     show_details();
                                 }
                             });
                         }
-                        
-                        // Create a Delete Button
-                        let buttonContainer = $(`<div><button>Delete</button></div>`);
 
-                        // Add the the onclick function to each button
-                        buttonContainer.find('button').on('click', () => deleteImage(imageId));
-                        $('#delete-button-container').append(buttonContainer);
+                        let imageContainer = $('<div class="p-5 rounded-md bg-Yellow col-span-1"><button class="p-2 rounded-md bg-red-500 text-white">Delete</button><img src="Capstone/'+(data.image_dir)+'" /></div>');
+                        imageContainer.find('button').on('click', () => deleteImage(imageId));
+                        // imageContainer.find('img').on('click', () => deleteImage(imageId));
+                        $('#image-modal-body').append(imageContainer);                   
                     }
-                    $("#delete-button-container").toggle();
-                    
-                    
-                });
 
+                    // for (let i = 0; i < fetchedImages.length; i++) {
+                    //     let obj = fetchedImages[i];
+                    //     // Get only the Image ID
+                    //     let imageId = (obj.image_id);
+                    //     let imageDir = (obj.image_dir);
+                        
+                    //     }
+
+                    //     // // Delete Image Function
+                    //     // function deleteImage(imageID) {
+                    //     //     // console.log(imageId);
+                    //     //     $.ajax({
+                    //     //         type: 'POST',
+                    //     //         url: 'includes/delete-hospital-image-inc.php',
+                    //     //         data: {imageId:imageId, imageDir:imageDir},
+                    //     //         beforeSend: function () {
+
+                    //     //         },
+                    //     //         success: function(data, textStatus, xhr) {
+                    //     //             console.log(xhr.status);
+                    //     //             show_details();
+                    //     //         }
+                    //     //     });
+                    //     // }
+                        
+                    //     // Create a Delete Button
+                    //     let buttonContainer = $(`<div><button>Delete</button></div>`);
+
+                    //     // Add the the onclick function to each button
+                    //     buttonContainer.find('button').on('click', () => deleteImage(imageId));
+                    //     $('#delete-button-container').append(buttonContainer);
+                    
+                    // $("#delete-button-container").toggle();
+                });
                 
                 
                 let lg = document.getElementById('image-gallery');
                 lightGallery(lg);
             },
-        });  
+        }); 
+        
+    }
+
+    function buttonClose(){
+        toggleModal('editImagesModal', false);
     }
 
     // Upload Images
@@ -195,8 +231,6 @@
                         show_details();
                     }
                     else{
-                        
-
                         // Send image to server to process
                         xhr.open("post", "includes/insert-hospital-images-inc.php");
                         xhr.send(formData);
@@ -205,11 +239,6 @@
                         document.getElementById("fileInput").classList.add('disable-button');
                         document.getElementById("upload").classList.add('disable-button');
                         $("#upload-loader").show();
-                        
-                        
-                        // xhr.upload.addEventListener("load", function () {
-                            
-                        // });
 
                         // Complete function
                         xhr.addEventListener('readystatechange', function(e) {

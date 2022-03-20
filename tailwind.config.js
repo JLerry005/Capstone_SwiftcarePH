@@ -2,6 +2,7 @@ module.exports = {
 
   content: [  
     './dist/index.html',
+    './hospital-dashboard.php',
     './admin-dashboard.php',
     './user-signup.php',
     './verify-otp.php',
@@ -9,10 +10,10 @@ module.exports = {
     './user-signup.js',
     './hospital-signup.php',
     './existing-user-signup.php',
-    './hospital-dashboard.php',
     './pages/reservations.php',
     './pages/account.php',
-    './pages/edit-details.php'
+    './pages/edit-details.php',
+    "./node_modules/flowbite/**/*.js"
 ],
 
   presets: [],
@@ -979,6 +980,8 @@ module.exports = {
     'active',
     'disabled',
   ],
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 }
 

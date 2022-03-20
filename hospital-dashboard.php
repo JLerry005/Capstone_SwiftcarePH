@@ -9,8 +9,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>        
+
     <!-- Flowbite minified stylesheet -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css"/>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -250,7 +251,7 @@
             <!-- Edit Details Contents -->
             <div class=" editDetailsContent tab-contents" id="editDetailsContent" style="display: none;">
                 <!-- Refresh Button -->
-                <div class="flex flex-1 justify-end space-x-1 text-xs fixed z-10 right-0 mr-24">
+                <div class="flex flex-1 justify-end space-x-1 text-xs fixed z-10 right-0 mr-16">
                     <div class="bg-gray-500 hover:bg-gray-700 drop-shadow-md rounded-3xl h-5 w-5 p-5 flex items-center justify-center text-gray-300 hover:rounded-xl transition-all">
                         <button class="" onclick="toggle_edit_details()"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -365,7 +366,7 @@
                     <div class="xl:col-span-8 p-6 bg-white drop-shadow-md text-gray-700 text-sm">
                         <div class="flex items-center justify-between">
                             <h1 class="font-bold"><i class="bi bi-images"></i> Uploaded Images</h1>
-                            <button id="edit-images" class="p-2 bg-green-500 drop-shadow-lg text-white rounded-lg"><i class="bi bi-trash-fill"></i> Edit Images</button>
+                            <button id="edit-images" class="p-2 bg-green-500 drop-shadow-lg text-white hover:bg-green-700 rounded-xl hover:scale-105 hover:rounded-md focus:outline-none focus:ring focus:ring-blue-400 transition-all"><i class="bi bi-trash-fill"></i> Edit Images</button>
                         </div>
                         
                         <div class="py-3">
@@ -377,6 +378,44 @@
                         </div>
                     </div>
                 </div>
+
+
+                <!------------------ Edit Images Modal------------- -->
+
+                <!-- Large Modal -->
+                <div id="editImagesModal" class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full">
+                    <div class="relative px-4 w-full max-w-4xl h-full md:h-auto">
+                        <!-- Modal content -->
+                        <div class="relative bg-gray-900 rounded-lg shadow">
+                            <!-- Modal header -->
+                            <div class="flex justify-between items-center p-5 rounded-t border-b dark:border-gray-600">
+                                <h3 class="text-xl font-medium text-gray-900 dark:text-white">
+                                    Delete Images | Why not?
+                                </h3>
+                                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" onclick="buttonClose()">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                                </button>
+                            </div>
+                            <!-- Modal body -->
+
+                            <div class="p-6 grid grid-cols-6 gap-4" id="image-modal-body">
+                                <!-- <div class="p-5 rounded-md bg-Yellow col-span-1">
+                                    Sample Images..
+                                </div> -->
+                            </div>
+                            
+                            <!-- Modal footer -->
+                            <div class="flex justify-end p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                                <button type="button" class="text-white bg-red-600 hover:bg-red-900 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Delete All</button>
+                                <button type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600" onclick="buttonClose()">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!------------------ -------------------------------- -->
+
+                <!-- Toasts -->
                 <div id="upload-success-toast"><i class="bi bi-cloud-check-fill"></i> Your File was uploaded successfully!</div>
                 <div id="success-toast"> <i class="bi bi-check2-circle"></i> Successfully Updated!</div>    
             </div>
@@ -553,7 +592,7 @@
                     <!-- Modal content -->
                     <div class="relative bg-gray-900 rounded-lg shadow">
                         <!-- Modal body -->
-                        <div class="p-6 pt-0 text-center">
+                        <div class="p-6 mt-5 text-center">
                             <!-- <i class="bi bi-check2-circle mx-auto mb-4 w-14 h-14 text-green-500"></i> -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-4 w-14 h-14 text-green-500" stroke="currentColor" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
                             <h3 class="mb-5 text-lg font-normal text-gray-200">Password has been updated <span class="text-green-500 font-medium">successfully</span>, Click the button below to reload the page.</h3>
@@ -641,7 +680,8 @@
 
     <script src="js\hospital-dashboard.js" defer></script>
     <!-- Flowbite -->
-    <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
+    <!-- <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script> -->
+    <script src="node_modules\flowbite\dist\flowbite.js"></script>
 
     <!-- Light Gallery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
