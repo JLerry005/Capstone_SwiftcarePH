@@ -130,18 +130,19 @@ opacity: 1;
 
 #upload-success-toast {
   font-weight: bold;
-  visibility: hidden;
-  /* margin-left: -125px; */
-  background-color: rgb(62, 155, 63);
-  color: #fff;
-  text-align: center;
-  border-radius: 10px;
-  padding: 8px;
-  position: fixed;
-  z-index: 1;
-  /* left: 50%; */
-  bottom: 30px;
-  font-size: 17px;
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: rgb(62, 155, 63);
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
 }
 
 #upload-success-toast.show {
@@ -151,23 +152,23 @@ opacity: 1;
 }
 
 @-webkit-keyframes fadein {
-  from {opacity: 0;} 
-  to {opacity: 1;}
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
 }
 
 @keyframes fadein {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
 }
 
 @-webkit-keyframes fadeout {
-  from {opacity: 1;} 
-  to {opacity: 0;}
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
 }
 
 @keyframes fadeout {
-  from {opacity: 1;}
-  to {opacity: 0;}
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
 }
 
     /* Password Match Warning */

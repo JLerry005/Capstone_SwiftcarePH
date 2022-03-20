@@ -97,19 +97,50 @@
 
                 for(var i = 0; i < fetchedImages.length; i++) {
                     var obj = fetchedImages[i];             
-                    $("#image-gallery").append('<a href="Capstone/'+(obj.image_dir)+'" class="xl:col-span-2 w-40 h-40 hover:scale-105 transition duration-200"> <button onclick="deleteImage(id)" class="delete-button" style="display:none;"><i class="bi bi-trash-fill"></i> Delete</button>  <img id="'+(obj.image_id)+'" class="card-img" alt="..." src="Capstone/'+(obj.image_dir)+'"/></a>');
+                    $("#image-gallery").append('<a href="Capstone/'+(obj.image_dir)+'" class="fetched-image xl:col-span-1 w-40 h-40 hover:scale-105 bg-green-400 transition duration-200"><img id="'+(obj.image_id)+'" class="card-img" alt="..." src="Capstone/'+(obj.image_dir)+'"/></a>');
                 }
 
+                // Show delete button
+               
                 $("#edit-images").click(function () {
-                    $(".delete-button").toggle();
+                    $("#delete-button-container").html("");
+                    
+                    for (let i = 0; i < fetchedImages.length; i++) {
+                        let obj = fetchedImages[i];
+                        // Get only the Image ID
+                        let imageId = (obj.image_id);
+                        let imageDir = (obj.image_dir);
+
+                        // Delete Image Function
+                        function deleteImage(imageID) {
+                            // console.log(imageId);
+                            $.ajax({
+                                type: 'POST',
+                                url: 'includes/delete-hospital-image-inc.php',
+                                data: {imageId:imageId, imageDir:imageDir},
+                                beforeSend: function () {
+
+                                },
+                                success: function(data, textStatus, xhr) {
+                                    console.log(xhr.status);
+                                    show_details();
+                                }
+                            });
+                        }
+                        
+                        // Create a Delete Button
+                        let buttonContainer = $(`<div><button>Delete</button></div>`);
+
+                        // Add the the onclick function to each button
+                        buttonContainer.find('button').on('click', () => deleteImage(imageId));
+                        $('#delete-button-container').append(buttonContainer);
+                    }
+                    $("#delete-button-container").toggle();
+                    
+                    
                 });
 
-                function deleteImage(id) {
-                    alert("Delete this image?");
-                }
-                // $("#145").hide();
-                // $("#144").hide();
-                // $("#143").hide();
+                
                 
                 let lg = document.getElementById('image-gallery');
                 lightGallery(lg);
@@ -164,24 +195,34 @@
                         show_details();
                     }
                     else{
-                        // While image is being uploaded
-                        document.getElementById("fileInput").classList.add('disable-button');
-                        document.getElementById("upload").classList.add('disable-button');
-                        $("#upload-loader").show();
+                        
 
                         // Send image to server to process
                         xhr.open("post", "includes/insert-hospital-images-inc.php");
                         xhr.send(formData);
 
+                        // While image is being uploaded
+                        document.getElementById("fileInput").classList.add('disable-button');
+                        document.getElementById("upload").classList.add('disable-button');
+                        $("#upload-loader").show();
+                        
+                        
+                        // xhr.upload.addEventListener("load", function () {
+                            
+                        // });
+
                         // Complete function
-                        xhr.upload.addEventListener("load",function (e) {
-                            document.getElementById("fileInput").classList.remove('disable-button');
-                            document.getElementById("upload").classList.remove('disable-button');
-                            $("#upload-loader").hide();
-                            var x = document.getElementById("upload-success-toast");
-                            x.className = "show";
-                            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-                            show_details();
+                        xhr.addEventListener('readystatechange', function(e) {
+                            if( this.readyState === 4 ) {
+                                document.getElementById("fileInput").classList.remove('disable-button');
+                                document.getElementById("upload").classList.remove('disable-button');
+                                $("#upload-loader").hide();
+
+                                var x = document.getElementById("upload-success-toast");
+                                x.className = "show";
+                                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+                                show_details();
+                            }
                         });
                     }
                 }
@@ -285,7 +326,6 @@
         // START VERIFY PASSWORD
 
         $('#btnEditPasswordNext').click( function (event) {
-            // alert("hehexd");
             event.preventDefault();
             
             let btnEditPasswordNext = $('#btnEditPasswordNext').val();

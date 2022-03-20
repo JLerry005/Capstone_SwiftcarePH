@@ -329,7 +329,7 @@
                             
                             <!-- Submit Button -->
                             <div class="text-sm flex justify-end p-6">
-                                <button type="submit" name="submit" id="submit-details" onclick="submitDetails(event)" class="bg-blue-600 text-white p-3 drop-shadow-md hover:bg-blue-700 rounded-xl hover:scale-105 hover:rounded-md transition-all">Save Changes<i class="bi bi-check-lg"></i></button>
+                                <button type="submit" name="submit" id="submit-details" onclick="submitDetails(event)" class="bg-blue-600 text-white p-3 drop-shadow-md hover:bg-blue-700 rounded-xl hover:scale-105 hover:rounded-md focus:outline-none focus:ring focus:ring-blue-400 transition-all">Save Changes<i class="bi bi-check-lg"></i></button>
                             </div>
                         </div>
                     </div>
@@ -338,13 +338,13 @@
                 <!-- Images Form -->
                 <div class="grid grid-cols-12 gap-2 2xl:px-12">
                     <!-- Form -->
-                    <div class="xl:col-span-4 p-6 othersDetailsContent bg-white drop-shadow-md text-gray-700">
+                    <div class="xl:col-span-4 p-6 othersDetailsContent bg-white drop-shadow-md text-gray-700 text-sm">
                         <h1 class="font-bold"><i class="bi bi-cloud-arrow-up-fill"></i> Upload an Image</h1>
                         <div class="py-6">
                             <hr class="border-gray-300">     
                         </div>
                         <div class="xl:col-span-4">
-                            <input type="file" id="fileInput" value="" class="border-2 w-full mb-3" multiple>
+                            <input type="file" id="fileInput" value="" class="border-2 border-green-300 rounded-md p-2 w-full mb-3" multiple>
                             <button id="upload" class="p-2 mb-3 bg-blue-600 rounded-md w-full text-center text-white"><i class="bi bi-cloud-upload-fill"></i> Upload Images</button>
 
                             <div class="p-3 bg-red-600 text-white text-center rounded-md drop-shadow-lg" id="upload-messasge" style="display: none;">
@@ -355,10 +355,12 @@
                             </div>
                             
                             <p class="p-3 bg-green-600 text-white text-center rounded-md drop-shadow-lg transition duration-200 ease-in-out" style="display: none;" id="upload-success"><i class="bi bi-cloud-check-fill"></i> Your File was uploaded successfully!</p>
-                            <div id="upload-success-toast"><i class="bi bi-cloud-check-fill"></i> Your File was uploaded successfully!</div>
+                            
                         </div>
                     </div>
 
+                    <!-- <div><button onclick="deleteImage('+(obj.image_id)+')" class="delete-button bg-red-600 rounded-lg p-2 text-white" style="display:none;"><i class="bi bi-trash-fill"></i> Delete</button><a href="Capstone/'+(obj.image_dir)+'" class="xl:col-span-2 w-40 h-40 hover:scale-105 transition duration-200"><img id="'+(obj.image_id)+'" class="card-img" alt="..." src="Capstone/'+(obj.image_dir)+'"/></a></div> -->
+                    <!-- <button onclick="deleteImage(id)" class="delete-button bg-red-600 rounded-lg p-2 text-white" style="display:none;"><i class="bi bi-trash-fill"></i> Delete</button>   -->
                     <!-- Image Gallery -->
                     <div class="xl:col-span-8 p-6 bg-white drop-shadow-md text-gray-700 text-sm">
                         <div class="flex items-center justify-between">
@@ -366,14 +368,16 @@
                             <button id="edit-images" class="p-2 bg-green-500 drop-shadow-lg text-white rounded-lg"><i class="bi bi-trash-fill"></i> Edit Images</button>
                         </div>
                         
-                        <div class="py-6">
+                        <div class="py-3">
                             <hr class="border-gray-300">     
                         </div>
+                        <div id="delete-button-container"></div>
                         <div class="image-gallery xl:grid xl:grid-cols-6 gap-4" id="image-gallery">
+                        
                         </div>
                     </div>
                 </div>
-                
+                <div id="upload-success-toast"><i class="bi bi-cloud-check-fill"></i> Your File was uploaded successfully!</div>
                 <div id="success-toast"> <i class="bi bi-check2-circle"></i> Successfully Updated!</div>    
             </div>
 
@@ -383,7 +387,7 @@
                 <!-- Hospital Information Container -->
                 <div class="col-span-12 xl:col-span-12 p-6 bg-white drop-shadow-md mb-5">
 
-                    <h1 class="font-bold">Hospital Informations</h1>
+                    <h1 class="font-bold">Hospital Information</h1>
 
                     <div class="py-3 mb-3">
                         <hr class="border-gray-500">     
@@ -424,7 +428,7 @@
                 <!-- Other Details -->
                 <div class="col-span-12 xl:col-span-12 p-6 bg-white drop-shadow-md">
 
-                    <h1 class="font-bold">Other Informations</h1>
+                    <h1 class="font-bold">Other Information</h1>
 
                     <div class="py-3 mb-3">
                         <hr class="border-gray-500"> 
@@ -473,7 +477,7 @@
                         </div>
 
                         <!-- Modal body & Verify Password Form -->
-                        <form action="includes/hospitalVerifyPassword-inc.php" method="POST">
+                        <form method="POST">
                             <div class="space-y-6">
                                 <!-- VerifyPassword Container -->
                                 <div id="verifyPassword-div" name="verifyPassword" class="p-6 ">
@@ -489,7 +493,7 @@
                                     <p id="resultMessage" class="text-center"></p> 
                                     <!-- Button of Continue and Close  -->
                                     <div class="flex justify-end space-x-3">
-                                        <button id="btnEditPasswordNext" name="btnEditPasswordNext" type="button" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:ring-cyan-800 dark:focus:ring-cyan-800">
+                                        <button id="btnEditPasswordNext" name="btnEditPasswordNext" type="submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:ring-cyan-800 dark:focus:ring-cyan-800">
                                             <span class="relative px-5 py-2.5 transition-all ease-in-out duration-75 bg-gray-900 dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">  
                                                 Continue
                                             </span>
@@ -507,7 +511,7 @@
                                 
                                 <p class="text-gray-500 mb-4"><i class="bi bi-info-circle-fill"></i> Type in your new password. (Minimum of 8 Characters)</p>
 
-                                <form action="includes/insert-new-password-hospital-inc.php" method="post" id="edit-new-password-form">
+                                <form method="post" id="edit-new-password-form">
                                     <!-- New password -->
                                     <div class="relative mb-6">
                                         <label for="newPassword" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">New password</label>
