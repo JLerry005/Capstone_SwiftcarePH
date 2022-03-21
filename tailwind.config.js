@@ -2,6 +2,7 @@ module.exports = {
 
   content: [  
     './dist/index.html',
+    './new-homepage.php',
     './hospital-dashboard.php',
     './admin-dashboard.php',
     './user-signup.php',

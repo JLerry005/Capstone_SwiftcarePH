@@ -13,7 +13,7 @@
 <!--CSS Link-->
 <link href="styling/indexStyling.css" rel="stylesheet" type="text/css">
 
-<body>   
+<body class="">   
     <!--Header Main Container -->
     <div class="container-fluid mainContainer">
         <!-- Header-->

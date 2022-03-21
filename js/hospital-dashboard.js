@@ -93,6 +93,11 @@
             url: "includes/get-hospital-images-inc.php",
             success: function (data, status) {
                 let fetchedImages = JSON.parse(data);
+
+                // if (fetchedImages.length == 0) {
+                //     $("#no-images-message").html('<p class="text-slate-500 text-lg text-center"><i class="bi bi-emoji-frown-fill"></i> No Images found!</p>');
+                // }
+
                 $("#image-gallery").html("");
                 for(var i = 0; i < fetchedImages.length; i++) {
                     var obj = fetchedImages[i];             
@@ -101,10 +106,59 @@
                 }
                 let lg = document.getElementById('image-gallery');
                 lightGallery(lg);
-            },
+
+            }
         }); 
         
     }
+
+    // Get Updated Image list for edit images modal
+    function getUpdatedImages() {
+        $("#image-modal-body").html("");
+        $.ajax({
+            method: "GET",
+            url: "includes/get-hospital-images-inc.php",
+            success: function (data, status) {
+                let fetchedImages = JSON.parse(data);
+
+                if (fetchedImages.length == 0) {
+                    $("#image-modal-body").html('<p class="col-span-6 text-slate-400 text-lg text-center"><i class="bi bi-emoji-frown-fill"></i> No Images found!</p>');
+                }
+                else{
+                    for (let i = 0; i < fetchedImages.length; i++) {
+                        let data = fetchedImages[i];
+                        let imageId = (data.image_id);
+                        let imageDir = (data.image_dir);
+                        
+                        let imageContainer = $('<div class="p-5 rounded-md bg-Yellow col-span-1"><button class="p-2 rounded-md bg-red-500 text-white">Delete</button><img src="Capstone/'+(data.image_dir)+'" /></div>');
+                        imageContainer.find('button').on('click', () => deleteImage(imageId));
+                        $('#image-modal-body').append(imageContainer); 
+                        
+                        function deleteImage(imageId) {
+                            toggleModal('editImagesModal', false);
+                            toggleModal('confirm-delete', true);
+    
+                            $("#btn-confirm-delete").click(function () {
+                                $.ajax({
+                                    type: 'POST',
+                                    url: 'includes/delete-hospital-image-inc.php',
+                                    data: {imageId:imageId, imageDir:imageDir},
+                                    success: function(data, textStatus, xhr) {
+                                        toggleModal('confirm-delete', false);
+                                        show_details();
+                                        toggleModal('editImagesModal', true);
+                                        
+                                        // location.reload();
+                                    }
+                                });
+                            });   
+                        }       
+                    }
+                } 
+            }
+        });
+    }
+
 
     // Show Edit Images Modal
     $("#edit-images").click(function () {
@@ -117,34 +171,42 @@
             success: function (data, status) {
                 let fetchedImages = JSON.parse(data);
 
-                for (let i = 0; i < fetchedImages.length; i++) {
-                    let data = fetchedImages[i];
-                    let imageId = (data.image_id);
-                    let imageDir = (data.image_dir);
-
-                    let imageContainer = $('<div class="p-5 rounded-md bg-Yellow col-span-1"><button class="p-2 rounded-md bg-red-500 text-white">Delete</button><img src="Capstone/'+(data.image_dir)+'" /></div>');
-                    imageContainer.find('button').on('click', () => deleteImage(imageId));
-                    $('#image-modal-body').append(imageContainer); 
-                    
-                    function deleteImage(imageId) {
-                        toggleModal('editImagesModal', false);
-                        toggleModal('confirm-delete', true);
-
-                        $("#btn-confirm-delete").click(function () {
-                            $.ajax({
-                                type: 'POST',
-                                url: 'includes/delete-hospital-image-inc.php',
-                                data: {imageId:imageId, imageDir:imageDir},
-                                success: function(data, textStatus, xhr) {
-                                    show_details();
-                                    toggleModal('editImagesModal', false);
-                                    toggleModal('confirm-delete', false);
-                                    // location.reload();
-                                }
-                            });
-                        });   
-                    }       
+                if (fetchedImages.length == 0) {
+                    $("#image-modal-body").html('<p class="col-span-6 text-slate-400 text-lg text-center"><i class="bi bi-emoji-frown-fill"></i> No Images found!</p>');
                 }
+                else{
+                    for (let i = 0; i < fetchedImages.length; i++) {
+                        let data = fetchedImages[i];
+                        let imageId = (data.image_id);
+                        let imageDir = (data.image_dir);
+    
+                        let imageContainer = $('<div class="p-5 rounded-md bg-Yellow col-span-1"><button class="p-2 rounded-md bg-red-500 text-white">Delete</button><img src="Capstone/'+(data.image_dir)+'" /></div>');
+                        imageContainer.find('button').on('click', () => deleteImage(imageId));
+                        $('#image-modal-body').append(imageContainer); 
+                        
+                        function deleteImage(imageId) {
+                            toggleModal('editImagesModal', false);
+                            toggleModal('confirm-delete', true);
+    
+                            $("#btn-confirm-delete").click(function () {
+                                $.ajax({
+                                    type: 'POST',
+                                    url: 'includes/delete-hospital-image-inc.php',
+                                    data: {imageId:imageId, imageDir:imageDir},
+                                    success: function(data, textStatus, xhr) {
+                                        show_details();
+                                        getUpdatedImages();
+                                        toggleModal('confirm-delete', false);
+                                        
+                                        toggleModal('editImagesModal', true);
+                                        
+                                        // location.reload();
+                                    }
+                                });
+                            });   
+                        }       
+                    }
+                }  
             }
         });
     });
@@ -164,6 +226,11 @@
     const uploadButton = document.getElementById("upload");
 
     uploadButton.addEventListener("click", function () {
+     
+        let filePath = fileInput.value;
+        // Allowing file type
+        let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+        
         $.ajax({
             method: "GET",
             url: "includes/get-image-count-inc.php",
@@ -174,6 +241,7 @@
                     document.getElementById("upload-messasge").innerHTML = "";
                     document.getElementById("upload-messasge").innerHTML = "<i class='bi bi-exclamation-circle-fill'></i> Max. Upload exceeded!";
                     show_details();
+                    return false;
                 }else{
                     const xhr = new XMLHttpRequest();
                     const formData = new FormData();
@@ -192,18 +260,29 @@
                         $("#upload-messasge").show();
                         document.getElementById("upload-messasge").innerHTML = "<i class='bi bi-exclamation-circle-fill'></i> Please select an image first!";
                         show_details();
+                        return false;
+                    }
+                    else if (!allowedExtensions.exec(filePath)) {
+                        document.getElementById("upload-messasge").innerHTML = "";
+                        $("#upload-messasge").show();
+                        document.getElementById("upload-messasge").innerHTML = "<i class='bi bi-exclamation-circle-fill'></i> Invalid File Format!";
+                        fileInput.value = '';
+                        show_details();
+                        return false;
                     }
                     else if(finalLength > 10) {
                         document.getElementById("upload-messasge").innerHTML = "";
                         $("#upload-messasge").show();
                         document.getElementById("upload-messasge").innerHTML = "<i class='bi bi-exclamation-circle-fill'></i> Max. of 10 images per upload only!";
                         show_details();
+                        return false;
                     }
                     else if (totalUploads > 10) {
                         document.getElementById("upload-messasge").innerHTML = "";
                         $("#upload-messasge").show();
                         document.getElementById("upload-messasge").innerHTML = "<i class='bi bi-exclamation-circle-fill'></i> You've reached the max. number of uploads! Delete some images if you want to upload more.";
                         show_details();
+                        return false;
                     }
                     else{
                         // Send image to server to process
@@ -221,6 +300,8 @@
                                 document.getElementById("fileInput").classList.remove('disable-button');
                                 document.getElementById("upload").classList.remove('disable-button');
                                 $("#upload-loader").hide();
+                                fileInput.value = '';
+                                $("#upload-messasge").hide();
 
                                 var x = document.getElementById("upload-success-toast");
                                 x.className = "show";
@@ -397,6 +478,7 @@
                     saveChanges: saveChanges,
                 }, function(statusTxt) {
                     if (statusTxt == "<p style='color:#17B978;'>Successfully Changed!</p>") {
+
                         toggleModal('popup-modal', true);
                     }
                     if (statusTxt == "STMT FAILED!") {
@@ -457,6 +539,7 @@
 
     function closeButtons(){
         location.reload();
+        // show_account();
         toggleModal('popup-modal', false);
     }
 
