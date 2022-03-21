@@ -268,7 +268,7 @@
                 <!--Listing Details Form -->
                 <form method="POST" id="details-form" enctype="multipart/form-data">
                     <!-- Main Container -->
-                    <div class="mainContainer grid grid-cols-12 sm:px-3 md:px-6 2xl:px-12 space-y-6 xl:space-y-0 gap-5 text-sm mb-6 text-gray-700" id="main-container">
+                    <div class="mainContainer grid grid-cols-12 pt-16 sm:px-3 md:px-6 2xl:px-12 space-y-6 xl:space-y-0 gap-5 text-sm mb-6 text-gray-700" id="main-container">
                         <!-- Main Details Content -->
                         <div class="col-span-12 xl:col-span-12 p-6 mainDetailsContainer bg-white drop-shadow-md">
                             <h1 class="font-bold">Main Details</h1>
@@ -337,7 +337,7 @@
                 </form>
 
                 <!-- Images Form -->
-                <div class="grid grid-cols-12 gap-2 2xl:px-12">
+                <div class="grid grid-cols-12 gap-2 2xl:px-12 mb-16">
                     <!-- Form -->
                     <div class="xl:col-span-4 p-6 othersDetailsContent bg-white drop-shadow-md text-gray-700 text-sm">
                         <h1 class="font-bold"><i class="bi bi-cloud-arrow-up-fill"></i> Upload an Image</h1>
@@ -408,6 +408,28 @@
                             <div class="flex justify-end p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
                                 <button type="button" class="text-white bg-red-600 hover:bg-red-900 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Delete All</button>
                                 <button type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600" onclick="buttonClose()">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ------------Delete Image confirmation Modal------------ -->
+
+                <!-- Delete Images Modal -->
+                <div class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="confirm-delete">
+                    <div class="relative px-4 w-full max-w-md h-full md:h-auto">
+                        <!-- Modal content -->
+                        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                            <!-- Modal header -->
+                            <div class="flex justify-end p-2">
+                            </div>
+                            <!-- Modal body -->
+                            <div class="p-6 pt-0 text-center">
+                                <svg class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this image?</h3>
+                                <button type="button" id="btn-confirm-delete" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                                    Yes, I'm sure
+                                </button>
+                                <button type="button" onclick="cancelDelete()" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">No, cancel</button>
                             </div>
                         </div>
                     </div>
@@ -613,8 +635,8 @@
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
                     <a href="https://flowbite.com" class="flex items-center"></a>
-                    <img src="/docs/images/logo.svg" class="mr-3 h-8" alt="FlowBite Logo">
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                    <img src="assets/main-logo.svg" class="mr-3 h-8" alt="Swiftcare PH Logo">
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Swiftcare PH</span>
                     </a>
                     </div>
                     <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -622,10 +644,10 @@
                             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
                             <ul class="text-gray-600 dark:text-gray-400">
                                 <li class="mb-4">
-                                    <a href="https://flowbite.com" class="hover:underline">Flowbite</a>
+                                    <a href="https://doh.gov.ph/" class="hover:underline">DOH</a>
                                 </li>
                                 <li>
-                                    <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                                    <a href="https://doh.gov.ph/node/31722" class="hover:underline">One Hospital Command</a>
                                 </li>
                             </ul>
                     </div>
@@ -633,10 +655,10 @@
                         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
                         <ul class="text-gray-600 dark:text-gray-400">
                             <li class="mb-4">
-                                <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
+                                <a href="#" class="hover:underline ">Facebook</a>
                             </li>
                             <li>
-                                <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
+                                <a href="#" class="hover:underline">Discord</a>
                             </li>
                         </ul>
                     </div>
@@ -655,7 +677,7 @@
                     </div>
                     <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
                     <div class="sm:flex sm:items-center sm:justify-between">
-                    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+                    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="" class="hover:underline">SwiftcarePH™</a>. All Rights Reserved.
                     </span>
                     <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                     <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">

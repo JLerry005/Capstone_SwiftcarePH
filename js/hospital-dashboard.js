@@ -88,91 +88,17 @@
         });
        
         // Get Images
-        $("#image-gallery").html("");
         $.ajax({
             method: "GET",
             url: "includes/get-hospital-images-inc.php",
             success: function (data, status) {
                 let fetchedImages = JSON.parse(data);
-
+                $("#image-gallery").html("");
                 for(var i = 0; i < fetchedImages.length; i++) {
                     var obj = fetchedImages[i];             
                     $("#image-gallery").append('<a href="Capstone/'+(obj.image_dir)+'" class="relative fetched-image xl:col-span-1 w-40 h-40 hover:scale-105 transition duration-200"><img id="'+(obj.image_id)+'" class="card-img" alt="..." src="Capstone/'+(obj.image_dir)+'"/></a>');
                     // $("$image-gallery").append('<button id="'+(obj.image_id)+'" class="p-2 rounded bg-red-500 text-white absolut z-10">Delete</button>');
                 }
-
-                // Show delete button
-                $("#edit-images").click(function () {
-                    $("#image-modal-body").html("");
-                    toggleModal('editImagesModal', true);
-
-                    for (let i = 0; i < fetchedImages.length; i++) {
-                        let data = fetchedImages[i];
-                        let imageId = (data.image_id);
-                        let imageDir = (data.image_dir);
-                        
-                        function deleteImage(imageId) {
-                            $.ajax({
-                                type: 'POST',
-                                url: 'includes/delete-hospital-image-inc.php',
-                                data: {imageId:imageId, imageDir:imageDir},
-                                beforeSend: function () {
-                                
-                                },
-                                success: function(data, textStatus, xhr) {
-                                    console.log(xhr.status);
-                                    // toggleModal('editImagesModal', false);
-                                    location.reload();
-                                },
-                                complete: function () {
-                                    // toggleModal('editImagesModal', true);
-                                    show_details();
-                                }
-                            });
-                        }
-
-                        let imageContainer = $('<div class="p-5 rounded-md bg-Yellow col-span-1"><button class="p-2 rounded-md bg-red-500 text-white">Delete</button><img src="Capstone/'+(data.image_dir)+'" /></div>');
-                        imageContainer.find('button').on('click', () => deleteImage(imageId));
-                        // imageContainer.find('img').on('click', () => deleteImage(imageId));
-                        $('#image-modal-body').append(imageContainer);                   
-                    }
-
-                    // for (let i = 0; i < fetchedImages.length; i++) {
-                    //     let obj = fetchedImages[i];
-                    //     // Get only the Image ID
-                    //     let imageId = (obj.image_id);
-                    //     let imageDir = (obj.image_dir);
-                        
-                    //     }
-
-                    //     // // Delete Image Function
-                    //     // function deleteImage(imageID) {
-                    //     //     // console.log(imageId);
-                    //     //     $.ajax({
-                    //     //         type: 'POST',
-                    //     //         url: 'includes/delete-hospital-image-inc.php',
-                    //     //         data: {imageId:imageId, imageDir:imageDir},
-                    //     //         beforeSend: function () {
-
-                    //     //         },
-                    //     //         success: function(data, textStatus, xhr) {
-                    //     //             console.log(xhr.status);
-                    //     //             show_details();
-                    //     //         }
-                    //     //     });
-                    //     // }
-                        
-                    //     // Create a Delete Button
-                    //     let buttonContainer = $(`<div><button>Delete</button></div>`);
-
-                    //     // Add the the onclick function to each button
-                    //     buttonContainer.find('button').on('click', () => deleteImage(imageId));
-                    //     $('#delete-button-container').append(buttonContainer);
-                    
-                    // $("#delete-button-container").toggle();
-                });
-                
-                
                 let lg = document.getElementById('image-gallery');
                 lightGallery(lg);
             },
@@ -180,6 +106,55 @@
         
     }
 
+    // Show Edit Images Modal
+    $("#edit-images").click(function () {
+        $("#image-modal-body").html("");
+        toggleModal('editImagesModal', true);
+        
+        $.ajax({
+            method: "GET",
+            url: "includes/get-hospital-images-inc.php",
+            success: function (data, status) {
+                let fetchedImages = JSON.parse(data);
+
+                for (let i = 0; i < fetchedImages.length; i++) {
+                    let data = fetchedImages[i];
+                    let imageId = (data.image_id);
+                    let imageDir = (data.image_dir);
+
+                    let imageContainer = $('<div class="p-5 rounded-md bg-Yellow col-span-1"><button class="p-2 rounded-md bg-red-500 text-white">Delete</button><img src="Capstone/'+(data.image_dir)+'" /></div>');
+                    imageContainer.find('button').on('click', () => deleteImage(imageId));
+                    $('#image-modal-body').append(imageContainer); 
+                    
+                    function deleteImage(imageId) {
+                        toggleModal('editImagesModal', false);
+                        toggleModal('confirm-delete', true);
+
+                        $("#btn-confirm-delete").click(function () {
+                            $.ajax({
+                                type: 'POST',
+                                url: 'includes/delete-hospital-image-inc.php',
+                                data: {imageId:imageId, imageDir:imageDir},
+                                success: function(data, textStatus, xhr) {
+                                    show_details();
+                                    toggleModal('editImagesModal', false);
+                                    toggleModal('confirm-delete', false);
+                                    // location.reload();
+                                }
+                            });
+                        });   
+                    }       
+                }
+            }
+        });
+    });
+
+    // Cancel Delete
+    function cancelDelete() {
+        toggleModal('confirm-delete', false);
+        toggleModal('editImagesModal', true);
+    }
+    // Close Edit Images Modal
     function buttonClose(){
         toggleModal('editImagesModal', false);
     }
