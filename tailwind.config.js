@@ -14,6 +14,7 @@ module.exports = {
     './pages/reservations.php',
     './pages/account.php',
     './pages/edit-details.php',
+    './index.php',
     "./node_modules/flowbite/**/*.js"
 ],
 
@@ -982,7 +983,8 @@ module.exports = {
     'disabled',
   ],
   plugins: [
-    require('flowbite/plugin')
+    require('flowbite/plugin'),
+    require('@tailwindcss/line-clamp')
   ],
 }
 

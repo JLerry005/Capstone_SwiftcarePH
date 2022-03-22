@@ -105,7 +105,7 @@
             $_SESSION["sessionPatientPhoneNumber"] = $userMobileNumberExists["patientPhoneNumber"];
             $_SESSION["sessionPatientFirstName"] = $userMobileNumberExists["patientFirstname"];
 
-            header("location: ../index.php?succefully-logged-in");
+            header("location: ../index?succefully-logged-in");
             exit();
         }
     }
@@ -129,7 +129,7 @@
         }
 
         else if ($checkOldPassword === true) {
-            header("location: ../user-dashboard.php?password-correct");
+            header("location: ../user-dashboard?password-correct");
             echo $oldPassword;
             $_SESSION["oldPassword"] = $oldPassword;
             exit();

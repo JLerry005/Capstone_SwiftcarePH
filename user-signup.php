@@ -20,7 +20,7 @@
     <title>User Signup | SwiftCare PH</title>
 
 </head>
-<body class="bg-footerColor relative font-poppins text-sm sm:text-base md:text-base text-white">
+<body class="bg-gray-900 relative font-poppins text-sm sm:text-base md:text-base text-white">
     <!-- Back button Container -->
     <div class="absolute top-5 left-5">
         <a href="index" class="underline "><i class="bi bi-arrow-left-circle"></i> Back to home page</a>
