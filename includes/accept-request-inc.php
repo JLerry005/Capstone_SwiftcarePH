@@ -29,7 +29,7 @@
 
         if ($query) {
             $insertHospitalAcc = "INSERT INTO hospitalaccount (infoID, hospitalName, hospitalEmail, hospitalPassword)
-                                VALUES ('$lastID', '$name', '$email', '$hashedPwd')";
+                                VALUES ('$lastID', '$name', '$email', '$hashedPwd' )";
             $insHospitalResult = mysqli_query($conn, $insertHospitalAcc) or die(mysqli_error($conn));
             
             if ($insertHospitalAcc) {
@@ -37,7 +37,7 @@
                 $sqlResult = mysqli_query($conn, $sql) or die(mysqli_error($conn));
                 
                 if ($sql) {
-                    $insertToListing = "INSERT INTO hospitallisting (hospitalID, hospital_name, hospital_type) VALUES ('$lastID', '$name', '$type')";  
+                    $insertToListing = "INSERT INTO hospitallisting (hospitalID, hospital_name, hospital_type, hospital_phone) VALUES ('$lastID', '$name', '$type', '$phone')";  
                     $insListingResult = mysqli_query($conn, $insertToListing) or die(mysqli_error($conn));
                 }
 

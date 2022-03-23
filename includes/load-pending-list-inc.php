@@ -22,7 +22,7 @@
 
         $output .='
             <div class="card pending-cards m-3 mt-4 mb-3 pt-3 p-3 bg-gradient bg-whiteBGColor" onclick="showFullDetails('.$pendingID.')">
-                <div class="card-body d-flex justify-content-between my-auto">
+                <div class="card-body d-flex justify-content-between my-auto"></div>
                     <div class="fs-1 text-footerColor my-auto fw-bolder"> '.$pendingID.'</div>
                     <div class="text-center my-auto">
                         <h4 class="text-4xl font-bold">'.$pendingName.'</h4>

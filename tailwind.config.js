@@ -15,6 +15,8 @@ module.exports = {
     './pages/account.php',
     './pages/edit-details.php',
     './index.php',
+    './includes/nav.php',
+    './hospital-overview.php',
     "./node_modules/flowbite/**/*.js"
 ],
 

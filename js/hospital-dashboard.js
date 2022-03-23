@@ -490,7 +490,7 @@
     
         // CREATE NEW PASSWORD END 
         
-        // Toggle User Password
+        // Toggle Verify Password
         $("#verifyTogglePass").click(function() {
             $(this).toggleClass("bi-eye bi-eye-slash");
             hospitalPassword = $(this).parent().find("input.hospitalPassword");
@@ -504,7 +504,7 @@
             }
         });
 
-        // Toggle User Password
+        // Toggle New Password
         $("#newTogglePass").click(function() {
             $(this).toggleClass("bi-eye bi-eye-slash");
             newPasswordToggle = $(this).parent().find("input.newPassword");
@@ -518,7 +518,7 @@
             }
         });
 
-        // Toggle User Password
+        // Toggle Repeat Password
         $("#repeatTogglePass").click(function() {
             $(this).toggleClass("bi-eye bi-eye-slash");
             newPasswordRepeatToggle = $(this).parent().find("input.newPasswordRepeat");

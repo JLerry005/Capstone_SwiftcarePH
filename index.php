@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Flowbite minified stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="dist/output.css">
+    
     <link rel="icon" href="assets/main-logo-line.png" type="image/x-icon">  
     <title>SwiftCare PH</title>
 </head>
@@ -31,23 +34,23 @@
 
                 <div>
                     <div class="hidden sm:hidden md:hidden lg:flex flex-row justify-center lg:justify-start space-x-6">
-                        <h1 class="flex flex-row items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <h1 class="flex flex-row items-center" id="find-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
-                            Find
+                            &nbsp;Find
                         </h1>
                         <h1 class="flex flex-row items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                               </svg>
-                            Fill up
+                            &nbsp;Fill up
                         </h1>
                         <h1 class="flex flex-row items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
-                            Reserve
+                            &nbsp;Reserve
                         </h1>
                     </div>
                 </div>
@@ -104,13 +107,13 @@
             </div>
 
             <!-- Cards List -->
-            <div class="grid grid-cols-12 gap-2 gap-y-5 md:gap-x-5 md:gap-y-10">
-                <?php
-                    include_once 'includes/all-listing-inc.php';
-                ?>
+            <div class="grid grid-cols-12 gap-2 gap-y-5 md:gap-x-5 md:gap-y-10" id="listing-cards-container">
+                <!-- <?php
+                    //include_once 'includes/all-listing-inc.php';
+                ?> -->
                 
                 <!-- Card 1 -->
-                <!-- <div class="border-[1px] border-gray-300 xl:col-span-3 2xl:col-span-2 lg:col-span-4 md:col-span-6 sm:col-span-6 col-span-6 rounded-md bg-white drop-shadow-md p-2 lg:p-5 md:min-h-[20rem] text-sm hover:scale-105 transition-all cursor-pointer">
+                <!-- <div class="border-[1px] border-gray-300 xl:col-span-3 2xl:col-span-2 lg:col-span-4 md:col-span-6 sm:col-span-6 col-span-6 rounded-md bg-white drop-shadow-md p-2 lg:p-5 md:min-h-[20rem] text-sm hover:scale-105 transition-all cursor-pointer" id="listing-card">
                     <div class="mb-2 bg-red-300 h-28 md:h-36 bg-clip-border bg-center bg-cover bg-no-repeat rounded-md" style="background-image: url(assets/mcu-3.jpg);">
                     </div>
                     <div class="flex flex-row justify-between md:items-center">
@@ -306,5 +309,9 @@
 
     <?php include_once 'includes/footer.php'; ?>
 
+
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script src="js\index.js" defer></script>
 </body>
 </html>
