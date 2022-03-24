@@ -106,11 +106,18 @@
                 </span>
             </div>
 
+            <div id="skeleton-loader" class="flex justify-center" style="display: none;">
+                <p class="animate-pulse flex items-center text-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z" />
+                      </svg>
+                    &ensp;Loading Hospitals..
+                </p>
+            </div>
             <!-- Cards List -->
             <div class="grid grid-cols-12 gap-2 gap-y-5 md:gap-x-5 md:gap-y-10" id="listing-cards-container">
-                <!-- <?php
-                    //include_once 'includes/all-listing-inc.php';
-                ?> -->
+
+                
                 
                 <!-- Card 1 -->
                 <!-- <div class="border-[1px] border-gray-300 xl:col-span-3 2xl:col-span-2 lg:col-span-4 md:col-span-6 sm:col-span-6 col-span-6 rounded-md bg-white drop-shadow-md p-2 lg:p-5 md:min-h-[20rem] text-sm hover:scale-105 transition-all cursor-pointer" id="listing-card">

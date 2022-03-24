@@ -6,7 +6,7 @@
     <nav class="absolute text-white py-5 px-5 lg:px-12 w-full">
         <div class="flex flex-row justify-between items-center  pb-6 border-slate-600">
             <div class="flex flex-row items-center space-x-4">
-            <a href="#" class="flex items-center text-center">
+            <a href="index" class="flex items-center text-center">
                 <img src="assets/main-logo-transparent.png" class="mr-3 h-8" alt="Swiftcare PH Logo">
                 <span class="self-center text-lg md:text-2xl font-semibold whitespace-nowrap dark:text-white">Swiftcare PH</span>
                 </a>

@@ -1,11 +1,16 @@
     // alert("Working!");
-
+    
+    $("#skeleton-loader").hide();
     showAllLisitng();
     function showAllLisitng() {
         $.ajax({
             method: "GET",
             url: "includes/all-listing-inc.php",
+            beforeSend: function () {
+                $("#skeleton-loader").show();
+            },
             success: function (data, status) {
+                $("#skeleton-loader").hide();
                 // $("#listing-cards-container").html(data);
                 let listingData = JSON.parse(data);
 
@@ -17,8 +22,14 @@
                     let hospitalName = (data.hospital_name);
                     let hospitalAddress = (data.hospital_location);
                     let hospitalType = (data.hospital_type);
-                    let hospitalSlot = (data.room_slot);
+                    let roomSlot = (data.room_slot);
+                    let bedSlot = (data.bed_slot);
                     let hospitalPhoneNumber = (data.hospital_phone);
+
+                    let roomSlotInt = parseInt(roomSlot);
+                    let bedSlotInt  = parseInt(bedSlot);
+
+                    let totalSlot = roomSlotInt + bedSlotInt;
 
                     // Pass Listing ID to getCoverPhoto Function
                     let listingID = (data.listing_id);
@@ -50,7 +61,7 @@
                         console.log(data);
                         
 
-                        let card = $('<div class="border-[1px] border-gray-300 xl:col-span-3 2xl:col-span-2 lg:col-span-4 md:col-span-6 sm:col-span-6 col-span-6 rounded-md bg-white drop-shadow-md p-2 lg:p-5 md:min-h-[20rem] text-sm hover:scale-105 transition-all cursor-pointer" id="listing-card">\
+                        let card = $('<a href="hospital-overview?listingID='+listingID+'" class="border-[1px] border-gray-300 xl:col-span-3 2xl:col-span-2 lg:col-span-4 md:col-span-6 sm:col-span-6 col-span-6 rounded-md bg-white drop-shadow-md p-2 lg:p-5 md:min-h-[20rem] text-sm hover:scale-105 transition-all cursor-pointer"><div id="listing-card">\
                                         <div class="mb-2 bg-red-300 h-28 md:h-36 bg-clip-border bg-center bg-cover bg-no-repeat rounded-md" style="background-image: url(Capstone/'+data+');" id="card-image-container">\
                                         </div>\
                                         <div class="flex flex-row justify-between md:items-center">\
@@ -84,7 +95,7 @@
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">\
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />\
                                                 </svg>\
-                                                &nbsp;'+hospitalSlot+'\
+                                                &nbsp;'+totalSlot+'\
                                             </h1>\
                                             <p class="flex flex-row items-center">\
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">\
@@ -108,7 +119,7 @@
                                                 &nbsp;Full Details\
                                             </button>\
                                         </div>\
-                                    </div>');
+                                    </div></a>');
 
                         // let hospitalNameText = document.getElementById("hospital-name");
                         // tippy(hospitalNameText, {
