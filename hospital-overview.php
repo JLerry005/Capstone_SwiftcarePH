@@ -47,8 +47,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Flatpickr Date & Time  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!-- Flowbite minified stylesheet -->
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css"/>
     <!--lightGallery CSS CDN-->
@@ -303,7 +301,7 @@
 
             <!-- BOOK NOW Button -->
             <div class="pt-4">
-                <button class="bg-blue-500 p-2 rounded-md text-white flex items-center" type="button" data-modal-toggle="defaultModal">
+                <button class="bg-blue-500 p-2 rounded-md text-white flex items-center" type="button" onclick="bookModal()">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                       </svg>
@@ -314,7 +312,7 @@
         </div>
         
         <!-- Main modal -->
-        <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+        <div id="bookFormModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
             <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
                 <!-- Modal content -->
                 <div class="relative bg-blue-50 rounded-lg shadow">
@@ -323,7 +321,7 @@
                         <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl">
                             BOOKING FORM
                         </h3>
-                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="bookFormModal">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
                         </button>
                     </div>
@@ -333,65 +331,125 @@
 
                         <!-- Modal body -->
                         <div class="p-6 space-y-2">
+                            
+                            <div class="mb-3 font-semibold flex justify-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-900" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                            </svg>
+                                <p>&ensp;Patient Name</p><span class="text-red-500">&nbsp;*</span>
+                            </div>
 
                             <!-- Patient First & Last Name -->
                             <div class="grid xl:grid-cols-2 xl:gap-6">
                                 <!-- Patient First Name -->
-                                <div class="relative z-0 mb-6 w-full group">
+                                <div class="relative z-0 mb-4 w-full group">
                                     <input type="text" name="firstName" id="firstName" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
                                     <label for="firstName" class="absolute text-sm font-medium  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First name</label>
                                 </div>
                                 <!-- Patient Last Name -->
-                                <div class="relative z-0 mb-6 w-full group">
+                                <div class="relative z-0 mb-4 w-full group">
                                     <input type="text" name="lastName" id="lastName" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
                                     <label for="lastName" class="absolute text-sm font-medium  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last name</label>
                                 </div>
                             </div>
 
+                            <div class="pb-3 font-semibold flex justify-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                            </svg>
+                                <p>&ensp;Appointment Schedule</p><span class="text-red-600">&nbsp;*</span>
+                            </div>
+
+
                             <!-- Date and time  -->
                             <div class="grid xl:grid-cols-2 xl:gap-6">
                                 <!-- Date -->
-                                <div class="relative z-0 mb-6 w-full group">
+                                <div class="relative z-0 mb-4 w-full group">
                                     <input type="date" name="date" id="date_picker" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                                    <label for="date" class="absolute text-sm font-medium  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Date</label>
+                                    <label for="date" class="absolute text-sm font-semibold  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Date</label>
                                 </div>
 
                                 <!-- Time -->
-                                <div class="relative z-0 mb-6 w-full group">
+                                <div class="relative z-0 mb-4 w-full group">
                                     <input type="time" name="time" id="time" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                                    <label for="time" class="absolute text-sm font-medium  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Time</label>
+                                    <label for="time" class="absolute text-sm font-semibold  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Time</label>
                                 </div>
+                            </div>
+
+                            <div class="pb-2 font-semibold flex justify-row">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-600" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                                </svg>
+                                <p>&ensp;Patient Contact Details</p><span class="text-red-600">&nbsp;*</span>
                             </div>
 
                             <!-- Contact Number -->
                             <div class="relative z-0 w-full group">
                                 <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                                <label for="floating_phone" class="absolute text-sm font-medium  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Contact number</label>
+                                <label for="floating_phone" class="absolute text-sm font-medium  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone number <span class="text-gray-400">(+63-9XX-XXXX-XXX)</span></label>
                             </div>
 
-                            <div class="relative z-0 pt-6 w-full group"> 
-                                <label for="concern" class="block mb-2 text-sm font-medium text-gray-900">Select your concern</label>
-                                <select id="concern" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option selected disabled value="">-Select-</option>
-                                <option value="Covid">Covid</option>
-                                <option value="Non - Covid">Non - Covid</option>
-                                </select>
+                            <!-- Select & Specify your concern -->
+                            <div class="grid xl:grid-cols-2 xl:gap-6">
+                                <!-- Select concern -->
+                                <div class="relative z-0 pt-4 w-full group">
+
+                                    <div class="flex justify-row">
+                                        <i class="bi bi-clipboard2-pulse-fill text-blue-400"></i>
+                                        <label for="concern" class="block mb-2 text-sm font-semibold text-gray-900">Select your concern</label><span class="text-red-600">&nbsp;*</span>
+                                    </div> 
+
+                                    <select id="concern" class="bg-blue-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <option selected disabled value="" class="font-medium text-gray-900">-Select-</option>
+                                    <option value="Covid">Covid</option>
+                                    <option value="Non - Covid">Non - Covid</option>
+                                    </select>
+                                </div>
+
+                                <!-- Specify your concern input -->
+                                <div class="relative z-0 mt-10 w-full group">
+                                    <input type="text" name="specifyConcern" id="specifyConcern" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                                    <label for="specifyConcern" class="absolute text-sm font-medium  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Specify your concern</label>
+                                </div>
                             </div>
+
+                            <div class="pt-4 font-semibold flex justify-row">
+                                <i class="bi bi-hospital text-orange-500"></i>
+                                <p>&ensp;Hospital Details</p><span class="text-red-600">&nbsp;*</span>
+                            </div>
+
+                            <!-- Hospital Name and City  -->
+                            <div class="grid xl:grid-cols-2 xl:gap-6">
+                                <!-- Hospital Name -->
+                                <div class="relative z-0 mt-2 mb-6 w-full group">
+                                    <input type="text" name="hospitalName" id="hospitalName" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                                    <label for="date" class="absolute text-sm font-medium  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Hospital Name</label>
+                                </div>
+
+                                <!-- City -->
+                                <div class="relative z-0 mt-2 mb-6 w-full group">
+                                    <input type="text" name="cityName" id="cityName" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                                    <label for="cityName" class="absolute text-sm font-medium  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">City</label>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-rows">
+                                <label class="block mb-2 text-sm font-medium text-gray-900" for="user_avatar">Attachment for Referal</label><span class="text-red-600">&nbsp;*</span>
+                            </div>
+                            <input class="block w-full text-sm text-gray-900 bg-blue-50 rounded-lg border border-gray-300 cursor-pointer focus:outline-none focus:border-transparent" aria-describedby="user_avatar_help" id="user_avatar" type="file">
                         </div>
                     </form>
 
                     <!-- Modal footer -->
-                    <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                        <button data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">I accept</button>
-                        <button data-modal-toggle="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Decline</button>
+                    <div class="flex justify-end p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                        <button data-modal-toggle="bookFormModal" type="button" class="focus:outline-none text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Book Now</button>
+                        <button data-modal-toggle="bookFormModal" type="button" class="text-red-500 hover:text-white border border-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Cancel</button>
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
-    <!-- Flatpickr Date and Time  -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <!-- FLOWBITE CDN -->
     <script src="node_modules\flowbite\dist\flowbite.js"></script>
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>

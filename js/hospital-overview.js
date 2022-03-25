@@ -25,9 +25,9 @@
     // today = yyyy + '-' + mm + '-' + dd;
     // $('#date_picker').attr('min',today);
 
-    var numberOfDaysToAdd = 2;
-
+    // Date
     var today = new Date();
+    var numberOfDaysToAdd = 2;
     var dd = String(today.getDate()+numberOfDaysToAdd).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0');
     var yyyy = today.getFullYear();
@@ -35,9 +35,9 @@
     today = yyyy + '-' + mm + '-' + dd;
     $('#date_picker').attr('min',today);
 
-    
-
-
-
     // Lightgallery
     lightGallery(document.querySelector('.image-gallery'));
+
+    function bookModal(){
+        toggleModal('bookFormModal', true);
+    }

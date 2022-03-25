@@ -1089,8 +1089,28 @@ input:checked + .toggle-bg{
   margin-top: 0.5rem;
 }
 
+.mt-12{
+  margin-top: 3rem;
+}
+
+.mt-11{
+  margin-top: 2.75rem;
+}
+
+.mt-14{
+  margin-top: 3.5rem;
+}
+
 .mt-6{
   margin-top: 1.5rem;
+}
+
+.mt-4{
+  margin-top: 1rem;
+}
+
+.mt-1{
+  margin-top: 0.25rem;
 }
 
 .block{
@@ -1401,6 +1421,10 @@ input:checked + .toggle-bg{
 
 .items-start{
   align-items: flex-start;
+}
+
+.items-end{
+  align-items: flex-end;
 }
 
 .items-center{
@@ -1759,6 +1783,16 @@ input:checked + .toggle-bg{
   border-color: rgb(26 86 219 / var(--tw-border-opacity));
 }
 
+.border-red-700{
+  --tw-border-opacity: 1;
+  border-color: rgb(200 30 30 / var(--tw-border-opacity));
+}
+
+.border-red-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(240 82 82 / var(--tw-border-opacity));
+}
+
 .border-b-gray-500{
   --tw-border-opacity: 1;
   border-bottom-color: rgb(107 114 128 / var(--tw-border-opacity));
@@ -1909,6 +1943,16 @@ input:checked + .toggle-bg{
 
 .bg-white\/50{
   background-color: rgb(255 255 255 / 0.5);
+}
+
+.bg-green-700{
+  --tw-bg-opacity: 1;
+  background-color: rgb(4 108 78 / var(--tw-bg-opacity));
+}
+
+.bg-blue-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(225 239 254 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50{
@@ -2195,12 +2239,16 @@ input:checked + .toggle-bg{
   padding-bottom: 0.25rem;
 }
 
-.pb-4{
-  padding-bottom: 1rem;
-}
-
 .pt-6{
   padding-top: 1.5rem;
+}
+
+.pt-8{
+  padding-top: 2rem;
+}
+
+.pb-4{
+  padding-bottom: 1rem;
 }
 
 .text-left{
@@ -2257,6 +2305,10 @@ input:checked + .toggle-bg{
 .text-3xl{
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-\[1px\]{
+  font-size: 1px;
 }
 
 .font-bold{
@@ -2419,9 +2471,14 @@ input:checked + .toggle-bg{
   color: rgb(255 90 31 / var(--tw-text-opacity));
 }
 
-.text-gray-800{
+.text-gray-600{
   --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+.text-blue-400{
+  --tw-text-opacity: 1;
+  color: rgb(118 169 250 / var(--tw-text-opacity));
 }
 
 .underline{
@@ -2706,6 +2763,31 @@ input:checked + .toggle-bg{
   background-color: rgb(14 159 110 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-green-800:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(3 84 63 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-green-600:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 122 85 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-green-900:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(1 71 55 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-red-700:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(200 30 30 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-red-600:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 36 36 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-gradient-to-br:hover{
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
@@ -2766,6 +2848,10 @@ input:checked + .toggle-bg{
 .focus\:border-blue-600:focus{
   --tw-border-opacity: 1;
   border-color: rgb(28 100 242 / var(--tw-border-opacity));
+}
+
+.focus\:border-transparent:focus{
+  border-color: transparent;
 }
 
 .focus\:bg-gray-500:focus{
@@ -3672,10 +3758,6 @@ input:checked + .toggle-bg{
     margin-top: 0px;
   }
 
-  .xl\:mt-6{
-    margin-top: 1.5rem;
-  }
-
   .xl\:flex{
     display: flex;
   }
@@ -3767,10 +3849,6 @@ input:checked + .toggle-bg{
 
   .xl\:pr-12{
     padding-right: 3rem;
-  }
-
-  .xl\:pt-6{
-    padding-top: 1.5rem;
   }
 
   .xl\:text-2xl{
