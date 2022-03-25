@@ -331,7 +331,8 @@
 
                         <!-- Modal body -->
                         <div class="p-6 space-y-2">
-                            
+
+                            <!-- Patient Name Text -->
                             <div class="mb-3 font-semibold flex justify-row">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-900" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
@@ -353,8 +354,9 @@
                                 </div>
                             </div>
 
+                            <!-- Appointment Schedule Text -->
                             <div class="pb-3 font-semibold flex justify-row">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-500" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                             </svg>
                                 <p>&ensp;Appointment Schedule</p><span class="text-red-600">&nbsp;*</span>
@@ -376,11 +378,12 @@
                                 </div>
                             </div>
 
+                            <!-- Contact Details Text -->
                             <div class="pb-2 font-semibold flex justify-row">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-600" viewBox="0 0 20 20" fill="currentColor">
                                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                                 </svg>
-                                <p>&ensp;Patient Contact Details</p><span class="text-red-600">&nbsp;*</span>
+                                <p>&ensp;Contact Details</p><span class="text-red-600">&nbsp;*</span>
                             </div>
 
                             <!-- Contact Number -->
@@ -395,11 +398,14 @@
                                 <div class="relative z-0 pt-4 w-full group">
 
                                     <div class="flex justify-row">
-                                        <i class="bi bi-clipboard2-pulse-fill text-blue-400"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
+                                        </svg>
                                         <label for="concern" class="block mb-2 text-sm font-semibold text-gray-900">Select your concern</label><span class="text-red-600">&nbsp;*</span>
                                     </div> 
 
-                                    <select id="concern" class="bg-blue-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <select id="concern" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option selected disabled value="" class="font-medium text-gray-900">-Select-</option>
                                     <option value="Covid">Covid</option>
                                     <option value="Non - Covid">Non - Covid</option>
@@ -413,8 +419,11 @@
                                 </div>
                             </div>
 
+                            <!-- Hospital Details Text -->
                             <div class="pt-4 font-semibold flex justify-row">
-                                <i class="bi bi-hospital text-orange-500"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-orange-600" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd" />
+                                </svg>
                                 <p>&ensp;Hospital Details</p><span class="text-red-600">&nbsp;*</span>
                             </div>
 
@@ -441,7 +450,7 @@
                     </form>
 
                     <!-- Modal footer -->
-                    <div class="flex justify-end p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                    <div class="flex justify-end p-6 space-x-2 rounded-b border-t border-gray-600">
                         <button data-modal-toggle="bookFormModal" type="button" class="focus:outline-none text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Book Now</button>
                         <button data-modal-toggle="bookFormModal" type="button" class="text-red-500 hover:text-white border border-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Cancel</button>
                     </div>
