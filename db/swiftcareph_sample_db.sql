@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2022 at 04:32 PM
+-- Generation Time: Mar 25, 2022 at 04:14 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -174,6 +174,7 @@ CREATE TABLE `hospitallisting` (
   `listing_id` int(11) NOT NULL,
   `hospitalID` int(20) NOT NULL,
   `hospital_location` varchar(255) NOT NULL,
+  `hospital_city` varchar(250) NOT NULL,
   `hospital_name` varchar(255) NOT NULL,
   `hospital_description` varchar(255) NOT NULL,
   `hospital_type` varchar(255) NOT NULL,
@@ -190,11 +191,11 @@ CREATE TABLE `hospitallisting` (
 -- Dumping data for table `hospitallisting`
 --
 
-INSERT INTO `hospitallisting` (`listing_id`, `hospitalID`, `hospital_location`, `hospital_name`, `hospital_description`, `hospital_type`, `room`, `room_slot`, `bed`, `bed_slot`, `additional_docs`, `website_link`, `hospital_phone`) VALUES
-(2, 177, 'Makati City', 'Adventist Medical Center Manila', 'Sample Description lorem lorem lorem', 'Public Hospital', 'Room', 5, '', 0, 'Yes', 'www.mcuhopsita.com', ''),
-(5, 180, 'Kanto ng Tinio, Caloocan CIty', 'Nior Hospital', 'Sample Description', 'Public Hospital', 'Room', 33, 'Bed', 33, 'Yes', '33', ''),
-(6, 181, 'Sulu, Mindanao 💣💥💥💣', 'Taego General hospital', 'Sample lang', 'Public Hospital', '', 99, '', 99, 'Yes', '', '+63887867546'),
-(7, 182, '', 'Our Lady of Lourdes Hospital', '', 'Private Hospital', 'no', NULL, 'no', NULL, 'no', NULL, '+639341415636');
+INSERT INTO `hospitallisting` (`listing_id`, `hospitalID`, `hospital_location`, `hospital_city`, `hospital_name`, `hospital_description`, `hospital_type`, `room`, `room_slot`, `bed`, `bed_slot`, `additional_docs`, `website_link`, `hospital_phone`) VALUES
+(2, 177, 'Makati City', '0', 'Adventist Medical Center Manila', 'Sample Description lorem lorem lorem', 'Public Hospital', 'Room', 5, '', 0, 'Yes', 'www.mcuhopsita.com', ''),
+(5, 180, 'Kanto ng Tinio, Caloocan CIty', '0', 'Nior Hospital', 'Sample Description', 'Public Hospital', 'Room', 33, 'Bed', 33, 'Yes', '33', ''),
+(6, 181, 'Sulu, Mindanao 💣', 'sample city', 'Taego General hospital', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nemo iusto ipsum voluptas, omnis vitae minima quis aperiam ab veritatis. Voluptatibus, provident. Rem voluptatem sed ut qui nobis quod fuga?', 'Public Hospital', 'Room', 99, 'Bed', 99, 'Yes', 'www.taegocity.com.ph', '+63887867546'),
+(7, 182, 'Los Angers, USA', 'Caloocan City', 'Our Lady of Lourdes Hospital', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, co', 'Private Hospital', '', 1, '', 1, 'Yes', 'www.pinoyflix.tv', '+639341415636');
 
 -- --------------------------------------------------------
 
@@ -235,8 +236,7 @@ INSERT INTO `listingimages` (`image_id`, `listing_idFK`, `image_name`, `image_di
 (292, 2, 'Deku', '../web/hospital-images/deku.jpg'),
 (583, 5, 'Tyler Lastovich HM08wZJBlK4 Unsplash', '../web/hospital-images/tyler-lastovich-hM08wZJBlK4-unsplash.jpg'),
 (584, 6, 'Martin Adams Y1M0dZ 1Psc Unsplash', '../web/hospital-images/martin-adams-y1M0dZ-1Psc-unsplash.jpg'),
-(589, 7, 'Pagayunan', '../web/hospital-images/pagayunan.jpg'),
-(590, 7, 'Parallax', '../web/hospital-images/parallax.jpg');
+(591, 7, 'Spiderman', '../web/hospital-images/spiderman.jpg');
 
 -- --------------------------------------------------------
 
@@ -651,7 +651,7 @@ ALTER TABLE `hospitalsignuphistory`
 -- AUTO_INCREMENT for table `listingimages`
 --
 ALTER TABLE `listingimages`
-  MODIFY `image_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=591;
+  MODIFY `image_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=593;
 
 --
 -- AUTO_INCREMENT for table `otpstorage`
