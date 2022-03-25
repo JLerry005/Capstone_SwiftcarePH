@@ -70,11 +70,20 @@
                         <input type="text" class="form-control" name="hospitalNameInput" id="hospitalName" autocomplete="off" required>
                     </div>
 
-                    <!--Address-->
-                    <div class="mb-3">
-                        <label for="address" class="form-label address-label">Address</label>
-                        <span class="text-danger ">*</span>
-                        <input type="text" class="form-control" name="addressInput" id="address" autocomplete="off" required>
+                    <div class="d-flex mb-3">
+                        <!--Address-->
+                        <div class="col-6">
+                            <label for="address" class="form-label address-label">Address</label>
+                            <span class="text-danger ">*</span>
+                            <input type="text" class="form-control first-input" name="addressInput" id="address" autocomplete="off" required>
+                        </div>
+
+                        <!--City-->
+                        <div class="col-6">
+                            <label for="city" class="form-label address-label">City</label>
+                            <span class="text-danger ">*</span>
+                            <input type="text" class="form-control" name="cityInput" id="city" autocomplete="off" required>
+                        </div>
                     </div>
                     
                     <!--Branch & Representative's Name-->

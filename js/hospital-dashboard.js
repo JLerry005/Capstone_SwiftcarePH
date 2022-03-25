@@ -54,6 +54,7 @@
                 $("#hospital-name").val(fetchedData.hospital_name);
                 $("#hospital-location").val(fetchedData.hospital_location);
                 $("#hospital-description").val(fetchedData.hospital_description);
+                $("#hospital-city").val(fetchedData.hospital_city);
                 $("#hospitalType").val(fetchedData.hospital_type);
                 $("#website-link").val(fetchedData.website_link);
                 $("#room-slot").val(fetchedData.room_slot);
@@ -108,9 +109,24 @@
                 lightGallery(lg);
 
             }
-        }); 
-        
+        });   
+      
     }
+
+    function roomCheck() {
+        var roomChecked = document.getElementById("hospital-room");
+        var roomSlots = document.getElementById("room-slot");
+
+        if (roomChecked.checked == true) {
+            alert ("working!");
+            roomSlots.style.display = "block";
+        }
+        else {
+            roomSlots.style.display = "none";
+        }
+    }
+
+
 
     // Get Updated Image list for edit images modal
     function getUpdatedImages() {
@@ -320,6 +336,7 @@
         event.preventDefault();
         let location = $('#hospital-location').val();
         let description = $('#hospital-description').val();
+        let city = $('#hospital-city').val();
         let room = $('#hospital-room').val();
         let roomSlot = $('#room-slot').val();
         let bed = $('#hospital-bed').val();
@@ -333,6 +350,7 @@
             data: {
                 location:location,
                 description:description,
+                city:city,
                 roomSlot:roomSlot,
                 bedSlot:bedSlot,
                 websiteLink:websiteLink,
@@ -379,7 +397,6 @@
                     $("#account-hospital-name").val(fetchedData.hospitalName);
                     $("#hospital-email").val(fetchedData.email);
                     $("#hospital-phoneNumber").val(fetchedData.phoneNumber); 
-
                     $("#account-hospital-location").val(fetchedData.hospitalAddress);
                     $("#hospital-representative").val(fetchedData.representativeName);
                     $("#hospital-designation").val(fetchedData.designation);

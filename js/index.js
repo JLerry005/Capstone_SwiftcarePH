@@ -150,58 +150,46 @@
         content: "I'm a Tippy tooltip!",
       });
 
-    // function get_image_dir(id){
-    //     let listingID = id;
-    //     console.log("Your ID is:",+listingID);
+    // Search Funtion
+    let searchInput = document.getElementById("search-hospital-input");
+    let resultContainer = document.getElementById("search-result-container");
+    let loaderMessage = document.getElementById("results-loader");
 
-    //     $.post("includes/get-cover-photo-inc.php", {listingID:listingID},
-    //     function(data, status) {
+    $(loaderMessage).hide();
+    $(resultContainer).hide();
 
-    //         let fetchedData = JSON.parse(data);
+    searchInput.onkeyup = function () {
+        let searchInputVal = document.getElementById("search-hospital-input").value;
+        // console.log(searchInputVal);
 
-    //         for(var i = 0; i < fetchedData.length; i++) {
-    //             var dataImage = fetchedData[i];
-    //             finalImage = dataImage.image_dir;
+        if (searchInputVal !="") {
+            $.ajax({
+                type: "GET",
+                url: "includes/search-hospital-inc.php",
+                data: {searchInputVal:searchInputVal},
+                beforeSend: function () {
+                    $(loaderMessage).show();
+                },
+                success: function (data) {
+                    $(loaderMessage).hide();
+                    $(resultContainer).show();
+                    resultContainer.innerHTML = data;
+                    // console.log(data);
+                }
+            });
+        }else{
+            $(resultContainer).hide();
+            resultContainer.innerHTML = '';
+        }
+    }
 
-    //             console.log(finalImage);
+    // Dismiss Search Results when clicked outside
+    $('body *:not(#searchInput)').mouseup(function () { 
+        $(resultContainer).hide();
+    });
 
-    //             let imageContainer = document.getElementById("card-image-container");
+    // Show Results when input is clicked
+    searchInput.onclick = function () {
+        $(resultContainer).show();
+    }
 
-    //             imageContainer.setAttribute("style", "background-image: url('Capstone/'+(dataImage.finalImage+');")
-    //         }
-    //     });
-    // }
-
-    // function getCoverPhoto(listingID, finalImage) {
-    //     // console.log("ID is:"+listingID);
-    //     $.ajax({
-    //         method: "POST",
-    //         url: "includes/get-cover-photo-inc.php",
-    //         data: {listingID:listingID},
-    //         success: function (data, status) {
-    //             let dataImage = JSON.parse(data);
-    //             finalImage = dataImage[0].image_dir;
-    //             // console.log(finalImage);
-    //             // return finalImage;
-
-    //             callback(finalImage);
-    //         }
-    //     }); 
-    // }
-
-    // var image_data;
-    // function callback(response) {
-    //     image_data = response;
-    //     console.log("Fetched Data: " +image_data);
-    // }
-    // $.ajax({
-    //     method: "POST",
-    //     url: "includes/get-cover-photo-inc.php",
-    //     data: {listingID:listingID},
-    //     success: function (data, status) {
-    //         let dataImage = JSON.parse(data);
-    //         finalImage = dataImage[0].image_dir;
-            
-    //         callback(finalImage);
-    //     }
-    // }); 

@@ -282,8 +282,10 @@
                             </div>
                             
                             <!-- Location -->
-                            <input type="text" class="focus:outline-none p-3 border border-blue-400" id="hospital-location" name="hospital-location" required>
-                            <button class="bg-green-500 p-2 drop-shadow-md rounded-md text-white">Get my Location</button>
+                            <div class="flex justify-end space-x-4">
+                                <input type="text" class="border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-5/6" id="hospital-location" name="hospital-location" required>
+                                <button class="bg-green-500 w-1/6 p-2 drop-shadow-md rounded-md text-white"><i class="bi bi-geo-alt-fill"></i> Get my Location</button>
+                            </div>
                         </div>
             
                         <!-- Listing Details Content -->
@@ -293,40 +295,65 @@
                                 <hr class="border-gray-300">     
                             </div>
             
-                            <!-- Hospita Name & Type of Hospital -->
-                            <div class="flex justify-between">
-                                <!-- Hospita Name -->
-                                <input type="text" class="focus:outline-none p-3 border border-blue-400" id="hospital-name" name="hospitalName" disabled>
+                            <!-- Type of Hospital -->
+                            <div class="flex justify-end">
                                 <!-- Type of Hospital -->
-                                <input class="bg-red-500 drop-shadow-md text-white p-2 focus:outline-none rounded-lg text-center" type="text" id="hospitalType" name="hospital-type" disabled>
+                                <input class="drop-shadow-lg w-fit text-orange-500 p-2 focus:outline-none rounded-lg text-center" type="text" id="hospitalType" name="hospital-type" disabled>
+                            </div>
+
+                            <!-- Hospital Name and City Place -->
+                            <div class="grid xl:grid-cols-2 xl:gap-6">
+                                <!-- Hospital Name -->
+                                <div class="mb-6">
+                                    <label class="block mb-2 text-sm font-medium text-gray-900">Hospital Name</label>
+                                    <input type="text" class="w-full border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" id="hospital-name" name="hospitalName" disabled>
+                                </div>
+
+                                <!-- Hospital City-->
+                                <div class="mb-6">
+                                    <label class="block mb-2 text-sm font-medium text-gray-900">City Place</label>
+                                    <input type="text" class="w-full border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" id="hospital-city" name="hospitalCity" value="City" required>
+                                </div>
                             </div>
             
                             <!-- Hospital Description -->
-                            <div>
-                                <input type="text" class="focus:outline-none p-3 border border-blue-400" id="hospital-description" name="hospitalDescription" value="Description" required>
+                            <div class="mb-6">
+                                <label class="block mb-2 text-sm font-medium text-gray-900">Description</label>
+                                <textarea id="hospital-description" name="hospitalDescription" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Type a description here..." required></textarea>
                             </div>
                             
-                            <!-- Rooms / Beds -->
-                            <div>
-                                <!-- Rooms -->
-                                <input type="checkbox" class="focus:outline-none p-3 border border-blue-400" id="hospital-room" name="room" value="Room">
-                                <label for="hospital-room"> room</label>
-                                <input type="number" class="focus:outline-none p-3 border border-blue-400" id="room-slot" name="room-slot" min="1" max="99" placeholder="1 ~ 99">
-                                
-                                <!-- Beds -->
-                                <input type="checkbox" class="focus:outline-none p-3 border border-blue-400" id="hospital-bed" name="bed" value="Bed">
-                                <label for="hospital-bed"> Bed</label>
-                                <input type="number" class="focus:outline-none p-3 border border-blue-400" id="bed-slot" name="bed-slot" min="1" max="99" placeholder="1 ~ 99">
+                            <!-- Rooms -->
+                            <div class="flex items-center mb-6 checkbox-card">
+                                <input type="checkbox" class="checkbox mr-3 w-5 h-5 text-green-600 bg-green-100 rounded border-green-700 focus:ring-green-500 focus:ring-2 " id="hospital-room" name="room" value="Room" onclick="checked()">
+                                <label for="hospital-room" class="text-md mr-3"> Room</label>
+                                <input type="number" class="w-32 border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block p-2.5" id="room-slot" name="room-slot" min="1" max="99" placeholder="1 ~ 99" style="display:none">
+                            </div>
+                            
+                            <!-- Beds -->
+                            <div class="flex items-center mb-6">
+                                <input type="checkbox" class="mr-3 w-5 h-5 text-green-600 bg-green-100 rounded border-green-700 focus:ring-green-500 focus:ring-2" id="hospital-bed" name="bed" value="Bed">
+                                <label for="hospital-bed" class="text-md mr-6"> Bed</label>
+                                <input type="number" class="w-32 border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block p-2.5" id="bed-slot" name="bed-slot" min="1" max="99" placeholder="1 ~ 99">
                             </div>
                             
                             <!-- Refferal or other documents -->
-                            <div>
-                                <input type="checkbox" class="focus:outline-none p-3 border border-blue-400" id="require-documents" name="require-documents" value="Yes">
-                                <label for="require-documents">Require Referal or other documents related into hopsital.</label>
+                            <div class="mb-6">
+                                <input type="checkbox" class="mr-2 w-5 h-5 text-green-600 bg-green-100 rounded border-green-700 focus:ring-green-500 focus:ring-2" id="require-documents" name="require-documents" value="Yes">
+                                <label for="require-documents" class="text-md">Require Referal or other documents related into hopsital.</label>
                             </div>
                             
                             <!-- Website Link -->
-                            <input type="text" class="focus:outline-none p-3 border border-blue-400" name="website-link" id="website-link" placeholder="www.sample.com" required>
+                            <div class=""> 
+                                <label class="block mb-2 text-sm font-medium text-gray-900"> Type your website link here: </label>
+                                <div class="relative">
+                                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
+                                    </div>
+                                    <input type="text" name="website-link" id="website-link" class="w-80 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block pl-10 p-2.5" placeholder="Type your website...">
+                                </div>
+                                <!-- <input type="text" class="w-full border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" name="website-link" id="website-link" placeholder="www.sample.com" required> -->
+
+                            </div>
                             
                             <!-- Submit Button -->
                             <div class="text-sm flex justify-end p-6">
@@ -494,26 +521,26 @@
 
                     <!-- Location -->
                     <div class="mb-6">
-                        <label class="block mb-2 text-sm font-medium dark:text-gray-900"> <i class="bi bi-geo-alt-fill text-red-700"></i> Location</label>
+                        <label class="block mb-2 text-sm font-medium text-gray-900"> <i class="bi bi-geo-alt-fill text-red-700"></i> Location</label>
                         <input id="account-hospital-location" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
                     </div>
                     <!-- Representative Name & Designation / Position -->
                     <div class="grid xl:grid-cols-2 xl:gap-6">
                         <!-- Representative Name -->
                         <div class="mb-6">
-                            <label class="block mb-2 text-sm font-medium dark:text-gray-900"> <i class="bi bi-person text-navColor"></i> Representative Name</label>
+                            <label class="block mb-2 text-sm font-medium text-gray-900"> <i class="bi bi-person text-navColor"></i> Representative Name</label>
                             <input id="hospital-representative" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
                         </div>
                         <!-- Designation / Position -->
                         <div class="mb-6">
-                            <label class="block mb-2 text-sm font-medium dark:text-gray-900"> <i class="bi bi-briefcase text-green-400"></i> Designation / Position</label>
+                            <label class="block mb-2 text-sm font-medium text-gray-900"> <i class="bi bi-briefcase text-green-400"></i> Designation / Position</label>
                             <input id="hospital-designation" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
                         </div>
                     </div>
 
                     <!-- Supervisor Name -->
                     <div class="mb-6">
-                        <label class="block mb-2 text-sm font-medium dark:text-gray-900"> <i class="bi bi-person-fill"></i> Supervisor Name</label>
+                        <label class="block mb-2 text-sm font-medium text-gray-900"> <i class="bi bi-person-fill"></i> Supervisor Name</label>
                         <input id="hospital-supervisor" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
                     </div>
                 </div>

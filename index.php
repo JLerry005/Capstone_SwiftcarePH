@@ -76,13 +76,26 @@
         <!-- Main Content -->
         <div class="mainContent py-5 px-5 lg:px-12 min-h-screen bg-slate-100 text-gray-700">
             <!-- Search Bar -->
-            <div class="relaive flex flex-row justify-center border-x-0 border-t-0 border-b-2 border-b-gray-500 p-2">
+            <div class="relative flex flex-row justify-center border-2 border-gray-500 rounded-md bg-white p-2">
                 <button class="">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
                       </svg>
                 </button>
-                <input type="search" name="" id="" placeholder="Search for a hospital.." class="p-3 focus:outline-none focus:ring-0 bg-slate-100 w-full border-0">
+                <input type="search" name="" id="search-hospital-input" placeholder="Search for a hospital..." class="p-3 focus:outline-none focus:ring-0 bg-white w-full border-0">
+
+                <!-- Search Result Container -->
+                <div class="bg-white w-full absolute top-16 right-0 left-0 drop-shadow-md z-10" id="search-result-container">
+                    <!-- Loading Message -->
+                    <div id="results-loader" class="flex justify-center m-4" style="display: none;">
+                        <p class="animate-pulse flex items-center text-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z" />
+                              </svg>
+                            &ensp;Loading Hospitals..
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <!-- Filter -->

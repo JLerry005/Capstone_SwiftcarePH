@@ -6,6 +6,7 @@
     // $hospitalName = $_POST['hospitalName'];
     $location = $_POST['location'];
     $description = $_POST['description'];
+    $city = $_POST['city'];
     // $type = $_POST['hospitalType'];
     $bed = $_POST['bed'];
     $bedSlot = $_POST['bedSlot'];
@@ -22,8 +23,7 @@
 
     // $hospitalID = 177;
     
-    $sql = "UPDATE hospitallisting SET hospital_location = ?, hospital_description = ?, bed = ?, bed_slot = ?, room = ?, room_slot = ?, additional_docs = ?, website_link = ? WHERE hospitalID = ?;";
-
+    $sql = "UPDATE hospitallisting SET hospital_location = ?, hospital_description = ?,  hospital_city = ?, bed = ?, bed_slot = ?, room = ?, room_slot = ?, additional_docs = ?, website_link = ? WHERE hospitalID = ?;";
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -31,7 +31,7 @@
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "sssisissi", $location, $description, $bed, $bedSlot, $room, $roomSlot, $refferal, $websiteLink, $hospitalID);
+    mysqli_stmt_bind_param($stmt, "ssssisissi", $location, $description, $city, $bed, $bedSlot, $room, $roomSlot, $refferal, $websiteLink, $hospitalID);
     mysqli_stmt_execute($stmt); 
     mysqli_stmt_close($stmt);
 
