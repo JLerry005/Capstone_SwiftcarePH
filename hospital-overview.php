@@ -178,6 +178,12 @@
 
         <!-- Details Content-->
         <div class="my-2 mx-4 space-y-3 px-2">
+
+            <!-- Hospital Type -->
+            <div class="flex flex-row">
+                <span class="text-blue-600 font-bold uppercase"><?php echo $hospitalType?> </span>
+            </div>
+
             <!-- Hospital Name -->
             <div class="xl:flex xl:items-start xl:justify-between">
                 <p class="text-orange-500 text-xl md:text-2xl lg:text-3xl font-bold uppercase"><?php echo $hospitalName ?></p>
@@ -207,11 +213,6 @@
                     
                 </div>
                 
-            </div>
-
-            <!-- Hospital Type -->
-            <div class="flex flex-row">
-                <span class="text-blue-500 font-medium">•&nbsp;<?php echo $hospitalType?> </span>
             </div>
 
             <!-- Hospital Address -->
@@ -278,18 +279,26 @@
             </div>
             
             <!-- Image -->
-            <div class="image-gallery xl:grid xl:grid-cols-6 gap-1" id="image-gallery">
+            <div class="image-gallery grid items-center grid-cols-6 lg:grid-cols-4 xl:grid-cols-5 gap-x-4 gap-y-4 p-2" id="image-gallery">
                 <?php
                     $imageDir;
                     $getImages = $conn->query("SELECT * FROM listingimages WHERE listing_idFK = $listingID") or die($conn->error);
                     while ($imageRow = mysqli_fetch_assoc($getImages)) {
                         $imageDir = $imageRow["image_dir"];
                         echo '
-                            <a href="Capstone/'.$imageDir.'" class="fetched-image xl:col-span-1 w-40 h-40 hover:scale-105 transition duration-200">
-                                <img id="" class="card-img" alt="..." src="Capstone/'.$imageDir.'"/>
+                            <a href="Capstone/'.$imageDir.'" class="fetched-image col-span-3 sm:col-span-2 lg:col-span-1 xl:col-span-1 bg-gray-900 rounded-lg border-solid border-2 border-gray-900 hover:scale-105 transition duration-200">
+                                <img id="" class="card-img w-full h-36 md:h-48 border-solid border-2 border-gray-800 rounded-md" alt="..." src="Capstone/'.$imageDir.'"/>
                             </a>
                         ';
+
+                        // echo '
+                        // <a href="Capstone/'.$imageDir.'" class="fetched-image mr-3 xl:col-span-1 flex items-center bg-gray-900 rounded-lg border-solid border-2 border-sky-500 hover:scale-105 transition duration-200">
+                        //     <img id="" class="card-img w-fit h-fit" alt="..." src="Capstone/'.$imageDir.'"/>
+                        // </a>
+                        // ';
                     }
+
+
                 ?>  
             </div>
 
@@ -301,11 +310,11 @@
 
             <!-- BOOK NOW Button -->
             <div class="pt-4">
-                <button class="bg-blue-500 p-2 rounded-md text-white flex items-center" type="button" onclick="bookModal()">
+                <button class="bg-blue-500 p-2 rounded-md text-white flex items-center hover:bg-blue-700" type="button" onclick="bookModal()">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
                       </svg>
-                    &nbsp;BOOK NOW!
+                    &nbsp;BOOKING FORM
                 </button>
             </div>
             

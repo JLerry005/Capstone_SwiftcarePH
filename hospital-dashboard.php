@@ -305,34 +305,44 @@
                             <div class="grid xl:grid-cols-2 xl:gap-6">
                                 <!-- Hospital Name -->
                                 <div class="mb-6">
-                                    <label class="block mb-2 text-sm font-medium text-gray-900">Hospital Name</label>
+                                    <label class="block mb-2 text-sm font-medium text-orange-500">Hospital Name</label>
                                     <input type="text" class="w-full border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" id="hospital-name" name="hospitalName" disabled>
                                 </div>
 
                                 <!-- Hospital City-->
                                 <div class="mb-6">
-                                    <label class="block mb-2 text-sm font-medium text-gray-900">City Place</label>
+                                    <label for="hospital-city" class="block mb-2 text-sm font-medium text-orange-500">City Place</label>
                                     <input type="text" class="w-full border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" id="hospital-city" name="hospitalCity" value="City" required>
                                 </div>
                             </div>
             
                             <!-- Hospital Description -->
                             <div class="mb-6">
-                                <label class="block mb-2 text-sm font-medium text-gray-900">Description</label>
+                                <label for="hospital-description" class="block mb-2 text-sm font-medium text-orange-500">Description</label>
                                 <textarea id="hospital-description" name="hospitalDescription" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Type a description here..." required></textarea>
                             </div>
-                            
+
+                            <!-- Room slot title  -->
+                            <div class="mb-3 flex flex-rows">
+                                <p class="text-orange-500 font-medium">Room Slot</p>&nbsp;<span class="text-gray-600">(If you want to add slot in room, please check the checkbox below).</span>
+                            </div>
+
                             <!-- Rooms -->
                             <div class="flex items-center mb-6 checkbox-card">
                                 <input type="checkbox" class="checkbox mr-3 w-5 h-5 text-green-600 bg-green-100 rounded border-green-700 focus:ring-green-500 focus:ring-2 " id="hospital-room" name="room" value="Room" onclick="checked()">
-                                <label for="hospital-room" class="text-md mr-3"> Room</label>
-                                <input type="number" class="w-32 border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block p-2.5" id="room-slot" name="room-slot" min="1" max="99" placeholder="1 ~ 99" style="display:none">
+                                <label for="hospital-room" class="text-md mr-3 text-green-600 font-medium"> Room</label>
+                                <input type="number" class="w-32 border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block p-2.5" id="room-slot" name="room-slot" min="1" max="99" placeholder="1 ~ 99">
+                            </div>
+
+                            <!-- Bed slot title  -->
+                            <div class="mb-3 flex flex-rows">
+                                <p class="text-orange-500 font-medium">Bed Slot</p>&nbsp;<span class="text-gray-600">(If you want to add slot in bed, please check the checkbox below).</span>
                             </div>
                             
                             <!-- Beds -->
                             <div class="flex items-center mb-6">
                                 <input type="checkbox" class="mr-3 w-5 h-5 text-green-600 bg-green-100 rounded border-green-700 focus:ring-green-500 focus:ring-2" id="hospital-bed" name="bed" value="Bed">
-                                <label for="hospital-bed" class="text-md mr-6"> Bed</label>
+                                <label for="hospital-bed" class="text-md mr-6 text-green-600 font-medium"> Bed</label>
                                 <input type="number" class="w-32 border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block p-2.5" id="bed-slot" name="bed-slot" min="1" max="99" placeholder="1 ~ 99">
                             </div>
                             
@@ -344,7 +354,7 @@
                             
                             <!-- Website Link -->
                             <div class=""> 
-                                <label class="block mb-2 text-sm font-medium text-gray-900"> Type your website link here: </label>
+                                <label for="website-link" class="block mb-2 text-sm font-medium text-orange-500"> Type your website link here: </label>
                                 <div class="relative">
                                     <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
@@ -398,7 +408,7 @@
                             <hr class="border-gray-300">     
                         </div>
                         <div id="no-images-message"></div>
-                        <div class="image-gallery xl:grid xl:grid-cols-6 gap-4" id="image-gallery">
+                        <div class="image-gallery grid items-center grid-cols-5 gap-4 p-2" id="image-gallery">
                         
                         </div>
                     </div>

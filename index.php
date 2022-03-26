@@ -24,7 +24,7 @@
         ?>
 
         <!-- hero -->
-        <div class="heroContainer flex flex-col justify-between items-center text-white text-sm md:text-base pt-24 lg:pt-28 lg:pb-20 py-16 px-5 lg:flex-row lg:justify-between lg:px-12 bg-center bg-cover bg-no-repeat" style="background-image: url(assets/headger-bg-ambulance-dark-blurred.png);">
+        <div class="heroContainer md:flex md:flex-col md:justify-between md:items-center text-white text-sm md:text-base md:pt-24 lg:pt-28 lg:pb-20 py-16 px-5 lg:flex-row lg:justify-between lg:px-12 bg-center bg-cover bg-no-repeat" style="background-image: url(assets/headger-bg-ambulance-dark-blurred.png);">
             <div class="leftSection space-y-4 text-center lg:text-left">
                 <h1 class="hidden md:block font-bold text-2xl md:text-3xl text-orange-400">The Power of Heal</h1>
                 <p class="hidden md:block ">
@@ -57,7 +57,8 @@
                 <!-- <button class="bg-orange-400 text-gray-700 font-bold p-4 rounded uppercase">Sign up now!</button> -->
             </div>
 
-            <div class="rightSection flex flex-col mt-3 lg:mt-0 md:flex-col md:justify-center space-y-4">
+            <!-- Signup section -->
+            <div class="rightSection hidden md:flex flex-col mt-3 lg:mt-0 md:flex-col md:justify-center space-y-4">
                 <div class="transition ease-out hover:-translate-y-1 hover:scale-110 duration-300">
                     <h1 class="mb-2 font-semibold md:text-lg text-md ">Book your first Reservation Now!</h1>
                     <!-- <p>Click the button below to Signup:</p> -->
@@ -71,54 +72,273 @@
                 </div>
                 <p class="text-center">Already have an Account? <a href="user-login.php" class="hover:underline hover:text-blue-500">Login</a></p>
             </div>
+
+            <!-- Hero section for small devices -->
+            <div class="md:hidden text-left space-y-2">
+                <h1 class="font-bold text-xl text-orange-400">The Power of Heal</h1>
+                <p>Lorem ipsum dolor, sit amet. Cum in, quas ut exercitationem provident.</p>
+                <button class="flex flex-1 items-center p-2 px-4 bg-orange-500 rounded-md text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                        <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                      </svg>
+                      &ensp;Signup
+                </button>
+            </div>
         </div>
 
         <!-- Main Content -->
         <div class="mainContent py-5 px-5 lg:px-12 min-h-screen bg-slate-100 text-gray-700">
-            <!-- Search Bar -->
-            <div class="relative flex flex-row justify-center border-2 border-gray-500 rounded-md bg-white p-2">
-                <button class="">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-                      </svg>
-                </button>
-                <input type="search" name="" id="search-hospital-input" placeholder="Search for a hospital..." class="p-3 focus:outline-none focus:ring-0 bg-white w-full border-0">
 
-                <!-- Search Result Container -->
-                <div class="bg-white w-full absolute top-16 right-0 left-0 drop-shadow-md z-10" id="search-result-container">
-                    <!-- Loading Message -->
-                    <div id="results-loader" class="flex justify-center m-4" style="display: none;">
-                        <p class="animate-pulse flex items-center text-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z" />
-                              </svg>
-                            &ensp;Loading Hospitals..
-                        </p>
+            <div class="flex items-center space-x-4 mb-3">
+                <!-- Search Bar -->
+                <div class="relative flex flex-row justify-center border-b-2 border-gray-300 rounded-full bg-slate-300 px-4 w-full">
+                    <button class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <input type="search" name="" id="search-hospital-input" placeholder="Search for a hospital..." class="p-3 focus:outline-none focus:ring-0 bg-slate-300 w-full border-0 text-sm md:text-base">
+
+                    <!-- Search Result Container -->
+                    <div class="bg-white w-full absolute top-12 right-0 left-0 drop-shadow-md z-10 rounded-xl" id="search-result-container">
+                        <!-- Loading Message -->
+                        <div id="results-loader" class="flex justify-center m-4" style="display: none;">
+                            <p class="animate-pulse flex items-center text-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z" />
+                                </svg>
+                                &ensp;Loading Hospitals..
+                            </p>
+                        </div>
+                        <p>Showing Result for</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Filter -->
-            <div class="flex flex-row justify-around items-start sm:items-center space-x-3 my-5 text-xs lg:text-base">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-center space-y-2 sm:space-y-0 sm:space-x-2">
-                    <label for="byLocation">Filter by City: </label>
-                    <select name="byLocation" id="byLocation">
-                        <option value="">Caloocan</option>
-                        <option value="">Malabon</option>
-                        <option value="">Navotas</option>
-                    </select>
+                <!-- Toggle Filter button -->
+                <div>
+                    <button class="bg-blue-500 p-3 rounded-xl  hover:bg-blue-800 focus:bg-blue-800 hover:rounded-lg transition-all text-white" id="toggle-filter">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
+                          </svg>
+                    </button>
+                </div>
+            </div> 
+
+            <!-- Filter Container -->
+            <div class="bg-white p-3 rounded-md drop-shadow-md my-3 text-sm space-y-4" id="filter-content">
+                
+                <!-- Filter Type -->
+                <div class="space-y-2">
+                    <p class="font-bold">Filter by Type:</p>
+
+                    <div class="ml-2 flex items-center space-x-3">
+                         <!-- Private -->
+                        <div>
+                            <input type="radio" id="private" name="hospitalType" class="hospitalType" value="private">
+                            <label for="private">Private</label>
+                        </div>
+                        <!-- Public -->
+                        <div>
+                            <input type="radio" id="public" name="hospitalType" class="hospitalType" value="public">
+                            <label for="public">Public</label>
+                        </div>
+                        <!-- All -->
+                        <div>
+                            <input type="radio" id="all" name="hospitalType" class="hospitalType" value="all">
+                            <label for="all">All</label>
+                        </div>
+                    </div> 
+                   
                 </div>
                 
+                <!-- Filter By Island -->
+                <div class="space-y-3">
+                    <p class="font-bold">Filter by Philippine Island:</p>
+                    
+                    <div class="ml-2" id="luzonDiv">
+                        <p class="font-semibold flex items-center mb-2">
+                            Luzon&ensp;
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                              </svg>
+                        </p>
 
-                <span class="flex flex-col sm:flex-row  items-center space-y-2 sm:space-x-2">
-                    <p>Filter by Date: </p>
-                    <div class="border-2 rounded">
-                        <button class="focus:bg-blue-500 focus:text-white p-3 focus:rounded">Oldest</button>
-                        <button class="focus:bg-blue-500 focus:text-white p-3 focus:rounded">Newest</button>
-                    </div>
-                </span>
+                        <!-- Region 1 -->
+                        <div class="ml-2 pb-3 text-xs text-gray-600 mb-3 border-b-[1px] border-gray-300">
+                            <p class="font-medium mb-1 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+                                  </svg>
+                                &ensp;Region I
+                            </p>
+
+                            <div class="grid grid-cols-12 gap-y-2">
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Alaminos</label>
+                                </div>
+                                
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Batac</label>
+                                </div>
+                                
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Candon</label>
+                                </div>
+                                
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Laoag</label>
+                                </div>
+
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> San Carlos</label>
+                                </div>
+
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> San Fernando</label>
+                                </div>
+
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Urdaneta</label>
+                                </div>
+
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Vigan</label>
+                                </div>
+
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Dagupan</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Region 2 -->
+                        <div class="ml-2 pb-3 text-xs text-gray-600 mb-3 border-b-[1px] border-gray-300">
+                            <p class="font-medium mb-1 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+                                  </svg>
+                                &ensp;Region II
+                            </p>
+
+                            <div class="grid grid-cols-12 gap-y-2">
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Cauayan</label>
+                                </div>
+                                
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Ilagan</label>
+                                </div>
+                                
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Santiago</label>
+                                </div>
+                                
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Tuguegarao</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Region 3 -->
+                        <div class="ml-2 pb-3 text-xs text-gray-600 mb-3 border-b-[1px] border-gray-300">
+                            <p class="font-medium mb-1 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+                                  </svg>
+                                &ensp;Region III
+                            </p>
+
+                            <div class="grid grid-cols-12 gap-y-2">
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Balanga</label>
+                                </div>
+                                
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Malolos</label>
+                                </div>
+                                
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Meycauayan</label>
+                                </div>
+                                
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> San Jose del Monte</label>
+                                </div>
+
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Cabanatuan</label>
+                                </div>
+
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Gapan</label>
+                                </div>
+
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Muñoz</label>
+                                </div>
+
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Palayan</label>
+                                </div>
+
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> San Jose</label>
+                                </div>
+
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Angeles City</label>
+                                </div>
+
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Mabalacat</label>
+                                </div>
+
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> San Fernando</label>
+                                </div>
+
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Tarlac </label>
+                                </div>
+
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="makati" name="makati" value="makati">
+                                    <label for="vehicle3"> Olongapo </label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>  
+                </div>
             </div>
-
+            
             <div id="skeleton-loader" class="flex justify-center" style="display: none;">
                 <p class="animate-pulse flex items-center text-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

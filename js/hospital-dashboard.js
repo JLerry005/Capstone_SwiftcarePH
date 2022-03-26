@@ -68,15 +68,19 @@
                 // Check if bedCheckBox has value
                 if (bedCheckBox == "Bed") {
                     document.getElementById("hospital-bed").checked = true;
+                    $('#bed-slot').fadeIn();
                 }else if(bedCheckBox == ""){
                     document.getElementById("hospital-bed").checked = false;
+                    $('#bed-slot').fadeOut();
                 }
 
                 // Check if roomCheckBox has value
                 if (roomCheckBox == "Room") {
                     document.getElementById("hospital-room").checked = true;
+                    $('#room-slot').fadeIn();
                 }else if(roomCheckBox == ""){
                     document.getElementById("hospital-room").checked = false;
+                    $('#room-slot').fadeOut();
                 }
 
                 // Check if additional docs has value
@@ -102,7 +106,7 @@
                 $("#image-gallery").html("");
                 for(var i = 0; i < fetchedImages.length; i++) {
                     var obj = fetchedImages[i];             
-                    $("#image-gallery").append('<a href="Capstone/'+(obj.image_dir)+'" class="relative fetched-image xl:col-span-1 w-40 h-40 hover:scale-105 transition duration-200"><img id="'+(obj.image_id)+'" class="card-img" alt="..." src="Capstone/'+(obj.image_dir)+'"/></a>');
+                    $("#image-gallery").append('<a href="Capstone/'+(obj.image_dir)+'" class="relative fetched-image xl:col-span-1 rounded-lg border-solid bg-gray-900 border-2 border-gray-900 hover:scale-105 transition duration-200"><img id="'+(obj.image_id)+'" class="card-img w-full h-48 rounded-md" alt="..." src="Capstone/'+(obj.image_dir)+'"/></a>');
                     // $("$image-gallery").append('<button id="'+(obj.image_id)+'" class="p-2 rounded bg-red-500 text-white absolut z-10">Delete</button>');
                 }
                 let lg = document.getElementById('image-gallery');
@@ -113,18 +117,25 @@
       
     }
 
-    function roomCheck() {
-        var roomChecked = document.getElementById("hospital-room");
-        var roomSlots = document.getElementById("room-slot");
+    // Hospital Room Slot | Show and Hide Function
+    $(document).ready(function () {
+        $('#hospital-room').change(function () {
+            if (!this.checked) 
+                $('#room-slot').fadeOut();
+            else 
+                $('#room-slot').fadeIn();
+        });
+    });
 
-        if (roomChecked.checked == true) {
-            alert ("working!");
-            roomSlots.style.display = "block";
-        }
-        else {
-            roomSlots.style.display = "none";
-        }
-    }
+    // Hospital Bed Slot | Show and Hide Function
+    $(document).ready(function () {
+        $('#hospital-bed').change(function () {
+            if (!this.checked) 
+                $('#bed-slot').fadeOut();
+            else 
+                $('#bed-slot').fadeIn();
+        });
+    });
 
 
 
