@@ -128,7 +128,7 @@
             <div class="bg-white p-3 rounded-md drop-shadow-md my-3 text-sm space-y-4" id="filter-content">
                 <!-- Apply Vilter | Clear All | Close Button -->
                 <div class="flex items-center md:justify-end border-b-[1px] border-gray-300 pb-3 space-x-3 text-xs md:text-sm">
-                    <button class="py-1 px-2 md:p-2 bg-gray-900 rounded-lg drop-shadow-md text-white hover:underline flex items-center">
+                    <button type="submit" id="apply-filter-button" class="py-1 px-2 md:p-2 bg-gray-900 rounded-lg drop-shadow-md text-white hover:underline flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                             </svg>
@@ -181,14 +181,15 @@
                 
                 <!-- Filter By Island -->
                 <div class=" grid grid-cols-12 gap-x-5">
-                    <p class="font-bold col-span-12 mb-3">Filter by Philippine Island:</p>
+                    <p class="font-bold col-span-12">Filter by Philippine Island:</p>
                     
                     <!-- Luzon -->
-                    <div class="col-span-12 2xl:col-span-4" id="luzonDiv">
-                        <div class="flex items-start">
+                    <div class="col-span-12 2xl:col-span-12 mt-3" id="luzonDiv">
+
+                        <div class="flex items-start mb-3">
                             <p class="font-semibold flex items-center mb-2"></p>
 
-                            <button>
+                            <button class="flex items-center" id="luzon-toggle-button">
                                 &ensp;Luzon
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -196,491 +197,543 @@
                             </button>
     
                             <div class="text-sm">
-                                <input type="checkbox" onclick="toggle(this)">
-                                <label for="vehicle3">
+                                <input type="checkbox" onclick="toggle(this)" class="rounded-md">
+                                <!-- <label for="vehicle3">
                                     &nbsp;Select All
-                                </label>
+                                </label> -->
                             </div>
                         </div>
 
-                        <!-- Region 1 -->
-                        <div class="ml-2 pb-3 text-xs text-gray-600 mb-3 border-b-[1px] border-gray-300">
-                            <div class="flex items-start space-x-2">
-                                <p class="font-medium mb-1 flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
-                                    </svg>
-                                    &ensp;Region I
-                                </p>
+                        <div id="luzon-region-checkbox" class="grid grid-cols-12 gap-x-3">
+                            <!-- Region 1 -->
+                            <div class="col-span-12 xl:col-span-6 ml-2 pb-3 text-xs text-gray-600 bg-gray-100 p-2 rounded-md mb-3 border-b-[1px] border-gray-300">
+                                <div class="flex items-start space-x-2">
+                                    <p class="font-medium mb-1 flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+                                        </svg>
+                                        &ensp;Ilocos Region | Cities
+                                    </p>
 
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="checkAllRegionI" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
-                                    <label for="makati">Check All</label>
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="checkAllRegionI" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <label for="makati">Select All</label>
+                                    </div>
+                                </div>
+                                
+                                <!-- Cities -->
+                                <div class="grid grid-cols-12 gap-y-2">
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIAlaminos" name="luzon" class="regionI" value="makati" checked>
+                                        <label for="regionIAlaminos"> Alaminos</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIBatac" name="luzon" class="regionI" value="makati">
+                                        <label for="regionIBatac"> Batac</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionICandon" name="luzon" class="regionI" value="makati">
+                                        <label for="regionICandon"> Candon</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionILaoag" name="luzon" class="regionI" value="makati">
+                                        <label for="regionILaoag"> Laoag</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionISanCarlos" name="luzon" class="regionI" value="makati">
+                                        <label for="regionISanCarlos"> San Carlos</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionISanFernando" name="luzon" class="regionI" value="makati">
+                                        <label for="regionISanFernando"> San Fernando</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIUrdaneta" name="luzon" class="regionI" value="makati">
+                                        <label for="regionIUrdaneta"> Urdaneta</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVigan" name="luzon" class="regionI" value="makati">
+                                        <label for="regionIVigan"> Vigan</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIDagupan" name="luzon" class="regionI" value="makati">
+                                        <label for="regionIDagupan"> Dagupan</label>
+                                    </div>
                                 </div>
                             </div>
+
+                            <!-- Region 2 -->
+                            <div class="col-span-12 xl:col-span-6 ml-2 pb-3 text-xs text-gray-600 bg-gray-100 p-2 rounded-md mb-3 border-b-[1px] border-gray-300">
+                                <div class="flex items-start space-x-2">
+                                    <p class="font-medium mb-1 flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+                                        </svg>
+                                        &ensp;Cagayan Valley | Cities
+                                    </p>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="checkAllRegionII" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <label for="makati">Select All</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-12 gap-y-2">
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIICauayan" name="luzon" class="regionII" value="makati">
+                                        <label for="regionIICauayan"> Cauayan</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIIIlagan" name="luzon" class="regionII" value="makati">
+                                        <label for="regionIIIlagan"> Ilagan</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIISantiago" name="luzon" class="regionII" value="makati">
+                                        <label for="regionIISantiago"> Santiago</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIITuguegarao" name="luzon" class="regionII" value="makati">
+                                        <label for="regionIITuguegarao"> Tuguegarao</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Region 3 -->
+                            <div class="col-span-12 xl:col-span-6 ml-2 pb-3 text-xs text-gray-600 bg-gray-100 p-2 rounded-md mb-3 border-b-[1px] border-gray-300">
+                                <div class="flex items-start space-x-2">
+                                    <p class="font-medium mb-1 flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+                                        </svg>
+                                        &ensp;Central Luzon | Cities
+                                    </p>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="checkAllRegionIII" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <label for="makati">Select All</label>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-12 gap-y-2">
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIIIBalanga" name="luzon" class="regionIII" value="makati">
+                                        <label for="regionIIIBalanga"> Balanga</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIIIMalolos" name="luzon" class="regionIII" value="makati">
+                                        <label for="regionIIIMalolos"> Malolos</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIIIMeycauayan" name="luzon" class="regionIII" value="makati">
+                                        <label for="regionIIIMeycauayan"> Meycauayan</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIIISanJosedelMonte" name="luzon" class="regionIII" value="makati">
+                                        <label for="regionIIISanJosedelMonte"> San Jose del Monte</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIIICabanatuan" name="luzon" class="regionIII" value="makati">
+                                        <label for="regionIIICabanatuan"> Cabanatuan</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIIIGapan" name="luzon" class="regionIII" value="makati">
+                                        <label for="regionIIIGapan"> Gapan</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIIIMuñoz" name="luzon" class="regionIII" value="makati">
+                                        <label for="regionIIIMuñoz"> Muñoz</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIIIPalayan" name="luzon" class="regionIII" value="makati">
+                                        <label for="regionIIIPalayan"> Palayan</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIIISanJose" name="luzon" class="regionIII" value="makati">
+                                        <label for="regionIIISanJose"> San Jose</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIIIAngelesCity" name="luzon" class="regionIII" value="makati">
+                                        <label for="regionIIIAngelesCity"> Angeles City</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIIIMabalacat" name="luzon" class="regionIII" value="makati">
+                                        <label for="regionIIIMabalacat"> Mabalacat</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIIISanFernando" name="luzon" class="regionIII" value="makati">
+                                        <label for="regionIIISanFernando"> San Fernando</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIIITarlac" name="luzon" class="regionIII" value="makati">
+                                        <label for="regionIIITarlac"> Tarlac </label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIIIOlongapo" name="luzon" class="regionIII" value="makati">
+                                        <label for="regionIIIOlongapo"> Olongapo </label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Region IV-A -->
+                            <div class="col-span-12 xl:col-span-6 ml-2 pb-3 text-xs text-gray-600 bg-gray-100 p-2 rounded-md mb-3 border-b-[1px] border-gray-300">
+                                <div class="flex items-start space-x-2">
+                                    <p class="font-medium mb-1 flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+                                        </svg>
+                                        &ensp;CALABARZON | Cities
+                                    </p>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="checkAllRegionIVA" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <label for="makati">Select All</label>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-12 gap-y-2">
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVAntipolo" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVAntipolo"> Antipolo</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVBacoor" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVBacoor"> Bacoor</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVBatangas" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVBatangas"> Batangas</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVBiñan" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVBiñan"> Biñan</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVCabuyao" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVCabuyao"> Cabuyao</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVCalamba" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVCalamba"> Calamba</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVCavite" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVCavite"> Cavite</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVDasmariñas" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVDasmariñas"> Dasmariñas</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVGeneralTrias" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVGeneralTrias"> General Trias</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVImus" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVImus"> Imus</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVLipa" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVLipa"> Lipa</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVLucena" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVLucena"> Lucena</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVSanPablo" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVSanPablo"> San Pablo</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVSanPedro" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVSanPedro"> San Pedro</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVSantaRosa" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVSantaRosa"> Santa Rosa</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVSantoTomas" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVSantoTomas"> Santo Tomas</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVTagaytay" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVTagaytay"> Tagaytay</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVTanauan" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVTanauan"> Tanauan</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVTayabas" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVTayabas"> Tayabas</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionIVTreceMartires" name="luzon" class="regionIVA" value="makati">
+                                        <label for="regionIVTreceMartires"> Trece Martires</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Region V -->
+                            <div class="col-span-12 xl:col-span-6 ml-2 pb-3 text-xs text-gray-600 bg-gray-100 p-2 rounded-md mb-3 border-b-[1px] border-gray-300">
+                                <div class="flex items-start space-x-2">
+                                    <p class="font-medium mb-1 flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+                                        </svg>
+                                        &ensp;Bicol Region | Cities
+                                    </p>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="checkAllRegionV" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <label for="makati">Select All</label>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-12 gap-y-2">
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionVLegazpi" name="luzon" class="regionV" value="makati">
+                                        <label for="regionVLegazpi"> Legazpi</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionVNaga" name="luzon" class="regionV" value="makati">
+                                        <label for="regionVNaga"> Naga</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionVIriga" name="luzon" class="regionV" value="makati">
+                                        <label for="regionVIriga"> Iriga</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionVTabaco" name="luzon" class="regionV" value="makati">
+                                        <label for="regionVTabaco"> Tabaco</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionVLigao" name="luzon" class="regionV" value="makati">
+                                        <label for="regionVLigao"> Ligao</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionVSorsogon" name="luzon" class="regionV" value="makati">
+                                        <label for="regionVSorsogon"> Sorsogon</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="regionVMasbate" name="luzon" class="regionV" value="makati">
+                                        <label for="regionVMasbate"> Masbate</label>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- NCR -->
+                            <div class="col-span-12 xl:col-span-6 ml-2 pb-3 text-xs text-gray-600 bg-gray-100 p-2 rounded-md mb-3 border-b-[1px] border-gray-300">
+                                <div class="flex items-start space-x-2">
+                                    <p class="font-medium mb-1 flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+                                        </svg>
+                                        &ensp;Nation Capital Region | Cities
+                                    </p>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="checkAllRegionNCR" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <label for="makati">Select All</label>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-12 gap-y-2">
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="NCRCaloocan" name="luzon" class="NCR" value="makati">
+                                        <label for="NCRCaloocan"> Caloocan</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="NCRMarikina" name="luzon" class="NCR" value="makati">
+                                        <label for="NCRMarikina"> Marikina</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="NCRMakati" name="luzon" class="NCR" value="makati">
+                                        <label for="NCRMakati"> Makati</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="NCRMandaluyong" name="luzon" class="NCR" value="makati">
+                                        <label for="NCRMandaluyong"> Mandaluyong</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="NCRMuntinlupa" name="luzon" class="NCR" value="makati">
+                                        <label for="NCRMuntinlupa"> Muntinlupa</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="NCRManila" name="luzon" class="NCR" value="makati">
+                                        <label for="NCRManila"> Manila</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="NCRNavotas" name="luzon" class="NCR" value="makati">
+                                        <label for="NCRNavotas"> Navotas</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="NCRMalabon" name="luzon" class="NCR" value="makati">
+                                        <label for="NCRMalabon"> Malabon</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="NCRValenzuela" name="luzon" class="NCR" value="makati">
+                                        <label for="NCRValenzuela"> Valenzuela</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="NCRPasay" name="luzon" class="NCR" value="makati">
+                                        <label for="NCRPasay"> Pasay</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="NCRPasig" name="luzon" class="NCR" value="makati">
+                                        <label for="NCRPasig"> Pasig</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="NCRParañaque" name="luzon" class="NCR" value="makati">
+                                        <label for="NCRParañaque"> Parañaque</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="NCRQuezon" name="luzon" class="NCR" value="makati">
+                                        <label for="NCRQuezon"> Quezon</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="NCRSanJuan" name="luzon" class="NCR" value="makati">
+                                        <label for="NCRSanJuan"> San Juan</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="NCRLasPiñas" name="luzon" class="NCR" value="makati">
+                                        <label for="NCRLasPiñas"> Las Piñas</label>
+                                    </div>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="NCRTaguig" name="luzon" class="NCR" value="makati">
+                                        <label for="NCRTaguig"> Taguig</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CAR -->
+                            <div class="col-span-12 xl:col-span-6 ml-2 pb-3 text-xs text-gray-600 bg-gray-100 p-2 rounded-md mb-3 border-b-[1px] border-gray-300">        
+                                <div class="flex items-start space-x-2">
+                                    <p class="font-medium mb-1 flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+                                        </svg>
+                                        &ensp;Cordillera Administrative Region | Cities
+                                    </p>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="checkAllRegionCAR" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <label for="makati">Select All</label>
+                                    </div>
+                                </div>
                             
-
-                            <div class="grid grid-cols-12 gap-y-2">
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIAlaminos" name="luzon" class="regionI" value="makati" checked>
-                                    <label for="regionIAlaminos"> Alaminos</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIBatac" name="luzon" class="regionI" value="makati">
-                                    <label for="regionIBatac"> Batac</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionICandon" name="luzon" class="regionI" value="makati">
-                                    <label for="regionICandon"> Candon</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionILaoag" name="luzon" class="regionI" value="makati">
-                                    <label for="regionILaoag"> Laoag</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionISanCarlos" name="luzon" class="regionI" value="makati">
-                                    <label for="regionISanCarlos"> San Carlos</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionISanFernando" name="luzon" class="regionI" value="makati">
-                                    <label for="regionISanFernando"> San Fernando</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIUrdaneta" name="luzon" class="regionI" value="makati">
-                                    <label for="regionIUrdaneta"> Urdaneta</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVigan" name="luzon" class="regionI" value="makati">
-                                    <label for="regionIVigan"> Vigan</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIDagupan" name="luzon" class="regionI" value="makati">
-                                    <label for="regionIDagupan"> Dagupan</label>
+                                <div class="grid grid-cols-12 gap-y-2">
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="CARBaguio" name="luzon" class="CAR" value="makati">
+                                        <label for="CARBaguio"> Baguio</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="CARTabuk" name="luzon" class="CAR" value="makati">
+                                        <label for="CARTabuk"> Tabuk</label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Region 2 -->
-                        <div class="ml-2 pb-3 text-xs text-gray-600 mb-3 border-b-[1px] border-gray-300">
-                            <p class="font-medium mb-1 flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
-                                  </svg>
-                                &ensp;Region II
-                            </p>
+                            <!-- MIMAROPA -->
+                            <div class="col-span-12 xl:col-span-6 ml-2 pb-3 text-xs text-gray-600 bg-gray-100 p-2 rounded-md mb-3 border-b-[1px] border-gray-300">
+                                <div class="flex items-start space-x-2">
+                                    <p class="font-medium mb-1 flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+                                        </svg>
+                                        &ensp;MIMAROPA Region | Cities
+                                    </p>
 
-                            <div class="grid grid-cols-12 gap-y-2">
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIICauayan" name="luzon" value="makati">
-                                    <label for="regionIICauayan"> Cauayan</label>
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="checkAllRegionMIMAROPA" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <label for="makati">Select All</label>
+                                    </div>
                                 </div>
                                 
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIIIlagan" name="luzon" value="makati">
-                                    <label for="regionIIIlagan"> Ilagan</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIISantiago" name="luzon" value="makati">
-                                    <label for="regionIISantiago"> Santiago</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIITuguegarao" name="luzon" value="makati">
-                                    <label for="regionIITuguegarao"> Tuguegarao</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Region 3 -->
-                        <div class="ml-2 pb-3 text-xs text-gray-600 mb-3 border-b-[1px] border-gray-300">
-                            <p class="font-medium mb-1 flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
-                                  </svg>
-                                &ensp;Region III
-                            </p>
-
-                            <div class="grid grid-cols-12 gap-y-2">
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIIIBalanga" name="luzon" value="makati">
-                                    <label for="regionIIIBalanga"> Balanga</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIIIMalolos" name="luzon" value="makati">
-                                    <label for="regionIIIMalolos"> Malolos</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIIIMeycauayan" name="luzon" value="makati">
-                                    <label for="regionIIIMeycauayan"> Meycauayan</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIIISanJosedelMonte" name="luzon" value="makati">
-                                    <label for="regionIIISanJosedelMonte"> San Jose del Monte</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIIICabanatuan" name="luzon" value="makati">
-                                    <label for="regionIIICabanatuan"> Cabanatuan</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIIIGapan" name="luzon" value="makati">
-                                    <label for="regionIIIGapan"> Gapan</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIIIMuñoz" name="luzon" value="makati">
-                                    <label for="regionIIIMuñoz"> Muñoz</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIIIPalayan" name="luzon" value="makati">
-                                    <label for="regionIIIPalayan"> Palayan</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIIISanJose" name="luzon" value="makati">
-                                    <label for="regionIIISanJose"> San Jose</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIIIAngelesCity" name="luzon" value="makati">
-                                    <label for="regionIIIAngelesCity"> Angeles City</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIIIMabalacat" name="luzon" value="makati">
-                                    <label for="regionIIIMabalacat"> Mabalacat</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIIISanFernando" name="luzon" value="makati">
-                                    <label for="regionIIISanFernando"> San Fernando</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIIITarlac" name="luzon" value="makati">
-                                    <label for="regionIIITarlac"> Tarlac </label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIIIOlongapo" name="luzon" value="makati">
-                                    <label for="regionIIIOlongapo"> Olongapo </label>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- Region IV-A -->
-                        <div class="ml-2 pb-3 text-xs text-gray-600 mb-3 border-b-[1px] border-gray-300">
-                            <p class="font-medium mb-1 flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
-                                  </svg>
-                                &ensp;Region IV-A (CALABARZON)
-                            </p>
-
-                            <div class="grid grid-cols-12 gap-y-2">
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVAntipolo" name="luzon" value="makati">
-                                    <label for="regionIVAntipolo"> Antipolo</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVBacoor" name="luzon" value="makati">
-                                    <label for="regionIVBacoor"> Bacoor</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVBatangas" name="luzon" value="makati">
-                                    <label for="regionIVBatangas"> Batangas</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVBiñan" name="luzon" value="makati">
-                                    <label for="regionIVBiñan"> Biñan</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVCabuyao" name="luzon" value="makati">
-                                    <label for="regionIVCabuyao"> Cabuyao</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVCalamba" name="luzon" value="makati">
-                                    <label for="regionIVCalamba"> Calamba</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVCavite" name="luzon" value="makati">
-                                    <label for="regionIVCavite"> Cavite</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVDasmariñas" name="luzon" value="makati">
-                                    <label for="regionIVDasmariñas"> Dasmariñas</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVGeneralTrias" name="luzon" value="makati">
-                                    <label for="regionIVGeneralTrias"> General Trias</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVImus" name="luzon" value="makati">
-                                    <label for="regionIVImus"> Imus</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVLipa" name="luzon" value="makati">
-                                    <label for="regionIVLipa"> Lipa</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVLucena" name="luzon" value="makati">
-                                    <label for="regionIVLucena"> Lucena</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVSanPablo" name="luzon" value="makati">
-                                    <label for="regionIVSanPablo"> San Pablo</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVSanPedro" name="luzon" value="makati">
-                                    <label for="regionIVSanPedro"> San Pedro</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVSantaRosa" name="luzon" value="makati">
-                                    <label for="regionIVSantaRosa"> Santa Rosa</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVSantoTomas" name="luzon" value="makati">
-                                    <label for="regionIVSantoTomas"> Santo Tomas</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVTagaytay" name="luzon" value="makati">
-                                    <label for="regionIVTagaytay"> Tagaytay</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVTanauan" name="luzon" value="makati">
-                                    <label for="regionIVTanauan"> Tanauan</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVTayabas" name="luzon" value="makati">
-                                    <label for="regionIVTayabas"> Tayabas</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionIVTreceMartires" name="luzon" value="makati">
-                                    <label for="regionIVTreceMartires"> Trece Martires</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Region V -->
-                        <div class="ml-2 pb-3 text-xs text-gray-600 mb-3 border-b-[1px] border-gray-300">
-                            <p class="font-medium mb-1 flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
-                                  </svg>
-                                &ensp;Region V
-                            </p>
-
-                            <div class="grid grid-cols-12 gap-y-2">
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionVLegazpi" name="luzon" value="makati">
-                                    <label for="regionVLegazpi"> Legazpi</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionVNaga" name="luzon" value="makati">
-                                    <label for="regionVNaga"> Naga</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionVIriga" name="luzon" value="makati">
-                                    <label for="regionVIriga"> Iriga</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionVTabaco" name="luzon" value="makati">
-                                    <label for="regionVTabaco"> Tabaco</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionVLigao" name="luzon" value="makati">
-                                    <label for="regionVLigao"> Ligao</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionVSorsogon" name="luzon" value="makati">
-                                    <label for="regionVSorsogon"> Sorsogon</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="regionVMasbate" name="luzon" value="makati">
-                                    <label for="regionVMasbate"> Masbate</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- NCR -->
-                        <div class="ml-2 pb-3 text-xs text-gray-600 mb-3 border-b-[1px] border-gray-300">
-                            <p class="font-medium mb-1 flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
-                                  </svg>
-                                &ensp;NCR
-                            </p>
-
-                            <div class="grid grid-cols-12 gap-y-2">
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="NCRCaloocan" name="luzon" value="makati">
-                                    <label for="NCRCaloocan"> Caloocan</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="NCRMarikina" name="luzon" value="makati">
-                                    <label for="NCRMarikina"> Marikina</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="NCRMakati" name="luzon" value="makati">
-                                    <label for="NCRMakati"> Makati</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="NCRMandaluyong" name="luzon" value="makati">
-                                    <label for="NCRMandaluyong"> Mandaluyong</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="NCRMuntinlupa" name="luzon" value="makati">
-                                    <label for="NCRMuntinlupa"> Muntinlupa</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="NCRManila" name="luzon" value="makati">
-                                    <label for="NCRManila"> Manila</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="NCRNavotas" name="luzon" value="makati">
-                                    <label for="NCRNavotas"> Navotas</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="NCRMalabon" name="luzon" value="makati">
-                                    <label for="NCRMalabon"> Malabon</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="NCRValenzuela" name="luzon" value="makati">
-                                    <label for="NCRValenzuela"> Valenzuela</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="NCRPasay" name="luzon" value="makati">
-                                    <label for="NCRPasay"> Pasay</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="NCRPasig" name="luzon" value="makati">
-                                    <label for="NCRPasig"> Pasig</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="NCRParañaque" name="luzon" value="makati">
-                                    <label for="NCRParañaque"> Parañaque</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="NCRQuezon" name="luzon" value="makati">
-                                    <label for="NCRQuezon"> Quezon</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="NCRSanJuan" name="luzon" value="makati">
-                                    <label for="NCRSanJuan"> San Juan</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="NCRLasPiñas" name="luzon" value="makati">
-                                    <label for="NCRLasPiñas"> Las Piñas</label>
-                                </div>
-
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="NCRTaguig" name="luzon" value="makati">
-                                    <label for="NCRTaguig"> Taguig</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- CAR -->
-                        <div class="ml-2 pb-3 text-xs text-gray-600 mb-3 border-b-[1px] border-gray-300">
-                            <p class="font-medium mb-1 flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
-                                  </svg>
-                                &ensp;CAR
-                            </p>
-
-                            <div class="grid grid-cols-12 gap-y-2">
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="CARBaguio" name="luzon" value="makati">
-                                    <label for="CARBaguio"> Baguio</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="CARTabuk" name="luzon" value="makati">
-                                    <label for="CARTabuk"> Tabuk</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- MIMAROPA -->
-                        <div class="ml-2 pb-3 text-xs text-gray-600 mb-3 border-b-[1px] border-gray-300">
-                            <p class="font-medium mb-1 flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
-                                  </svg>
-                                &ensp;MIMAROPA
-                            </p>
-
-                            <div class="grid grid-cols-12 gap-y-2">
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="MIMAROPACalapan" name="luzon" value="makati">
-                                    <label for="MIMAROPACalapan"> Calapan</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="MIMAROPAPuertoPrincesa" name="luzon" value="makati">
-                                    <label for="MIMAROPAPuertoPrincesa"> Puerto Princesa</label>
+                                <!-- Cities -->
+                                <div class="grid grid-cols-12 gap-y-2">
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="MIMAROPACalapan" name="luzon" class="MIMAROPARegion" value="makati">
+                                        <label for="MIMAROPACalapan"> Calapan</label>
+                                    </div>
+                                    
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="MIMAROPAPuertoPrincesa" name="luzon" class="MIMAROPARegion" value="makati">
+                                        <label for="MIMAROPAPuertoPrincesa"> Puerto Princesa</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>  
 
                     <!-- Visayas -->
-                    <div class="col-span-12 2xl:col-span-4" id="luzonDiv">
+                    <div class="col-span-12 2xl:col-span-12 mt-3">
                         <div class="flex items-center justify-between">
                             <p class="font-semibold flex items-center mb-2">
                                 Visayas&ensp;
@@ -703,7 +756,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
                                   </svg>
-                                &ensp;Region VI
+                                &ensp;Western Visayas | Cities
                             </p>
 
                             <div class="grid grid-cols-12 gap-y-2">
@@ -795,7 +848,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
                                   </svg>
-                                &ensp;Region VII
+                                &ensp;Central Visayas | Cities
                             </p>
 
                             <div class="grid grid-cols-12 gap-y-2">
@@ -825,58 +878,58 @@
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Lapu-Lapu</label>
+                                    <input type="checkbox" id="regionVIILapuLapu" name="visayas" value="makati">
+                                    <label for="regionVIILapuLapu"> Lapu-Lapu</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Mandaue</label>
+                                    <input type="checkbox" id="regionVIIMandaue" name="visayas" value="makati">
+                                    <label for="regionVIIMandaue"> Mandaue</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Naga</label>
+                                    <input type="checkbox" id="regionVIINaga" name="visayas" value="makati">
+                                    <label for="regionVIINaga"> Naga</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Talisay</label>
+                                    <input type="checkbox" id="regionVIITalisay" name="visayas" value="makati">
+                                    <label for="regionVIITalisay"> Talisay</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Bais</label>
+                                    <input type="checkbox" id="regionVIIBais" name="visayas" value="makati">
+                                    <label for="regionVIIBais"> Bais</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Bayawan</label>
+                                    <input type="checkbox" id="regionVIIBayawan" name="visayas" value="makati">
+                                    <label for="regionVIIBayawan"> Bayawan</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Canlaon</label>
+                                    <input type="checkbox" id="regionVIICanlaon" name="visayas" value="makati">
+                                    <label for="regionVIICanlaon"> Canlaon</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Dumaguete</label>
+                                    <input type="checkbox" id="regionVIIDumaguete" name="visayas" value="makati">
+                                    <label for="regionVIIDumaguete"> Dumaguete</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Guihulngan</label>
+                                    <input type="checkbox" id="regionVIIGuihulngan" name="visayas" value="makati">
+                                    <label for="regionVIIGuihulngan"> Guihulngan</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Tanjay</label>
+                                    <input type="checkbox" id="regionVIITanjay" name="visayas" value="makati">
+                                    <label for="regionVIITanjay"> Tanjay</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Toledo</label>
+                                    <input type="checkbox" id="regionVIIToledo" name="visayas" value="makati">
+                                    <label for="regionVIIToledo"> Toledo</label>
                                 </div>
                             </div>
                         </div>
@@ -887,50 +940,50 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
                                   </svg>
-                                &ensp;Region VI
+                                &ensp;Eastern Visayas | Cities
                             </p>
 
                             <div class="grid grid-cols-12 gap-y-2">
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Borongan</label>
+                                    <input type="checkbox" id="regionVIBorongan" name="visayas" value="makati">
+                                    <label for="regionVIBorongan"> Borongan</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Baybay</label>
+                                    <input type="checkbox" id="regionVIBaybay" name="visayas" value="makati">
+                                    <label for="regionVIBaybay"> Baybay</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Ormoc</label>
+                                    <input type="checkbox" id="regionVIOrmoc" name="visayas" value="makati">
+                                    <label for="regionVIOrmoc"> Ormoc</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Tacloban</label>
+                                    <input type="checkbox" id="regionVITacloban" name="visayas" value="makati">
+                                    <label for="regionVITacloban"> Tacloban</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Calbayog</label>
+                                    <input type="checkbox" id="regionVICalbayog" name="visayas" value="makati">
+                                    <label for="regionVICalbayog"> Calbayog</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Catbalogan</label>
+                                    <input type="checkbox" id="regionVICatbalogan" name="visayas" value="makati">
+                                    <label for="regionVICatbalogan"> Catbalogan</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="visayas" value="makati">
-                                    <label for="vehicle3"> Maasin</label>
+                                    <input type="checkbox" id="regionVIMaasin" name="visayas" value="makati">
+                                    <label for="regionVIMaasin"> Maasin</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Mindanao -->
-                    <div class="col-span-12 2xl:col-span-4" id="luzonDiv">
+                    <div class="col-span-12 2xl:col-span-12" id="luzonDiv">
                         <div class="flex items-center justify-between">
                             <p class="font-semibold flex items-center mb-2">
                                 Mindanao&ensp;
@@ -953,32 +1006,32 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
                                   </svg>
-                                &ensp;Region IX
+                                &ensp;Zamboanga Peninsula | Cities
                             </p>
 
                             <div class="grid grid-cols-12 gap-y-2">
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Isabela</label>
+                                    <input type="checkbox" id="regionIXIsabela" name="mindanao" value="makati">
+                                    <label for="regionIXIsabela"> Isabela</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Dapitan</label>
+                                    <input type="checkbox" id="regionIXDapitan" name="mindanao" value="makati">
+                                    <label for="regionIXDapitan"> Dapitan</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Dipolog</label>
+                                    <input type="checkbox" id="regionIXDipolog" name="mindanao" value="makati">
+                                    <label for="regionIXDipolog"> Dipolog</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Pagadian</label>
+                                    <input type="checkbox" id="regionIXPagadian" name="mindanao" value="makati">
+                                    <label for="regionIXPagadian"> Pagadian</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
+                                    <input type="checkbox" id="regionIXZamboanga" name="mindanao" value="makati">
                                     <label for="vehicle3"> Zamboanga</label>
                                 </div>
                             </div>
@@ -990,53 +1043,53 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
                                   </svg>
-                                &ensp;Region X
+                                &ensp;Northern Mindanao | Cities
                             </p>
 
                             <div class="grid grid-cols-12 gap-y-2">
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Malaybalay</label>
+                                    <input type="checkbox" id="regionXMalaybalay" name="mindanao" value="makati">
+                                    <label for="regionXMalaybalay"> Malaybalay</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Valencia</label>
+                                    <input type="checkbox" id="regionXValencia" name="mindanao" value="makati">
+                                    <label for="regionXValencia"> Valencia</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Iligan</label>
+                                    <input type="checkbox" id="regionXIligan" name="mindanao" value="makati">
+                                    <label for="regionXIligan"> Iligan</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Oroquieta</label>
+                                    <input type="checkbox" id="regionXOroquieta" name="mindanao" value="makati">
+                                    <label for="regionXOroquieta"> Oroquieta</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Ozamiz</label>
+                                    <input type="checkbox" id="regionXOzamiz" name="mindanao" value="makati">
+                                    <label for="regionXOzamiz"> Ozamiz</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Tangub</label>
+                                    <input type="checkbox" id="regionXTangub" name="mindanao" value="makati">
+                                    <label for="regionXTangub"> Tangub</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Cagayan de Oro</label>
+                                    <input type="checkbox" id="regionXCagayandeOro" name="mindanao" value="makati">
+                                    <label for="regionXCagayandeOro"> Cagayan de Oro</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> El Salvador</label>
+                                    <input type="checkbox" id="regionXElSalvador" name="mindanao" value="makati">
+                                    <label for="regionXElSalvador"> El Salvador</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Gingoog</label>
+                                    <input type="checkbox" id="regionXGingoog" name="mindanao" value="makati">
+                                    <label for="regionXGingoog"> Gingoog</label>
                                 </div>
                             </div>
                         </div>
@@ -1047,38 +1100,38 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
                                   </svg>
-                                &ensp;Region XI
+                                &ensp;Davao Region | Cities
                             </p>
 
                             <div class="grid grid-cols-12 gap-y-2">
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Panabo</label>
+                                    <input type="checkbox" id="regionXIPanabo" name="mindanao" value="makati">
+                                    <label for="regionXIPanabo"> Panabo</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Samal</label>
+                                    <input type="checkbox" id="regionXISamal" name="mindanao" value="makati">
+                                    <label for="regionXISamal"> Samal</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Tagum</label>
+                                    <input type="checkbox" id="regionXITagum" name="mindanao" value="makati">
+                                    <label for="regionXITagum"> Tagum</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Davao</label>
+                                    <input type="checkbox" id="regionXIDavao" name="mindanao" value="makati">
+                                    <label for="regionXIDavao"> Davao</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Digos</label>
+                                    <input type="checkbox" id="regionXIDigos" name="mindanao" value="makati">
+                                    <label for="regionXIDigos"> Digos</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Mati</label>
+                                    <input type="checkbox" id="regionXIMati" name="mindanao" value="makati">
+                                    <label for="regionXIMati"> Mati</label>
                                 </div>
                             </div>
                         </div>
@@ -1089,33 +1142,28 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
                                   </svg>
-                                &ensp;Region XII
+                                &ensp;SOCCSKSARGEN | Cities
                             </p>
 
                             <div class="grid grid-cols-12 gap-y-2">
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Kidapawan</label>
+                                    <input type="checkbox" id="regionXIIKidapawan" name="mindanao" value="makati">
+                                    <label for="regionXIIKidapawan"> Kidapawan</label>
+                                </div>
+                                                               
+                                <div class="col-span-4">
+                                    <input type="checkbox" id="regionXIIGeneralSantos" name="mindanao" value="makati">
+                                    <label for="regionXIIGeneralSantos"> General Santos</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Cotabato</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> General Santos</label>
-                                </div>
-                                
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Koronadal</label>
+                                    <input type="checkbox" id="regionXIIKoronadal" name="mindanao" value="makati">
+                                    <label for="regionXIIKoronadal"> Koronadal</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Tacurong</label>
+                                    <input type="checkbox" id="regionXIITacurong" name="mindanao" value="makati">
+                                    <label for="regionXIITacurong"> Tacurong</label>
                                 </div>
                             </div>
                         </div>
@@ -1126,65 +1174,79 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
                                   </svg>
-                                &ensp;Region XII
+                                &ensp;Bangsamoro Autonomous Region in Muslim Mindanao | Cities
                             </p>
 
                             <div class="grid grid-cols-12 gap-y-2">
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Cotabato</label>
+                                    <input type="checkbox" id="BARMMCotabato" name="mindanao" value="makati">
+                                    <label for="BARMMCotabato"> Cotabato</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Lamitan</label>
+                                    <input type="checkbox" id="BARMMLamitan" name="mindanao" value="makati">
+                                    <label for="BARMMLamitan"> Lamitan</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Marawi</label>
+                                    <input type="checkbox" id="BARMMMarawi" name="mindanao" value="makati">
+                                    <label for="BARMMMarawi"> Marawi</label>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Region XIII -->
                         <div class="ml-2 pb-3 text-xs text-gray-600 mb-3 border-b-[1px] border-gray-300">
-                            <p class="font-medium mb-1 flex items-center">
+                            <!-- <p class="font-medium mb-1 flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
                                   </svg>
-                                &ensp;Region XIII
-                            </p>
+                                &ensp;Caraga | Cities
+                            </p> -->
+
+                                <div class="flex items-start space-x-2">
+                                    <p class="font-medium mb-1 flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+                                        </svg>
+                                        &ensp;Caraga | Cities
+                                    </p>
+
+                                    <div class="col-span-4">
+                                        <input type="checkbox" id="checkAllRegionI" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <label for="makati">Select All</label>
+                                    </div>
+                                </div>
 
                             <div class="grid grid-cols-12 gap-y-2">
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Butuan</label>
+                                    <input type="checkbox" id="regionXIIIButuan" name="mindanao" value="makati">
+                                    <label for="regionXIIIButuan"> Butuan</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Cabadbaran</label>
+                                    <input type="checkbox" id="regionXIIICabadbaran" name="mindanao" value="makati">
+                                    <label for="regionXIIICabadbaran"> Cabadbaran</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Bayugan</label>
+                                    <input type="checkbox" id="regionXIIIBayugan" name="mindanao" value="makati">
+                                    <label for="regionXIIIBayugan"> Bayugan</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Surigao</label>
+                                    <input type="checkbox" id="regionXIIISurigao" name="mindanao" value="makati">
+                                    <label for="regionXIIISurigao"> Surigao</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Bislig</label>
+                                    <input type="checkbox" id="regionXIIIBislig" name="mindanao" value="makati">
+                                    <label for="regionXIIIBislig"> Bislig</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="mindanao" value="makati">
-                                    <label for="vehicle3"> Tandag</label>
+                                    <input type="checkbox" id="regionXIIITandag" name="mindanao" value="makati">
+                                    <label for="regionXIIITandag"> Tandag</label>
                                 </div>
                             </div>
                         </div>

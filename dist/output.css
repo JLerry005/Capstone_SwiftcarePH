@@ -1431,6 +1431,10 @@ input:checked + .toggle-bg{
   grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
+.grid-cols-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .flex-row{
   flex-direction: row;
 }
@@ -1504,6 +1508,11 @@ input:checked + .toggle-bg{
 
 .gap-y-4{
   row-gap: 1rem;
+}
+
+.gap-x-3{
+  -moz-column-gap: 0.75rem;
+       column-gap: 0.75rem;
 }
 
 .space-x-6 > :not([hidden]) ~ :not([hidden]){
@@ -1656,6 +1665,10 @@ input:checked + .toggle-bg{
 
 .rounded-none{
   border-radius: 0px;
+}
+
+.rounded-sm{
+  border-radius: 0.125rem;
 }
 
 .rounded-r-none{
@@ -3777,6 +3790,10 @@ input:checked + .toggle-bg{
     grid-column: span 1 / span 1;
   }
 
+  .xl\:col-span-6{
+    grid-column: span 6 / span 6;
+  }
+
   .xl\:row-span-1{
     grid-row: span 1 / span 1;
   }
@@ -3928,6 +3945,10 @@ input:checked + .toggle-bg{
 
   .\32xl\:col-span-2{
     grid-column: span 2 / span 2;
+  }
+
+  .\32xl\:col-span-12{
+    grid-column: span 12 / span 12;
   }
 
   .\32xl\:col-start-1{
