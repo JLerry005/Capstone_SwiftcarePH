@@ -201,3 +201,23 @@
         $("#filter-content").toggle(340);
     });
 
+    $("#close-filter-options").click(function () {
+        $("#filter-content").toggle(340);
+    });
+
+    // Checkbox - Select All From Luzon
+    function toggle(source) {
+        checkboxes = document.getElementsByName('luzon');
+        for(var i=0, n=checkboxes.length;i<n;i++) {
+          checkboxes[i].checked = source.checked;
+        }
+    }
+
+    // Check All Region 1
+    document.getElementById('checkAllRegionI').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionI');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+

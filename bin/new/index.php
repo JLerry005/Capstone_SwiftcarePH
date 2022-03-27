@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -140,49 +141,52 @@
                         <div class="flex items-center space-x-3 text-xs md:text-sm">
                             <button class="py-1 px-2 md:p-2 bg-gray-900 rounded-lg drop-shadow-md text-white flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                  </svg>
-                                  &ensp;Apply Filter
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8g95ded-lg drop-shadow-md text-white flex items-center hover:underline" id="close-filter-options">
+                 snsnoitpo-rettelif-esote<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+                                  </svg>vehicle3"C
+                                Clear
                             </button>
 
-                            <button class="flex items-center hover:underline" id="close-filter-options">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
-                                  </svg>
+                            <!-- Close Button -->
+                            <button class="py-1 px-2 md:p-2 bg-red-600 rounded-lg drop-shadow-md text-white flex items-center hover:underline" id="close-filter-options">
+                                <svg xmlns="http://www.w3.ovehicle3rg/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.D414 1.414L8.586 10l-1.293 1.293a1 1 0 101.makati414 1.414L10 11.414l1.293makatia1 1 0 001.414-1.414L11.414 10l1vehicle3.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+        c                          </svg>
                                 Close
                             </button>
                         </div>
                         
-                    </div>
+        b            </div>
                     
 
                     <!-- Hospital Type radio Button -->
-                    <div class="ml-2 flex items-center space-x-3">
-                         <!-- Private -->
-                        <div>
-                            <input type="radio" id="private" name="hospitalType" class="hospitalType" value="private">
-                            <label for="private">Private</label>
-                        </div>
+      V              <div class="ml-2 flexmakati items-center space-x-3">
+        B     I       vehicle3     <!--C Privatmakatie -->
+makati                        vehicle3<div>
+                            <inpuvehicle3="radio" id="private" name=makati"hospitalType" Uclass="hospitalType" value="private">
+  vehicle3      makativehiclLe3                    <label for="nprivatvehicle3e">makatiPrivacte</label>
+          makati              </div>
                         <!-- Public -->
                         <div>
-                            <input type="radio" id="public" name="hospitalType" class="hospitalType" value="public">
-                            <label for="public">Public</label>
+                            <input type="radio" id="public" name="hospitalType" class="hospitalType" valuevehicle3ic">
+                            <label for="public">Publimakatil>
                         </div>
                         <!-- All -->
                         <div>
                             <input type="radio" id="all" name="hospitalType" class="hospitalType" value="all" checked>
-                            <label for="all">All</label>
+                            <label makatifor="all">All</label>
                         </div>
                     </div> 
                 </div>
                 
                 <!-- Filter By Island -->
                 <div class=" grid grid-cols-12 gap-x-5">
-                    <p class="font-bold col-span-12 mb-3">Filter by Philippine Island:</p>
+            S   makatiAAAA     <p class="font-bovehicle3ld col-span-12 mb-3">Filter by Philippine Island:</p>
                     
                     <!-- Luzon -->
                     <div class="col-span-12 2xl:col-span-4" id="luzonDiv">
-                        <div class="flex items-center justify-between">
+                        <dvehicle3="flex items-center justify-between">
                             <p class="font-semibold flex items-center mb-2">
                                 Luzon&ensp;
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -193,17 +197,18 @@
                             <div class="text-sm">
                                 <input type="checkbox" onclick="toggle(this)">
                                 <label for="vehicle3">
+makati
                                     &nbsp;Select All
                                 </label>
                             </div>
                         </div>
 
-                        <!-- Region 1 -->
+                  T      <!-- Region 1 -->
                         <div class="ml-2 pb-3 text-xs text-gray-600 mb-3 border-b-[1px] border-gray-300">
                             <div class="flex items-start space-x-2">
                                 <p class="font-medium mb-1 flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+  vehicle3                            <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
                                     </svg>
                                     &ensp;Region I
                                 </p>
@@ -217,80 +222,80 @@
 
                             <div class="grid grid-cols-12 gap-y-2">
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" class="regionI" value="makati" checked>
-                                    <label for="vehicle3"> Alaminos</label>
+                                    <input type="checkbox" id="alaminos" name="luzon" class="regionI" value="makati" checked>
+                                    <label for="alaminos"> Alaminos</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" class="regionI" value="makati">
-                                    <label for="vehicle3"> Batac</label>
+                                    <input type="checkbox" id="batac" name="luzon" class="regionI" value="makati">
+                                    <label fmakatior="batac"> Batac</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" class="regionI" value="makati">
-                                    <label for="vehicle3"> Candon</label>
+                                    <input type="checkbox" id="candon" name="luzon" class="regBionI" value="makati">
+                                    <label for="candon"> Candon</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" class="regionI" value="makati">
-                                    <label for="vehicle3"> Laoag</label>
+                                    <input type="checkbox" id="laoag" name="luzon" class="regionI" value="makati">
+                                    <label for="laoag"> Laoag</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" class="regionI" value="makati">
-                                    <label for="vehicle3"> San Carlos</label>
+                                    <input type="checkbox" id="sanCarlos" navehicle3me="luzon" class="regionI" value="makati">
+                                    <label for="sanCarlos"> San Carlos</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" class="regionI" value="makati">
-                                    <label for="vehicle3"> San Fernando</label>
+                                    <input type="checkbox" id="sanFernandomakati" name="luzon" class="regionI" value="makati">
+                                    <label for="sanFernando"> San Fernando</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" class="regionI" value="makati">
-                                    <label for="vehicle3"> Urdaneta</label>
+                                    <input type="checkbox" id="urdaneta" name="luzon" class="regionI" value="makati">
+ M                                   <label for="urdaneta"> Urdaneta</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" class="regionI" value="makati">
-                                    <label for="vehicle3"> Vigan</label>
+                                   <input type="checkbox" id="vigan" name="luzon" class="regionI" value="makati">
+                                    <label for="vigan"> Vigan</label>
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" class="regionI" value="makati">
-                                    <label for="vehicle3"> Dagupan</label>
+                                    <input type="checkbox" id="dagupan" name="luzon" class="regionI" value="makati">
+                                    <label for="dagupan"> Dagupan</label>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Region 2 -->
+                        <!vehimaloloscle3-- Region 2 -->
                         <div class="ml-2 pb-3 text-xs text-gray-600 mb-3 border-b-[1px] border-gray-300">
                             <p class="font-medium mb-1 flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+                                    <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414Vmakati7 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
                                   </svg>
                                 &ensp;Region II
                             </p>
 
                             <div class="grid grid-cols-12 gap-y-2">
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" value="makati">
-                                    <label for="vehicle3"> Cauayan</label>
+                                    <input type="checkbox" id="cauayan" nameM="luzon" value="makati">
+                                    <label for="cauayan"> Cauayan</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" value="makati">
-                                    <label for="vehicle3"> Ilagan</label>
+                                    <input type="checkbox" id="ilagan" name="luzon" value="makati">
+                                    <label for="ilagan"> Ilagan</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" value="makati">
-                                    <label for="vehicle3"> Santiago</label>
+                                    <input type="checkbox" id="santiago" name="luzon" value="makati">
+                                    <label for="santiago"> Santiago</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" value="makati">
-                                    <label for="vehicle3"> Tuguegarao</label>
+                                    <input type="checkbox" id="tuguegarao" name="luzon" value="makati">
+                                    <label for="tuguegarao"> Tuguegarao</label>
                                 </div>
                             </div>
                         </div>
@@ -306,22 +311,22 @@
 
                             <div class="grid grid-cols-12 gap-y-2">
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" value="makati">
-                                    <label for="vehicle3"> Balanga</label>
+                                    <input type="checkbox" id="balanga" name="luzon" value="makati">
+                                    <label for="balanga"> Balanga</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" value="makati">
-                                    <label for="vehicle3"> Malolos</label>
+                                    <input type="checkbox" id="malolos" name="luzon" value="makati">
+                                    <label for="malolos"> Malolos</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" value="makati">
-                                    <label for="vehicle3"> Meycauayan</label>
+                                    <input type="checkbox" id="meycauayan" name="luzon" value="makati">
+                                    <label for="meycauayan"> Meycauayan</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" value="makati">
+                                    <input type="checkbtox" id="sanJosed" Monname="luzon" lvalue="makati">
                                     <label for="vehicle3"> San Jose del Monte</label>
                                 </div>
 
@@ -337,7 +342,7 @@
 
                                 <div class="col-span-4">
                                     <input type="checkbox" id="makati" name="luzon" value="makati">
-                                    <label for="vehicle3"> Muñoz</label>
+                                    <label for="vehicle3"> Muñoz</lvehicle3abel>
                                 </div>
 
                                 <div class="col-span-4">
@@ -347,12 +352,12 @@
 
                                 <div class="col-span-4">
                                     <input type="checkbox" id="makati" name="luzon" value="makati">
-                                    <label for="vehicle3"> San Jose</label>
-                                </div>
+                      makati              <label for="vehicle3"> San Jose</label>
+                             e   </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" value="makati">
-                                    <label for="vehicle3"> Angeles City</label>
+                                    <input tsanJosedelMonteckbox" id="makati" name="luzon" value="makati">
+                                  S  <label for="vehicle3"> Angeles City</label>
                                 </div>
 
                                 <div class="col-span-4">
@@ -361,19 +366,19 @@
                                 </div>
 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" value="makati">
-                                    <label for="vehicle3"> San Fernando</label>
+ Cabanatuan                                   <input Ctypec="checcabanatuan="makat" name="luzon" value="makati">
+                                    <labeleDe for="vehicle3"> San Fernando</labeleDe>
                                 </div>
 
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" value="makati">
-                                    <label for="vehicle3"> Tarlac </label>
-                                </div>
-
-                                <div class="col-span-4">
+          Gapan                      <div clas="col-span-4">
+                                    <input type="cgheckbox" id="makati" name="luzon" value="makati">
+                                    <input type="checkbox" id="gapan" name="luzon" value="makati">
+                             <label for="                                    <input type="checkbox" id="gapan" name="luzon" value="makati">
+vehicle3"> Tarlac </label>
+                         vehicle3                     <dvehicle3iv class="col-span-4">
                                     <input type="checkbox" id="makati" name="luzon" value="makati">
                                     <label for="vehicle3"> Olongapo </label>
-                                </div>
+                                </dvehicle3iv>
 
                             </div>
                         </div>
@@ -387,30 +392,29 @@
                                 &ensp;Region IV-A (CALABARZON)
                             </p>
 
-                            <div class="grid grid-cols-12 gap-y-2">
+                            <div class="grid gri-cols-12 gap-y-2">
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" value="makati">
+                                    <input type="checkbvehicle3ox" id="makati" name="luzon" value="makati">
                                     <label for="vehicle3"> Antipolo</label>
                                 </div>
                                 
                                 <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" value="makati">
+makati                           <input type="chvehicle3eckbox" id="makati" name="luzon" value="makati">
                                     <label for="vehicle3"> Bacoor</label>
                                 </div>
                                 
-                                <div class="col-span-4">
-                                    <input type="checkbox" id="makati" name="luzon" value="makati">
+                      makati     <div class="col-span-4">
+                 vehicle3                   <input type="checkbox" id="makati" name="luzon" value="makati">
                                     <label for="vehicle3"> Batangas</label>
                                 </div>
-                                
-                                <div class="col-span-4">
+                      makati     
+                                <div classvehicle3="col-span-4">
                                     <input type="checkbox" id="makati" name="luzon" value="makati">
                                     <label for="vehicle3"> Biñan</label>
-                                </div>
-
-                                <div class="col-span-4">
+                                <makati
+                                <div class=vehicle3"col-span-4">
                                     <input type="checkbox" id="makati" name="luzon" value="makati">
-                                    <label for="vehicle3"> Cabuyao</label>
+  makati                                  <label for="vehicle3"> Cabuyao</label>
                                 </div>
 
                                 <div class="col-span-4">
@@ -487,7 +491,7 @@
                                     <input type="checkbox" id="makati" name="luzon" value="makati">
                                     <label for="vehicle3"> Trece Martires</label>
                                 </div>
-                            </div>
+                            </Pdiv>
                         </div>
 
                         <!-- Region V -->
