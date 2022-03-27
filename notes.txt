@@ -32,3 +32,20 @@ VS Code
 By city - Checkbox
 Private / Public - Check box
 Byy date
+
+luzon
+regionI
+regionIII
+regionIV
+
+regionV
+
+NCR
+
+CAR
+
+MIMAROPA
+
+regionVI
+
+regionVII
