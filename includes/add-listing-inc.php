@@ -6,7 +6,7 @@
     // $hospitalName = $_POST['hospitalName'];
     $location = $_POST['location'];
     $description = $_POST['description'];
-    $city = $_POST['city'];
+    $hospitalCity = $_POST['hospitalCity'];
     // $type = $_POST['hospitalType'];
     $bed = $_POST['bed'];
     $bedSlot = $_POST['bedSlot'];
@@ -31,7 +31,7 @@
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "ssssisissi", $location, $description, $city, $bed, $bedSlot, $room, $roomSlot, $refferal, $websiteLink, $hospitalID);
+    mysqli_stmt_bind_param($stmt, "ssssisissi", $location, $description, $hospitalCity, $bed, $bedSlot, $room, $roomSlot, $refferal, $websiteLink, $hospitalID);
     mysqli_stmt_execute($stmt); 
     mysqli_stmt_close($stmt);
 

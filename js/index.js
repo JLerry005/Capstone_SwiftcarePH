@@ -195,11 +195,10 @@
     }
 
     // Filter Ajax Funtion
-
-
+    document.getElementById("discard-changes").disabled = true; 
     $("#apply-filter-button").click(function () {
         // alert("Working!");
-
+        document.getElementById("discard-changes").disabled = false; 
         $.ajax({
             method: "POST",
             url: "includes/filter-list-inc.php",
@@ -299,16 +298,67 @@
 
 
                 // --------------------------- Visayas ----------------------------------- //
-                
 
-                // -------- RegionVI -------- //
+                // ------------- RegionVI ------------ //
 
+                victorias:$('#regionVIVictorias:checkbox:checked').val(),
+                talisay:$('#regionVITalisay:checkbox:checked').val(),
+                sipalay:$('#regionVISipalay:checkbox:checked').val(),
+                silay:$('#regionVISilay:checkbox:checked').val(),
+                sanCarlos:$('#regionVISanCarlos:checkbox:checked').val(),
+                sagay:$('#regionVISagay:checkbox:checked').val(),
+                carlota:$('#regionVILaCarlota:checkbox:checked').val(),
+                kabankalan:$('#regionVIKabankalan:checkbox:checked').val(),
+                himamaylan:$('#regionVIHimamaylan:checkbox:checked').val(),
+                escalante:$('#regionVIEscalante:checkbox:checked').val(),
+                cadiz:$('#regionVICadiz:checkbox:checked').val(),
+                bago:$('#regionVIBago:checkbox:checked').val(),
+                bacolod:$('#regionVIBacolod:checkbox:checked').val(),
+                calapan:$('#regionVIPassi:checkbox:checked').val(),
+                iloilo:$('#regionVIIloilo:checkbox:checked').val(),
+                roxas:$('#regionVIRoxas:checkbox:checked').val(),
+
+                // ------------- RegionVII ------------ //
+                toledo:$('#regionVIIToledo:checkbox:checked').val(),
+                tanjay:$('#regionVIITanjay:checkbox:checked').val(),
+                guihulngan:$('#regionVIIGuihulngan:checkbox:checked').val(),
+                dumaguete:$('#regionVIIDumaguete:checkbox:checked').val(),
+                canlaon:$('#regionVIICanlaon:checkbox:checked').val(),
+                bayawan:$('#regionVIIBayawan:checkbox:checked').val(),
+                bais:$('#regionVIIBais:checkbox:checked').val(),
+                talisay:$('#regionVIITalisay:checkbox:checked').val(),
+                naga:$('#regionVIINaga:checkbox:checked').val(),
+                mandaue:$('#regionVIIMandaue:checkbox:checked').val(),
+                lapuLapu:$('#regionVIILapuLapu:checkbox:checked').val(),
+                danaoati:$('#regionVIIDanaoati:checkbox:checked').val(),
+                cebu:$('#regionVIICebu:checkbox:checked').val(),
+                carcar:$('#regionVIICarcar:checkbox:checked').val(),
+                bogo:$('#regionVIIBogo:checkbox:checked').val(),
+                tagbilaran:$('#regionVIITagbilaran:checkbox:checked').val(),
+
+                // ------------- Region VIII --------- //
+
+                maasin:$('#regionVIIIMaasin:checkbox:checked').val(),
+                catbalogan:$('#regionVIIICatbalogan:checkbox:checked').val(),
+                calbayog:$('#regionVIIICalbayog:checkbox:checked').val(),
+                tacloban:$('#regionVIIITacloban:checkbox:checked').val(),
+                ormoc:$('#regionVIIIOrmoc:checkbox:checked').val(),
+                baybay:$('#regionVIIIBaybay:checkbox:checked').val(),
+                borongan:$('#regionVIIIBorongan:checkbox:checked').val(),
+
+                // --------------------------- Mindanao ----------------------------------- //
+
+                // ------------- Region IX --------- //
 
                 // -------------------------- Hospital Type ---------------------------- //
                 hospitalType:$(".hospitalType:checked").val()
 
             },
+            beforeSend: function () {
+                $("#filter-loader").show();  
+            },
             success: function (data) {
+                $("#filter-loader").hide();
                 // console.log(data);
                 // allListing.innerHTML = data;
                 let filteredData = JSON.parse(data);
@@ -431,6 +481,11 @@
         });
     });
 
+    // Discard Changes
+    $("#discard-changes").click(function () {
+        showAllLisitng();
+    });
+
     // Toggle Filter Button
     $("#filter-content").hide();
 
@@ -442,9 +497,28 @@
         $("#filter-content").toggle(340);
     });
 
+    $("#luzon-region-checkbox").hide();
+    $("#visayas-region-checkbox").show();
+    $("#mindanao-region-checkbox").hide();
+    // --------------------------------
+    // Toggle Luzon Contents
     $("#luzon-toggle-button").click(function () {
         $("#luzon-region-checkbox").toggle(340);
+        $(".luzon-dropdown-icon").toggleClass("bi-chevron-up bi-chevron-down");
     });
+
+    // Toggle Visayas Contents
+    $("#visayas-toggle-button").click(function () {
+        $("#visayas-region-checkbox").toggle(340);
+        $(".visayas-dropdown-icon").toggleClass("bi-chevron-up bi-chevron-down");
+    });
+
+    // Toggle Mindanao Contents
+    $("#mindanao-toggle-button").click(function () {
+        $("#mindanao-region-checkbox").toggle(340);
+        $(".mindanao-dropdown-icon").toggleClass("bi-chevron-up bi-chevron-down");
+    });
+    // -------------------------------
 
     // Checkbox - Select All From Luzon
     function toggle(source) {
@@ -454,7 +528,29 @@
         }
     }
 
-    // -------------------------------------------------------------
+    // Select All Visayas Toggle Button
+    // $("#visayas-toggle-button").click(function () {
+    //     $("#visayas-region-checkbox").toggle(340);
+    // });
+
+    // Checkbox - Select All From Visayas
+    function selectAllVisayas(source) {
+        checkboxes = document.getElementsByName('visayas');
+        for(var i=0, n=checkboxes.length;i<n;i++) {
+            checkboxes[i].checked = source.checked;
+        }
+    }
+
+    // Checkbox - Select All From mindanao
+    function selectAllMindanao(source) {
+        checkboxes = document.getElementsByName('mindanao');
+        for(var i=0, n=checkboxes.length;i<n;i++) {
+            checkboxes[i].checked = source.checked;
+        }
+    }
+
+    // -----------------------Luzon - Select all by Region--------------------- //
+
     // Check All Region 1
     document.getElementById('checkAllRegionI').onclick = function() {
         var checkboxes = document.querySelectorAll('.regionI');
@@ -514,6 +610,81 @@
     // Check All MIMAROPA
     document.getElementById('checkAllRegionMIMAROPA').onclick = function() {
         var checkboxes = document.querySelectorAll('.MIMAROPARegion');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+
+    // -----------------------Visayas - Select all by Region------------------- //
+    // Check All Region VI
+    document.getElementById('checkAllRegionVI').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionVI');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All RegionVII
+    document.getElementById('checkAllRegionVII').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionVII');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All RegionVIII
+    document.getElementById('checkAllRegionVIII').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionVIII');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // -----------------------MIndanao - Select all by Region------------------- //
+    // Check All RegionIX
+    document.getElementById('checkAllRegionIX').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionIX');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All RegionX
+    document.getElementById('checkAllRegionX').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionX');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All RegionXI
+    document.getElementById('checkAllRegionXI').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionXI');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+    
+    // Check All SOCCSKSARGEN
+    document.getElementById('checkAllSOCCSKSARGEN').onclick = function() {
+        var checkboxes = document.querySelectorAll('.SOCCSKSARGENRegion');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All BARMM Region
+    document.getElementById('checkAllBARMMRegion').onclick = function() {
+        var checkboxes = document.querySelectorAll('.BARMMRegion');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All Region XIII
+    document.getElementById('checkAllRegionXIII').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionXIII');
         for (var checkbox of checkboxes) {
             checkbox.checked = this.checked;
         }

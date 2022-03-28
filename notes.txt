@@ -178,22 +178,22 @@ regionVIITalisay
 regionVIINaga
 regionVIIMandaue
 regionVIILapuLapu
-regionVIImakDanaoati
+regionVIIDanaoati
 regionVIICebu
 regionVIICarcar
 regionVIIBogo
 regionVIITagbilaran
 
 
-RegionVI
+Region VIII
 
-regionVIMaasin
-regionVICatbalogan
-regionVICalbayog
-regionVITacloban
-regionVIOrmoc
-regionVIBaybay
-regionVIBorongan
+regionVIIIMaasin
+regionVIIICatbalogan
+regionVIIICalbayog
+regionVIIITacloban
+regionVIIIOrmoc
+regionVIIIBaybay
+regionVIIIBorongan
 
 
 @@ MINDANAO @@

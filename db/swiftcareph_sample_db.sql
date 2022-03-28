@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2022 at 04:14 PM
+-- Generation Time: Mar 28, 2022 at 02:13 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -193,9 +193,9 @@ CREATE TABLE `hospitallisting` (
 
 INSERT INTO `hospitallisting` (`listing_id`, `hospitalID`, `hospital_location`, `hospital_city`, `hospital_name`, `hospital_description`, `hospital_type`, `room`, `room_slot`, `bed`, `bed_slot`, `additional_docs`, `website_link`, `hospital_phone`) VALUES
 (2, 177, 'Makati City', '0', 'Adventist Medical Center Manila', 'Sample Description lorem lorem lorem', 'Public Hospital', 'Room', 5, '', 0, 'Yes', 'www.mcuhopsita.com', ''),
-(5, 180, 'Kanto ng Tinio, Caloocan CIty', '0', 'Nior Hospital', 'Sample Description', 'Public Hospital', 'Room', 33, 'Bed', 33, 'Yes', '33', ''),
-(6, 181, 'Sulu, Mindanao 💣', 'sample city', 'Taego General hospital', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nemo iusto ipsum voluptas, omnis vitae minima quis aperiam ab veritatis. Voluptatibus, provident. Rem voluptatem sed ut qui nobis quod fuga?', 'Public Hospital', 'Room', 99, 'Bed', 99, 'Yes', 'www.taegocity.com.ph', '+63887867546'),
-(7, 182, 'Los Angers, USA', 'Caloocan City', 'Our Lady of Lourdes Hospital', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, co', 'Private Hospital', '', 1, '', 1, 'Yes', 'www.pinoyflix.tv', '+639341415636');
+(5, 180, 'Kanto ng Tinio, Caloocan CIty', 'baguio', 'Nior Hospital', 'Lorem ipsum kung nababasa mo to, hit like and subscibe.', 'Public Hospital', '', 0, '', 1, 'Yes', 'www.nior.com', ''),
+(6, 181, 'Sulu, Mindanao 💣', 'batac', 'Taego General hospital', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nemo iusto ipsum voluptas, omnis vitae minima quis aperiam ab veritatis. Voluptatibus, provident. Rem voluptatem sed ut qui nobis quod fuga?', 'Public Hospital', 'Room', 99, 'Bed', 99, 'Yes', 'www.taegocity.com.ph', '+63887867546'),
+(7, 182, 'Los Angers, USA', 'San Jose del Monte City', 'Our Lady of Lourdes Hospital', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, co', 'Private Hospital', '', 0, '', 1, 'Yes', 'www.pinoyflix.tv', '+639341415636');
 
 -- --------------------------------------------------------
 
@@ -236,7 +236,17 @@ INSERT INTO `listingimages` (`image_id`, `listing_idFK`, `image_name`, `image_di
 (292, 2, 'Deku', '../web/hospital-images/deku.jpg'),
 (583, 5, 'Tyler Lastovich HM08wZJBlK4 Unsplash', '../web/hospital-images/tyler-lastovich-hM08wZJBlK4-unsplash.jpg'),
 (584, 6, 'Martin Adams Y1M0dZ 1Psc Unsplash', '../web/hospital-images/martin-adams-y1M0dZ-1Psc-unsplash.jpg'),
-(591, 7, 'Spiderman', '../web/hospital-images/spiderman.jpg');
+(594, 7, 'Slime 1', '../web/hospital-images/slime-1.jpg'),
+(595, 7, 'Gojo', '../web/hospital-images/gojo.gif'),
+(596, 7, 'Birthday', '../web/hospital-images/birthday.gif'),
+(597, 7, 'Gojooo', '../web/hospital-images/gojooo.gif'),
+(598, 7, 'Laugh', '../web/hospital-images/laugh.gif'),
+(599, 7, 'Snow', '../web/hospital-images/snow.gif'),
+(600, 7, 'Aaaaa (2)', '../web/hospital-images/aaaaa (2).jpg'),
+(601, 7, 'Bb', '../web/hospital-images/bb.jpg'),
+(602, 7, 'Black Panther', '../web/hospital-images/Black panther.jpg'),
+(603, 7, 'Blue', '../web/hospital-images/blue.jpg'),
+(604, 5, 'Leonardo Yip NcWnJmeVtcw Unsplash', '../web/hospital-images/leonardo-yip-NcWnJmeVtcw-unsplash.jpg');
 
 -- --------------------------------------------------------
 
@@ -651,7 +661,7 @@ ALTER TABLE `hospitalsignuphistory`
 -- AUTO_INCREMENT for table `listingimages`
 --
 ALTER TABLE `listingimages`
-  MODIFY `image_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=593;
+  MODIFY `image_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=605;
 
 --
 -- AUTO_INCREMENT for table `otpstorage`

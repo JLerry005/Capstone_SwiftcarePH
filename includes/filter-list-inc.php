@@ -4,6 +4,8 @@
 
     // -----------------Check if checkbox is checked-------------------------- //
 
+    // -------------------------------- Luzon ------------------------------- //
+
     // REGION I--------------------------------------------------
     if (isset($_POST["alaminos"])) {
         $cityArray[] = "hospital_city LIKE '%alaminos%'";
@@ -241,6 +243,169 @@
     if (isset($_POST["calapan"])) {
         $cityArray[] = "hospital_city LIKE '%calapan%'";
     }
+
+    // -------------------------------- Luzon ------------------------------- //
+
+    // RegionVI ------------------------------------------------
+    if (isset($_POST["victorias"])) {
+        $victorias[] = "hospital_city LIKE '%victorias%'";
+    }
+
+    if (isset($_POST["talisay"])) {
+        $talisay[] = "hospital_city LIKE '%talisay%'";
+    }
+
+    if (isset($_POST["sipalay"])) {
+        $sipalay[] = "hospital_city LIKE '%sipalay%'";
+    }
+
+    if (isset($_POST["silay"])) {
+        $silay[] = "hospital_city LIKE '%silay%'";
+    }
+
+    if (isset($_POST["sanCarlos"])) {
+        $sanCarlos[] = "hospital_city LIKE '%sanCarlos%'";
+    }
+
+    if (isset($_POST["sagay"])) {
+        $sagay[] = "hospital_city LIKE '%sagay%'";
+    }
+
+    if (isset($_POST["carlota"])) {
+        $carlota[] = "hospital_city LIKE '%carlota%'";
+    }
+
+    if (isset($_POST["kabankalan"])) {
+        $kabankalan[] = "hospital_city LIKE '%kabankalan%'";
+    }
+
+    if (isset($_POST["himamaylan"])) {
+        $himamaylan[] = "hospital_city LIKE '%himamaylan%'";
+    }
+
+    if (isset($_POST["escalante"])) {
+        $escalante[] = "hospital_city LIKE '%escalante%'";
+    }
+
+    if (isset($_POST["cadiz"])) {
+        $cadiz[] = "hospital_city LIKE '%cadiz%'";
+    }
+
+    if (isset($_POST["victorias"])) {
+        $bago[] = "hospital_city LIKE '%bago%'";
+    }
+
+    if (isset($_POST["bacolod"])) {
+        $bacolod[] = "hospital_city LIKE '%bacolod%'";
+    }
+
+    if (isset($_POST["calapan"])) {
+        $calapan[] = "hospital_city LIKE '%calapan%'";
+    }
+
+    if (isset($_POST["iloilo"])) {
+        $iloilo[] = "hospital_city LIKE '%iloilo%'";
+    }
+
+    if (isset($_POST["roxas"])) {
+        $roxas[] = "hospital_city LIKE '%roxas%'";
+    }
+
+
+    // RegionVII ------------------------------------------------
+    if (isset($_POST["toledo"])) {
+        $toledo[] = "hospital_city LIKE '%toledo%'";
+    }
+
+    if (isset($_POST["tanjay"])) {
+        $tanjay[] = "hospital_city LIKE '%tanjay%'";
+    }
+    
+    if (isset($_POST["guihulngan"])) {
+        $guihulngan[] = "hospital_city LIKE '%guihulngan%'";
+    }
+    
+    if (isset($_POST["dumaguete"])) {
+        $dumaguete[] = "hospital_city LIKE '%dumaguete%'";
+    }
+    
+    if (isset($_POST["canlaon"])) {
+        $canlaon[] = "hospital_city LIKE '%canlaon%'";
+    }
+    
+    if (isset($_POST["bayawan"])) {
+        $bayawan[] = "hospital_city LIKE '%bayawan%'";
+    }
+    
+    if (isset($_POST["bais"])) {
+        $bais[] = "hospital_city LIKE '%bais%'";
+    }
+    
+    if (isset($_POST["talisay"])) {
+        $talisay[] = "hospital_city LIKE '%talisay%'";
+    }
+    
+    if (isset($_POST["naga"])) {
+        $naga[] = "hospital_city LIKE '%naga%'";
+    }
+
+    if (isset($_POST["mandaue"])) {
+        $mandaue[] = "hospital_city LIKE '%mandaue%'";
+    }
+    
+    if (isset($_POST["lapuLapu"])) {
+        $lapuLapu[] = "hospital_city LIKE '%lapu Lapu%'";
+    }
+    
+    if (isset($_POST["danaoati"])) {
+        $danaoati[] = "hospital_city LIKE '%danaoati%'";
+    }
+    
+    if (isset($_POST["cebu"])) {
+        $cebu[] = "hospital_city LIKE '%cebu%'";
+    }
+    
+    if (isset($_POST["carcar"])) {
+        $carcar[] = "hospital_city LIKE '%carcar%'";
+    }
+    
+    if (isset($_POST["bogo"])) {
+        $bogo[] = "hospital_city LIKE '%bogo%'";
+    }
+    
+    if (isset($_POST["tagbilaran"])) {
+        $tagbilaran[] = "hospital_city LIKE '%tagbilaran%'";
+    }
+    
+    // RegionVIII ------------------------------------------------
+    if (isset($_POST["maasin"])) {
+        $maasin[] = "hospital_city LIKE '%maasin%'";
+    }
+
+    if (isset($_POST["catbalogan"])) {
+        $catbalogan[] = "hospital_city LIKE '%catbalogan%'";
+    }
+
+    if (isset($_POST["calbayog"])) {
+        $calbayog[] = "hospital_city LIKE '%calbayog%'";
+    }
+
+    if (isset($_POST["tacloban"])) {
+        $tacloban[] = "hospital_city LIKE '%tacloban%'";
+    }
+
+    if (isset($_POST["ormoc"])) {
+        $ormoc[] = "hospital_city LIKE '%ormoc%'";
+    }
+
+    if (isset($_POST["baybay"])) {
+        $tolbaybayedo[] = "hospital_city LIKE '%baybay%'";
+    }
+
+    if (isset($_POST["borongan"])) {
+        $borongan[] = "hospital_city LIKE '%borongan%'";
+    }
+
 
 
     $hospitalTypeValue = $_POST["hospitalType"];

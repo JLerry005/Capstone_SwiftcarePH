@@ -43,7 +43,7 @@
         </div>
 
         <!-- Sidebar -->
-        <div class="z-10 sidebar-container fixed inset-y-0 left-0 transfrom -translate-x-full lg:sticky lg:translate-x-0 transition duration-200 ease-in-out flex flex-col justify-between bg-footerColor py-8 h-screen w-52 xl:w-64">
+        <div class="z-10 sidebar-container fixed inset-y-0 left-0 transfrom -translate-x-full lg:sticky lg:translate-x-0 transition duration-200 ease-in-out flex flex-col justify-between bg-gray-900 py-8 h-screen w-52 xl:w-64">
             <div class="sideBar relative text-white space-y-5 text-center">
                 <a class="font-bold text-2xl mx-6"><i class="bi bi-activity"></i> Swiftcare PH</a>
                 <div class="py-1 mx-6">
@@ -266,7 +266,7 @@
                 </div>
                 
                 <!--Listing Details Form -->
-                <form method="POST" id="details-form" enctype="multipart/form-data">
+                <form method="POST" id="details-form">
                     <!-- Main Container -->
                     <div class="mainContainer grid grid-cols-12 pt-16 sm:px-3 md:px-6 2xl:px-12 space-y-6 xl:space-y-0 gap-5 text-sm mb-6 text-gray-700" id="main-container">
                         <!-- Main Details Content -->
@@ -289,80 +289,153 @@
                         </div>
             
                         <!-- Listing Details Content -->
-                        <div class="col-span-12 xl:col-span-12 p-6 listingDetailsContainer bg-white drop-shadow-md">
+                        <div class="col-span-12 xl:col-span-12 p-6 listingDetailsContainer bg-white drop-shadow-md space-y-6">
                             <h1 class="font-bold">Listing Details</h1>
                             <div class="py-6">
                                 <hr class="border-gray-300">     
                             </div>
-            
-                            <!-- Type of Hospital -->
-                            <div class="flex justify-end">
-                                <!-- Type of Hospital -->
-                                <input class="drop-shadow-lg w-fit text-orange-500 p-2 focus:outline-none rounded-lg text-center" type="text" id="hospitalType" name="hospital-type" disabled>
-                            </div>
 
                             <!-- Hospital Name and City Place -->
-                            <div class="grid xl:grid-cols-2 xl:gap-6">
+                            <div class="flex flex-col xl:flex-row xl:items-center xl:space-x-3">
                                 <!-- Hospital Name -->
-                                <div class="mb-6">
-                                    <label class="block mb-2 text-sm font-medium text-orange-500">Hospital Name</label>
+                                <div class="grow">
+                                    <label class="flex items-center mb-2 text-sm font-medium text-orange-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                        &ensp;Hospital Name
+                                    </label>
                                     <input type="text" class="w-full border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" id="hospital-name" name="hospitalName" disabled>
                                 </div>
 
                                 <!-- Hospital City-->
-                                <div class="mb-6">
-                                    <label for="hospital-city" class="block mb-2 text-sm font-medium text-orange-500">City Place</label>
-                                    <input type="text" class="w-full border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" id="hospital-city" name="hospitalCity" value="City" required>
+                                <div class="">
+                                    <label for="hospital-city" class="flex items-center mb-2 text-sm font-medium text-orange-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                                        </svg>
+                                        &ensp;City&ensp;
+                                        <div id="city-info">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <select name="hospitalCity" id="hospital-city" class="text-sm rounded-md border-[1px] border-gray-300">
+                                        <optgroup label="NCR">
+                                          <option value="caloocan">Caloocan</option>
+                                          <option value="valenzuela">Valenzuela</option>
+                                        </optgroup>
+                                        <optgroup label="region I">
+                                          <option value="baguio">Baguio</option>
+                                          <option value="batangas">Batangas</option>
+                                        </optgroup>
+                                    </select>
+
+                                    <!-- <label for="hospital-city" class="flex items-center mb-2 text-sm font-medium text-orange-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                                        </svg>
+                                        &ensp;City
+                                    </label>
+                                    <input type="text" class="w-full border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" id="hospital-city" name="hospitalCity" value="City" required> -->
+                                </div>
+
+                                <!-- Type of Hospital -->
+                                <div class="">
+                                    <label for="hospitalType" class="flex items-center mb-2 text-sm font-medium text-orange-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd" />
+                                        </svg>
+                                        &ensp;Hospital Type
+                                    </label>
+                                    <input class="focus:outline-none text-sm rounded-lg border-1 border-gray-300 p-2.5" type="text" id="hospitalType" name="hospital-type" disabled>
                                 </div>
                             </div>
             
                             <!-- Hospital Description -->
                             <div class="mb-6">
-                                <label for="hospital-description" class="block mb-2 text-sm font-medium text-orange-500">Description</label>
+                                <label for="hospital-description" class="flex items-center mb-2 text-sm font-medium text-orange-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+                                    </svg>
+                                    &ensp;Description
+                                </label>
                                 <textarea id="hospital-description" name="hospitalDescription" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Type a description here..." required></textarea>
                             </div>
 
                             <!-- Room slot title  -->
-                            <div class="mb-3 flex flex-rows">
-                                <p class="text-orange-500 font-medium">Room Slot</p>&nbsp;<span class="text-gray-600">(If you want to add slot in room, please check the checkbox below).</span>
-                            </div>
+                            <!-- <div class="mb-3 flex flex-row">
+                                <p class="text-orange-500 font-medium">Room Slot</p>&nbsp;<span class="text-gray-600">Leave to 0 if there are none.</span>
+                            </div> -->
 
-                            <!-- Rooms -->
-                            <div class="flex items-center mb-6 checkbox-card">
-                                <input type="checkbox" class="checkbox mr-3 w-5 h-5 text-green-600 bg-green-100 rounded border-green-700 focus:ring-green-500 focus:ring-2 " id="hospital-room" name="room" value="Room" onclick="checked()">
-                                <label for="hospital-room" class="text-md mr-3 text-green-600 font-medium"> Room</label>
-                                <input type="number" class="w-32 border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block p-2.5" id="room-slot" name="room-slot" min="1" max="99" placeholder="1 ~ 99">
-                            </div>
-
-                            <!-- Bed slot title  -->
-                            <div class="mb-3 flex flex-rows">
-                                <p class="text-orange-500 font-medium">Bed Slot</p>&nbsp;<span class="text-gray-600">(If you want to add slot in bed, please check the checkbox below).</span>
-                            </div>
-                            
-                            <!-- Beds -->
-                            <div class="flex items-center mb-6">
-                                <input type="checkbox" class="mr-3 w-5 h-5 text-green-600 bg-green-100 rounded border-green-700 focus:ring-green-500 focus:ring-2" id="hospital-bed" name="bed" value="Bed">
-                                <label for="hospital-bed" class="text-md mr-6 text-green-600 font-medium"> Bed</label>
-                                <input type="number" class="w-32 border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block p-2.5" id="bed-slot" name="bed-slot" min="1" max="99" placeholder="1 ~ 99">
-                            </div>
-                            
-                            <!-- Refferal or other documents -->
-                            <div class="mb-6">
-                                <input type="checkbox" class="mr-2 w-5 h-5 text-green-600 bg-green-100 rounded border-green-700 focus:ring-green-500 focus:ring-2" id="require-documents" name="require-documents" value="Yes">
-                                <label for="require-documents" class="text-md">Require Referal or other documents related into hopsital.</label>
-                            </div>
-                            
-                            <!-- Website Link -->
-                            <div class=""> 
-                                <label for="website-link" class="block mb-2 text-sm font-medium text-orange-500"> Type your website link here: </label>
-                                <div class="relative">
-                                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
-                                    </div>
-                                    <input type="text" name="website-link" id="website-link" class="w-80 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block pl-10 p-2.5" placeholder="Type your website...">
+                            <!-- Room / Bed Slot and website Container -->
+                            <div class="flex items-center space-x-3">
+                                <!-- Rooms -->
+                                <div class="checkbox-card">
+                                    <!-- <input type="checkbox" class="checkbox mr-3 w-5 h-5 text-green-600 bg-green-100 rounded border-green-700 focus:ring-green-500 focus:ring-2 " id="hospital-room" name="room" value="Room" onclick="checked()"> -->
+                                    <label for="hospital-room" class="flex items-center text-md mb-2 text-green-600 font-medium">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                        </svg>
+                                        &ensp;Room Slot
+                                        &ensp;
+                                        <div id="room-slot-info">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                    </label> 
+                                    <input type="number" class="w-32 border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block p-2.5" id="room-slot" name="room-slot" min="0" max="99" placeholder="1 ~ 99">
                                 </div>
-                                <!-- <input type="text" class="w-full border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" name="website-link" id="website-link" placeholder="www.sample.com" required> -->
 
+                                <!-- Bed slot title  -->
+                                <!-- <div class="mb-3 flex flex-rows">
+                                    <p class="text-orange-500 font-medium">Bed Slot</p>&nbsp;<span class="text-gray-600">(If you want to add slot in bed, please check the checkbox below).</span>
+                                </div> -->
+                                
+                                <!-- Beds -->
+                                <div class="">
+                                    <!-- <input type="checkbox" class="mr-3 w-5 h-5 text-green-600 bg-green-100 rounded border-green-700 focus:ring-green-500 focus:ring-2" id="hospital-bed" name="bed" value="Bed"> -->
+                                    <label for="hospital-bed" class="flex items-center mb-2 text-md text-green-600 font-medium">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                        </svg>
+                                        &ensp;Bed Slot
+                                        &ensp;
+                                        <div id="bed-slot-info">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <input type="number" class="w-32 border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block p-2.5" id="bed-slot" name="bed-slot" min="0" max="99" placeholder="1 ~ 99">
+                                </div>
+                                
+                                <!-- Website Link -->
+                                <div class=""> 
+                                    <label for="website-link" class="block mb-2 text-sm font-medium text-orange-500"> Type your website link here: </label>
+                                    <div class="relative">
+                                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
+                                        </div>
+                                        <input type="text" name="website-link" id="website-link" class="w-80 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block pl-10 p-2.5" placeholder="Type your website...">
+                                    </div>
+                                    <!-- <input type="text" class="w-full border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" name="website-link" id="website-link" placeholder="www.sample.com" required> -->
+                                </div>
+                            </div>
+
+                            <!-- Refferal or other documents -->
+                            <div class="mb-6 flex items-center self-end">
+                                <input type="checkbox" class="mr-2 w-5 h-5 text-green-600 bg-green-100 rounded border-green-700 focus:ring-green-500 focus:ring-2" id="require-documents" name="require-documents" value="Yes">
+                                <label for="require-documents" class="flex items-center text-md">
+                                    Require Referral or other documents before booking a reservation.&ensp;
+                                    <div id="referral-slot-info">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </label>
                             </div>
                             
                             <!-- Submit Button -->

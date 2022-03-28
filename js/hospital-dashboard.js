@@ -354,6 +354,7 @@
         let bedSlot = $('#bed-slot').val();
         let refferal = $('#require-documents').val();
         let websiteLink = $('#website-link').val();
+        // let hospitalCity = $('hospital-city').val();
 
         $.ajax({
             type: 'POST',
@@ -365,6 +366,7 @@
                 roomSlot:roomSlot,
                 bedSlot:bedSlot,
                 websiteLink:websiteLink,
+                hospitalCity:$('#hospital-city option:selected').val(),
                 room:$('#hospital-room:checkbox:checked').val(),
                 bed:$('#hospital-bed:checkbox:checked').val(),
                 refferal:$('#require-documents:checkbox:checked').val()
@@ -570,6 +572,26 @@
         // show_account();
         toggleModal('popup-modal', false);
     }
+
+    let bedSlotInfo = document.getElementById("bed-slot-info");
+    let roomSlotInfo = document.getElementById("room-slot-info");
+    let referralSlotInfo = document.getElementById("referral-slot-info");
+    let cityinfo = document.getElementById("city-info");
+    tippy(bedSlotInfo, {
+        content: "Leave to zero (0) if there are no slots for Bed.",
+    });
+
+    tippy(roomSlotInfo, {
+        content: "Leave to zero (0) if there are no slots for Room.",
+    });
+
+    tippy(referralSlotInfo, {
+        content: "This will require the patient to submit a copy of the related documents upon filling-up the booking form.",
+    });
+
+    tippy(cityinfo, {
+        content: "Select which city you belong so users can find your listing more easily.",
+    });
 
 
 
