@@ -349,6 +349,49 @@
                 // --------------------------- Mindanao ----------------------------------- //
 
                 // ------------- Region IX --------- //
+                zamboanga:$('#regionIXZamboanga:checkbox:checked').val(),
+                pagadian:$('#regionIXPagadian:checkbox:checked').val(),
+                dipolog:$('#regionIXDipolog:checkbox:checked').val(),
+                dapitan:$('#regionIXDapitan:checkbox:checked').val(),
+                isabela:$('#regionIXIsabela:checkbox:checked').val(),
+
+                // ------------- Region X --------- //
+                gingoog:$('#regionXGingoog:checkbox:checked').val(),
+                salvador:$('#regionXElSalvador:checkbox:checked').val(),
+                cagayandeOro:$('#regionXCagayandeOro:checkbox:checked').val(),
+                tangub:$('#regionXTangub:checkbox:checked').val(),
+                ozamiz:$('#regionXOzamiz:checkbox:checked').val(),
+                oroquieta:$('#regionXOroquieta:checkbox:checked').val(),
+                iligan:$('#regionXIligan:checkbox:checked').val(),
+                valencia:$('#regionXValencia:checkbox:checked').val(),
+                malaybalay:$('#regionXMalaybalay:checkbox:checked').val(),
+
+                // ------------- Region XI --------- //
+                mati:$('#regionXIMati:checkbox:checked').val(),
+                digos:$('#regionXIDigos:checkbox:checked').val(),
+                davao:$('#regionXIDavao:checkbox:checked').val(),
+                tagum:$('#regionXITagum:checkbox:checked').val(),
+                samal:$('#regionXISamal:checkbox:checked').val(),
+                panabo:$('#regionXIPanabo:checkbox:checked').val(),
+
+                // ------------- Region XII --------- //
+                kidapawan:$('#regionXIIKidapawan:checkbox:checked').val(),
+                generalSantos:$('#regionXIIGeneralSantos:checkbox:checked').val(),
+                koronadal:$('#regionXIIKoronadal:checkbox:checked').val(),
+                tacurong:$('#regionXIITacurong:checkbox:checked').val(),
+
+                // ------------- BARMM --------- //
+                marawi:$('#BARMMMarawi:checkbox:checked').val(),
+                lamitan:$('#BARMMLamitan:checkbox:checked').val(),
+                cotabato:$('#BARMMCotabato:checkbox:checked').val(),
+
+                // ------------- Region XIII --------- //
+                tandag:$('#regionXIIITandag:checkbox:checked').val(),
+                bislig:$('#regionXIIIBislig:checkbox:checked').val(),
+                surigao:$('#regionXIIISurigao:checkbox:checked').val(),
+                bayugan:$('#regionXIIIBayugan:checkbox:checked').val(),
+                cabadbaran:$('#regionXIIICabadbaran:checkbox:checked').val(),
+                butuan:$('#regionXIIIButuan:checkbox:checked').val(),
 
                 // -------------------------- Hospital Type ---------------------------- //
                 hospitalType:$(".hospitalType:checked").val()
