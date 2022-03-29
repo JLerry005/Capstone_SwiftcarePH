@@ -195,10 +195,9 @@
     }
 
     // Filter Ajax Funtion
-    document.getElementById("discard-changes").disabled = true; 
     $("#apply-filter-button").click(function () {
         // alert("Working!");
-        document.getElementById("discard-changes").disabled = false; 
+        $("#discard-changes").show();
         $.ajax({
             method: "POST",
             url: "includes/filter-list-inc.php",
@@ -525,9 +524,68 @@
     });
 
     // Discard Changes
-    $("#discard-changes").click(function () {
+    $("#discard-changes").hide();
+    
+     // Clear Filter 
+     document.getElementById('discard-changes').onclick = function() {
         showAllLisitng();
+        $("#filter-content").toggle(340);
+        $("#discard-changes").hide();
+        $("#clear-selection").hide();
+        $("#apply-filter-button").hide();
+        var checkboxes = document.querySelectorAll('.checkbox');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked=false;
+        }
+    }
+
+    // Show clear & apply filter selection if a checkbox is checked.
+    $("#clear-selection").hide();
+    $("#apply-filter-button").hide();
+    $(".checkbox").click(function() {
+        $('#clear-selection').toggle( $(".checkbox:checked").length > 0 );
+        $('#apply-filter-button').toggle( $(".checkbox:checked").length > 0 );
     });
+
+     // Show apply filter button if a checkbox is checked.
+
+    //  $(".checkbox").click(function() {
+    //      if($(this).is(":checked")) {
+    //          $("#apply-filter-button").fadeIn();
+    //      } else {
+    //          $("#apply-filter-button").fadeOut();
+    //      }
+    //  });
+
+    // Show clear selection if a checkbox is checked.
+    // $("#clear-selection").hide();
+    // $(".checkbox").click(function() {
+    //     if($(this).is(":checked")) {
+    //         $("#clear-selection").fadeIn();
+    //     } else {
+    //         $("#clear-selection").fadeOut();
+    //     }
+    // });
+
+    // $("input[type='checkbox']").change(function(){
+    //     var a = $("input[type='checkbox']");
+    //     if(a.length == a.filter(":checked").length){
+    //         alert('all checked');
+    //     } else {
+    //         alert('not all checked');
+    //     }
+    // });
+   
+    
+    // Clear All Selection
+    document.getElementById('clear-selection').onclick = function() {
+        var checkboxes = document.querySelectorAll('.checkbox');
+        $("#clear-selection").fadeOut();
+        $("#apply-filter-button").fadeOut();
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked=false;
+        }
+    }
 
     // Toggle Filter Button
     $("#filter-content").hide();

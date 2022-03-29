@@ -164,7 +164,7 @@
                             <p class="font-bold">Filter by Type:</p>
                         </div>
                         
-                        <button class="py-1 px-2 md:p-2 rounded-lg drop-shadow-md flex items-center hover:underline" id="">
+                        <button class="py-1 px-2 md:p-2 rounded-lg drop-shadow-md flex items-center hover:underline" id="clear-selection">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M6.707 4.879A3 3 0 018.828 4H15a3 3 0 013 3v6a3 3 0 01-3 3H8.828a3 3 0 01-2.12-.879l-4.415-4.414a1 1 0 010-1.414l4.414-4.414zm4 2.414a1 1 0 00-1.414 1.414L10.586 10l-1.293 1.293a1 1 0 101.414 1.414L12 11.414l1.293 1.293a1 1 0 001.414-1.414L13.414 10l1.293-1.293a1 1 0 00-1.414-1.414L12 8.586l-1.293-1.293z" clip-rule="evenodd" />
                                 </svg>
@@ -201,7 +201,7 @@
                         <!-- Luzon Title -->
                         <div class="flex items-start mb-3">
                             <div class="text-sm">
-                                <input type="checkbox" onclick="toggle(this)" class="rounded-md">
+                                <input type="checkbox" onclick="toggle(this)" class="checkbox rounded-md">
                                 <!-- <label for="vehicle3">
                                     &nbsp;Select All
                                 </label> -->
@@ -224,7 +224,7 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllRegionI" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllRegionI" name="luzon" value="makati" class=" checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="checkAllRegionI">Select All</label>
                                     </div>
                                 </div>
@@ -232,47 +232,47 @@
                                 <!-- Cities -->
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIAlaminos" name="luzon" class="regionI" value="makati" checked>
+                                        <input type="checkbox" id="regionIAlaminos" name="luzon" class="checkbox regionI" value="makati">
                                         <label for="regionIAlaminos"> Alaminos</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIBatac" name="luzon" class="regionI" value="makati">
+                                        <input type="checkbox" id="regionIBatac" name="luzon" class=" checkbox regionI" value="makati">
                                         <label for="regionIBatac"> Batac</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionICandon" name="luzon" class="regionI" value="makati">
+                                        <input type="checkbox" id="regionICandon" name="luzon" class=" checkbox regionI" value="makati">
                                         <label for="regionICandon"> Candon</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionILaoag" name="luzon" class="regionI" value="makati">
+                                        <input type="checkbox" id="regionILaoag" name="luzon" class=" checkbox regionI" value="makati">
                                         <label for="regionILaoag"> Laoag</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionISanCarlos" name="luzon" class="regionI" value="makati">
+                                        <input type="checkbox" id="regionISanCarlos" name="luzon" class=" checkbox regionI" value="makati">
                                         <label for="regionISanCarlos"> San Carlos</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionISanFernando" name="luzon" class="regionI" value="makati">
+                                        <input type="checkbox" id="regionISanFernando" name="luzon" class=" checkbox regionI" value="makati">
                                         <label for="regionISanFernando"> San Fernando</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIUrdaneta" name="luzon" class="regionI" value="makati">
+                                        <input type="checkbox" id="regionIUrdaneta" name="luzon" class=" checkbox regionI" value="makati">
                                         <label for="regionIUrdaneta"> Urdaneta</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVigan" name="luzon" class="regionI" value="makati">
+                                        <input type="checkbox" id="regionIVigan" name="luzon" class=" checkbox regionI" value="makati">
                                         <label for="regionIVigan"> Vigan</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIDagupan" name="luzon" class="regionI" value="makati">
+                                        <input type="checkbox" id="regionIDagupan" name="luzon" class=" checkbox regionI" value="makati">
                                         <label for="regionIDagupan"> Dagupan</label>
                                     </div>
                                 </div>
@@ -289,29 +289,29 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllRegionII" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllRegionII" name="luzon" value="makati" class="checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="checkAllRegionII">Select All</label>
                                     </div>
                                 </div>
                                 
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIICauayan" name="luzon" class="regionII" value="makati">
+                                        <input type="checkbox" id="regionIICauayan" name="luzon" class="checkbox regionII" value="makati">
                                         <label for="regionIICauayan"> Cauayan</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIIIlagan" name="luzon" class="regionII" value="makati">
+                                        <input type="checkbox" id="regionIIIlagan" name="luzon" class="checkbox regionII" value="makati">
                                         <label for="regionIIIlagan"> Ilagan</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIISantiago" name="luzon" class="regionII" value="makati">
+                                        <input type="checkbox" id="regionIISantiago" name="luzon" class="checkbox regionII" value="makati">
                                         <label for="regionIISantiago"> Santiago</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIITuguegarao" name="luzon" class="regionII" value="makati">
+                                        <input type="checkbox" id="regionIITuguegarao" name="luzon" class="checkbox regionII" value="makati">
                                         <label for="regionIITuguegarao"> Tuguegarao</label>
                                     </div>
                                 </div>
@@ -328,79 +328,79 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllRegionIII" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllRegionIII" name="luzon" value="makati" class="checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="checkAllRegionIII">Select All</label>
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIIIBalanga" name="luzon" class="regionIII" value="makati">
+                                        <input type="checkbox" id="regionIIIBalanga" name="luzon" class="checkbox regionIII" value="makati">
                                         <label for="regionIIIBalanga"> Balanga</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIIIMalolos" name="luzon" class="regionIII" value="makati">
+                                        <input type="checkbox" id="regionIIIMalolos" name="luzon" class="checkbox regionIII" value="makati">
                                         <label for="regionIIIMalolos"> Malolos</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIIIMeycauayan" name="luzon" class="regionIII" value="makati">
+                                        <input type="checkbox" id="regionIIIMeycauayan" name="luzon" class="checkbox regionIII" value="makati">
                                         <label for="regionIIIMeycauayan"> Meycauayan</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIIISanJosedelMonte" name="luzon" class="regionIII" value="makati">
+                                        <input type="checkbox" id="regionIIISanJosedelMonte" name="luzon" class="checkbox regionIII" value="makati">
                                         <label for="regionIIISanJosedelMonte"> San Jose del Monte</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIIICabanatuan" name="luzon" class="regionIII" value="makati">
+                                        <input type="checkbox" id="regionIIICabanatuan" name="luzon" class="checkbox regionIII" value="makati">
                                         <label for="regionIIICabanatuan"> Cabanatuan</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIIIGapan" name="luzon" class="regionIII" value="makati">
+                                        <input type="checkbox" id="regionIIIGapan" name="luzon" class="checkbox regionIII" value="makati">
                                         <label for="regionIIIGapan"> Gapan</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIIIMuñoz" name="luzon" class="regionIII" value="makati">
+                                        <input type="checkbox" id="regionIIIMuñoz" name="luzon" class="checkbox regionIII" value="makati">
                                         <label for="regionIIIMuñoz"> Muñoz</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIIIPalayan" name="luzon" class="regionIII" value="makati">
+                                        <input type="checkbox" id="regionIIIPalayan" name="luzon" class="checkbox regionIII" value="makati">
                                         <label for="regionIIIPalayan"> Palayan</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIIISanJose" name="luzon" class="regionIII" value="makati">
+                                        <input type="checkbox" id="regionIIISanJose" name="luzon" class="checkbox regionIII" value="makati">
                                         <label for="regionIIISanJose"> San Jose</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIIIAngelesCity" name="luzon" class="regionIII" value="makati">
+                                        <input type="checkbox" id="regionIIIAngelesCity" name="luzon" class="checkbox regionIII" value="makati">
                                         <label for="regionIIIAngelesCity"> Angeles City</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIIIMabalacat" name="luzon" class="regionIII" value="makati">
+                                        <input type="checkbox" id="regionIIIMabalacat" name="luzon" class="checkbox regionIII" value="makati">
                                         <label for="regionIIIMabalacat"> Mabalacat</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIIISanFernando" name="luzon" class="regionIII" value="makati">
+                                        <input type="checkbox" id="regionIIISanFernando" name="luzon" class="checkbox regionIII" value="makati">
                                         <label for="regionIIISanFernando"> San Fernando</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIIITarlac" name="luzon" class="regionIII" value="makati">
+                                        <input type="checkbox" id="regionIIITarlac" name="luzon" class="checkbox regionIII" value="makati">
                                         <label for="regionIIITarlac"> Tarlac </label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIIIOlongapo" name="luzon" class="regionIII" value="makati">
+                                        <input type="checkbox" id="regionIIIOlongapo" name="luzon" class="checkbox regionIII" value="makati">
                                         <label for="regionIIIOlongapo"> Olongapo </label>
                                     </div>
 
@@ -418,109 +418,109 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllRegionIVA" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllRegionIVA" name="luzon" value="makati" class="checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="checkAllRegionIVA">Select All</label>
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVAntipolo" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVAntipolo" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVAntipolo"> Antipolo</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVBacoor" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVBacoor" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVBacoor"> Bacoor</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVBatangas" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVBatangas" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVBatangas"> Batangas</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVBiñan" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVBiñan" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVBiñan"> Biñan</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVCabuyao" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVCabuyao" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVCabuyao"> Cabuyao</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVCalamba" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVCalamba" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVCalamba"> Calamba</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVCavite" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVCavite" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVCavite"> Cavite</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVDasmariñas" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVDasmariñas" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVDasmariñas"> Dasmariñas</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVGeneralTrias" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVGeneralTrias" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVGeneralTrias"> General Trias</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVImus" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVImus" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVImus"> Imus</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVLipa" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVLipa" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVLipa"> Lipa</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVLucena" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVLucena" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVLucena"> Lucena</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVSanPablo" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVSanPablo" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVSanPablo"> San Pablo</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVSanPedro" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVSanPedro" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVSanPedro"> San Pedro</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVSantaRosa" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVSantaRosa" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVSantaRosa"> Santa Rosa</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVSantoTomas" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVSantoTomas" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVSantoTomas"> Santo Tomas</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVTagaytay" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVTagaytay" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVTagaytay"> Tagaytay</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVTanauan" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVTanauan" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVTanauan"> Tanauan</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVTayabas" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVTayabas" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVTayabas"> Tayabas</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIVTreceMartires" name="luzon" class="regionIVA" value="makati">
+                                        <input type="checkbox" id="regionIVTreceMartires" name="luzon" class="checkbox regionIVA" value="makati">
                                         <label for="regionIVTreceMartires"> Trece Martires</label>
                                     </div>
                                 </div>
@@ -537,44 +537,44 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllRegionV" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllRegionV" name="luzon" value="makati" class="checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="makati">Select All</label>
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVLegazpi" name="luzon" class="regionV" value="makati">
+                                        <input type="checkbox" id="regionVLegazpi" name="luzon" class="checkbox regionV" value="makati">
                                         <label for="regionVLegazpi"> Legazpi</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVNaga" name="luzon" class="regionV" value="makati">
+                                        <input type="checkbox" id="regionVNaga" name="luzon" class="checkbox regionV" value="makati">
                                         <label for="regionVNaga"> Naga</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIriga" name="luzon" class="regionV" value="makati">
+                                        <input type="checkbox" id="regionVIriga" name="luzon" class="checkbox regionV" value="makati">
                                         <label for="regionVIriga"> Iriga</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVTabaco" name="luzon" class="regionV" value="makati">
+                                        <input type="checkbox" id="regionVTabaco" name="luzon" class="checkbox regionV" value="makati">
                                         <label for="regionVTabaco"> Tabaco</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVLigao" name="luzon" class="regionV" value="makati">
+                                        <input type="checkbox" id="regionVLigao" name="luzon" class="checkbox regionV" value="makati">
                                         <label for="regionVLigao"> Ligao</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVSorsogon" name="luzon" class="regionV" value="makati">
+                                        <input type="checkbox" id="regionVSorsogon" name="luzon" class="checkbox regionV" value="makati">
                                         <label for="regionVSorsogon"> Sorsogon</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVMasbate" name="luzon" class="regionV" value="makati">
+                                        <input type="checkbox" id="regionVMasbate" name="luzon" class="checkbox regionV" value="makati">
                                         <label for="regionVMasbate"> Masbate</label>
                                     </div>
                                 </div>
@@ -591,89 +591,89 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllRegionNCR" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllRegionNCR" name="luzon" value="makati" class="checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="checkAllRegionNCR">Select All</label>
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="NCRCaloocan" name="luzon" class="NCR" value="makati">
+                                        <input type="checkbox" id="NCRCaloocan" name="luzon" class="checkbox NCR" value="makati">
                                         <label for="NCRCaloocan"> Caloocan</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="NCRMarikina" name="luzon" class="NCR" value="makati">
+                                        <input type="checkbox" id="NCRMarikina" name="luzon" class="checkbox NCR" value="makati">
                                         <label for="NCRMarikina"> Marikina</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="NCRMakati" name="luzon" class="NCR" value="makati">
+                                        <input type="checkbox" id="NCRMakati" name="luzon" class="checkbox NCR" value="makati">
                                         <label for="NCRMakati"> Makati</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="NCRMandaluyong" name="luzon" class="NCR" value="makati">
+                                        <input type="checkbox" id="NCRMandaluyong" name="luzon" class="checkbox NCR" value="makati">
                                         <label for="NCRMandaluyong"> Mandaluyong</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="NCRMuntinlupa" name="luzon" class="NCR" value="makati">
+                                        <input type="checkbox" id="NCRMuntinlupa" name="luzon" class="checkbox NCR" value="makati">
                                         <label for="NCRMuntinlupa"> Muntinlupa</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="NCRManila" name="luzon" class="NCR" value="makati">
+                                        <input type="checkbox" id="NCRManila" name="luzon" class="checkbox NCR" value="makati">
                                         <label for="NCRManila"> Manila</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="NCRNavotas" name="luzon" class="NCR" value="makati">
+                                        <input type="checkbox" id="NCRNavotas" name="luzon" class="checkbox NCR" value="makati">
                                         <label for="NCRNavotas"> Navotas</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="NCRMalabon" name="luzon" class="NCR" value="makati">
+                                        <input type="checkbox" id="NCRMalabon" name="luzon" class="checkbox NCR" value="makati">
                                         <label for="NCRMalabon"> Malabon</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="NCRValenzuela" name="luzon" class="NCR" value="makati">
+                                        <input type="checkbox" id="NCRValenzuela" name="luzon" class="checkbox NCR" value="makati">
                                         <label for="NCRValenzuela"> Valenzuela</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="NCRPasay" name="luzon" class="NCR" value="makati">
+                                        <input type="checkbox" id="NCRPasay" name="luzon" class="checkbox NCR" value="makati">
                                         <label for="NCRPasay"> Pasay</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="NCRPasig" name="luzon" class="NCR" value="makati">
+                                        <input type="checkbox" id="NCRPasig" name="luzon" class="checkbox NCR" value="makati">
                                         <label for="NCRPasig"> Pasig</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="NCRParañaque" name="luzon" class="NCR" value="makati">
+                                        <input type="checkbox" id="NCRParañaque" name="luzon" class="checkbox NCR" value="makati">
                                         <label for="NCRParañaque"> Parañaque</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="NCRQuezon" name="luzon" class="NCR" value="makati">
+                                        <input type="checkbox" id="NCRQuezon" name="luzon" class="checkbox NCR" value="makati">
                                         <label for="NCRQuezon"> Quezon</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="NCRSanJuan" name="luzon" class="NCR" value="makati">
+                                        <input type="checkbox" id="NCRSanJuan" name="luzon" class="checkbox NCR" value="makati">
                                         <label for="NCRSanJuan"> San Juan</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="NCRLasPiñas" name="luzon" class="NCR" value="makati">
+                                        <input type="checkbox" id="NCRLasPiñas" name="luzon" class="checkbox NCR" value="makati">
                                         <label for="NCRLasPiñas"> Las Piñas</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="NCRTaguig" name="luzon" class="NCR" value="makati">
+                                        <input type="checkbox" id="NCRTaguig" name="luzon" class="checkbox NCR" value="makati">
                                         <label for="NCRTaguig"> Taguig</label>
                                     </div>
                                 </div>
@@ -690,19 +690,19 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllRegionCAR" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllRegionCAR" name="luzon" value="makati" class="checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="checkAllRegionCAR">Select All</label>
                                     </div>
                                 </div>
                             
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="CARBaguio" name="luzon" class="CAR" value="makati">
+                                        <input type="checkbox" id="CARBaguio" name="luzon" class="checkbox CAR" value="makati">
                                         <label for="CARBaguio"> Baguio</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="CARTabuk" name="luzon" class="CAR" value="makati">
+                                        <input type="checkbox" id="CARTabuk" name="luzon" class="checkbox CAR" value="makati">
                                         <label for="CARTabuk"> Tabuk</label>
                                     </div>
                                 </div>
@@ -719,7 +719,7 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllRegionMIMAROPA" name="luzon" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllRegionMIMAROPA" name="luzon" value="makati" class="checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="checkAllRegionMIMAROPA">Select All</label>
                                     </div>
                                 </div>
@@ -727,12 +727,12 @@
                                 <!-- Cities -->
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="MIMAROPACalapan" name="luzon" class="MIMAROPARegion" value="makati">
+                                        <input type="checkbox" id="MIMAROPACalapan" name="luzon" class="checkbox MIMAROPARegion" value="makati">
                                         <label for="MIMAROPACalapan"> Calapan</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="MIMAROPAPuertoPrincesa" name="luzon" class="MIMAROPARegion" value="makati">
+                                        <input type="checkbox" id="MIMAROPAPuertoPrincesa" name="luzon" class="checkbox MIMAROPARegion" value="makati">
                                         <label for="MIMAROPAPuertoPrincesa"> Puerto Princesa</label>
                                     </div>
                                 </div>
@@ -746,7 +746,7 @@
                         <!-- Visayas Title -->
                         <div class="flex items-start mb-3">
                             <div class="text-sm">
-                                <input type="checkbox" onclick="selectAllVisayas(this)" class="rounded-md">
+                                <input type="checkbox" onclick="selectAllVisayas(this)" class="checkbox rounded-md">
                             </div>
 
                             <p class="font-semibold flex items-center mb-2"></p>
@@ -768,89 +768,89 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllRegionVI" name="visayas" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllRegionVI" name="visayas" value="makati" class="checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="checkAllRegionVI">Select All</label>
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIRoxas" name="visayas" class="regionVI" value="makati">
+                                        <input type="checkbox" id="regionVIRoxas" name="visayas" class="checkbox regionVI" value="makati">
                                         <label for="regionVIRoxas"> Roxas</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIIloilo" name="visayas" class="regionVI" value="makati">
+                                        <input type="checkbox" id="regionVIIloilo" name="visayas" class="checkbox regionVI" value="makati">
                                         <label for="regionVIIloilo"> Iloilo</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIPassi" name="visayas" class="regionVI" value="makati">
+                                        <input type="checkbox" id="regionVIPassi" name="visayas" class="checkbox regionVI" value="makati">
                                         <label for="regionVIPassi"> Passi</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIBacolod" name="visayas" class="regionVI" value="makati">
+                                        <input type="checkbox" id="regionVIBacolod" name="visayas" class="checkbox regionVI" value="makati">
                                         <label for="regionVIBacolod"> Bacolod</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIBago" name="visayas" class="regionVI" value="makati">
+                                        <input type="checkbox" id="regionVIBago" name="visayas" class="checkbox regionVI" value="makati">
                                         <label for="regionVIBago"> Bago</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVICadiz" name="visayas" class="regionVI" value="makati">
+                                        <input type="checkbox" id="regionVICadiz" name="visayas" class="checkbox regionVI" value="makati">
                                         <label for="regionVICadiz"> Cadiz</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIEscalante" name="visayas" class="regionVI" value="makati">
+                                        <input type="checkbox" id="regionVIEscalante" name="visayas" class="checkbox regionVI" value="makati">
                                         <label for="regionVIEscalante"> Escalante</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIHimamaylan" name="visayas" class="regionVI" value="makati">
+                                        <input type="checkbox" id="regionVIHimamaylan" name="visayas" class="checkbox regionVI" value="makati">
                                         <label for="regionVIHimamaylan"> Himamaylan</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIKabankalan" name="visayas" class="regionVI" value="makati">
+                                        <input type="checkbox" id="regionVIKabankalan" name="visayas" class="checkbox regionVI" value="makati">
                                         <label for="regionVIKabankalan"> Kabankalan</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVILaCarlota" name="visayas" class="regionVI" value="makati">
+                                        <input type="checkbox" id="regionVILaCarlota" name="visayas" class="checkbox regionVI" value="makati">
                                         <label for="regionVILaCarlota"> La Carlota</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVISagay" name="visayas" class="regionVI" value="makati">
+                                        <input type="checkbox" id="regionVISagay" name="visayas" class="checkbox regionVI" value="makati">
                                         <label for="regionVISagay"> Sagay</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVISanCarlos" name="visayas" class="regionVI" value="makati">
+                                        <input type="checkbox" id="regionVISanCarlos" name="visayas" class="checkbox regionVI" value="makati">
                                         <label for="regionVISanCarlos"> San Carlos</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVISilay" name="visayas" class="regionVI" value="makati">
+                                        <input type="checkbox" id="regionVISilay" name="visayas" class="checkbox regionVI" value="makati">
                                         <label for="regionVISilay"> Silay</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVISipalay" name="visayas" class="regionVI" value="makati">
+                                        <input type="checkbox" id="regionVISipalay" name="visayas" class="checkbox regionVI" value="makati">
                                         <label for="regionVISipalay"> Sipalay</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVITalisay" name="visayas" class="regionVI" value="makati">
+                                        <input type="checkbox" id="regionVITalisay" name="visayas" class="checkbox regionVI" value="makati">
                                         <label for="regionVITalisay"> Talisay</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIVictorias" name="visayas" class="regionVI" value="makati">
+                                        <input type="checkbox" id="regionVIVictorias" name="visayas" class="checkbox regionVI" value="makati">
                                         <label for="regionVIVictorias"> Victorias</label>
                                     </div>
                                 </div>
@@ -868,89 +868,89 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllRegionVII" name="visayas" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllRegionVII" name="visayas" value="makati" class="checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="makati">Select All</label>
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIITagbilaran" name="visayas" class="regionVII" value="makati">
+                                        <input type="checkbox" id="regionVIITagbilaran" name="visayas" class="checkbox regionVII" value="makati">
                                         <label for="regionVIITagbilaran"> Tagbilaran</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIIBogo" name="visayas" class="regionVII" value="makati">
+                                        <input type="checkbox" id="regionVIIBogo" name="visayas" class="checkbox regionVII" value="makati">
                                         <label for="regionVIIBogo"> Bogo</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIICarcar" name="visayas" class="regionVII" value="makati">
+                                        <input type="checkbox" id="regionVIICarcar" name="visayas" class="checkbox regionVII" value="makati">
                                         <label for="regionVIICarcar"> Carcar</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIICebu" name="visayas" class="regionVII" value="makati">
+                                        <input type="checkbox" id="regionVIICebu" name="visayas" class="checkbox regionVII" value="makati">
                                         <label for="regionVIICebu"> Cebu</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIIDanaoati" name="visayas" class="regionVII" value="makati">
+                                        <input type="checkbox" id="regionVIIDanaoati" name="visayas" class="checkbox regionVII" value="makati">
                                         <label for="regionVIImakDanaoati"> Danao</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIILapuLapu" name="visayas" class="regionVII" value="makati">
+                                        <input type="checkbox" id="regionVIILapuLapu" name="visayas" class="checkbox regionVII" value="makati">
                                         <label for="regionVIILapuLapu"> Lapu-Lapu</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIIMandaue" name="visayas" class="regionVII" value="makati">
+                                        <input type="checkbox" id="regionVIIMandaue" name="visayas" class="checkbox regionVII" value="makati">
                                         <label for="regionVIIMandaue"> Mandaue</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIINaga" name="visayas" class="regionVII" value="makati">
+                                        <input type="checkbox" id="regionVIINaga" name="visayas" class="checkbox regionVII" value="makati">
                                         <label for="regionVIINaga"> Naga</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIITalisay" name="visayas" class="regionVII" value="makati">
+                                        <input type="checkbox" id="regionVIITalisay" name="visayas" class="checkbox regionVII" value="makati">
                                         <label for="regionVIITalisay"> Talisay</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIIBais" name="visayas" class="regionVII" value="makati">
+                                        <input type="checkbox" id="regionVIIBais" name="visayas" class="checkbox regionVII" value="makati">
                                         <label for="regionVIIBais"> Bais</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIIBayawan" name="visayas" class="regionVII" value="makati">
+                                        <input type="checkbox" id="regionVIIBayawan" name="visayas" class="checkbox regionVII" value="makati">
                                         <label for="regionVIIBayawan"> Bayawan</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIICanlaon" name="visayas" class="regionVII" value="makati">
+                                        <input type="checkbox" id="regionVIICanlaon" name="visayas" class="checkbox regionVII" value="makati">
                                         <label for="regionVIICanlaon"> Canlaon</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIIDumaguete" name="visayas" class="regionVII" value="makati">
+                                        <input type="checkbox" id="regionVIIDumaguete" name="visayas" class="checkbox regionVII" value="makati">
                                         <label for="regionVIIDumaguete"> Dumaguete</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIIGuihulngan" name="visayas" class="regionVII" value="makati">
+                                        <input type="checkbox" id="regionVIIGuihulngan" name="visayas" class="checkbox regionVII" value="makati">
                                         <label for="regionVIIGuihulngan"> Guihulngan</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIITanjay" name="visayas" class="regionVII" value="makati">
+                                        <input type="checkbox" id="regionVIITanjay" name="visayas" class="checkbox regionVII" value="makati">
                                         <label for="regionVIITanjay"> Tanjay</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIIToledo" name="visayas" class="regionVII" value="makati">
+                                        <input type="checkbox" id="regionVIIToledo" name="visayas" class="checkbox regionVII" value="makati">
                                         <label for="regionVIIToledo"> Toledo</label>
                                     </div>
                                 </div>
@@ -968,44 +968,44 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllRegionVIII" name="visayas" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllRegionVIII" name="visayas" value="makati" class="checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="checkAllRegionVIII">Select All</label>
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIIIBorongan" name="visayas" class="regionVIII" value="makati">
+                                        <input type="checkbox" id="regionVIIIBorongan" name="visayas" class="checkbox regionVIII" value="makati">
                                         <label for="regionVIBorongan"> Borongan</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIIIBaybay" name="visayas" class="regionVIII" value="makati">
+                                        <input type="checkbox" id="regionVIIIBaybay" name="visayas" class="checkbox regionVIII" value="makati">
                                         <label for="regionVIBaybay"> Baybay</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIIIOrmoc" name="visayas" class="regionVIII" value="makati">
+                                        <input type="checkbox" id="regionVIIIOrmoc" name="visayas" class="checkbox regionVIII" value="makati">
                                         <label for="regionVIOrmoc"> Ormoc</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIIITacloban" name="visayas" class="regionVIII" value="makati">
+                                        <input type="checkbox" id="regionVIIITacloban" name="visayas" class="checkbox regionVIII" value="makati">
                                         <label for="regionVITacloban"> Tacloban</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIIICalbayog" name="visayas" class="regionVIII" value="makati">
+                                        <input type="checkbox" id="regionVIIICalbayog" name="visayas" class="checkbox regionVIII" value="makati">
                                         <label for="regionVICalbayog"> Calbayog</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIIICatbalogan" name="visayas" class="regionVIII" value="makati">
+                                        <input type="checkbox" id="regionVIIICatbalogan" name="visayas" class="checkbox regionVIII" value="makati">
                                         <label for="regionVICatbalogan"> Catbalogan</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionVIIIMaasin" name="visayas" class="regionVIII" value="makati">
+                                        <input type="checkbox" id="regionVIIIMaasin" name="visayas" class="checkbox regionVIII" value="makati">
                                         <label for="regionVIMaasin"> Maasin</label>
                                     </div>
                                 </div>
@@ -1018,7 +1018,7 @@
                         <!-- Mindanao Title -->
                         <div class="flex items-start mb-3">
                             <div class="text-sm">
-                                <input type="checkbox" onclick="selectAllMindanao(this)" class="rounded-md">
+                                <input type="checkbox" onclick="selectAllMindanao(this)" class="checkbox rounded-md">
                             </div>
                             
                             <p class="font-semibold flex items-center mb-2"></p>
@@ -1040,34 +1040,34 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllRegionIX" name="mindanao" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllRegionIX" name="mindanao" value="makati" class="checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="checkAllRegionIX">Select All</label>
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIXIsabela" name="mindanao" class="regionIX" value="makati">
+                                        <input type="checkbox" id="regionIXIsabela" name="mindanao" class="checkbox regionIX" value="makati">
                                         <label for="regionIXIsabela"> Isabela</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIXDapitan" name="mindanao" class="regionIX" value="makati">
+                                        <input type="checkbox" id="regionIXDapitan" name="mindanao" class="checkbox regionIX" value="makati">
                                         <label for="regionIXDapitan"> Dapitan</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIXDipolog" name="mindanao" class="regionIX" value="makati">
+                                        <input type="checkbox" id="regionIXDipolog" name="mindanao" class="checkbox regionIX" value="makati">
                                         <label for="regionIXDipolog"> Dipolog</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIXPagadian" name="mindanao" class="regionIX" value="makati">
+                                        <input type="checkbox" id="regionIXPagadian" name="mindanao" class="checkbox regionIX" value="makati">
                                         <label for="regionIXPagadian"> Pagadian</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionIXZamboanga" name="mindanao" class="regionIX" value="makati">
+                                        <input type="checkbox" id="regionIXZamboanga" name="mindanao" class="checkbox regionIX" value="makati">
                                         <label for="vehicle3"> Zamboanga</label>
                                     </div>
                                 </div>
@@ -1085,54 +1085,54 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllRegionX" name="mindanao" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllRegionX" name="mindanao" value="makati" class="checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="checkAllRegionX">Select All</label>
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXMalaybalay" name="mindanao" class="regionX" value="makati">
+                                        <input type="checkbox" id="regionXMalaybalay" name="mindanao" class="checkbox regionX" value="makati">
                                         <label for="regionXMalaybalay"> Malaybalay</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXValencia" name="mindanao" class="regionX" value="makati">
+                                        <input type="checkbox" id="regionXValencia" name="mindanao" class="checkbox regionX" value="makati">
                                         <label for="regionXValencia"> Valencia</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXIligan" name="mindanao" class="regionX" value="makati">
+                                        <input type="checkbox" id="regionXIligan" name="mindanao" class="checkbox regionX" value="makati">
                                         <label for="regionXIligan"> Iligan</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXOroquieta" name="mindanao" class="regionX" value="makati">
+                                        <input type="checkbox" id="regionXOroquieta" name="mindanao" class="checkbox regionX" value="makati">
                                         <label for="regionXOroquieta"> Oroquieta</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXOzamiz" name="mindanao" class="regionX" value="makati">
+                                        <input type="checkbox" id="regionXOzamiz" name="mindanao" class="checkbox regionX" value="makati">
                                         <label for="regionXOzamiz"> Ozamiz</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXTangub" name="mindanao" class="regionX" value="makati">
+                                        <input type="checkbox" id="regionXTangub" name="mindanao" class="checkbox regionX" value="makati">
                                         <label for="regionXTangub"> Tangub</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXCagayandeOro" name="mindanao" class="regionX" value="makati">
+                                        <input type="checkbox" id="regionXCagayandeOro" name="mindanao" class="checkbox regionX" value="makati">
                                         <label for="regionXCagayandeOro"> Cagayan de Oro</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXElSalvador" name="mindanao" class="regionX" value="makati">
+                                        <input type="checkbox" id="regionXElSalvador" name="mindanao" class="checkbox regionX" value="makati">
                                         <label for="regionXElSalvador"> El Salvador</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXGingoog" name="mindanao" class="regionX" value="makati">
+                                        <input type="checkbox" id="regionXGingoog" name="mindanao" class="checkbox regionX" value="makati">
                                         <label for="regionXGingoog"> Gingoog</label>
                                     </div>
                                 </div>
@@ -1150,39 +1150,39 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllRegionXI" name="mindanao" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllRegionXI" name="mindanao" value="makati" class="checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="checkAllRegionXI">Select All</label>
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXIPanabo" name="mindanao" class="regionXI" value="makati">
+                                        <input type="checkbox" id="regionXIPanabo" name="mindanao" class="checkbox regionXI" value="makati">
                                         <label for="regionXIPanabo"> Panabo</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXISamal" name="mindanao" class="regionXI" value="makati">
+                                        <input type="checkbox" id="regionXISamal" name="mindanao" class="checkbox regionXI" value="makati">
                                         <label for="regionXISamal"> Samal</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXITagum" name="mindanao" class="regionXI" value="makati">
+                                        <input type="checkbox" id="regionXITagum" name="mindanao" class="checkbox regionXI" value="makati">
                                         <label for="regionXITagum"> Tagum</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXIDavao" name="mindanao" class="regionXI" value="makati">
+                                        <input type="checkbox" id="regionXIDavao" name="mindanao" class="checkbox regionXI" value="makati">
                                         <label for="regionXIDavao"> Davao</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXIDigos" name="mindanao" class="regionXI" value="makati">
+                                        <input type="checkbox" id="regionXIDigos" name="mindanao" class="checkbox regionXI" value="makati">
                                         <label for="regionXIDigos"> Digos</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXIMati" name="mindanao" class="regionXI" value="makati">
+                                        <input type="checkbox" id="regionXIMati" name="mindanao" class="checkbox regionXI" value="makati">
                                         <label for="regionXIMati"> Mati</label>
                                     </div>
                                 </div>
@@ -1200,29 +1200,29 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllSOCCSKSARGEN" name="mindanao" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllSOCCSKSARGEN" name="mindanao" value="makati" class="checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="checkAllSOCCSKSARGEN">Select All</label>
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXIIKidapawan" name="mindanao"  class="SOCCSKSARGENRegion" value="makati">
+                                        <input type="checkbox" id="regionXIIKidapawan" name="mindanao"  class="checkbox SOCCSKSARGENRegion" value="makati">
                                         <label for="regionXIIKidapawan"> Kidapawan</label>
                                     </div>
                                                                 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXIIGeneralSantos" name="mindanao" class="SOCCSKSARGENRegion" value="makati">
+                                        <input type="checkbox" id="regionXIIGeneralSantos" name="mindanao" class="checkbox SOCCSKSARGENRegion" value="makati">
                                         <label for="regionXIIGeneralSantos"> General Santos</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXIIKoronadal" name="mindanao" class="SOCCSKSARGENRegion" value="makati">
+                                        <input type="checkbox" id="regionXIIKoronadal" name="mindanao" class="checkbox SOCCSKSARGENRegion" value="makati">
                                         <label for="regionXIIKoronadal"> Koronadal</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXIITacurong" name="mindanao" class="SOCCSKSARGENRegion" value="makati">
+                                        <input type="checkbox" id="regionXIITacurong" name="mindanao" class="checkbox SOCCSKSARGENRegion" value="makati">
                                         <label for="regionXIITacurong"> Tacurong</label>
                                     </div>
                                 </div>
@@ -1241,24 +1241,24 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllBARMMRegion" name="mindanao" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllBARMMRegion" name="mindanao" value="makati" class="checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="checkAllBARMMRegion">Select All</label>
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="BARMMCotabato" name="mindanao" class="BARMMRegion" value="makati">
+                                        <input type="checkbox" id="BARMMCotabato" name="mindanao" class="checkbox BARMMRegion" value="makati">
                                         <label for="BARMMCotabato"> Cotabato</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="BARMMLamitan" name="mindanao" class="BARMMRegion" value="makati">
+                                        <input type="checkbox" id="BARMMLamitan" name="mindanao" class="checkbox BARMMRegion" value="makati">
                                         <label for="BARMMLamitan"> Lamitan</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="BARMMMarawi" name="mindanao" class="BARMMRegion" value="makati">
+                                        <input type="checkbox" id="BARMMMarawi" name="mindanao" class="checkbox BARMMRegion" value="makati">
                                         <label for="BARMMMarawi"> Marawi</label>
                                     </div>
                                 </div>
@@ -1275,39 +1275,39 @@
                                     </p>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="checkAllRegionXIII" name="mindanao" value="makati" class="rounded-md text-green-500 focus:ring-0">
+                                        <input type="checkbox" id="checkAllRegionXIII" name="mindanao" value="makati" class=" checkbox rounded-md text-green-500 focus:ring-0">
                                         <label for="checkAllRegionXIII">Select All</label>
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-12 gap-y-2">
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXIIIButuan" name="mindanao" class="regionXIII" value="makati">
+                                        <input type="checkbox" id="regionXIIIButuan" name="mindanao" class=" checkbox regionXIII" value="makati">
                                         <label for="regionXIIIButuan"> Butuan</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXIIICabadbaran" name="mindanao" class="regionXIII" value="makati">
+                                        <input type="checkbox" id="regionXIIICabadbaran" name="mindanao" class=" checkbox regionXIII" value="makati">
                                         <label for="regionXIIICabadbaran"> Cabadbaran</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXIIIBayugan" name="mindanao" class="regionXIII" value="makati">
+                                        <input type="checkbox" id="regionXIIIBayugan" name="mindanao" class=" checkbox regionXIII" value="makati">
                                         <label for="regionXIIIBayugan"> Bayugan</label>
                                     </div>
                                     
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXIIISurigao" name="mindanao" class="regionXIII" value="makati">
+                                        <input type="checkbox" id="regionXIIISurigao" name="mindanao" class=" checkbox regionXIII" value="makati">
                                         <label for="regionXIIISurigao"> Surigao</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXIIIBislig" name="mindanao" class="regionXIII" value="makati">
+                                        <input type="checkbox" id="regionXIIIBislig" name="mindanao" class=" checkbox regionXIII" value="makati">
                                         <label for="regionXIIIBislig"> Bislig</label>
                                     </div>
 
                                     <div class="col-span-4">
-                                        <input type="checkbox" id="regionXIIITandag" name="mindanao"  class="regionXIII" value="makati">
+                                        <input type="checkbox" id="regionXIIITandag" name="mindanao"  class="checkbox regionXIII" value="makati">
                                         <label for="regionXIIITandag"> Tandag</label>
                                     </div>
                                 </div>
@@ -1315,14 +1315,14 @@
                         </div>
                     </div> 
 
-                    <div class="col-span-12 flex justify-end">
+                    <!-- <div class="col-span-12 flex justify-end">
                         <button class="py-1 px-2 md:p-2 bg-gray-900 rounded-lg drop-shadow-md text-white flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                               </svg>
                               &ensp;Apply Filter
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             

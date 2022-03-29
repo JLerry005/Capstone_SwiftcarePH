@@ -186,7 +186,72 @@
 
             <!-- Hospital Name -->
             <div class="xl:flex xl:items-start xl:justify-between">
-                <p class="text-orange-500 text-xl md:text-2xl lg:text-3xl font-bold uppercase"><?php echo $hospitalName ?></p>
+                <div class="">
+                    <p class="text-orange-500 text-xl md:text-2xl lg:text-3xl font-bold uppercase mb-2"><?php echo $hospitalName ?></p>
+
+                    <!-- Hospital Address -->
+                    <div class="flex flex-row mb-2">
+                        <i class="bi bi-geo-alt-fill text-red-500"></i>
+                        <p class="font-semibold">&ensp; Address: <span class="font-medium">&nbsp;<?php echo $hospitalAddress ?></span></p>
+                    </div>
+
+                    <!-- Details for large screen -->
+                    <div class="hidden xl:flex xl:flex-row space-x-3">
+
+                        <!-- Hospital Phone Number -->
+                        <div class="flex flex-row bg-white p-3 drop-shadow-md rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                            </svg>
+                            <p class="font-semibold text-xs">&ensp;Phone:</p> <span class="text-blue-500 font-medium">&nbsp;<?php echo $hospitalPhone?></span>
+                        </div>
+
+                        <?php
+                            // Check if bed is available
+                            if ($bedSlot > 0) {
+                                echo '
+                                    <!-- Hospital Bed Slot -->
+                                    <div class="flex flex-row bg-white p-3 drop-shadow-md rounded-full">
+                                        <i class="bi bi-collection-fill"></i>
+                                        <p class="font-semibold text-xs">&ensp; Bed Slot:</p> &nbsp;<span>'.$bedSlot.'</span> 
+                                    </div>
+                                ';
+                            }else {
+                                echo '';
+                            }
+
+                            // Check if room is available
+                            if ($roomSlot ) {
+                                echo '
+                                    <!-- Hospital Room Slot -->
+                                    <div class="flex flex-row bg-white p-3 drop-shadow-md rounded-full">
+                                        <i class="bi bi-collection"></i>
+                                        <p class="font-semibold text-xs">&ensp; Room Slot:</p> &nbsp;<span>'.$roomSlot.'</span> 
+                                    </div>
+                                ';
+                            }else {
+                                echo '';
+                            }
+                        ?>
+                        
+                        <!-- Hospital Referral -->
+                        <?php if($referral == "Yes"){
+                                    echo '
+                                        <div class="flex flex-row bg-white p-3 drop-shadow-md rounded-full">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                                            </svg>
+                                            <p class="font-semibold text-xs">&nbsp; Referral Documents required</p>
+                                        </div>
+                                    ';
+                                }else {
+                                    echo '';
+                                }
+                        ?>
+
+                    </div>
+                </div>
+                
 
                 <div class="hidden xl:flex xl:items-center">
                     <div id="getDirectionsInput">
@@ -213,68 +278,76 @@
                     
                 </div>
                 
-            </div>
+            </div>           
 
-            <!-- Hospital Address -->
-            <div class="flex flex-row">
-                <i class="bi bi-geo-alt-fill text-red-500"></i>
-                <p class="font-semibold">&ensp; Address: <span class="font-medium">&nbsp;<?php echo $hospitalAddress ?></span></p>
-                
-            </div>
+            <div class="xl:hidden">
+                <!-- Hospital Address -->
+                <div class="flex flex-row">
+                    <i class="bi bi-geo-alt-fill text-red-500"></i>
+                    <p class="font-semibold">&ensp; Address: <span class="font-medium">&nbsp;<?php echo $hospitalAddress ?></span></p>
+                </div>
 
-            <!-- Hospital Phone Number -->
-            <div class="flex flex-row">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                </svg>
-                <p class="font-semibold">&ensp;Phone:</p> <span class="text-blue-500 font-medium">&nbsp;<?php echo $hospitalPhone?></span>
-            </div>
-                
-            <?php
-                // Check if bed is available
-                if ($bed == "Bed") {
-                    echo '
-                        <!-- Hospital Bed Slot -->
-                        <div class="flex flex-row">
-                            <i class="bi bi-collection-fill"></i>
-                            <p class="font-semibold">&ensp; Bed Slot:</p> &nbsp;<span>'.$bedSlot.'</span> 
-                        </div>
-                    ';
-                }else {
-                    echo '';
-                }
-
-                // Check if room is available
-                if ($room == "Room") {
-                    echo '
-                        <!-- Hospital Room Slot -->
-                        <div class="flex flex-row">
-                            <i class="bi bi-collection"></i>
-                            <p class="font-semibold">&ensp; Room Slot:</p> &nbsp;<span>'.$roomSlot.'</span> 
-                        </div>
-                    ';
-                }else {
-                    echo '';
-                }
-            ?>
-            
-            <!-- Hospital Referral -->
-            <?php if($referral == "Yes"){
+                <!-- Hospital Phone Number -->
+                <div class="flex flex-row">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                    <p class="font-semibold">&ensp;Phone:</p> <span class="text-blue-500 font-medium">&nbsp;<?php echo $hospitalPhone?></span>
+                </div>
+                    
+                <?php
+                    // Check if bed is available
+                    if ($bedSlot > 0) {
                         echo '
+                            <!-- Hospital Bed Slot -->
                             <div class="flex flex-row">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                                </svg>
-                                <p class="font-semibold">&nbsp; Referral Documents required</p>
+                                <i class="bi bi-collection-fill"></i>
+                                <p class="font-semibold">&ensp; Bed Slot:</p> &nbsp;<span>'.$bedSlot.'</span> 
                             </div>
                         ';
                     }else {
                         echo '';
                     }
-            ?>
 
+                    // Check if room is available
+                    if ($roomSlot ) {
+                        echo '
+                            <!-- Hospital Room Slot -->
+                            <div class="flex flex-row">
+                                <i class="bi bi-collection"></i>
+                                <p class="font-semibold">&ensp; Room Slot:</p> &nbsp;<span>'.$roomSlot.'</span> 
+                            </div>
+                        ';
+                    }else {
+                        echo '';
+                    }
+                ?>
+                
+                <!-- Hospital Referral -->
+                <?php if($referral == "Yes"){
+                            echo '
+                                <div class="flex flex-row">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                                    </svg>
+                                    <p class="font-semibold">&nbsp; Referral Documents required</p>
+                                </div>
+                            ';
+                        }else {
+                            echo '';
+                        }
+                ?>
+
+            </div>
+            
             <!-- Hospital Description -->
-            <div class="pt-3 pb-1">
+            <div class="pt-3 pb-1 xl:w-[800px]">
+                <h1 class="flex items-center mb-2 font-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd" />
+                      </svg>
+                    &ensp;About <?php echo $hospitalName?>&nbsp;
+                </h1>
                 <p><?php echo $hospitalDescription?></p>
             </div>
             
@@ -339,7 +412,7 @@
                     <form action="" method="post">
 
                         <!-- Modal body -->
-                        <div class="p-6 space-y-2">
+                        <div class="p-8 space-y-2">
 
                             <!-- Patient Name Text -->
                             <div class="mb-3 font-semibold flex justify-row">
@@ -353,13 +426,13 @@
                             <div class="grid xl:grid-cols-2 xl:gap-6">
                                 <!-- Patient First Name -->
                                 <div class="relative z-0 mb-4 w-full group">
-                                    <label for="firstName" class="block mb-2 text-sm font-medium text-gray-900">First Name</label>
-                                    <input type="text" name="firstName" id="firstName" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder=" " required />
+                                    <!-- <label for="firstName" class="block mb-2 text-sm font-medium text-gray-900">First Name</label> -->
+                                    <input type="text" name="firstName" id="firstName" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="First Name" required />
                                 </div>
                                 <!-- Patient Last Name -->
                                 <div class="relative z-0 mb-4 w-full group">
-                                    <label for="lastName" class="block mb-2 text-sm font-medium text-gray-900">Last name</label>
-                                    <input type="text" name="lastName" id="lastName" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder=" " required />
+                                    <!-- <label for="lastName" class="block mb-2 text-sm font-medium text-gray-900">Last name</label> -->
+                                    <input type="text" name="lastName" id="lastName" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Last name" required />
                                 </div>
                             </div>
 
@@ -417,19 +490,24 @@
                                         <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
                                         <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
                                         </svg>
-                                        <label for="concern" class="block mb-2 text-sm font-medium text-gray-900">Select your concern</label><span class="text-red-600">&nbsp;*</span>
+                                        <label for="concern" class="block mb-2 text-sm font-medium text-gray-900">&ensp;Select your Concern</label>                                        
+                                        <div id="select-concern-info">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
                                     </div> 
 
-                                    <select id="concern" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                    <option selected disabled value="" class="font-medium text-gray-900">-Select-</option>
-                                    <option value="Covid">Covid</option>
-                                    <option value="Non - Covid">Non - Covid</option>
+                                    <select id="concern"  class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                        <option selected disabled value="" class="font-medium text-gray-900">-Select-</option>
+                                        <option value="Covid">Covid</option>
+                                        <option value="Non-Covid">Non - Covid</option>
                                     </select>
                                 </div>
 
                                 <!-- Specify your concern input -->
                                 <div class="relative z-0 mt-10 w-full group">
-                                    <input type="text" name="specifyConcern" id="specifyConcern" class="mt-1 bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Specify your concern" required />
+                                    <input type="text" name="specifyConcern" id="specifyConcern" class="mt-1 bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Specify your concern">
                                 </div>
                             </div>
 
@@ -446,20 +524,56 @@
                                 <!-- Hospital Name -->
                                 <div class="relative z-0 mt-2 mb-6 w-full group">
                                     <!-- <label for="date" class="block mb-2 text-sm font-medium text-gray-900">Hospital Name</label> -->
-                                    <input type="text" name="hospitalName" id="hospitalName" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Hospital name" required />
+                                    <input type="text" name="hospitalName" id="hospitalName" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="" value="<?php echo $hospitalName ?>" disabled />
                                 </div>
 
-                                <!-- City -->
-                                <div class="relative z-0 mt-2 mb-6 w-full group">
-                                    <!-- <label for="cityName" class="block mb-2 text-sm font-medium text-gray-900">City</label> -->
-                                    <input type="text" name="cityName" id="cityName" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="City Place" required />
+                                <!-- Bed or Room -->
+                                <div class="relative mt-2 z-0 w-full group">
+
+                                    <!-- <div class="flex justify-row">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
+                                        </svg>
+                                        <label for="concern" class="block mb-2 text-sm font-medium text-gray-900">Select your Reservation Type</label><span class="text-red-600">&nbsp;*</span>
+                                    </div>  -->
+
+                                    <select id="concern" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
+                                        <option selected disabled value="" class="font-medium text-gray-900">-Select your Reservation Type-</option>
+                                        <?php
+                                            if ($bedSlot > 0) {
+                                                echo '<option value="bed">Bed</option>';
+                                            }
+
+                                            if ($roomSlot > 0) {
+                                                echo '<option value="room">Room</option>';
+                                            }
+                                        ?>
+                                        
+                                        
+                                    </select>
                                 </div>
+
                             </div>
 
-                            <div class="flex flex-rows">
+                            <!-- Hospital Referral -->
+                            <?php if($referral == "Yes"){
+                                        echo '
+                                            <div class="flex flex-rows">
+                                                <label class="block mb-2 text-sm font-medium text-gray-900" for="user_avatar">Attachment for Referal</label><span class="text-red-600">&nbsp;*</span>
+                                            </div>
+                                            <input class="block w-full text-sm text-gray-900 bg-blue-50 rounded-lg border border-gray-400 cursor-pointer focus:outline-none focus:border-transparent " aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                        ';
+                                    }else {
+                                        echo '';
+                                    }
+                            ?>
+
+                            <!-- <div class="flex flex-rows">
                                 <label class="block mb-2 text-sm font-medium text-gray-900" for="user_avatar">Attachment for Referal</label><span class="text-red-600">&nbsp;*</span>
                             </div>
-                            <input class="block w-full text-sm text-gray-900 bg-blue-50 rounded-lg border border-gray-400 cursor-pointer focus:outline-none focus:border-transparent " aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                            <input class="block w-full text-sm text-gray-900 bg-blue-50 rounded-lg border border-gray-400 cursor-pointer focus:outline-none focus:border-transparent " aria-describedby="user_avatar_help" id="user_avatar" type="file"> -->
+
                         </div>
                     </form>
 

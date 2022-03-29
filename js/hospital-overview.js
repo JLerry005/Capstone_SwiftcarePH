@@ -41,3 +41,23 @@
     function bookModal(){
         toggleModal('bookFormModal', true);
     }
+
+    // Enable and Disable Input
+    $("#concern").change(function() {
+        if ($(this).val() == "Covid") {
+          $("#specifyConcern").attr("disabled", "disabled");
+          document.getElementById("specifyConcern").required = false;
+        } else {
+          $("#specifyConcern").removeAttr("disabled");
+          document.getElementById("specifyConcern").required = true;
+        }
+      }).trigger("change");
+    
+      let selectConcernInfo = document.getElementById("select-concern-info");
+      let roomSlotInfo = document.getElementById("room-slot-info");
+      let referralSlotInfo = document.getElementById("referral-slot-info");
+      let cityinfo = document.getElementById("city-info");
+      
+      tippy(selectConcernInfo, {
+          content: "Leave to zero (0) if there are no slots for Bed.",
+      });

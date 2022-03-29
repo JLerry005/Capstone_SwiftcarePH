@@ -26,7 +26,7 @@ Gmail
 VS Code
 
 ---
-
+    
 -Saan yan? sa index lods ahh
 
 By city - Checkbox
