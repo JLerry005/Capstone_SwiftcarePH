@@ -354,20 +354,20 @@
                                 <!-- Patient First Name -->
                                 <div class="relative z-0 mb-4 w-full group">
                                     <label for="firstName" class="block mb-2 text-sm font-medium text-gray-900">First Name</label>
-                                    <input type="text" name="firstName" id="firstName" class="bg-blue-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder=" " required />
+                                    <input type="text" name="firstName" id="firstName" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder=" " required />
                                 </div>
                                 <!-- Patient Last Name -->
                                 <div class="relative z-0 mb-4 w-full group">
-                                    <input type="text" name="lastName" id="lastName" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                                    <label for="lastName" class="absolute text-sm font-medium  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last name</label>
+                                    <label for="lastName" class="block mb-2 text-sm font-medium text-gray-900">Last name</label>
+                                    <input type="text" name="lastName" id="lastName" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder=" " required />
                                 </div>
                             </div>
 
                             <!-- Appointment Schedule Text -->
-                            <div class="pb-3 font-semibold flex justify-row">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                            </svg>
+                            <div class="font-semibold flex justify-row">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                                </svg>
                                 <p>&ensp;Appointment Schedule</p><span class="text-red-600">&nbsp;*</span>
                             </div>
 
@@ -376,29 +376,35 @@
                             <div class="grid xl:grid-cols-2 xl:gap-6">
                                 <!-- Date -->
                                 <div class="relative z-0 mb-4 w-full group">
-                                    <input type="date" name="date" id="date_picker" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                                    <label for="date" class="absolute text-sm font-semibold  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Date</label>
+                                    <label for="date" class="block mb-2 text-sm font-medium text-gray-900">Date</label>
+                                    <input type="date" name="date" id="date_picker" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder=" " required />
                                 </div>
 
                                 <!-- Time -->
                                 <div class="relative z-0 mb-4 w-full group">
-                                    <input type="time" name="time" id="time" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                                    <label for="time" class="absolute text-sm font-semibold  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Time</label>
+                                    <label for="time" class="block mb-2 text-sm font-medium text-gray-900">Time</label>
+                                    <input type="time" name="time" id="time" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder=" " required />
                                 </div>
                             </div>
 
                             <!-- Contact Details Text -->
-                            <div class="pb-2 font-semibold flex justify-row">
+                            <div class="font-semibold flex justify-row">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-600" viewBox="0 0 20 20" fill="currentColor">
                                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                                 </svg>
-                                <p>&ensp;Contact Details</p><span class="text-red-600">&nbsp;*</span>
+                                <p>&ensp;Contact Number</p><span class="text-red-600">&nbsp;*</span>
                             </div>
 
                             <!-- Contact Number -->
-                            <div class="relative z-0 w-full group">
-                                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                                <label for="floating_phone" class="absolute text-sm font-medium  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone number <span class="text-gray-400">(+63-9XX-XXXX-XXX)</span></label>
+                            <!-- <div class="relative z-0 w-full group">
+                                <label for="floating_phone" class="block mb-2 text-sm font-medium text-gray-900">Phone number <span class="text-gray-400">(+63-9XX-XXXX-XXX)</span></label>
+                                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Phone number (+63-9XX-XXXX-XXX)" value="+63-9" required />
+                            </div> -->
+                            <div class="relative">
+                                <div class="flex absolute inset-y-0 left-0 items-center pl-1 pointer-events-none">
+                                    <img src="assets\Philippines-Flag.svg" alt="Philippines Flag" class="w-10 h-10 p-1" >
+                                </div>
+                               <input type="text" id="email-adress-icon" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 p-2.5 " placeholder="Phone number (+63-9XX-XXXX-XXX)" value="+63-9" required>
                             </div>
 
                             <!-- Select & Specify your concern -->
@@ -411,7 +417,7 @@
                                         <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
                                         <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
                                         </svg>
-                                        <label for="concern" class="block mb-2 text-sm font-semibold text-gray-900">Select your concern</label><span class="text-red-600">&nbsp;*</span>
+                                        <label for="concern" class="block mb-2 text-sm font-medium text-gray-900">Select your concern</label><span class="text-red-600">&nbsp;*</span>
                                     </div> 
 
                                     <select id="concern" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -423,8 +429,7 @@
 
                                 <!-- Specify your concern input -->
                                 <div class="relative z-0 mt-10 w-full group">
-                                    <input type="text" name="specifyConcern" id="specifyConcern" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                                    <label for="specifyConcern" class="absolute text-sm font-medium  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Specify your concern</label>
+                                    <input type="text" name="specifyConcern" id="specifyConcern" class="mt-1 bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Specify your concern" required />
                                 </div>
                             </div>
 
@@ -440,21 +445,21 @@
                             <div class="grid xl:grid-cols-2 xl:gap-6">
                                 <!-- Hospital Name -->
                                 <div class="relative z-0 mt-2 mb-6 w-full group">
-                                    <input type="text" name="hospitalName" id="hospitalName" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                                    <label for="date" class="absolute text-sm font-medium  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Hospital Name</label>
+                                    <!-- <label for="date" class="block mb-2 text-sm font-medium text-gray-900">Hospital Name</label> -->
+                                    <input type="text" name="hospitalName" id="hospitalName" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Hospital name" required />
                                 </div>
 
                                 <!-- City -->
                                 <div class="relative z-0 mt-2 mb-6 w-full group">
-                                    <input type="text" name="cityName" id="cityName" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                                    <label for="cityName" class="absolute text-sm font-medium  text-gray-900 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">City</label>
+                                    <!-- <label for="cityName" class="block mb-2 text-sm font-medium text-gray-900">City</label> -->
+                                    <input type="text" name="cityName" id="cityName" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="City Place" required />
                                 </div>
                             </div>
 
                             <div class="flex flex-rows">
                                 <label class="block mb-2 text-sm font-medium text-gray-900" for="user_avatar">Attachment for Referal</label><span class="text-red-600">&nbsp;*</span>
                             </div>
-                            <input class="block w-full text-sm text-gray-900 bg-blue-50 rounded-lg border border-gray-300 cursor-pointer focus:outline-none focus:border-transparent" aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                            <input class="block w-full text-sm text-gray-900 bg-blue-50 rounded-lg border border-gray-400 cursor-pointer focus:outline-none focus:border-transparent " aria-describedby="user_avatar_help" id="user_avatar" type="file">
                         </div>
                     </form>
 

@@ -324,7 +324,13 @@
                                     <select name="hospitalCity" id="hospital-city" class="text-sm rounded-md border-[1px] border-gray-300">
                                         <optgroup label="NCR">
                                           <option value="caloocan">Caloocan</option>
-                                          <option value="valenzuela">Valenzuela</option>
+                                          <option value="valenzuela">Marikina</option>
+                                          <option value="caloocan">Makati</option>
+                                          <option value="valenzuela">Mandaluyong</option>
+                                          <option value="caloocan">Muntinlupa</option>
+                                          <option value="valenzuela">Manila</option>
+                                          <option value="caloocan">Navotas</option>
+                                          <option value="valenzuela">Malabon</option>
                                         </optgroup>
                                         <optgroup label="region I">
                                           <option value="baguio">Baguio</option>
@@ -416,12 +422,12 @@
                                 <div class=""> 
                                     <label for="website-link" class="block mb-2 text-sm font-medium text-orange-500"> Type your website link here: </label>
                                     <div class="relative">
-                                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                        <div class="flex absolute inset-y-0 left-0 pl-3 items-center pointer-events-none ">
+                                            <!-- <img src="assets\health-login-icon.svg" alt="" srcset="" class="w-10 h-10"> -->
                                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
                                         </div>
                                         <input type="text" name="website-link" id="website-link" class="w-80 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block pl-10 p-2.5" placeholder="Type your website...">
                                     </div>
-                                    <!-- <input type="text" class="w-full border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" name="website-link" id="website-link" placeholder="www.sample.com" required> -->
                                 </div>
                             </div>
 
