@@ -371,7 +371,6 @@
                         // ';
                     }
 
-
                 ?>  
             </div>
 
@@ -409,7 +408,7 @@
                     </div>
 
                     <!-- Form -->
-                    <form action="" method="post">
+                    <form action="includes/booking-form-signup-inc.php" method="POST">
 
                         <!-- Modal body -->
                         <div class="p-8 space-y-2">
@@ -427,7 +426,7 @@
                                 <!-- Patient First Name -->
                                 <div class="relative z-0 mb-4 w-full group">
                                     <!-- <label for="firstName" class="block mb-2 text-sm font-medium text-gray-900">First Name</label> -->
-                                    <input type="text" name="firstName" id="firstName" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="First Name" required />
+                                    <input type="text" name="firstName" id="firstName" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="First Name" required/>
                                 </div>
                                 <!-- Patient Last Name -->
                                 <div class="relative z-0 mb-4 w-full group">
@@ -469,15 +468,11 @@
                             </div>
 
                             <!-- Contact Number -->
-                            <!-- <div class="relative z-0 w-full group">
-                                <label for="floating_phone" class="block mb-2 text-sm font-medium text-gray-900">Phone number <span class="text-gray-400">(+63-9XX-XXXX-XXX)</span></label>
-                                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Phone number (+63-9XX-XXXX-XXX)" value="+63-9" required />
-                            </div> -->
                             <div class="relative">
                                 <div class="flex absolute inset-y-0 left-0 items-center pl-1 pointer-events-none">
                                     <img src="assets\Philippines-Flag.svg" alt="Philippines Flag" class="w-10 h-10 p-1" >
                                 </div>
-                               <input type="text" id="email-adress-icon" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 p-2.5 " placeholder="Phone number (+63-9XX-XXXX-XXX)" value="+63-9" required>
+                               <input type="tel"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="phoneNumber" name="phoneNumber" maxlength="13" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 p-2.5 " placeholder="Phone number (+63-9XX-XXXX-XXX)" value="+639" required>
                             </div>
 
                             <!-- Select & Specify your concern -->
@@ -498,7 +493,7 @@
                                         </div>
                                     </div> 
 
-                                    <select id="concern"  class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <select id="concern" name="concern" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                         <option selected disabled value="" class="font-medium text-gray-900">-Select-</option>
                                         <option value="Covid">Covid</option>
                                         <option value="Non-Covid">Non - Covid</option>
@@ -507,7 +502,7 @@
 
                                 <!-- Specify your concern input -->
                                 <div class="relative z-0 mt-10 w-full group">
-                                    <input type="text" name="specifyConcern" id="specifyConcern" class="mt-1 bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Specify your concern">
+                                    <input type="text" name="specifyConcern" id="specifyConcern" class="mt-1 bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Specify your concern" disabled required>
                                 </div>
                             </div>
 
@@ -538,7 +533,7 @@
                                         <label for="concern" class="block mb-2 text-sm font-medium text-gray-900">Select your Reservation Type</label><span class="text-red-600">&nbsp;*</span>
                                     </div>  -->
 
-                                    <select id="concern" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
+                                    <select id="concern" name="reservationType" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
                                         <option selected disabled value="" class="font-medium text-gray-900">-Select your Reservation Type-</option>
                                         <?php
                                             if ($bedSlot > 0) {
@@ -575,13 +570,14 @@
                             <input class="block w-full text-sm text-gray-900 bg-blue-50 rounded-lg border border-gray-400 cursor-pointer focus:outline-none focus:border-transparent " aria-describedby="user_avatar_help" id="user_avatar" type="file"> -->
 
                         </div>
-                    </form>
 
-                    <!-- Modal footer -->
-                    <div class="flex justify-end p-6 space-x-2 rounded-b border-t border-gray-600">
-                        <button data-modal-toggle="bookFormModal" type="button" class="focus:outline-none text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Book Now</button>
-                        <button data-modal-toggle="bookFormModal" type="button" class="text-red-500 hover:text-white border border-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Cancel</button>
-                    </div>
+
+                        <!-- Modal footer -->
+                        <div class="flex justify-end p-6 space-x-2 rounded-b border-t border-gray-600">
+                            <button  type="button" name="btnBookingNow" class="focus:outline-none text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Book Now</button>
+                            <button type="button" class="text-red-500 hover:text-white border border-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Cancel</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
