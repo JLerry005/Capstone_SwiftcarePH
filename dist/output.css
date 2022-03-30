@@ -1285,26 +1285,6 @@ input:checked + .toggle-bg{
   width: 16rem;
 }
 
-.w-60{
-  width: 15rem;
-}
-
-.w-\[300px\]{
-  width: 300px;
-}
-
-.w-\[200px\]{
-  width: 200px;
-}
-
-.w-\[400px\]{
-  width: 400px;
-}
-
-.w-\[800px\]{
-  width: 800px;
-}
-
 .max-w-4xl{
   max-width: 56rem;
 }

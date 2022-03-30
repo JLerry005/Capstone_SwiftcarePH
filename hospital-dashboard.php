@@ -336,6 +336,10 @@
                                           <option value="baguio">Baguio</option>
                                           <option value="batangas">Batangas</option>
                                         </optgroup>
+
+                                        <optgroup label="Visayas">
+                                            <option value="Cebu">Cebu</option>
+                                        </optgroup>
                                     </select>
 
                                     <!-- <label for="hospital-city" class="flex items-center mb-2 text-sm font-medium text-orange-500">

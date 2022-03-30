@@ -3,7 +3,7 @@
     $serverName = "localhost";
     $dbUsername = "root";
     $dbPassword = "";
-    $dbName = "swiftcareph_sample_db";
+    $dbName = "swiftcare_db";
 
     $conn = mysqli_connect($serverName, $dbUsername, $dbPassword, $dbName);
 

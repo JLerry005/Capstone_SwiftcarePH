@@ -81,7 +81,7 @@
                     <label for="userEmail">Email</label>
                     <input type="email" name="user-email" id="user-email" class="mb-1 border lg:border-2 text-gray-700 border-blue-500 focus:outline outline-2 outline-blue-500 p-3 rounded font-bold" placeholder="ex: email@email.com" required>
                     <label for="userMobile">Mobile Number</label>
-                    <input type="tel" inputmode="numeric" enterkeyhint="next" pattern="[0-9]{10,11}" name="userMobileNumber" id="userMobileNumber" class="mb-7 border text-gray-700 lg:border-2 border-blue-500 focus:outline outline-2 outline-blue-500 p-3 rounded font-bold" placeholder="ex:09123456789" required>
+                    <input type="tel" inputmode="numeric" enterkeyhint="next" pattern="[0-9]{10,11}" maxlength="11" name="userMobileNumber" id="userMobileNumber" class="mb-7 border text-gray-700 lg:border-2 border-blue-500 focus:outline outline-2 outline-blue-500 p-3 rounded font-bold" placeholder="ex:09123456789" required>
                     
                     <center class="text-dark">
                         <?php
@@ -119,7 +119,7 @@
     </div>
 
     <div class="absolute 2xl:bottom-5 left-0 right-0 hidden 2xl:block">
-        <p class="text-center text-slate-400 text-xs">© <a href="#" class="hover:underline">Swiftcare PH</a>  2022 | All Rights Reserved. 😎🩺🔥</p>
+        <p class="text-center text-slate-400 text-xs">© <a href="#" class="hover:underline">Swiftcare PH</a>  2022 | All Rights Reserved.</p>
     </div>
 </body>
 </html>
