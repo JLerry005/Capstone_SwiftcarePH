@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2022 at 02:43 PM
+-- Generation Time: Mar 31, 2022 at 05:41 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -66,7 +66,8 @@ CREATE TABLE `approvedhospital` (
 INSERT INTO `approvedhospital` (`approvalID`, `hospitalID`, `hospitalName`, `registrationCode`, `approvalTimestamp`) VALUES
 (108, 183, 'Amang Rodriguez Memorial Medical Center', 0, '2022-03-30 11:22:55'),
 (109, 184, 'Mount Banawe General Hospital', 0, '2022-03-30 11:23:25'),
-(110, 185, 'Cebu Doctors University Hospital', 0, '2022-03-30 11:31:48');
+(110, 185, 'Cebu Doctors University Hospital', 0, '2022-03-30 11:31:48'),
+(111, 186, 'Sample hospital', 0, '2022-03-30 13:05:11');
 
 -- --------------------------------------------------------
 
@@ -102,9 +103,10 @@ CREATE TABLE `hospitalaccount` (
 --
 
 INSERT INTO `hospitalaccount` (`hospitalID`, `infoID`, `hospitalName`, `hospitalEmail`, `hospitalPassword`, `hospitalPhoneNumber`) VALUES
-(14, 183, 'Amang Rodriguez Memorial Medical Center', 'nior3210@gmail.com', '$2y$10$q6qf7GirdXtff6h3K.gbe.hOh.imPlbFNI3wEiMdM5Lvtp.I6WtDO', 0),
+(14, 183, 'Amang Rodriguez Memorial Medical Center', 'nior3210@gmail.com', '$2y$10$GBsZEmiRRdGpxb6FfS40T.xzRiif78VZ.XOuHnUX2qoDNY1tXU0rC', 0),
 (15, 184, 'Mount Banawe General Hospital', 'larry.mabuti.jr@gmail.com', '$2y$10$uLpmXXaAr9kuJolqxP9ycePJeJThlPaa.AQuDS0J9XnjcW8kD0FIi', 0),
-(16, 185, 'Cebu Doctors University Hospital', 'hapatingajohnlerry@gmail.com', '$2y$10$PbStvm2lXfATVXFeF3ptCe0ETHQWvGei49mp2iglXnEdNUqggjYm.', 0);
+(16, 185, 'Cebu Doctors University Hospital', 'hapatingajohnlerry@gmail.com', '$2y$10$PbStvm2lXfATVXFeF3ptCe0ETHQWvGei49mp2iglXnEdNUqggjYm.', 0),
+(17, 186, 'Sample hospital', 'larrymabutipogi@gmail.com', '$2y$10$tISWymisNJ55z/WaMYjvCe.353mO8gmse3.JoYXFNT7fF6YF0ObP2', 0);
 
 -- --------------------------------------------------------
 
@@ -145,9 +147,10 @@ CREATE TABLE `hospitalinformation` (
 --
 
 INSERT INTO `hospitalinformation` (`ID`, `hospitalType`, `hospitalName`, `hospitalAddress`, `representativeName`, `supervisorName`, `phoneNumber`, `designation`, `email`, `hospitalPassword`, `registrationCode`, `timestamp`) VALUES
-(183, 'Private Hospital', 'Amang Rodriguez Memorial Medical Center', 'Sumulong Highway Sto. Nino, Marikina, 1800 Metro Manila', 'Juan Dela Cruz', 'John De leon', '+639886756677', 'Assistant', 'nior3210@gmail.com', '$2y$10$q6qf7GirdXtff6h3K.gbe.hOh.imPlbFNI3wEiMdM5Lvtp.I6WtDO', 0, '2022-03-30 11:22:55'),
+(183, 'Private Hospital', 'Amang Rodriguez Memorial Medical Center', 'Sumulong Highway Sto. Nino, Marikina, 1800 Metro Manila', 'Juan Dela Cruz', 'John De leon', '+639886756677', 'Assistant', 'nior3210@gmail.com', '$2y$10$GBsZEmiRRdGpxb6FfS40T.xzRiif78VZ.XOuHnUX2qoDNY1tXU0rC', 0, '2022-03-30 13:11:48'),
 (184, 'Public Hospital', 'Mount Banawe General Hospital', '448 Quezon Ave, Quiapo, Quezon City, 1200 Metro Manila', 'John Juan', 'Kiko Panganiban', '+638675586755', 'Supervisor', 'larry.mabuti.jr@gmail.com', '$2y$10$uLpmXXaAr9kuJolqxP9ycePJeJThlPaa.AQuDS0J9XnjcW8kD0FIi', 0, '2022-03-30 11:51:11'),
-(185, 'Public Hospital', 'Cebu Doctors University Hospital', 'President Sergio Suico Osmeña Boulevard, Cebu City', 'Juanito dela Cruz', 'Kiko Panganiban', '+638675576866', 'Assistant', 'hapatingajohnlerry@gmail.com', '$2y$10$PbStvm2lXfATVXFeF3ptCe0ETHQWvGei49mp2iglXnEdNUqggjYm.', 0, '2022-03-30 11:31:48');
+(185, 'Public Hospital', 'Cebu Doctors University Hospital', 'President Sergio Suico Osmeña Boulevard, Cebu City', 'Juanito dela Cruz', 'Kiko Panganiban', '+638675576866', 'Assistant', 'hapatingajohnlerry@gmail.com', '$2y$10$PbStvm2lXfATVXFeF3ptCe0ETHQWvGei49mp2iglXnEdNUqggjYm.', 0, '2022-03-30 11:31:48'),
+(186, 'Public Hospital', 'Sample hospital', 'Caloocan, Metro manila', 'Larry Mabuti jr', 'John Lerry Hapatinga', '+639663700835', 'Assistant Manager', 'larrymabutipogi@gmail.com', '$2y$10$tISWymisNJ55z/WaMYjvCe.353mO8gmse3.JoYXFNT7fF6YF0ObP2', 0, '2022-03-30 13:05:11');
 
 -- --------------------------------------------------------
 
@@ -179,7 +182,8 @@ CREATE TABLE `hospitallisting` (
 INSERT INTO `hospitallisting` (`listing_id`, `hospitalID`, `hospital_location`, `hospital_city`, `hospital_name`, `hospital_description`, `hospital_type`, `room`, `room_slot`, `bed`, `bed_slot`, `additional_docs`, `website_link`, `hospital_phone`) VALUES
 (8, 183, 'Sumulong Highway Sto. Nino, Marikina, 1800 Metro Manila', 'valenzuela', 'Amang Rodriguez Memorial Medical Center', 'This is a sample description.', 'Private Hospital', '', 5, '', 10, 'Yes', 'amangrodriguezhospital.ph', '+639886756677'),
 (9, 184, '448 Quezon Ave, Quiapo, Quezon City, 1200 Metro Manila', 'valenzuela', 'Mount Banawe General Hospital', 'This is a sample paragraph.', 'Public Hospital', '', 0, '', 6, 'Yes', '', '+638675586755'),
-(10, 185, 'Osmeña Blvd, Cebu City, 6000 Cebu', 'Cebu', 'Cebu Doctors University Hospital', 'Cebu Doctors\' University Hospital is a leading tertiary level hospital in the Southern Phillipines. It was founded in 1972 and today has 300 beds and 1200 employees, 326 of which are medical doctors. The hospital is also a comprehensive medical education ', 'Public Hospital', '', 2, '', 4, '', 'https://cebudocgroup.com.ph/', '+638675576866');
+(10, 185, 'Osmeña Blvd, Cebu City, 6000 Cebu', 'Cebu', 'Cebu Doctors University Hospital', 'Cebu Doctors\' University Hospital is a leading tertiary level hospital in the Southern Phillipines. It was founded in 1972 and today has 300 beds and 1200 employees, 326 of which are medical doctors. The hospital is also a comprehensive medical education ', 'Public Hospital', '', 2, '', 4, '', 'https://cebudocgroup.com.ph/', '+638675576866'),
+(11, 186, '', '', 'Sample hospital', '', 'Public Hospital', 'no', 0, 'no', 0, 'no', '0', '+639663700835');
 
 -- --------------------------------------------------------
 
@@ -215,13 +219,15 @@ CREATE TABLE `listingimages` (
 --
 
 INSERT INTO `listingimages` (`image_id`, `listing_idFK`, `image_name`, `image_dir`) VALUES
-(606, 8, 'Martin Adams Y1M0dZ 1Psc Unsplash', '../web/hospital-images/martin-adams-y1M0dZ-1Psc-unsplash.jpg'),
 (607, 9, 'Tyler Lastovich HM08wZJBlK4 Unsplash', '../web/hospital-images/tyler-lastovich-hM08wZJBlK4-unsplash.jpg'),
 (608, 10, 'Hall', '../web/hospital-images/hall.jpg'),
 (609, 10, 'Hospital', '../web/hospital-images/hospital.jpg'),
 (610, 10, 'School', '../web/hospital-images/school.jpg'),
 (611, 9, 'Tyler Lastovich HM08wZJBlK4 Unsplash', '../web/hospital-images/tyler-lastovich-hM08wZJBlK4-unsplash.jpg'),
-(612, 9, 'Tyler Lastovich Ybao6_A8RDI Unsplash', '../web/hospital-images/tyler-lastovich-Ybao6_A8RDI-unsplash.jpg');
+(612, 9, 'Tyler Lastovich Ybao6_A8RDI Unsplash', '../web/hospital-images/tyler-lastovich-Ybao6_A8RDI-unsplash.jpg'),
+(617, 8, 'Tyler Lastovich Ybao6_A8RDI Unsplash', '../web/hospital-images/tyler-lastovich-Ybao6_A8RDI-unsplash.jpg'),
+(618, 10, 'For Loop', '../web/hospital-images/for-loop.png'),
+(619, 10, 'For Loop', '../web/hospital-images/for-loop.png');
 
 -- --------------------------------------------------------
 
@@ -242,7 +248,8 @@ CREATE TABLE `otpstorage` (
 
 INSERT INTO `otpstorage` (`ID`, `emailID`, `otp`, `timestamp`) VALUES
 (66, 66, 843077, '2022-03-30 12:09:51'),
-(67, 67, 732354, '2022-03-30 12:10:41');
+(67, 67, 732354, '2022-03-30 12:10:41'),
+(68, 68, 658847, '2022-03-30 12:57:38');
 
 -- --------------------------------------------------------
 
@@ -277,6 +284,13 @@ CREATE TABLE `referralfiles` (
   `file_name` varchar(255) NOT NULL,
   `file_dir` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `referralfiles`
+--
+
+INSERT INTO `referralfiles` (`referral_id`, `booking_id`, `file_name`, `file_dir`) VALUES
+(11, 15, 'Brown', '../web/referral-images/brown.jpg');
 
 -- --------------------------------------------------------
 
@@ -331,15 +345,25 @@ CREATE TABLE `userbooking` (
   `listing_id` int(120) NOT NULL,
   `patientFirstName` varchar(50) NOT NULL,
   `patientLastName` varchar(50) NOT NULL,
-  `patientDate` date NOT NULL,
-  `patientTime` time NOT NULL,
-  `patientPhoneNumber` int(14) NOT NULL,
+  `patientDate` varchar(255) NOT NULL,
+  `patientTime` varchar(255) NOT NULL,
+  `patientPhoneNumber` varchar(55) NOT NULL,
   `patientConcern` varchar(50) NOT NULL,
   `patientSpecifyConcern` varchar(50) NOT NULL,
   `patientHospitalName` varchar(50) NOT NULL,
-  `patientReservationType` varchar(50) NOT NULL,
-  `patientReferral` varchar(50) NOT NULL
+  `patientReservationType` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `userbooking`
+--
+
+INSERT INTO `userbooking` (`ID`, `user_id`, `listing_id`, `patientFirstName`, `patientLastName`, `patientDate`, `patientTime`, `patientPhoneNumber`, `patientConcern`, `patientSpecifyConcern`, `patientHospitalName`, `patientReservationType`) VALUES
+(9, 94, 9, 'awdawdawd', 'awdawdaw', '2022-04-02', '21:14', '09123131231', 'Covid', '', 'Mount Banawe General Hospital', 'bed'),
+(12, 95, 8, 'Try LAng', 'Try LAng', '2022-04-15', '01:02', '09685586767', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed'),
+(13, 94, 8, 'awdawdaw', 'awdadawd', '2022-04-02', '15:57', '09135135353', 'Non-Covid', 'Tubol', 'Amang Rodriguez Memorial Medical Center', 'bed'),
+(14, 95, 8, 'Try LAng', 'Try LAng', '2022-04-15', '01:02', '09685586767', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed'),
+(15, 94, 8, 'awdawdaw', 'awdadawd', '2022-04-02', '15:57', '09135135353', 'Non-Covid', 'Tubol', 'Amang Rodriguez Memorial Medical Center', 'bed');
 
 -- --------------------------------------------------------
 
@@ -363,7 +387,8 @@ CREATE TABLE `userpatient` (
 
 INSERT INTO `userpatient` (`patientUserID`, `patientUsername`, `patientFirstname`, `patientLastname`, `patientEmail`, `patientPassword`, `patientPhoneNumber`) VALUES
 (93, '', 'larry jr.', 'Mabuti', 'nior3210@gmail.com', '$2y$10$gbfiybMWhIqBQpIFQyjW1ujplceVJKFhdWGkelysKIrqQdQ6J2sqq', '09445757766'),
-(94, '', 'John Lerry', 'Hapatinga', 'hapatingajohnlerry@gmail.com', '$2y$10$rq9E0c9xM3hdtlUAfaOJPedcVja3gOQHQiqkj.y8fCzIbQ3Q/2RaK', '09513513513');
+(94, '', 'John Lerry', 'Hapatinga', 'hapatingajohnlerry@gmail.com', '$2y$10$rq9E0c9xM3hdtlUAfaOJPedcVja3gOQHQiqkj.y8fCzIbQ3Q/2RaK', '09513513513'),
+(95, '', 'Larry ', 'Mabuti JR', 'jlerry005@gmail.com', '$2y$10$nTvq/YD2dJLw0OVQdw.hFucsIt.1YCy31q14nGRxOkdVHBYpo21e2', '09663700835');
 
 -- --------------------------------------------------------
 
@@ -389,7 +414,8 @@ INSERT INTO `userpatienttemp` (`tempUserID`, `tempUsername`, `tempFirstname`, `t
 (64, '', 'larry jr.', 'Mabuti', 'nior3210@gmail.com', '$2y$10$HuglKBbJCp0VGNOZ2EUZHOLcjpyPoaRznYHeNg1639O.A3urAi2Wq', '09445757766'),
 (65, '', 'John Lerry', 'Hapatinga', 'hapatingajohnlerry@gmail.com', '$2y$10$T8UoVOlXhLu4XjkH2gCpn.3MsgXJ69QhkTakFEa4QnXCOGd0WPaHe', '09513513513'),
 (66, '', 'Juan', 'Delacruz', 'eksdi420@gmail.com', '$2y$10$FDF0cbP4E.c8lNvndO6iG.HtZd.HX0x2UcTFHxXO9QeRFD9Kle3ia', '09667574464'),
-(67, '', 'Juan', 'dela Cruz', 'eksdi420@gmail.com', '$2y$10$wRzSqC1iG5DfURbMXEgINOEEq0jtdbMLj2LTsTbODIcGp1mMIHA9e', '09778858585');
+(67, '', 'Juan', 'dela Cruz', 'eksdi420@gmail.com', '$2y$10$wRzSqC1iG5DfURbMXEgINOEEq0jtdbMLj2LTsTbODIcGp1mMIHA9e', '09778858585'),
+(68, '', 'Larry ', 'Mabuti JR', 'jlerry005@gmail.com', '$2y$10$tbLSSPYMgabE/kdWR9WBeekbySf9W85xI1jCndpxrjkyOuzhW4h8C', '09663700835');
 
 --
 -- Indexes for dumped tables
@@ -521,7 +547,7 @@ ALTER TABLE `approvedadminsignup`
 -- AUTO_INCREMENT for table `approvedhospital`
 --
 ALTER TABLE `approvedhospital`
-  MODIFY `approvalID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `approvalID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT for table `approved_hospital`
@@ -533,25 +559,25 @@ ALTER TABLE `approved_hospital`
 -- AUTO_INCREMENT for table `hospitalaccount`
 --
 ALTER TABLE `hospitalaccount`
-  MODIFY `hospitalID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `hospitalID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `hospitaldocuments`
 --
 ALTER TABLE `hospitaldocuments`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- AUTO_INCREMENT for table `hospitalinformation`
 --
 ALTER TABLE `hospitalinformation`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=186;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=187;
 
 --
 -- AUTO_INCREMENT for table `hospitallisting`
 --
 ALTER TABLE `hospitallisting`
-  MODIFY `listing_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `listing_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `hospitalsignuphistory`
@@ -563,25 +589,25 @@ ALTER TABLE `hospitalsignuphistory`
 -- AUTO_INCREMENT for table `listingimages`
 --
 ALTER TABLE `listingimages`
-  MODIFY `image_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=613;
+  MODIFY `image_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=620;
 
 --
 -- AUTO_INCREMENT for table `otpstorage`
 --
 ALTER TABLE `otpstorage`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `pendingadminsignup`
 --
 ALTER TABLE `pendingadminsignup`
-  MODIFY `pendingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
+  MODIFY `pendingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
 
 --
 -- AUTO_INCREMENT for table `referralfiles`
 --
 ALTER TABLE `referralfiles`
-  MODIFY `referral_id` int(120) NOT NULL AUTO_INCREMENT;
+  MODIFY `referral_id` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `rejectedhospital`
@@ -599,19 +625,19 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT for table `userbooking`
 --
 ALTER TABLE `userbooking`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `userpatient`
 --
 ALTER TABLE `userpatient`
-  MODIFY `patientUserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `patientUserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `userpatienttemp`
 --
 ALTER TABLE `userpatienttemp`
-  MODIFY `tempUserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `tempUserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- Constraints for dumped tables
