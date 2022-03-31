@@ -17,3 +17,9 @@
 body{
     font-family: 'Poppins';
 }
+
+.disabled{
+  pointer-events: none;
+  filter: contrast(.5) !important;
+  
+}

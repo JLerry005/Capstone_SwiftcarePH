@@ -1021,6 +1021,16 @@ input:checked + .toggle-bg{
   margin-right: 1rem;
 }
 
+.my-10{
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.my-52{
+  margin-top: 13rem;
+  margin-bottom: 13rem;
+}
+
 .mb-10{
   margin-bottom: 2.5rem;
 }
@@ -1099,6 +1109,30 @@ input:checked + .toggle-bg{
 
 .mt-2{
   margin-top: 0.5rem;
+}
+
+.mt-80{
+  margin-top: 20rem;
+}
+
+.mt-40{
+  margin-top: 10rem;
+}
+
+.mt-32{
+  margin-top: 8rem;
+}
+
+.ml-5{
+  margin-left: 1.25rem;
+}
+
+.mt-20{
+  margin-top: 5rem;
+}
+
+.mt-6{
+  margin-top: 1.5rem;
 }
 
 .block{
@@ -1211,6 +1245,10 @@ input:checked + .toggle-bg{
   height: 2.25rem;
 }
 
+.h-7{
+  height: 1.75rem;
+}
+
 .min-h-screen{
   min-height: 100vh;
 }
@@ -1285,6 +1323,18 @@ input:checked + .toggle-bg{
   width: 16rem;
 }
 
+.w-7{
+  width: 1.75rem;
+}
+
+.w-9{
+  width: 2.25rem;
+}
+
+.w-\[600px\]{
+  width: 600px;
+}
+
 .max-w-4xl{
   max-width: 56rem;
 }
@@ -1326,6 +1376,26 @@ input:checked + .toggle-bg{
 
 .rotate-180{
   --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-rotate-45{
+  --tw-rotate: -45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-rotate-12{
+  --tw-rotate: -12deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.skew-x-3{
+  --tw-skew-x: 3deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-skew-x-6{
+  --tw-skew-x: -6deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1441,6 +1511,10 @@ input:checked + .toggle-bg{
 
 .items-start{
   align-items: flex-start;
+}
+
+.items-end{
+  align-items: flex-end;
 }
 
 .items-center{
@@ -1826,11 +1900,6 @@ input:checked + .toggle-bg{
 .border-sky-500{
   --tw-border-opacity: 1;
   border-color: rgb(14 165 233 / var(--tw-border-opacity));
-}
-
-.border-red-500{
-  --tw-border-opacity: 1;
-  border-color: rgb(240 82 82 / var(--tw-border-opacity));
 }
 
 .border-blue-700{
@@ -2290,6 +2359,10 @@ input:checked + .toggle-bg{
   padding-left: 3rem;
 }
 
+.pl-14{
+  padding-left: 3.5rem;
+}
+
 .text-left{
   text-align: left;
 }
@@ -2384,6 +2457,10 @@ input:checked + .toggle-bg{
 
 .leading-9{
   line-height: 2.25rem;
+}
+
+.leading-relaxed{
+  line-height: 1.625;
 }
 
 .text-red-500{
@@ -2511,14 +2588,19 @@ input:checked + .toggle-bg{
   color: rgb(255 138 76 / var(--tw-text-opacity));
 }
 
-.text-blue-600{
-  --tw-text-opacity: 1;
-  color: rgb(28 100 242 / var(--tw-text-opacity));
-}
-
 .text-orange-600{
   --tw-text-opacity: 1;
   color: rgb(208 56 1 / var(--tw-text-opacity));
+}
+
+.text-yellow-400{
+  --tw-text-opacity: 1;
+  color: rgb(227 160 8 / var(--tw-text-opacity));
+}
+
+.text-gray-800{
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
 .underline{
@@ -2874,6 +2956,11 @@ input:checked + .toggle-bg{
   border-color: transparent;
 }
 
+.focus\:border-orange-500:focus{
+  --tw-border-opacity: 1;
+  border-color: rgb(255 90 31 / var(--tw-border-opacity));
+}
+
 .focus\:bg-gray-500:focus{
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
@@ -2970,6 +3057,11 @@ input:checked + .toggle-bg{
 .focus\:ring-gray-200:focus{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity));
+}
+
+.focus\:ring-orange-500:focus{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(255 90 31 / var(--tw-ring-opacity));
 }
 
 .group:hover .group-hover\:bg-opacity-0{
@@ -3117,6 +3209,11 @@ input:checked + .toggle-bg{
   .dark\:hover\:bg-blue-700:hover{
     --tw-bg-opacity: 1;
     background-color: rgb(26 86 219 / var(--tw-bg-opacity));
+  }
+
+  .dark\:hover\:bg-gray-800:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
   }
 
   .dark\:hover\:text-white:hover{
