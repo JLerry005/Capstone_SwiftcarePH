@@ -429,13 +429,13 @@
                             <div class="grid xl:grid-cols-2 xl:gap-6">
                                 <!-- Patient First Name -->
                                 <div class="relative z-0 mb-4 w-full group">
-                                    <!-- <label for="firstName" class="block mb-2 text-sm font-medium text-gray-900">First Name</label> -->
                                     <input type="text" name="firstName" id="firstName" class="bg-blue-50 border-2 font-bold capitalize border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" placeholder="First Name" required/>
+                                    <div id="firstName-error" class="text-red-500 text-center mt-2 font-medium"></div>
                                 </div>
                                 <!-- Patient Last Name -->
                                 <div class="relative z-0 mb-4 w-full group">
-                                    <!-- <label for="lastName" class="block mb-2 text-sm font-medium text-gray-900">Last name</label> -->
                                     <input type="text" name="lastName" id="lastName" class="bg-blue-50 border-2 font-bold capitalize border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" placeholder="Last name" required />
+                                    <div id="lastName-error" class="text-red-500 text-center mt-2 font-medium"></div>
                                 </div>
                             </div>
 
@@ -454,12 +454,14 @@
                                 <div class="relative z-0 mb-4 w-full group">
                                     <label for="date" class="block mb-2 text-sm font-semibold">Date</label>
                                     <input type="date" name="date" id="date_picker" class="bg-blue-50 border-2 font-bold border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" required/>
+                                    <div id="dateInput-error"  class="text-red-500 text-center mt-2 font-medium"></div>
                                 </div>
 
                                 <!-- Time -->
                                 <div class="relative z-0 mb-4 w-full group">
                                     <label for="time" class="block mb-2 text-sm font-semibold">Time</label>
-                                    <input type="time" name="time" id="time" class="bg-blue-50 border-2 font-bold uppercase border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" required />
+                                    <input type="time" name="time" id="time" class="bg-blue-50 border-2 font-bold uppercase border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" value="09:00" required />
+                                    <div id="timeInput-error"  class="text-red-500 text-center mt-2 font-medium"></div>
                                 </div>
                             </div>
 
@@ -478,6 +480,7 @@
                                         <img src="assets\Philippines-Flag.svg" alt="Philippines Flag" class="w-10 h-10 p-1" >
                                     </div>
                                     <input type="tel" id="phoneNumber" name="phoneNumber" maxlength="11" class="pl-12 bg-blue-50 border-2 font-bold capitalize border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" placeholder="Phone number (09X-XXXX-XXXX)" required>
+                                    <div id="phoneNumber-error"  class="text-red-500 text-center mt-2 font-medium"></div>
                                 </div>
 
                                 <!-- Email Address Input -->
@@ -486,6 +489,7 @@
                                         <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
                                     </div>
                                     <input type="text" id="emailAddress" name="emailAddress" class="pl-12 bg-blue-50 border-2 font-bold border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" placeholder="Email Address">
+                                    <div id="emailAddress-error"  class="text-red-500 text-center mt-2 font-medium"></div>
                                 </div>
 
                             </div>
@@ -512,11 +516,13 @@
                                         <option value="Covid">Covid</option>
                                         <option value="Non-Covid">Non - Covid</option>
                                     </select>
+                                    <div id="selecetConcern-error" class="text-red-500 text-center mt-2 font-medium"></div>
                                 </div>
 
                                 <!-- Specify your concern input -->
                                 <div class="relative z-0 mt-10 w-full group">
                                     <input type="text" name="specifyConcern" id="specifyConcern" class="mt-1 bg-blue-50 border-2 font-bold capitalize border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" placeholder="Specify your concern" disabled required>
+                                    <div id="specifyConcern-error" class="text-red-500 text-center mt-2 font-medium"></div>
                                 </div>
                             </div>
 
@@ -532,7 +538,6 @@
                             <div class="grid xl:grid-cols-2 xl:gap-6">
                                 <!-- Hospital Name -->
                                 <div class="relative z-0 mt-2 mb-6 w-full group">
-                                    <!-- <label for="date" class="block mb-2 text-sm font-medium text-gray-900">Hospital Name</label> -->
                                     <input type="text" name="hospitalName" id="hospitalName" class="bg-blue-50 border-2 font-bold capitalize border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" placeholder="" value="<?php echo $hospitalName ?>" disabled />
                                 </div>
 
@@ -558,9 +563,8 @@
                                                 if ($roomSlot > 0) {
                                                 echo '<option value="room">Room</option>';
                                                 }
-                                            ?>
-                                            
-                            
+                                            ?>     
+                                            <div id="reservationType-error" class="text-red-500 text-center mt-2 font-medium"></div>    
                                     </select>
                                 </div>
                                 
@@ -575,7 +579,8 @@
                                             <label class="block mb-2 text-gray-900 text-sm font-bold uppercase" for="user_avatar">Attachment for Referal</label><span class="text-red-600">&nbsp;*</span>
                                         </div>
                                         <input class="block w-full text-sm text-gray-900 bg-blue-50 rounded-lg border-2 border-gray-500 cursor-pointer focus:outline-none focus:border-transparent" id="referralFilesInput" type="file" multiple>
-                                    ';
+                                        <div id="referralFiles-error" class="text-red-500 text-center mt-2 font-medium"></div>
+                                        ';
                                     }else {
                                         echo '';
                                     }

@@ -68,6 +68,86 @@
             loginForBooking.style.display = "block";
         }
     }
+
+    // Run Validate Functions
+    function validateInputs() {
+
+        // return validateFirstname() && validateLastname() && invalidDate();
+
+        // if (validateFirstname() && validateLastname() && invalidDate()) {
+        //     return true;
+        // }else{
+        //     return false;
+        // }
+    }
+
+    // Validate Firstname
+    function validateFirstname() {
+        let firstName = document.getElementById("firstName"); 
+
+        firstNameValue=firstName.value.trim(); 
+        validFirstName=/^[A-Za-z]+$/;
+        firstNameError=document.getElementById("firstName-error");
+
+        if(firstNameValue==""){
+            firstName.classList.add('invalidInput');
+            firstNameError.innerHTML="⚠️ Firstname is required!";
+            return false;
+        }
+        else if(!validFirstName.test(firstNameValue)){
+            firstName.classList.add('invalidInput');
+            firstNameError.innerHTML="⚠️ Firstname must not contain any Numbers or Special Characters!";
+            return false;
+        }
+        else{
+            firstNameError.innerHTML="";
+            firstName.classList.remove('invalidInput');
+            return true;   
+        }
+    }
+
+    // Validate Lastname
+    function validateLastname() {
+        let lastName = document.getElementById("lastName"); 
+
+        lastNameValue=lastName.value.trim(); 
+        validLastName=/^[A-Za-z]+$/;
+        lastNameError=document.getElementById("lastName-error");
+
+        if(firstNameValue==""){
+            lastName.classList.add('invalidInput');
+            lastNameError.innerHTML="⚠️ Firstname is required!";
+            return false;
+        }
+        else if(!validLastName.test(lastNameValue)){
+            lastName.classList.add('invalidInput');
+            lastNameError.innerHTML="⚠️ Lastname must not contain any Numbers or Special Characters!";
+            return false;
+        }
+        else{
+            lastNameError.innerHTML="";
+            lastName.classList.remove('invalidInput');
+            return true;   
+        }
+    }
+
+    // if picked date is invalid
+    function invalidDate() {
+        let dateInput = document.getElementById("date_picker"); 
+        let dateInputError = document.getElementById("dateInput-error"); 
+
+        if (datePicked == today) {
+            dateInput.classList.add('invalidInput');
+            dateInputError.innerHTML="⚠️ You can't choose the Date today!";
+            return false;
+        }else{
+            dateInputError.innerHTML="";
+            dateInput.classList.remove('invalidInput');
+            return true;
+        }
+    }
+
+    
     
     $("#btnBookingNow").click(function () {
         let firstName = document.getElementById("firstName").value;
@@ -84,123 +164,133 @@
         let userID = document.getElementById("user-id-placeholder").value;
         
         let referralValue = document.getElementById("referral-placeholder");
-
-    // console.log(datePicked, phoneNumber, concern, hospitalName, listingID);
-
-        // if picked date is invalid
-        if (datePicked == today) {
-            alertModalError().show();
-            return;
-        }
         
-        // Run if referral is required
-        else if (referralValue) {
+        // console.log(datePicked, phoneNumber, concern, hospitalName, listingID);
+        
+        if (!validateFirstname() || !validateLastname() || !invalidDate()) {
+            return;
+        }else{
+            // Run if referral is required
+            if (referralValue) {
+                $.ajax({
+                    method: "POST",
+                    url: "includes/get-booking-count-inc.php",
+                    data: {userID:userID},
+                    success: function (data) {
+                        let pendingbookingsCount = parseInt(data);
 
-            // Insert Details
-            $.ajax({
-                method: "POST",
-                url: "includes/user-booking-form-inc.php",
-                data: {
-                firstName:firstName,
-                lastName:lastName,
-                date_picker:date_picker,
-                time:time,
-                phoneNumber:phoneNumber,
-                email:email,
-                concern:concern,
-                specifyConcern:specifyConcern,
-                hospitalName:hospitalName,
-                reservationType:reservationType,
-                listingID:listingID,
-                userID:userID
-                },
-                success: function (response) {
-                // window.location.href = "../index/success.php";
-                    // Send image to server to process
-                    const fileInput = document.getElementById("referralFilesInput");
+                        console.log(pendingbookingsCount);
 
-                    let filePath = fileInput.value;
-                    // Allowing file type
-                    let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+                        // Check if pending reservations is == 5
+                        if (pendingbookingsCount >= 5) {
+                            // alertModalError().show();
+                            alert("Max Bookings Exceeded!");
+                            return;
+                        }else {
+                            // Insert Details
+                            $.ajax({
+                                method: "POST",
+                                url: "includes/user-booking-form-inc.php",
+                                data: {
+                                firstName:firstName,
+                                lastName:lastName,
+                                date_picker:date_picker,
+                                time:time,
+                                phoneNumber:phoneNumber,
+                                email:email,
+                                concern:concern,
+                                specifyConcern:specifyConcern,
+                                hospitalName:hospitalName,
+                                reservationType:reservationType,
+                                listingID:listingID,
+                                userID:userID
+                                },
+                                success: function (response) {
+                                    alert("Success!");
+                                    // Send image to server to process
+                                    const fileInput = document.getElementById("referralFilesInput");
 
-                    const xhr = new XMLHttpRequest();
-                    const formData = new FormData();
+                                    let filePath = fileInput.value;
+                                    // Allowing file type
+                                    let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
 
-                    for (let file of fileInput.files) {
-                        formData.append("images[]", file);
-                    }   
+                                    const xhr = new XMLHttpRequest();
+                                    const formData = new FormData();
 
-                    let length = $(fileInput).get(0).files.length;
-                    let finalLength = parseInt(length);
+                                    for (let file of fileInput.files) {
+                                        formData.append("images[]", file);
+                                    }   
 
-                    if (finalLength < 1) {  // If no files are selected
-                        alert("Choose your file first!");
-                        return false;
+                                    let length = $(fileInput).get(0).files.length;
+                                    let finalLength = parseInt(length);
+
+                                    if (finalLength < 1) {  // If no files are selected
+                                        alert("Choose your file first!");
+                                        return false;
+                                    }
+                                    else if (!allowedExtensions.exec(filePath)) {  // if file type is not allowed
+                                        alert("File type not allowed!");
+                                        return false;
+                                    }
+                                    else if(finalLength > 10) {  // if max upload exceeded
+                                        alert("10 uploads lang!");
+                                        return false;
+                                    }else{   // if upload is valid
+                                        xhr.open("post", "includes/insert-referral-images.php");
+                                        xhr.send(formData);
+                                    }  
+                                }
+                            }); 
+                        }
                     }
-                    else if (!allowedExtensions.exec(filePath)) {  // if file type is not allowed
-                        alert("File type not allowed!");
-                        return false;
+                });            
+            }
+
+            // run if referral is not required
+            else{
+                $.ajax({
+                    method: "POST",
+                    url: "includes/get-booking-count-inc.php",
+                    data: {userID:userID},
+                    success: function (data) {
+                        let pendingbookingsCount = parseInt(data);
+
+                        alert("Success!");
+
+                        // Check if pending reservations is == 5
+                        if (pendingbookingsCount >= 5) {
+                            alertModalError().show();
+                            return;
+                        }else {
+                            // Insert Details
+                            $.ajax({
+                                method: "POST",
+                                url: "includes/user-booking-form-inc.php",
+                                data: {
+                                firstName:firstName,
+                                lastName:lastName,
+                                date_picker:date_picker,
+                                time:time,
+                                phoneNumber:phoneNumber,
+                                email:email,
+                                concern:concern,
+                                specifyConcern:specifyConcern,
+                                hospitalName:hospitalName,
+                                reservationType:reservationType,
+                                listingID:listingID,
+                                userID:userID
+                                },
+                                success: function (response) {
+                                    alert("Success");
+                                }
+                            }); 
+                        }
                     }
-                    else if(finalLength > 10) {  // if max upload exceeded
-                        alert("10 uploads lang!");
-                        return false;
-                    }else{   // if upload is valid
-                        xhr.open("post", "includes/insert-referral-images.php");
-                        xhr.send(formData);
-                    }  
-                }
-            });     
-
-            // While image is being uploaded
-            // document.getElementById("fileInput").classList.add('disable-button');
-            // document.getElementById("upload").classList.add('disable-button');
-            // $("#upload-loader").show();
-
-            // Complete function
-            // xhr.addEventListener('readystatechange', function(e) {
-            //     if( this.readyState === 4 ) {
-            //         // document.getElementById("fileInput").classList.remove('disable-button');
-            //         // document.getElementById("upload").classList.remove('disable-button');
-            //         // $("#upload-loader").hide();
-            //         // fileInput.value = '';
-            //         // $("#upload-messasge").hide();
-
-            //         // var x = document.getElementById("upload-success-toast");
-            //         // x.className = "show";
-            //         // setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-            //         // show_details();
-            //     }
-            // });
+                }); 
+            }
         }
 
-        // run if referral is not required
-        else{
-            $.ajax({
-                method: "POST",
-                url: "includes/user-booking-form-inc.php",
-                data: {
-                firstName:firstName,
-                lastName:lastName,
-                date_picker:date_picker,
-                time:time,
-                phoneNumber:phoneNumber,
-                email:email,
-                concern:concern,
-                specifyConcern:specifyConcern,
-                hospitalName:hospitalName,
-                reservationType:reservationType,
-                listingID:listingID,
-                userID:userID
-                },
-                success: function (response) {
-                // window.location.href = "../index/success.php";
-                alert("Success!");
-                }
-            });
-        }
     });
-
-
 
     // Lightgallery
     lightGallery(document.querySelector('.image-gallery'));

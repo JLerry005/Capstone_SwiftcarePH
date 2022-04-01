@@ -21,5 +21,10 @@ body{
 .disabled{
   pointer-events: none;
   filter: contrast(.5) !important;
-  
+}
+
+.invalidInput{
+  border-color: rgb(255, 55, 55) !important;
+  color: rgb(255, 55, 55) !important;
+  background-color: rgb(242, 226, 226) !important;
 }

@@ -64,7 +64,7 @@
     <!-- <script src="/js/hospital-overview.js" type="text/javascript"></script> -->
     <link rel="icon" href="assets/main-logo-line.png" type="image/x-icon">  
 </head>
-<body class="bg-blue-50 text-gray-700 text-xs sm:text-sm md:text-md font-poppins">
+<body class="bg-blue-50 text-gray-700 text-xs sm:text-sm md:text-md font-poppins text">
     
     <!-- Nav Bar -->
     <nav class="text-white py-5 px-5 lg:px-12 w-full bg-gray-900">
@@ -430,13 +430,13 @@
                             <div class="grid xl:grid-cols-2 xl:gap-6">
                                 <!-- Patient First Name -->
                                 <div class="relative z-0 mb-4 w-full group">
-                                    <!-- <label for="firstName" class="block mb-2 text-sm font-medium text-gray-900">First Name</label> -->
                                     <input type="text" name="firstName" id="firstName" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="First Name" required/>
+                                    <div id="firstName-error"></div>
                                 </div>
-                                <!-- Patient Last Name -->
-                                <div class="relative z-0 mb-4 w-full group">
-                                    <!-- <label for="lastName" class="block mb-2 text-sm font-medium text-gray-900">Last name</label> -->
+
+                                <div class="relative z-0 mb-4 w-full group">                                    
                                     <input type="text" name="lastName" id="lastName" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Last name" required />
+                                    <div id="lastName-error"></div>
                                 </div>
                             </div>
 
@@ -461,6 +461,7 @@
                                 <div class="relative z-0 mb-4 w-full group">
                                     <label for="time" class="block mb-2 text-sm font-medium text-gray-900">Time</label>
                                     <input type="time" name="time" id="time" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder=" " required />
+                                    <div id="timeInput-error"></div>
                                 </div>
                             </div>
 
@@ -478,6 +479,7 @@
                                     <img src="assets\Philippines-Flag.svg" alt="Philippines Flag" class="w-10 h-10 p-1" >
                                 </div>
                                <input type="tel"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="phoneNumber" name="phoneNumber" maxlength="13" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 p-2.5 " placeholder="Phone number (+63-9XX-XXXX-XXX)" value="+639" required>
+                               <div id="phoneNumber-error"></div>
                             </div>
 
                             <!-- Select & Specify your concern -->
@@ -503,11 +505,13 @@
                                         <option value="Covid">Covid</option>
                                         <option value="Non-Covid">Non - Covid</option>
                                     </select>
+                                    <div id="selecetConcern-error"></div>
                                 </div>
 
                                 <!-- Specify your concern input -->
                                 <div class="relative z-0 mt-10 w-full group">
                                     <input type="text" name="specifyConcern" id="specifyConcern" class="mt-1 bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Specify your concern" disabled required>
+                                    <div id="specifyConcern-error"></div>
                                 </div>
                             </div>
 
@@ -540,17 +544,16 @@
 
                                     <select id="concern" name="reservationType" class="bg-blue-50 border border-gray-400 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
                                         <option selected disabled value="" class="font-medium text-gray-900">-Select your Reservation Type-</option>
-                                        <?php
-                                            if ($bedSlot > 0) {
-                                                echo '<option value="bed">Bed</option>';
-                                            }
+                                            <?php
+                                                if ($bedSlot > 0) {
+                                                    echo '<option value="bed">Bed</option>';
+                                                }
 
-                                            if ($roomSlot > 0) {
-                                                echo '<option value="room">Room</option>';
-                                            }
-                                        ?>
-                                        
-                                        
+                                                if ($roomSlot > 0) {
+                                                    echo '<option value="room">Room</option>';
+                                                }
+                                            ?>
+                                            <div id="reservationType-error"></div>    
                                     </select>
                                 </div>
 
@@ -563,7 +566,8 @@
                                                 <label class="block mb-2 text-sm font-medium text-gray-900" for="user_avatar">Attachment for Referal</label><span class="text-red-600">&nbsp;*</span>
                                             </div>
                                             <input class="block w-full text-sm text-gray-900 bg-blue-50 rounded-lg border border-gray-400 cursor-pointer focus:outline-none focus:border-transparent " aria-describedby="user_avatar_help" id="user_avatar" type="file">
-                                        ';
+                                            <div id="referralFiles-error"></div>
+                                            ';
                                     }else {
                                         echo '';
                                     }
