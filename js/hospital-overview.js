@@ -510,6 +510,6 @@
         content: "Leave to zero (0) if there are no slots for Bed.",
     });
 
-    $("#getLocationButton").click(function(){
-        toggleModal('reviewDetailsModal', true);
-      });
+    // $("#getLocationButton").click(function(){
+    //     toggleModal('reviewDetailsModal', true);
+    //   });

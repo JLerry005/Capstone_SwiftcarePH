@@ -1439,16 +1439,16 @@ input:checked + .toggle-bg{
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
+.grid-cols-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .grid-cols-4{
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid-cols-7{
   grid-template-columns: repeat(7, minmax(0, 1fr));
-}
-
-.grid-cols-2{
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-row{
@@ -1771,10 +1771,6 @@ input:checked + .toggle-bg{
 
 .border-b-\[1px\]{
   border-bottom-width: 1px;
-}
-
-.border-b-4{
-  border-bottom-width: 4px;
 }
 
 .border-solid{
@@ -2142,12 +2138,8 @@ input:checked + .toggle-bg{
   padding: 3rem;
 }
 
-.p-16{
-  padding: 4rem;
-}
-
-.p-10{
-  padding: 2.5rem;
+.p-20{
+  padding: 5rem;
 }
 
 .py-8{
