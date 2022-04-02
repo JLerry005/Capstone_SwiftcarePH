@@ -475,18 +475,18 @@
 
                             <div class="grid xl:grid-cols-2 xl:gap-6">
                                 <!-- Contact Number -->
-                                <div class="relative">
+                                <div class="relative mb-3">
                                     <div class="flex absolute inset-y-0 left-0 items-center pl-1 pointer-events-none">
-                                        <img src="assets\Philippines-Flag.svg" alt="Philippines Flag" class="w-10 h-10 p-1" >
+                                        <img src="assets\Philippines-Flag.svg" alt="Philippines Flag" class="w-10 h-10 p-1 pb-3" >
                                     </div>
                                     <input type="tel" id="phoneNumber" name="phoneNumber" maxlength="11" class="pl-12 bg-blue-50 border-2 font-bold capitalize border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" placeholder="Phone number (09X-XXXX-XXXX)" required>
                                     <div id="phoneNumber-error"  class="text-red-500 text-center mt-2 font-medium"></div>
                                 </div>
 
                                 <!-- Email Address Input -->
-                                <div class="relative">
+                                <div class="relative mb-3">
                                     <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                                        <svg class="w-6 h-6 text-gray-600 mb-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
                                     </div>
                                     <input type="text" id="emailAddress" name="emailAddress" class="pl-12 bg-blue-50 border-2 font-bold border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" placeholder="Email Address">
                                     <div id="emailAddress-error"  class="text-red-500 text-center mt-2 font-medium"></div>
@@ -521,7 +521,7 @@
 
                                 <!-- Specify your concern input -->
                                 <div class="relative z-0 mt-10 w-full group">
-                                    <input type="text" name="specifyConcern" id="specifyConcern" class="mt-1 bg-blue-50 border-2 font-bold capitalize border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" placeholder="Specify your concern" disabled required>
+                                    <input type="text" name="specifyConcern" id="specifyConcern" class="mt-1 bg-blue-50 border-2 font-bold capitalize border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" placeholder="Specify your concern">
                                     <div id="specifyConcern-error" class="text-red-500 text-center mt-2 font-medium"></div>
                                 </div>
                             </div>
@@ -564,8 +564,8 @@
                                                 echo '<option value="room">Room</option>';
                                                 }
                                             ?>     
-                                            <div id="reservationType-error" class="text-red-500 text-center mt-2 font-medium"></div>    
                                     </select>
+                                    <div id="reservationType-error" class="text-red-500 text-center mt-2 font-medium"></div>    
                                 </div>
                                 
                             </div>
@@ -597,7 +597,7 @@
 
 
                             <div class="flex justify-end justify-row">
-                                <button type="button" name="btnBookingNow" id="btnBookingNow" class="mt-6 w-32 focus:outline-none text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:ring-green-300 rounded-lg text-sm py-3 px-4 mr-3 font-semibold">Submit <i class="bi bi-box-arrow-in-right font-bold"></i></button>
+                                <button type="button" name="btnBookingNow" id="btnBookingNow" class="mt-6 w-32 focus:outline-none text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:ring-green-300 rounded-lg text-sm py-3 px-4 mr-3 font-semibold">Continue<i class="bi bi-box-arrow-in-right font-bold"></i></button>
                             </div>
                         </div> 
                     </form>
@@ -612,31 +612,184 @@
             
 
 
-    <!-- Alert Modal -->
-    <div id="alertModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
-        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-            <!-- Modal content -->
-            <div class="relative bg-gray-900 rounded-lg shadow">
-                <!-- Modal header -->
-                <div class="flex justify-end p-2">
-                    <!-- <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="alertModal">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
-                    </button> -->
-                </div>
-                <!-- Modal body -->
-                <div class="p-6 pt-0 text-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-4 w-14 h-14 text-yellow-400" stroke="currentColor" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
-                    <!-- <svg class="mx-auto mb-4 w-14 h-14 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> -->
-                    <h3 class="mb-5 text-lg font-normal text-gray-300">You can't choose the date today! </h3>
-                    <!-- <button data-modal-toggle="alertModal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                        Yes, I'm sure
-                    </button> -->
-                    <button data-modal-toggle="alertModal" type="button" class="hidden text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">Close</button>
-                    <button type="button" class="text-gray-400 bg-gray-900 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10" onclick="btnClose()">Close</button>
+            <!-- Alert Modal -->
+            <div id="alertModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
+                <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+                    <!-- Modal content -->
+                    <div class="relative bg-gray-900 rounded-lg shadow">
+                        <!-- Modal header -->
+                        <div class="flex justify-end p-2">
+                            <!-- <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="alertModal">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                            </button> -->
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-6 pt-0 text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-4 w-14 h-14 text-yellow-400" stroke="currentColor" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                            <!-- <svg class="mx-auto mb-4 w-14 h-14 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> -->
+                            <h3 class="mb-5 text-lg font-normal text-gray-300">You can't choose the date today! </h3>
+                            <!-- <button data-modal-toggle="alertModal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                                Yes, I'm sure
+                            </button> -->
+                            <button data-modal-toggle="alertModal" type="button" class="hidden text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">Close</button>
+                            <button type="button" class="text-gray-400 bg-gray-900 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10" onclick="btnClose()">Close</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+
+            <!-- Review the details Modal -->
+            <div id="reviewDetailsModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+                <div class="relative p-4 w-full max-w-7xl h-full md:h-auto">
+                    <!-- Modal content -->
+                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-900">
+                        <!-- Modal header -->
+                        <div class="flex justify-center items-center text-center p-5">
+                            <h3 class="text-xl font-medium text-gray-900 dark:text-white flex items-center">
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg> -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                                </svg>
+                                &ensp;Double-check the Information you provided before proceeding.
+                            </h3>
+                            <!-- <button type="button" id="close-review-details" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                            </button> -->
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-12 space-y-6 text-gray-200">
+
+                            <!-- Patiend Details -->
+                            <div class="uppercase font-bold flex justify-row items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                                </svg>
+                                <p>&ensp;Patient Details</p>
+                            </div>
+                            
+                            <!-- First name and Last name -->
+                            <div class="grid grid-cols-2 gap-6">
+                                <!-- First name -->
+                                <div class="relative z-0 w-full group flex justify-row items-center text-lg">
+                                    <p class="font-semibold">First name: &nbsp;</p>
+                                    <p id="firstnameContainer" class="capitalize"></p>
+                                </div>
+                                <!-- Last name -->
+                                <div class="relative z-0 w-full group flex justify-row items-center text-lg">
+                                    <p class="font-semibold">Last name: &nbsp;</p>
+                                    <p id="lastnameContainer" class="capitalize"></p>
+                                </div>
+                            </div>
+
+                            <!-- Appointment Schedule -->
+                            <div class="uppercase font-bold flex justify-row items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                                </svg>
+                                <p>&ensp;Appointment Schedule</p>
+                            </div>
+
+                            <!-- Date and TIme -->
+                            <div class="grid grid-cols-2 gap-6">
+                                <!-- Date -->
+                                <div class="relative z-0 w-full group flex justify-row items-center text-lg">
+                                    <p class="font-semibold">Date: &nbsp;</p>
+                                    <p id="dateContainer" class="capitalize"></p>
+                                </div>
+                                <!-- Time-->
+                                <div class="relative z-0 w-full group flex justify-row items-center text-lg">
+                                    <p class="font-semibold">Time: &nbsp;</p>
+                                    <p id="timeContainer" class="capitalize"></p>
+                                </div>
+                            </div>
+
+                             <!-- Contact Details -->
+                            <div class="uppercase font-bold flex justify-row items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                                </svg>
+                                <p>&ensp;Contact Details</p>
+                            </div>
+
+                            <!-- Phone number and Email -->
+                            <div class="grid grid-cols-2 gap-6">
+                                <!-- Phone number -->
+                                <div class="relative z-0 w-full group flex justify-row items-center text-lg">
+                                    <p class="font-semibold">Phone number: &nbsp;</p>
+                                    <p id="phoneNuberContainer" class="capitalize"></p>
+                                </div>
+                                <!-- Eamil-->
+                                <div class="relative z-0 w-full group flex justify-row items-center text-lg">
+                                    <p class="font-semibold">Email Address: &nbsp;</p>
+                                    <p id="emailContainer" class="capitalize"></p>
+                                </div>
+                            </div>
+
+                            <!-- selected concern -->
+                            <div class="uppercase font-bold flex justify-row items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                                </svg>
+                                <p>&ensp;Selected concern</p>
+                            </div>
+
+                            <!-- Phone number and Email -->
+                            <div class="grid grid-cols-2 gap-6">
+                                <!-- Phone number -->
+                                <div class="relative z-0 w-full group flex justify-row items-center text-lg">
+                                    <p class="font-semibold">Your concern is &nbsp;</p>
+                                    <p id="selectConcernContainer" class="capitalize"></p>
+                                </div>
+                                <!-- Eamil-->
+                                <div class="relative z-0 w-full group flex justify-row items-center text-lg">
+                                    <p class="font-semibold">Your specific concern is &nbsp;</p>
+                                    <p id="specifyConcernContainer" class="capitalize"></p>
+                                </div>
+                            </div>
+
+                            <!-- Hospital Details -->
+                            <div class="uppercase font-bold flex justify-row items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                                </svg>
+                                <p>&ensp;Hospital Details</p>
+                            </div>
+
+                            <!-- Phone number and Email -->
+                            <div class="grid grid-cols-2 gap-6">
+                                <!-- Phone number -->
+                                <div class="relative z-0 w-full group flex justify-row items-center text-lg">
+                                    <p class="font-semibold">Hospital name: &nbsp;</p>
+                                    <p id="hospitalNameContainer" class="capitalize"></p>
+                                </div>
+                                <!-- Eamil-->
+                                <div class="relative z-0 w-full group flex justify-row items-center text-lg">
+                                    <p class="font-semibold">Reservation Type: &nbsp;</p>
+                                    <p id="reservationTypeContainer" class="capitalize"></p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="flex justify-end items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                            <button class="hidden" data-modal-toggle="reviewDetailsModal"></button>
+
+                            <!-- Loading Message -->
+                            <div class="animate-pulse flex items-center" style="display: none;" id="reservation-loader">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
+                                    <path d="M9 13h2v5a1 1 0 11-2 0v-5z" />
+                                  </svg>
+                                  &ensp;Your Reservation is being submitted..
+                            </div>
+                            <button id="submitButton" name="submitButton" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                            <button id="cancelButton" name="cancelButton" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
         </div>
     </div>

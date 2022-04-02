@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2022 at 05:41 PM
+-- Generation Time: Apr 02, 2022 at 02:48 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -285,13 +285,6 @@ CREATE TABLE `referralfiles` (
   `file_dir` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `referralfiles`
---
-
-INSERT INTO `referralfiles` (`referral_id`, `booking_id`, `file_name`, `file_dir`) VALUES
-(11, 15, 'Brown', '../web/referral-images/brown.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -351,19 +344,20 @@ CREATE TABLE `userbooking` (
   `patientConcern` varchar(50) NOT NULL,
   `patientSpecifyConcern` varchar(50) NOT NULL,
   `patientHospitalName` varchar(50) NOT NULL,
-  `patientReservationType` varchar(50) NOT NULL
+  `patientReservationType` varchar(50) NOT NULL,
+  `bookingTimestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `userbooking`
 --
 
-INSERT INTO `userbooking` (`ID`, `user_id`, `listing_id`, `patientFirstName`, `patientLastName`, `patientDate`, `patientTime`, `patientPhoneNumber`, `patientConcern`, `patientSpecifyConcern`, `patientHospitalName`, `patientReservationType`) VALUES
-(9, 94, 9, 'awdawdawd', 'awdawdaw', '2022-04-02', '21:14', '09123131231', 'Covid', '', 'Mount Banawe General Hospital', 'bed'),
-(12, 95, 8, 'Try LAng', 'Try LAng', '2022-04-15', '01:02', '09685586767', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed'),
-(13, 94, 8, 'awdawdaw', 'awdadawd', '2022-04-02', '15:57', '09135135353', 'Non-Covid', 'Tubol', 'Amang Rodriguez Memorial Medical Center', 'bed'),
-(14, 95, 8, 'Try LAng', 'Try LAng', '2022-04-15', '01:02', '09685586767', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed'),
-(15, 94, 8, 'awdawdaw', 'awdadawd', '2022-04-02', '15:57', '09135135353', 'Non-Covid', 'Tubol', 'Amang Rodriguez Memorial Medical Center', 'bed');
+INSERT INTO `userbooking` (`ID`, `user_id`, `listing_id`, `patientFirstName`, `patientLastName`, `patientDate`, `patientTime`, `patientPhoneNumber`, `patientConcern`, `patientSpecifyConcern`, `patientHospitalName`, `patientReservationType`, `bookingTimestamp`) VALUES
+(140, 94, 10, 'sddd', 'dwdsd', '2022-04-13', '09:00', '09125253535', 'Non-Covid', 'awdawd', 'Cebu Doctors University Hospital', 'bed', '2022-04-02 11:09:54'),
+(141, 95, 10, 'asdasdas', 'asdasdasdas', '2022-04-14', '09:00', '12312312313', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-02 11:09:57'),
+(142, 94, 10, 'sddd', 'dwdsd', '2022-04-03', '09:00', '09125253535', 'Non-Covid', 'sssss', 'Cebu Doctors University Hospital', 'bed', '2022-04-02 11:10:49'),
+(143, 95, 10, 'asdasdasdasd', 'asdasdasd', '2022-04-13', '09:00', '12312312312', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-02 11:11:04'),
+(144, 95, 10, 'qweqweqwe', 'qweqweqwe', '2022-04-22', '09:00', '12313131231', 'Covid', '1231', 'Cebu Doctors University Hospital', 'bed', '2022-04-02 11:16:08');
 
 -- --------------------------------------------------------
 
@@ -607,7 +601,7 @@ ALTER TABLE `pendingadminsignup`
 -- AUTO_INCREMENT for table `referralfiles`
 --
 ALTER TABLE `referralfiles`
-  MODIFY `referral_id` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `referral_id` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `rejectedhospital`
@@ -625,7 +619,7 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT for table `userbooking`
 --
 ALTER TABLE `userbooking`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 
 --
 -- AUTO_INCREMENT for table `userpatient`
