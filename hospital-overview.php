@@ -659,7 +659,7 @@
                             </button> -->
                         </div>
                         <!-- Modal body -->
-                        <div class="p-12 space-y-6 text-gray-200">
+                        <div class="p-20 space-y-6 text-gray-200">
 
                             <!-- Patiend Details -->
                             <div class="uppercase font-bold flex justify-row items-center">
@@ -670,7 +670,7 @@
                             </div>
                             
                             <!-- First name and Last name -->
-                            <div class="grid grid-cols-2 gap-6">
+                            <div class="grid grid-cols-2 gap-6 mx-6">
                                 <!-- First name -->
                                 <div class="relative z-0 w-full group flex justify-row items-center text-lg">
                                     <p class="font-semibold">First name: &nbsp;</p>
@@ -692,7 +692,7 @@
                             </div>
 
                             <!-- Date and TIme -->
-                            <div class="grid grid-cols-2 gap-6">
+                            <div class="grid grid-cols-2 gap-6 mx-6">
                                 <!-- Date -->
                                 <div class="relative z-0 w-full group flex justify-row items-center text-lg">
                                     <p class="font-semibold">Date: &nbsp;</p>
@@ -714,7 +714,7 @@
                             </div>
 
                             <!-- Phone number and Email -->
-                            <div class="grid grid-cols-2 gap-6">
+                            <div class="grid grid-cols-2 gap-6 mx-6">
                                 <!-- Phone number -->
                                 <div class="relative z-0 w-full group flex justify-row items-center text-lg">
                                     <p class="font-semibold">Phone number: &nbsp;</p>
@@ -736,7 +736,7 @@
                             </div>
 
                             <!-- Phone number and Email -->
-                            <div class="grid grid-cols-2 gap-6">
+                            <div class="grid grid-cols-2 gap-6 mx-6">
                                 <!-- Phone number -->
                                 <div class="relative z-0 w-full group flex justify-row items-center text-lg">
                                     <p class="font-semibold">Your concern is &nbsp;</p>
@@ -758,16 +758,16 @@
                             </div>
 
                             <!-- Phone number and Email -->
-                            <div class="grid grid-cols-2 gap-6">
+                            <div class="grid grid-cols-2 gap-6 mx-6">
                                 <!-- Phone number -->
                                 <div class="relative z-0 w-full group flex justify-row items-center text-lg">
                                     <p class="font-semibold">Hospital name: &nbsp;</p>
-                                    <p id="hospitalNameContainer" class="capitalize"></p>
+                                    <p id="hospitalNameContainer" class=""></p>
                                 </div>
                                 <!-- Eamil-->
                                 <div class="relative z-0 w-full group flex justify-row items-center text-lg">
                                     <p class="font-semibold">Reservation Type: &nbsp;</p>
-                                    <p id="reservationTypeContainer" class="capitalize"></p>
+                                    <p id="reservationTypeContainer" class=""></p>
                                 </div>
                             </div>
 
