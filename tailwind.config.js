@@ -18,7 +18,8 @@ module.exports = {
     './includes/nav.php',
     './hospital-overview.php',
     './new-hospital-overview.php',
-    "./node_modules/flowbite/**/*.js"
+    './node_modules/flowbite/**/*.js',
+    './reservation-success.php'
 ],
 
   presets: [],

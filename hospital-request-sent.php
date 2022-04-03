@@ -17,7 +17,7 @@
     <link rel="icon" href="assets/main-logo-line.png" type="image/x-icon">
 </head>
 
-<body class="bg-dark">
+<body style="background-color: #111827;">
     
     <div class="container">
         <div class="row">

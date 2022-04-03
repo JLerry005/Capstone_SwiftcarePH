@@ -1105,8 +1105,32 @@ input:checked + .toggle-bg{
   margin-top: 0.25rem;
 }
 
+.mr-4{
+  margin-right: 1rem;
+}
+
 .mt-6{
   margin-top: 1.5rem;
+}
+
+.mt-20{
+  margin-top: 5rem;
+}
+
+.mt-16{
+  margin-top: 4rem;
+}
+
+.mt-14{
+  margin-top: 3.5rem;
+}
+
+.mt-12{
+  margin-top: 3rem;
+}
+
+.mt-24{
+  margin-top: 6rem;
 }
 
 .block{
@@ -1293,6 +1317,10 @@ input:checked + .toggle-bg{
   width: 600px;
 }
 
+.w-40{
+  width: 10rem;
+}
+
 .w-64{
   width: 16rem;
 }
@@ -1307,10 +1335,6 @@ input:checked + .toggle-bg{
 
 .max-w-2xl{
   max-width: 42rem;
-}
-
-.max-w-7xl{
-  max-width: 80rem;
 }
 
 .flex-1{
@@ -2142,6 +2166,22 @@ input:checked + .toggle-bg{
   padding: 5rem;
 }
 
+.p-40{
+  padding: 10rem;
+}
+
+.p-48{
+  padding: 12rem;
+}
+
+.p-56{
+  padding: 14rem;
+}
+
+.p-10{
+  padding: 2.5rem;
+}
+
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -2237,6 +2277,21 @@ input:checked + .toggle-bg{
   padding-right: 1.75rem;
 }
 
+.px-24{
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.py-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.px-3\.5{
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+}
+
 .pl-10{
   padding-left: 2.5rem;
 }
@@ -2311,6 +2366,22 @@ input:checked + .toggle-bg{
 
 .pl-12{
   padding-left: 3rem;
+}
+
+.pt-40{
+  padding-top: 10rem;
+}
+
+.pt-48{
+  padding-top: 12rem;
+}
+
+.pt-20{
+  padding-top: 5rem;
+}
+
+.pt-32{
+  padding-top: 8rem;
 }
 
 .text-left{
@@ -2411,6 +2482,10 @@ input:checked + .toggle-bg{
 
 .leading-9{
   line-height: 2.25rem;
+}
+
+.tracking-wide{
+  letter-spacing: 0.025em;
 }
 
 .text-red-500{
@@ -2536,6 +2611,11 @@ input:checked + .toggle-bg{
 .text-orange-400{
   --tw-text-opacity: 1;
   color: rgb(255 138 76 / var(--tw-text-opacity));
+}
+
+.text-gray-800{
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
 .text-orange-600{
@@ -2834,11 +2914,6 @@ input:checked + .toggle-bg{
   background-color: rgb(14 159 110 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-green-800:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(3 84 63 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-gradient-to-br:hover{
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
@@ -2999,6 +3074,11 @@ input:checked + .toggle-bg{
   --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity));
 }
 
+.focus\:ring-cyan-200:focus{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(165 243 252 / var(--tw-ring-opacity));
+}
+
 .group:hover .group-hover\:bg-opacity-0{
   --tw-bg-opacity: 0;
 }
@@ -3146,11 +3226,6 @@ input:checked + .toggle-bg{
     background-color: rgb(26 86 219 / var(--tw-bg-opacity));
   }
 
-  .dark\:hover\:bg-gray-800:hover{
-    --tw-bg-opacity: 1;
-    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-  }
-
   .dark\:hover\:text-white:hover{
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -3271,6 +3346,18 @@ input:checked + .toggle-bg{
     padding: 0.75rem;
   }
 
+  .sm\:p-10{
+    padding: 2.5rem;
+  }
+
+  .sm\:p-12{
+    padding: 3rem;
+  }
+
+  .sm\:p-14{
+    padding: 3.5rem;
+  }
+
   .sm\:px-3{
     padding-left: 0.75rem;
     padding-right: 0.75rem;
@@ -3279,6 +3366,16 @@ input:checked + .toggle-bg{
   .sm\:px-10{
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .sm\:px-4{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .sm\:py-3{
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 
   .sm\:pr-5{
@@ -3297,6 +3394,14 @@ input:checked + .toggle-bg{
     padding-right: 2.25rem;
   }
 
+  .sm\:pt-40{
+    padding-top: 10rem;
+  }
+
+  .sm\:pt-48{
+    padding-top: 12rem;
+  }
+
   .sm\:text-base{
     font-size: 1rem;
     line-height: 1.5rem;
@@ -3310,6 +3415,21 @@ input:checked + .toggle-bg{
   .sm\:text-sm{
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .sm\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .sm\:text-4xl{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .sm\:text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 
@@ -3440,6 +3560,16 @@ input:checked + .toggle-bg{
     padding-right: 6rem;
   }
 
+  .md\:px-5{
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .md\:py-3{
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
   .md\:pr-5{
     padding-right: 1.25rem;
   }
@@ -3483,6 +3613,11 @@ input:checked + .toggle-bg{
   .md\:text-sm{
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .md\:text-4xl{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
 
@@ -3657,6 +3792,14 @@ input:checked + .toggle-bg{
     padding: 0.5rem;
   }
 
+  .lg\:p-0{
+    padding: 0px;
+  }
+
+  .lg\:p-10{
+    padding: 2.5rem;
+  }
+
   .lg\:px-8{
     padding-left: 2rem;
     padding-right: 2rem;
@@ -3713,6 +3856,22 @@ input:checked + .toggle-bg{
 
   .lg\:pb-10{
     padding-bottom: 2.5rem;
+  }
+
+  .lg\:pt-48{
+    padding-top: 12rem;
+  }
+
+  .lg\:pt-40{
+    padding-top: 10rem;
+  }
+
+  .lg\:pt-36{
+    padding-top: 9rem;
+  }
+
+  .lg\:pt-32{
+    padding-top: 8rem;
   }
 
   .lg\:text-left{
@@ -3791,6 +3950,18 @@ input:checked + .toggle-bg{
 
   .xl\:mt-0{
     margin-top: 0px;
+  }
+
+  .xl\:mt-24{
+    margin-top: 6rem;
+  }
+
+  .xl\:mt-5{
+    margin-top: 1.25rem;
+  }
+
+  .xl\:mt-10{
+    margin-top: 2.5rem;
   }
 
   .xl\:flex{
@@ -3884,6 +4055,16 @@ input:checked + .toggle-bg{
     padding-right: 2rem;
   }
 
+  .xl\:py-3{
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .xl\:px-5{
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
   .xl\:pr-5{
     padding-right: 1.25rem;
   }
@@ -3900,9 +4081,23 @@ input:checked + .toggle-bg{
     padding-right: 3rem;
   }
 
+  .xl\:pt-48{
+    padding-top: 12rem;
+  }
+
   .xl\:text-2xl{
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .xl\:text-5xl{
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .xl\:text-xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 

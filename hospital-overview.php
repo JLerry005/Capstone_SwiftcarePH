@@ -346,13 +346,13 @@
 
             <!-- Hospital Description -->
             <div class="pt-3 pb-1 xl:w-[800px]">
-                <h1 class="flex items-center mb-2 font-bold">
+                <h1 class="flex items-center mb-2 font-bold text-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd" />
                       </svg>
-                    &ensp;About <?php echo $hospitalName?>&nbsp;
+                    &ensp;About in <?php echo $hospitalName?>&nbsp;
                 </h1>
-                <p><?php echo $hospitalDescription?></p>
+                <p class="text-justify text-gray-800 font-medium"><?php echo $hospitalDescription?></p>
             </div>
 
             <!-- Image -->
@@ -576,9 +576,9 @@
                                 if($referral == "Yes"){
                                     echo '
                                         <div class="flex flex-rows">
-                                            <label class="block mb-2 text-gray-900 text-sm font-bold uppercase" for="user_avatar">Attachment for Referal</label><span class="text-red-600">&nbsp;*</span>
+                                            <label class="block mb-2 text-gray-900 text-sm font-bold uppercase" for="user_avatar">Attachment for Referral</label><span class="text-red-600">&nbsp;*</span>
                                         </div>
-                                        <input class="block w-full text-sm text-gray-900 bg-blue-50 rounded-lg border-2 border-gray-500 cursor-pointer focus:outline-none focus:border-transparent" id="referralFilesInput" type="file" multiple>
+                                        <input class="block w-full text-md text-gray-900 bg-blue-50 rounded-lg border-2 border-gray-500 cursor-pointer focus:outline-none focus:border-transparent" id="referralFilesInput" type="file" multiple>
                                         <div id="referralFiles-error" class="text-red-500 text-center mt-2 font-medium"></div>
                                         ';
                                     }else {
@@ -597,7 +597,7 @@
 
 
                             <div class="flex justify-end justify-row">
-                                <button type="button" name="btnBookingNow" id="btnBookingNow" class="mt-6 w-32 focus:outline-none text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:ring-green-300 rounded-lg text-sm py-3 px-4 mr-3 font-semibold">Continue<i class="bi bi-box-arrow-in-right font-bold"></i></button>
+                                <button type="button" name="btnBookingNow" id="btnBookingNow" class="w-40 bg-gray-900 p-3 mt-3 mr-4 rounded-lg text-white flex justify-center items-center hover:bg-gray-800 text-md font-semibold tracking-wide">Continue&nbsp; <i class="bi bi-box-arrow-in-right font-bold"></i></button>
                             </div>
                         </div> 
                     </form>
@@ -605,12 +605,10 @@
 
                 <!-- Login or signup for booking form -->
                 <form action="includes/booking-login-inc.php?listingID=<?php echo $listingID ?>" method="post" id="login-for-booking">  
-                    <p>You need to be Logged in first before you can book a reservation.</p>
-                    <button type="submit" name="booking-login" id="booking-login" class="focus:outline-none text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Login</button>
+                    <p class="mt-6 mb-4 text-gray-900 font-semibold text-md">You need to be Logged in first before you can book a reservation.</p>
+                    <button type="submit" name="booking-login" id="booking-login" class="w-40 bg-gray-900 p-4 rounded-md text-white flex justify-center items-center hover:bg-gray-800 text-md uppercase font-semibold tracking-wide">Login</button>
                 </form>
             </div>
-            
-
 
             <!-- Alert Modal -->
             <div id="alertModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
@@ -619,9 +617,6 @@
                     <div class="relative bg-gray-900 rounded-lg shadow">
                         <!-- Modal header -->
                         <div class="flex justify-end p-2">
-                            <!-- <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="alertModal">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
-                            </button> -->
                         </div>
                         <!-- Modal body -->
                         <div class="p-6 pt-0 text-center">
@@ -638,142 +633,141 @@
                 </div>
             </div>
 
-            <!-- Review the details Modal -->
+            <!-- Review Details Modal -->
             <div id="reviewDetailsModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
-                <div class="relative p-4 w-full max-w-7xl h-full md:h-auto">
+                <div class="relative p-4 w-full max-w-4xl h-full md:h-auto">
                     <!-- Modal content -->
-                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-900">
+                    <div class="relative rounded-lg shadow bg-gray-900">
                         <!-- Modal header -->
-                        <div class="flex justify-center items-center text-center p-5">
-                            <h3 class="text-xl font-medium text-gray-900 dark:text-white flex items-center">
-                                <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg> -->
+                        <div class="flex justify-center items-center text-center pt-10">
+                            <h3 class="text-xl font-medium text-gray-900 dark:text-white flex items-center tracking-wide">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                                 </svg>
                                 &ensp;Double-check the Information you provided before proceeding.
                             </h3>
-                            <!-- <button type="button" id="close-review-details" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
-                            </button> -->
                         </div>
+
                         <!-- Modal body -->
-                        <div class="p-20 space-y-6 text-gray-200">
+                        <div class="px-24 py-10 space-y-6 text-gray-200">
 
                             <!-- Patiend Details -->
                             <div class="uppercase font-bold flex justify-row items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
                                 </svg>
-                                <p>&ensp;Patient Details</p>
+                                <p class="text-blue-500 text-lg">&ensp;Patient name</p>
                             </div>
                             
                             <!-- First name and Last name -->
-                            <div class="grid grid-cols-2 gap-6 mx-6">
+                            <div class="grid grid-cols-2 gap-6 mb-6">
                                 <!-- First name -->
                                 <div class="relative z-0 w-full group flex justify-row items-center text-lg">
-                                    <p class="font-semibold">First name: &nbsp;</p>
-                                    <p id="firstnameContainer" class="capitalize"></p>
+                                    <p class="font-semibold">&nbsp;</p>
+                                    <p id="firstnameContainer" class="capitalize">First name</p>
                                 </div>
                                 <!-- Last name -->
                                 <div class="relative z-0 w-full group flex justify-row items-center text-lg">
-                                    <p class="font-semibold">Last name: &nbsp;</p>
-                                    <p id="lastnameContainer" class="capitalize"></p>
+                                    <p class="font-semibold">&nbsp;</p>
+                                    <p id="lastnameContainer" class="capitalize">Last name</p>
                                 </div>
                             </div>
 
                             <!-- Appointment Schedule -->
                             <div class="uppercase font-bold flex justify-row items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                                </svg>
-                                <p>&ensp;Appointment Schedule</p>
+                                </svg> -->
+                                <p class="text-blue-500 text-lg">Appointment Schedule</p>
                             </div>
 
                             <!-- Date and TIme -->
-                            <div class="grid grid-cols-2 gap-6 mx-6">
+                            <div class="grid grid-cols-2 gap-6">
                                 <!-- Date -->
                                 <div class="relative z-0 w-full group flex justify-row items-center text-lg">
-                                    <p class="font-semibold">Date: &nbsp;</p>
-                                    <p id="dateContainer" class="capitalize"></p>
+                                    <p class="font-semibold"><i class="bi bi-calendar-event"></i> &nbsp;</p>
+                                    <p id="dateContainer" class="capitalize">Date</p>
                                 </div>
                                 <!-- Time-->
                                 <div class="relative z-0 w-full group flex justify-row items-center text-lg">
-                                    <p class="font-semibold">Time: &nbsp;</p>
-                                    <p id="timeContainer" class="capitalize"></p>
+                                    <p class="font-semibold"><i class="bi bi-clock"></i> &nbsp;</p>
+                                    <p id="timeContainer" class="capitalize">Time</p>
                                 </div>
                             </div>
 
                              <!-- Contact Details -->
                             <div class="uppercase font-bold flex justify-row items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                                </svg>
-                                <p>&ensp;Contact Details</p>
+                                </svg> -->
+                                <p class="text-blue-500 text-lg">Contact Details</p>
                             </div>
 
                             <!-- Phone number and Email -->
-                            <div class="grid grid-cols-2 gap-6 mx-6">
+                            <div class="grid grid-cols-2 gap-6">
                                 <!-- Phone number -->
                                 <div class="relative z-0 w-full group flex justify-row items-center text-lg">
-                                    <p class="font-semibold">Phone number: &nbsp;</p>
-                                    <p id="phoneNuberContainer" class="capitalize"></p>
+                                    <p class="font-semibold"><i class="bi bi-telephone"></i> &nbsp;</p>
+                                    <p id="phoneNuberContainer" class="capitalize">Phone Number</p>
                                 </div>
-                                <!-- Eamil-->
+                                <!-- Email-->
                                 <div class="relative z-0 w-full group flex justify-row items-center text-lg">
-                                    <p class="font-semibold">Email Address: &nbsp;</p>
-                                    <p id="emailContainer" class="capitalize"></p>
+                                    <p class="font-semibold"><i class="bi bi-envelope"></i> &nbsp;</p>
+                                    <p id="emailContainer" class="">Email</p>
                                 </div>
                             </div>
 
                             <!-- selected concern -->
                             <div class="uppercase font-bold flex justify-row items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                                 </svg>
-                                <p>&ensp;Selected concern</p>
+                                <p class="text-blue-500 text-lg">&ensp;Selected concern</p>
                             </div>
 
-                            <!-- Phone number and Email -->
-                            <div class="grid grid-cols-2 gap-6 mx-6">
-                                <!-- Phone number -->
+                            <!-- Concern and Speciy concern -->
+                            <div class="grid grid-cols-2 gap-6">
+                                <!-- Concern -->
                                 <div class="relative z-0 w-full group flex justify-row items-center text-lg">
-                                    <p class="font-semibold">Your concern is &nbsp;</p>
-                                    <p id="selectConcernContainer" class="capitalize"></p>
+                                    <p class="font-semibold">&nbsp;</p>
+                                    <p id="selectConcernContainer" class="capitalize">Concern</p>
                                 </div>
-                                <!-- Eamil-->
+                                <!--  Speciy concern-->
                                 <div class="relative z-0 w-full group flex justify-row items-center text-lg">
-                                    <p class="font-semibold">Your specific concern is &nbsp;</p>
+                                    <p class="font-semibold">&nbsp;</p>
                                     <p id="specifyConcernContainer" class="capitalize"></p>
                                 </div>
                             </div>
 
                             <!-- Hospital Details -->
                             <div class="uppercase font-bold flex justify-row items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                 </svg>
-                                <p>&ensp;Hospital Details</p>
+                                <p class="text-blue-500 text-lg">&ensp;Hospital Details</p>
                             </div>
 
-                            <!-- Phone number and Email -->
-                            <div class="grid grid-cols-2 gap-6 mx-6">
-                                <!-- Phone number -->
+                            <!-- Hospital Name and Reservation Type -->
+                            <div class="grid grid-cols-2 gap-6">
+                                <!-- Hospital Name -->
                                 <div class="relative z-0 w-full group flex justify-row items-center text-lg">
-                                    <p class="font-semibold">Hospital name: &nbsp;</p>
-                                    <p id="hospitalNameContainer" class=""></p>
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                    </svg> -->
+                                    <p class="font-semibold">&nbsp;</p>
+                                    <p id="hospitalNameContainer" class="">Hospital Name</p>
                                 </div>
-                                <!-- Eamil-->
+                                <!-- Reservation Type-->
                                 <div class="relative z-0 w-full group flex justify-row items-center text-lg">
-                                    <p class="font-semibold">Reservation Type: &nbsp;</p>
-                                    <p id="reservationTypeContainer" class=""></p>
+                                    <p class="font-semibold"><i class="bi bi-file-medical"></i> &nbsp;</p>
+                                    <p id="reservationTypeContainer" class="">Reservation Type</p>
                                 </div>
                             </div>
 
                         </div>
+
                         <!-- Modal footer -->
-                        <div class="flex justify-end items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                        <div class="flex justify-end items-center p-6 space-x-4 rounded-b border-t border-gray-200 dark:border-gray-600">
                             <button class="hidden" data-modal-toggle="reviewDetailsModal"></button>
 
                             <!-- Loading Message -->
@@ -784,8 +778,8 @@
                                   </svg>
                                   &ensp;Your Reservation is being submitted..
                             </div>
-                            <button id="submitButton" name="submitButton" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-                            <button id="cancelButton" name="cancelButton" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancel</button>
+                            <button id="cancelButton" name="cancelButton" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600 mr-2 mb-2">Cancel</button>
+                            <button id="submitButton" name="submitButton" type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Submit</button>
                         </div>
                     </div>
                 </div>
