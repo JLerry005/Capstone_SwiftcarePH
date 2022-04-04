@@ -1,10 +1,32 @@
 <?php
     session_start();
-?>    
-    
+
+    // if (!isset($_SESSION['sessionpatientUserID'])) {
+    //             header("location: user-login.php");
+    //             die();
+    //     } 
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Flowbite minified stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css"/>
+    <title>User Dashboard | SwiftCare PH</title>
+    <link rel="icon" href="assets/main-logo-line.png" type="image/x-icon"> 
+    <link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="styling/user-dashboard.css">
+</head>
+<body class="font-poppins bg-blue-50">
+
     <!-- Nav Bar -->
-    <nav class="absolute text-white py-5 px-5 lg:px-12 w-full">
-        <div class="flex flex-row justify-between items-center  pb-6 border-slate-600">
+    <nav class="text-white py-5 px-5 lg:px-12 w-full bg-gray-900">
+        <div class="flex flex-row justify-between items-center   border-slate-600">
             <div class="flex flex-row items-center space-x-4">
             <a href="index" class="flex items-center text-center">
                 <img src="assets/main-logo-transparent.png" class="mr-3 h-8" alt="Swiftcare PH Logo">
@@ -15,7 +37,7 @@
 
                 <a href="#" class="hover:underline hidden md:block">About</a>
             </div>
-            
+
             <?php
                 if (isset($_SESSION["sessionpatientUserID"])) {
                     echo '
@@ -24,8 +46,8 @@
                         <p class="flex flex-row items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                              </svg>
-                              <a href="user-dashboard"> &nbsp;'.$_SESSION['sessionPatientFirstName'].'</a>
+                            </svg>
+                            &nbsp;'.$_SESSION['sessionPatientFirstName'].'
                         </p>
                         <a href="includes/logout-inc" class="bg-red-600 hover:bg-red-500 hover:drop-shadow-md py-2 px-7 rounded-lg hover:rounded-md hover:scale-105 flex flex-row text-sm transition-all">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -50,7 +72,6 @@
                 }
             ?>
 
-    
             <!-- Hamburger Button -->
             <div class="md:hidden flex flex-row items-center">
                 <button class="hamburger-button id="hamburger-button">
@@ -69,4 +90,13 @@
         </div>
     </nav>
 
-    
+
+    <div class="">
+        <div>
+
+        </div>
+    </div>
+<!-- 
+    <script src="js\user-dashboard.js" defer></script> -->
+</body>
+</html>

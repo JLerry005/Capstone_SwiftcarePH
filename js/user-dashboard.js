@@ -223,7 +223,7 @@
                 $(editPasswordDiv).fadeIn();
             }
             if (statusTxt == "Wrong Password!") {
-                alert("Wrong Password!");
+                // alert("Wrong Password!");
             }
         });
     });
@@ -254,6 +254,10 @@
         }
     }
 
+    function reloads(){
+        location.reload();
+    }
+
     $('#edit-new-password-form').submit(function (event) {
         event.preventDefault();
         let newPasswordValue = $('#new-password').val();
@@ -273,6 +277,7 @@
                     $('#changes-made-toast').toast('show');
                     $(resultToast).toast('show');
                     $('#result-modal').hide();
+                    reloads();
                 }
                 if (statusTxt == "STMT FAILED!") {
                     $(editPasswordDiv).fadeIn();
@@ -282,8 +287,12 @@
         }
     });
 
-    $("btn-closes").click(function(){
-        $("verifyPassword").hide();
+    $("account-content").click(function(){
+        $("account-content").show();
+    });
+
+    $("#btnClose").click(function(){
+        $("#verifyPassword-div").fadeOut();
       });
 
     

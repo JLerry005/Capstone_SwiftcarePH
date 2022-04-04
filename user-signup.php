@@ -104,7 +104,7 @@
             <!-- Login container -->
             <div class="relative border-t-2 border-gray-300 mt-5 py-5 text-center">
                 <p class="text-center">Already have an account?</p>
-                <a href="user-login" class="mb-3 rounded underline text-lg p-2">LOGIN</a>
+                <a href="user-login" class="mb-3 rounded underline text-lg p-2 hover:text-blue-500 tracking-wide">LOGIN</a>
                 
                 <div class="absolute -bottom-5 lg:-bottom-20 left-0 right-0 2xl:hidden">
                     <p class="text-center text-slate-400 text-xs">© <a href="#" class="hover:underline">Swiftcare PH</a>  2022 | All Rights Reserved. 😎🩺🔥</p>

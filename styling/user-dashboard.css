@@ -11,7 +11,7 @@
     --PlainWhite: white;
     --Pending: #155263;
     --Confirmed: #FF6F3C;
-    --Rejected: #FF9A3C;
+    --Rejected: #fe8e25;
     --History: #3A4750;
   
     /*Syntax:   color: var(--whiteBGColor);*/
@@ -22,6 +22,7 @@ body{
     margin: 0;
     font-family: 'Poppins';
     background-color: var(--whiteBGColor);
+    overflow-x: hidden;
 }
 
 .card-icon{
@@ -40,24 +41,33 @@ body{
 }
 
 .card-reservation{
-    background-color: var(--footerColor);
+    background-color: #536DFE;
+}
+
+.card-reservation:hover{
+    background-color: #3856fe;
 }
 
 .card-account{
-    background-color: var(--yellow);
+    background-color: #E6E6E6;
+}
+
+.card-account:hover{
+    background-color: #a9a8a8;
 }
 
 .account-title{
-    color: var(--footerColor);
+    color: #111827;
     font-weight: bold;
 }
 
 .card-pending{
-    background-color: var(--Pending);
+    background-color: var(--Pending); 
     transition: all 0.6s cubic-bezier(0.19, 0.89, 0.32, 1.28);
 }
 
 .card-pending:hover{
+    background-color: #003e4f;
     transform: scale(1.01);
     box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
 }
@@ -68,6 +78,7 @@ body{
 }
 
 .card-confirmed:hover{
+    background-color:#f6561c;
     transform: scale(1.01);
     box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
 }
@@ -78,6 +89,7 @@ body{
 }
 
 .card-rejected:hover{
+    background-color: #fa7e0a;
     transform: scale(1.01);
     box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
 }
@@ -88,13 +100,16 @@ body{
 }
 
 .card-history:hover{
+    background-color: #242c31;
     transform: scale(1.01);
     box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
 }
 
 .account-setting{
-    /* background-color: gainsboro; */
-    padding: 10px;
+    background-color: #111827;
+    margin: 50px 20px;
+    padding: 20px 30px;
+    border-radius: 20px;
 }
 
 .edit-phone-number{
@@ -103,7 +118,7 @@ body{
     float: right;
     cursor: pointer;
     margin-right: 25px;
-    margin-top: -63px;
+    margin-top: -75px;
 }
 
 .save-phone-number{
@@ -130,12 +145,6 @@ body{
     right: 40px;
 }
 
-.btn-pwd{
-    border: 2px solid var(--footerColor);
-    width: 100%;
-    padding: 12px;
-}
-
 .fadingOut{
     animation: fadeOutAnimation ease 1s;
 }
@@ -149,10 +158,9 @@ body{
     }
 }
 
-/* .fadingIn {
-    transition:opacity 0.6s linear;
-    opacity:1;
-} */
+.inputStyle{
+    background-color: #111827;
+}
 
 .position{
     position: absolute;
