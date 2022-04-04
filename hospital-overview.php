@@ -597,7 +597,7 @@
 
 
                             <div class="flex justify-end justify-row">
-                                <button type="button" name="btnBookingNow" id="btnBookingNow" class="w-40 bg-gray-900 p-3 mt-3 mr-4 rounded-lg text-white flex justify-center items-center hover:bg-gray-800 text-md font-semibold tracking-wide">Continue&nbsp; <i class="bi bi-box-arrow-in-right font-bold"></i></button>
+                                <button type="button" name="btnBookingNow" id="btnBookingNow" class="w-40 bg-gray-900 p-3 mt-3 mr-2 rounded-lg text-white flex justify-center items-center hover:bg-gray-800 text-md font-semibold tracking-wide">Continue&nbsp; <i class="bi bi-box-arrow-in-right font-bold"></i></button>
                             </div>
                         </div> 
                     </form>

@@ -472,7 +472,9 @@
                                                     window.location.replace('http://localhost/Capstone/reservation-success');
                                                 }
                                             });
-                                        }  
+                                        } 
+                                        
+                                        
                                     }
                                 }); 
                             }

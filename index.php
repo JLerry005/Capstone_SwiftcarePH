@@ -1414,24 +1414,24 @@
         <!-- Why Swiftcare Serction -->
         <div class="grid grid-cols-12 px-12 bg-gray-900 text-white 2xl:px-32 2xl:gap-24 text-center py-28">
             <!-- Title -->
-            <div class="col-span-12 text-2xl font-bold lg:self-end lg:pb-10">
-                <p class="font-black">Why SwiftCare PH?</p>
+            <div class="col-span-12 text-4xl font-bold lg:self-end lg:pb-10">
+                <p class="text-orange-400 tracking-wider"> Why SwiftCare PH?</p>
             </div>
 
             <!-- Time Efficient -->
             <div class="block col-span-12 lg:col-span-4 sm:flex sm:flex-col sm:items-center md:px-16 lg:px-5 lg:text-justify lg:self-start">
                 <!-- Image -->
                 <div class="">
-                    <img src="assets/health-login-icon.svg" alt="">
+                    <img src="assets/Why-swiftcareph-img/time-efficient.svg" alt="Time Efficient" class="w-80 h-80 mb-10">
                 </div>
 
                 <!-- Title -->
-                <div class="text-2xl mb-2 font-semibold">
+                <div class="text-3xl mb-2 font-semibold text-blue-500">
                     <p>Time Efficient</p>
                 </div>    
                            
                 <!-- Description -->
-                <div class="">
+                <div class="text-center trac">
                     Waste no time on going from one hospital to another
                     only to find out that there are no rooms left that are available.
                 </div>
@@ -1441,16 +1441,16 @@
             <div class="block col-span-12 lg:col-span-4 sm:flex sm:flex-col sm:items-center md:px-16 lg:px-5 lg:text-justify">
                 <!-- Image -->
                 <div class="">
-                    <img src="assets/health-login-icon.svg" alt="">
+                    <img src="assets/Why-swiftcareph-img/convient.svg" alt="Convient" class="w-80 h-80 mb-10">
                 </div>
 
                 <!-- Title -->
-                <div class="text-2xl mb-2 font-semibold">
+                <div class="text-3xl mb-2 font-semibold text-blue-500">
                     <p>Convenient</p>
                 </div>    
 
                 <!-- Description -->
-                <div class="">
+                <div class="text-center">
                     Easyly and conveniently look for a
                     nearby hospital with available rooms
                     from the comfort of your home.
@@ -1461,16 +1461,16 @@
             <div class="block col-span-12 lg:col-span-4 sm:flex sm:flex-col sm:items-center md:px-16 lg:px-5 lg:text-justify">
                 <!-- Image -->
                 <div class="">
-                    <img src="assets/health-login-icon.svg" alt="">
+                    <img src="assets/Why-swiftcareph-img/rapid-care.svg" alt="Rapid Care" class="w-80 h-80 mb-10">
                 </div>
 
                 <!-- Title -->
-                <div class="text-2xl mb-2 font-semibold">
+                <div class="text-3xl mb-2 font-semibold text-blue-500">
                     <p>Rapid Care</p>
                 </div>  
                  
                 <!-- Description -->
-                <div class="">
+                <div class="text-center">
                     Help yourself or your loved ones
                     find the right care that they need
                     without wasting too much time.
@@ -1517,10 +1517,10 @@
 
 
                 <!-- Sign up and login Button -->
-                <a href="hospital-signup" class="flex flex-row justify-center items-center border-2 border-blue-500 hover:bg-blue-600 p-2 rounded-md mb-5 lg:text-center lg:mt-6" type="button">
+                <a href="hospital-signup" class="flex flex-row justify-center items-center border-2 border-blue-500 hover:bg-blue-500 p-2 rounded-md mb-5 lg:text-center lg:mt-6" type="button">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                      </svg>
+                      </svg>&nbsp;
                     Signup Access
                 </a>
                 <p class="lg:text-center">Already Signed up? Login <a href="hospital-login" class="font-bold hover:text-orange-400">Here!</a></p>
