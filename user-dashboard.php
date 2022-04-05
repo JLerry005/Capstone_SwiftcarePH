@@ -47,18 +47,21 @@
 
         <!-- Reservations and Account Settings Cards -->
         <div id="main-cards">
-
+            <!-- Images vector and homepage button -->
             <div class="grid grid-cols-2 mt-36">
                 <div class="col-span-1">
                     <img src="assets/user-dashboard/welcome.svg" alt="" srcset="" class="w-fit h-fit mx-4">
-                    <div class="mx-20 flex items-center">
-                        <button class="relative inline-flex items-center justify-center p-0.5 w-full mt-10 mr-2 overflow-hidden font-medium text-blue-50 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
-                            <span class="relative px-5 py-2.5 transition-all ease-in duration-75 w-full bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                            <i class="bi bi-house-door"></i> Back to homepage
-                            </span>
-                        </button>
-                    </div>
+                    <a href="index">
+                        <div class="mx-20 flex items-center">
+                            <button class="relative inline-flex items-center justify-center p-0.5 w-full mt-10 mr-2 overflow-hidden font-medium text-blue-50 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 w-full bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                                <i class="bi bi-house-door"></i> Back to homepage
+                                </span>
+                            </button>  
+                        </div>
+                    </a>
                 </div>
+                <!-- Reservations and Account Settings Cards -->
                 <div class="col-span-1 py-20 space-y-10">
                     <!-- Reservation -->
                     <div class="card mt-5 mb-4 text-light p-5 card-reservation" id="reservations-card">
