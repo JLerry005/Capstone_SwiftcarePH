@@ -20,9 +20,18 @@
 body{
     padding: 0 40px;
     margin: 0;
-    font-family: 'Poppins';
     background-color: var(--whiteBGColor);
     overflow-x: hidden;
+    animation: fadeInAnimation ease 2s;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .card-icon{
