@@ -12,6 +12,8 @@
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Flowbite minified stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css"/>
     <!--Bootstrap 5 Install-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -53,7 +55,7 @@
                     <img src="assets/user-dashboard/welcome.svg" alt="" srcset="" class="w-fit h-fit mx-4">
                     <a href="index">
                         <div class="mx-20 flex items-center">
-                            <button class="relative inline-flex items-center justify-center p-0.5 w-full mt-10 mr-2 overflow-hidden font-medium text-blue-50 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                            <button class="relative inline-flex items-center justify-center p-0.5 w-full mt-10 mr-2 overflow-hidden font-medium text-blue-50 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-cyan-800">
                                 <span class="relative px-5 py-2.5 transition-all ease-in duration-75 w-full bg-gray-900 rounded-md group-hover:bg-opacity-0">
                                 <i class="bi bi-house-door"></i> Back to homepage
                                 </span>
@@ -285,7 +287,7 @@
 
                         <!-- Edit Password -->
                         <div class="col-xl-12 col-md-12 mb-5">
-                            <button id="btn-edit-password" class="relative inline-flex items-center justify-center p-0.5 w-full mr-2 overflow-hidden font-medium text-blue-50 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                            <button data-modal-toggle="editPasswordModal" id="btn-edit-password" class="relative inline-flex items-center justify-center p-0.5 w-full mr-2 overflow-hidden font-medium text-blue-50 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-cyan-800">
                                 <span class="relative px-5 uppercase py-2.5 transition-all ease-in duration-75 w-full bg-gray-900 rounded-md group-hover:bg-opacity-0">
                                 <i class="bi bi-key"></i> &ensp;Edit Password
                                 </span>
@@ -294,46 +296,94 @@
 
                         <!-- START -->
 
-                        <!-- Verify Password Form -->
-                        <div class="verifyPassword mb-3" id="verifyPassword-div" name="verifyPassword" style="display: none;">
-                            <div class="mb-4">
-                                <p class="text-xl text-blue-500 font-medium mb-2">Verify your password</p>
-                                <p class="text-gray-300"><i class="bi bi-info-circle-fill"></i> Type in your old password to make it's you.</p>                                        
-                            </div>
-                            <form action="includes/userVerifyPassword-inc.php" method="POST" id="editPasswordForm">
-                                <div class="mb-3">
-                                    <label for="lastName" class="block mb-2 text-md font-medium text-blue-500">Current Password</label>
-                                    <input type="password" id="userPassword" name="userPassword" class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" required>
-                                </div>
-                                <p id="resultMessage" class="resultMessage text-danger text-center"></p>     
-                                <div class="flex justify-end space-x-2 mr-2">
-                                    <button type="button" class="text-blue-50 border-2 border-gray-500 bg-gray-900 hover:bg-gray-500 px-3 py-2.5 text-center mr-2 mb-2 w-24 rounded-md" id="btnClose">Close</button>
-                                    <button type="submit" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2" id="btnEditPasswordNext" name="btnEditPasswordNext">Continue</button>
-                                </div>
-                                   
-                            </form>      
-                        </div>
+                        <!-- Edit Password Modal -->
+                        <div id="editPasswordModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+                            <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+                                <!-- Modal content -->
+                                <div class="relative bg-gray-900 rounded-lg shadow">
+                                    <!-- Modal header -->
+                                    <div class="flex justify-between items-start p-3 rounded-t border-b border-gray-600">
+                                        <h3 class="text-xl font-semibold text-white lg:text-2xl">
+                                            Edit password
+                                        </h3>
+                                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-600 hover:text-white rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="editPasswordModal">
+                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                                        </button>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="p-6 space-y-6">
+
+                                        <!-- Verify Password Form -->
+                                        <div class="verifyPassword mb-3" id="verifyPassword-div" name="verifyPassword">
+                                            <div class="mb-4">
+                                                <p class="text-xl text-blue-500 font-medium mb-2">Verify your password</p>
+                                                <p class="text-gray-300"><i class="bi bi-info-circle-fill"></i> Type in your old password to make it's you.</p>                                        
+                                            </div>
+                                            <form action="includes/userVerifyPassword-inc.php" method="POST" id="editPasswordForm">
+                                                <div class="mb-3">
+                                                    <label for="lastName" class="block mb-2 text-md font-medium text-blue-500">Current Password</label>
+                                                    <input type="password" id="userPassword" name="userPassword" placeholder="••••••••" class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                                </div>
+                                                <p id="resultMessage" class="resultMessage text-danger text-center"></p>     
+                                                <div class="flex justify-end space-x-1 mr-2">
+                                                    <!-- <button type="button" class="text-blue-50 border-2 border-gray-500 bg-gray-900 hover:bg-gray-500 px-3 py-2.5 text-center mr-2 mb-2 w-24 rounded-md" id="btnClose">Close</button> -->
+                                                    <button type="submit" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2" id="btnEditPasswordNext" name="btnEditPasswordNext">Continue</button>
+                                                </div>
                                                 
-                        <!-- Create new Password Form -->
-                        <div class="editPassword mb-3" id="editPassword-div" name="editPassword" style="display: none;">
-                            <div>
-                                <h4>Create a new Password</h4>
-                                <p class="text-muted"><i class="bi bi-info-circle-fill"></i> Type in your new password. (Minimum of 8 Characters)</p>                                        
+                                            </form>      
+                                        </div>
+                                                                
+                                        <!-- Create new Password Form -->
+                                        <div class="editPassword mb-3" id="editPassword-div" name="editPassword" style="display: none;">
+                                            <div class="mb-4">
+                                                <p class="text-xl text-blue-500 font-medium mb-2">Create a new Password</p>
+                                                <p class="text-gray-300"><i class="bi bi-info-circle-fill"></i> Type in your new password. (Minimum of 8 Characters)</p>                                        
+                                            </div>
+                                            <form action="includes/insert-new-password-inc.php" method="POST" id="edit-new-password-form">
+                                                <div class="mb-3">
+                                                    <label for="new-password" class="block mb-2 text-md font-medium text-blue-500">New password</label>
+                                                    <input type="password" id="new-password" name="new-password" placeholder="••••••••"  class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                                </div> 
+                                                <div class="mb-3 repeat-password-div" id="repeat-password-div" style="display: none;">
+                                                    <label for="new-password-repeat" class="block mb-2 text-md font-medium text-blue-500">Repeat your new password</label>
+                                                    <input type="password" id="new-password-repeat" placeholder="••••••••"  name="new-password-repeat" class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                                </div>
+                                                <p id="passMatchWarning" class="text-rose-600 text-center space-y-2"></p>   
+                                                <div class="flex justify-end mt-3">
+                                                    <!-- <button type="button" class="text-blue-50 border-2 border-gray-500 bg-gray-900 hover:bg-gray-500 px-3 py-2.5 text-center mr-2 mb-2 w-24 rounded-md" id="btnCloseCreate"><i class="bi bi-x-circle"></i>Back</button> -->
+                                                    <button type="submit" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2" id="btnSaveChanges" name="btnSaveChanges" disabled><i class="bi bi-box-arrow-in-right"></i> Save Changes </button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+
+                                </div>
                             </div>
-                            <form action="includes/insert-new-password-inc.php" method="POST" id="edit-new-password-form">
-                                <div class="form-floating mb-3">
-                                    <input type="password" class="form-control new-password mb-3" id="new-password" name="new-password" placeholder="new password" required>
-                                    <label for="new-password">Your new Password</label>
-                                </div> 
-                                <div class="form-floating mb-3 repeat-password-div" id="repeat-password-div" style="display: none;">
-                                    <input type="password" class="form-control new-password-repeat mb-3" id="new-password-repeat" name="new-password-repeat" placeholder="repeat new password" required>
-                                    <label for="new-password-repeat">Repeat your new Password</label>
+                        </div>
+
+                        <!-- Success Modal Popup -->
+                        <div id="successModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
+                            <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+                                <!-- Modal content -->
+                                <div class="relative bg-gray-900 rounded-lg shadow">
+                                    <!-- Modal header -->
+                                    <div class="flex justify-end p-2">
+                                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-800  hover:text-white rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="successModal">
+                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                                        </button>
+                                    </div>
+                                    <!-- Modal body -->
+                                    <div class="p-6 mt-5 text-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-4 w-14 h-14 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                                        <h3 class="mb-5 text-lg font-normal text-gray-200">Password has been updated <span class="text-green-500 font-medium">successfully</span>, Click the button below to reload the page.</h3>
+                                        <button type="button" class="text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2" onclick="closeButtons()">
+                                            Close
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="d-flex justify-content-end">
-                                    <button type="button" class="btn btn-danger mx-2" data-bs-dismiss="modal"><i class="bi bi-x-circle"></i> Close</button>
-                                    <button type="submit" class="btn btn-success btnSaveChanges" id="btnSaveChanges" name="btnSaveChanges" disabled>Save Changes <i class="bi bi-box-arrow-in-right"></i></button>
-                                </div>
-                            </form>
+                            </div>
                         </div>
 
                     </div>            
@@ -347,34 +397,12 @@
             </div>
 
         </div>   
-        <!-- END -->    
-            
-       
+        <!-- END -->     
 
         <p id="result-modal"></p>
-        <!-- Change Password Dialog Result -->
-        <!-- <div class="modal fade" id="result-modal" tabindex="-1" aria-labelledby="result-modal" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="result-modal-header">hehhe</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="result-modal-body">
-                    asdasd
-                </div>
-                <div class="result-modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Okay</button>
-                </div>
-            </div>
-            </div>
-        </div> -->
-        <!-- MODAL END -->  
-
-        </div>                    
+    </div>                    
      
-
-      <div class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true" id="result-toast">
+      <!-- <div class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true" id="result-toast">
         <div class="toast-header bg-success text-white">
           <strong class="me-auto"><i class="bi bi-check-circle-fill"></i> Success</strong>
           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -383,10 +411,13 @@
             <b>New password has been saved successfully!</b>
           </div>
         </div>     
-      </div>
+      </div> -->
                                 
          </div>
         <!-- End -->
         <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <!-- FLOWBITE CDN -->
+        <script src="node_modules\flowbite\dist\flowbite.js"></script>
+        <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
 </body>
 </html>

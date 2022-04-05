@@ -29,7 +29,30 @@
         });
     }
 
-    
+    // Toggle the Pending Container
+    function togglePending() {
+        $("#pending-cards-container").toggle(340);
+        $(".pending-icon").toggleClass("ri-arrow-up-s-line ri-arrow-down-s-line");  
+
+        // let toggleButton = document.getElementById("btn-toggle-pending");
+        // if (toggleButton.innerHTML === "Show Less ∧ "){
+        //     toggleButton.innerHTML = "Show Full ∨";
+        // } else {
+        //     toggleButton.innerHTML = "Show Less ∧";
+        // }
+    }
+
+    // Toggle the Upcoming Container
+    function toggleUpcoming(){
+        $("#upcoming-cards-container").toggle(340);
+        $(".upcoming-icon").toggleClass("ri-arrow-up-s-line ri-arrow-down-s-line");  
+    }
+
+    // Toggle the History Container
+    function toggleHistory(){
+        $("#history-cards-container").toggle(340);
+        $(".history-icon").toggleClass("ri-arrow-up-s-line ri-arrow-down-s-line");  
+    }
 
     // Dashboard Refresh Button
     function refreshDashboard() {

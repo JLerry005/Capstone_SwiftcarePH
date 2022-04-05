@@ -203,10 +203,6 @@
     let newPasswordRepeat = document.getElementById("new-password-repeat");
     let btnSaveChanges = document.getElementById("btnSaveChanges");
 
-    btnEditPassword.onclick = function () { 
-        $(verifyPasswordDiv).fadeIn();
-    }
-
     $('#btnEditPasswordNext').click( function () {
         // alert("hehexd");
         event.preventDefault();
@@ -234,6 +230,9 @@
 
     // CREATE NEW PASSWORD START
     newPassword.onkeyup = function () {
+
+
+
         if (newPassword.value.length >= 8) {
             $(passwordRepeatDiv).fadeIn();
             btnSaveChanges.disabled = false;
@@ -254,9 +253,9 @@
         }
     }
 
-    function reloads(){
-        location.reload();
-    }
+    // function reloads(){
+    //     location.reload();
+    // }
 
     $('#edit-new-password-form').submit(function (event) {
         event.preventDefault();
@@ -265,7 +264,9 @@
         let resultToast = $('#result-toast');
 
         if (newPassword.value !== newPasswordRepeat.value) {
-            alert("password did not match!");
+            $('#passMatchWarning').removeClass("passwordWarningMatched");
+            $('#passMatchWarning').addClass("passwordWarningNotMatched");
+            $('#passMatchWarning').text("Password doesn't match!")
         }
         else{
             $(editPasswordDiv).fadeOut();
@@ -273,11 +274,13 @@
                 newPasswordValue: newPasswordValue,
                 saveChanges: saveChanges,
             }, function(statusTxt) {
-                if (statusTxt == "Changes Saved!") {
-                    $('#changes-made-toast').toast('show');
-                    $(resultToast).toast('show');
-                    $('#result-modal').hide();
-                    reloads();
+                if (statusTxt == "") {
+                    // $('#changes-made-toast').toast('show');
+                    // $(resultToast).toast('show');
+                    // $('#result-modal').hide();
+                    // reloads();
+                    toggleModal('editPasswordModal', false);
+                    toggleModal('successModal', true);
                 }
                 if (statusTxt == "STMT FAILED!") {
                     $(editPasswordDiv).fadeIn();
@@ -287,86 +290,49 @@
         }
     });
 
-    $("account-content").click(function(){
-        $("account-content").show();
+    function closeButtons(){
+        location.reload();
+        toggleModal('successModal', false);
+    }
+
+    // Toggle Verify Password
+    $("#verifyTogglePass").click(function() {
+        $(this).toggleClass("bi-eye bi-eye-slash");
+        hospitalPassword = $(this).parent().find("input.hospitalPassword");
+
+        if (hospitalPassword.attr("type") == "password") {
+            hospitalPassword.attr("type", "text");
+        } 
+        
+        else {
+            hospitalPassword.attr("type", "password");
+        }
     });
 
-    $("#btnClose").click(function(){
-        $("#verifyPassword-div").fadeOut();
-      });
+    // Toggle New Password
+    $("#newTogglePass").click(function() {
+        $(this).toggleClass("bi-eye bi-eye-slash");
+        newPasswordToggle = $(this).parent().find("input.newPassword");
 
-    
-    // CREATE NEW PASSWORD END
-
-    
-
-    // Verify Old Password - Ajax
-    // $("#btnEditPasswordNext").click(function (event) {
-    //     event.preventDefault();
-    //     let userPassword = $('#userPassword').val();
-    //     let btnEditPasswordNext = $('#btnEditPasswordNext').val();
-
-    //     $('.resultMessage').load("includes/userVerifyPassword-inc.php", {
-    //         userPassword: userPassword,
-    //         btnEditPasswordNext: btnEditPasswordNext,
-    //     }, function (statusTxt) {
-    //         if (statusTxt == "Correct Password!") {
-    //             $('#edit-password').modal("hide");
-    //             $('#edit-new-password').modal("show");
-    //         }
-    //         if (statusTxt == "Wrong Password!") {
-    //             // alert("Wrong Password!");
-    //         }
-    //     });
+        if (newPasswordToggle.attr("type") == "password") {
+            newPasswordToggle.attr("type", "text");
+        } 
         
-    // });
+        else {
+            newPasswordToggle.attr("type", "password");
+        }
+    });
 
-    // Submit New Password
-    // let newPassword = document.getElementById("new-password");
-    // let newPasswordRepeat = document.getElementById("new-password-repeat");
+    // Toggle Repeat Password
+    $("#repeatTogglePass").click(function() {
+        $(this).toggleClass("bi-eye bi-eye-slash");
+        newPasswordRepeatToggle = $(this).parent().find("input.newPasswordRepeat");
 
-    // newPassword.onkeyup = function () {
-    //     if (newPassword.value.length >= 8) {
-    //         newPasswordRepeat.disabled = false;
-    //     }
-    //     else{
-    //         newPasswordRepeat.disabled = true;
-    //     }
-    // }
-
-    //  $('#edit-new-password-form').submit(function (event) {
-    //     event.preventDefault();
-    //     let newPasswordValue = $('#new-password').val();
-    //     let saveChanges = $('#btnSaveChanges').val();
-    //     let resultToast = $('#result-toast');
-
-    //     if (newPassword.value !== newPasswordRepeat.value) {
-    //         alert("password did not match!");
-    //     }
-    //     else{
-    //         $('#edit-new-password').modal("hide");
-    //         $('#result-modal').load("includes/insert-new-password-inc.php", {
-    //             newPasswordValue: newPasswordValue,
-    //             saveChanges: saveChanges,
-    //         }, function(statusTxt) {
-    //             if (statusTxt == "Changes Saved!") {
-    //                 $('#changes-made-toast').toast('show');
-    //                 $(resultToast).toast('show');
-    //             }
-    //             if (statusTxt == "STMT FAILED!") {
-    //                 $('#edit-new-password').modal("hide");
-    //                 alert("Failed!");
-    //             }
-    //         });
-    //     }
+        if (newPasswordRepeatToggle.attr("type") == "password") {
+            newPasswordRepeatToggle.attr("type", "text");
+        } 
         
-        // let newPassword = $('#new-password').val();
-        // let newPasswordRepeat = $('#new-password-repeat').val();
-
-    // });
-
-    // $('#sample').click(function (){
-    //     alert("Working!");
-    // });
-
-        // END VERIFY PASSWORD
+        else {
+            newPasswordRepeatToggle.attr("type", "password");
+        }
+    });

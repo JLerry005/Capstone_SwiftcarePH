@@ -31,3 +31,14 @@
 
     session_start();
     $_SESSION["bookingID"] = $bookingID;
+
+    if ($sql) {
+        if ($reservationType == "bed") {
+                $updateBedSlot = "UPDATE hospitallisting SET bed_slot = bed_slot - 1 WHERE listing_id = $listingID";
+                $updateBedResult = mysqli_query($conn, $updateBedSlot) or die(mysqli_error($conn));
+        }
+        else if ($reservationType == "room") {
+                $updateRoomSlot = "UPDATE hospitallisting SET room_slot = room_slot - 1 WHERE listing_id = $listingID";
+                $updateRoomResult = mysqli_query($conn, $updateRoomSlot) or die(mysqli_error($conn));
+        }
+    }

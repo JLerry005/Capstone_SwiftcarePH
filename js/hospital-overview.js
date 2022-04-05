@@ -367,15 +367,14 @@
                                     beforeSend: function () {
                                         btnSubmit.classList.add("disabled");
                                         btnCancel.classList.add("disabled");
-                                        closeReviewDetails.classList.add("disabled");
                                         $(reservationLoader).show();
                                     },
                                     success: function (response) {
                                         toggleModal('reviewDetailsModal', false);
-                                        // alert("Success!");
+                                        alert("Success!");
                                         $(reservationLoader).hide();
-                                        window.location.replace('http://localhost/Capstone/reservation-success');
-                                        return;
+                                        // window.location.replace('http://localhost/Capstone/reservation-success');
+                                        // return;
                                     }
                                 }); 
                             }
@@ -427,7 +426,6 @@
                                     beforeSend: function () {
                                         btnSubmit.classList.add("disabled");
                                         btnCancel.classList.add("disabled");
-                                        closeReviewDetails.classList.add("disabled");
                                         $(reservationLoader).show();
                                     },
                                     success: function (response) {
@@ -468,8 +466,9 @@
                                             // Complete function
                                             xhr.addEventListener('readystatechange', function(e) {
                                                 if( this.readyState === 4 ) {
-                                                    $(reservationLoader).hide();                                                    
-                                                    window.location.replace('http://localhost/Capstone/reservation-success');
+                                                    $(reservationLoader).hide();  
+                                                    alert("Success!");                                                  
+                                                    // window.location.replace('http://localhost/Capstone/reservation-success');
                                                 }
                                             });
                                         } 
