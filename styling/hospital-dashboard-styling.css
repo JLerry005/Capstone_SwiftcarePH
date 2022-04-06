@@ -39,9 +39,6 @@ body{
     color: var(--navColor) !important;
 }
 
-.username{
-}
-
 .btn-nav-login{
     text-decoration: none;
     height: auto;

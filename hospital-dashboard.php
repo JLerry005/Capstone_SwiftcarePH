@@ -47,14 +47,19 @@
         <!-- Sidebar -->
         <div class="z-10 sidebar-container fixed inset-y-0 left-0 transfrom -translate-x-full lg:sticky lg:translate-x-0 transition duration-200 ease-in-out flex flex-col justify-between bg-gray-900 py-8 h-screen w-52 xl:w-64">
             <div class="sideBar relative text-white space-y-5 text-center">
-                <a href="index" class="font-bold text-2xl mx-6 hover:text-gray-300"><i class="bi bi-activity text-Yellow"></i>&ensp;Swiftcare PH</a>
+                <a href="index" class="font-bold text-2xl mx-6 hover:text-gray-300"><i class="bi bi-activity text-blue-500"></i>&ensp;Swiftcare PH</a>
                 <div class="py-1 mx-6">
                     <hr class="border-slate-600">
                 </div>
                 
     
                 <nav class="flex flex-col items-start text-md">
-                    <button class="btn w-full text-left p-3 transition duration-150 hover:bg-blue-50 text-white hover:text-white nav-btn btn-dashboard pl-10 drop-shadow-xl" id="btn-dashboard" onclick="show_dashboard()"><i class="bi bi-speedometer text-DarkerYellow"></i>&emsp;Dashboard</button>
+                    <button class="flex flex-row btn w-full text-left p-3 transition duration-150 hover:bg-blue-50 text-white hover:text-white nav-btn btn-dashboard pl-10 drop-shadow-md" id="btn-dashboard" onclick="show_dashboard()">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"/><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
+                        </svg>
+                        &emsp;Dashboard
+                    </button>
                     <button class="btn w-full text-left p-3 transition duration-150 hover:bg-blue-50 text-white hover:text-white nav-btn pl-10 drop-shadow-xl" id="btn-account" onclick="show_details()"><i class="bi bi-gear-fill text-DarkerYellow"></i>&emsp;Edit Details</button>
                     <button class="btn w-full text-left p-3 transition duration-150 hover:bg-blue-50 text-white hover:text-white nav-btn pl-10 drop-shadow-xl" id="btn-account" onclick="show_account()"><i class="bi bi-person-circle text-DarkerYellow"></i>&emsp;Account</button>
                 </nav>
