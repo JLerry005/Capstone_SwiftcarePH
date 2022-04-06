@@ -239,11 +239,11 @@
                 </button>
             </div>
 
-            <div class="grid grid-cols-2">
+            <div class="grid grid-cols-2 py-16">
                 <!-- Account Setting -->
                 <div class="account-setting cols-span-1">
                     <!-- Title -->
-                    <div class="text-2xl text-blue-50 my-3">
+                    <div class="text-2xl text-blue-50 my-4 uppercase tracking-wider">
                         <p>Personal Information</p>
                     </div>
 
@@ -255,8 +255,8 @@
                         <!-- First Name -->
                         <div class="col-xl-6 col-md-6">
                             <div class="">
-                                <label for="firstName" class="block mb-2 text-md font-medium text-blue-500">First name</label>
-                                <input type="input" id="firstName" value="<?php echo $row['patientFirstname']; ?>" class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" disabled>
+                                <label for="firstName" class="block mb-2 text-md font-medium text-blue-500 ">First name</label>
+                                <input type="input" id="firstName" value="<?php echo $row['patientFirstname']; ?>" class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 capitalize" disabled>
                             </div>
                         </div>
 
@@ -264,7 +264,7 @@
                         <div class="col-xl-6 col-md-6 mb-6">
                             <div class="">
                                 <label for="lastName" class="block mb-2 text-md font-medium text-blue-500">Last name</label>
-                                <input type="input" id="lastName" value="<?php echo $row['patientLastname']; ?>" class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" disabled>
+                                <input type="input" id="lastName" value="<?php echo $row['patientLastname']; ?>" class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 capitalize" disabled>
                             </div>
                         </div>
                         
@@ -321,9 +321,12 @@
                                                 <p class="text-gray-300"><i class="bi bi-info-circle-fill"></i> Type in your old password to make it's you.</p>                                        
                                             </div>
                                             <form action="includes/userVerifyPassword-inc.php" method="POST" id="editPasswordForm">
-                                                <div class="mb-3">
+                                                <div class="relative mb-3">
                                                     <label for="lastName" class="block mb-2 text-md font-medium text-blue-500">Current Password</label>
-                                                    <input type="password" id="userPassword" name="userPassword" placeholder="••••••••" class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                                    <input type="password" id="userPassword" name="userPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="••••••••" class="userPassword bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                                    <i class="bi bi-eye-slash text-gray-300 absolute cursor-pointer 2xl:right-0 2xl:top-12 2xl:pr-5 xl:right-0 xl:top-14 xl:pr-5 lg:right-0 lg:top-9 lg:pr-5 md:right-0 md:top-16 md:pr-5 sm:right-0 sm:top-16 sm:pr-5 right-0" id="verifyTogglePass"></i>
+                                                    <div id="passwordHelpBlock" class="form-text">
+                                                    </div>
                                                 </div>
                                                 <p id="resultMessage" class="resultMessage text-danger text-center"></p>     
                                                 <div class="flex justify-end space-x-1 mr-2">
@@ -340,14 +343,23 @@
                                                 <p class="text-xl text-blue-500 font-medium mb-2">Create a new Password</p>
                                                 <p class="text-gray-300"><i class="bi bi-info-circle-fill"></i> Type in your new password. (Minimum of 8 Characters)</p>                                        
                                             </div>
+                                            <!-- New password and Repeat Password -->
                                             <form action="includes/insert-new-password-inc.php" method="POST" id="edit-new-password-form">
-                                                <div class="mb-3">
+                                                <!-- New Password -->
+                                                <div class="relative mb-3">
                                                     <label for="new-password" class="block mb-2 text-md font-medium text-blue-500">New password</label>
-                                                    <input type="password" id="new-password" name="new-password" placeholder="••••••••"  class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
-                                                </div> 
-                                                <div class="mb-3 repeat-password-div" id="repeat-password-div" style="display: none;">
+                                                    <input type="password" id="new-password" name="new-password" placeholder="••••••••" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="newPassword bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                                    <i class="bi bi-eye-slash text-gray-300 absolute cursor-pointer 2xl:right-0 2xl:top-12 2xl:pr-5 xl:right-0 xl:top-16 xl:pr-5 lg:right-0 lg:top-9 lg:pr-5 md:right-0 md:top-16 md:pr-5 sm:right-0 sm:top-16 sm:pr-5 right-0" id="newTogglePass"></i>
+                                                    <div id="passwordHelpBlock" class="form-text">
+                                                    </div>
+                                                </div>
+                                                <!-- Repeat Password -->
+                                                <div class="relative mb-3 repeat-password-div" id="repeat-password-div" style="display: none;">
                                                     <label for="new-password-repeat" class="block mb-2 text-md font-medium text-blue-500">Repeat your new password</label>
-                                                    <input type="password" id="new-password-repeat" placeholder="••••••••"  name="new-password-repeat" class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                                    <input type="password" id="new-password-repeat" placeholder="••••••••" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="new-password-repeat" class="newPasswordRepeat bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                                                    <i class="bi bi-eye-slash text-gray-300 absolute cursor-pointer 2xl:right-0 2xl:top-12 2xl:pr-5 xl:right-0 xl:top-16 xl:pr-5 lg:right-0 lg:top-9 lg:pr-5 md:right-0 md:top-16 md:pr-5 sm:right-0 sm:top-16 sm:pr-5 right-0" id="repeatTogglePass"></i>
+                                                    <div id="passwordHelpBlock" class="form-text">
+                                                    </div>
                                                 </div>
                                                 <p id="passMatchWarning" class="text-rose-600 text-center space-y-2"></p>   
                                                 <div class="flex justify-end mt-3">
