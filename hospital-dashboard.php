@@ -103,7 +103,8 @@
             <!-- DASHBOARD CONTENT -->
             <div class="tab-contents mainContainer block text-gray-700 space-y-12" id="dashboardContent" style="display: none;">
                 <div class="hidden lg:flex justify-between items-center lg:px-8 xl:px-8 2xl:px-16">
-                    <h1 class="text-2xl font-bold" id="user-name">Reservations</h1>
+                    <!-- Hospital Name -->
+                    <h1 class="text-2xl font-bold text-blue-500" id="user-name"></h1>
 
                     <div class="flex items-center space-x-3">
                         <div class="bg-gray-500 hover:bg-gray-700 drop-shadow-md rounded-3xl h-3 w-3 p-5 flex items-center justify-center text-gray-300 hover:rounded-xl transition-all">
@@ -933,7 +934,7 @@
                 <!-- Hospital Information Container -->
                 <div class="col-span-12 xl:col-span-12 p-6 bg-white drop-shadow-md mb-5">
 
-                    <h1 class="font-bold">Hospital Information</h1>
+                    <h1 class="font-bold text-blue-700">Hospital Information</h1>
 
                     <div class="py-3 mb-3">
                         <hr class="border-gray-500">     
@@ -941,7 +942,7 @@
 
                     <!-- Hospital Name -->
                     <div class="mb-6">
-                        <label class="block mb-2 text-sm font-medium dark:text-gray-900"> <i class="bi bi-building text-navColor"></i> Hospital Name</label>
+                        <label class="block mb-2 text-sm font-medium text-gray-900"> <i class="bi bi-building text-navColor"></i> Hospital Name</label>
                         <input id="account-hospital-name" class="shadow-sm border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:text-navColor dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" disabled>
                     </div>
 
@@ -974,7 +975,7 @@
                 <!-- Other Details -->
                 <div class="col-span-12 xl:col-span-12 p-6 bg-white drop-shadow-md">
 
-                    <h1 class="font-bold">Other Information</h1>
+                    <h1 class="font-bold text-blue-700">Other Information</h1>
 
                     <div class="py-3 mb-3">
                         <hr class="border-gray-500"> 
