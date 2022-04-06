@@ -36,7 +36,7 @@
 
         <!-- Mobile Menu -->
         <div class="p-4 bg-gray-800 text-white flex justify-between items-center lg:hidden">
-            <a href="#">Swiftcare PH</a>
+            <a href="index">Swiftcare PH</a>
             <div class="flex items-center space-x-6">
                 <button class="hover:text-Yellow"><i class="bi bi-bell-fill"></i> Notifications</button>
                 <button class="mobile-menu-button text-2xl rounded hover:text-gray-300 focus:text-gray-300"><i class="bi bi-menu-button-wide"></i></button>
@@ -47,7 +47,7 @@
         <!-- Sidebar -->
         <div class="z-10 sidebar-container fixed inset-y-0 left-0 transfrom -translate-x-full lg:sticky lg:translate-x-0 transition duration-200 ease-in-out flex flex-col justify-between bg-gray-900 py-8 h-screen w-52 xl:w-64">
             <div class="sideBar relative text-white space-y-5 text-center">
-                <a class="font-bold text-2xl mx-6"><i class="bi bi-activity"></i> Swiftcare PH</a>
+                <a href="index" class="font-bold text-2xl mx-6 hover:text-gray-300"><i class="bi bi-activity text-Yellow"></i>&ensp;Swiftcare PH</a>
                 <div class="py-1 mx-6">
                     <hr class="border-slate-600">
                 </div>
@@ -160,7 +160,7 @@
                 <div id="pending-contents" class="bg-white p-5 2xl:mx-16 md:mx-6 lg:mx-6 rounded drop-shadow-md text-sm scroll-my-7">
                     <!-- Header -->
                     <div class="flex flex-col sm:flex-row justify-between items-center">
-                        <h1 class="text-lg font-bold"><i class="bi bi-hourglass-top"></i> Pending Reservations</h1>
+                        <h1 class="text-lg font-bold text-blue-600"><i class="bi bi-hourglass-top text-gray-800"></i> Pending Reservations</h1>
                         <div class="flex space-x-5 items-center">
                             <div class="-space-x-1">
                                 <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Newest</button>
@@ -173,7 +173,7 @@
                             </div>
                             <!-- Toggle Button -->  
                             <div class="flex items-center">
-                                <button class=" w-8 h-8 bg-blue-300 hover:bg-blue-400 rounded-md border-2 border-gray-500 tra" id="btn-toggle-pending" onclick="togglePending()"><i class="ri-arrow-up-s-line text-gray-900 font-bold pending-icon"></i></button>
+                                <button class=" w-8 h-8 bg-blue-500 hover:bg-blue-800 rounded-md border-2 border-gray-500 tra" id="btn-toggle-pending" onclick="togglePending()"><i class="ri-arrow-up-s-line text-gray-100 font-bold pending-icon"></i></button>
                             </div>
                         </div>
                     </div>
@@ -450,7 +450,7 @@
                 <div id="upcoming-contents" class="bg-white p-5 2xl:mx-16 md:mx-6 rounded drop-shadow-md text-sm scroll-my-7">
                     <!-- Header -->
                     <div class="flex flex-col sm:flex-row justify-between items-center">
-                        <h1 class="text-lg font-bold"><i class="bi bi-hourglass-top"></i> Upcoming Reservations</h1>
+                        <h1 class="text-lg font-bold text-blue-700"><i class="bi bi-calendar-check-fill text-gray-800"></i> Upcoming Reservations</h1>
                         <div class="flex space-x-5">
                             <div class="-space-x-1">
                                 <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Newest</button>
@@ -463,7 +463,7 @@
                             </div>
                             <!-- Toggle Button -->
                             <div class="flex items-center">
-                                <button class=" w-8 h-8 bg-blue-300 hover:bg-blue-400 rounded-md border-2 border-gray-500 tra" id="btn-toggle-pending" onclick="toggleUpcoming()"><i class="ri-arrow-up-s-line text-gray-900 font-bold upcoming-icon"></i></button>
+                                <button class=" w-8 h-8 bg-blue-500 hover:bg-blue-800 rounded-md border-2 border-gray-500" id="btn-toggle-pending" onclick="toggleUpcoming()"><i class="ri-arrow-up-s-line text-gray-100 font-bold upcoming-icon"></i></button>
                             </div>
                         </div>
                     </div>
@@ -532,7 +532,7 @@
                 <div id="history-contents" class="bg-white p-5 2xl:mx-16 md:mx-6 rounded drop-shadow-md text-sm scroll-my-7">
                     <!-- Header -->
                     <div class="flex flex-col sm:flex-row justify-between items-center">
-                        <h1 class="text-lg font-bold"><i class="bi bi-hourglass-top"></i> History</h1>
+                        <h1 class="text-lg font-bold text-blue-600"><i class="bi bi-clock-fill text-gray-800"></i> History</h1>
                         <div class="flex space-x-5">
                             <div class="-space-x-1">
                                 <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Newest</button>
@@ -545,7 +545,7 @@
                             </div>
                             <!-- Toggle Button -->
                             <div class="flex items-center">
-                                <button class=" w-8 h-8 bg-blue-300 hover:bg-blue-400 rounded-md border-2 border-gray-500 tra" id="btn-toggle-pending" onclick="toggleHistory()"><i class="ri-arrow-up-s-line text-gray-900 font-bold upcoming-icon"></i></button>
+                                <button class=" w-8 h-8 bg-blue-500 hover:bg-blue-800 rounded-md border-2 border-gray-500 tra" id="btn-toggle-pending" onclick="toggleHistory()"><i class="ri-arrow-up-s-line text-gray-100 font-bold upcoming-icon"></i></button>
                             </div>
                         </div>
                     </div>
