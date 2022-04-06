@@ -60,8 +60,8 @@
                         </svg>
                         &emsp;Dashboard
                     </button>
-                    <button class="btn w-full text-left p-3 transition duration-150 hover:bg-blue-50 text-white hover:text-white nav-btn pl-10 drop-shadow-xl" id="btn-account" onclick="show_details()"><i class="bi bi-gear-fill text-DarkerYellow"></i>&emsp;Edit Details</button>
-                    <button class="btn w-full text-left p-3 transition duration-150 hover:bg-blue-50 text-white hover:text-white nav-btn pl-10 drop-shadow-xl" id="btn-account" onclick="show_account()"><i class="bi bi-person-circle text-DarkerYellow"></i>&emsp;Account</button>
+                    <button class="btn w-full text-left p-3 transition duration-150 hover:bg-blue-50 text-white hover:text-white nav-btn pl-10 drop-shadow-xl" id="btn-account" onclick="show_details()"><i class="bi bi-gear-fill text-blue-500"></i>&emsp;Edit Details</button>
+                    <button class="btn w-full text-left p-3 transition duration-150 hover:bg-blue-50 text-white hover:text-white nav-btn pl-10 drop-shadow-xl" id="btn-account" onclick="show_account()"><i class="bi bi-person-circle text-blue-500"></i>&emsp;Account</button>
                 </nav>
 
             </div>
