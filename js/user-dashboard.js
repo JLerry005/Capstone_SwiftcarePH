@@ -298,41 +298,41 @@
     // Toggle Verify Password
     $("#verifyTogglePass").click(function() {
         $(this).toggleClass("bi-eye bi-eye-slash");
-        hospitalPassword = $(this).parent().find("input.hospitalPassword");
+        userPassword = $(this).parent().find("input.userPassword");
 
-        if (hospitalPassword.attr("type") == "password") {
-            hospitalPassword.attr("type", "text");
+        if (userPassword.attr("type") == "password") {
+            userPassword.attr("type", "text");
         } 
         
         else {
-            hospitalPassword.attr("type", "password");
+            userPassword.attr("type", "password");
         }
     });
 
     // Toggle New Password
     $("#newTogglePass").click(function() {
         $(this).toggleClass("bi-eye bi-eye-slash");
-        newPasswordToggle = $(this).parent().find("input.newPassword");
+        newPassword = $(this).parent().find("input.newPassword");
 
-        if (newPasswordToggle.attr("type") == "password") {
-            newPasswordToggle.attr("type", "text");
+        if (newPassword.attr("type") == "password") {
+            newPassword.attr("type", "text");
         } 
         
         else {
-            newPasswordToggle.attr("type", "password");
+            newPassword.attr("type", "password");
         }
     });
 
     // Toggle Repeat Password
     $("#repeatTogglePass").click(function() {
         $(this).toggleClass("bi-eye bi-eye-slash");
-        newPasswordRepeatToggle = $(this).parent().find("input.newPasswordRepeat");
+        newPasswordRepeat = $(this).parent().find("input.newPasswordRepeat");
 
-        if (newPasswordRepeatToggle.attr("type") == "password") {
-            newPasswordRepeatToggle.attr("type", "text");
+        if (newPasswordRepeat.attr("type") == "password") {
+            newPasswordRepeat.attr("type", "text");
         } 
         
         else {
-            newPasswordRepeatToggle.attr("type", "password");
+            newPasswordRepeat.attr("type", "password");
         }
     });

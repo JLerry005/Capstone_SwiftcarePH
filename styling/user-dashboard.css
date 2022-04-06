@@ -136,7 +136,7 @@ body{
     float: right;
     cursor: pointer;
     margin-right: 25px;
-    margin-top: -63px;
+    margin-top: -75px;
 }
 
 .phone-success-message{
@@ -144,7 +144,7 @@ body{
     float: right;
     display: none;
     margin-right: 25px;
-    margin-top: -55px;
+    margin-top: -68px;
 }
 
 #result-toast{
