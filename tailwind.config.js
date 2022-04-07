@@ -20,7 +20,8 @@ module.exports = {
     './hospital-overview.php',
     './new-hospital-overview.php',
     './node_modules/flowbite/**/*.js',
-    './reservation-success.php'
+    './reservation-success.php',
+    './new-user-login.php'
 ],
 
   presets: [],
