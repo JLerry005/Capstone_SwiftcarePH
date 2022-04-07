@@ -22,10 +22,10 @@
         <div class="col-span-4 bg-gray-900">
             <img src="assets/user-login/Banner-img-1.png" class="h-screen w-screen" >
         </div>
-        <div class="col-span-3 bg-gray-900 h-screen p-6 pt-48">
-            <div class="text-4xl font-bold space-y-12">
-                <p class="text-7xl"><span class="font-normal text-blue-500">|</span>&nbsp;SwiftCare PH</p>
-                <p>User Login</p>
+        <div class="col-span-3 bg-gray-900 h-screen p-6 pt-44">
+            <div class="text-4xl font-bold tracking-wider">
+                <p class="text-7xl text-blue-50"><span class="font-normal text-blue-500">|</span>&nbsp;SwiftCare PH</p>
+                <p class="tracking-wide mt-20">User Login</p>
             </div>
             <div class="space-y-4 mr-72 mt-5 pr-32">
                 <div>
@@ -47,8 +47,6 @@
             </div>
         </div>
     </div>
-
-
 
     <script src="js\user-login.js" defer></script>
 </body>
