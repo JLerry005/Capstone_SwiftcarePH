@@ -17,13 +17,13 @@
 
     $finalPhoneNumber = sprintf("%011s", $phoneNumber);
 
-    $sql = "INSERT INTO userbooking (user_id, listing_id, patientFirstName, patientLastName, patientDate, patientTime, patientPhoneNumber, patientConcern, patientSpecifyConcern, patientHospitalName, patientReservationType)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+    $sql = "INSERT INTO userbooking (user_id, listing_id, patientFirstName, patientLastName, patientDate, patientTime, patientEmail, patientPhoneNumber, patientConcern, patientSpecifyConcern, patientHospitalName, patientReservationType)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
     $stmt = mysqli_stmt_init($conn);
 
     mysqli_stmt_prepare($stmt, $sql);
-    mysqli_stmt_bind_param($stmt, "sssssssssss", $userID, $listingID, $firstName, $lastName, $date, $time, $finalPhoneNumber, $concern, $specifyConcern, $hospitalName, $reservationType);
+    mysqli_stmt_bind_param($stmt, "ssssssssssss", $userID, $listingID, $firstName, $lastName, $date, $time, $email, $finalPhoneNumber, $concern, $specifyConcern, $hospitalName, $reservationType);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 

@@ -4,118 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="js\user-login.js"></script>
-    <!-- CSS Link -->
-    <link  href="styling/user-login-styling.css" rel="stylesheet" type="text/css">
-    <!-- Title -->
-    <title>User Login | SwiftCare PH</title>
+    <!-- Bootstrap Icon CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Tailwind CSS Link -->
+    <link rel="stylesheet" href="dist/output.css">
+    <!-- Header Icon -->
     <link rel="icon" href="assets/main-logo-line.png" type="image/x-icon">  
+    <!-- Header Title  -->
+    <title>User Login | SwiftCare PH</title>
+    <!-- JavaScipt Link -->
+    <script src="js\user-login.js"></script>
+
 </head>
-<body>  
-    <!--Header Container-->
-    <div class="container-fluid main-container">
-        <!-- Header-->
-        <div class="row row1">
-            <!-- 1st Column-->
-            <div class="col-xl-3">
+<body class="font-poppins text-gray-200">
+
+    <div class="grid grid-cols-7">
+        <!-- left side content -->
+        <div class="col-span-4 bg-gray-900">
+            <img src="assets/user-login/Banner-img-1.png" class="h-screen w-screen" >
+        </div>
+        <!-- right side content -->
+        <div class="col-span-3 bg-gray-900 h-screen p-6 pt-44">
+            <div class="text-4xl font-bold tracking-wider">
+                <p class="text-7xl text-blue-50"><span class="font-normal text-blue-500">|</span>&nbsp;SwiftCare PH</p>
+                <p class="tracking-wide mt-20">User Login</p>
             </div>
-
-            <!-- 2nd Column - -->
-            <div class="col-xl-6 middle-column my-auto">
-                <div class="row loginFormRow">
-                    
-                    <!--Login Form Container-->
-                    <div class="col-xl-7 formContainer">   
-                        <div class="d-flex justify-content-center">
-                            <img src="assets/main-logo-transparent.png" class="img-fluid vectorLogin" alt="Responsive image" width="100px" height="100px">  
-                        </div>
-                        <div class="text-center titleLabel">  
-                            <h3>User Access</h3>                                  
-                        </div> 
-                        <br>
-
-                        <div class="d-flex align-items-center justify-content-center">
-                            <!--Login Form-->
-                            <form action="includes/user-login-inc" method="post" id="login-form">
-                                    
-                                <!--Email Input-->
-                                <div class="form-floating mb-3">
-                                    <input type="tel" name="userMobileNumber" id="userMobileNumber" inputmode="numeric" enterkeyhint="next" pattern="[0-9]{10,11}" title="Invalid Number" class="form-control" id="floatingInput" placeholder="ex: 09123456789" required>
-                                    <label for="floatingInput" class="form-label">Mobile No.</label>
-                                </div>
-
-                                <!--Password Input-->
-                                <div class="form-floating">
-                                    <input type="password" name="userPassword" id="userPassword" class="form-control" id="floatingPassword" placeholder="Password" required>
-                                    <label for="floatingPassword" class="form-label">Password</label>
-                                </div>
-                                
-                                <!--Forgot Password-->
-                                <div class="text-end pt-1">
-                                    <a class="text-right" href="...">Forgot Password?</a>
-                                </div>                                
-                                <!--Remember Me Checkbox-->
-                                <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input rememberMeCheckBox" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-                                </div>
-                                <!--Login Button-->
-                                <!-- <a href="/html/admin-dashboard.html"> -->
-                                <button type="submit" name="submit" id="submit" class="btn btnLogin">LOGIN
-                                    <div class="spinner-grow text-primary login-spinners" role="status" style="display: none;">
-                                        <span class="visually-hidden">Loading...</span>
-                                    </div>
-                                    <div class="spinner-grow text-secondary login-spinners" role="status" style="display: none;">
-                                        <span class="visually-hidden">Loading...</span>
-                                    </div>
-                                    <div class="spinner-grow text-success login-spinners" role="status" style="display: none;">
-                                        <span class="visually-hidden">Loading...</span>
-                                    </div>
-                                </button></a>
-                                <div class="text-center pt-4 pb-3 orLabel">
-                                   <h5>━━━━━━━━━━━━━ OR ━━━━━━━━━━━━━━</h5>                        
-                                </div>                                
-                                <!--Signup Button-->
-                                <div class="signupContainer">
-                                   <a href="index" class="btn btn-outline-light btnBack" role="button">Back To Home</a>
-                                </div>
-                            </form>
-                        </div>
-                           
-                                
-
+            <!-- User Email and Password -->
+            <div class="space-y-4 mr-72 mt-5 pr-32">
+                <form action="includes/user-login-inc" method="POST" id="login-form">
+                    <!-- User Email -->
+                    <div>
+                        <label for="userMobileNumber" class="block mb-2 text-md font-medium text-blue-500">Email</label>
+                        <input type="tel" id="userMobileNumber" name="userMobileNumber" autocomplete="nope" class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                     </div>
-                    <!--Side Illustration Container-->
-                    <div class="col-xl-5 vectorContainer">
-                        <h1 class="text-center">Login and Book Now!</h1>                 
-                        <img src="assets/user-logo.svg" class="img-fluid vectorLogin" alt="Responsive image">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Quos earum corrupti maxime delectus eos reprehenderit.
-                            Tempore voluptatum nisi perferendis fugit unde aspernatur,
-                            recusandae cupiditate consectetur ratione dicta mollitia,
-                            totam eligendi!
-                        </p>
-                        <br>
-                            <h5 class="signupLabel text-center">Don't have an account yet?</h5>
-                            <!--<button type="submit" class="btn btn-primary btnSignup" id="btnSignup">Signup</button>-->
-                            <a href="user-signup" class="btn btnSignup" role="button">Signup</a>            
+                    <!-- User Password -->
+                    <div>
+                        <label for="userPassword" class="block mb-2 text-md font-medium text-blue-500">Password</label>
+                        <input type="password" id="userPassword" name="userPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="••••••••" class="userPassword bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                        <a class="text-sm flex justify-end mt-1 mr-2 hover:underline" href="...">Forgot Password?</a>
                     </div>
-                </div>
             </div>
-            
-            <!-- 3rd Column-->
-            <div class="col-xl-3 my-auto">
-
+            <!-- login button -->
+            <div class="mr-72 mt-5 pr-32">
+                <button id="submit" name="submit" type="submit" class="text-white w-full bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2" id="btnEditPasswordNext" name="btnEditPasswordNext">Login</button>
+            </div>
+                </form>
+            <!-- sigup content -->
+            <div class="mr-72 mt-16 pr-32">
+                <p class="font-medium mb-3">Don't have an account yet?</p>
+                <a href="user-signup" type="button" class="text-white w-full border-2 border-blue-500 from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2" id="btnEditPasswordNext" name="btnEditPasswordNext">Sign up</a>
             </div>
         </div>
     </div>
-</div>        
 </body>
 </html>

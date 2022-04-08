@@ -1,6 +1,6 @@
 
     // alert("working!");
-    let userMobileNumber = $('#userMobileNumber').val();
+    let userEmail = $('#userEmail').val();
     let userPassword = $('#userPassword').val();
     let submit = $('#submit');
 
@@ -10,7 +10,7 @@
         $.ajax({
             method: "POST",
             url: "includes/user-login-inc.php",
-            data: {userMobileNumber:userMobileNumber, userPassword:userPassword, submit:submit},
+            data: {userEmail:userEmail, userPassword:userPassword, submit:submit},
             beforeSend: function () {
                 alert("Success!");
                 $('.login-spinners').show();

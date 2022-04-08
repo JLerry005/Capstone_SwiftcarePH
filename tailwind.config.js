@@ -21,7 +21,9 @@ module.exports = {
     './new-hospital-overview.php',
     './node_modules/flowbite/**/*.js',
     './reservation-success.php',
-    './new-user-login.php'
+    './new-user-login.php',
+    './pending-reservations-inc.php',
+    './pending-booking-details.php'
 ],
 
   presets: [],

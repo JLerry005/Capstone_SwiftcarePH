@@ -29,6 +29,23 @@
         });
     }
 
+    // Show Pending List
+    showPendingReservations();
+    function showPendingReservations() {
+        let pendingListContainer = document.getElementById("pending-cards-container");
+        let listingID = document.getElementById("listingID").value;
+
+        pendingListContainer.innerHTML = "";
+        $.ajax({
+            method: "POST",
+            url: "includes/pending-reservations-inc.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                pendingListContainer.innerHTML = data;
+            }
+        });
+    }
+
     // Toggle the Pending Container
     function togglePending() {
         $("#pending-cards-container").toggle(340);

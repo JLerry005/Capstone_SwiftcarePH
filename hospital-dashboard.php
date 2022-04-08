@@ -185,13 +185,16 @@
                     </div>
                     
                     <hr class="border-slate-200 my-3">
-                    <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse beatae.</p>
+                    <!-- <p class="mb-5">Wala akong maisip</p> -->
 
+
+                    <!-- Hospital Listing ID -->
+                    <input type="hidden" name="listingID" id="listingID" value="<?php echo $_SESSION["listing-id"] ?>">
                     <!-- Cards go here -->
-                    <div class="px-5 lg:grid grid-cols-12 gap-4" id="pending-cards-container">
+                    <div class="px-5 lg:grid grid-cols-12 gap-4 min-h-[200px]" id="pending-cards-container">
 
                         <!-- Cards -->
-                        <div class="col-span-3 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
+                        <!-- <div class="col-span-3 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
                             <div class="p-4 flex items-center justify-between">
                                 <h1 class="bg-blue-700 hover:bg-blue-800 rounded-full w-fit py-0.5 px-2 text-white flex items-center">
                                     <i class="ri-door-open-fill"></i> &nbsp; <span class="cursor-pointer">Bed</span>
@@ -240,215 +243,7 @@
                                       </svg>
                                 </button>
                             </div>
-                        </div>
-                        
-                        <!-- Cards -->
-                        <div class="col-span-3 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
-                            <div class="p-4 flex items-center justify-between">
-                                <h1 class="bg-blue-700 hover:bg-blue-800 rounded-full w-fit py-0.5 px-2 text-white flex items-center">
-                                    <i class="ri-door-open-fill"></i> &nbsp; <span class="cursor-pointer">Bed</span>
-                                </h1>
-
-                                <p class="flex items-center">
-                                    <i class="bi bi-clock-history hover:text-blue-500"></i> &nbsp;Today: 10:30 AM
-                                </p>
-                            </div>
-
-                            <div class="mb-2 px-4 flex items-center justify-between">
-                                <h1 class="text-lg font-bold text-white">Juan Dela Cruz</h1>
-                                <p class="flex items-center bg-white hover:bg-gray-200 cursor-default rounded-full py-0.5 px-2 w-fit text-blue-700 font-bold">
-                                    <i class="ri-stethoscope-fill h-5 w-5"></i>Covid
-                                </p>
-                            </div>
-                            <div class="flex items-start justify-between px-4">
-                                <div class="text-sm font-light pb-4">
-                                    <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 hover:text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                                        </svg>
-                                        10/20/2022
-                                    </p>
-                                    <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 hover:text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
-                                          </svg>
-                                        10:30 AM
-                                    </p>
-                                    <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 hover:text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                                        </svg>
-                                        09295874653
-                                    </p>
-
-                                </div>
-                            </div>
-
-                            <div class="bg-blue-700 p-4 rounded-b-lg flex justify-center">
-                                <button class="text-white hover:text-blue-200 hover:underline flex items-center">
-                                    View Full Details&ensp;
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                                      </svg>
-                                </button>
-                            </div>
-                        </div> 
-
-                        <!-- Cards -->
-                        <div class="col-span-3 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
-                            <div class="p-4 flex items-center justify-between">
-                                <h1 class="bg-blue-700 hover:bg-blue-800 rounded-full w-fit py-0.5 px-2 text-white flex items-center">
-                                    <i class="ri-door-open-fill"></i> &nbsp; <span class="cursor-pointer">Bed</span>
-                                </h1>
-
-                                <p class="flex items-center">
-                                    <i class="bi bi-clock-history hover:text-blue-500"></i> &nbsp;Today: 10:30 AM
-                                </p>
-                            </div>
-
-                            <div class="mb-2 px-4 flex items-center justify-between">
-                                <h1 class="text-lg font-bold text-white">Juan Dela Cruz</h1>
-                                <p class="flex items-center bg-white hover:bg-gray-200 cursor-default rounded-full py-0.5 px-2 w-fit text-blue-700 font-bold">
-                                    <i class="ri-stethoscope-fill h-5 w-5"></i>Covid
-                                </p>
-                            </div>
-                            <div class="flex items-start justify-between px-4">
-                                <div class="text-sm font-light pb-4">
-                                    <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 hover:text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                                        </svg>
-                                        10/20/2022
-                                    </p>
-                                    <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 hover:text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
-                                          </svg>
-                                        10:30 AM
-                                    </p>
-                                    <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 hover:text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                                        </svg>
-                                        09295874653
-                                    </p>
-
-                                </div>
-                            </div>
-
-                            <div class="bg-blue-700 p-4 rounded-b-lg flex justify-center">
-                                <button class="text-white hover:text-blue-200 hover:underline flex items-center">
-                                    View Full Details&ensp;
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                                      </svg>
-                                </button>
-                            </div>
-                        </div>  
-
-                        <!-- Cards -->
-                        <div class="col-span-3 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
-                            <div class="p-4 flex items-center justify-between">
-                                <h1 class="bg-blue-700 hover:bg-blue-800 rounded-full w-fit py-0.5 px-2 text-white flex items-center">
-                                    <i class="ri-door-open-fill"></i> &nbsp; <span class="cursor-pointer">Bed</span>
-                                </h1>
-
-                                <p class="flex items-center">
-                                    <i class="bi bi-clock-history hover:text-blue-500"></i> &nbsp;Today: 10:30 AM
-                                </p>
-                            </div>
-
-                            <div class="mb-2 px-4 flex items-center justify-between">
-                                <h1 class="text-lg font-bold text-white">Juan Dela Cruz</h1>
-                                <p class="flex items-center bg-white hover:bg-gray-200 cursor-default rounded-full py-0.5 px-2 w-fit text-blue-700 font-bold">
-                                    <i class="ri-stethoscope-fill h-5 w-5"></i>Covid
-                                </p>
-                            </div>
-                            <div class="flex items-start justify-between px-4">
-                                <div class="text-sm font-light pb-4">
-                                    <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 hover:text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                                        </svg>
-                                        10/20/2022
-                                    </p>
-                                    <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 hover:text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
-                                          </svg>
-                                        10:30 AM
-                                    </p>
-                                    <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 hover:text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                                        </svg>
-                                        09295874653
-                                    </p>
-
-                                </div>
-                            </div>
-
-                            <div class="bg-blue-700 p-4 rounded-b-lg flex justify-center">
-                                <button class="text-white hover:text-blue-200 hover:underline flex items-center">
-                                    View Full Details&ensp;
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                                      </svg>
-                                </button>
-                            </div>
-                        </div> 
-
-                        <!-- Cards -->
-                        <div class="col-span-3 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
-                            <div class="p-4 flex items-center justify-between">
-                                <h1 class="bg-blue-700 hover:bg-blue-800 rounded-full w-fit py-0.5 px-2 text-white flex items-center">
-                                    <i class="ri-door-open-fill"></i> &nbsp; <span class="cursor-pointer">Bed</span>
-                                </h1>
-
-                                <p class="flex items-center">
-                                    <i class="bi bi-clock-history hover:text-blue-500"></i> &nbsp;Today: 10:30 AM
-                                </p>
-                            </div>
-
-                            <div class="mb-2 px-4 flex items-center justify-between">
-                                <h1 class="text-lg font-bold text-white">Juan Dela Cruz</h1>
-                                <p class="flex items-center bg-white hover:bg-gray-200 cursor-default rounded-full py-0.5 px-2 w-fit text-blue-700 font-bold">
-                                    <i class="ri-stethoscope-fill h-5 w-5"></i>Covid
-                                </p>
-                            </div>
-                            <div class="flex items-start justify-between px-4">
-                                <div class="text-sm font-light pb-4">
-                                    <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 hover:text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                                        </svg>
-                                        10/20/2022
-                                    </p>
-                                    <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 hover:text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
-                                          </svg>
-                                        10:30 AM
-                                    </p>
-                                    <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 hover:text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                                        </svg>
-                                        09295874653
-                                    </p>
-
-                                </div>
-                            </div>
-
-                            <div class="bg-blue-700 p-4 rounded-b-lg flex justify-center">
-                                <button class="text-white hover:text-blue-200 hover:underline flex items-center">
-                                    View Full Details&ensp;
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                                      </svg>
-                                </button>
-                            </div>
-                        </div> 
+                        </div> -->
                     </div>
                 </div>
 
@@ -640,7 +435,7 @@
                     <div class="mainContainer grid grid-cols-12 pt-16 sm:px-3 md:px-6 2xl:px-12 space-y-6 xl:space-y-0 gap-5 text-sm mb-6 text-gray-700" id="main-container">
                         <!-- Main Details Content -->
                         <div class="col-span-12 xl:col-span-12 p-6 mainDetailsContainer bg-white drop-shadow-md">
-                            <h1 class="font-bold">Main Details</h1>
+                            <h1 class="font-bold text-blue-700">Main Details</h1>
                             <div class="py-6">
                                 <hr class="border-gray-300">     
                             </div>
@@ -659,7 +454,7 @@
             
                         <!-- Listing Details Content -->
                         <div class="col-span-12 xl:col-span-12 p-6 listingDetailsContainer bg-white drop-shadow-md space-y-6">
-                            <h1 class="font-bold">Listing Details</h1>
+                            <h1 class="font-bold text-blue-700">Listing Details</h1>
                             <div class="py-6">
                                 <hr class="border-gray-300">     
                             </div>
@@ -742,7 +537,6 @@
                                 </label>
                                 <textarea id="hospital-description" name="hospitalDescription" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Type a description here..." required></textarea>
                             </div>
-
                             <!-- Room slot title  -->
                             <!-- <div class="mb-3 flex flex-row">
                                 <p class="text-orange-500 font-medium">Room Slot</p>&nbsp;<span class="text-gray-600">Leave to 0 if there are none.</span>
@@ -782,7 +576,7 @@
                                         </svg>
                                         &ensp;Bed Slot
                                         &ensp;
-                                        <div id="select-concern-info">
+                                        <div id="bed-slot-info">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
                                             </svg>
@@ -829,7 +623,7 @@
                 <div class="grid grid-cols-12 gap-2 2xl:px-12 mb-16">
                     <!-- Form -->
                     <div class="xl:col-span-4 p-6 othersDetailsContent bg-white drop-shadow-md text-gray-700 text-sm">
-                        <h1 class="font-bold"><i class="bi bi-cloud-arrow-up-fill"></i> Upload an Image</h1>
+                        <h1 class="font-bold text-blue-700"><i class="bi bi-cloud-arrow-up-fill"></i> Upload an Image</h1>
                         <div class="py-6">
                             <hr class="border-gray-300">     
                         </div>
@@ -852,7 +646,7 @@
                     <!-- Image Gallery -->
                     <div class="xl:col-span-8 p-6 bg-white drop-shadow-md text-gray-700 text-sm">
                         <div class="flex items-center justify-between">
-                            <h1 class="font-bold"><i class="bi bi-images"></i> Uploaded Images</h1>
+                            <h1 class="font-bold text-blue-700"><i class="bi bi-images"></i> Uploaded Images</h1>
                             <button id="edit-images" class="p-2 bg-green-500 drop-shadow-lg text-white hover:bg-green-700 rounded-xl hover:scale-105 hover:rounded-md focus:outline-none focus:ring focus:ring-blue-400 transition-all"><i class="bi bi-trash-fill"></i> Edit Images</button>
                         </div>
                         

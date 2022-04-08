@@ -371,10 +371,9 @@
                                     },
                                     success: function (response) {
                                         toggleModal('reviewDetailsModal', false);
-                                        alert("Success!");
                                         $(reservationLoader).hide();
-                                        // window.location.replace('http://localhost/Capstone/reservation-success');
-                                        // return;
+                                        window.location.replace('http://localhost/Capstone/reservation-success');
+                                        return;
                                     }
                                 }); 
                             }
@@ -466,9 +465,8 @@
                                             // Complete function
                                             xhr.addEventListener('readystatechange', function(e) {
                                                 if( this.readyState === 4 ) {
-                                                    $(reservationLoader).hide();  
-                                                    alert("Success!");                                                  
-                                                    // window.location.replace('http://localhost/Capstone/reservation-success');
+                                                    $(reservationLoader).hide();                                                   
+                                                    window.location.replace('http://localhost/Capstone/reservation-success');
                                                 }
                                             });
                                         } 
