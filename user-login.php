@@ -23,36 +23,37 @@
     <div class="grid grid-cols-7">
         <!-- left side content -->
         <div class="col-span-4 bg-gray-900">
-            <img src="assets/user-login/Banner-img-1.png" class="h-screen w-screen" >
+            <img src="assets/user-login/Banner-user-login.svg" class="h-screen w-fit">
         </div>
         <!-- right side content -->
-        <div class="col-span-3 bg-gray-900 h-screen p-6 pt-44">
+        <div class="col-span-3 bg-gray-900 h-screen pl-10 p-6 pt-32">
             <div class="text-4xl font-bold tracking-wider">
-                <p class="text-7xl text-blue-50"><span class="font-normal text-blue-500">|</span>&nbsp;SwiftCare PH</p>
-                <p class="tracking-wide mt-20">User Login</p>
+                <!-- <p class="text-7xl text-blue-50"><span class="font-normal text-blue-500">|</span>&nbsp;SwiftCare PH</p> -->
+                <img src="assets/user-login/swiftcare-ph-logo-bg.png" alt="" srcset="" class="h-32 w-32">
+                <p class="tracking-wide mt-16">User Login</p>
             </div>
             <!-- User Email and Password -->
-            <div class="space-y-4 mr-72 mt-5 pr-32">
+            <div class="space-y-4 mr-72 mt-10 pr-16">
                 <form action="includes/user-login-inc" method="POST" id="login-form">
                     <!-- User Email -->
-                    <div>
-                        <label for="userMobileNumber" class="block mb-2 text-md font-medium text-blue-500">Email</label>
-                        <input type="tel" id="userMobileNumber" name="userMobileNumber" autocomplete="nope" class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                    <div class="mb-6">
+                        <label for="userMobileNumber" class="block mb-2 text-md font-medium text-blue-500">Phone Number</label>
+                        <input type="tel" id="userMobileNumber" name="userMobileNumber" autocomplete="nope" class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-md focus:bg-slate-800 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                     </div>
                     <!-- User Password -->
-                    <div>
+                    <div class="mb-6">
                         <label for="userPassword" class="block mb-2 text-md font-medium text-blue-500">Password</label>
                         <input type="password" id="userPassword" name="userPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="••••••••" class="userPassword bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                         <a class="text-sm flex justify-end mt-1 mr-2 hover:underline" href="...">Forgot Password?</a>
                     </div>
             </div>
             <!-- login button -->
-            <div class="mr-72 mt-5 pr-32">
+            <div class="mr-72 mt-5 pr-16">
                 <button id="submit" name="submit" type="submit" class="text-white w-full bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2" id="btnEditPasswordNext" name="btnEditPasswordNext">Login</button>
             </div>
                 </form>
             <!-- sigup content -->
-            <div class="mr-72 mt-16 pr-32">
+            <div class="mr-72 mt-32 pr-16">
                 <p class="font-medium mb-3">Don't have an account yet?</p>
                 <a href="user-signup" type="button" class="text-white w-full border-2 border-blue-500 from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2" id="btnEditPasswordNext" name="btnEditPasswordNext">Sign up</a>
             </div>
