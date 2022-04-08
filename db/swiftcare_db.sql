@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2022 at 02:48 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Generation Time: Apr 08, 2022 at 04:01 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -180,9 +180,9 @@ CREATE TABLE `hospitallisting` (
 --
 
 INSERT INTO `hospitallisting` (`listing_id`, `hospitalID`, `hospital_location`, `hospital_city`, `hospital_name`, `hospital_description`, `hospital_type`, `room`, `room_slot`, `bed`, `bed_slot`, `additional_docs`, `website_link`, `hospital_phone`) VALUES
-(8, 183, 'Sumulong Highway Sto. Nino, Marikina, 1800 Metro Manila', 'valenzuela', 'Amang Rodriguez Memorial Medical Center', 'This is a sample description.', 'Private Hospital', '', 5, '', 10, 'Yes', 'amangrodriguezhospital.ph', '+639886756677'),
-(9, 184, '448 Quezon Ave, Quiapo, Quezon City, 1200 Metro Manila', 'valenzuela', 'Mount Banawe General Hospital', 'This is a sample paragraph.', 'Public Hospital', '', 0, '', 6, 'Yes', '', '+638675586755'),
-(10, 185, 'Osmeña Blvd, Cebu City, 6000 Cebu', 'Cebu', 'Cebu Doctors University Hospital', 'Cebu Doctors\' University Hospital is a leading tertiary level hospital in the Southern Phillipines. It was founded in 1972 and today has 300 beds and 1200 employees, 326 of which are medical doctors. The hospital is also a comprehensive medical education ', 'Public Hospital', '', 2, '', 4, '', 'https://cebudocgroup.com.ph/', '+638675576866'),
+(8, 183, 'Sumulong Highway Sto. Nino, Marikina, 1800 Metro Manila', 'valenzuela', 'Amang Rodriguez Memorial Medical Center', 'This is a sample description.', 'Private Hospital', '', 5, '', 3, 'Yes', 'amangrodriguezhospital.ph', '+639886756677'),
+(9, 184, '448 Quezon Ave, Quiapo, Quezon City, 1200 Metro Manila', 'valenzuela', 'Mount Banawe General Hospital', 'This is a sample paragraph.', 'Public Hospital', '', 0, '', 5, 'Yes', '', '+638675586755'),
+(10, 185, 'Osmeña Blvd, Cebu City, 6000 Cebu', 'Cebu', 'Cebu Doctors University Hospital', 'Cebu Doctors\' University Hospital is a leading tertiary level hospital in the Southern Phillipines. It was founded in 1972 and today has 300 beds and 1200 employees, 326 of which are medical doctors. The hospital is also a comprehensive medical education ', 'Public Hospital', '', 7, '', 1, '', 'https://cebudocgroup.com.ph/', '+638675576866'),
 (11, 186, '', '', 'Sample hospital', '', 'Public Hospital', 'no', 0, 'no', 0, 'no', '0', '+639663700835');
 
 -- --------------------------------------------------------
@@ -225,9 +225,9 @@ INSERT INTO `listingimages` (`image_id`, `listing_idFK`, `image_name`, `image_di
 (610, 10, 'School', '../web/hospital-images/school.jpg'),
 (611, 9, 'Tyler Lastovich HM08wZJBlK4 Unsplash', '../web/hospital-images/tyler-lastovich-hM08wZJBlK4-unsplash.jpg'),
 (612, 9, 'Tyler Lastovich Ybao6_A8RDI Unsplash', '../web/hospital-images/tyler-lastovich-Ybao6_A8RDI-unsplash.jpg'),
-(617, 8, 'Tyler Lastovich Ybao6_A8RDI Unsplash', '../web/hospital-images/tyler-lastovich-Ybao6_A8RDI-unsplash.jpg'),
 (618, 10, 'For Loop', '../web/hospital-images/for-loop.png'),
-(619, 10, 'For Loop', '../web/hospital-images/for-loop.png');
+(619, 10, 'For Loop', '../web/hospital-images/for-loop.png'),
+(621, 8, 'Ambulance2', '../web/hospital-images/ambulance2.jpg');
 
 -- --------------------------------------------------------
 
@@ -249,7 +249,8 @@ CREATE TABLE `otpstorage` (
 INSERT INTO `otpstorage` (`ID`, `emailID`, `otp`, `timestamp`) VALUES
 (66, 66, 843077, '2022-03-30 12:09:51'),
 (67, 67, 732354, '2022-03-30 12:10:41'),
-(68, 68, 658847, '2022-03-30 12:57:38');
+(68, 68, 658847, '2022-03-30 12:57:38'),
+(69, 69, 138838, '2022-04-06 02:25:38');
 
 -- --------------------------------------------------------
 
@@ -285,6 +286,14 @@ CREATE TABLE `referralfiles` (
   `file_dir` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `referralfiles`
+--
+
+INSERT INTO `referralfiles` (`referral_id`, `booking_id`, `file_name`, `file_dir`) VALUES
+(67, 179, 'Ambulance2', '../web/referral-images/ambulance2.jpg'),
+(68, 181, 'Ambulance2', '../web/referral-images/ambulance2.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -309,6 +318,54 @@ CREATE TABLE `rejectedhospital` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `rejectedreservations`
+--
+
+CREATE TABLE `rejectedreservations` (
+  `ID` int(120) NOT NULL,
+  `user_id` varchar(250) NOT NULL,
+  `listing_id` int(120) NOT NULL,
+  `firstname` varchar(250) NOT NULL,
+  `lastname` varchar(250) NOT NULL,
+  `date` varchar(250) NOT NULL,
+  `time` varchar(250) NOT NULL,
+  `phonenumber` varchar(250) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `concern` varchar(250) NOT NULL,
+  `specifyconcern` varchar(250) NOT NULL,
+  `hospitalname` varchar(250) NOT NULL,
+  `reservationtype` varchar(250) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `booking_timestamp` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `rejectedreservations`
+--
+
+INSERT INTO `rejectedreservations` (`ID`, `user_id`, `listing_id`, `firstname`, `lastname`, `date`, `time`, `phonenumber`, `email`, `concern`, `specifyconcern`, `hospitalname`, `reservationtype`, `timestamp`, `booking_timestamp`) VALUES
+(1, 'john lerry', 0, '2022-04-09', '09:00', '09125253535', ' ', 'Covid', '', 'Covid', 'bed', '2022-04-08 15:15:24', '96', '2022-04-08 11:55:35', '10'),
+(2, '96', 10, 'john lerry', 'hapatinga', '2022-04-09', '09:00', '09125253535', ' ', 'Covid', '', 'Covid', 'bed', '2022-04-08 11:56:47', '2022-04-08 15:15:24'),
+(3, '96', 10, 'Maria', 'Khalifa', '2022-04-19', '09:00', '09125253535', ' hapatinga@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-08 11:57:27', '2022-04-08 17:29:23'),
+(4, '96', 10, 'Maria', 'Khalifa', '2022-04-19', '09:00', '09125253535', ' hapatinga@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-08 12:02:04', '2022-04-08 17:29:23'),
+(5, '96', 10, 'john lerry', 'hapatinga', '2022-04-09', '09:00', '09125253535', ' hapatinga@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-08 12:04:13', '2022-04-08 20:03:50'),
+(6, '95', 8, 'Juanito', 'Balagbag', '2022-04-23', '09:00', '12312313131', ' ', 'Covid', '', 'Covid', 'bed', '2022-04-08 12:04:47', '2022-04-08 15:23:12'),
+(7, '96', 10, 'awdawd', 'awdawd', '2022-04-14', '09:00', '09123232323', ' hapatinga@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-08 12:05:13', '2022-04-08 20:05:04'),
+(8, '96', 10, 'john lerry', 'hapatinga', '2022-04-11', '09:00', '09123232323', ' sample@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-08 12:09:34', '2022-04-08 20:09:02'),
+(9, '95', 8, 'Larry', 'Bird', '2022-04-15', '09:00', '12312312312', ' asd@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-08 12:11:53', '2022-04-08 20:09:10'),
+(10, '96', 10, 'awdawd', 'hapatinga', '2022-04-16', '09:00', '09123232323', ' sample@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-08 12:12:48', '2022-04-08 20:09:13'),
+(11, '95', 8, 'Larry', 'Bird', '2022-04-15', '09:00', '12312312312', ' asd@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-08 12:13:27', '2022-04-08 20:09:10'),
+(12, '95', 8, 'Larry', 'Bird', '2022-04-15', '09:00', '12312312312', ' asd@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-08 12:13:27', '2022-04-08 20:09:10'),
+(13, '95', 8, 'Larry', 'Bird', '2022-04-15', '09:00', '12312312312', ' asd@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-08 12:13:27', '2022-04-08 20:09:10'),
+(14, '95', 8, 'Larry', 'Bird', '2022-04-15', '09:00', '12312312312', ' asd@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-08 12:13:53', '2022-04-08 20:09:10'),
+(15, '95', 8, 'Larry', 'Bird', '2022-04-15', '09:00', '12312312312', ' asd@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-08 12:13:53', '2022-04-08 20:09:10'),
+(16, '95', 8, 'Larry', 'Bird', '2022-04-15', '09:00', '12312312312', ' asd@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-08 12:13:53', '2022-04-08 20:09:10'),
+(17, '', 0, '', '', '', '', '', ' ', '', '', '', '', '2022-04-08 12:13:59', ''),
+(18, '96', 10, 'sss', 'sss', '2022-04-10', '09:00', '09125253535', ' hapatinga@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-08 12:58:24', '2022-04-08 20:57:01');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `test`
 --
 
@@ -329,6 +386,42 @@ INSERT INTO `test` (`ID`, `firstname`, `lastname`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `upcomingreservations`
+--
+
+CREATE TABLE `upcomingreservations` (
+  `ID` int(120) NOT NULL,
+  `reservation_code` varchar(255) NOT NULL,
+  `user_id` int(120) NOT NULL,
+  `listing_id` int(120) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `time` varchar(255) NOT NULL,
+  `phonenumber` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `concern` varchar(255) NOT NULL,
+  `specifyconcern` varchar(255) NOT NULL,
+  `hospitalname` varchar(255) NOT NULL,
+  `reservationtype` varchar(255) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `booking_timestamp` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `upcomingreservations`
+--
+
+INSERT INTO `upcomingreservations` (`ID`, `reservation_code`, `user_id`, `listing_id`, `firstname`, `lastname`, `date`, `time`, `phonenumber`, `email`, `concern`, `specifyconcern`, `hospitalname`, `reservationtype`, `timestamp`, `booking_timestamp`) VALUES
+(4, 'SCPHRES288367', 95, 8, 'Nior', 'Mabuts', '2022-04-16', '09:00', '12312313131', 'asd@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-08 11:49:30', '2022-04-08 17:30:18'),
+(5, 'SCPHRES240123', 95, 8, 'Nior', 'Mabuts', '2022-04-16', '09:00', '12312313131', 'asd@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-08 11:56:16', '2022-04-08 17:30:18'),
+(6, 'SCPHRES480309', 95, 8, 'Nior', 'Mabuts', '2022-04-16', '09:00', '12312313131', 'asd@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-08 11:56:16', '2022-04-08 17:30:18'),
+(7, 'SCPHRES373319', 95, 8, 'Nior', 'Mabuts', '2022-04-16', '09:00', '12312313131', 'asd@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-08 11:57:35', '2022-04-08 17:30:18'),
+(9, 'SCPHRES419152', 95, 8, 'John', 'De Guzman', '2022-04-22', '09:00', '12312313131', 'asd@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-08 11:59:03', '2022-04-08 15:58:49');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `userbooking`
 --
 
@@ -341,6 +434,7 @@ CREATE TABLE `userbooking` (
   `patientDate` varchar(255) NOT NULL,
   `patientTime` varchar(255) NOT NULL,
   `patientPhoneNumber` varchar(55) NOT NULL,
+  `patientEmail` varchar(100) NOT NULL,
   `patientConcern` varchar(50) NOT NULL,
   `patientSpecifyConcern` varchar(50) NOT NULL,
   `patientHospitalName` varchar(50) NOT NULL,
@@ -352,12 +446,10 @@ CREATE TABLE `userbooking` (
 -- Dumping data for table `userbooking`
 --
 
-INSERT INTO `userbooking` (`ID`, `user_id`, `listing_id`, `patientFirstName`, `patientLastName`, `patientDate`, `patientTime`, `patientPhoneNumber`, `patientConcern`, `patientSpecifyConcern`, `patientHospitalName`, `patientReservationType`, `bookingTimestamp`) VALUES
-(140, 94, 10, 'sddd', 'dwdsd', '2022-04-13', '09:00', '09125253535', 'Non-Covid', 'awdawd', 'Cebu Doctors University Hospital', 'bed', '2022-04-02 11:09:54'),
-(141, 95, 10, 'asdasdas', 'asdasdasdas', '2022-04-14', '09:00', '12312312313', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-02 11:09:57'),
-(142, 94, 10, 'sddd', 'dwdsd', '2022-04-03', '09:00', '09125253535', 'Non-Covid', 'sssss', 'Cebu Doctors University Hospital', 'bed', '2022-04-02 11:10:49'),
-(143, 95, 10, 'asdasdasdasd', 'asdasdasd', '2022-04-13', '09:00', '12312312312', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-02 11:11:04'),
-(144, 95, 10, 'qweqweqwe', 'qweqweqwe', '2022-04-22', '09:00', '12313131231', 'Covid', '1231', 'Cebu Doctors University Hospital', 'bed', '2022-04-02 11:16:08');
+INSERT INTO `userbooking` (`ID`, `user_id`, `listing_id`, `patientFirstName`, `patientLastName`, `patientDate`, `patientTime`, `patientPhoneNumber`, `patientEmail`, `patientConcern`, `patientSpecifyConcern`, `patientHospitalName`, `patientReservationType`, `bookingTimestamp`) VALUES
+(179, 95, 8, 'Larry', 'Bird', '2022-04-15', '09:00', '12312312312', 'asd@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-08 12:09:10'),
+(181, 95, 8, 'Joshua', 'Bravo', '2022-04-22', '09:00', '12312313131', 'asd@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-08 12:11:34'),
+(182, 96, 10, 'Maria', 'hapatinga', '2022-04-29', '09:00', '09123232323', 'sample@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-08 12:12:40');
 
 -- --------------------------------------------------------
 
@@ -381,8 +473,8 @@ CREATE TABLE `userpatient` (
 
 INSERT INTO `userpatient` (`patientUserID`, `patientUsername`, `patientFirstname`, `patientLastname`, `patientEmail`, `patientPassword`, `patientPhoneNumber`) VALUES
 (93, '', 'larry jr.', 'Mabuti', 'nior3210@gmail.com', '$2y$10$gbfiybMWhIqBQpIFQyjW1ujplceVJKFhdWGkelysKIrqQdQ6J2sqq', '09445757766'),
-(94, '', 'John Lerry', 'Hapatinga', 'hapatingajohnlerry@gmail.com', '$2y$10$rq9E0c9xM3hdtlUAfaOJPedcVja3gOQHQiqkj.y8fCzIbQ3Q/2RaK', '09513513513'),
-(95, '', 'Larry ', 'Mabuti JR', 'jlerry005@gmail.com', '$2y$10$nTvq/YD2dJLw0OVQdw.hFucsIt.1YCy31q14nGRxOkdVHBYpo21e2', '09663700835');
+(95, '', 'Larry ', 'Mabuti JR', 'jlerry005@gmail.com', '$2y$10$nTvq/YD2dJLw0OVQdw.hFucsIt.1YCy31q14nGRxOkdVHBYpo21e2', '09663700835'),
+(96, '', 'john lerry', 'hapatinga', 'hapatingajohnlerry@gmail.com', '$2y$10$9rqyXpNdU1abN8Z/igwb9OC7KnO0TCFe60Hr6zKpjdBRPtxaUSIda', '09455526133');
 
 -- --------------------------------------------------------
 
@@ -409,7 +501,8 @@ INSERT INTO `userpatienttemp` (`tempUserID`, `tempUsername`, `tempFirstname`, `t
 (65, '', 'John Lerry', 'Hapatinga', 'hapatingajohnlerry@gmail.com', '$2y$10$T8UoVOlXhLu4XjkH2gCpn.3MsgXJ69QhkTakFEa4QnXCOGd0WPaHe', '09513513513'),
 (66, '', 'Juan', 'Delacruz', 'eksdi420@gmail.com', '$2y$10$FDF0cbP4E.c8lNvndO6iG.HtZd.HX0x2UcTFHxXO9QeRFD9Kle3ia', '09667574464'),
 (67, '', 'Juan', 'dela Cruz', 'eksdi420@gmail.com', '$2y$10$wRzSqC1iG5DfURbMXEgINOEEq0jtdbMLj2LTsTbODIcGp1mMIHA9e', '09778858585'),
-(68, '', 'Larry ', 'Mabuti JR', 'jlerry005@gmail.com', '$2y$10$tbLSSPYMgabE/kdWR9WBeekbySf9W85xI1jCndpxrjkyOuzhW4h8C', '09663700835');
+(68, '', 'Larry ', 'Mabuti JR', 'jlerry005@gmail.com', '$2y$10$tbLSSPYMgabE/kdWR9WBeekbySf9W85xI1jCndpxrjkyOuzhW4h8C', '09663700835'),
+(69, '', 'john lerry', 'hapatinga', 'hapatingajohnlerry@gmail.com', '$2y$10$xQzJjY2TGNqkJHNV.MdTWOXnnWQ7pZuV8BeQj2kdByVJjvZmUuV8W', '09455526133');
 
 --
 -- Indexes for dumped tables
@@ -502,10 +595,24 @@ ALTER TABLE `rejectedhospital`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `rejectedreservations`
+--
+ALTER TABLE `rejectedreservations`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `test`
 --
 ALTER TABLE `test`
   ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `upcomingreservations`
+--
+ALTER TABLE `upcomingreservations`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `listing_id` (`listing_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `userbooking`
@@ -583,13 +690,13 @@ ALTER TABLE `hospitalsignuphistory`
 -- AUTO_INCREMENT for table `listingimages`
 --
 ALTER TABLE `listingimages`
-  MODIFY `image_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=620;
+  MODIFY `image_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=622;
 
 --
 -- AUTO_INCREMENT for table `otpstorage`
 --
 ALTER TABLE `otpstorage`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `pendingadminsignup`
@@ -601,7 +708,7 @@ ALTER TABLE `pendingadminsignup`
 -- AUTO_INCREMENT for table `referralfiles`
 --
 ALTER TABLE `referralfiles`
-  MODIFY `referral_id` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `referral_id` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `rejectedhospital`
@@ -610,28 +717,40 @@ ALTER TABLE `rejectedhospital`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
+-- AUTO_INCREMENT for table `rejectedreservations`
+--
+ALTER TABLE `rejectedreservations`
+  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
 -- AUTO_INCREMENT for table `test`
 --
 ALTER TABLE `test`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `upcomingreservations`
+--
+ALTER TABLE `upcomingreservations`
+  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `userbooking`
 --
 ALTER TABLE `userbooking`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
 
 --
 -- AUTO_INCREMENT for table `userpatient`
 --
 ALTER TABLE `userpatient`
-  MODIFY `patientUserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `patientUserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT for table `userpatienttemp`
 --
 ALTER TABLE `userpatienttemp`
-  MODIFY `tempUserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `tempUserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- Constraints for dumped tables
@@ -685,6 +804,13 @@ ALTER TABLE `otpstorage`
 --
 ALTER TABLE `referralfiles`
   ADD CONSTRAINT `referralfiles_ibfk_1` FOREIGN KEY (`booking_id`) REFERENCES `userbooking` (`ID`);
+
+--
+-- Constraints for table `upcomingreservations`
+--
+ALTER TABLE `upcomingreservations`
+  ADD CONSTRAINT `upcomingreservations_ibfk_1` FOREIGN KEY (`listing_id`) REFERENCES `hospitallisting` (`listing_id`),
+  ADD CONSTRAINT `upcomingreservations_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `userpatient` (`patientUserID`);
 
 --
 -- Constraints for table `userbooking`
