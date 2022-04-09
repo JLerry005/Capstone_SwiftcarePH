@@ -54,72 +54,154 @@
     <!--Bootstrap Icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <!-- TITLE -->
-    <title>View Full Details | SwiftCare PH</title>
+    <title>Patient Details | SwiftCare PH</title>
     <!-- JQUERY LINK -->
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!-- HEADER ICON -->
     <link rel="icon" href="assets/main-logo-line.png" type="image/x-icon">
 </head>
-<body class="text-gray-700">
+<body class="text-gray-700 bg-blue-50 font-poppins">
     <input type="hidden" name="userID" id="userID" value="<?php echo $userID ?>">
     <input type="hidden" name="listingID" id="listingID" value="<?php echo $listingID ?>">
     <input type="hidden" name="bookingID" id="bookingID" value="<?php echo $bookingID ?>">
     <input type="hidden" name="hospitalName" id="hospitalName" value="<?php echo $hospitalName ?>">
+
     <div class="container p-10 mx-64">
+        <!-- Grid Container -->
+        <div class="grid grid-cols-8 gap-6">
 
-        <div class="">
-            <h1 class="font-bold">Date of Booking</h1>
-            <p id="time-stamp" name="time-stamp"><?php echo $timeStamp ?></p>
+            <!-- This is the first row Container -->
+
+            <!-- left side  -->
+            <div class="col-span-4 h-24">
+                <!-- first name & Last name -->
+                <div class="flex items-center ml-2">
+                    <div class="flex items-center space-x-2">
+                        <img src="https://avatars.dicebear.com/api/big-smile/'.$firstName.'.svg?b=%231a56bb&r=50"  class="w-14 mr-4" value="<?php echo $firstName ?>">
+                    </div>
+                    <div>
+                        <p class="text-xs font-medium text-blue-700">Patient Name</p>
+                        <div class="flex items-center capitalize font-bold text-gray-900 text-3xl">
+                            <p id="firstname" name="firstname"><?php echo $firstName ?></p>&nbsp;
+                            <p id="lastname" name="lastname"><?php echo $lastName ?></p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- right side -->
+            <div class="col-span-3 h-24">
+                <div class="flex justify-end items-center mr-8">
+                    <!-- <h1 class="font-bold">Date of Request:</h1> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p id="time-stamp" name="time-stamp"><?php echo $timeStamp ?></p>
+                </div>
+            </div>
+
+            <div class="col-span-7 bg-white h-56 drop-shadow-lg p-6 px-10 rounded-3xl">
+                <div class="flex items-center text-md text-blue-700 font-bold border-b border-gray-400 pb-2">
+                    <h1>Patient Concern</h1>
+                </div>
+                <div class="flex justify-between items-center p-10 space-x-10 space-y-2">
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-800 hover:text-blue-700" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                        </svg>
+                        <div>
+                            <h1 class="font-bold">Concern</h1>
+                            <p id="patient-concern" name="patient-concern"><?php echo $patientConcern?></p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-800 hover:text-blue-700" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                        </svg>
+                        <div>
+                            <h1 class="font-bold">Specify Concern</h1>
+                            <p id="specify-concern" name="specify-concern"><?php echo $specifyConcern?></p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-800 hover:text-blue-700" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                        </svg>
+                        <div>
+                            <h1 class="font-bold">Reservation Type</h1>
+                            <p id="reservation-type" name="reservation-type"><?php echo $reservationType?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- This is the Second row Container -->
+
+            <!-- Main Details -->
+            <div class="col-span-4 bg-white h-56 drop-shadow-lg p-6 px-10 rounded-3xl">
+                <div class="flex items-center text-md text-blue-700 font-bold border-b border-gray-400 pb-2">
+                    <h1>Contact Details</h1>
+                </div>
+                <div class="flex justify-between items-center p-10 space-x-10">
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-800 hover:text-blue-700" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                        </svg>
+                        <div class="">
+                            <h1 class="font-bold">Phone Number</h1>
+                            <p id="contact-number" name="contact-number"><?php echo $contactNumber?></p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-800 hover:text-blue-700" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                        </svg>
+                        <div>
+                            <h1 class="font-bold">Email Address</h1>
+                            <p id="email-add" name="email-add"><?php echo $emailAddress?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-3 bg-white h-56 drop-shadow-lg p-6 px-10 rounded-3xl">
+                <div class="flex items-center text-md text-blue-700 font-bold border-b border-gray-400 pb-2">
+                    <h1>Schedule of Booking</h1>
+                </div>
+                <div class="flex justify-between items-center p-10 space-x-10">
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-800 hover:text-blue-700" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                        </svg>
+                        <div>
+                            <h1 class="font-bold">Date</h1>
+                            <p id="date" name="date"><?php echo $date?></p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-800 hover:text-blue-700" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                        </svg>
+                        <div>
+                            <h1 class="font-bold">Time</h1>
+                            <p id="time" name="time"><?php echo $time?></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="">
-            <h1 class="font-bold">Firstname</h1>
-            <p id="firstname" name="firstname"><?php echo $firstName ?></p>
-        </div>
-
-        <div class="">
-            <h1 class="font-bold">Lastname</h1>
-            <p id="lastname" name="lastname"><?php echo $lastName ?></p>
-        </div>
-
-        <div class="">
-            <h1 class="font-bold">Date</h1>
-            <p id="date" name="date"><?php echo $date?></p>
-        </div>
-
-        <div class="">
-            <h1 class="font-bold">Time</h1>
-            <p id="time" name="time"><?php echo $time?></p>
-        </div>
-
-        <div class="">
-            <h1 class="font-bold">Phone Number</h1>
-            <p id="contact-number" name="contact-number"><?php echo $contactNumber?></p>
-        </div>
-
-        <div class="">
-            <h1 class="font-bold">Email Address</h1>
-            <p id="email-add" name="email-add"><?php echo $emailAddress?></p>
-        </div>
-
-        <div class="">
-            <h1 class="font-bold">Concern</h1>
-            <p id="patient-concern" name="patient-concern"><?php echo $patientConcern?></p>
-        </div>
-
-        <div class="">
-            <h1 class="font-bold">Specify Concern</h1>
-            <p id="specify-concern" name="specify-concern"><?php echo $specifyConcern?></p>
-        </div>
-
-        <div class="">
-            <h1 class="font-bold">Reservation Type</h1>
-            <p id="reservation-type" name="reservation-type"><?php echo $reservationType?></p>
-        </div>
-
-        <div>
-            <button type="submit" id="btn-accept" name="btn-accept" class="p-3 rounded-lg font-bold bg-blue-600 text-white">Accept</button>
-            <button type="submit" id="btn-reject" name="btn-reject" class="p-3 rounded-lg font-bold bg-red-600 text-white">Reject</button>
+        <div class="flex justify-end space-x-2 mr-52 mt-5">
+            <button type="submit" id="btn-accept" name="btn-accept" class="p-3 px-7 rounded-lg font-bold bg-gray-900 text-white">Accept</button>
+            <button type="submit" id="btn-reject" name="btn-reject" class="p-3 px-7 rounded-lg font-bold bg-red-600 text-white">Reject</button>
         </div> 
     </div>
 
