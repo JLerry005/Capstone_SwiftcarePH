@@ -404,7 +404,7 @@
                             </p>
                         </div>
                         
-                        <img src="assets\booking-form\calendar-pencil.svg" class="w-80" alt="">
+                        <img src="assets\booking-form\Calendar-with-pencil.svg" class="w-80" alt="">
                     </div>
                     
                     <input type="hidden" name="" value="<?php echo $_SESSION['sessionpatientUserID'] ?>" id="user-id-placeholder">

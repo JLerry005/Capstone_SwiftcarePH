@@ -67,13 +67,13 @@
             </div>
 
             <div>  
-                <div class="p-2 mx-6 bg-slate-600 rounded-md">
-                    <h1 class="text-white font-bold uppercase text-center"><i class="bi bi-building"></i> <?php echo $_SESSION["hospitalName"]; ?></h1>
+                <div class="p-2 mx-6 rounded-md">
+                    <h1 class="text-white font-bold uppercase text-center"><?php echo $_SESSION["hospitalName"]; ?></h1>
                 </div>
                 <hr class="my-5 mx-6 border-slate-600">
 
                 <div class="bg-red-600 hover:bg-red-800 p-2 rounded-md mx-6 text-center">
-                    <a href="includes/hospital-logout" class="w-full rounded-lg transition duration-150 text-white hover:underline" id="btn-account"><i class="bi bi-arrow-left-circle-fill"></i> Logout</a>
+                    <a href="includes/hospital-logout" class="w-full rounded-lg transition duration-150 text-white hover:underline" id="btn-account"><i class="bi bi-arrow-bar-left"></i>&ensp;Logout</a>
                 </div>
                 
             </div> 

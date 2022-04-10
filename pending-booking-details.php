@@ -18,6 +18,7 @@
     $userID;
     $listingID;
     $hospitalName;
+    $referral;
 
     $getFullDetails = $conn->query("SELECT * FROM userbooking WHERE ID = $bookingID;") or die($conn->error);
     while ($row = mysqli_fetch_assoc($getFullDetails)) {
@@ -35,7 +36,6 @@
         $userID = $row["user_id"];
         $hospitalName = $row["patientHospitalName"];
     }
-
     // echo $firstName;
 ?>
 
@@ -53,6 +53,8 @@
     <link rel="stylesheet" href="dist/output.css">
     <!--Bootstrap Icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+    <!-- Remix Icon CDN Link -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- TITLE -->
     <title>Patient Details | SwiftCare PH</title>
     <!-- JQUERY LINK -->
@@ -70,29 +72,30 @@
         <!-- Grid Container -->
         <div class="grid grid-cols-8 gap-6">
 
-            <!-- This is the first row Container -->
+         <!---------- This is the first row Container ---------->
 
             <!-- left side  -->
             <div class="col-span-4 h-24">
                 <!-- first name & Last name -->
                 <div class="flex items-center ml-2">
                     <div class="flex items-center space-x-2">
-                        <img src="https://avatars.dicebear.com/api/big-smile/'.$firstName.'.svg?b=%231a56bb&r=50"  class="w-14 mr-4" value="<?php echo $firstName ?>">
+                        <?php
+                            echo ' <img src="https://avatars.dicebear.com/api/big-smile/'.$firstName.'.svg?b=%231a56bb&r=50"  class="w-14 mr-4">'
+                        ?>
                     </div>
                     <div>
-                        <p class="text-xs font-medium text-blue-700">Patient Name</p>
+                        <p class="text-xs font-semibold text-blue-700">Patient Name</p>
                         <div class="flex items-center capitalize font-bold text-gray-900 text-3xl">
                             <p id="firstname" name="firstname"><?php echo $firstName ?></p>&nbsp;
                             <p id="lastname" name="lastname"><?php echo $lastName ?></p>
                         </div>
                     </div>
-
                 </div>
-
             </div>
+
             <!-- right side -->
             <div class="col-span-3 h-24">
-                <div class="flex justify-end items-center mr-8">
+                <div class="flex justify-end items-center mr-8 font-medium">
                     <!-- <h1 class="font-bold">Date of Request:</h1> -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -101,36 +104,36 @@
                 </div>
             </div>
 
+        <!---------- This is the second row Container ---------->
+
+            <!-- Patient Concern Container -->
             <div class="col-span-7 bg-white h-56 drop-shadow-lg p-6 px-10 rounded-3xl">
-                <div class="flex items-center text-md text-blue-700 font-bold border-b border-gray-400 pb-2">
+                <div class="flex items-center text-md text-blue-700 font-bold border-b border-gray-300 pb-2">
                     <h1>Patient Concern</h1>
                 </div>
+                <!-- Patient Concern Content -->
                 <div class="flex justify-between items-center p-10 space-x-10 space-y-2">
+                    <!-- Concern of Patient -->
                     <div class="flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-800 hover:text-blue-700" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-12 w-12"><path fill="none" d="M0 0H24V24H0z"/><path d="M8 3v2H6v4c0 2.21 1.79 4 4 4s4-1.79 4-4V5h-2V3h3c.552 0 1 .448 1 1v5c0 2.973-2.162 5.44-5 5.917V16.5c0 1.933 1.567 3.5 3.5 3.5 1.497 0 2.775-.94 3.275-2.263C16.728 17.27 16 16.22 16 15c0-1.657 1.343-3 3-3s3 1.343 3 3c0 1.371-.92 2.527-2.176 2.885C19.21 20.252 17.059 22 14.5 22 11.462 22 9 19.538 9 16.5v-1.583C6.162 14.441 4 11.973 4 9V4c0-.552.448-1 1-1h3zm11 11c-.552 0-1 .448-1 1s.448 1 1 1 1-.448 1-1-.448-1-1-1z" fill="rgba(50,152,219,1)"/></svg>
                         <div>
                             <h1 class="font-bold">Concern</h1>
                             <p id="patient-concern" name="patient-concern"><?php echo $patientConcern?></p>
                         </div>
                     </div>
 
+                    <!-- Specify Concern of Patient -->
                     <div class="flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-800 hover:text-blue-700" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-12 w-12"><path fill="none" d="M0 0H24V24H0z"/><path d="M17 5v2c1.657 0 3 1.343 3 3v11c0 .552-.448 1-1 1H5c-.552 0-1-.448-1-1V10c0-1.657 1.343-3 3-3V5h10zm-4 6h-2v2H9v2h1.999L11 17h2l-.001-2H15v-2h-2v-2zm6-9v2H5V2h14z" fill="rgba(24,49,77,1)"/></svg>
                         <div>
                             <h1 class="font-bold">Specify Concern</h1>
-                            <p id="specify-concern" name="specify-concern"><?php echo $specifyConcern?></p>
+                            <p id="specify-concern" name="specify-concern" ><?php echo $specifyConcern?></p>
                         </div>
                     </div>
 
-                    <div class="flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-800 hover:text-blue-700" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                        </svg>
-                        <div>
+                    <!-- Resevation Type -->                    
+                    <div class="flex items-center space-x-2 capitalize">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-12 w-12"><path fill="none" d="M0 0H24V24H0z"/><path d="M2 21v-2h2V4.835c0-.484.346-.898.821-.984l9.472-1.722c.326-.06.638.157.697.483.007.035.01.07.01.107v1.28L19 4c.552 0 1 .448 1 1v14h2v2h-4V6h-3v15H2zm10-10h-2v2h2v-2z" fill="rgba(170,43,29,1)"/></svg>                        <div>
                             <h1 class="font-bold">Reservation Type</h1>
                             <p id="reservation-type" name="reservation-type"><?php echo $reservationType?></p>
                         </div>
@@ -138,29 +141,27 @@
                 </div>
             </div>
             
-            <!-- This is the Second row Container -->
+        <!---------- This is the third row Container ---------->
 
-            <!-- Main Details -->
+            <!-- Contact Details Container -->
             <div class="col-span-4 bg-white h-56 drop-shadow-lg p-6 px-10 rounded-3xl">
-                <div class="flex items-center text-md text-blue-700 font-bold border-b border-gray-400 pb-2">
+                <!-- Schedule Booking Content -->
+                <div class="flex items-center text-md text-blue-700 font-bold border-b border-gray-300 pb-2">
                     <h1>Contact Details</h1>
                 </div>
+                <!-- Phone Number and Email Address -->
                 <div class="flex justify-between items-center p-10 space-x-10">
+                    <!-- Phone Number -->
                     <div class="flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-800 hover:text-blue-700" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                        </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-12 w-12"><path fill="none" d="M0 0h24v24H0z"/><path d="M21 16.42v3.536a1 1 0 0 1-.93.998c-.437.03-.794.046-1.07.046-8.837 0-16-7.163-16-16 0-.276.015-.633.046-1.07A1 1 0 0 1 4.044 3H7.58a.5.5 0 0 1 .498.45c.023.23.044.413.064.552A13.901 13.901 0 0 0 9.35 8.003c.095.2.033.439-.147.567l-2.158 1.542a13.047 13.047 0 0 0 6.844 6.844l1.54-2.154a.462.462 0 0 1 .573-.149 13.901 13.901 0 0 0 4 1.205c.139.02.322.042.55.064a.5.5 0 0 1 .449.498z" fill="rgba(107,203,119,1)"/></svg>
                         <div class="">
                             <h1 class="font-bold">Phone Number</h1>
                             <p id="contact-number" name="contact-number"><?php echo $contactNumber?></p>
                         </div>
                     </div>
-
+                    <!-- Email Address -->
                     <div class="flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-800 hover:text-blue-700" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                        </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-12 w-12"><path fill="none" d="M0 0h24v24H0z"/><path d="M22 13.341A6 6 0 0 0 14.341 21H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v9.341zm-9.94-1.658L5.648 6.238 4.353 7.762l7.72 6.555 7.581-6.56-1.308-1.513-6.285 5.439zM19 22l-3.536-3.536 1.415-1.414L19 19.172l3.536-3.536 1.414 1.414L19 22z" fill="rgba(5,89,91,1)"/></svg>
                         <div>
                             <h1 class="font-bold">Email Address</h1>
                             <p id="email-add" name="email-add"><?php echo $emailAddress?></p>
@@ -169,39 +170,53 @@
                 </div>
             </div>
 
+            <!-- Schedule Booking Container -->
             <div class="col-span-3 bg-white h-56 drop-shadow-lg p-6 px-10 rounded-3xl">
-                <div class="flex items-center text-md text-blue-700 font-bold border-b border-gray-400 pb-2">
+                <!-- Schedule Booking Content -->
+                <div class="flex items-center text-md text-blue-700 font-bold border-b border-gray-300 pb-2">
                     <h1>Schedule of Booking</h1>
                 </div>
+                <!-- Date -->                
                 <div class="flex justify-between items-center p-10 space-x-10">
                     <div class="flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-800 hover:text-blue-700" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                        </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-12 w-12"><path fill="none" d="M0 0h24v24H0z"/><path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" fill="rgba(190,140,99,1)"/></svg>
                         <div>
                             <h1 class="font-bold">Date</h1>
                             <p id="date" name="date"><?php echo $date?></p>
                         </div>
                     </div>
-
+                    <!-- Time -->                
                     <div class="flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-800 hover:text-blue-700" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
-                        </svg>
-                        <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-12 w-12"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm1-10V7h-2v7h6v-2h-4z" fill="rgba(169,113,85,1)"/></svg>                        <div>
                             <h1 class="font-bold">Time</h1>
                             <p id="time" name="time"><?php echo $time?></p>
                         </div>
                     </div>
                 </div>
-
             </div>
 
+            <?php 
+                // if($referral == "Yes"){
+                //     echo '
+                //         <div class="flex flex-row bg-white px-3 py-2 drop-shadow-md rounded-full">
+                //             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                //                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                //             </svg>
+                //             <p class="font-semibold text-xs">&nbsp; Referral Documents required</p>
+                //         </div>
+                //     ';
+                //     }else {
+                //         echo '';
+                // }
+            ?>
         </div>
 
+        <!-- Accept and Reject Button -->
         <div class="flex justify-end space-x-2 mr-52 mt-5">
-            <button type="submit" id="btn-accept" name="btn-accept" class="p-3 px-7 rounded-lg font-bold bg-gray-900 text-white">Accept</button>
-            <button type="submit" id="btn-reject" name="btn-reject" class="p-3 px-7 rounded-lg font-bold bg-red-600 text-white">Reject</button>
+            <!-- Accept Button -->
+            <button type="submit" id="btn-accept" name="btn-accept" class="p-3 px-7 rounded-lg font-bold bg-gray-900 hover:bg-gray-800 text-white">Accept</button>
+            <!-- Reject Button -->            
+            <button type="submit" id="btn-reject" name="btn-reject" class="p-3 px-7 rounded-lg font-bold bg-red-600 hover:bg-red-500 text-white">Reject</button>
         </div> 
     </div>
 
