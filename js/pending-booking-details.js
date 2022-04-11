@@ -91,7 +91,7 @@
                 },
                 success: function () {
                     toggleModal('rejectModal', false);
-                    // window.location.replace('http://localhost/Capstone/hospital-dashboard');
+                    window.location.replace('http://localhost/Capstone/hospital-dashboard');
                 }
             });
         }

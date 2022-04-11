@@ -270,13 +270,13 @@
                     </div>
 
                     <hr class="border-slate-200 my-3">
-                    <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse beatae.</p>
+                    <!-- <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse beatae.</p> -->
 
                     <!-- Cards go here -->
                     <div class="px-5 lg:grid grid-cols-12 gap-4" id="upcoming-cards-container">
 
                         <!-- Cards -->
-                        <div class="col-span-3 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
+                        <!-- <div class="col-span-3 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
                             <div class="p-4 flex items-center justify-between">
                                 <h1 class="bg-blue-700 hover:bg-blue-800 rounded-full w-fit py-0.5 px-2 text-white flex items-center">
                                     <i class="ri-door-open-fill"></i> &nbsp; <span class="cursor-pointer">Bed</span>
@@ -325,7 +325,7 @@
                                     </svg>
                                 </button>
                             </div>
-                        </div> 
+                        </div>  -->
                     </div>
                 </div>
 

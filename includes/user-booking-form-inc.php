@@ -42,3 +42,6 @@
                 $updateRoomResult = mysqli_query($conn, $updateRoomSlot) or die(mysqli_error($conn));
         }
     }
+
+    require_once '../PHPMailer/user-booking-confirmation.php';
+    sendEmailConfirmation($conn, $firstName, $lastName, $hospitalName, $reservationType, $email);

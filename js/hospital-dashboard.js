@@ -46,6 +46,37 @@
         });
     }
 
+    moveToCompleted();
+    function moveToCompleted() {
+        let listingID = document.getElementById("listingID").value;
+
+        $.ajax({
+            method: "POST",
+            url: "includes/move-to-completed-inc.php",
+            data: {listingID:listingID},
+            success: function (data) {
+
+            }
+        });
+    }
+
+    // Show Pending List
+    showUpcomingReservations();
+    function showUpcomingReservations() {
+        let upcomingListContainer = document.getElementById("upcoming-cards-container");
+        let listingID = document.getElementById("listingID").value;
+
+        upcomingListContainer.innerHTML = "";
+        $.ajax({
+            method: "POST",
+            url: "includes/upcoming-reservations-inc.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                upcomingListContainer.innerHTML = data;
+            }
+        });
+    }
+
     // Toggle the Pending Container
     function togglePending() {
         $("#pending-cards-container").toggle(340);

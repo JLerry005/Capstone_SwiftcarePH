@@ -34,6 +34,7 @@
             <p class="tracking-wider mt-10 sm:mt-14 mb-6 sm:mb-10 text-center 2xl:text-left font-bold text-2xl xl:mt-16">User Login</p>
             <!-- User Email and Password -->
             <div class="2xl:space-y-4 2xl:mr-10 xl:mt-10 2xl:pr-16">
+                <!-- This is the form to submit a data -->
                 <form action="includes/user-login-inc" method="POST" id="login-form">
                     <!-- User Email -->
                     <div class="mb-3 md:mb-6">

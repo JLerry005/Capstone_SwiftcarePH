@@ -4,117 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://kit.fontawesome.com/98b00faa31.js" crossorigin="anonymous"></script>
-    <!-- CSS Link -->
-    <link  href="styling/hospital-login.css" rel="stylesheet" type="text/css">  
-
-    <link rel="icon" href="assets/main-logo-line.png" type="image/x-icon">  
-    
-    <title>Hospital Login | SwiftCare PH </title>
+    <!-- Bootstrap Icon CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Tailwind CSS Link -->
+    <link rel="stylesheet" href="dist/output.css">
+    <!-- Header Icon -->
+    <link rel="icon" href="assets/main-logo-line.png" type="image/x-icon"> 
+    <title>Hospital Login | Swiftcare PH</title>
 </head>
-<body>  
-    <!--Header Container-->
-    <div class="container-fluid main-container">
-        <!-- Header-->
-        <div class="row row1">
-            <!-- 1st Column-->
-            <div class="col-xl-3 my-auto">
+<body class="font-poppins bg-gray-900 text-gray-200">
+
+    <!-- This the container of Hospital Login -->
+    <div class="grid grid-cols-7">
+        <!-- Left side of the container -->
+        <div class="col-span-7 xl:col-span-3 xl:h-screen flex flex-col mx-10 lg:mx-20 pt-10">
+            <div class="xl:flex xl:items-start xl:flex-col">
+                <!-- Logo of SwiftCare PH -->
+                <a href="index" tooltip="Back to homepage" class="flex justify-center mb-10">
+                    <img src="assets/user-login/swiftcare-ph-logo-bg.png" alt="" srcset="" class="h-32 w-32 mt-2 xl:mt-10 xl:mb-6">
+                </a>
+                <!-- Title -->
+                <p class="text-center text-xl md:text-2xl mb-6 font-bold tracking-wider">Hospital Login</p>
             </div>
-
-            <!-- 2nd Column - -->
-            <div class="col-xl-6 middle-column my-auto">
-                <div class="row loginFormRow">
-                    
-                    <!--Login Form Container-->
-                    <div class="col-xl-7 formContainer">   
-                        <div class="d-flex justify-content-center">
-                            <img src="assets/main-logo-blue.png" class="img-fluid vectorLogin" alt="Responsive image" width="100px" height="100px">  
-                        </div>
-                        <div class="text-center titleLabel">  
-                            <h3>Admin Access</h3>                                  
-                        </div> 
-                        <br>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <!--Login Form-->
-                            <form action="includes/hospital-login-inc.php" method="POST">
-                                
-                                <!--Email Input-->
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" name="emailInput" id="floatingInput" placeholder="name@example.com" required>
-                                    <label for="floatingInput" class="form-label">Email Address</label>
-                                </div>   
-                                            
-                                <!--Password Input-->
-                                <div class="form-floating">
-                                    <input type="password" name="passwordInput" class="form-control" id="floatingPassword" placeholder="Password" required>
-                                    <label for="floatingPassword" class="form-label">Password</label>
-                                </div>
-                                
-                                <!--Forget Password-->
-                                <div class="text-end">
-                                    <a class="text-right" href="...">Forgot Password?</a>
-                                </div>
-
-                                <!--Remember Me Checkbox-->
-                                <div class="form-group form-check">
-                                    <input class="form-check-input rememberMeCheckBox" type="checkbox"  id="exampleCheck1">
-                                    <label class="form-check-labels rememberMeLabel" for="exampleCheck1">Remember Me</label>
-                                </div>
-
-                                <center class="text-dark">
-                                    <?php
-                                        if (isset($_GET["error"])) {
-                                            if($_GET["error"] == "wronglogin") {
-                                                echo "<p class='error-mobileNumber-used text-red-600 mb-3'><i class='bi bi-exclamation-circle-fill'></i> Email or Password is not correct!</p>";
-                                            }
-                                        }
-                                    ?>
-                                </center>
-
-                                <!--Login Button-->
-                                <!-- <a href="/html/admin-dashboard.html"> -->
-                                <button type="submit" name="submit" class="btn btnLogin">LOGIN</button></a>
-                                <div class="text-center pt-4 pb-3 orLabel">
-                                    <h5>━━━━━━━━━━━━━ OR ━━━━━━━━━━━━━━</h5>                        
-                                </div>                
-
-                                <!--Signup Button-->
-                                <div class="signupContainer">
-                                   <a href="index" class="btn btn-outline-light btnBack" role="button">Back To Home</a>
-                                </div>
-                            </form>
-                        </div>                                                           
-
+            <!-- Input of Email and Password with Login button -->
+            <div class="space-y-4 xl:mr-16 xl:mt-10">
+                <!-- This is the form to submit a data -->
+                <form action="includes/hospital-login-inc.php" method="POST">
+                    <!-- Hospital Admin Email -->
+                    <div class="mb-3 md:mb-6">
+                        <label for="emailInput" class="block mb-2 text-sm md:text-md font-medium text-blue-500">Email Address</label>
+                        <input type="email" id="emailInput" name="emailInput" autocomplete="nope" class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-md focus:bg-slate-800 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                     </div>
-                    <!--Side Illustration Container-->
-                    <div class="col-xl-5 vectorContainer"> 
-                        <h1 class="texts text-center">Hospital Login</h1>
-                        <img src="assets/health-login-icon.svg" class="img-fluid" alt="Responsive image">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Quos earum corrupti maxime delectus eos reprehenderit.
-                            Tempore voluptatum nisi perferendis fugit unde aspernatur,
-                            recusandae cupiditate consectetur ratione dicta mollitia,
-                            totam eligendi!
-                        </p>
-                        <br>
-                            <h5 class="text-center">Don't have an account yet?</h5>
-                            <!--<button type="submit" class="btn btn-primary btnSignup" id="btnSignup">Signup</button>-->
-                            <a href="hospital-signup" class="btn btn-warning btnSignup" role="button">Signup</a>            
+                    <!-- Hospital Admin Password -->
+                    <div class="mb-3 md:mb-6">
+                        <label for="passwordInput" class="block mb-2 text-sm md:text-md font-medium text-blue-500">Password</label>
+                        <input type="password" id="passwordInput" name="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="••••••••" class="userPassword bg-gray-900 focus:bg-slate-800 border border-blue-50 text-blue-50 text-lg rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                        <a class="text-xs flex justify-end mt-1 mr-2 hover:underline" href="...">Forgot Password?</a>
                     </div>
+            </div>
+        
+                <!-- login button -->
+                <div class="mb-6 xl:mr-16 xl:mb-20">
+                    <button id="submit" name="submit" type="submit" class="text-white w-full bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2" id="btnEditPasswordNext" name="btnEditPasswordNext">Login</button>
+                </div>
+
+                </form>
+
+                <!-- sigup content -->
+                <div class="xl:mr-16">
+                    <p class="font-medium mb-3">Don't have an account yet?</p>
+                    <a href="hospital-signup" type="button" class="text-white w-full border-2 border-blue-500 from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2" id="btnEditPasswordNext" name="btnEditPasswordNext">Sign up</a>
                 </div>
             </div>
-            <!-- 3rd Column-->
-            <div class="col-xl-3 my-auto">
-            </div>
+
+        <!-- Right side of the container -->
+        <div class="col-span-7 xl:col-span-4 p-6 sm:p-12 xl:h-screen flex xl:items-center xl:mx-auto">
+            <img src="assets/hospital-login/hospital-login-img.svg" alt="" class="xl:w-screen xl:h-screen">
         </div>
     </div>
-
 </body>
 </html>

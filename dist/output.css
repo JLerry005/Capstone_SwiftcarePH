@@ -947,14 +947,6 @@ input:checked + .toggle-bg{
   grid-column: span 7 / span 7;
 }
 
-.row-span-2{
-  grid-row: span 2 / span 2;
-}
-
-.row-span-1{
-  grid-row: span 1 / span 1;
-}
-
 .m-1{
   margin: 0.25rem;
 }
@@ -1290,10 +1282,6 @@ input:checked + .toggle-bg{
   height: 2.25rem;
 }
 
-.h-20{
-  height: 5rem;
-}
-
 .min-h-screen{
   min-height: 100vh;
 }
@@ -1546,10 +1534,6 @@ input:checked + .toggle-bg{
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.grid-rows-2{
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-}
-
 .flex-row{
   flex-direction: row;
 }
@@ -1576,10 +1560,6 @@ input:checked + .toggle-bg{
 
 .justify-between{
   justify-content: space-between;
-}
-
-.justify-evenly{
-  justify-content: space-evenly;
 }
 
 .justify-items-end{
@@ -1999,11 +1979,6 @@ input:checked + .toggle-bg{
 .bg-gray-900{
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-}
-
-.bg-slate-600{
-  --tw-bg-opacity: 1;
-  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
 
 .bg-red-600{
@@ -2743,11 +2718,6 @@ input:checked + .toggle-bg{
   color: rgb(227 160 8 / var(--tw-text-opacity));
 }
 
-.text-blue-800{
-  --tw-text-opacity: 1;
-  color: rgb(30 66 159 / var(--tw-text-opacity));
-}
-
 .underline{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -3086,11 +3056,6 @@ input:checked + .toggle-bg{
 .hover\:text-orange-400:hover{
   --tw-text-opacity: 1;
   color: rgb(255 138 76 / var(--tw-text-opacity));
-}
-
-.hover\:text-blue-700:hover{
-  --tw-text-opacity: 1;
-  color: rgb(26 86 219 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover{
@@ -3532,6 +3497,10 @@ input:checked + .toggle-bg{
     padding: 3.5rem;
   }
 
+  .sm\:p-12{
+    padding: 3rem;
+  }
+
   .sm\:px-3{
     padding-left: 0.75rem;
     padding-right: 0.75rem;
@@ -3848,6 +3817,11 @@ input:checked + .toggle-bg{
     margin-right: 1.5rem;
   }
 
+  .lg\:mx-20{
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
   .lg\:mb-8{
     margin-bottom: 2rem;
   }
@@ -4100,6 +4074,11 @@ input:checked + .toggle-bg{
     margin-bottom: 0px;
   }
 
+  .xl\:mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .xl\:ml-24{
     margin-left: 6rem;
   }
@@ -4126,6 +4105,18 @@ input:checked + .toggle-bg{
 
   .xl\:mt-14{
     margin-top: 3.5rem;
+  }
+
+  .xl\:mb-6{
+    margin-bottom: 1.5rem;
+  }
+
+  .xl\:mr-16{
+    margin-right: 4rem;
+  }
+
+  .xl\:mb-20{
+    margin-bottom: 5rem;
   }
 
   .xl\:flex{
@@ -4162,6 +4153,10 @@ input:checked + .toggle-bg{
     width: fit-content;
   }
 
+  .xl\:w-screen{
+    width: 100vw;
+  }
+
   .xl\:grid-flow-col{
     grid-auto-flow: column;
   }
@@ -4180,6 +4175,10 @@ input:checked + .toggle-bg{
 
   .xl\:flex-row{
     flex-direction: row;
+  }
+
+  .xl\:flex-col{
+    flex-direction: column;
   }
 
   .xl\:items-start{

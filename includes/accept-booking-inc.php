@@ -25,7 +25,30 @@
     $sql = $conn->query("INSERT INTO upcomingreservations (reservation_code, user_id, listing_id, firstname, lastname, date, time, phonenumber, email, concern, specifyconcern, hospitalname, reservationtype, booking_timestamp) 
                         VALUES('$reservationCode', '$userID', '$listingID', '$firstname', '$lastname', '$date', '$time', '$contactNumber', '$emailAdd', '$patientConcern', '$specifyConcern', '$hospitalName', '$reservationType', '$timeStamp');") or die($conn->error);
 
+    
+
+    // $imageToDelete = $_POST["imageId"];
+
+    $imageDirectory = array();
+
+    // $listing_id = $_SESSION["listing-id"];
+
     if ($sql) {
-        $deleteFromUserBooking = $conn->query("DELETE FROM userbooking WHERE ID = $bookingID;") or die($conn->error);
+        $getImageDir = $conn->query("SELECT * FROM referralfiles WHERE booking_id = $bookingID;") or die($conn->error);
+        while ($row = mysqli_fetch_assoc($getImageDir)) {
+            $imageDirectory[] = $row["file_dir"];
+        }
+
+        foreach ($imageDirectory as $toDelete) {
+            unlink($toDelete);
+        }
+
+        $deleteReferral = "DELETE FROM referralfiles WHERE booking_id = $bookingID;";
+        $result = mysqli_query($conn, $deleteReferral) or die(mysqli_error($conn));
+
+        if ($deleteReferral) {
+            $deleteUserBooking = "DELETE FROM userbooking WHERE ID = $bookingID";
+            $deleteResult = mysqli_query($conn, $deleteUserBooking) or die(mysqli_error($conn));
+        }
     }
     

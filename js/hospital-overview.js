@@ -277,6 +277,46 @@
             return true;
         }
     }
+
+    // Validate Images
+    function validateImages() {
+        // Send image to server to process
+        const fileInput = document.getElementById("referralFilesInput");
+
+        let filePath = fileInput.value;
+        // let filePath = document.getElementById("referralFilesInput");
+
+        const xhr = new XMLHttpRequest();
+        const formData = new FormData();
+
+        // Allowing file type
+        let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+
+        for (let file of fileInput.files) {
+            formData.append("images[]", file);
+        }   
+
+        let length = $(fileInput).get(0).files.length;
+        let finalLength = parseInt(length);
+
+        if (finalLength < 1) {  // If no files are selected
+            alert("Choose your file first!");
+            return false;
+        }
+        else if (!allowedExtensions.exec(filePath)) {  // if file type is not allowed
+            alert("File type not allowed!");
+            return false;
+        }
+        else if(finalLength > 10) {  // if max upload exceeded
+            alert("10 uploads lang!");
+            return false;
+        }
+        else{
+            // reservationType.classList.remove('invalidInput');
+            // reservationTypeError.innerHTML="";
+            return true;
+        }
+    }
     
     $("#btnBookingNow").click(function () {
         let firstName = document.getElementById("firstName").value;
@@ -322,13 +362,19 @@
         let reservationTypeContainer = document.getElementById("reservationTypeContainer");
         reservationTypeContainer.innerHTML = reservationType;
 
+        let referralValue = document.getElementById("referral-placeholder").value;
+        if (referralValue) {
+            if (!validateImages()) {
+                return;
+            } 
+        }
         if (!validateFirstname() || !validateLastname() || !invalidDate() || !validateMobileNumber() || !validateEmail() || !validateConcern() || !validateReservationType()) {
             return;
         }else{
             const btnSubmit = document.getElementById("submitButton");
             const btnCancel = document.getElementById("cancelButton");
             const reservationLoader = document.getElementById("reservation-loader");
-            let referralValue = document.getElementById("referral-placeholder").value;
+            
             // run if referral is not required
             if (!referralValue){
                 $.ajax({
@@ -431,47 +477,30 @@
                                         // Send image to server to process
                                         const fileInput = document.getElementById("referralFilesInput");
 
-                                        let filePath = fileInput.value;
+                                        // let filePath = fileInput.value;
                                         // let filePath = document.getElementById("referralFilesInput");
 
                                         // Allowing file type
-                                        let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+                                        // let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
 
                                         const xhr = new XMLHttpRequest();
                                         const formData = new FormData();
 
                                         for (let file of fileInput.files) {
                                             formData.append("images[]", file);
-                                        }   
-
-                                        let length = $(fileInput).get(0).files.length;
-                                        let finalLength = parseInt(length);
-
-                                        if (finalLength < 1) {  // If no files are selected
-                                            alert("Choose your file first!");
-                                            return false;
                                         }
-                                        else if (!allowedExtensions.exec(filePath)) {  // if file type is not allowed
-                                            alert("File type not allowed!");
-                                            return false;
-                                        }
-                                        else if(finalLength > 10) {  // if max upload exceeded
-                                            alert("10 uploads lang!");
-                                            return false;
-                                        }else{   // if upload is valid
-                                            xhr.open("post", "includes/insert-referral-images.php");
-                                            xhr.send(formData);
 
-                                            // Complete function
-                                            xhr.addEventListener('readystatechange', function(e) {
-                                                if( this.readyState === 4 ) {
-                                                    $(reservationLoader).hide();                                                   
-                                                    window.location.replace('http://localhost/Capstone/reservation-success');
-                                                }
-                                            });
-                                        } 
-                                        
-                                        
+                                        // if upload is valid
+                                        xhr.open("post", "includes/insert-referral-images.php");
+                                        xhr.send(formData);
+
+                                        // Complete function
+                                        xhr.addEventListener('readystatechange', function(e) {
+                                            if( this.readyState === 4 ) {
+                                                $(reservationLoader).hide();                                                   
+                                                window.location.replace('http://localhost/Capstone/reservation-success');
+                                            }
+                                        });
                                     }
                                 }); 
                             }

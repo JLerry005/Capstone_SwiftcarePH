@@ -22,8 +22,10 @@ module.exports = {
     './node_modules/flowbite/**/*.js',
     './reservation-success.php',
     './user-login.php',
+    './hospital-login.php',
     './pending-reservations-inc.php',
-    './pending-booking-details.php'
+    './pending-booking-details.php',
+    './PHPMailer/user-booking-confirmation.php'
 ],
 
   presets: [],
