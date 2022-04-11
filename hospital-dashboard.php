@@ -130,7 +130,7 @@
                         </div>
                         
                         <div class="hover:text-blue-500 transition duration-200 ease-in-out">
-                            <h1 class="text-5xl font-bold">14</h1>
+                            <h1 class="text-5xl font-bold"><?php require_once'includes/pending-count-reservation-inc.php'; ?></h1>
                             <h1>Pending Reservations</h1>
                         </div>
                         <div class="">

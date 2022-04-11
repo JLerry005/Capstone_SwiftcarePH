@@ -3,6 +3,7 @@
     include_once 'includes/dbh-inc.php';
 
     $bookingID = $_GET["bookingID"];
+    // $bookingID = $_GET["bookingID"];
 
     $reservationType;
     $timeStamp;
@@ -19,21 +20,22 @@
     $hospitalName;
     $referral;
 
-    $getFullDetails = $conn->query("SELECT * FROM userbooking WHERE ID = $bookingID;") or die($conn->error);
+    $getFullDetails = $conn->query("SELECT * FROM upcomingreservations WHERE ID = $bookingID;") or die($conn->error);
     while ($row = mysqli_fetch_assoc($getFullDetails)) {
-        $reservationType = $row['patientReservationType'];
-        $timeStamp = $row['bookingTimestamp'];
-        $firstName = $row['patientFirstName'];
-        $lastName = $row['patientLastName'];
-        $date = $row['patientDate'];
-        $time = $row['patientTime'];
-        $contactNumber = $row['patientPhoneNumber'];
-        $patientConcern = $row['patientConcern'];
-        $specifyConcern = $row["patientSpecifyConcern"];
-        $emailAddress = $row["patientEmail"];
+        $reservationType = $row['reservationtype'];
+        $reservationCode = $row['reservation_code'];
+        $timeStamp = $row['booking_timestamp'];
+        $firstName = $row['firstname'];
+        $lastName = $row['lastname'];
+        $date = $row['date'];
+        $time = $row['time'];
+        $contactNumber = $row['phonenumber'];
+        $patientConcern = $row['concern'];
+        $specifyConcern = $row["specifyconcern"];
+        $emailAddress = $row["email"];
         $listingID = $row["listing_id"];
         $userID = $row["user_id"];
-        $hospitalName = $row["patientHospitalName"];
+        $hospitalName = $row["hospitalname"];
     }
     // echo $firstName;
 ?>
@@ -83,7 +85,7 @@
                         ?>
                     </div>
                     <div>
-                        <p class="text-xs font-semibold text-blue-700">Patient Name</p>
+                        <p class=" flex text-xs font-semibold text-blue-700 tracking-wider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 mr-1"><path fill="none" d="M0 0H24V24H0z"/><path d="M17 2v2h3c.552 0 1 .448 1 1v16c0 .552-.448 1-1 1H4c-.552 0-1-.448-1-1V5c0-.552.448-1 1-1h3V2h10zM7 6H5v14h14V6h-2v2H7V6zm6 5v2h2v2h-2.001L13 17h-2l-.001-2H9v-2h2v-2h2zm2-7H9v2h6V4z" fill="rgba(26,86,187,1)"/></svg><?php echo $reservationCode ?></p>
                         <div class="flex items-center capitalize font-bold text-gray-900 text-3xl">
                             <p id="firstname" name="firstname"><?php echo $firstName ?></p>&nbsp;
                             <p id="lastname" name="lastname"><?php echo $lastName ?></p>
