@@ -903,6 +903,10 @@ input:checked + .toggle-bg{
   top: 3rem;
 }
 
+.right-10{
+  right: 2.5rem;
+}
+
 .z-10{
   z-index: 10;
 }
@@ -1150,6 +1154,14 @@ input:checked + .toggle-bg{
 
 .mr-52{
   margin-right: 13rem;
+}
+
+.mr-20{
+  margin-right: 5rem;
+}
+
+.mr-24{
+  margin-right: 6rem;
 }
 
 .block{
@@ -2108,6 +2120,16 @@ input:checked + .toggle-bg{
   background-color: rgb(255 255 255 / 0.5);
 }
 
+.bg-gray-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
+.bg-gray-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-50{
   --tw-bg-opacity: 0.5;
 }
@@ -2118,6 +2140,10 @@ input:checked + .toggle-bg{
 
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.bg-none{
+  background-image: none;
 }
 
 .from-cyan-500{
@@ -2359,6 +2385,11 @@ input:checked + .toggle-bg{
 .px-3\.5{
   padding-left: 0.875rem;
   padding-right: 0.875rem;
+}
+
+.px-6{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .pl-10{
@@ -3070,6 +3101,10 @@ input:checked + .toggle-bg{
 
 .focus\:z-10:focus{
   z-index: 10;
+}
+
+.focus\:border-0:focus{
+  border-width: 0px;
 }
 
 .focus\:border-blue-500:focus{

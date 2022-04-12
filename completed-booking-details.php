@@ -20,7 +20,7 @@
     $hospitalName;
     $referral;
 
-    $getFullDetails = $conn->query("SELECT * FROM upcomingreservations WHERE ID = $bookingID;") or die($conn->error);
+    $getFullDetails = $conn->query("SELECT * FROM completedreservations WHERE ID = $bookingID;") or die($conn->error);
     while ($row = mysqli_fetch_assoc($getFullDetails)) {
         $reservationType = $row['reservationtype'];
         $reservationCode = $row['reservation_code'];
@@ -36,6 +36,7 @@
         $listingID = $row["listing_id"];
         $userID = $row["user_id"];
         $hospitalName = $row["hospitalname"];
+        $remarks = $row["remarks"];
     }
     // echo $firstName;
 ?>
@@ -56,6 +57,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <!-- Remix Icon CDN Link -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styling\completed-booking-details.css">
     <!-- TITLE -->
     <title>Patient Details | SwiftCare PH</title>
     <!-- JQUERY LINK -->
@@ -69,8 +72,7 @@
     <input type="hidden" name="bookingID" id="bookingID" value="<?php echo $bookingID ?>">
     <input type="hidden" name="hospitalName" id="hospitalName" value="<?php echo $hospitalName ?>">
 
-    <div class="container p-10 mx-64">
-        <!-- Go Back Button -->
+    <div class="container p-10 mx-64 h-screen">
         <a href="hospital-dashboard" class="hover:underline flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
@@ -103,12 +105,26 @@
 
             <!-- right side -->
             <div class="col-span-3 h-24">
-                <div class="flex justify-end items-center mr-8 font-medium">
+                <div class="flex flex-col justify-end items-center mr-8 font-medium">
                     <!-- <h1 class="font-bold">Date of Request:</h1> -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <p id="time-stamp" name="time-stamp"><?php echo $timeStamp ?></p>
+
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <p id="time-stamp" name="time-stamp"><?php echo $timeStamp ?></p>
+                    </div>
+                    
+                    <div>
+                        <?php
+                            if ($remarks == '') {
+                                echo '<button id="btn-add-remarks" class="bg-green-500 rounded-lg py-1 px-2 drop-shadow-lg text-white text-sm">Add Remarks +</button> ';
+                            }
+                            else{
+                                echo '<p>Remarks: <b>'.$remarks.'</b></p>';
+                            }
+                        ?>
+                    </div>
                 </div>
             </div>
 
@@ -203,9 +219,6 @@
                 </div>
             </div>
 
-            <!---------- This is the fourth row of Container ---------->
-
-
             <!-- Refferal Image -->
             <div class="col-span-7 bg-white px-10 py-10 drop-shadow-md rounded-3xl image-gallery" id="image-gallery">
                 <!-- Referral Content -->
@@ -223,67 +236,53 @@
                                     <img id="" class="card-img my-5 mx-5 w-fit h-36 border-solid border-2 border-gray-800 rounded-md hover:scale-105 transition duration-200" alt="..." src="Capstone/'.$imageDir.'"/>
                                 </a>
                             ';
-
-                            // echo '
-                            // <a href="Capstone/'.$imageDir.'" class="fetched-image mr-3 xl:col-span-1 flex items-center bg-gray-900 rounded-lg border-solid border-2 border-sky-500 hover:scale-105 transition duration-200">
-                            //     <img id="" class="card-img w-fit h-fit" alt="..." src="Capstone/'.$imageDir.'"/>
-                            // </a>
-                            // ';
                         }
                     ?>  
             </div>
-
+                   
         </div>
 
-        <!-- Accept and Reject Button -->
-        <div class="flex justify-end space-x-2 mr-52 mt-5">
-            <!-- Accept Button -->
-            <button type="submit" id="btn-accept" name="btn-accept" class="p-3 px-7 rounded-lg font-bold bg-gray-900 hover:bg-gray-800 text-white">Accept</button>
-            <!-- Reject Button -->            
-            <button type="submit" id="btn-reject" name="btn-reject" class="p-3 px-7 rounded-lg font-bold bg-red-600 hover:bg-red-500 text-white">Reject</button>
-        </div> 
+       
     </div>
 
-    <!-- Confirmation of Accept Modal -->
-    <div id="AcceptModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
+    <!-- Add Remarks Modal -->
+    <div id="add-remarks-modal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
         <div class="relative p-4 w-full max-w-md h-full md:h-auto">
             <!-- Modal content -->
             <div class="relative bg-gray-900 rounded-lg shadow">
                 <!-- Modal header -->
-                <div class="flex justify-end p-2">
+                <div class="flex justify-between p-6">
+                    <p class="text-white">Mark the Reservation as:</p>
+                    <button id="btn-close-remarks" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                    </button>
                 </div>
                 <!-- Modal body -->
-                <div class="p-6 pt-0 text-center">
-                    <svg class="mx-auto mb-4 w-14 h-14 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <h3 class="mb-5 text-lg font-normal text-gray-300">Are you sure you want to <span class="text-blue-500 font-bold">accept</span>  this booking request?</h3>
-                    <button type="button" id="btnContinueAccept"  class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2">
-                        Continue
+                <div class="p-6 pt-0">
+                    
+                    <button id="btn-arrived" class="select-remarks text-white p-3 bg-gray-600  rounded-lg mb-3 w-full text-left flex justify-between items-center">
+                        Successful - Patient arrived
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                          </svg>
                     </button>
-                    <button type="button" id="btnCancelAccept"  class="text-gray-300 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-600 rounded-lg border border-gray-500 font-medium px-5 py-2.5 hover:text-white focus:z-10 mr-2 mb-2">Cancel</button>
-                    <button type="hidden" data-modal-toggle="AcceptModal"></button>
+                    <button id="btn-did-not-arrive" class="select-remarks text-white p-3 bg-gray-600 rounded-lg mb-3 w-full text-left flex justify-between items-center">
+                        Unsuccessful - Patient did not arrive
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                          </svg>
+                    </button>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Confirmation of Reject Modal -->
-    <div id="rejectModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
-        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-            <!-- Modal content -->
-            <div class="relative bg-gray-900 rounded-lg shadow">
-                <!-- Modal header -->
-                <div class="flex justify-end p-2">
-                </div>
-                <!-- Modal body -->
-                <div class="p-6 pt-0 text-center">
-                    <svg class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <h3 class="mb-5 text-lg font-normal text-gray-300">Are you sure you want to <span class="text-red-600 font-bold">reject</span>  this booking request?</h3>
-                    <button type="button" id="btnContinueReject" class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark: dark: dark:focus:ring-red-900">
-                        Continue
+                <div class="p-6 pt-0 flex justify-end">
+                    <button id="btn-save" class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                        Save
                     </button>
-                    <button type="button" id="btnCancelReject" class="text-gray-300 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-600 rounded-lg border border-gray-500 font-medium px-5 py-2.5 hover:text-white focus:z-10 mr-2 mb-2">Cancel</button>
-                    <button type="hidden" id="btnCancelReject"data-modal-toggle="rejectModal"></button>
+                    <!-- This a hidden Class -->
+                    <button class="hidden" data-modal-toggle="add-remarks-modal"></button>
+                    <button id="btn-cancel" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancel</button>
                 </div>
+               
             </div>
         </div>
     </div>
@@ -301,6 +300,7 @@
     <!-- Light Gallery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
 
-    <script src="js\pending-booking-details.js" defer></script>
+    <!-- <script src="js\pending-booking-details.js" defer></script> -->
+    <script src="js\completed-booking-details.js" defer></script>
 </body>
 </html>

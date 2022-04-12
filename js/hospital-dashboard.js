@@ -46,6 +46,49 @@
         });
     }
 
+    // Filter Pending Reservations
+    const btnPendingCovid = document.getElementById("btn-pendingCovid");
+    const btnPendingNonCovid = document.getElementById("btn-pendingNonCovid");
+
+    // Filter Covid
+    btnPendingCovid.onclick = function () {
+        let pendingListContainer = document.getElementById("pending-cards-container");
+        let listingID = document.getElementById("listingID").value;
+
+        pendingListContainer.innerHTML = "";
+        $.ajax({
+            method: "GET",
+            url: "includes/get-pending-covid.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                pendingListContainer.innerHTML = data;
+            }
+        });
+    }
+
+    // Filter Non Covid
+    btnPendingNonCovid.onclick = function () {
+        let pendingListContainer = document.getElementById("pending-cards-container");
+        let listingID = document.getElementById("listingID").value;
+
+        pendingListContainer.innerHTML = "";
+        $.ajax({
+            method: "GET",
+            url: "includes/get-pending-non-covid.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                pendingListContainer.innerHTML = data;
+            }
+        });
+    }
+
+    // Show All
+    const btnShowAllPending = document.getElementById("btn-show-all-pending");
+
+    btnShowAllPending.onclick = function () {
+        showPendingReservations();
+    }
+
     moveToCompleted();
     function moveToCompleted() {
         let listingID = document.getElementById("listingID").value;
@@ -60,7 +103,7 @@
         });
     }
 
-    // Show Pending List
+    // Show Upcoming List
     showUpcomingReservations();
     function showUpcomingReservations() {
         let upcomingListContainer = document.getElementById("upcoming-cards-container");
@@ -73,6 +116,134 @@
             data: {listingID:listingID},
             success: function (data) {
                 upcomingListContainer.innerHTML = data;
+            }
+        });
+    }
+
+    // Search From Upcoming Reservations
+    let searchInput = document.getElementById("inp-search-upcoming");
+    let upcomingContainer = document.getElementById("upcoming-cards-container");
+
+    searchInput.onkeyup = function () {
+        let searchInputVal = document.getElementById("inp-search-upcoming").value;
+
+        if (searchInputVal !="") {
+            $.ajax({
+                type: "GET",
+                url: "includes/search-upcoming-reservations.php",
+                data: {searchInputVal:searchInputVal},
+                success: function (data) {
+                    upcomingContainer.innerHTML = data;
+                    // console.log(data);
+                }
+            });
+        }else{
+            upcomingContainer.innerHTML = "";
+            showUpcomingReservations();
+        }
+    }
+
+    // Filter Upcoming Reservations
+    const btnUpcomingCovid = document.getElementById("btn-upcomingCovid");
+    const btnUpcomingNonCovid = document.getElementById("btn-upcomingNonCovid");
+
+    // Filter Covid
+    btnUpcomingCovid.onclick = function () {
+        let upcomingListContainer = document.getElementById("upcoming-cards-container");
+        let listingID = document.getElementById("listingID").value;
+
+        upcomingListContainer.innerHTML = "";
+        $.ajax({
+            method: "GET",
+            url: "includes/get-upcoming-covid.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                upcomingListContainer.innerHTML = data;
+            }
+        });
+    }
+
+    // Filter Non Covid
+    btnUpcomingNonCovid.onclick = function () {
+        let upcomingListContainer = document.getElementById("upcoming-cards-container");
+        let listingID = document.getElementById("listingID").value;
+
+        upcomingListContainer.innerHTML = "";
+        $.ajax({
+            method: "GET",
+            url: "includes/get-upcoming-non-covid.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                upcomingListContainer.innerHTML = data;
+            }
+        });
+    }
+
+    // Show All
+    const btnShowAllUpcoming = document.getElementById("btn-show-all-upcoming");
+
+    btnShowAllUpcoming.onclick = function () {
+        showUpcomingReservations();
+    }
+    
+    // Show Completed List
+    showCompletedReservations();
+    function showCompletedReservations() {
+        let completedListContainer = document.getElementById("history-cards-container");
+        let listingID = document.getElementById("listingID").value;
+
+        completedListContainer.innerHTML = "";
+        $.ajax({
+            method: "POST",
+            url: "includes/completed-reservations-inc.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                completedListContainer.innerHTML = data;
+            }
+        });
+    }
+
+    // get pending count
+    getPendingCount();
+    function getPendingCount() {
+        let pendingCountContainer = document.getElementById("pendingCountContainer");
+        let listingID = document.getElementById("listingID").value;
+        $.ajax({
+            method: "GET",
+            url: "includes/get-pending-reservations-count.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                pendingCountContainer.innerHTML = data;
+            }
+        });
+    }
+
+    // get upcoming count
+    getUpcomingCount();
+    function getUpcomingCount() {
+        let upcomingCountContainer = document.getElementById("upcomingCountContainer");
+        let listingID = document.getElementById("listingID").value;
+        $.ajax({
+            method: "GET",
+            url: "includes/get-upcoming-reservations-count.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                upcomingCountContainer.innerHTML = data;
+            }
+        });
+    }
+
+    // get completed count
+    getCompletedCount();
+    function getCompletedCount() {
+        let completedCountContainer = document.getElementById("completedCountContainer");
+        let listingID = document.getElementById("listingID").value;
+        $.ajax({
+            method: "GET",
+            url: "includes/get-completed-reservations-count.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                completedCountContainer.innerHTML = data;
             }
         });
     }
@@ -105,6 +276,13 @@
     // Dashboard Refresh Button
     function refreshDashboard() {
         show_dashboard();
+        showPendingReservations();
+        moveToCompleted();
+        showUpcomingReservations();
+        showCompletedReservations();
+        getPendingCount();
+        getUpcomingCount();
+        getCompletedCount();
     }
     
     function show_details() {

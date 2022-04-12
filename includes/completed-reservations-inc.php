@@ -5,10 +5,10 @@
     $listingID = $_POST["listingID"];
 
     $output = '';
-    $result = $conn->query("SELECT * FROM upcomingreservations WHERE listing_id = $listingID;") or die($conn->error);
+    $result = $conn->query("SELECT * FROM completedreservations WHERE listing_id = $listingID;") or die($conn->error);
 
     if (mysqli_num_rows($result)==0) {
-        $output = '<p class="col-span-12 text-center font-bold text-blue-300 self-center "><i class="bi bi-emoji-frown-fill"></i> There are NO Upcoming Reservations..</p> ';
+        $output = '<p class="col-span-12 text-center font-bold text-blue-300 self-center "><i class="bi bi-emoji-frown-fill"></i> There are NO Completed Reservations so far..</p> ';
     }
     else{
         while ($row = mysqli_fetch_assoc($result)) {
@@ -22,13 +22,20 @@
             $contactNumber = $row['phonenumber'];
             $bookingID = $row['ID'];
             $patientConcern = $row['concern'];
+            $remarks = $row['remarks'];
             
-    
+
             $output .='
-                <a href="upcoming-booking-details?bookingID='.$bookingID.'" class="col-span-4 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
-                    <div class="bg-blue-700 p-2 rounded-t-lg">
-                        <p class="flex items-center cursor-default py-0.5 px-2 w-fit text-blue-50 font-medium tracking-wider">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 mr-2"><path fill="none" d="M0 0H24V24H0z"/><path d="M17 2v2h3c.552 0 1 .448 1 1v16c0 .552-.448 1-1 1H4c-.552 0-1-.448-1-1V5c0-.552.448-1 1-1h3V2h10zM7 6H5v14h14V6h-2v2H7V6zm6 5v2h2v2h-2.001L13 17h-2l-.001-2H9v-2h2v-2h2zm2-7H9v2h6V4z" fill="rgba(0,0,0,1)"/></svg> '.$reservationCode.'
+                <a href="completed-booking-details?bookingID='.$bookingID.'" class="col-span-4 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
+                    <div class="bg-blue-700 p-2 rounded-t-lg flex items-center justify-between">
+                        <div>
+                            <p class="flex items-center cursor-default py-0.5 px-2 w-fit text-blue-50 font-medium tracking-wider">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 mr-2"><path fill="none" d="M0 0H24V24H0z"/><path d="M17 2v2h3c.552 0 1 .448 1 1v16c0 .552-.448 1-1 1H4c-.552 0-1-.448-1-1V5c0-.552.448-1 1-1h3V2h10zM7 6H5v14h14V6h-2v2H7V6zm6 5v2h2v2h-2.001L13 17h-2l-.001-2H9v-2h2v-2h2zm2-7H9v2h6V4z" fill="rgba(0,0,0,1)"/></svg> '.$reservationCode.'
+                        </div>
+                        
+                        <div>
+                            '.$remarks.'
+                        </div>
                     </div>
                     <div class="p-4 flex items-center justify-between">
                         <div class="flex items-center space-x-3">
@@ -44,7 +51,7 @@
                             <i class="bi bi-clock-history hover:text-blue-500"></i> &nbsp;'.$timeStamp.'
                         </p>
                     </div>
-    
+
                     <div class="mb-2 px-4 flex items-center space-x-3">
                         <img src="https://avatars.dicebear.com/api/big-smile/'.$firstName.'.svg?b=%231a56bb&r=50" alt="" srcset="" class="w-10">
                         <h1 class="text-lg font-bold text-white capitalize">'.$firstName.' '.$lastName.'</h1>
@@ -69,10 +76,10 @@
                                 </svg>
                                 '.$contactNumber.'
                             </p>
-    
+
                         </div>
                     </div>
-    
+
                     <div class="bg-blue-700 p-4 rounded-b-lg flex justify-center">
                         <button class="text-white hover:text-blue-200 hover:underline flex items-center">
                             View Full Details&ensp;
@@ -85,7 +92,6 @@
             ';
         }
     }
-    
+
 
     echo $output;
-    

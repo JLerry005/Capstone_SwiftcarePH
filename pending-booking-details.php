@@ -35,7 +35,15 @@
         $userID = $row["user_id"];
         $hospitalName = $row["patientHospitalName"];
     }
-    // echo $firstName;
+
+    $listingID = $_SESSION["listing-id"];    
+    $referral;
+
+    $getDetailsReferral = $conn->query("SELECT * FROM hospitallisting WHERE listing_id = $listingID;") or die($conn->error);
+    while ($data = mysqli_fetch_assoc($getDetailsReferral)) {
+        $referral = $data["additional_docs"];
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -68,10 +76,17 @@
     <input type="hidden" name="hospitalName" id="hospitalName" value="<?php echo $hospitalName ?>">
 
     <div class="container p-10 mx-64">
+        <!-- Go Back Button -->
+        <a href="hospital-dashboard" class="hover:underline flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+              </svg>
+            &nbsp;Go back
+        </a>
         <!-- Grid Container -->
-        <div class="grid grid-cols-8 gap-6">
+        <div class="grid grid-cols-8 gap-6 mt-10">
 
-         <!---------- This is the first row Container ---------->
+         <!---------- This is the first row of Container ---------->
 
             <!-- left side  -->
             <div class="col-span-4 h-24">
@@ -79,7 +94,7 @@
                 <div class="flex items-center ml-2">
                     <div class="flex items-center space-x-2">
                         <?php
-                            echo ' <img src="https://avatars.dicebear.com/api/big-smile/'.$firstName.'.svg?b=%231a56bb&r=50"  class="w-14 mr-4">'
+                            echo ' <img src="https://avatars.dicebear.com/api/big-smile/'.$firstName.''.$lastName.'.svg?b=%231a56bb&r=50"  class="w-14 mr-4">'
                         ?>
                     </div>
                     <div>
@@ -103,7 +118,7 @@
                 </div>
             </div>
 
-        <!---------- This is the second row Container ---------->
+        <!---------- This is the second row of Container ---------->
 
             <!-- Patient Concern Container -->
             <div class="col-span-7 bg-white h-56 drop-shadow-lg p-6 px-10 rounded-3xl">
@@ -140,7 +155,7 @@
                 </div>
             </div>
             
-        <!---------- This is the third row Container ---------->
+        <!---------- This is the third row of Container ---------->
 
             <!-- Contact Details Container -->
             <div class="col-span-4 bg-white h-56 drop-shadow-lg p-6 px-10 rounded-3xl">
@@ -194,20 +209,37 @@
                 </div>
             </div>
 
-            <?php 
-                // if($referral == "Yes"){
-                //     echo '
-                //         <div class="flex flex-row bg-white px-3 py-2 drop-shadow-md rounded-full">
-                //             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                //                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                //             </svg>
-                //             <p class="font-semibold text-xs">&nbsp; Referral Documents required</p>
-                //         </div>
-                //     ';
-                //     }else {
-                //         echo '';
-                // }
-            ?>
+            <!---------- This is the fourth row of Container ---------->
+
+            <!-- Refferal Image -->
+            <div class="col-span-7 bg-white px-10 py-10 drop-shadow-md rounded-3xl image-gallery" id="image-gallery">
+                <!-- Referral Content -->
+                <div class="flex items-center text-md text-blue-700 font-bold border-b border-gray-300 pb-2">
+                    <h1>Referral Files</h1>
+                </div>
+
+                    <?php
+                        $imageDir;
+                        $getImages = $conn->query("SELECT * FROM referralfiles WHERE booking_id = $bookingID") or die($conn->error);
+                        while ($imageRow = mysqli_fetch_assoc($getImages)) {
+                            $imageDir = $imageRow["file_dir"];
+                            if($referral == "Yes"){
+                                echo '
+                                <a href="Capstone/'.$imageDir.'" class="bg-gray-900 rounded-lg">
+                                    <img id="" class="card-img my-5 mx-5 w-fit h-36 border-solid border-2 border-gray-800 rounded-md hover:scale-105 transition duration-200" alt="..." src="Capstone/'.$imageDir.'"/>
+                                </a>
+                            ';
+                            }
+                            else{
+                                echo '
+                                    <p>ADAWDASW</p>
+                                ';
+                            }
+
+                        }
+                    ?>  
+            </div>
+
         </div>
 
         <!-- Accept and Reject Button -->

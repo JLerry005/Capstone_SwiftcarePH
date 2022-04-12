@@ -34,6 +34,9 @@
     // $listing_id = $_SESSION["listing-id"];
 
     if ($sql) {
+        require_once '../PHPMailer/user-booking-accepted.php';
+        sendEmailConfirmation($conn, $reservationCode, $userID, $listingID, $firstname, $lastname, $date, $time, $contactNumber, $emailAdd, $patientConcern, $specifyConcern, $hospitalName, $reservationType, $timeStamp);
+
         $getImageDir = $conn->query("SELECT * FROM referralfiles WHERE booking_id = $bookingID;") or die($conn->error);
         while ($row = mysqli_fetch_assoc($getImageDir)) {
             $imageDirectory[] = $row["file_dir"];

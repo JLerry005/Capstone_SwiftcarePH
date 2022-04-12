@@ -100,3 +100,6 @@
             toggleModal('rejectModal', false);
         }
     }
+
+    // Lightgallery
+    lightGallery(document.querySelector('.image-gallery'));

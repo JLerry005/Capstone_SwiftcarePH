@@ -24,7 +24,7 @@
             
     
             $output .='
-                <a href="pending-booking-details?bookingID='.$bookingID.'" target="_blank" class="col-span-4 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
+                <a href="pending-booking-details?bookingID='.$bookingID.'" class="col-span-4 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
                     <div class="p-4 flex items-center justify-between">
                         <div class="flex items-center space-x-3">
                             <h1 class="bg-blue-700 hover:bg-blue-800 rounded-full w-fit py-0.5 px-2 text-white flex items-center capitalize">
@@ -41,7 +41,7 @@
                     </div>
     
                     <div class="mb-2 px-4 flex items-center space-x-3">
-                        <img src="https://avatars.dicebear.com/api/big-smile/'.$firstName.'.svg?b=%231a56bb&r=50" alt="" srcset="" class="w-10">
+                        <img src="https://avatars.dicebear.com/api/big-smile/'.$firstName.''.$lastName.'.svg?b=%231a56bb&r=50" alt="" srcset="" class="w-10">
                         <h1 class="text-lg font-bold text-white capitalize">'.$firstName.' '.$lastName.'</h1>
                     </div>
                     <div class="flex items-start justify-between px-4">

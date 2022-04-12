@@ -1,0 +1,10 @@
+
+.selected{
+    outline: 2px solid rgb(212, 180, 243);
+    background-color: rgb(115, 95, 243);
+}
+
+.disabled{
+    pointer-events: none;
+    filter: opacity(.5);
+}

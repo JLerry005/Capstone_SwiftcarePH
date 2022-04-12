@@ -1,9 +1,13 @@
 <?php
     session_start();
+    require_once 'includes/dbh-inc.php';
 
     if (!isset($_SESSION["hospitalID"])) {
         header("location: hospital-login");
     }
+
+    $listingID = $_SESSION["listing-id"];
+    
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +42,7 @@
         <div class="p-4 bg-gray-800 text-white flex justify-between items-center lg:hidden">
             <a href="index">Swiftcare PH</a>
             <div class="flex items-center space-x-6">
-                <button class="hover:text-Yellow"><i class="bi bi-bell-fill"></i> Notifications</button>
+                <!-- <button class="hover:text-Yellow"><i class="bi bi-bell-fill"></i> Notifications</button> -->
                 <button class="mobile-menu-button text-2xl rounded hover:text-gray-300 focus:text-gray-300"><i class="bi bi-menu-button-wide"></i></button>
             </div>
             
@@ -106,13 +110,13 @@
                     <!-- Hospital Name -->
                     <h1 class="text-2xl font-bold text-blue-500" id="user-name"></h1>
 
-                    <div class="flex items-center space-x-3">
+                    <div class="flex items-center space-x-3 fixed z-10 right-0 mr-20 mt-5">
                         <div class="bg-gray-500 hover:bg-gray-700 drop-shadow-md rounded-3xl h-3 w-3 p-5 flex items-center justify-center text-gray-300 hover:rounded-xl transition-all">
                             <button onclick="refreshDashboard()" class="text-sm"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                             </svg></button>
                         </div>
-                        <button class="hover:text-Yellow"><i class="bi bi-bell-fill"></i> Notifications</button>
+                        <!-- <button class="hover:text-Yellow"><i class="bi bi-bell-fill"></i> Notifications</button> -->
                     </div>
                     
                 </div>
@@ -124,13 +128,13 @@
                     <div id="pending-reservations" onclick="anchor_to_pending()" class="bg-white p-5 md:p-8 col-span-12  lg:col-span-4 2xl:col-start-1 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out flex items-center justify-between relative">
                         
                         <!-- Notification Ping -->
-                        <div class="">
+                        <!-- <div class="">
                             <div class="animate-ping absolute right-0 top-0 mt-3 mr-3 rounded-full bg-red-500 p-2"></div>
                             <span class="absolute right-0 top-0 mt-3 mr-3 rounded-full bg-red-500 p-2"></span>
-                        </div>
+                        </div> -->
                         
                         <div class="hover:text-blue-500 transition duration-200 ease-in-out">
-                            <h1 class="text-5xl font-bold"><?php require_once'includes/pending-count-reservation-inc.php'; ?></h1>
+                            <h1 class="text-5xl font-bold" id="pendingCountContainer"></h1>
                             <h1>Pending Reservations</h1>
                         </div>
                         <div class="">
@@ -141,7 +145,7 @@
                     <!-- Upcoming Reservations Banner -->
                     <div id="upcoming-reservations" onclick="anchor_to_upcoming()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out flex items-center justify-between">
                         <div class="hover:text-blue-500 transition duration-200 ease-in-out">
-                            <h1 class="text-5xl font-bold">20</h1>
+                            <h1 class="text-5xl font-bold" id="upcomingCountContainer"></h1>
                             <h1>Upcoming Reservations</h1>
                         </div>
                         <div>
@@ -149,14 +153,14 @@
                         </div>
                     </div>
 
-                    <!-- History Banner -->
+                    <!-- Completed Banner -->
                     <div id="history-reservations" onclick="anchor_to_history()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out flex items-center justify-between">
                         <div class="hover:text-blue-500 transition duration-200 ease-in-out">
-                            <h1 class="text-5xl font-bold">54</h1>
-                            <h1>History</h1>
+                            <h1 class="text-5xl font-bold" id="completedCountContainer"></h1>
+                            <h1>Completed</h1>
                         </div>
                         <div>
-                            <i class="bi bi-clock-history text-5xl hover:text-blue-500 transition duration-200 ease-in-out"></i>
+                            <i class="bi bi-check-circle text-5xl hover:text-blue-500 transition duration-200 ease-in-out"></i>
                         </div>
                     </div>
                 </div>
@@ -168,14 +172,14 @@
                     <div class="flex flex-col sm:flex-row justify-between items-center">
                         <h1 class="text-lg font-bold text-blue-600"><i class="bi bi-hourglass-top text-gray-800"></i> Pending Reservations</h1>
                         <div class="flex space-x-5 items-center">
+                            <!-- Filter - covid / non-covid -->
                             <div class="-space-x-1">
-                                <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Newest</button>
-                                <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Oldest</button>
+                                <button id="btn-pendingCovid" class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Covid</button>
+                                <button id="btn-pendingNonCovid" class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Non-Covid</button>
                             </div>
-                            
-                            <div class="-space-x-1">
-                                <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Covid</button>
-                                <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Non-Covid</button>
+
+                            <div>
+                                <button id="btn-show-all-pending" class="border-2 border-gray-500 rounded p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Show All</button>
                             </div>
                             <!-- Toggle Button -->  
                             <div class="flex items-center">
@@ -251,17 +255,29 @@
                 <div id="upcoming-contents" class="bg-white p-5 2xl:mx-16 md:mx-6 rounded drop-shadow-md text-sm scroll-my-7">
                     <!-- Header -->
                     <div class="flex flex-col sm:flex-row justify-between items-center">
-                        <h1 class="text-lg font-bold text-blue-700"><i class="bi bi-calendar-check-fill text-gray-800"></i> Upcoming Reservations</h1>
+                        <div class="flex items-center space-x-5">
+                            <h1 class="text-lg font-bold text-blue-700"><i class="bi bi-calendar-check-fill text-gray-800"></i> Upcoming Reservations</h1>
+
+                            <div class="flex items-center py-2 px-2 text-sm rounded-lg bg-gray-900 text-white">
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                                      </svg>
+                                </button>
+                                <input type="search" name="" id="inp-search-upcoming" class="focus:outline-none focus:ring-0 focus:border-0 border-0 bg-gray-900 text-white text-sm py-0" placeholder="First / Lastname or Registration Code..">
+                            </div>
+                        </div>
+                        
                         <div class="flex space-x-5">
                             <div class="-space-x-1">
-                                <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Newest</button>
-                                <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Oldest</button>
+                                <button id="btn-upcomingCovid" class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Covid</button>
+                                <button id="btn-upcomingNonCovid" class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Non-Covid</button>
                             </div>
-                            
-                            <div class="-space-x-1">
-                                <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Covid</button>
-                                <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Non-Covid</button>
+
+                            <div>
+                                <button id="btn-show-all-upcoming" class="border-2 border-gray-500 rounded p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Show All</button>
                             </div>
+
                             <!-- Toggle Button -->
                             <div class="flex items-center">
                                 <button class=" w-8 h-8 bg-blue-500 hover:bg-blue-800 rounded-md border-2 border-gray-500" id="btn-toggle-pending" onclick="toggleUpcoming()"><i class="ri-arrow-up-s-line text-gray-100 font-bold upcoming-icon"></i></button>
@@ -329,11 +345,11 @@
                     </div>
                 </div>
 
-                <!-- History Reservations Contents -->
+                <!-- Completed Reservations Contents -->
                 <div id="history-contents" class="bg-white p-5 2xl:mx-16 md:mx-6 rounded drop-shadow-md text-sm scroll-my-7">
                     <!-- Header -->
                     <div class="flex flex-col sm:flex-row justify-between items-center">
-                        <h1 class="text-lg font-bold text-blue-600"><i class="bi bi-clock-fill text-gray-800"></i> History</h1>
+                        <h1 class="text-lg font-bold text-blue-600"><i class="bi bi-check-circle-fill text-gray-800"></i> Completed</h1>
                         <div class="flex space-x-5">
                             <div class="-space-x-1">
                                 <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Newest</button>
@@ -351,8 +367,6 @@
                         </div>
                     </div>
                     <hr class="border-slate-200 my-3">
-
-                    <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse beatae.</p>
 
                     <!-- Cards go here -->
                     <div class="px-5 lg:grid grid-cols-12 gap-4" id="history-cards-container">
@@ -416,12 +430,6 @@
             <div class=" editDetailsContent tab-contents" id="editDetailsContent" style="display: none;">
                 <!-- Refresh Button -->
                 <div class="flex flex-1 justify-end space-x-1 text-xs fixed z-10 right-0 mr-16">
-                    <div class="bg-gray-500 hover:bg-gray-700 drop-shadow-md rounded-3xl h-5 w-5 p-5 flex items-center justify-center text-gray-300 hover:rounded-xl transition-all">
-                        <button class="" onclick="toggle_edit_details()"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                            </svg></button>
-                    </div>
-                    
                     <div class="bg-gray-500 hover:bg-gray-700 drop-shadow-md rounded-3xl h-5 w-5 p-5 flex items-center justify-center text-gray-300 hover:rounded-xl transition-all">
                         <button onclick="refreshEditDetails()"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
