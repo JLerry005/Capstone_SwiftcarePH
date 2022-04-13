@@ -649,8 +649,7 @@
                         </div>
 
                         <!-- Modal body -->
-                        <div class="px-24 py-10 space-y-6 text-gray-200">
-
+                        <div class="px-24 py-10 space-y-6 text-gray-200" id="booking-modal-body">
                             <!-- Patiend Details -->
                             <div class="uppercase font-bold flex justify-row items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
@@ -769,14 +768,13 @@
                         <!-- Modal footer -->
                         <div class="flex justify-end items-center p-6 space-x-4 rounded-b border-t border-gray-200 dark:border-gray-600">
                             <button class="hidden" data-modal-toggle="reviewDetailsModal"></button>
-
                             <!-- Loading Message -->
-                            <div class="animate-pulse flex items-center" style="display: none;" id="reservation-loader">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <div class="animate-pulse flex items-center text-lg" style="display: none;" id="reservation-loader">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 " viewBox="0 0 20 20" fill="currentColor">
                                     <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
                                     <path d="M9 13h2v5a1 1 0 11-2 0v-5z" />
                                   </svg>
-                                  &ensp;Your Reservation is being submitted..
+                                  &ensp;<p>Your Reservation is being submitted..</p>
                             </div>
                             <button id="cancelButton" name="cancelButton" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600 mr-2 mb-2">Cancel</button>
                             <button id="submitButton" name="submitButton" type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Submit</button>

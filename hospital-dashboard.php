@@ -36,7 +36,7 @@
 <body class="bg-blue-200 font-poppins">
 
     <!-- Main Cointainer -->
-    <div class="relative lg:flex min-h-screen bg-white">
+    <div class="relative lg:flex min-h-screen bg-gray-700">
 
         <!-- Mobile Menu -->
         <div class="p-4 bg-gray-800 text-white flex justify-between items-center lg:hidden">
@@ -258,13 +258,14 @@
                         <div class="flex items-center space-x-5">
                             <h1 class="text-lg font-bold text-blue-700"><i class="bi bi-calendar-check-fill text-gray-800"></i> Upcoming Reservations</h1>
 
-                            <div class="flex items-center py-2 px-2 text-sm rounded-lg bg-gray-900 text-white">
+                            <!-- search input -->
+                            <div class="flex items-center py-2 px-2 text-sm rounded-lg bg-gray-300 text-gray-700">
                                 <button>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
                                       </svg>
                                 </button>
-                                <input type="search" name="" id="inp-search-upcoming" class="focus:outline-none focus:ring-0 focus:border-0 border-0 bg-gray-900 text-white text-sm py-0" placeholder="First / Lastname or Registration Code..">
+                                <input type="search" name="" id="inp-search-upcoming" class="focus:outline-none focus:ring-0 focus:border-0 border-0 bg-gray-300 text-gray-700 text-sm py-0" placeholder="First / Lastname or Registration Code..">
                             </div>
                         </div>
                         
@@ -289,7 +290,7 @@
                     <!-- <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse beatae.</p> -->
 
                     <!-- Cards go here -->
-                    <div class="px-5 lg:grid grid-cols-12 gap-4" id="upcoming-cards-container">
+                    <div class="px-5 py-5 lg:grid grid-cols-12 gap-4 min-h-[200px]" id="upcoming-cards-container">
 
                         <!-- Cards -->
                         <!-- <div class="col-span-3 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
@@ -350,16 +351,25 @@
                     <!-- Header -->
                     <div class="flex flex-col sm:flex-row justify-between items-center">
                         <h1 class="text-lg font-bold text-blue-600"><i class="bi bi-check-circle-fill text-gray-800"></i> Completed</h1>
-                        <div class="flex space-x-5">
+                        <!-- Filter Buttons -->
+                        <div class="flex space-x-5">  
+                            <!-- Covid & Non - Covid Button -->
                             <div class="-space-x-1">
-                                <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Newest</button>
-                                <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Oldest</button>
-                            </div>
-                            
+                                <button id="btn-completedSuccessful" class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Successful</button>
+                                <button id="btn-completedUnsuccessful" class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Unsuccessful</button>
+                            </div>   
+
+                            <!-- Succesful & Unsucessful Button -->
                             <div class="-space-x-1">
-                                <button class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Covid</button>
-                                <button class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Non-Covid</button>
+                                <button id="btn-completedCovid" class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Covid</button>
+                                <button id="btn-completedNonCovid" class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Non-Covid</button>
                             </div>
+
+                            <!-- Show All Button -->
+                            <div>
+                                <button id="btn-show-all-completed" class="border-2 border-gray-500 rounded p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Show All</button>
+                            </div>
+
                             <!-- Toggle Button -->
                             <div class="flex items-center">
                                 <button class=" w-8 h-8 bg-blue-500 hover:bg-blue-800 rounded-md border-2 border-gray-500 tra" id="btn-toggle-pending" onclick="toggleHistory()"><i class="ri-arrow-up-s-line text-gray-100 font-bold upcoming-icon"></i></button>
@@ -369,7 +379,7 @@
                     <hr class="border-slate-200 my-3">
 
                     <!-- Cards go here -->
-                    <div class="px-5 lg:grid grid-cols-12 gap-4" id="history-cards-container">
+                    <div class="px-5 lg:grid grid-cols-12 gap-4 min-h-[200px]" id="completed-cards-container">
 
                         <!-- Cards -->
                         <div class="col-span-3 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
@@ -494,23 +504,208 @@
                                         </div>
                                     </label>
                                     <select name="hospitalCity" id="hospital-city" class="text-sm rounded-md border-[1px] border-gray-300">
-                                        <optgroup label="NCR">
-                                          <option value="caloocan">Caloocan</option>
-                                          <option value="valenzuela">Marikina</option>
-                                          <option value="caloocan">Makati</option>
-                                          <option value="valenzuela">Mandaluyong</option>
-                                          <option value="caloocan">Muntinlupa</option>
-                                          <option value="valenzuela">Manila</option>
-                                          <option value="caloocan">Navotas</option>
-                                          <option value="valenzuela">Malabon</option>
+                                        <!-- BARMM -->
+                                        <optgroup label="BARMM">
+                                            <?php
+                                                $sql = $conn->query("SELECT * FROM citydata WHERE region = 'Bangsamoro Autonomous Region in Muslim Mindanao';") or die($conn->error);
+                                                while ($row = mysqli_fetch_assoc($sql)) {
+                                                    echo '
+                                                        <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                    ';
+                                                }
+                                            ?>
                                         </optgroup>
-                                        <optgroup label="region I">
-                                          <option value="baguio">Baguio</option>
-                                          <option value="batangas">Batangas</option>
+                                        
+                                        <!-- Bicol Region -->
+                                        <optgroup label="Bicol Region">
+                                            <?php
+                                                $sql = $conn->query("SELECT * FROM citydata WHERE region = 'Bicol Region';") or die($conn->error);
+                                                while ($row = mysqli_fetch_assoc($sql)) {
+                                                    echo '
+                                                        <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                    ';
+                                                }
+                                            ?>
+                                        </optgroup>
+                                        
+                                        <!-- Cagayan Valley -->
+                                        <optgroup label="Cagayan Valley">
+                                            <?php
+                                                $sql = $conn->query("SELECT * FROM citydata WHERE region = 'Cagayan Valley';") or die($conn->error);
+                                                while ($row = mysqli_fetch_assoc($sql)) {
+                                                    echo '
+                                                        <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                    ';
+                                                }
+                                            ?>
                                         </optgroup>
 
-                                        <optgroup label="Visayas">
-                                            <option value="Cebu">Cebu</option>
+                                        <!-- CALABARZON -->
+                                        <optgroup label="CALABARZON">
+                                            <?php
+                                                $sql = $conn->query("SELECT * FROM citydata WHERE region = 'CALABARZON ';") or die($conn->error);
+                                                while ($row = mysqli_fetch_assoc($sql)) {
+                                                    echo '
+                                                        <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                    ';
+                                                }
+                                            ?>
+                                        </optgroup>
+
+                                        <!-- Caraga -->
+                                        <optgroup label="Caraga">
+                                                <?php
+                                                    $sql = $conn->query("SELECT * FROM citydata WHERE region = 'Caraga';") or die($conn->error);
+                                                    while ($row = mysqli_fetch_assoc($sql)) {
+                                                        echo '
+                                                            <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                        ';
+                                                    }
+                                                ?>
+                                        </optgroup>
+                                        
+                                        <!-- Central Luzon -->
+                                        <optgroup label="Central Luzon">
+                                                <?php
+                                                    $sql = $conn->query("SELECT * FROM citydata WHERE region = 'Central Luzon';") or die($conn->error);
+                                                    while ($row = mysqli_fetch_assoc($sql)) {
+                                                        echo '
+                                                            <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                        ';
+                                                    }
+                                                ?>
+                                        </optgroup>
+
+                                        <!-- Central Visayas -->
+                                        <optgroup label="Central Visayas">
+                                                <?php
+                                                    $sql = $conn->query("SELECT * FROM citydata WHERE region = 'Central Visayas';") or die($conn->error);
+                                                    while ($row = mysqli_fetch_assoc($sql)) {
+                                                        echo '
+                                                            <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                        ';
+                                                    }
+                                                ?>
+                                        </optgroup>
+
+                                        <!-- CAR -->
+                                        <optgroup label="CAR">
+                                                <?php
+                                                    $sql = $conn->query("SELECT * FROM citydata WHERE region = 'Cordillera Administrative Region';") or die($conn->error);
+                                                    while ($row = mysqli_fetch_assoc($sql)) {
+                                                        echo '
+                                                            <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                        ';
+                                                    }
+                                                ?>
+                                        </optgroup>   
+                                                                             
+                                        <!-- Davao Region -->
+                                        <optgroup label="Davao Region">
+                                                <?php
+                                                    $sql = $conn->query("SELECT * FROM citydata WHERE region = 'Davao Region';") or die($conn->error);
+                                                    while ($row = mysqli_fetch_assoc($sql)) {
+                                                        echo '
+                                                            <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                        ';
+                                                    }
+                                                ?>
+                                        </optgroup>
+
+                                        <!-- Eastern Visayas -->
+                                        <optgroup label="Eastern Visayas">
+                                                <?php
+                                                    $sql = $conn->query("SELECT * FROM citydata WHERE region = 'Eastern Visayas';") or die($conn->error);
+                                                    while ($row = mysqli_fetch_assoc($sql)) {
+                                                        echo '
+                                                            <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                        ';
+                                                    }
+                                                ?>
+                                        </optgroup>
+
+                                        <!-- Ilocos Region -->
+                                        <optgroup label="Ilocos Region">
+                                                <?php
+                                                    $sql = $conn->query("SELECT * FROM citydata WHERE region = 'Ilocos Region';") or die($conn->error);
+                                                    while ($row = mysqli_fetch_assoc($sql)) {
+                                                        echo '
+                                                            <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                        ';
+                                                    }
+                                                ?>
+                                        </optgroup>
+                                        
+                                        <!-- MIMAROPA -->
+                                        <optgroup label="MIMAROPA">
+                                                <?php
+                                                    $sql = $conn->query("SELECT * FROM citydata WHERE region = 'MIMAROPA Region';") or die($conn->error);
+                                                    while ($row = mysqli_fetch_assoc($sql)) {
+                                                        echo '
+                                                            <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                        ';
+                                                    }
+                                                ?>
+                                        </optgroup>
+
+                                        <!-- NCR -->
+                                        <optgroup label="NCR">
+                                                <?php
+                                                    $sql = $conn->query("SELECT * FROM citydata WHERE region = 'Nation Capital Region';") or die($conn->error);
+                                                    while ($row = mysqli_fetch_assoc($sql)) {
+                                                        echo '
+                                                            <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                        ';
+                                                    }
+                                                ?>
+                                        </optgroup>
+
+                                        <!-- Northern Mindanao -->
+                                        <optgroup label="Northern Mindanao">
+                                                <?php
+                                                    $sql = $conn->query("SELECT * FROM citydata WHERE region = 'Northern Mindanao';") or die($conn->error);
+                                                    while ($row = mysqli_fetch_assoc($sql)) {
+                                                        echo '
+                                                            <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                        ';
+                                                    }
+                                                ?>
+                                        </optgroup>
+
+                                        <!-- SOCCSKSARGEN -->
+                                        <optgroup label="SOCCSKSARGEN">
+                                                <?php
+                                                    $sql = $conn->query("SELECT * FROM citydata WHERE region = 'SOCCSKSARGEN';") or die($conn->error);
+                                                    while ($row = mysqli_fetch_assoc($sql)) {
+                                                        echo '
+                                                            <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                        ';
+                                                    }
+                                                ?>
+                                        </optgroup>
+
+                                        <!-- Western Visayas -->
+                                        <optgroup label="Western Visayas">
+                                                <?php
+                                                    $sql = $conn->query("SELECT * FROM citydata WHERE region = 'Western Visayas';") or die($conn->error);
+                                                    while ($row = mysqli_fetch_assoc($sql)) {
+                                                        echo '
+                                                            <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                        ';
+                                                    }
+                                                ?>
+                                        </optgroup>
+
+                                        <!-- Zamboanga Peninsula -->
+                                        <optgroup label="Zamboanga Peninsula">
+                                                <?php
+                                                    $sql = $conn->query("SELECT * FROM citydata WHERE region = 'Zamboanga Peninsula';") or die($conn->error);
+                                                    while ($row = mysqli_fetch_assoc($sql)) {
+                                                        echo '
+                                                            <option value="'.$row["city"].'">'.$row["city"].'</option>
+                                                        ';
+                                                    }
+                                                ?>
                                         </optgroup>
                                     </select>
 

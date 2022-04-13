@@ -69,7 +69,7 @@
     <input type="hidden" name="bookingID" id="bookingID" value="<?php echo $bookingID ?>">
     <input type="hidden" name="hospitalName" id="hospitalName" value="<?php echo $hospitalName ?>">
 
-    <div class="container p-10 mx-64">
+    <div class="container p-10 mx-64 h-screen">
         <!-- Go Back Button -->
         <a href="hospital-dashboard" class="hover:underline flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -207,86 +207,32 @@
 
 
             <!-- Refferal Image -->
-            <div class="col-span-7 bg-white px-10 py-10 drop-shadow-md rounded-3xl image-gallery" id="image-gallery">
+            <!-- <div class="col-span-7 bg-white px-10 py-10 drop-shadow-md rounded-3xl image-gallery" id="image-gallery"> -->
                 <!-- Referral Content -->
-                <div class="flex items-center text-md text-blue-700 font-bold border-b border-gray-300 pb-2">
+                <!-- <div class="flex items-center text-md text-blue-700 font-bold border-b border-gray-300 pb-2">
                     <h1>Referral Files</h1>
                 </div>
 
                     <?php
-                        $imageDir;
-                        $getImages = $conn->query("SELECT * FROM referralfiles WHERE booking_id = $bookingID") or die($conn->error);
-                        while ($imageRow = mysqli_fetch_assoc($getImages)) {
-                            $imageDir = $imageRow["file_dir"];
-                            echo '
-                                <a href="Capstone/'.$imageDir.'" class="bg-gray-900 rounded-lg">
-                                    <img id="" class="card-img my-5 mx-5 w-fit h-36 border-solid border-2 border-gray-800 rounded-md hover:scale-105 transition duration-200" alt="..." src="Capstone/'.$imageDir.'"/>
-                                </a>
-                            ';
-
-                            // echo '
-                            // <a href="Capstone/'.$imageDir.'" class="fetched-image mr-3 xl:col-span-1 flex items-center bg-gray-900 rounded-lg border-solid border-2 border-sky-500 hover:scale-105 transition duration-200">
-                            //     <img id="" class="card-img w-fit h-fit" alt="..." src="Capstone/'.$imageDir.'"/>
-                            // </a>
-                            // ';
-                        }
+                        // $imageDir;
+                        // $getImages = $conn->query("SELECT * FROM referralfiles WHERE booking_id = $bookingID") or die($conn->error);
+                        // while ($imageRow = mysqli_fetch_assoc($getImages)) {
+                        //     $imageDir = $imageRow["file_dir"];
+                        //     echo '
+                        //         <a href="Capstone/'.$imageDir.'" class="bg-gray-900 rounded-lg">
+                        //             <img id="" class="card-img my-5 mx-5 w-fit h-36 border-solid border-2 border-gray-800 rounded-md hover:scale-105 transition duration-200" alt="..." src="Capstone/'.$imageDir.'"/>
+                        //         </a>
+                        //     ';
+                        // }
                     ?>  
-            </div>
+            </div> -->
 
         </div>
 
-        <!-- Accept and Reject Button -->
-        <div class="flex justify-end space-x-2 mr-52 mt-5">
-            <!-- Accept Button -->
-            <button type="submit" id="btn-accept" name="btn-accept" class="p-3 px-7 rounded-lg font-bold bg-gray-900 hover:bg-gray-800 text-white">Accept</button>
-            <!-- Reject Button -->            
-            <button type="submit" id="btn-reject" name="btn-reject" class="p-3 px-7 rounded-lg font-bold bg-red-600 hover:bg-red-500 text-white">Reject</button>
-        </div> 
+       
     </div>
 
-    <!-- Confirmation of Accept Modal -->
-    <div id="AcceptModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
-        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-            <!-- Modal content -->
-            <div class="relative bg-gray-900 rounded-lg shadow">
-                <!-- Modal header -->
-                <div class="flex justify-end p-2">
-                </div>
-                <!-- Modal body -->
-                <div class="p-6 pt-0 text-center">
-                    <svg class="mx-auto mb-4 w-14 h-14 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <h3 class="mb-5 text-lg font-normal text-gray-300">Are you sure you want to <span class="text-blue-500 font-bold">accept</span>  this booking request?</h3>
-                    <button type="button" id="btnContinueAccept"  class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2">
-                        Continue
-                    </button>
-                    <button type="button" id="btnCancelAccept"  class="text-gray-300 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-600 rounded-lg border border-gray-500 font-medium px-5 py-2.5 hover:text-white focus:z-10 mr-2 mb-2">Cancel</button>
-                    <button type="hidden" data-modal-toggle="AcceptModal"></button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Confirmation of Reject Modal -->
-    <div id="rejectModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
-        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-            <!-- Modal content -->
-            <div class="relative bg-gray-900 rounded-lg shadow">
-                <!-- Modal header -->
-                <div class="flex justify-end p-2">
-                </div>
-                <!-- Modal body -->
-                <div class="p-6 pt-0 text-center">
-                    <svg class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <h3 class="mb-5 text-lg font-normal text-gray-300">Are you sure you want to <span class="text-red-600 font-bold">reject</span>  this booking request?</h3>
-                    <button type="button" id="btnContinueReject" class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark: dark: dark:focus:ring-red-900">
-                        Continue
-                    </button>
-                    <button type="button" id="btnCancelReject" class="text-gray-300 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-600 rounded-lg border border-gray-500 font-medium px-5 py-2.5 hover:text-white focus:z-10 mr-2 mb-2">Cancel</button>
-                    <button type="hidden" id="btnCancelReject"data-modal-toggle="rejectModal"></button>
-                </div>
-            </div>
-        </div>
-    </div>
+ 
 
     <!-- FLOWBITE CDN -->
     <script src="node_modules\flowbite\dist\flowbite.js"></script>

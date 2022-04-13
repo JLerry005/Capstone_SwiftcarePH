@@ -5,7 +5,7 @@
     $listingID = $_POST["listingID"];
 
     $output = '';
-    $result = $conn->query("SELECT * FROM userbooking WHERE listing_id = $listingID;") or die($conn->error);
+    $result = $conn->query("SELECT * FROM userbooking WHERE listing_id = $listingID ORDER BY bookingTimestamp;") or die($conn->error);
 
     if (mysqli_num_rows($result)==0) {
         $output = '<p class="col-span-12 text-center font-bold text-blue-300 self-center "><i class="bi bi-emoji-frown-fill"></i> There are NO Pending Reservations..</p> ';

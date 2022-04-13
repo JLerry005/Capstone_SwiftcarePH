@@ -25,7 +25,8 @@ module.exports = {
     './hospital-login.php',
     './pending-reservations-inc.php',
     './pending-booking-details.php',
-    './PHPMailer/user-booking-confirmation.php'
+    './PHPMailer/user-booking-confirmation.php',
+    './update-options.php'
 ],
 
   presets: [],

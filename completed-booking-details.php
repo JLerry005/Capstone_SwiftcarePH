@@ -220,25 +220,25 @@
             </div>
 
             <!-- Refferal Image -->
-            <div class="col-span-7 bg-white px-10 py-10 drop-shadow-md rounded-3xl image-gallery" id="image-gallery">
+            <!-- <div class="col-span-7 bg-white px-10 py-10 drop-shadow-md rounded-3xl image-gallery" id="image-gallery"> -->
                 <!-- Referral Content -->
-                <div class="flex items-center text-md text-blue-700 font-bold border-b border-gray-300 pb-2">
+                <!-- <div class="flex items-center text-md text-blue-700 font-bold border-b border-gray-300 pb-2">
                     <h1>Referral Files</h1>
                 </div>
 
                     <?php
-                        $imageDir;
-                        $getImages = $conn->query("SELECT * FROM referralfiles WHERE booking_id = $bookingID") or die($conn->error);
-                        while ($imageRow = mysqli_fetch_assoc($getImages)) {
-                            $imageDir = $imageRow["file_dir"];
-                            echo '
-                                <a href="Capstone/'.$imageDir.'" class="bg-gray-900 rounded-lg">
-                                    <img id="" class="card-img my-5 mx-5 w-fit h-36 border-solid border-2 border-gray-800 rounded-md hover:scale-105 transition duration-200" alt="..." src="Capstone/'.$imageDir.'"/>
-                                </a>
-                            ';
-                        }
+                        // $imageDir;
+                        // $getImages = $conn->query("SELECT * FROM referralfiles WHERE booking_id = $bookingID") or die($conn->error);
+                        // while ($imageRow = mysqli_fetch_assoc($getImages)) {
+                        //     $imageDir = $imageRow["file_dir"];
+                        //     echo '
+                        //         <a href="Capstone/'.$imageDir.'" class="bg-gray-900 rounded-lg">
+                        //             <img id="" class="card-img my-5 mx-5 w-fit h-36 border-solid border-2 border-gray-800 rounded-md hover:scale-105 transition duration-200" alt="..." src="Capstone/'.$imageDir.'"/>
+                        //         </a>
+                        //     ';
+                        // }
                     ?>  
-            </div>
+            </div> -->
                    
         </div>
 

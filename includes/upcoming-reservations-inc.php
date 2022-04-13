@@ -5,7 +5,7 @@
     $listingID = $_POST["listingID"];
 
     $output = '';
-    $result = $conn->query("SELECT * FROM upcomingreservations WHERE listing_id = $listingID;") or die($conn->error);
+    $result = $conn->query("SELECT * FROM upcomingreservations WHERE listing_id = $listingID ORDER BY date;") or die($conn->error);
 
     if (mysqli_num_rows($result)==0) {
         $output = '<p class="col-span-12 text-center font-bold text-blue-300 self-center "><i class="bi bi-emoji-frown-fill"></i> There are NO Upcoming Reservations..</p> ';
@@ -25,31 +25,31 @@
             
     
             $output .='
-                <a href="upcoming-booking-details?bookingID='.$bookingID.'" class="col-span-4 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
+                <a href="upcoming-booking-details?bookingID='.$bookingID.'" class="col-span-4 bg-blue-600 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
                     <div class="bg-blue-700 p-2 rounded-t-lg">
                         <p class="flex items-center cursor-default py-0.5 px-2 w-fit text-blue-50 font-medium tracking-wider">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 mr-2"><path fill="none" d="M0 0H24V24H0z"/><path d="M17 2v2h3c.552 0 1 .448 1 1v16c0 .552-.448 1-1 1H4c-.552 0-1-.448-1-1V5c0-.552.448-1 1-1h3V2h10zM7 6H5v14h14V6h-2v2H7V6zm6 5v2h2v2h-2.001L13 17h-2l-.001-2H9v-2h2v-2h2zm2-7H9v2h6V4z" fill="rgba(0,0,0,1)"/></svg> '.$reservationCode.'
                     </div>
                     <div class="p-4 flex items-center justify-between">
                         <div class="flex items-center space-x-3">
-                            <h1 class="bg-blue-700 hover:bg-blue-800 rounded-full w-fit py-0.5 px-2 text-white flex items-center capitalize">
+                            <h1 class="bg-gray-900 hover:bg-blue-800 rounded-full w-fit py-0.5 px-2 text-white flex items-center capitalize">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 mr-1"><path fill="none" d="M0 0H24V24H0z"/><path d="M2 21v-2h2V4.835c0-.484.346-.898.821-.984l9.472-1.722c.326-.06.638.157.697.483.007.035.01.07.01.107v1.28L19 4c.552 0 1 .448 1 1v14h2v2h-4V6h-3v15H2zM13 4.396L6 5.67V19h7V4.396zM12 11v2h-2v-2h2z" fill="rgba(255,255,255,1)"/></svg>'.$reservationType.'
                             </h1>
-                            <p class="flex items-center bg-white hover:bg-gray-300 cursor-pointer rounded-full py-0.5 px-2 w-fit text-blue-700 font-bold">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 mr-1 ="><path fill="none" d="M0 0H24V24H0z"/><path d="M8 3v2H6v4c0 2.21 1.79 4 4 4s4-1.79 4-4V5h-2V3h3c.552 0 1 .448 1 1v5c0 2.973-2.162 5.44-5 5.917V16.5c0 1.933 1.567 3.5 3.5 3.5 1.497 0 2.775-.94 3.275-2.263C16.728 17.27 16 16.22 16 15c0-1.657 1.343-3 3-3s3 1.343 3 3c0 1.371-.92 2.527-2.176 2.885C19.21 20.252 17.059 22 14.5 22 11.462 22 9 19.538 9 16.5v-1.583C6.162 14.441 4 11.973 4 9V4c0-.552.448-1 1-1h3zm11 11c-.552 0-1 .448-1 1s.448 1 1 1 1-.448 1-1-.448-1-1-1z" fill="rgba(26,86,219,1)"/></svg>'.$patientConcern.'
+                            <p class="flex items-center bg-white hover:bg-gray-300 cursor-pointer rounded-full py-0.5 px-2 w-fit text-gray-900 font-bold">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 mr-1 ="><path fill="none" d="M0 0H24V24H0z"/><path d="M8 3v2H6v4c0 2.21 1.79 4 4 4s4-1.79 4-4V5h-2V3h3c.552 0 1 .448 1 1v5c0 2.973-2.162 5.44-5 5.917V16.5c0 1.933 1.567 3.5 3.5 3.5 1.497 0 2.775-.94 3.275-2.263C16.728 17.27 16 16.22 16 15c0-1.657 1.343-3 3-3s3 1.343 3 3c0 1.371-.92 2.527-2.176 2.885C19.21 20.252 17.059 22 14.5 22 11.462 22 9 19.538 9 16.5v-1.583C6.162 14.441 4 11.973 4 9V4c0-.552.448-1 1-1h3zm11 11c-.552 0-1 .448-1 1s.448 1 1 1 1-.448 1-1-.448-1-1-1z" fill="rgba(17,24,39)"/></svg>'.$patientConcern.'
                             </p>
                         </div>
                         
-                        <p class="flex items-center">
+                        <p class="flex items-center text-white">
                             <i class="bi bi-clock-history hover:text-blue-500"></i> &nbsp;'.$timeStamp.'
                         </p>
                     </div>
     
                     <div class="mb-2 px-4 flex items-center space-x-3">
-                        <img src="https://avatars.dicebear.com/api/big-smile/'.$firstName.'.svg?b=%231a56bb&r=50" alt="" srcset="" class="w-10">
+                        <img src="https://avatars.dicebear.com/api/big-smile/'.$firstName.'.svg?b=%23111827&r=50&scale=93" alt="" srcset="" class="w-10">
                         <h1 class="text-lg font-bold text-white capitalize">'.$firstName.' '.$lastName.'</h1>
                     </div>
-                    <div class="flex items-start justify-between px-4">
+                    <div class="flex items-start justify-between px-4 text-white">
                         <div class="text-sm font-light pb-4">
                             <p class="flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 hover:text-blue-500" viewBox="0 0 20 20" fill="currentColor">

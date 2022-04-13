@@ -49,8 +49,11 @@
             <ul class="notifications d-flex justify-content-end my-auto">
                 <div class="mx-5 text-success">
                     <li><i class="bi bi-check-circle"></i> Approved Request: <b><?php require_once'includes/get-pending-count-approved-inc.php'; ?></b></li>
+                    <div class="d-flex justify-content-end mt-1">
+                        <a href="update-options" class="btn p-1 bg-primary text-white fs-6">Update Button</a>
+                    </div>
                 </div>
-            </ul>  
+            </ul>
         </div>
     </nav> 
 
@@ -501,6 +504,8 @@
 
         </div>
     </div>
+
+
     <!-- Light Gallery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
 </body>

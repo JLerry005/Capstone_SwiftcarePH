@@ -58,26 +58,3 @@
     }
 
     $deleteFromUpcoming = $conn->query("DELETE FROM upcomingreservations WHERE listing_id = ".$listingID." AND date < $currentDate;") or die($conn->error);
-    // while ($row = mysqli_fetch_assoc($deleteFromUpcoming)) {
-    //     // $idContainer[] = $row["ID"];
-    //     // $dateContainer[] = $row["date"];
-
-    //     $resultContainer[] =  $row;
-    // }
-    // echo $ID;
-    // print_r($idContainer);
-
-    
-
-    // if ($currentDate >) {
-    //     # code...
-    // }
-
-    // $scheduledDate = ;
-
-    // if ($currentDate > $scheduledDate) {
-    //     echo 'greater than';
-    // }
-    // else{
-    //     echo 'Less than';
-    // }

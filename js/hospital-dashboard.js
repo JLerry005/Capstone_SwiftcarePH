@@ -189,7 +189,7 @@
     // Show Completed List
     showCompletedReservations();
     function showCompletedReservations() {
-        let completedListContainer = document.getElementById("history-cards-container");
+        let completedListContainer = document.getElementById("completed-cards-container");
         let listingID = document.getElementById("listingID").value;
 
         completedListContainer.innerHTML = "";
@@ -201,6 +201,83 @@
                 completedListContainer.innerHTML = data;
             }
         });
+    }
+
+    // Filter Completed Reservations
+    const btnCompletedCovid = document.getElementById("btn-completedCovid");
+    const btnCompletedNonCovid = document.getElementById("btn-completedNonCovid");
+    const btnCompletedSuccessful = document.getElementById("btn-completedSuccessful");
+    const btnCompletedUnsuccessful = document.getElementById("btn-completedUnsuccessful");
+
+    // Filter Covid
+    btnCompletedCovid.onclick = function () {
+        let completedListContainer = document.getElementById("completed-cards-container");
+        let listingID = document.getElementById("listingID").value;
+
+        completedListContainer.innerHTML = "";
+        $.ajax({
+            method: "GET",
+            url: "includes/get-completed-covid.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                completedListContainer.innerHTML = data;
+            }
+        });
+    }
+
+    // Filter Non Covid
+    btnCompletedNonCovid.onclick = function () {
+        let completedListContainer = document.getElementById("completed-cards-container");
+        let listingID = document.getElementById("listingID").value;
+
+        completedListContainer.innerHTML = "";
+        $.ajax({
+            method: "GET",
+            url: "includes/get-completed-non-covid.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                completedListContainer.innerHTML = data;
+            }
+        });
+    }
+
+    // Filter Covid
+    btnCompletedSuccessful.onclick = function () {
+        let completedListContainer = document.getElementById("completed-cards-container");
+        let listingID = document.getElementById("listingID").value;
+
+        completedListContainer.innerHTML = "";
+        $.ajax({
+            method: "GET",
+            url: "includes/get-completed-success.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                completedListContainer.innerHTML = data;
+            }
+        });
+    }
+
+    // Filter Non Covid
+    btnCompletedUnsuccessful.onclick = function () {
+        let completedListContainer = document.getElementById("completed-cards-container");
+        let listingID = document.getElementById("listingID").value;
+
+        completedListContainer.innerHTML = "";
+        $.ajax({
+            method: "GET",
+            url: "includes/get-completed-unsuccess.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                completedListContainer.innerHTML = data;
+            }
+        });
+    }
+
+    // Show All
+    const btnShowAllCompleted = document.getElementById("btn-show-all-completed");
+
+    btnShowAllCompleted.onclick = function () {
+        showCompletedReservations();
     }
 
     // get pending count
@@ -269,7 +346,7 @@
 
     // Toggle the History Container
     function toggleHistory(){
-        $("#history-cards-container").toggle(340);
+        $("#completed-cards-container").toggle(340);
         $(".history-icon").toggleClass("ri-arrow-up-s-line ri-arrow-down-s-line");  
     }
 

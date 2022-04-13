@@ -23,6 +23,12 @@ body{
   filter: contrast(.5) !important;
 }
 
+.disabled-blurred{
+  pointer-events: none;
+  /* filter: contrast(.5) !important; */
+  filter: blur(3px) !important;
+}
+
 .invalidInput{
   border-color: rgb(255, 55, 55) !important;
   color: rgb(255, 55, 55) !important;

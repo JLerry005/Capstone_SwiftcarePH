@@ -58,6 +58,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
     <!-- TAILWIND CSS Link -->
     <link rel="stylesheet" href="dist/output.css">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="styling/_pending-booking-details.css">
     <!--Bootstrap Icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <!-- Remix Icon CDN Link -->
@@ -219,22 +221,17 @@
                 </div>
 
                     <?php
+
                         $imageDir;
                         $getImages = $conn->query("SELECT * FROM referralfiles WHERE booking_id = $bookingID") or die($conn->error);
                         while ($imageRow = mysqli_fetch_assoc($getImages)) {
                             $imageDir = $imageRow["file_dir"];
-                            if($referral == "Yes"){
+
                                 echo '
                                 <a href="Capstone/'.$imageDir.'" class="bg-gray-900 rounded-lg">
-                                    <img id="" class="card-img my-5 mx-5 w-fit h-36 border-solid border-2 border-gray-800 rounded-md hover:scale-105 transition duration-200" alt="..." src="Capstone/'.$imageDir.'"/>
+                                    <img id="" class="card-img my-5 mx-5 w-auto h-36 border-solid border-2 border-gray-800 rounded-md hover:scale-105 transition duration-200" alt="..." src="Capstone/'.$imageDir.'"/>
                                 </a>
                             ';
-                            }
-                            else{
-                                echo '
-                                    <p>ADAWDASW</p>
-                                ';
-                            }
 
                         }
                     ?>  
@@ -258,16 +255,28 @@
             <div class="relative bg-gray-900 rounded-lg shadow">
                 <!-- Modal header -->
                 <div class="flex justify-end p-2">
+
                 </div>
                 <!-- Modal body -->
                 <div class="p-6 pt-0 text-center">
                     <svg class="mx-auto mb-4 w-14 h-14 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     <h3 class="mb-5 text-lg font-normal text-gray-300">Are you sure you want to <span class="text-blue-500 font-bold">accept</span>  this booking request?</h3>
+
+                    <!-- Cancel Button -->
+                    <button type="button" id="btnCancelAccept"  class="text-gray-300 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-600 rounded-lg border border-gray-500 font-medium px-5 py-2.5 hover:text-white focus:z-10 mr-2 mb-2">Cancel</button>
+                    <!-- Continue Button       -->
                     <button type="button" id="btnContinueAccept"  class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2">
                         Continue
                     </button>
-                    <button type="button" id="btnCancelAccept"  class="text-gray-300 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-600 rounded-lg border border-gray-500 font-medium px-5 py-2.5 hover:text-white focus:z-10 mr-2 mb-2">Cancel</button>
                     <button type="hidden" data-modal-toggle="AcceptModal"></button>
+                    <!-- Loading Message -->
+                    <div class="flex items-end justify-center text-lg mt-5" style="display:none;" id="reservation-loader">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 animate-pulse" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
+                            <path d="M9 13h2v5a1 1 0 11-2 0v-5z" />
+                        </svg>
+                            &ensp;<p>Accepting Reservation..</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -285,10 +294,12 @@
                 <div class="p-6 pt-0 text-center">
                     <svg class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     <h3 class="mb-5 text-lg font-normal text-gray-300">Are you sure you want to <span class="text-red-600 font-bold">reject</span>  this booking request?</h3>
-                    <button type="button" id="btnContinueReject" class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark: dark: dark:focus:ring-red-900">
-                        Continue
-                    </button>
-                    <button type="button" id="btnCancelReject" class="text-gray-300 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-600 rounded-lg border border-gray-500 font-medium px-5 py-2.5 hover:text-white focus:z-10 mr-2 mb-2">Cancel</button>
+                    <!-- Cancel Button -->
+                        <button type="button" id="btnCancelReject" class="text-gray-300 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-600 rounded-lg border border-gray-500 font-medium px-5 py-2.5 hover:text-white focus:z-10 mr-2 mb-2">Cancel</button>
+                    <!-- Continue Button -->
+                        <button type="button" id="btnContinueReject" class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark: dark: dark:focus:ring-red-900">
+                            Continue
+                        </button>
                     <button type="hidden" id="btnCancelReject"data-modal-toggle="rejectModal"></button>
                 </div>
             </div>

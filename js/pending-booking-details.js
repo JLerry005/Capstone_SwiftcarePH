@@ -20,12 +20,14 @@
     let listingID = document.getElementById("listingID").value;
     let bookingID = document.getElementById("bookingID").value;
     let hospitalName = document.getElementById("hospitalName").value;
+    const reservationLoader = document.getElementById("reservation-loader");
   
     // Accept Button
     btnAccept.onclick = function () {
         toggleModal('AcceptModal', true);
         const btnContinue = document.getElementById("btnContinueAccept");
         const btnCancel = document.getElementById("btnCancelAccept");
+
 
 
         btnContinue.onclick = function () {
@@ -49,7 +51,12 @@
                     bookingID:bookingID,
                     hospitalName:hospitalName
                 },
-                success: function () {
+                beforeSend: function () {
+                    btnContinue.classList.add("disabled");
+                    btnCancel.classList.add("disabled");
+                    $(reservationLoader).show();
+                },
+                success: function (response) {
                     toggleModal('AcceptModal', false);
                     window.location.replace('http://localhost/Capstone/hospital-dashboard');
                 }

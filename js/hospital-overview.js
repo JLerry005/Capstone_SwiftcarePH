@@ -373,6 +373,7 @@
         }else{
             const btnSubmit = document.getElementById("submitButton");
             const btnCancel = document.getElementById("cancelButton");
+            const bookingModalBody = document.getElementById("booking-modal-body");
             const reservationLoader = document.getElementById("reservation-loader");
             
             // run if referral is not required
@@ -413,6 +414,7 @@
                                     beforeSend: function () {
                                         btnSubmit.classList.add("disabled");
                                         btnCancel.classList.add("disabled");
+                                        bookingModalBody.classList.add("disabled-blurred");
                                         $(reservationLoader).show();
                                     },
                                     success: function (response) {
@@ -471,6 +473,7 @@
                                     beforeSend: function () {
                                         btnSubmit.classList.add("disabled");
                                         btnCancel.classList.add("disabled");
+                                        bookingModalBody.classList.add("disabled-blurred");
                                         $(reservationLoader).show();
                                     },
                                     success: function (response) {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2022 at 04:03 PM
+-- Generation Time: Apr 13, 2022 at 05:06 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -86,6 +86,170 @@ CREATE TABLE `approved_hospital` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `citydata`
+--
+
+CREATE TABLE `citydata` (
+  `ID` int(120) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `region` varchar(255) NOT NULL,
+  `island` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `citydata`
+--
+
+INSERT INTO `citydata` (`ID`, `city`, `region`, `island`) VALUES
+(35, 'Alaminos', 'Ilocos Region', 'luzon'),
+(36, 'Batac', 'Ilocos Region', 'luzon'),
+(37, 'Candon', 'Ilocos Region', 'luzon'),
+(38, 'Laoag', 'Ilocos Region', 'luzon'),
+(39, 'San Carlos', 'Ilocos Region', 'luzon'),
+(40, 'San Fernando', 'Ilocos Region', 'luzon'),
+(41, 'Urdaneta', 'Ilocos Region', 'luzon'),
+(42, 'Vigan', 'Ilocos Region', 'luzon'),
+(43, 'Dagupan', 'Ilocos Region', 'luzon'),
+(44, 'Roxas', 'Western Visayas', 'visayas'),
+(45, 'Bacolod', 'Western Visayas', 'visayas'),
+(46, 'Escalante', 'Western Visayas', 'visayas'),
+(47, 'Balanga', 'Central Luzon', 'luzon'),
+(48, 'Malolos', 'Central Luzon', 'luzon'),
+(49, 'La Carlota', 'Western Visayas', 'visayas'),
+(50, 'Meycauayan', 'Central Luzon', 'luzon'),
+(51, 'Silay', 'Western Visayas', 'visayas'),
+(52, 'San Jose del Monte', 'Central Luzon', 'luzon'),
+(53, 'Victorias', 'Western Visayas', 'visayas'),
+(54, 'Cabanatuan', 'Central Luzon', 'luzon'),
+(55, 'Gapan', 'Central Luzon', 'luzon'),
+(56, 'Muñoz', 'Central Luzon', 'luzon'),
+(57, 'Iloilo', 'Western Visayas', 'visayas'),
+(58, 'Palayan', 'Central Luzon', 'luzon'),
+(59, 'Bago', 'Western Visayas', 'visayas'),
+(60, 'San Jose', 'Central Luzon', 'luzon'),
+(61, 'Himamaylan', 'Western Visayas', 'visayas'),
+(62, 'Angeles City', 'Central Luzon', 'luzon'),
+(63, 'Sagay', 'Western Visayas', 'visayas'),
+(64, 'Mabalacat', 'Central Luzon', 'luzon'),
+(65, 'Sipalay', 'Western Visayas', 'visayas'),
+(66, 'San Fernando', 'Central Luzon', 'luzon'),
+(67, 'Passi', 'Western Visayas', 'visayas'),
+(68, 'Tarlac', 'Central Luzon', 'luzon'),
+(69, 'Cadiz', 'Western Visayas', 'visayas'),
+(70, 'Olongapo', 'Central Luzon', 'luzon'),
+(71, 'Kabankalan', 'Western Visayas', 'visayas'),
+(72, 'San Carlos', 'Western Visayas', 'visayas'),
+(73, 'Talisay', 'Western Visayas', 'visayas'),
+(74, 'Legazpi', 'Bicol Region', 'luzon'),
+(75, 'Naga', 'Bicol Region', 'luzon'),
+(76, 'Iriga', 'Bicol Region', 'luzon'),
+(77, 'Tagbilaran', 'Central Visayas', 'visayas'),
+(78, 'Cebu', 'Central Visayas', 'visayas'),
+(79, 'Mandaue', 'Central Visayas', 'visayas'),
+(80, 'Tabaco', 'Bicol Region', 'luzon'),
+(81, 'Bais', 'Central Visayas', 'visayas'),
+(82, 'Dumaguete', 'Central Visayas', 'visayas'),
+(83, 'Ligao', 'Bicol Region', 'luzon'),
+(84, 'Toledo', 'Central Visayas', 'visayas'),
+(85, 'Sorsogon', 'Bicol Region', 'luzon'),
+(86, 'Masbate', 'Bicol Region', 'luzon'),
+(87, 'Bogo', 'Central Visayas', 'visayas'),
+(88, 'Danao', 'Central Visayas', 'visayas'),
+(89, 'Naga', 'Central Visayas', 'visayas'),
+(90, 'Bayawan', 'Central Visayas', 'visayas'),
+(91, 'Guihulngan', 'Central Visayas', 'visayas'),
+(92, 'Carcar', 'Central Visayas', 'visayas'),
+(93, 'Baguio', 'Cordillera Administrative Region', 'luzon'),
+(94, 'Lapu-Lapu', 'Central Visayas', 'visayas'),
+(95, 'Tabuk', 'Cordillera Administrative Region', 'luzon'),
+(96, 'Talisay', 'Central Visayas', 'visayas'),
+(97, 'Canlaon', 'Central Visayas', 'visayas'),
+(98, 'Tanjay', 'Central Visayas', 'visayas'),
+(99, 'Borongan', 'Eastern Visayas', 'visayas'),
+(100, 'Tacloban', 'Eastern Visayas', 'visayas'),
+(101, 'Maasin', 'Eastern Visayas', 'visayas'),
+(102, 'Baybay', 'Eastern Visayas', 'visayas'),
+(103, 'Calbayog', 'Eastern Visayas', 'visayas'),
+(104, 'Ormoc', 'Eastern Visayas', 'visayas'),
+(105, 'Cauayan', 'Cagayan Valley', 'luzon'),
+(106, 'Catbalogan', 'Eastern Visayas', 'visayas'),
+(107, 'Ilagan', 'Cagayan Valley', 'luzon'),
+(108, 'Santiago', 'Cagayan Valley', 'luzon'),
+(109, 'Tuguegarao', 'Cagayan Valley', 'luzon'),
+(110, 'Isabela', 'Zamboanga Peninsula', 'mindanao'),
+(111, 'Antipolo', 'CALABARZON', 'luzon'),
+(112, 'Bacoor', 'CALABARZON', 'luzon'),
+(113, 'Pagadian', 'Zamboanga Peninsula', 'mindanao'),
+(114, 'Batangas', 'CALABARZON', 'luzon'),
+(115, 'Dapitan', 'Zamboanga Peninsula', 'mindanao'),
+(116, 'Biñan', 'CALABARZON', 'luzon'),
+(117, 'Zamboanga', 'Zamboanga Peninsula', 'mindanao'),
+(118, 'Cabuyao', 'CALABARZON', 'luzon'),
+(119, 'Dipolog', 'Zamboanga Peninsula', 'mindanao'),
+(120, 'Calamba', 'CALABARZON', 'luzon'),
+(121, 'Cavite', 'CALABARZON', 'luzon'),
+(122, 'Dasmariñas', 'CALABARZON', 'luzon'),
+(123, 'General Trias', 'CALABARZON', 'luzon'),
+(124, 'Malaybalay', 'Northern Mindanao', 'mindanao'),
+(125, 'Imus', 'CALABARZON', 'luzon'),
+(126, 'Oroquieta', 'Northern Mindanao', 'mindanao'),
+(127, 'Lipa', 'CALABARZON', 'luzon'),
+(128, 'Lucena', 'CALABARZON', 'luzon'),
+(129, 'Cagayan de Oro', 'Northern Mindanao', 'mindanao'),
+(130, 'San Pablo', 'CALABARZON', 'luzon'),
+(131, 'Valencia', 'Northern Mindanao', 'mindanao'),
+(132, 'San Pedro', 'CALABARZON', 'luzon'),
+(133, 'Ozamiz', 'Northern Mindanao', 'mindanao'),
+(134, 'Santa Rosa', 'CALABARZON', 'luzon'),
+(135, 'El Salvador', 'Northern Mindanao', 'mindanao'),
+(136, 'Santo Tomas', 'CALABARZON', 'luzon'),
+(137, 'Iligan', 'Northern Mindanao', 'mindanao'),
+(138, 'Tagaytay', 'CALABARZON', 'luzon'),
+(139, 'Tangub', 'Northern Mindanao', 'mindanao'),
+(140, 'Tayabas', 'CALABARZON', 'luzon'),
+(141, 'Gingoog', 'Northern Mindanao', 'mindanao'),
+(142, 'Trece Martires', 'CALABARZON', 'luzon'),
+(143, 'Panabo', 'Davao Region', 'mindanao'),
+(144, 'Davao', 'Davao Region', 'mindanao'),
+(145, 'Caloocan', 'Nation Capital Region', 'luzon'),
+(146, 'Marikina', 'Nation Capital Region', 'luzon'),
+(147, 'Makati', 'Nation Capital Region', 'luzon'),
+(148, 'Samal', 'Davao Region', 'mindanao'),
+(149, 'Mandaluyong', 'Nation Capital Region', 'luzon'),
+(150, 'Digos', 'Davao Region', 'mindanao'),
+(151, 'Muntinlupa', 'Nation Capital Region', 'luzon'),
+(152, 'Tagum', 'Davao Region', 'mindanao'),
+(153, 'Manila', 'Nation Capital Region', 'luzon'),
+(154, 'Mati', 'Davao Region', 'mindanao'),
+(155, 'Navotas', 'Nation Capital Region', 'luzon'),
+(156, 'Malabon', 'Nation Capital Region', 'luzon'),
+(157, 'Kidapawan', 'SOCCSKSARGEN', 'mindanao'),
+(158, 'Tacurong', 'SOCCSKSARGEN', 'mindanao'),
+(159, 'Valenzuela', 'Nation Capital Region', 'luzon'),
+(160, 'Pasay', 'Nation Capital Region', 'luzon'),
+(161, 'General Santos', 'SOCCSKSARGEN', 'mindanao'),
+(162, 'Pasig', 'Nation Capital Region', 'luzon'),
+(163, 'Koronadal', 'SOCCSKSARGEN', 'mindanao'),
+(164, 'Parañaque', 'Nation Capital Region', 'luzon'),
+(165, 'Quezon', 'Nation Capital Region', 'luzon'),
+(166, 'San Juan', 'Nation Capital Region', 'luzon'),
+(167, 'Las Piñas', 'Nation Capital Region', 'luzon'),
+(168, 'Cotabato', 'Bangsamoro Autonomous Region in Muslim Mindanao', 'mindanao'),
+(169, 'Taguig', 'Nation Capital Region', 'luzon'),
+(170, 'Lamitan', 'Bangsamoro Autonomous Region in Muslim Mindanao', 'mindanao'),
+(171, 'Marawi', 'Bangsamoro Autonomous Region in Muslim Mindanao', 'mindanao'),
+(172, 'Butuan', 'Caraga', 'mindanao'),
+(173, 'Surigao', 'Caraga', 'mindanao'),
+(175, 'Cabadbaran', 'Caraga', 'mindanao'),
+(177, 'Bislig', 'Caraga', 'mindanao'),
+(179, 'Bayugan', 'Caraga', 'mindanao'),
+(180, 'Tandag', 'Caraga', 'mindanao'),
+(181, 'Calapan', 'MIMAROPA Region', 'luzon'),
+(182, 'Puerto Princesa', 'MIMAROPA Region', 'luzon');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `completedreservations`
 --
 
@@ -114,12 +278,7 @@ CREATE TABLE `completedreservations` (
 --
 
 INSERT INTO `completedreservations` (`ID`, `reservation_code`, `user_id`, `listing_id`, `remarks`, `firstname`, `lastname`, `date`, `time`, `phonenumber`, `email`, `concern`, `specifyconcern`, `hospitalname`, `reservationtype`, `timestamp`, `booking_timestamp`) VALUES
-(38, 'SCPHRES409316', 95, 8, 'Arrived', 'Joshua', 'Bravo', '2022-04-22', '09:00', '12312313131', 'asd@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-12 06:17:09', '2022-04-08 20:11:34'),
-(39, 'SCPHRES297057', 95, 8, 'Did not Arrive', 'Larry', 'Bird', '2022-04-15', '09:00', '12312312312', 'asd@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-12 06:17:15', '2022-04-08 20:09:10'),
-(40, 'SCPHRES792231', 95, 8, 'Successful', 'John ', 'Doe', '2022-04-13', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-12 07:55:16', '2022-04-12 12:46:55'),
-(41, 'SCPHRES792231', 95, 8, 'Unsuccessful', 'John ', 'Doe', '2022-04-13', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-12 07:55:39', '2022-04-12 12:46:55'),
-(42, 'SCPHRES487729', 95, 8, 'Unsuccessful', 'Johhny ', 'Bravo', '2022-04-13', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-12 07:54:12', '2022-04-12 12:47:50'),
-(43, 'SCPHRES666420', 95, 8, 'Successful', 'Larry', 'Goods', '2022-04-13', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-12 12:08:47', '2022-04-12 12:47:50');
+(45, 'qweqweqweasdasdasd', 93, 8, '', 'larry', 'goods', '10-10-10', '10:30 AM', '1231231312313', 'asd@gmail.com', 'covid', '', 'amang rodriguez', 'bed', '2022-04-13 11:13:24', '');
 
 -- --------------------------------------------------------
 
@@ -218,9 +377,9 @@ CREATE TABLE `hospitallisting` (
 --
 
 INSERT INTO `hospitallisting` (`listing_id`, `hospitalID`, `hospital_location`, `hospital_city`, `hospital_name`, `hospital_description`, `hospital_type`, `room`, `room_slot`, `bed`, `bed_slot`, `additional_docs`, `website_link`, `hospital_phone`) VALUES
-(8, 183, 'Sumulong Highway Sto. Nino, Marikina, 1800 Metro Manila', 'valenzuela', 'Amang Rodriguez Memorial Medical Center', 'This is a sample description.', 'Private Hospital', '', 95, '', 94, 'Yes', 'amangrodriguezhospital.ph', '+639886756677'),
-(9, 184, '448 Quezon Ave, Quiapo, Quezon City, 1200 Metro Manila', 'valenzuela', 'Mount Banawe General Hospital', 'This is a sample paragraph.', 'Public Hospital', '', 0, '', 5, 'Yes', '', '+638675586755'),
-(10, 185, 'Osmeña Blvd, Cebu City, 6000 Cebu', 'Cebu', 'Cebu Doctors University Hospital', 'Cebu Doctors\' University Hospital is a leading tertiary level hospital in the Southern Phillipines. It was founded in 1972 and today has 300 beds and 1200 employees, 326 of which are medical doctors. The hospital is also a comprehensive medical education ', 'Public Hospital', '', 98, '', 99, 'Yes', 'https://cebudocgroup.com.ph/', '+638675576866'),
+(8, 183, 'Sumulong Highway Sto. Nino, Marikina, 1800 Metro Manila', 'Lamitan', 'Amang Rodriguez Memorial Medical Center', 'This is a sample description.', 'Private Hospital', '', 90, '', 85, '', 'amangrodriguezhospital.ph', '+639886756677'),
+(9, 184, '448 Quezon Ave, Quiapo, Quezon City, 1200 Metro Manila', 'valenzuela', 'Mount Banawe General Hospital', 'This is a sample paragraph.', 'Public Hospital', '', 0, '', 3, 'Yes', '', '+638675586755'),
+(10, 185, 'Osmeña Blvd, Cebu City, 6000 Cebu', 'Cebu', 'Cebu Doctors University Hospital', 'Cebu Doctors\' University Hospital is a leading tertiary level hospital in the Southern Phillipines. It was founded in 1972 and today has 300 beds and 1200 employees, 326 of which are medical doctors. The hospital is also a comprehensive medical education ', 'Public Hospital', '', 97, '', 93, 'Yes', 'https://cebudocgroup.com.ph/', '+638675576866'),
 (11, 186, '', '', 'Sample hospital', '', 'Public Hospital', 'no', 0, 'no', 0, 'no', '0', '+639663700835');
 
 -- --------------------------------------------------------
@@ -265,7 +424,9 @@ INSERT INTO `listingimages` (`image_id`, `listing_idFK`, `image_name`, `image_di
 (612, 9, 'Tyler Lastovich Ybao6_A8RDI Unsplash', '../web/hospital-images/tyler-lastovich-Ybao6_A8RDI-unsplash.jpg'),
 (618, 10, 'For Loop', '../web/hospital-images/for-loop.png'),
 (619, 10, 'For Loop', '../web/hospital-images/for-loop.png'),
-(621, 8, 'Ambulance2', '../web/hospital-images/ambulance2.jpg');
+(621, 8, 'Ambulance2', '../web/hospital-images/ambulance2.jpg'),
+(622, 8, 'Tyler Lastovich HM08wZJBlK4 Unsplash', '../web/hospital-images/tyler-lastovich-hM08wZJBlK4-unsplash.jpg'),
+(623, 8, 'Tyler Lastovich Ybao6_A8RDI Unsplash', '../web/hospital-images/tyler-lastovich-Ybao6_A8RDI-unsplash.jpg');
 
 -- --------------------------------------------------------
 
@@ -329,7 +490,10 @@ CREATE TABLE `referralfiles` (
 --
 
 INSERT INTO `referralfiles` (`referral_id`, `booking_id`, `file_name`, `file_dir`) VALUES
-(76, 192, 'Bb', '../web/referral-images/bb.jpg');
+(89, 211, 'Ambulance2', '../web/referral-images/ambulance2.jpg'),
+(91, 213, 'Clay Banks U27Rrbs9Dwc Unsplash', '../web/referral-images/clay-banks-u27Rrbs9Dwc-unsplash.jpg'),
+(92, 214, 'Leonardo Yip NcWnJmeVtcw Unsplash', '../web/referral-images/leonardo-yip-NcWnJmeVtcw-unsplash.jpg'),
+(93, 215, 'Leonardo Yip NcWnJmeVtcw Unsplash', '../web/referral-images/leonardo-yip-NcWnJmeVtcw-unsplash.jpg');
 
 -- --------------------------------------------------------
 
@@ -399,7 +563,8 @@ INSERT INTO `rejectedreservations` (`ID`, `user_id`, `listing_id`, `firstname`, 
 (16, '95', 8, 'Larry', 'Bird', '2022-04-15', '09:00', '12312312312', ' asd@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-08 12:13:53', '2022-04-08 20:09:10'),
 (17, '', 0, '', '', '', '', '', ' ', '', '', '', '', '2022-04-08 12:13:59', ''),
 (18, '96', 10, 'sss', 'sss', '2022-04-10', '09:00', '09125253535', ' hapatinga@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-08 12:58:24', '2022-04-08 20:57:01'),
-(19, '96', 10, 'Maria', 'hapatinga', '2022-04-29', '09:00', '09123232323', ' hapatingajohnlerry@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-12 12:24:55', '2022-04-12 19:56:23');
+(19, '96', 10, 'Maria', 'hapatinga', '2022-04-29', '09:00', '09123232323', ' hapatingajohnlerry@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-12 12:24:55', '2022-04-12 19:56:23'),
+(20, '96', 10, 'John Lerry ', 'Nuttela', '2022-04-13', '09:00', '09125253535', ' hapatingajohnlerry@gmail.com', 'Covid', '', 'Covid', 'bed', '2022-04-13 10:56:06', '2022-04-12 20:26:05');
 
 -- --------------------------------------------------------
 
@@ -434,6 +599,7 @@ CREATE TABLE `upcomingreservations` (
   `listing_id` int(120) NOT NULL,
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
+  `fullname` varchar(255) NOT NULL,
   `date` varchar(255) NOT NULL,
   `time` varchar(255) NOT NULL,
   `phonenumber` varchar(255) NOT NULL,
@@ -450,20 +616,17 @@ CREATE TABLE `upcomingreservations` (
 -- Dumping data for table `upcomingreservations`
 --
 
-INSERT INTO `upcomingreservations` (`ID`, `reservation_code`, `user_id`, `listing_id`, `firstname`, `lastname`, `date`, `time`, `phonenumber`, `email`, `concern`, `specifyconcern`, `hospitalname`, `reservationtype`, `timestamp`, `booking_timestamp`) VALUES
-(12, 'SCPHRES792231', 95, 8, 'John ', 'Doe', '2022-04-13', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-12 04:48:16', '2022-04-12 12:46:55'),
-(13, 'SCPHRES487729', 95, 8, 'Johhny ', 'Bravo', '2022-04-13', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-12 04:48:20', '2022-04-12 12:47:50'),
-(14, 'SCPHRES255371', 95, 8, 'Larry', 'Goods', '2022-04-15', '09:00', '09887868878', 'nior3210@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'room', '2022-04-12 08:30:25', '2022-04-12 12:55:57'),
-(15, 'SCPHRES811203', 95, 8, 'asdasdas', 'qweqweqw', '2022-04-22', '09:00', '09887868878', 'nior3210@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-12 09:36:17', '2022-04-12 13:17:44'),
-(16, 'SCPHRES744197', 95, 8, 'Jonathan', 'Studebaker', '2022-04-15', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Non-Covid', 'Cough', 'Amang Rodriguez Memorial Medical Center', 'room', '2022-04-12 11:31:29', '2022-04-12 16:14:52'),
-(17, 'SCPHRES960494', 95, 8, 'Jonathan', 'Studebaker', '2022-04-15', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Non-Covid', 'Cough', 'Amang Rodriguez Memorial Medical Center', 'room', '2022-04-12 11:49:07', '2022-04-12 16:14:52'),
-(18, 'SCPHRES786633', 96, 10, 'Maria', 'hapatinga', '2022-04-11', '09:00', '09123232323', 'hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-12 13:18:22', '2022-04-12 19:56:23'),
-(19, 'SCPHRES946588', 96, 10, 'Maria', 'hapatinga', '2022-04-29', '09:00', '09123232323', 'hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-12 12:01:11', '2022-04-12 19:56:23'),
-(20, 'SCPHRES953933', 96, 10, 'Maria', 'hapatinga', '2022-04-29', '09:00', '09123232323', 'hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-12 12:02:11', '2022-04-12 19:56:23'),
-(21, 'SCPHRES854976', 95, 8, 'asdasdas', 'asdasdasd', '2022-04-20', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-12 13:51:02', '2022-04-12 13:24:17'),
-(22, 'SCPHRES242554', 95, 8, 'asdasdas', 'qweqweqw', '2022-04-20', '09:00', '09887868878', 'nior3210@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-12 13:53:59', '2022-04-12 13:44:38'),
-(23, 'SCPHRES415263', 95, 8, 'Roniel', 'Bravo', '2022-04-13', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'room', '2022-04-12 13:55:39', '2022-04-12 21:55:16'),
-(24, 'SCPHRES703136', 95, 8, 'asdwqewe', 'qwdewqdewq', '2022-04-13', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Non-Covid', 'Sample Concern', 'Amang Rodriguez Memorial Medical Center', 'room', '2022-04-12 13:58:06', '2022-04-12 21:57:38');
+INSERT INTO `upcomingreservations` (`ID`, `reservation_code`, `user_id`, `listing_id`, `firstname`, `lastname`, `fullname`, `date`, `time`, `phonenumber`, `email`, `concern`, `specifyconcern`, `hospitalname`, `reservationtype`, `timestamp`, `booking_timestamp`) VALUES
+(31, 'SCPHRES149206', 96, 10, 'japeth', 'Aguilar', 'japeth Aguilar', '2022-04-14', '09:00', '09125253535', 'hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-13 11:03:21', '2022-04-13 19:01:53'),
+(32, 'SCPHRES193439', 95, 8, 'asd', 'asdasd', 'asd asdasd', '2022-04-21', '09:00', '09887868878', 'nior3210@gmail.com', 'Non-Covid', 'asdasd', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-13 11:10:02', '2022-04-13 19:00:44'),
+(33, 'SCPHRES492910', 96, 10, 'Luis Alfred', 'tenorio', 'Luis Alfred tenorio', '2022-04-16', '09:00', '09125253535', 'hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-13 11:11:30', '2022-04-13 19:09:03'),
+(34, 'SCPHRES802307', 95, 8, 'asdasda', 'asdsa', 'asdasda asdsa', '2022-04-23', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-13 11:25:54', '2022-04-13 19:19:25'),
+(35, 'SCPHRES378382', 95, 8, 'asdasdas', 'qweqweqw', 'asdasdas qweqweqw', '2022-04-22', '09:00', '09887868878', 'nior3210@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'room', '2022-04-13 11:26:13', '2022-04-13 19:20:48'),
+(36, 'SCPHRES840515', 95, 10, 'asdas', 'asdasd', 'asdas asdasd', '2022-04-14', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-13 11:27:15', '2022-04-13 19:09:29'),
+(37, 'SCPHRES617193', 95, 8, 'asdasdas', 'qweqweqw', 'asdasdas qweqweqw', '2022-04-21', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-13 11:28:37', '2022-04-13 19:18:32'),
+(38, 'SCPHRES669004', 95, 8, 'asdasdas', 'asdasdasd', 'asdasdas asdasdasd', '2022-04-22', '09:00', '09887868878', 'nior3210@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-13 11:32:23', '2022-04-13 19:29:59'),
+(39, 'SCPHRES512383', 95, 8, 'asdasd', 'asdasd', 'asdasd asdasd', '2022-04-14', '09:00', '09887868878', 'nior3210@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-13 11:41:37', '2022-04-13 19:41:10'),
+(40, 'SCPHRES636671', 95, 8, 'asdasdas', 'qweqweqw', 'asdasdas qweqweqw', '2022-04-21', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-13 12:11:25', '2022-04-13 20:11:00');
 
 -- --------------------------------------------------------
 
@@ -493,8 +656,12 @@ CREATE TABLE `userbooking` (
 --
 
 INSERT INTO `userbooking` (`ID`, `user_id`, `listing_id`, `patientFirstName`, `patientLastName`, `patientDate`, `patientTime`, `patientPhoneNumber`, `patientEmail`, `patientConcern`, `patientSpecifyConcern`, `patientHospitalName`, `patientReservationType`, `bookingTimestamp`) VALUES
-(191, 96, 10, 'John Lerry ', 'Nuttela', '2022-04-13', '09:00', '09125253535', 'hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-12 12:26:05'),
-(192, 96, 10, 'John Lerry ', 'Duke', '2022-04-28', '09:00', '09125253535', 'hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'room', '2022-04-12 12:43:09');
+(206, 96, 10, 'Justine', 'Brownlee', '2022-04-21', '00:00', '09123232323', 'hapatingajohnlerry@gmail.com', 'Non-Covid', 'Cough', 'Cebu Doctors University Hospital', 'room', '2022-04-13 11:09:59'),
+(207, 96, 10, 'Scottie', 'Thompson', '2022-04-26', '09:00', '09123232323', 'hapatingajohnlerry@gmail.com', 'Non-Covid', 'TV WITH CABLE', 'Cebu Doctors University Hospital', 'bed', '2022-04-13 11:10:48'),
+(211, 96, 10, 'LeBron', 'James', '2022-04-23', '09:00', '09125253535', 'hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-13 11:29:50'),
+(213, 95, 8, 'qweqwe', 'qweqwewqe', '2022-04-15', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-13 11:33:27'),
+(214, 95, 9, 'asdasd', 'asdasd', '2022-04-21', '09:00', '09887868878', 'nior3210@gmail.com', 'Covid', '', 'Mount Banawe General Hospital', 'bed', '2022-04-13 11:35:11'),
+(215, 95, 9, 'qweqw', 'qwe', '2022-04-21', '09:00', '09887868878', 'nior3210@gmail.com', 'Covid', '', 'Mount Banawe General Hospital', 'bed', '2022-04-13 11:37:14');
 
 -- --------------------------------------------------------
 
@@ -571,6 +738,12 @@ ALTER TABLE `approvedhospital`
 --
 ALTER TABLE `approved_hospital`
   ADD PRIMARY KEY (`approvalID`);
+
+--
+-- Indexes for table `citydata`
+--
+ALTER TABLE `citydata`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `completedreservations`
@@ -710,10 +883,16 @@ ALTER TABLE `approved_hospital`
   MODIFY `approvalID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `citydata`
+--
+ALTER TABLE `citydata`
+  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
+
+--
 -- AUTO_INCREMENT for table `completedreservations`
 --
 ALTER TABLE `completedreservations`
-  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `hospitalaccount`
@@ -749,7 +928,7 @@ ALTER TABLE `hospitalsignuphistory`
 -- AUTO_INCREMENT for table `listingimages`
 --
 ALTER TABLE `listingimages`
-  MODIFY `image_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=622;
+  MODIFY `image_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=624;
 
 --
 -- AUTO_INCREMENT for table `otpstorage`
@@ -767,7 +946,7 @@ ALTER TABLE `pendingadminsignup`
 -- AUTO_INCREMENT for table `referralfiles`
 --
 ALTER TABLE `referralfiles`
-  MODIFY `referral_id` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `referral_id` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `rejectedhospital`
@@ -779,7 +958,7 @@ ALTER TABLE `rejectedhospital`
 -- AUTO_INCREMENT for table `rejectedreservations`
 --
 ALTER TABLE `rejectedreservations`
-  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `test`
@@ -791,13 +970,13 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT for table `upcomingreservations`
 --
 ALTER TABLE `upcomingreservations`
-  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `userbooking`
 --
 ALTER TABLE `userbooking`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=195;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=218;
 
 --
 -- AUTO_INCREMENT for table `userpatient`
