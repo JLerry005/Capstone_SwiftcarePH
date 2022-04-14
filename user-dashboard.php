@@ -1,9 +1,10 @@
 <?php
-//   include_once 'nav.php';
-//   if (!isset($_SESSION['sessionpatientUserID'])) {
-//             header("location: user-login.php");
-//             die();
-//     } 
+    session_start();
+    if (!isset($_SESSION['sessionpatientUserID'])) {
+        header("location: user-login");
+        die();
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -34,18 +35,8 @@
 </head>
 <body class="font-poppins bg-gray-900">
 
-    
-    <!-- <button class="btn btn-secondary sampleButton" id="sampleButton" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip primary examples">Tooltip primary</button> -->
-
     <!--Main Container-->
     <div class="mx-auto">
-        
-        <!-- <h3 class="text-start"><i class="bi bi-speedometer2"></i> Dashboard</h3> -->
-<!--         
-        <button type="button" id="sampleButton" class="btn btn-secondary sampleButton" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
-            Tooltip on top
-        </button> -->
-        
 
         <!-- Reservations and Account Settings Cards -->
         <div id="main-cards">
@@ -63,35 +54,37 @@
                         </div>
                     </a>
                 </div>
+
                 <!-- Reservations and Account Settings Cards -->
                 <div class="col-span-1 py-20 space-y-10">
                     <!-- Reservation -->
-                    <div class="card mt-5 mb-4 text-light p-5 card-reservation" id="reservations-card">
-                        <div class="card-body d-flex justify-content-between align-items-center">
-                            <!-- Left Side Content -->
-                            <div class="d-flex align-items-center">
-                                <div class="card-icon">
-                                    <i class="bi bi-calendar-check-fill fs-1 text-blue-50"></i>
+                    <div class="card mt-5 mb-4 text-light p-5 card-reservation" id="">
+                        <a href="user-reservations">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <!-- Left Side Content -->
+                                <div class="d-flex align-items-center">
+                                    <div class="card-icon">
+                                        <i class="bi bi-calendar-check-fill fs-1 text-blue-50"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="card-title fs-4 font-bold text-gray-900 uppercase tracking-wide">Reservations</h3>
+                                        <p class="card-text text-white">View and manage all of your <b class="text-gray-900">reservations.</b></p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 class="card-title fs-4 font-bold text-gray-900 uppercase tracking-wide">Reservations</h3>
-                                    <p class="card-text">View and manage all of your <b class="text-gray-900">reservations.</b></p>
-                                </div>
-                            </div>
-                            <!-- Right Side Content -->
-                            <div>
-                                <a href="#" class="btn fs-1">
+                                <!-- Right Side Content -->
+                                <div class="btn fs-1">                      
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                                    </svg>                        
-                                </a>
+                                    </svg>                                                        
+                                </div>
                             </div>
-                        </div> 
+                        </a>
                     </div>
 
                     <!-- Account Settings -->
                     <div class="card mb-4 p-5 card-account" id="account-card">
                         <div class="card-body d-flex justify-content-between align-items-center">
+
                             <!-- Left Side Content -->
                             <div class="d-flex align-items-center">
                                 <div class="card-icon">
@@ -102,6 +95,7 @@
                                     <p class="card-text">Manage your <b>account.</b></p>
                                 </div>
                             </div>
+
                             <!-- Right Side Content -->                
                             <div>
                                 <a href="#" class="btn fs-1">
@@ -117,117 +111,6 @@
         </div>
 
         <!-- Contents -->
-        
-        <!-- Start -->
-
-        <!-- Reservation Content -->
-        <div class="reservations-content my-20 mx-20" style="display: none;" id="reservations-content">
-            <!-- Back button -->
-            <div class="text-xl">
-                <button type="button" class="text-gray-100" id="reservations-back-to-dashboard" data-bs-toggle="tooltip" title="Back to dashboard">
-                    <i class="bi bi-arrow-left-circle"></i> Back
-                </button>
-            </div>
-            <div class="space-y-6 mt-16">
-                <!-- Pending -->
-                <div class="card mb-4 p-4 card-pending ">
-                    <div class="card-body d-flex justify-content-between align-items-center">
-                        <!-- Left Side Content -->
-                        <div class="d-flex align-items-center text-light">
-                            <div class="card-icon">
-                                <i class="bi bi-hourglass-split fs-1"></i>
-                            </div>
-                            <div>
-                                <h3 class="card-title fs-4 uppercase font-bold">Pending</h3>
-                                <p class="card-text">View and manage all of your reservations here.</p>
-                            </div>
-                        </div>
-                        <!-- Right Side Content -->
-                        <div>
-                            <a href="#" class="btn fs-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                                </svg>                          
-                            </a>                    
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Confirmed -->
-                <div class="card mb-4 p-4 card-confirmed">
-                    <div class="card-body d-flex justify-content-between align-items-center">
-                        <!-- Left Side Content -->
-                        <div class="d-flex align-items-center text-light">
-                            <div class="card-icon">
-                                <i class="bi bi-check2-circle fs-1"></i>
-                            </div>
-                            <div>
-                                <h3 class="card-title fs-4 uppercase font-bold">Confirmed</h3>
-                                <p class="card-text">View and manage all of your reservations here.</p>
-                            </div>
-                        </div>
-                        <!-- Right Side Content -->
-                        <div>
-                            <a href="#" class="btn fs-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                                </svg>                          
-                            </a>  
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Rejected -->
-                <div class="card mb-4 p-4 card-rejected">
-                    <div class="card-body d-flex justify-content-between align-items-center">
-                        <!-- Left Side Content -->
-                        <div class="d-flex align-items-center text-light">
-                            <div class="card-icon">
-                                <i class="bi bi-x-circle-fill fs-1"></i>
-                            </div>
-                            <div>
-                                <h3 class="card-title fs-4 uppercase font-bold">Rejected</h3>
-                                <p class="card-text">View and manage all of your reservations here.</p>
-                            </div>
-                        </div>
-                        <!-- Right Side Content -->
-                        <div>
-                            <a href="#" class="btn fs-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                                </svg>                          
-                            </a>  
-                        </div>
-                    </div>
-                </div>
-
-                <!-- History -->
-                <div class="card mb-4 p-4 card-history">
-                    <div class="card-body d-flex justify-content-between align-items-center">
-                        <!-- Left Side Content -->
-                        <div class="d-flex align-items-center text-light">
-                            <div class="card-icon">
-                                <i class="bi bi-clock-history fs-1"></i>
-                            </div>
-                            <div>
-                                <h3 class="card-title fs-4 uppercase font-bold">History</h3>
-                                <p class="card-text">View and manage all of your reservations here.</p>
-                            </div>
-                        </div>
-                        <!-- Right Side Content -->
-                        <div>
-                            <a href="#" class="btn fs-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                                </svg>                          
-                            </a>  
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>        
-        <!-- End -->
 
         <!-- Start -->
 
@@ -239,6 +122,7 @@
                 </button>
             </div>
 
+            <!-- Cotainer of Account Setting -->
             <div class="grid grid-cols-2 py-16">
                 <!-- Account Setting -->
                 <div class="account-setting cols-span-1">
@@ -413,19 +297,8 @@
 
         <p id="result-modal"></p>
     </div>                    
-     
-      <!-- <div class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true" id="result-toast">
-        <div class="toast-header bg-success text-white">
-          <strong class="me-auto"><i class="bi bi-check-circle-fill"></i> Success</strong>
-          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-          <div class="toast-body">
-            <b>New password has been saved successfully!</b>
-          </div>
-        </div>     
-      </div> -->
-                                
-         </div>
+                            
+    </div>
         <!-- End -->
         <script src="https://unpkg.com/@popperjs/core@2"></script>
         <!-- FLOWBITE CDN -->

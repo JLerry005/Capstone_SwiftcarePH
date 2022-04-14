@@ -195,7 +195,7 @@
                     <!-- Hospital Listing ID -->
                     <input type="hidden" name="listingID" id="listingID" value="<?php echo $_SESSION["listing-id"] ?>">
                     <!-- Cards go here -->
-                    <div class="px-5 lg:grid grid-cols-12 gap-4 min-h-[200px]" id="pending-cards-container">
+                    <div class="px-5 py-5 lg:grid grid-cols-12 gap-4 min-h-[200px]" id="pending-cards-container">
 
                         <!-- Cards -->
                         <!-- <div class="col-span-3 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 

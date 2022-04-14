@@ -1,5 +1,30 @@
 <?php
 
+    function verifyPhoneEmail($conn, $userMobileNumber) {
+        $sql = "SELECT * FROM userpatient WHERE patientPhoneNumber =  ? OR patientEmail = ?;";
+        $stmt = mysqli_stmt_init($conn);
+
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header("location: ../signup.php?error=stmtfailed");
+            exit();
+        }
+
+        mysqli_stmt_bind_param($stmt, "ss", $userMobileNumber, $userMobileNumber);
+        mysqli_stmt_execute($stmt);
+
+        $resultData = mysqli_stmt_get_result($stmt);
+
+        if ($row = mysqli_fetch_assoc($resultData)) {
+            return $row;
+        }
+        else {
+            $result = false;
+            return $result;
+        }
+
+        mysqli_stmt_close($stmt);
+    }
+
     function userMobileNumberExists($conn, $mobileNumber) {
         $sql = "SELECT * FROM userpatient WHERE patientPhoneNumber =  ?;";
         $stmt = mysqli_stmt_init($conn);
@@ -83,14 +108,20 @@
     
     // USER login function
     function loginUser($conn, $userMobileNumber, $userPassword) {
-        $userMobileNumberExists = userMobileNumberExists($conn, $userMobileNumber);
+        // $userMobileNumberExists = userMobileNumberExists($conn, $userMobileNumber);
+        $verifyPhoneEmail = verifyPhoneEmail($conn, $userMobileNumber);
 
-        if ($userMobileNumberExists === false) {
-            header("location: ../user-login.php?error=wronglogin");
+        // if ($userMobileNumberExists === false) {
+        //     header("location: ../user-login.php?error=wronglogin");
+        //     exit();
+        // }
+
+        if ($verifyPhoneEmail === false) {
+            header("location: ../user-login.php?error=wrong-email-or-phonenumber");
             exit();
         }
 
-        $pwdHashed = $userMobileNumberExists["patientPassword"];
+        $pwdHashed = $verifyPhoneEmail["patientPassword"];
         $checkPwd = password_verify($userPassword, $pwdHashed);
 
         if ($checkPwd === false) {
@@ -101,9 +132,12 @@
         else if ($checkPwd === true) {
             session_start();
 
-            $_SESSION["sessionpatientUserID"] = $userMobileNumberExists["patientUserID"];
-            $_SESSION["sessionPatientPhoneNumber"] = $userMobileNumberExists["patientPhoneNumber"];
-            $_SESSION["sessionPatientFirstName"] = $userMobileNumberExists["patientFirstname"];
+            // $sql = 
+
+            // $_SESSION["userID"] = 
+            $_SESSION["sessionpatientUserID"] = $verifyPhoneEmail["patientUserID"];
+            $_SESSION["sessionPatientPhoneNumber"] = $verifyPhoneEmail["patientPhoneNumber"];
+            $_SESSION["sessionPatientFirstName"] = $verifyPhoneEmail["patientFirstname"];
 
             header("location: ../index?succefully-logged-in");
             exit();

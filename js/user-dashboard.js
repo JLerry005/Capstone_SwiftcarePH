@@ -2,11 +2,11 @@
 
     
     let mainCards = document.getElementById("main-cards");
-    let reservations = document.getElementById("reservations-card");
+    // let reservations = document.getElementById("reservations-card");
     let account = document.getElementById("account-card");
-    let reservationsContent = document.getElementById("reservations-content");
+    // let reservationsContent = document.getElementById("reservations-content");
     let accountContent = document.getElementById("account-content");
-    let reservationsBackToDashboard = document.getElementById("reservations-back-to-dashboard");
+    // let reservationsBackToDashboard = document.getElementById("reservations-back-to-dashboard");
     let accountBackToDashboard = document.getElementById("account-back-to-dashboard");
     // let sampleButton = document.getElementById("sampleButton");
 
@@ -98,17 +98,17 @@
     // var tooltip = new bootstrap.Tooltip(exampleEl, options);
       
     // Reservations Card click Function
-    reservations.onclick = function () {
-        $(mainCards).addClass("fadingOut");
+    // reservations.onclick = function () {
+    //     $(mainCards).addClass("fadingOut");
         
-        $(mainCards).toggle("slide", {direction: "left"}, function () {
-            $(mainCards).removeClass("fadingOut");
-            $(reservationsContent).addClass("fadeInAnimation");
-            $(reservationsContent).show("slide", {direction: "right" },  function () {
-                // $('#reservations-content').removeClass("fadeInAnimation"); 
-            });
-        });
-    }
+    //     $(mainCards).toggle("slide", {direction: "left"}, function () {
+    //         $(mainCards).removeClass("fadingOut");
+    //         $(reservationsContent).addClass("fadeInAnimation");
+    //         $(reservationsContent).show("slide", {direction: "right" },  function () {
+    //             // $('#reservations-content').removeClass("fadeInAnimation"); 
+    //         });
+    //     });
+    // }
 
     // Account Card click Function
     account.onclick = function () {
@@ -124,17 +124,17 @@
     }
 
     // Back Button click Function
-    reservationsBackToDashboard.onclick = function () {
-        $(reservationsContent).removeClass("fadeInAnimation");
-        $(accountContent).addClass("fadingOut");
-        $(reservationsContent).hide("slide", {direction: "right" });
-        $(mainCards).show("slide", {direction: "left" });
-    }
+    // reservationsBackToDashboard.onclick = function () {
+    //     // $(reservationsContent).removeClass("fadeInAnimation");
+    //     $(accountContent).addClass("fadingOut");
+    //     $(reservationsContent).hide("slide", {direction: "right" });
+    //     $(mainCards).show("slide", {direction: "left" });
+    // }
 
     // Back Button click Function
     accountBackToDashboard.onclick = function () {
         $(accountContent).removeClass("fadeInAnimation");
-        $(reservationsContent).addClass("fadingOut");
+        // $(reservationsContent).addClass("fadingOut");
         $(accountContent).hide("slide", {direction: "right" });
         $(mainCards).show("slide", {direction: "left" });
     }

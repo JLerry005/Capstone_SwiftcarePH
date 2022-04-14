@@ -38,7 +38,7 @@
                 <form action="includes/user-login-inc" method="POST" id="login-form">
                     <!-- User Email -->
                     <div class="mb-3 md:mb-6">
-                        <label for="userMobileNumber" class="block mb-2 text-sm md:text-md font-medium text-blue-500">Phone Number</label>
+                        <label for="userMobileNumber" class="block mb-2 text-sm md:text-md font-medium text-blue-500">Phone Number or Email</label>
                         <input type="tel" id="userMobileNumber" name="userMobileNumber" autocomplete="nope" class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-md focus:bg-slate-800 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                     </div>
                     <!-- User Password -->
@@ -53,6 +53,15 @@
             <div class="2xl:mr-10 mt-5 2xl:pr-16">
                 <button id="submit" name="submit" type="submit" class="text-white w-full bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2" id="btnEditPasswordNext" name="btnEditPasswordNext">Login</button>
             </div>
+
+            <!-- Error Message -->
+            <?php
+                if (isset($_GET["error"])) {
+                    if($_GET["error"] == "wrong-email-or-phonenumber") {
+                        echo "<p class='error-mobileNumber-used text-red-600 mb-3 text-center'><i class='bi bi-exclamation-circle-fill'></i> Email or Phone Number is incorrect!</p>";
+                    }
+                }
+            ?>
                 </form>
             <!-- sigup content -->
             <div class="mt-6 sm:mt-16 md:mt-20 xl:mt-14 2xl:mr-10 2xl:mt-32 2xl:pr-16">

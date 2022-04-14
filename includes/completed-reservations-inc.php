@@ -167,7 +167,8 @@
                     <div class="bg-blue-500 p-2 rounded-t-lg flex items-center justify-between">
                         <div>
                             <p class="flex items-center cursor-default py-0.5 px-2 w-fit text-white font-medium tracking-wider">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 mr-2"><path fill="none" d="M0 0H24V24H0z"/><path d="M17 2v2h3c.552 0 1 .448 1 1v16c0 .552-.448 1-1 1H4c-.552 0-1-.448-1-1V5c0-.552.448-1 1-1h3V2h10zM7 6H5v14h14V6h-2v2H7V6zm6 5v2h2v2h-2.001L13 17h-2l-.001-2H9v-2h2v-2h2zm2-7H9v2h6V4z" fill="rgba(0,0,0,1)"/></svg> '.$reservationCode.'</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 mr-2"><path fill="none" d="M0 0H24V24H0z"/><path d="M17 2v2h3c.552 0 1 .448 1 1v16c0 .552-.448 1-1 1H4c-.552 0-1-.448-1-1V5c0-.552.448-1 1-1h3V2h10zM7 6H5v14h14V6h-2v2H7V6zm6 5v2h2v2h-2.001L13 17h-2l-.001-2H9v-2h2v-2h2zm2-7H9v2h6V4z" fill="rgba(0,0,0,1)"/></svg> '.$reservationCode.'
+                            </p>
                         </div>
                         
                         <div class="mr-1 rounded-md w-fit py-0.5 px-2 bg-blue-900 text-gray-100 font-medium tracking-wider drop-shadow-lg">
@@ -185,16 +186,16 @@
                         </div>
                         
                         <p class="flex items-center">
-                            <i class="bi bi-clock-history hover:text-blue-500"></i> &nbsp;'.$timeStamp.'
+                            <i class="bi bi-clock-history text-gray-900 hover:text-blue-500"></i> &nbsp;'.$timeStamp.'
                         </p>
                     </div>
 
                     <div class="mb-2 px-4 flex items-center space-x-3">
                         <img src="https://avatars.dicebear.com/api/big-smile/'.$firstName.'.svg?b=%231a56bb&r=50" alt="" srcset="" class="w-10">
-                        <h1 class="text-lg font-bold text-gray-700 capitalize">'.$firstName.' '.$lastName.'</h1>
+                        <h1 class="text-lg font-bold text-gray-900 capitalize">'.$firstName.' '.$lastName.'</h1>
                     </div>
                     <div class="flex items-start justify-between px-4">
-                        <div class="text-sm font-light pb-4">
+                        <div class="text-sm font-light pb-4 text-gray-900">
                             <p class="flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 hover:text-blue-500" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />

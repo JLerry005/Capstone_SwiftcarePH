@@ -1,7 +1,6 @@
 module.exports = {
 
-  content: [  
-    './dist/index.html',
+  content: [ 
     './new-homepage.php',
     './hospital-dashboard.php',
     './admin-dashboard.php',
@@ -19,14 +18,15 @@ module.exports = {
     './includes/nav.php',
     './hospital-overview.php',
     './new-hospital-overview.php',
-    './node_modules/flowbite/**/*.js',
     './reservation-success.php',
     './user-login.php',
     './hospital-login.php',
     './pending-reservations-inc.php',
     './pending-booking-details.php',
     './PHPMailer/user-booking-confirmation.php',
-    './update-options.php'
+    './update-options.php', 
+    './node_modules/flowbite/**/*.js',
+    './user-reservations.php'
 ],
 
   presets: [],

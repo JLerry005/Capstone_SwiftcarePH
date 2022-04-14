@@ -21,6 +21,7 @@
                 $("#skeleton-loader").hide();
                 $(".tab-contents").hide();
                 $('#dashboardContent').show();
+                window.scrollTo(0, 0);
 
                 let fetchedData = JSON.parse(data);
 
@@ -374,6 +375,7 @@
                 $("#skeleton-loader").hide();
                 $(".tab-contents").hide();
                 $("#editDetailsContent").show();
+                window.scrollTo(0, 0);
 
                 let fetchedData = JSON.parse(data);
 
@@ -387,27 +389,7 @@
                 $("#bed-slot").val(fetchedData.bed_slot);
 
                 // Checkbox
-                let bedCheckBox = (fetchedData.bed);
-                let roomCheckBox = (fetchedData.room);
                 let requireDocs = (fetchedData.additional_docs);
-
-                // Check if bedCheckBox has value
-                if (bedCheckBox == "Bed") {
-                    document.getElementById("hospital-bed").checked = true;
-                    $('#bed-slot').fadeIn();
-                }else if(bedCheckBox == ""){
-                    document.getElementById("hospital-bed").checked = false;
-                    $('#bed-slot').fadeOut();
-                }
-
-                // Check if roomCheckBox has value
-                if (roomCheckBox == "Room") {
-                    document.getElementById("hospital-room").checked = true;
-                    $('#room-slot').fadeIn();
-                }else if(roomCheckBox == ""){
-                    document.getElementById("hospital-room").checked = false;
-                    $('#room-slot').fadeOut();
-                }
 
                 // Check if additional docs has value
                 if (requireDocs == "Yes") {
@@ -716,6 +698,7 @@
     // Show Account When Dashboard Button is clicked.
     // let accountContent = document.getElementById("accountContent").innerHTML;
     function show_account() {
+        window.scrollTo(0, 0);
         // document.getElementById("content-container").innerHTML ="";
         // document.getElementById("content-container").innerHTML =accountContent;
 
