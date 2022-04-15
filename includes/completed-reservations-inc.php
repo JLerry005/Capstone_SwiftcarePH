@@ -164,14 +164,19 @@
             elseif ($remarks == "") {
                 $output .='
                 <a href="completed-booking-details?bookingID='.$bookingID.'" class="col-span-4 bg-blue-400 rounded-lg text-gray-700 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
-                    <div class="bg-blue-500 p-2 rounded-t-lg flex items-center justify-between">
+                    <div class="bg-blue-500 p-2 rounded-t-lg flex items-center justify-between relative">
+                        <div class="absolute top-0 right-0 mr-2 -mt-5 z-10">
+                            <div class="animate-ping absolute left-0 top-0 rounded-full bg-red-500 p-2"></div>
+                            <span class="absolute left-0 top-0 rounded-full bg-red-500 p-2"></span>
+                        </div>
                         <div>
                             <p class="flex items-center cursor-default py-0.5 px-2 w-fit text-white font-medium tracking-wider">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 mr-2"><path fill="none" d="M0 0H24V24H0z"/><path d="M17 2v2h3c.552 0 1 .448 1 1v16c0 .552-.448 1-1 1H4c-.552 0-1-.448-1-1V5c0-.552.448-1 1-1h3V2h10zM7 6H5v14h14V6h-2v2H7V6zm6 5v2h2v2h-2.001L13 17h-2l-.001-2H9v-2h2v-2h2zm2-7H9v2h6V4z" fill="rgba(0,0,0,1)"/></svg> '.$reservationCode.'
                             </p>
                         </div>
                         
-                        <div class="mr-1 rounded-md w-fit py-0.5 px-2 bg-blue-900 text-gray-100 font-medium tracking-wider drop-shadow-lg">
+                        
+                        <div class=" mr-1 rounded-md w-fit py-0.5 px-2 bg-blue-900 text-gray-100 font-medium tracking-wider drop-shadow-lg">
                             Add Remarks +
                         </div>
                     </div>

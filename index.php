@@ -56,21 +56,53 @@
                 <!-- <button class="bg-orange-400 text-gray-700 font-bold p-4 rounded uppercase">Sign up now!</button> -->
             </div>
 
-            <!-- Signup section -->
-            <div class="rightSection hidden md:flex flex-col mt-3 lg:mt-0 md:flex-col md:justify-center space-y-4">
-                <div class="transition ease-out hover:-translate-y-1 hover:scale-110 duration-300">
-                    <h1 class="mb-2 font-semibold md:text-lg text-md ">Book your first Reservation Now!</h1>
-                    <!-- <p>Click the button below to Signup:</p> -->
-                    <a href="user-signup.php" class="bg-orange-500 py-4 w-full rounded flex flex-row justify-center items-center hover:bg-orange-400 transition ease-out hover:-translate-y-1 hover:scale-100 duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                            <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
-                          </svg>
-                          &nbsp;Signup
-                    </a>
-                </div>
-                <p class="text-center">Already have an Account? <a href="user-login.php" class="hover:underline hover:text-blue-500">Login</a></p>
-            </div>
+            <?php
+                if (!isset($_SESSION["sessionpatientUserID"])) {
+                    echo '
+                        <!-- Signup section -->
+                        <div class="rightSection hidden md:flex flex-col mt-3 lg:mt-0 md:flex-col md:justify-center space-y-4">
+                            <div class="transition ease-out hover:-translate-y-1 hover:scale-110 duration-300">
+                                <h1 class="mb-2 font-semibold md:text-lg text-md ">Book your first Reservation Now!</h1>
+                                <!-- <p>Click the button below to Signup:</p> -->
+                                <a href="user-signup.php" class="bg-orange-500 py-4 w-full rounded flex flex-row justify-center items-center hover:bg-orange-400 transition ease-out hover:-translate-y-1 hover:scale-100 duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                        <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                                    </svg>
+                                    &nbsp;Signup
+                                </a>
+                            </div>
+                            <p class="text-center">Already have an Account? <a href="user-login.php" class="hover:underline hover:text-blue-500">Login</a></p>
+                        </div>
+                    ';
+                }
+
+                else {
+                    echo '
+                        <div class="rightSection hidden md:flex flex-col mt-3 lg:mt-0 md:flex-col md:justify-center space-y-4">
+                            <div class="">
+                                <div class="flex items-center">
+                                    <p class="font-semibold md:text-2xl text-md">Welcome back, &nbsp;'.$_SESSION['sessionPatientFirstName'].'</p>
+                                    &ensp;<img src="https://avatars.dicebear.com/api/big-smile/'.$_SESSION['sessionPatientFirstName'].'.svg?b=%231a56bb&r=50" alt=""class="w-10">
+                                </div>
+                            </div>
+
+                            <a href="user-dashboard" class="flex items-center justify-between space-x-3 pl-1 py-1 pr-5 rounded-full bg-blue-600 hover:bg-blue-500 transition-all">
+                                <div class="flex items-center space-x-3">
+                                    <img src="assets/speedometer.png" alt="" class="hover:animate-spin transition-all">
+                                    <p class="font-bold text-lg">My Dashboard</p>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                  </svg>
+                            </a>
+
+                            <p class="text-center text-sm text-slate-400">Manage your <b>Account</b> by clicking the button above.</p>
+                        </div>
+                    ';
+                }
+            ?>
+            
 
             <!-- Hero section for small devices -->
             <div class="md:hidden text-left space-y-2">

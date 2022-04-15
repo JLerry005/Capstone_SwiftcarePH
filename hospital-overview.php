@@ -85,14 +85,23 @@
                     echo '
 
                     <div class="hidden md:flex md:flex-row md:items-center space-x-5">
-                        <p class="flex flex-row items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <div class="px-3 hover:text-blue-400 text-blue-100 transition-all">
+                            <a href="user-reservations" target="_blank" class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                                  </svg>
+                                &ensp;My Reservations
+                            </a>
+                        </div>
+
+                        <p class="flex flex-row items-center capitalize px-3 hover:text-blue-400 text-blue-100 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                            </svg>
-                            &nbsp;'.$_SESSION['sessionPatientFirstName'].'
+                              </svg>
+                              <a href="user-dashboard" target="_blank"> &nbsp;'.$_SESSION['sessionPatientFirstName'].'</a>
                         </p>
-                        <a href="includes/logout-inc" class="bg-red-600 hover:bg-red-500 hover:drop-shadow-md py-2 px-7 rounded-lg hover:rounded-md hover:scale-105 flex flex-row text-sm transition-all">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <a href="includes/logout-inc" class=" hover:bg-red-500 border-2 border-red-500 hover:drop-shadow-md py-1 px-5 rounded-full flex items-center text-sm transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                             </svg>
                             &nbsp;Logout

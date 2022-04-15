@@ -24,7 +24,11 @@
             
     
             $output .='
-                <a href="pending-booking-details?bookingID='.$bookingID.'" class="col-span-4 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
+                <a href="pending-booking-details?bookingID='.$bookingID.'" class="relative col-span-4 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
+                    <div class="absolute top-0 right-0 mr-2 -mt-5 z-10">
+                        <div class="animate-ping absolute left-0 top-0 rounded-full bg-red-500 p-2"></div>
+                        <span class="absolute left-0 top-0 rounded-full bg-red-500 p-2"></span>
+                    </div>
                     <div class="p-4 flex items-center justify-between">
                         <div class="flex items-center space-x-3">
                             <h1 class="bg-blue-700 hover:bg-blue-800 rounded-full w-fit py-0.5 px-2 text-white flex items-center capitalize">

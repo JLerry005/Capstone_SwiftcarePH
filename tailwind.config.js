@@ -26,7 +26,8 @@ module.exports = {
     './PHPMailer/user-booking-confirmation.php',
     './update-options.php', 
     './node_modules/flowbite/**/*.js',
-    './user-reservations.php'
+    './user-reservations.php',
+    './user-account.php'
 ],
 
   presets: [],

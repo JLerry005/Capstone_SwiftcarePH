@@ -38,7 +38,7 @@
                 <form action="includes/user-login-inc" method="POST" id="login-form">
                     <!-- User Email -->
                     <div class="mb-3 md:mb-6">
-                        <label for="userMobileNumber" class="block mb-2 text-sm md:text-md font-medium text-blue-500">Phone Number or Email</label>
+                        <label for="userMobileNumber" class="block mb-2 text-sm md:text-md font-medium text-blue-500">Email or Phone Number  </label>
                         <input type="tel" id="userMobileNumber" name="userMobileNumber" autocomplete="nope" class="bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-md focus:bg-slate-800 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                     </div>
                     <!-- User Password -->

@@ -434,6 +434,38 @@
                         </div> 
                     </div>
                 </div>
+
+                <!-- Rejected / Expired Reservations Contents -->
+                <div id="rejected-contents" class="bg-white p-5 2xl:mx-16 md:mx-6 rounded drop-shadow-md text-sm scroll-my-7">
+                    <!-- Header -->
+                    <div class="flex flex-col sm:flex-row justify-between items-center">
+                        <h1 class="text-lg font-bold text-blue-700"><i class="bi bi-x-circle-fill text-gray-800"></i> Rejected / Expired Reservations</h1>
+
+                        <div class="flex space-x-5">
+                            <div class="-space-x-1">
+                                <button id="btn-upcomingCovid" class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Covid</button>
+                                <button id="btn-upcomingNonCovid" class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Non-Covid</button>
+                            </div>
+
+                            <div>
+                                <button id="btn-show-all-upcoming" class="border-2 border-gray-500 rounded p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Show All</button>
+                            </div>
+
+                            <!-- Toggle Button -->
+                            <div class="flex items-center">
+                                <button class=" w-8 h-8 bg-blue-500 hover:bg-blue-800 rounded-md border-2 border-gray-500" id="btn-toggle-rejected" onclick="toggleRejected()"><i class="ri-arrow-up-s-line text-gray-100 font-bold rejected-icon"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="border-slate-200 my-3">
+
+                    <!-- Cards go here -->
+                    <div class="px-5 py-5 lg:grid grid-cols-12 gap-4 min-h-[200px]" id="rejected-cards-container">
+
+                    </div>
+                </div>
+
             </div>
 
             <!-- Edit Details Contents -->

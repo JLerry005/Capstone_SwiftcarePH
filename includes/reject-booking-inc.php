@@ -18,6 +18,7 @@
         $userID = $_POST['userID'];
         $listingID = $_POST['listingID'];
 
+
         $moveToRejected = "INSERT INTO rejectedreservations (user_id, listing_id, firstname, lastname, date, time, phonenumber, email, concern, specifyconcern, hospitalname, reservationtype, booking_timestamp)
                         VALUES ('$userID', '$listingID', '$firstname','$lastname','$date','$time', '$contactNumber', ' $emailAdd', '$patientConcern', '$specifyConcern', '$patientConcern', '$reservationType', '$timeStamp')";
 

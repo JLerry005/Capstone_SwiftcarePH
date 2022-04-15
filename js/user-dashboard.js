@@ -1,13 +1,13 @@
     
 
     
-    let mainCards = document.getElementById("main-cards");
+    // let mainCards = document.getElementById("main-cards");
     // let reservations = document.getElementById("reservations-card");
-    let account = document.getElementById("account-card");
+    // let account = document.getElementById("account-card");
     // let reservationsContent = document.getElementById("reservations-content");
-    let accountContent = document.getElementById("account-content");
+    // let accountContent = document.getElementById("account-content");
     // let reservationsBackToDashboard = document.getElementById("reservations-back-to-dashboard");
-    let accountBackToDashboard = document.getElementById("account-back-to-dashboard");
+    // let accountBackToDashboard = document.getElementById("account-back-to-dashboard");
     // let sampleButton = document.getElementById("sampleButton");
 
     // ==========================================================
@@ -92,7 +92,7 @@
 
     // let toolTip = new bootstrap.tooltip(sampleButton);
     
-    $('#sampleButton').tooltip();
+    // $('#sampleButton').tooltip();
 
     // var exampleEl = document.getElementById('sampleButton');
     // var tooltip = new bootstrap.Tooltip(exampleEl, options);
@@ -111,17 +111,17 @@
     // }
 
     // Account Card click Function
-    account.onclick = function () {
-        $(mainCards).addClass("fadingOut");
-        $(mainCards).toggle("slide", {direction: "left"}, function () {
-            $(mainCards).removeClass("fadingOut");
+    // account.onclick = function () {
+    //     $(mainCards).addClass("fadingOut");
+    //     $(mainCards).toggle("slide", {direction: "left"}, function () {
+    //         $(mainCards).removeClass("fadingOut");
 
-            $(accountContent).addClass("fadeInAnimation");
-            $(accountContent).show("slide", {direction: "right" },  function () {
-                // $('#reservations-content').removeClass("fadeInAnimation"); 
-            });
-        });
-    }
+    //         $(accountContent).addClass("fadeInAnimation");
+    //         $(accountContent).show("slide", {direction: "right" },  function () {
+    //             // $('#reservations-content').removeClass("fadeInAnimation"); 
+    //         });
+    //     });
+    // }
 
     // Back Button click Function
     // reservationsBackToDashboard.onclick = function () {
@@ -132,12 +132,12 @@
     // }
 
     // Back Button click Function
-    accountBackToDashboard.onclick = function () {
-        $(accountContent).removeClass("fadeInAnimation");
-        // $(reservationsContent).addClass("fadingOut");
-        $(accountContent).hide("slide", {direction: "right" });
-        $(mainCards).show("slide", {direction: "left" });
-    }
+    // accountBackToDashboard.onclick = function () {
+    //     $(accountContent).removeClass("fadeInAnimation");
+    //     // $(reservationsContent).addClass("fadingOut");
+    //     $(accountContent).hide("slide", {direction: "right" });
+    //     $(mainCards).show("slide", {direction: "left" });
+    // }
 
     // ==========================================================
 
@@ -168,10 +168,8 @@
             if (statusTxt == "Successfully Saved!") {
                 $('#changes-made-toast').toast('show');
                 $('#mobileNumber').focus();
-                $('#mobileNumber').addClass("success-input").delay(3000).queue( function () {
+                $('#mobileNumber').addClass("success-input").delay(1000).queue( function () {
                     $(this).removeClass("success-input");
-                    next();
-                    next();mobileNumber
                 });
                 
                 $('#save-phone-number').hide();
@@ -179,6 +177,7 @@
                 $(savePhoneSuccessMessage).delay(1000).fadeOut('slow');
                 $('#edit-phone-number').delay(2000).fadeIn();
                 load_phone();
+                phoneNumberInput.disabled = true;
             }
             if (statusTxt == "STMT FAILED!") {
                 alert('Failed!');
@@ -279,7 +278,7 @@
                     // $(resultToast).toast('show');
                     // $('#result-modal').hide();
                     // reloads();
-                    toggleModal('editPasswordModal', false);
+                    toggleModal('editPasswordModal', false).hide();
                     toggleModal('successModal', true);
                 }
                 if (statusTxt == "STMT FAILED!") {

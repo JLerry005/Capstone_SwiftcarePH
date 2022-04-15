@@ -41,16 +41,16 @@
 
                     <a href="#" class="mb-2 px-4 flex items-center space-x-3">
                         <img src="https://avatars.dicebear.com/api/big-smile/'.$firstName.''.$lastName.'.svg?b=%231a56bb&r=50" alt="" srcset="" class="w-10">
-                        <h1 class="text-lg font-bold text-white capitalize">'.$firstName.''.$lastName.'</h1>
+                        <h1 class="text-lg font-bold text-white capitalize">'.$firstName.' '.$lastName.'</h1>
                     </a>
                     <div class="flex items-start justify-between px-4">
                         <div class="text-sm font-light pb-4 text-blue-200">
-                            <p class="flex items-center font-semibold">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 hover:text-blue-500 viewBox="0 0 20 20" fill="currentColor">
+                            <p class="flex items-center truncate">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd" />
                                 </svg>
                                 '.$hospitalname.'
-                            </p>
+                            </p>  
                             <p class="flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 hover:text-blue-500" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />

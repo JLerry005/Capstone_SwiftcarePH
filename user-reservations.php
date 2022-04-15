@@ -40,7 +40,7 @@
 
     <input type="hidden" name="userID" id="userID" value="<?php echo $userID ?>">
     
-    <div class="container mx-auto flex flex-col space-y-10 py-5 px-5 relative min-h-screen">
+    <div class="container mx-auto flex flex-col space-y-10 py-5 px-5 relative min-h-screen" id="main-container">
         <!-- nav links -->
         <div class="flex items-center justify-between mb-10 mt-3">
             <div class="hover:bg-gray-700 bg-gray-800 p-2 rounded-lg cursor-pointer transition-all">
@@ -175,7 +175,7 @@
                     <div class="px-5 py-5 lg:grid grid-cols-12 gap-4" id="pending-cards-container">
                         
                         <!-- Cards -->
-                        <div onclick="" class="text-xs md:text-sm md:col-span-12 lg:col-span-4 bg-blue-600 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
+                        <!-- <div onclick="" class="text-xs md:text-sm md:col-span-12 lg:col-span-4 bg-blue-600 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
                             <div class="p-2 pt-3 sm:p-4 flex items-center justify-between">
                                 <div class="flex items-center space-x-3">
                                     <a href="#" class="bg-blue-700 hover:bg-blue-800 rounded-full w-fit py-0.5 px-2 text-white flex items-center capitalize">
@@ -231,7 +231,7 @@
                                     </svg>
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -244,7 +244,10 @@
                     </button> 
                 </div>
 
-                <p class="text-blue-500 font-bold text-lg"><i class="bi bi-calendar2-check-fill text-gray-300"></i>&ensp;Upcoming Reservations</p>
+                <p class="flex items-center text-blue-500 font-bold text-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6"><path fill="none" d="M0 0h24v24H0z"/><path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8zM6 14h2v2H6v-2zm4 0h8v2h-8v-2z" fill="rgba(195,221,253,1)"/></svg>     
+                    &ensp;Upcoming Reservations
+                </p>
 
                 <!-- Upmcoming Cards Container -->
                 <div class="px-5 py-5 lg:grid grid-cols-12 gap-4" id="upcoming-cards-container">
@@ -409,11 +412,378 @@
         </div>
     </div>
 
-    
-    <!-- Footer -->
-    <!-- <div class="relative mt-5 py-5 text-center">
-        
-    </div> -->
+    <!-- Full Details Modal -->
+    <div id="full-details-modal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+        <div class="relative p-4 w-full max-w-4xl h-full md:h-auto">
+            <!-- Modal content -->
+            <div class="relative rounded-lg shadow bg-blue-600">
+                <button class="hidden" data-modal-toggle="full-details-modal"></button>
+                <!-- Modal header -->
+                <div class="flex justify-center items-center text-center pt-10 space-x-2">
+                    <img src="assets/reservations-images/calendar.png" alt="" class="w-8">
+                    <h1 class="font-bold md:text-2xl">Full Booking Details</h1>
+                </div>
+
+                <!-- Modal body -->
+                <div class="px-5 py-10 space-y-6 text-gray-200" id="details-modal-body">
+                    <!-- For Mobile -->
+                    <div class="md:hidden space-y-7">
+                        <!-- Timestamp -->
+                        <div class="flex justify-end mb-10">
+                            <p class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                                    </svg>
+                                &ensp;March 10, 2022
+                            </p>
+                        </div>
+                        <!-- Status -->
+                        <div class="flex items-start space-x-5">
+                            <div>
+                                <img src="assets/reservations-images/status.png" alt="" class="w-10">
+                            </div>
+
+                            <div class="">
+                                <div class="mb-4">
+                                    <h1 class="text-slate-400">Status</h1>
+                                    <h1 class="font-bold text-lg">Pending For Review</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- First and Last Name -->
+                        <div class="flex items-start space-x-5"> 
+                            <div>
+                                <img src="https://avatars.dicebear.com/api/big-smile/'.$firstName.''.$lastName.'.svg?b=%231a56bb&r=50" alt="" class="w-10">
+                            </div> 
+
+                            <div class="flex items-start space-x-5">
+                                <!-- Firstname -->
+                                <div class="mb-4">
+                                    <h1 class="text-slate-400">Firstname</h1>
+                                    <h1 class="font-bold text-lg">Larry</h1>
+                                </div>
+
+                                <!-- Lastname -->
+                                <div class="mb-4">
+                                    <h1 class="text-slate-400">Lastname</h1>
+                                    <h1 class="font-bold text-lg">Goods</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Date and Time -->
+                        <div class="flex items-start space-x-5">
+                            <div>
+                                <img src="assets/reservations-images/schedule.png" alt="" class="w-10">
+                            </div>
+
+                            <div class="flex items-start space-x-5">
+                                <!-- date -->
+                                <div class="mb-4">
+                                    <h1 class="text-slate-400">Date</h1>
+                                    <h1 class="font-bold text-lg">2022-04-20</h1>
+                                </div>
+
+                                <!-- time -->
+                                <div class="mb-4">
+                                    <h1 class="text-slate-400">Time</h1>
+                                    <h1 class="font-bold text-lg">09:30 AM</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start space-x-5">
+                            <div>
+                                <img src="assets/reservations-images/email.png" alt="" class="w-10">
+                            </div>
+
+                            <div class="">
+                                <div class="mb-4">
+                                    <h1 class="text-slate-400">Email</h1>
+                                    <h1 class="font-bold text-lg">asd@gmail.com</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-start space-x-5">
+                            <div>
+                                <img src="assets/reservations-images/mobile.png" alt="" class="w-10">
+                            </div>
+
+                            <div class="">
+                                <div class="mb-4">
+                                    <h1 class="text-slate-400">Mobile number</h1>
+                                    <h1 class="font-bold text-lg">09123456789</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Concern -->
+                        <div class="flex items-start space-x-5">
+                            <div>
+                                <img src="assets/reservations-images/stethoscope.png" alt="" class="w-10">
+                            </div>
+
+                            <div class="">
+                                <div class="mb-4">
+                                    <h1 class="text-slate-400">Concern</h1>
+                                    <h1 class="font-bold text-lg">Non-Covid</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Specify Concern -->
+                        <div class="flex items-start space-x-5">
+                            <div>
+                                <img src="assets/reservations-images/text.png" alt="" class="w-10">
+                            </div>
+
+                            <div class="">
+                                <div class="mb-4">
+                                    <h1 class="text-slate-400">Concern Details</h1>
+                                    <h1 class="font-medium text-sm">Lorem ipsum dolor sit amet consectetur.</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- hospital Name -->
+                        <div class="flex items-start space-x-5">
+                            <div>
+                                <img src="assets/reservations-images/hospitalbuilding.png" alt="" class="w-10">
+                            </div>
+
+                            <div class="">
+                                <div class="mb-4">
+                                    <h1 class="text-slate-400">Hospital</h1>
+                                    <h1 class="font-medium text-sm">Amang rodriguez General Hospital</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reservation Type -->
+                        <div class="flex items-start space-x-5">
+                            <div>
+                                <img src="assets/reservations-images/bed.png" alt="" class="w-10">
+                            </div>
+
+                            <div class="">
+                                <div class="mb-4">
+                                    <h1 class="text-slate-400">Reservation Type</h1>
+                                    <h1 class="font-medium text-lg">Bed</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Attatchments -->
+                        <div class="flex items-start space-x-5">
+                            <div>
+                                <img src="assets/reservations-images/text.png" alt="" class="w-10">
+                            </div>
+
+                            <div class="">
+                                <div class="mb-4">
+                                    <h1 class="text-slate-400">Referral Images Attachment</h1>
+                                    <a class="font-medium text-lg hover:underline cursor-pointer">See images</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <!-- for MD up new -->
+                    <div class="hidden md:block text-sm px-8">
+                        <!-- Timestamp -->
+                        <div class="flex justify-end mb-10">
+                            <p class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                                    </svg>
+                                &ensp;March 10, 2022
+                            </p>
+                        </div>
+
+                        <!-- First and Last Name -->
+                        <div class="flex justify-between items-start border-dotted border-b-2 mb-14">
+                            <div class="flex items-start space-x-5 mb-3"> 
+                                <div>
+                                    <img src="https://avatars.dicebear.com/api/big-smile/'.$firstName.''.$lastName.'.svg?b=%231a56bb&r=50" alt="" class="w-10">
+                                </div> 
+
+                                <div class="flex items-start space-x-3">
+                                    <!-- Firstname -->
+                                    <div class="mb-4">
+                                        <h1 class="text-slate-400">Full Name</h1>
+                                        <h1 class="font-bold text-md md:text-xl">Larry Goods</h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Status -->
+                            <div class="flex items-start space-x-5 mb-3">
+                                <div>
+                                    <img src="assets/reservations-images/status.png" alt="" class="w-10">
+                                </div>
+
+                                <div class="">
+                                    <div class="mb-4">
+                                        <h1 class="text-slate-400">Status</h1>
+                                        <h1 class="font-bold text-md md:text-xl">Pending For Review</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- First Row -->
+                        <div class="flex items-start justify-between space-x-20 mb-5">
+                            <!-- hospital name -->
+                            <div class="flex items-start space-x-2 mb-3 border-dotted border-b-2 shrink">
+                                <div>
+                                    <img src="assets/reservations-images/hospitalbuilding.png" alt="" class="w-8">
+                                </div>
+                                <div class="">
+                                    <div class="mb-4">
+                                        <h1 class="text-slate-400">Hospital</h1>
+                                        <h1 class="font-bold text-sm">Amang rodriguez General hospital</h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Reservation Type -->
+                            <div class="flex items-start space-x-2 mb-3 border-dotted border-b-2 shrink-0">
+                                <div>
+                                    <img src="assets/reservations-images/bed.png" alt="" class="w-8">
+                                </div>
+                                <div class="">
+                                    <div class="mb-4">
+                                        <h1 class="text-slate-400">Reservation Type</h1>
+                                        <h1 class="font-bold text-sm">Bed</h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Concern -->
+                            <div class="flex items-start space-x-2 mb-10 border-dotted border-b-2 shrink-0">
+                                <div>
+                                    <img src="assets/reservations-images/stethoscope.png" alt="" class="w-8">
+                                </div>
+                                <div class="">
+                                    <div class="mb-4">
+                                        <h1 class="text-slate-400">Concern</h1>
+                                        <h1 class="font-bold text-sm">Covid</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Second Row -->
+                        <div class="flex items-start justify-between space-x-20 mb-5">
+                            <!-- Date -->
+                            <div class="flex items-start space-x-2 mb-3 border-dotted border-b-2 shrink-0">
+                                <div>
+                                    <img src="assets/reservations-images/calendar.png" alt="" class="w-8">
+                                </div>
+                                <div class="">
+                                    <div class="mb-4">
+                                        <h1 class="text-slate-400">Date</h1>
+                                        <h1 class="font-bold text-sm">2022-04-20</h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Time -->
+                            <div class="flex items-start space-x-2 mb-3 border-dotted border-b-2 shrink-0">
+                                <div>
+                                    <img src="assets/reservations-images/hourglass.png" alt="" class="w-8">
+                                </div>
+                                <div class="">
+                                    <div class="mb-4">
+                                        <h1 class="text-slate-400">Time</h1>
+                                        <h1 class="font-bold text-sm">09:30 AM</h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <!-- Email -->
+                             <div class="flex items-start space-x-2 mb-10 border-dotted border-b-2 shrink-0">
+                                <div>
+                                    <img src="assets/reservations-images/email.png" alt="" class="w-8">
+                                </div>
+                                <div class="">
+                                    <div class="mb-4">
+                                        <h1 class="text-slate-400">Email</h1>
+                                        <h1 class="font-bold text-sm">asd@gmail.com</h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="flex items-start space-x-2 mb-10 border-dotted border-b-2 shrink-0">
+                                <div>
+                                    <img src="assets/reservations-images/mobile.png" alt="" class="w-8">
+                                </div>
+                                <div class="">
+                                    <div class="mb-4">
+                                        <h1 class="text-slate-400">Mobile number</h1>
+                                        <h1 class="font-bold text-sm">09123456789</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Third Row -->
+                        <div class="flex items-start justify-between space-x-5">
+                            <!-- Attatchments -->
+                            <div class="flex items-start space-x-5 mb-10 border-dotted border-b-2">
+                                <div>
+                                    <img src="assets/reservations-images/attachments.png" alt="" class="w-10">
+                                </div>
+
+                                <div class="">
+                                    <div class="mb-4">
+                                        <h1 class="text-slate-400">Referral Attachment</h1>
+                                        <a class="font-medium text-md hover:underline cursor-pointer">See images</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Concern Details -->
+                            <div class="flex items-start space-x-2 mb-10 border-dotted border-b-2">
+                                <div>
+                                    <img src="assets/reservations-images/text.png" alt="" class="w-8">
+                                </div>
+                                <div class="">
+                                    <div class="mb-4">
+                                        <h1 class="text-slate-400">Concern Details</h1>
+                                        <h1 class="font-bold text-sm">Lorem ipsum dolor sit, amet dolor. Lorem ipsum dolor sit, amet dolor.</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="flex justify-center items-center p-6 space-x-4 rounded-b">
+                    
+                    <button id="cancelButton" name="cancelButton" type="button" class="rounded-full bg-white text-blue-600 hover:bg-blue-300 py-2 px-4">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+
+    <!-- FLOWBITE CDN -->
+    <script src="node_modules\flowbite\dist\flowbite.js"></script>
+    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <!-- Tippy JS -->
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+    <!-- Light Gallery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
 
     <!-- JavaScript Link -->
     <script src="js\user-reservations.js" defer></script>

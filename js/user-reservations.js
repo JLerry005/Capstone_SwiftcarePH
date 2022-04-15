@@ -46,17 +46,45 @@
             method: "GET",
             url: "includes/user-pending-inc.php",
             data: {userID:userID},
+            beforeSend: function () {
+                pendingCardsContainer.innerHTML = '<div class="col-span-12 animate-pulse text-xl text-center my-60">Please wait..</div>';
+            },
             success: function (data) {
                 pendingCardsContainer.innerHTML = data;
             }
         });
     }
 
-    // View Pending Reservation Full Details
-    function fullDetails(bookingID) {
-        console.log(bookingID);
+    // Dismiss Modal When Clicked outside
+    const fullDetailsModal = document.getElementById("full-details-modal");
+    // let mainContainer = document.querySelector("main-container");
+    const closeModalButton = document.getElementById("cancelButton");
+    let modalBody = document.getElementById("details-modal-body");
 
-        window.location.replace('http://localhost/Capstone/user-pending-reservation-details?bookingID='+(bookingID)+'');
+    closeModalButton.onclick = function () {
+        modalBody.innerHTML = '';
+        toggleModal('full-details-modal', false);
+    }
+
+    // View Pending Reservation Full Details
+    function fullDetails(data) {
+        let bookingID = data;
+        modalBody.innerHTML = '';
+        toggleModal('full-details-modal', true);
+
+        $.ajax({
+            method: "GET",
+            url: "includes/user-full-pending-details.php",
+            data: {bookingID:bookingID},
+            beforeSend: function () {
+                modalBody.innerHTML = '<div class="animate-pulse text-xl text-center my-14">Details are being loaded..</div>';
+            },
+            success: function (data) {
+                modalBody.innerHTML = data;
+            }
+        });
+
+        // window.location.replace('http://localhost/Capstone/user-pending-reservation-details?bookingID='+(bookingID)+'');
     }
 
     // Show upcoming Contents

@@ -99,7 +99,22 @@
             url: "includes/move-to-completed-inc.php",
             data: {listingID:listingID},
             success: function (data) {
+                showCompletedReservations();
+                showUpcomingReservations();
+            }
+        });
+    }
 
+    moveToExpired();
+    function moveToExpired() {
+        let listingID = document.getElementById("listingID").value;
+
+        $.ajax({
+            method: "POST",
+            url: "includes/move-to-expired-inc.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                showPendingReservations();
             }
         });
     }
@@ -281,6 +296,22 @@
         showCompletedReservations();
     }
 
+    showAllRejectedExpired()
+    function showAllRejectedExpired() {
+        let rejectedContainer = document.getElementById("rejected-cards-container");
+        let listingID = document.getElementById("listingID").value;
+
+        rejectedContainer.innerHTML = "";
+        $.ajax({
+            method: "POST",
+            url: "includes/rejected-reservations-inc.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                rejectedContainer.innerHTML = data;
+            }
+        });
+    }
+
     // get pending count
     getPendingCount();
     function getPendingCount() {
@@ -349,6 +380,12 @@
     function toggleHistory(){
         $("#completed-cards-container").toggle(340);
         $(".history-icon").toggleClass("ri-arrow-up-s-line ri-arrow-down-s-line");  
+    }
+
+    // Toggle the Upcoming Container
+    function toggleRejected(){
+        $("#rejected-cards-container").toggle(340);
+        $(".rejected-icon").toggleClass("ri-arrow-up-s-line ri-arrow-down-s-line");  
     }
 
     // Dashboard Refresh Button
