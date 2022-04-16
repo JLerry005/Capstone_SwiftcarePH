@@ -46,7 +46,7 @@
         // $dateContainer[] = $row["date"];
 
         // echo $row;
-        print_r($row);
+        // print_r($row);
         $resultContainer[] =  $row;
     }
 
@@ -72,11 +72,14 @@
         if ($date < $currentDate) {
             $insertToCompleted = $conn->query("INSERT INTO completedreservations (reservation_code, user_id, listing_id, firstname, lastname, date, time, phonenumber, email, concern, specifyconcern, hospitalname, reservationtype, booking_timestamp)
                             VALUES('$reservation_code', '$user_id', '$listing_id', '$firstname', '$lastname', '$date', '$time', '$phonenumber', '$email', '$concern', '$specifyconcern', '$hospitalname', '$reservationtype', '$booking_timestamp');") or die($conn->error);
-        
+            
+            $lastID = mysqli_insert_id($conn);
+
             if ($insertToCompleted) {
                 $deleteFromUpcoming = $conn->query("DELETE FROM upcomingreservations WHERE ID = ".$ID.";") or die($conn->error);
             }
-    }
+
+        }
 
         
     }

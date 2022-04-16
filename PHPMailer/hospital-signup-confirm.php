@@ -475,7 +475,7 @@
 
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = 'Thank you for Signing Up! '.$hospitalNameInput.'!';
+            $mail->Subject = 'Thank you for Signing Up! at '.$hospitalNameInput.'!';
             $mail->Body    = $bodyMessage;
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 

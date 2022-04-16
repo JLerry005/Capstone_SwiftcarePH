@@ -14,7 +14,7 @@
     <!-- TAILWIND CSS Link -->
     <link rel="stylesheet" href="dist/output.css">
     <!-- CSS Link -->
-    <link rel="stylesheet" href="styling/_pending-booking-details.css">
+    <link rel="stylesheet" href="styling/user-dashboard.css">    
     <!--Bootstrap Icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <!-- Remix Icon CDN Link -->
@@ -26,7 +26,6 @@
     <!-- HEADER ICON -->
     <link rel="icon" href="assets/main-logo-line.png" type="image/x-icon">
     <link rel="stylesheet" href="styling/user-dashboard.css">
-    <script src="js\user-dashboard.js" defer></script>
 </head>
 <body class="bg-gray-900 font-poppins">
     <div class="container mx-auto xl:px-16">
@@ -152,7 +151,7 @@
                                         <p class="text-gray-300"><i class="bi bi-info-circle-fill"></i> Type in your new password. (Minimum of 8 Characters)</p>                                        
                                     </div>
                                     <!-- New password and Repeat Password -->
-                                    <form action="includes/insert-new-password-inc.php" method="POST" id="edit-new-password-form">
+                                    <form action="" method="POST" id="edit-new-password-form">
                                         <!-- New Password -->
                                         <div class="relative mb-3">
                                             <label for="new-password" class="block mb-2 text-md font-medium text-blue-500">New password</label>
@@ -162,7 +161,7 @@
                                             </div>
                                         </div>
                                         <!-- Repeat Password -->
-                                        <div class="relative mb-3 repeat-password-div" id="repeat-password-div" style="display: none;">
+                                        <div class="relative mb-3 repeat-password-div" id="repeat-password-div" >
                                             <label for="new-password-repeat" class="block mb-2 text-md font-medium text-blue-500">Repeat your new password</label>
                                             <input type="password" id="new-password-repeat" placeholder="••••••••" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="new-password-repeat" class="newPasswordRepeat bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                                             <i class="bi bi-eye-slash text-gray-300 absolute cursor-pointer 2xl:right-0 2xl:top-12 2xl:pr-5 xl:right-0 xl:top-12 xl:pr-5 lg:right-0 lg:top-12 lg:pr-5 md:right-0 md:top-12 md:pr-5 sm:right-0 sm:top-12 sm:pr-5 right-0 top-12 pr-5" id="repeatTogglePass"></i>
@@ -172,7 +171,7 @@
                                         <p id="passMatchWarning" class="text-rose-600 text-center space-y-2"></p>   
                                         <div class="flex justify-end mt-3">
                                             <!-- <button type="button" class="text-blue-50 border-2 border-gray-500 bg-gray-900 hover:bg-gray-500 px-3 py-2.5 text-center mr-2 mb-2 w-24 rounded-md" id="btnCloseCreate"><i class="bi bi-x-circle"></i>Back</button> -->
-                                            <button type="submit" class="text-white text-sm sm:text-md bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-800 font-medium rounded-lg px-3 py-2 sm:px-5 sm:py-2.5 text-center xl:mr-1 mb-2" id="btnSaveChanges" name="btnSaveChanges" disabled> Save Changes </button>
+                                            <button type="submit" class="text-white text-sm sm:text-md bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-800 font-medium rounded-lg px-3 py-2 sm:px-5 sm:py-2.5 text-center xl:mr-1 mb-2" id="btnSaveChanges" name="btnSaveChanges"> Save Changes </button>
                                         </div>
                                     </form>
                                 </div>
@@ -189,7 +188,7 @@
                         <!-- Modal content -->
                         <div class="relative bg-gray-900 rounded-lg shadow">
                             <!-- Modal header -->
-                            <div class="flex justify-end p-2">
+                            <div class="hidden justify-end p-2">
                                 <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-800  hover:text-white rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="successModal">
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
                                 </button>
@@ -219,5 +218,7 @@
     <!-- FLOWBITE CDN -->
     <script src="node_modules\flowbite\dist\flowbite.js"></script>
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+
+    <script src="js\user-dashboard.js" defer></script>
 </body>
 </html>

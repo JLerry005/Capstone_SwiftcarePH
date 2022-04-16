@@ -32,7 +32,54 @@
         $(menus).fadeIn();
     }
 
-    // Show Pending Contents
+    // Get Pending Count
+    getPendingCount();
+    function getPendingCount() {
+        let pendingCount = document.getElementById("pending-count");
+
+        $.ajax({
+            method: 'GET',
+            url: "includes/get-user-pending-count.php",
+            data: {userID:userID},
+            success: function (data) {
+                pendingCount.innerHTML = data;
+            }
+        });
+    }
+
+    // Get Upcoming Count
+    getUpcomingCount();
+    function getUpcomingCount() {
+        let upcomingCount = document.getElementById("upcoming-count");
+
+        $.ajax({
+            method: 'GET',
+            url: "includes/get-user-upcoming-count.php",
+            data: {userID:userID},
+            success: function (data) {
+                upcomingCount.innerHTML = data;
+            }
+        });
+    }
+
+    // Get history Count
+    getHistoryCount();
+    function getHistoryCount() {
+        let historyCount = document.getElementById("history-count");
+
+        $.ajax({
+            method: 'GET',
+            url: "includes/get-user-history-count.php",
+            data: {userID:userID},
+            success: function (data) {
+                historyCount.innerHTML = data;
+            }
+        });
+    }
+
+
+    // ----------------------Show Pending Contents------------------------------
+
     pendingButton.onclick = function () {
         let pendingCardsContainer = document.getElementById("pending-cards-container");
 
@@ -83,11 +130,33 @@
                 modalBody.innerHTML = data;
             }
         });
-
-        // window.location.replace('http://localhost/Capstone/user-pending-reservation-details?bookingID='+(bookingID)+'');
     }
 
-    // Show upcoming Contents
+    // View Referral Files
+    function showImages(bookingIDData) {
+        let bookingID = bookingIDData;
+        modalBody.innerHTML = '';
+
+        $.ajax({
+            method: "GET",
+            url: "includes/get-user-referral-images.php",
+            data: {bookingID:bookingID},
+            success: function (data) {
+                modalBody.innerHTML = data;
+            }
+        });
+    }
+
+    function backToPendingDetails(backbuttonData) {
+        toggleModal('full-details-modal', false);
+        fullDetails(backbuttonData);
+    }
+    // ----------------------------------------------------------------------
+
+
+
+
+    // -----------------------------Show upcoming Contents--------------------------------------------
     upcomingButton.onclick = function () {
         let upcomingCardsContainer = document.getElementById("upcoming-cards-container");
 
@@ -101,16 +170,101 @@
             method: "GET",
             url: "includes/user-upcoming-inc.php",
             data: {userID:userID},
+            beforeSend: function () {
+                upcomingCardsContainer.innerHTML = '<div class="col-span-12 animate-pulse text-xl text-center my-60">Please wait..</div>';
+            },
             success: function (data) {
                 upcomingCardsContainer.innerHTML = data;
             }
         });
     }
 
-    // Show History Contents
+    // Dismiss Modal When Clicked outside
+    // const upcomingDetailsModal = document.getElementById("upcoming-details-modal");
+    // let mainContainer = document.querySelector("main-container");
+    const btnCloseUpcomingModal = document.getElementById("upcoming-close-button");
+    let upcomingModalbody = document.getElementById("upcoming-modal-body");
+
+    btnCloseUpcomingModal.onclick = function () {
+        upcomingModalbody.innerHTML = '';
+        toggleModal('upcoming-details-modal', false);
+    }
+
+    // View Pending Reservation Full Details
+    function upcomingFullDetails(data) {
+        let bookingID = data;
+        upcomingModalbody.innerHTML = '';
+        toggleModal('upcoming-details-modal', true);
+
+        $.ajax({
+            method: "GET",
+            url: "includes/user-full-upcoming-details.php",
+            data: {bookingID:bookingID},
+            beforeSend: function () {
+                upcomingModalbody.innerHTML = '<div class="animate-pulse text-xl text-center my-14">Details are being loaded..</div>';
+            },
+            success: function (data) {
+                upcomingModalbody.innerHTML = data;
+            }
+        });
+    }
+
+    // -----------------------------------------------------------
+
+
+    // -----------------------------Show History Contents--------------------------------------------
     historyButton.onclick = function () {
+        let historyCardsContainer = document.getElementById("completed-cards-container");
+
         $(menus).hide();
         $(upcomingContents).hide();
         $(pendingContents).hide();
         $(historyContents).fadeIn();
+
+        // Get Upcoming List
+        $.ajax({
+            method: "GET",
+            url: "includes/user-history-inc.php",
+            data: {userID:userID},
+            beforeSend: function () {
+                historyCardsContainer.innerHTML = '<div class="col-span-12 animate-pulse text-xl text-center my-60">Please wait..</div>';
+            },
+            success: function (data) {
+                historyCardsContainer.innerHTML = data;
+            }
+        });
     }
+
+    const btnCloseHistoryModal = document.getElementById("history-close-button");
+    let historyModalbody = document.getElementById("history-modal-body");
+
+    btnCloseHistoryModal.onclick = function () {
+        historyModalbody.innerHTML = '';
+        toggleModal('history-details-modal', false);
+    }
+
+    // View Pending Reservation Full Details
+    function historyFullDetails(dataBookingID, bookingType) {
+        let bookingID = dataBookingID;
+        let type = bookingType;
+
+        console.log(bookingID);
+        console.log(type);
+        
+        historyModalbody.innerHTML = '';
+        toggleModal('history-details-modal', true);
+
+        $.ajax({
+            method: "GET",
+            url: "includes/user-full-history-details.php",
+            data: {bookingID:bookingID, type:type},
+            beforeSend: function () {
+                historyModalbody.innerHTML = '<div class="animate-pulse text-xl text-center my-14">Details are being loaded..</div>';
+            },
+            success: function (data) {
+                historyModalbody.innerHTML = data;
+            }
+        });
+    }
+
+    // -----------------------------------------------------------

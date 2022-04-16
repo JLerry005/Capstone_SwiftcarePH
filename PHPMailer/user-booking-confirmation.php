@@ -63,9 +63,6 @@
                     .u-row .u-col {
                         vertical-align: top;
                     }
-                    .u-row .u-col-50 {
-                        width: 250px !important;
-                    }
                     .u-row .u-col-100 {
                         width: 500px !important;
                     }
@@ -125,12 +122,7 @@
                     
                     table,
                     td {
-                    color: #494747;
-                    }
-                    
-                    a {
-                    color: #0000ee;
-                    text-decoration: underline;
+                    color: #ced4d9;
                     }
                 </style>
                 
@@ -142,14 +134,14 @@
                 
                 </head>
                 
-                <body class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #e7e7e7;color: #494747">
+                <body class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #111827;color: #ced4d9">
                 <!--[if IE]><div class="ie-container"><![endif]-->
                 <!--[if mso]><div class="mso-container"><![endif]-->
-                <table style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #e7e7e7;width:100%" cellpadding="0" cellspacing="0">
+                <table style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #111827;width:100%" cellpadding="0" cellspacing="0">
                     <tbody>
                     <tr style="vertical-align: top">
                         <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-                        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #e7e7e7;"><![endif]-->
+                        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #111827;"><![endif]-->
                 
                 
                         <div class="u-row-container" style="padding: 0px;background-color: transparent">
@@ -167,9 +159,9 @@
                                     <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
                                         <tbody>
                                         <tr>
-                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:11px;font-family:\'Open Sans\',sans-serif;" align="left">
+                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:14px;font-family:\'Open Sans\',sans-serif;" align="left">
                 
-                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #e7e7e7;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #111827;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                                 <tbody>
                                                 <tr style="vertical-align: top">
                                                     <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
@@ -183,14 +175,60 @@
                                         </tr>
                                         </tbody>
                                     </table>
+                
+                                    <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
+                
+                                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                <tr>
+                                                <td style="padding-right: 0px;padding-left: 0px;" align="center">
+                
+                                                    <img align="center" border="0" src="https://images.unlayer.com/projects/74921/1650084567316-184778.png" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 23%;max-width: 110.4px;"
+                                                    width="110.4" />
+                
+                                                </td>
+                                                </tr>
+                                            </table>
+                
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                
+                                    <!--[if (!mso)&(!IE)]><!-->
+                                    </div>
+                                    <!--<![endif]-->
+                                </div>
+                                </div>
+                                <!--[if (mso)|(IE)]></td><![endif]-->
+                                <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+                            </div>
+                            </div>
+                        </div>
+                
+                
+                
+                        <div class="u-row-container" style="padding: 0px;background-color: transparent">
+                            <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
+                            <div style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
+                                <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
+                
+                                <!--[if (mso)|(IE)]><td align="center" width="500" style="width: 500px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
+                                <div class="u-col u-col-100" style="max-width: 320px;min-width: 500px;display: table-cell;vertical-align: top;">
+                                <div style="width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
+                                    <!--[if (!mso)&(!IE)]><!-->
+                                    <div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
+                                    <!--<![endif]-->
                 
                                     <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
                                         <tbody>
                                         <tr>
                                             <td style="overflow-wrap:break-word;word-break:break-word;padding:12px;font-family:\'Open Sans\',sans-serif;" align="left">
                 
-                                            <div style="color: #494747; line-height: 140%; text-align: center; word-wrap: break-word;">
-                                                <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 40px; line-height: 56px;"><strong>SWIFTCARE PH</strong></span></p>
+                                            <div style="color: #ecf0f1; line-height: 140%; text-align: center; word-wrap: break-word;">
+                                                <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 26px; line-height: 36.4px;"><strong>SWIFTCARE PH</strong></span></p>
                                             </div>
                 
                                             </td>
@@ -203,7 +241,7 @@
                                         <tr>
                                             <td style="overflow-wrap:break-word;word-break:break-word;padding:11px;font-family:\'Open Sans\',sans-serif;" align="left">
                 
-                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #e7e7e7;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #111827;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                                 <tbody>
                                                 <tr style="vertical-align: top">
                                                     <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
@@ -248,8 +286,8 @@
                                         <tr>
                                             <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
                 
-                                            <div style="color: #2378b1; line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                <p style="font-size: 14px; line-height: 140%; text-align: center;"><span style="font-size: 24px; line-height: 33.6px;">Thank you for Booking a reservation!</span></p>
+                                            <div style="color: #3598db; line-height: 140%; text-align: left; word-wrap: break-word;">
+                                                <p style="font-size: 14px; line-height: 140%; text-align: center;"><span style="font-size: 22px; line-height: 30.8px; color: #3498da;">Thank you for Booking a Reservation!</span></p>
                                             </div>
                 
                                             </td>
@@ -260,191 +298,9 @@
                                     <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
                                         <tbody>
                                         <tr>
-                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:25px;font-family:\'Open Sans\',sans-serif;" align="left">
+                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:11px;font-family:\'Open Sans\',sans-serif;" align="left">
                 
-                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #e7e7e7;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-                                                <tbody>
-                                                <tr style="vertical-align: top">
-                                                    <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-                                                    <span>&#160;</span>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                
-                                    <!--[if (!mso)&(!IE)]><!-->
-                                    </div>
-                                    <!--<![endif]-->
-                                </div>
-                                </div>
-                                <!--[if (mso)|(IE)]></td><![endif]-->
-                                <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
-                            </div>
-                            </div>
-                        </div>
-                
-                
-                
-                        <div class="u-row-container" style="padding: 0px;background-color: transparent">
-                            <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 500px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
-                            <div style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
-                                <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px;"><tr style="background-color: transparent;"><![endif]-->
-                
-                                <!--[if (mso)|(IE)]><td align="center" width="250" style="width: 250px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
-                                <div class="u-col u-col-50" style="max-width: 320px;min-width: 250px;display: table-cell;vertical-align: top;">
-                                <div style="width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
-                                    <!--[if (!mso)&(!IE)]><!-->
-                                    <div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
-                                    <!--<![endif]-->
-                
-                                    <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                                        <tbody>
-                                        <tr>
-                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
-                
-                                            <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                <p style="font-size: 14px; line-height: 140%; text-align: left;"><span style="font-size: 16px; line-height: 22.4px; color: #236fa1;"><strong>PATIENT DETAILS</strong></span></p>
-                                            </div>
-                
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                
-                                    <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                                        <tbody>
-                                        <tr>
-                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
-                
-                                            <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                <p style="font-size: 14px; line-height: 140%; text-align: left;"><span style="color: #494747; font-size: 14px; line-height: 19.6px;"><strong><span style="font-size: 14px; line-height: 19.6px;"><span style="font-size: 14px; line-height: 19.6px;">Full Name:</span>&nbsp;</span>
-                                                </strong>&nbsp;</span>
-                                                </p>
-                                            </div>
-                
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                
-                                    <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                                        <tbody>
-                                        <tr>
-                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
-                
-                                            <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                <p style="font-size: 14px; line-height: 140%; text-align: left;"><span style="font-size: 14px; line-height: 19.6px;"><span style="font-size: 14px; line-height: 19.6px;"><span style="font-size: 16px; line-height: 22.4px; color: #236fa1;"><strong>HOSPITAL</strong></span></span><span style="font-size: 14px; line-height: 19.6px;"><span style="font-size: 16px; line-height: 22.4px; color: #236fa1;"><strong> D</strong></span></span>
-                                                <span
-                                                    style="font-size: 14px; line-height: 19.6px;"><span style="font-size: 16px; line-height: 22.4px; color: #236fa1;"><strong>ETAILS</strong></span></span>
-                                                    </span>
-                                                </p>
-                                            </div>
-                
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                
-                                    <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                                        <tbody>
-                                        <tr>
-                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
-                
-                                            <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                <p style="font-size: 14px; line-height: 140%; text-align: left;"><strong>Hospital Name: </strong> &nbsp;</p>
-                                            </div>
-                
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                
-                                    <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                                        <tbody>
-                                        <tr>
-                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
-                
-                                            <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                <p style="font-size: 14px; line-height: 140%; text-align: left;"><strong>Reservation Type:</strong>&nbsp; &nbsp;</p>
-                                            </div>
-                
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                
-                                    <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                                        <tbody>
-                                        <tr>
-                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
-                
-                                            <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                <p style="font-size: 14px; line-height: 140%; text-align: left;"><strong>Hosiptal Email: </strong></p>
-                                            </div>
-                
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                
-                                    <!--[if (!mso)&(!IE)]><!-->
-                                    </div>
-                                    <!--<![endif]-->
-                                </div>
-                                </div>
-                                <!--[if (mso)|(IE)]></td><![endif]-->
-                                <!--[if (mso)|(IE)]><td align="center" width="250" style="width: 250px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
-                                <div class="u-col u-col-50" style="max-width: 320px;min-width: 250px;display: table-cell;vertical-align: top;">
-                                <div style="width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
-                                    <!--[if (!mso)&(!IE)]><!-->
-                                    <div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
-                                    <!--<![endif]-->
-                
-                                    <table style="font-family:\'Open Sans\'\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                                        <tbody>
-                                        <tr>
-                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:20px;font-family:\'Open Sans\'\'Open Sans\',sans-serif;" align="left">
-                
-                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #e7e7e7;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-                                                <tbody>
-                                                <tr style="vertical-align: top">
-                                                    <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-                                                    <span>&#160;</span>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                
-                                    <table style="font-family:\'Open Sans\'\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                                        <tbody>
-                                        <tr>
-                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\'\'Open Sans\',sans-serif;" align="left">
-                
-                                            <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                <p style="font-size: 14px; line-height: 140%; text-align: left;"><span style="font-size: 14px; line-height: 19.6px;">'.$firstName.' '.$lastName.'</span></p>
-                                            </div>
-                
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                
-                                    <table style="font-family:\'Open Sans\'\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                                        <tbody>
-                                        <tr>
-                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:20px;font-family:\'Open Sans\'\'Open Sans\',sans-serif;" align="left">
-                
-                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #e7e7e7;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #111827;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                                 <tbody>
                                                 <tr style="vertical-align: top">
                                                     <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
@@ -464,9 +320,15 @@
                                         <tr>
                                             <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
                 
-                                            <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                <p style="font-size: 14px; line-height: 140%; text-align: left;">'.$hospitalName.'</p>
-                                            </div>
+                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px dashed #7e8c8d;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                                <tbody>
+                                                <tr style="vertical-align: top">
+                                                    <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                                    <span>&#160;</span>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
                 
                                             </td>
                                         </tr>
@@ -476,25 +338,17 @@
                                     <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
                                         <tbody>
                                         <tr>
-                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
+                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:11px;font-family:\'Open Sans\',sans-serif;" align="left">
                 
-                                            <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                <p style="font-size: 14px; line-height: 140%; text-align: left;">'.$reservationType.'</p>
-                                            </div>
-                
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                
-                                    <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-                                        <tbody>
-                                        <tr>
-                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
-                
-                                            <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                <p style="font-size: 14px; line-height: 140%; text-align: left;"><a rel="noopener" href="emailsample@gmail.com" target="_blank">emailsample@gmail.com</a></p>
-                                            </div>
+                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #111827;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                                <tbody>
+                                                <tr style="vertical-align: top">
+                                                    <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                                    <span>&#160;</span>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
                 
                                             </td>
                                         </tr>
@@ -529,9 +383,39 @@
                                     <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
                                         <tbody>
                                         <tr>
+                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
+                
+                                            <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
+                                                <p style="font-size: 14px; line-height: 140%; text-align: left;"><span style="font-size: 16px; line-height: 22.4px; color: #fffefe;"><strong>PATIENT DETAILS</strong></span></p>
+                                            </div>
+                
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                
+                                    <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
+                
+                                            <div style="color: #ecf0f1; line-height: 140%; text-align: left; word-wrap: break-word;">
+                                                <p style="font-size: 14px; line-height: 140%;"><span style="color: #edf0f0; font-size: 14px; line-height: 19.6px;">Full Name: </span>&nbsp;<span style="color: #3498da; font-size: 14px; line-height: 19.6px;"><strong><span style="font-size: 14px; line-height: 19.6px;">'.$firstName.' '.$lastName.'</span></strong>
+                                                </span>
+                                                </p>
+                                            </div>
+                
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                
+                                    <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                                        <tbody>
+                                        <tr>
                                             <td style="overflow-wrap:break-word;word-break:break-word;padding:11px;font-family:\'Open Sans\',sans-serif;" align="left">
                 
-                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px dashed #7e8d8c;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #111827;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                                 <tbody>
                                                 <tr style="vertical-align: top">
                                                     <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
@@ -552,9 +436,7 @@
                                             <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
                 
                                             <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                <p style="font-size: 14px; line-height: 140%; text-align: left;">This is to confirm that your reservation booking at <strong>'.$hospitalName.'</strong> is now being reviewed. <strong>The reviewing process may take from 3 Hours - 24 Hours.</strong></p>
-                                                <p style="font-size: 14px; line-height: 140%; text-align: left;">&nbsp;</p>
-                                                <p style="font-size: 14px; line-height: 140%; text-align: left;">A confirmation message will be sent to this same address once the reviewing process is done.</p>
+                                                <p style="font-size: 14px; line-height: 140%; text-align: left;"><span style="font-size: 16px; line-height: 22.4px; color: #edf0f0;"><strong>HOSPITAL DETAILS</strong></span></p>
                                             </div>
                 
                                             </td>
@@ -565,9 +447,116 @@
                                     <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
                                         <tbody>
                                         <tr>
-                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:27px;font-family:\'Open Sans\',sans-serif;" align="left">
+                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
                 
-                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #e7e7e7;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                            <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
+                                                <p style="font-size: 14px; line-height: 140%; text-align: left;"><span style="color: #cfd5d9; font-size: 14px; line-height: 19.6px;"><span style="color: #edf0f0; font-size: 14px; line-height: 19.6px;">Hospital Name: </span>&nbsp; <span style="color: #3498da; font-size: 14px; line-height: 19.6px;"><strong>'.$hospitalName.'</strong></span></span>
+                                                </p>
+                                            </div>
+                
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                
+                                    <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
+                
+                                            <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
+                                                <p style="font-size: 14px; line-height: 140%;"><span style="color: #cfd5d9; font-size: 14px; line-height: 19.6px;"><span style="color: #edf0f0; font-size: 14px; line-height: 19.6px;">Reservation Type:</span> &nbsp; <span style="color: #3498da; font-size: 14px; line-height: 19.6px;"><strong>'.$reservationType.'</strong></span></span>
+                                                </p>
+                                            </div>
+                
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                
+                                    <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
+                
+                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px dashed #111827;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                                <tbody>
+                                                <tr style="vertical-align: top">
+                                                    <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                                    <span>&#160;</span>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                
+                                    <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
+                
+                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px dashed #7e8c8d;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                                <tbody>
+                                                <tr style="vertical-align: top">
+                                                    <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                                    <span>&#160;</span>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                
+                                    <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
+                
+                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px dashed #111827;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                                <tbody>
+                                                <tr style="vertical-align: top">
+                                                    <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                                    <span>&#160;</span>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                
+                                    <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
+                
+                                            <div style="color: #ced4d9; line-height: 140%; text-align: left; word-wrap: break-word;">
+                                                <p style="font-size: 14px; line-height: 140%;"><span style="color: #edf0f0; font-size: 14px; line-height: 19.6px;">This is to confirm that your reservation booking at <span style="color: #3498da; font-size: 14px; line-height: 19.6px;"><strong>'.$hospitalName.'</strong></span>                                  is now being reviewed. <strong>The reviewing process may take from 3 Hours - 24 Hours.</strong></span>
+                                                </p>
+                                                <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
+                                                <p style="font-size: 14px; line-height: 140%;"><span style="color: #edf0f0; font-size: 14px; line-height: 19.6px;">A confirmation message will be sent to this same address once the reviewing process is done.</span></p>
+                                            </div>
+                
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                
+                                    <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:21px;font-family:\'Open Sans\',sans-serif;" align="left">
+                
+                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #111827;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                                 <tbody>
                                                 <tr style="vertical-align: top">
                                                     <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
@@ -602,8 +591,8 @@
                                             <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
                 
                                             <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                <p style="font-size: 14px; line-height: 140%; text-align: right;">Best Regards,</p>
-                                                <p style="font-size: 14px; line-height: 140%; text-align: right;"><strong>Swiftcare PH Team</strong></p>
+                                                <p style="font-size: 14px; line-height: 140%; text-align: right;"><span style="color: #edf0f0; font-size: 14px; line-height: 19.6px;">Best Regards,</span></p>
+                                                <p style="font-size: 14px; line-height: 140%; text-align: right;"><span style="color: #edf0f0; font-size: 14px; line-height: 19.6px;"><strong>Swiftcare PH Team</strong></span></p>
                                             </div>
                 
                                             </td>
@@ -614,9 +603,9 @@
                                     <table style="font-family:\'Open Sans\',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
                                         <tbody>
                                         <tr>
-                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:15px;font-family:\'Open Sans\',sans-serif;" align="left">
+                                            <td style="overflow-wrap:break-word;word-break:break-word;padding:26px;font-family:\'Open Sans\',sans-serif;" align="left">
                 
-                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #e7e7e7;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                            <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #111827;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                                 <tbody>
                                                 <tr style="vertical-align: top">
                                                     <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
@@ -657,7 +646,7 @@
 
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = 'Booking Confirmation '.$hospitalName.'';
+            $mail->Subject = 'Booking Confirmation at '.$hospitalName.'';
             $mail->Body    = $bodyMessage;
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 

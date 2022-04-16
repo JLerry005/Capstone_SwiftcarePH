@@ -212,32 +212,47 @@
             </div>
 
             <!---------- This is the fourth row of Container ---------->
-            <?php
+            <!-- Refferal Image -->
+            <div class=" col-span-7 bg-white px-10 py-10 drop-shadow-md rounded-3xl" >
+                
+                <!-- Referral Content -->
+                <div class="items-center text-md text-blue-700 font-bold border-b border-gray-300 pb-2">
+                    <h1>Referral Files</h1>
+                </div>
 
-                $imageDir;
-                $output = '';
-                $getImages = $conn->query("SELECT * FROM referralfiles WHERE booking_id = $bookingID") or die($conn->error);
-                while ($imageRow = mysqli_fetch_assoc($getImages)) {
-                    $imageDir = $imageRow["file_dir"];
+                <div class="grid grid-cols-4 gap-x-4 gap-y-4 p-2 mr-2 mt-4" >
+                <!-- <div id="image-gallery" class="image-gallery grid grid-cols-4 gap-x-4 gap-y-4 p-2 mr-6 mt-4" > -->
+                    <?php
 
-                        echo '
-                        <!-- Refferal Image -->
-                        <div class="col-span-7 bg-white px-10 py-10 drop-shadow-md rounded-3xl image-gallery" id="image-gallery">
+                        $imageDir;
+                        $output = '';
+                        $getImages = $conn->query("SELECT * FROM referralfiles WHERE booking_id = $bookingID") or die($conn->error);
 
-                            <!-- Referral Content -->
-                            <div class="flex items-center text-md text-blue-700 font-bold border-b border-gray-300 pb-2">
-                                <h1>Referral Files</h1>
-                            </div>
+                        if (mysqli_num_rows($getImages)==0) {
+                            $output = '<p class="col-span-4 text-center font-bold text-gray-600 self-center "><i class="bi bi-emoji-frown-fill"></i> The hospital will not required a Referral.</p> ';
+                        }
+                        else{
 
-                            <a href="Capstone/'.$imageDir.'" class="bg-gray-900 rounded-lg">
-                                <img id="" class="card-img my-5 mx-5 w-auto h-36 border-solid border-2 border-gray-800 rounded-md hover:scale-105 transition duration-200" alt="..." src="Capstone/'.$imageDir.'"/>
-                            </a>
-                        </div>
-                    ';
+                            while ($imageRow = mysqli_fetch_assoc($getImages)) {
+                                $imageDir = $imageRow["file_dir"];
+        
+                                $output .='
 
-                }
-            ?>  
+                                    <div class="col-span-1"> 
+                                        <a href="/Capstone'.$imageDir.'" target="_blank" class="fetched-image col-span-1 bg-gray-900 rounded-lg">
+                                            <img id="" class="card-img w-full h-36 border-solid border-2 border-gray-800 rounded-md hover:scale-105 transition duration-200" alt="..." src="/Capstone'.$imageDir.'"/>
+                                        </a>
+                                    </div>
+                               
+                                ';
+        
+                            }
+                        }
+                        echo $output;
+                    ?>  
 
+                </div>
+            </div>
         </div>
 
         <!-- Accept and Reject Button -->
@@ -307,6 +322,12 @@
         </div>
     </div>
 
+    <!-- Light Gallery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+
+    <!-- JavaScript Link -->
+    <script src="js\pending-booking-details.js" defer></script>
+
     <!-- FLOWBITE CDN -->
     <script src="node_modules\flowbite\dist\flowbite.js"></script>
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
@@ -314,12 +335,8 @@
     <?php include_once 'includes/footer.php'; ?>
 
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+
     <!-- Tippy JS -->
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
-
-    <!-- Light Gallery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
-
-    <script src="js\pending-booking-details.js" defer></script>
 </body>
 </html>

@@ -453,7 +453,7 @@
             $mail->isHTML(true);
             
             //Set email format to HTML
-            $mail->Subject = 'Update with your request, '.$representative.'!';
+            $mail->Subject = 'Update with your request, at '.$representative.'!';
             $mail->Body    = $bodyMessage;
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 

@@ -25,7 +25,7 @@
 
             $output .= '
 
-                <div onclick="fullDetails('.$bookingID.')" class="text-xs md:text-sm md:col-span-12 lg:col-span-4 bg-blue-600 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out mb-3"> 
+                <div onclick="upcomingFullDetails('.$bookingID.')" class="text-xs md:text-sm md:col-span-12 lg:col-span-4 bg-blue-600 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out mb-3"> 
                     <div class="bg-blue-700 p-2 rounded-t-lg">
                         <p class="flex items-center cursor-default py-0.5 px-2 w-fit text-blue-50 font-medium tracking-wider">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 mr-2"><path fill="none" d="M0 0H24V24H0z"/><path d="M17 2v2h3c.552 0 1 .448 1 1v16c0 .552-.448 1-1 1H4c-.552 0-1-.448-1-1V5c0-.552.448-1 1-1h3V2h10zM7 6H5v14h14V6h-2v2H7V6zm6 5v2h2v2h-2.001L13 17h-2l-.001-2H9v-2h2v-2h2zm2-7H9v2h6V4z" fill="rgba(0,0,0,1)"/></svg>'.$reservationCode.'
@@ -85,8 +85,10 @@
 
                     <div class="bg-blue-700 p-4 rounded-b-lg flex justify-between">
                         <div class="flex flex-row items-center px-2 bg-blue-600 rounded-lg">
-                            <p class="text-blue-200">Status: <b>Upcoming</b></p>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 ml-2 hover:text-blue-500"><path fill="none" d="M0 0h24v24H0z"/><path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8zM6 14h2v2H6v-2zm4 0h8v2h-8v-2z" fill="rgba(195,221,253,1)"/></svg>     
+                            <p class="text-white">Status: <b>Approved</b></p>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>     
                         </div>
                         
                         <a href="#" class="text-white hover:text-blue-200 hover:underline flex items-center">

@@ -68,8 +68,6 @@
         }
     }
 
-    
-
     // Reject Button
     btnReject.onclick = function () {
         toggleModal('rejectModal', true);
@@ -95,6 +93,7 @@
                     userID:userID,
                     bookingID:bookingID,
                     listingID:listingID,
+                    hospitalName:hospitalName
                 },
                 success: function () {
                     toggleModal('rejectModal', false);
@@ -107,6 +106,6 @@
             toggleModal('rejectModal', false);
         }
     }
-
+    
     // Lightgallery
     lightGallery(document.querySelector('.image-gallery'));

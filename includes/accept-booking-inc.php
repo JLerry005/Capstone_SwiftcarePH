@@ -27,8 +27,6 @@
     $sql = $conn->query("INSERT INTO upcomingreservations (reservation_code, user_id, listing_id, firstname, lastname, fullname, date, time, phonenumber, email, concern, specifyconcern, hospitalname, reservationtype, booking_timestamp) 
                         VALUES('$reservationCode', '$userID', '$listingID', '$firstname', '$lastname', '$fullname', '$date', '$time', '$contactNumber', '$emailAdd', '$patientConcern', '$specifyConcern', '$hospitalName', '$reservationType', '$timeStamp');") or die($conn->error);
 
-    
-
     // $imageToDelete = $_POST["imageId"];
 
     $imageDirectory = array();

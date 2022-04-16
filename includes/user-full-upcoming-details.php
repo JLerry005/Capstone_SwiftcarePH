@@ -5,6 +5,7 @@
     $bookingID = $_GET["bookingID"];
 
     $reservationType;
+    $reservationCode;
     $timeStamp;
     $firstName;
     $lastName;
@@ -17,24 +18,23 @@
     $specifyConcern;
     $hospitalName;
 
-    $referralFiles;
-
     $output = '';
 
-    $sql = $conn->query("SELECT * FROM userbooking WHERE ID = $bookingID;") or die($conn->error);
+    $sql = $conn->query("SELECT * FROM upcomingreservations WHERE ID = $bookingID;") or die($conn->error);
     while ($row = mysqli_fetch_assoc($sql)) {
-        $reservationType = $row['patientReservationType'];
-        $timeStamp = $row['bookingTimestamp'];
-        $firstName = $row['patientFirstName'];
-        $lastName = $row['patientLastName'];
-        $date = $row['patientDate'];
-        $time = $row['patientTime'];
-        $contactNumber = $row['patientPhoneNumber'];
-        $email = $row["patientEmail"];
+        $reservationType = $row['reservationtype'];
+        $reservationCode = $row['reservation_code'];
+        $timeStamp = $row['booking_timestamp'];
+        $firstName = $row['firstname'];
+        $lastName = $row['lastname'];
+        $date = $row['date'];
+        $time = $row['time'];
+        $contactNumber = $row['phonenumber'];
+        $email = $row["email"];
         $bookingID = $row['ID'];
-        $patientConcern = $row['patientConcern'];
-        $specifyConcern = $row['patientSpecifyConcern'];
-        $hospitalName = $row['patientHospitalName'];
+        $patientConcern = $row['concern'];
+        $specifyConcern = $row['specifyconcern'];
+        $hospitalName = $row['hospitalname'];
     }
 
     // Check IF specify concern is null
@@ -42,22 +42,11 @@
         $specifyConcern = 'N/A';
     }
 
-    // Get Images if available
-    $getImages = $conn->query("SELECT * FROM referralfiles WHERE booking_id  = $bookingID;") or die($conn->error);
-    // while ($row = mysqli_fetch_assoc($getImages)) {
-    //     $referralFiles = $row['referral_id'];
-    // }
-    if (mysqli_num_rows($getImages)==0) {
-        $referralFiles = '<p class="font-medium text-md">N/A</p>';
-    }else {
-        $referralFiles = '<button onclick="showImages('.$bookingID.')" class="font-medium text-md hover:underline cursor-pointer">See Images</button>';
-    }
-
     $output .='
         <!-- For Mobile -->
         <div class="md:hidden space-y-7">
             <!-- Timestamp -->
-            <div class="flex justify-end mb-10">
+            <div class="flex items-center justify-end mb-10">
                 <p class="flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
@@ -65,16 +54,32 @@
                     &ensp;'.$timeStamp.'
                 </p>
             </div>
+
+            <!-- Reservation code -->
+            <div>
+                <h1 class="text-slate-400 ml-3 mb-2">Reservation Code</h1>
+
+                <div class="py-1 px-2 rounded-full w-fit bg-white text-gray-900">
+                    <h1 class="font-bold text-lg flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm2 2V5h1v1H5zM3 13a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1v-3zm2 2v-1h1v1H5zM13 3a1 1 0 00-1 1v3a1 1 0 001 1h3a1 1 0 001-1V4a1 1 0 00-1-1h-3zm1 2v1h1V5h-1z" clip-rule="evenodd" />
+                            <path d="M11 4a1 1 0 10-2 0v1a1 1 0 002 0V4zM10 7a1 1 0 011 1v1h2a1 1 0 110 2h-3a1 1 0 01-1-1V8a1 1 0 011-1zM16 9a1 1 0 100 2 1 1 0 000-2zM9 13a1 1 0 011-1h1a1 1 0 110 2v2a1 1 0 11-2 0v-3zM7 11a1 1 0 100-2H4a1 1 0 100 2h3zM17 13a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zM16 17a1 1 0 100-2h-3a1 1 0 100 2h3z" />
+                          </svg>
+                        &ensp;'.$reservationCode.'
+                    </h1>
+                </div> 
+            </div>
+             
             <!-- Status -->
             <div class="flex items-start space-x-5">
                 <div>
-                    <img src="assets/reservations-images/status.png" alt="" class="w-10">
+                    <img src="assets/reservations-images/check.png" alt="" class="w-10">
                 </div>
 
                 <div class="">
                     <div class="mb-4">
                         <h1 class="text-slate-400">Status</h1>
-                        <h1 class="font-bold text-lg">Pending For Review</h1>
+                        <h1 class="font-bold text-lg">Approved</h1>
                     </div>
                 </div>
             </div>
@@ -204,26 +209,28 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Attatchments -->
-            <div class="flex items-start space-x-5">
-                <div>
-                    <img src="assets/reservations-images/text.png" alt="" class="w-10">
-                </div>
-
-                <div class="">
-                    <div class="mb-4">
-                        <h1 class="text-slate-400">Referral Images Attachment</h1>
-                        '.$referralFiles.'
-                    </div>
-                </div>
-            </div>
         </div>
         
         <!-- for MD up new -->
         <div class="hidden md:block text-sm px-8">
-            <!-- Timestamp -->
-            <div class="flex justify-end mb-10">
+            
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-10">
+                <!-- Reservation code -->
+                <div>
+                    <h1 class="text-slate-400 ml-3 mb-2">Reservation Code</h1>
+                    <div class="py-1 px-2 rounded-full w-fit bg-white text-gray-900">
+                        <h1 class="font-bold text-lg flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm2 2V5h1v1H5zM3 13a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1v-3zm2 2v-1h1v1H5zM13 3a1 1 0 00-1 1v3a1 1 0 001 1h3a1 1 0 001-1V4a1 1 0 00-1-1h-3zm1 2v1h1V5h-1z" clip-rule="evenodd" />
+                                <path d="M11 4a1 1 0 10-2 0v1a1 1 0 002 0V4zM10 7a1 1 0 011 1v1h2a1 1 0 110 2h-3a1 1 0 01-1-1V8a1 1 0 011-1zM16 9a1 1 0 100 2 1 1 0 000-2zM9 13a1 1 0 011-1h1a1 1 0 110 2v2a1 1 0 11-2 0v-3zM7 11a1 1 0 100-2H4a1 1 0 100 2h3zM17 13a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zM16 17a1 1 0 100-2h-3a1 1 0 100 2h3z" />
+                            </svg>
+                            '.$reservationCode.'
+                        </h1>
+                    </div> 
+                </div>
+
+                <!-- Timestamp -->
                 <p class="flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
@@ -362,20 +369,6 @@
 
             <!-- Third Row -->
             <div class="flex items-start justify-between space-x-5">
-                <!-- Attatchments -->
-                <div class="flex items-start space-x-5 mb-10 border-dotted border-b-2">
-                    <div>
-                        <img src="assets/reservations-images/attachments.png" alt="" class="w-10">
-                    </div>
-
-                    <div class="">
-                        <div class="mb-4">
-                            <h1 class="text-slate-400">Referral Attachment</h1>
-                            '.$referralFiles.'
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Concern Details -->
                 <div class="flex items-start space-x-2 mb-10 border-dotted border-b-2">
                     <div>

@@ -3,8 +3,11 @@
     include_once 'dbh-inc.php';
 
     $userID = $_GET["userID"];
+    $bookingID;
+
     $output = '';
     $sql = $conn->query("SELECT * FROM userbooking WHERE user_id = $userID;") or die($conn->error);
+
 
     if (mysqli_num_rows($sql)==0) {
         $output = '<p class="col-span-12 text-center font-bold text-blue-300 self-center "><i class="bi bi-emoji-frown-fill"></i> You have zero (0) Pending Reservation..</p> ';

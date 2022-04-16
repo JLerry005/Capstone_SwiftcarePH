@@ -101,9 +101,12 @@
         $_SESSION["sessionpatientUserID"] = $userMobileNumberExists["patientUserID"];
         $_SESSION["sessionPatientPhoneNumber"] = $userMobileNumberExists["patientPhoneNumber"];
        
-        // header("location: ../user-login.php?error=none");
-        header("location: ../index?succefully-logged-in");
+
+        // header("location: ../index?succefully-logged-in");
+        header("Refresh:0; url=../index?succefully-logged-in");
         exit();
+
+        
     }
     
     // USER login function

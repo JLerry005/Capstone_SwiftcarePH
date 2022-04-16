@@ -228,48 +228,47 @@
     // ==========================================================
 
     // CREATE NEW PASSWORD START
-    newPassword.onkeyup = function () {
+    // newPassword.onkeyup = function () {
 
-
-
-        if (newPassword.value.length >= 8) {
-            $(passwordRepeatDiv).fadeIn();
-            btnSaveChanges.disabled = false;
-        }
-        else{
-            $(passwordRepeatDiv).hide();
-            btnSaveChanges.disabled = true;
-        }
-    }
-
-    btnSaveChanges.disabled = true;
-    newPasswordRepeat.onkeyup = function () {
-        if (newPasswordRepeat.value.length >= 8) {
-            btnSaveChanges.disabled = false;
-        }
-        else{
-            btnSaveChanges.disabled = true;
-        }
-    }
-
-    // function reloads(){
-    //     location.reload();
+    //     if (newPassword.value.length >= 8) {
+    //         // $(passwordRepeatDiv).fadeIn();
+    //         btnSaveChanges.disabled = false;
+    //     }
+    //     else{
+    //         $(passwordRepeatDiv).hide();
+    //         btnSaveChanges.disabled = true;
+    //     }
     // }
+
+    // btnSaveChanges.disabled = true;
+    // newPasswordRepeat.onkeyup = function () {
+    //     if (newPasswordRepeat.value.length >= 8) {
+    //         btnSaveChanges.disabled = false;
+    //     }
+    //     else{
+    //         btnSaveChanges.disabled = true;
+    //     }
+    // }
+
+    function reloads(){
+        location.reload();
+    }
 
     $('#edit-new-password-form').submit(function (event) {
         event.preventDefault();
         let newPasswordValue = $('#new-password').val();
         let saveChanges = $('#btnSaveChanges').val();
-        let resultToast = $('#result-toast');
+        // let resultToast = $('#result-toast');
 
-        if (newPassword.value !== newPasswordRepeat.value) {
+        if (newPassword.value != newPasswordRepeat.value) {
             $('#passMatchWarning').removeClass("passwordWarningMatched");
             $('#passMatchWarning').addClass("passwordWarningNotMatched");
             $('#passMatchWarning').text("Password doesn't match!")
         }
         else{
             $(editPasswordDiv).fadeOut();
-            $('#result-modal').load("includes/insert-new-password-inc.php", {
+            toggleModal('editPasswordModal', false);
+            $('#edit-new-password-form').load("includes/insert-new-password-inc.php", {
                 newPasswordValue: newPasswordValue,
                 saveChanges: saveChanges,
             }, function(statusTxt) {
@@ -277,8 +276,6 @@
                     // $('#changes-made-toast').toast('show');
                     // $(resultToast).toast('show');
                     // $('#result-modal').hide();
-                    // reloads();
-                    toggleModal('editPasswordModal', false).hide();
                     toggleModal('successModal', true);
                 }
                 if (statusTxt == "STMT FAILED!") {
@@ -288,7 +285,6 @@
             });
         }
     });
-
     function closeButtons(){
         location.reload();
         toggleModal('successModal', false);
