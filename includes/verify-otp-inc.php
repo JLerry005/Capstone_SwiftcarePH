@@ -25,18 +25,14 @@
                 // $timestamp = $row['timestamp'];
 
                 if ($codeFromDB === $code) {
-                    
-                    echo "Code Matched! Congrats!";
-                    
                     $sql = "INSERT INTO userpatient (patientFirstname, patientLastname, patientEmail, patientPassword, patientPhoneNumber)
                             VALUES (?, ?, ?, ?, ?)";
 
                     $stmt = mysqli_stmt_init($conn);
                     
-                    
                     // $userMobileNumberExists = userMobileNumberExists($conn, $userMobileNumber);
                     // $loginUser = loginUser($conn, $userMobileNumber, $userPassword);
-                    $userID = mysqli_insert_id($conn);
+                    
 
 
                     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -55,7 +51,10 @@
                     // }
 
                     mysqli_stmt_close($stmt);
-                         
+
+                    $userID = mysqli_insert_id($conn);
+
+                    session_unset();
                     session_destroy();
                     session_start();
                     $_SESSION["sessionPatientFirstName"] = $firstname;
@@ -64,10 +63,10 @@
                 
                     // header("location: ../user-login.php?error=none");
                     // header("location: ../index.php?succefully-logged-in");
-
+                    echo "Code Matched! Congrats!";
                     exit();
 
-
+                    
                 }
                 else {
                     // header ("location: ../verify-code.php");

@@ -75,39 +75,87 @@
         mysqli_stmt_close($stmt);
     }
 
-    function createUser($conn, $userMobileNumber, $userPassword, $userFirstname, $userLastname) {
+    // function createUser($conn, $userMobileNumber, $userPassword, $userFirstname, $userLastname) {
 
-        $sql = "INSERT INTO userpatient (patientPhoneNumber, patientPassword, patientFirstname, patientLastname)
-                VALUES (?, ?, ?, ?);";
+    //     $sql = "INSERT INTO userpatient (patientPhoneNumber, patientPassword, patientFirstname, patientLastname)
+    //             VALUES (?, ?, ?, ?);";
 
-        $stmt = mysqli_stmt_init($conn);
-        $userMobileNumberExists = userMobileNumberExists($conn, $userMobileNumber);
-        // $loginUser = loginUser($conn, $userMobileNumber, $userPassword);
+    //     $stmt = mysqli_stmt_init($conn);
+    //     $userMobileNumberExists = userMobileNumberExists($conn, $userMobileNumber);
+    //     $loginUser = loginUserAfterSignup($conn, $userMobileNumber, $userPassword);
 
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location: ../user-signup.php?error=stmtfailed");
-            exit();
-        }
+    //     if (!mysqli_stmt_prepare($stmt, $sql)) {
+    //         header("location: ../user-signup.php?error=stmtfailed");
+    //         exit();
+    //     }
 
-        $hashedPwd = password_hash($userPassword, PASSWORD_DEFAULT);
+    //     $hashedPwd = password_hash($userPassword, PASSWORD_DEFAULT);
 
-        mysqli_stmt_bind_param($stmt, "ssss", $userMobileNumber, $hashedPwd, $userFirstname, $userLastname);
-        mysqli_stmt_execute($stmt); 
+    //     mysqli_stmt_bind_param($stmt, "ssss", $userMobileNumber, $hashedPwd, $userFirstname, $userLastname);
+    //     mysqli_stmt_execute($stmt); 
 
-        mysqli_stmt_close($stmt);
+    //     mysqli_stmt_close($stmt);
 
-        session_start();
-        $_SESSION["sessionPatientFirstName"] = $userFirstname;
-        $_SESSION["sessionpatientUserID"] = $userMobileNumberExists["patientUserID"];
-        $_SESSION["sessionPatientPhoneNumber"] = $userMobileNumberExists["patientPhoneNumber"];
+    //     if ($loginUser === false) {
+    //         header("location: ../user-login.php?error=wronglogin");
+    //         exit();
+    //     }
+
+    //     elseif ($loginUser === true) {
+    //         session_start();
+    //         $_SESSION["sessionpatientUserID"] = $verifyPhoneEmail["patientUserID"];
+    //         $_SESSION["sessionPatientPhoneNumber"] = $verifyPhoneEmail["patientPhoneNumber"];
+    //         $_SESSION["sessionPatientFirstName"] = $verifyPhoneEmail["patientFirstname"];
+
+    //         header("location: ../index?succefully-logged-in");
+    //         exit();
+    //     }
+
+    //     // session_start();
+    //     // $_SESSION["sessionPatientFirstName"] = $userFirstname;
+    //     // $_SESSION["sessionpatientUserID"] = $userMobileNumberExists["patientUserID"];
+    //     // $_SESSION["sessionPatientPhoneNumber"] = $userMobileNumberExists["patientPhoneNumber"];
        
 
-        // header("location: ../index?succefully-logged-in");
-        header("Refresh:0; url=../index?succefully-logged-in");
-        exit();
+    //     // // header("location: ../index?succefully-logged-in");
+    //     // header("Refresh:0; url=../index?succefully-logged-in");
+    //     // exit();
 
         
-    }
+    // }
+
+    // USER login after signup
+    // function loginUserAfterSignup($conn, $userMobileNumber, $userPassword) {
+    //     $verifyPhoneEmail = verifyPhoneEmail($conn, $userMobileNumber);
+
+    //     if ($verifyPhoneEmail === false) {
+    //         header("location: ../user-login.php?error=wrong-email-or-phonenumber");
+    //         exit();
+    //     }
+
+    //     $pwdHashed = $verifyPhoneEmail["patientPassword"];
+    //     $checkPwd = password_verify($userPassword, $pwdHashed);
+
+    //     if ($checkPwd === false) {
+    //         // header("location: ../user-login.php?error=wronglogin");
+    //         // exit();
+    //         $result = false;
+    //         return $result;
+    //     }
+
+    //     else if ($checkPwd === true) {
+    //         $result = true;
+    //         return $result;
+    //         // session_start();
+
+    //         // $_SESSION["sessionpatientUserID"] = $verifyPhoneEmail["patientUserID"];
+    //         // $_SESSION["sessionPatientPhoneNumber"] = $verifyPhoneEmail["patientPhoneNumber"];
+    //         // $_SESSION["sessionPatientFirstName"] = $verifyPhoneEmail["patientFirstname"];
+
+    //         // header("location: ../index?succefully-logged-in");
+    //         // exit();
+    //     }
+    // }
     
     // USER login function
     function loginUser($conn, $userMobileNumber, $userPassword) {

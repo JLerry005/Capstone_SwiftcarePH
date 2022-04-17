@@ -35,6 +35,7 @@
         $patientConcern = $row['concern'];
         $specifyConcern = $row['specifyconcern'];
         $hospitalName = $row['hospitalname'];
+        $listingID = $row['listing_id'];
     }
 
     // Check IF specify concern is null
@@ -191,7 +192,7 @@
                 <div class="">
                     <div class="mb-4">
                         <h1 class="text-slate-400">Hospital</h1>
-                        <h1 class="font-medium text-sm">'.$hospitalName.'</h1>
+                        <a href="hospital-overview?listingID='.$listingID.'" target="_blank" class="font-medium text-sm hover:underline">'.$hospitalName.'</a>
                     </div>
                 </div>
             </div>
@@ -258,13 +259,13 @@
                 <!-- Status -->
                 <div class="flex items-start space-x-5 mb-3">
                     <div>
-                        <img src="assets/reservations-images/status.png" alt="" class="w-10">
+                        <img src="assets/reservations-images/check.png" alt="" class="w-10">
                     </div>
 
                     <div class="">
                         <div class="mb-4">
                             <h1 class="text-slate-400">Status</h1>
-                            <h1 class="font-bold text-md md:text-xl">Pending For Review</h1>
+                            <h1 class="font-bold text-md md:text-xl">Approved</h1>
                         </div>
                     </div>
                 </div>
@@ -280,7 +281,7 @@
                     <div class="">
                         <div class="mb-4">
                             <h1 class="text-slate-400">Hospital</h1>
-                            <h1 class="font-bold text-sm">'.$hospitalName.'</h1>
+                            <a href="hospital-overview?listingID='.$listingID.'" target="_blank" class="font-bold text-sm hover:underline">'.$hospitalName.'</a>
                         </div>
                     </div>
                 </div>

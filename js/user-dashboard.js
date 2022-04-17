@@ -1,4 +1,4 @@
-    
+    alert("Working!");
 
     
     // let mainCards = document.getElementById("main-cards");
@@ -203,7 +203,6 @@
     let btnSaveChanges = document.getElementById("btnSaveChanges");
 
     $('#btnEditPasswordNext').click( function () {
-        // alert("hehexd");
         event.preventDefault();
         
         let btnEditPasswordNext = $('#btnEditPasswordNext').val();
@@ -254,37 +253,40 @@
         location.reload();
     }
 
-    $('#edit-new-password-form').submit(function (event) {
-        event.preventDefault();
-        let newPasswordValue = $('#new-password').val();
-        let saveChanges = $('#btnSaveChanges').val();
-        // let resultToast = $('#result-toast');
+    btnSaveChanges.onclick = function () {
+        let newPassVal = document.getElementById("new-password").value;
+        let newPassRepeatVal = document.getElementById("new-password-repeat").value;
 
-        if (newPassword.value != newPasswordRepeat.value) {
+        if (newPassVal != newPassRepeatVal) {
             $('#passMatchWarning').removeClass("passwordWarningMatched");
             $('#passMatchWarning').addClass("passwordWarningNotMatched");
-            $('#passMatchWarning').text("Password doesn't match!")
+            $('#passMatchWarning').text("Password didn't match!");
         }
-        else{
-            $(editPasswordDiv).fadeOut();
-            toggleModal('editPasswordModal', false);
-            $('#edit-new-password-form').load("includes/insert-new-password-inc.php", {
-                newPasswordValue: newPasswordValue,
-                saveChanges: saveChanges,
-            }, function(statusTxt) {
-                if (statusTxt == "") {
-                    // $('#changes-made-toast').toast('show');
-                    // $(resultToast).toast('show');
-                    // $('#result-modal').hide();
-                    toggleModal('successModal', true);
-                }
-                if (statusTxt == "STMT FAILED!") {
-                    $(editPasswordDiv).fadeIn();
-                    alert("Failed!");
-                }
-            });
+        else if(newPassVal == newPassRepeatVal){
+            if (newPassVal.length < 8) {
+                $('#passMatchWarning').removeClass("passwordWarningMatched");
+                $('#passMatchWarning').addClass("passwordWarningNotMatched");
+                $('#passMatchWarning').text("Must be atleast 8 characters!");
+            }
+            else{
+                $.ajax({
+                    method: "POST",
+                    url: "includes/insert-new-password-inc.php",
+                    data: {newPassVal:newPassVal},
+                    success: function (data) {
+                        $(editPasswordDiv).fadeOut();
+                        toggleModal('editPasswordModal', false);
+                        toggleModal('successModal', true);
+                    },
+                    error: function (data, status) {
+                        console.log(data);
+                        console.log(status);
+                    }
+                });
+            }
         }
-    });
+    }
+
     function closeButtons(){
         location.reload();
         toggleModal('successModal', false);

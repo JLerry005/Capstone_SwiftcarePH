@@ -501,7 +501,7 @@
                                         xhr.addEventListener('readystatechange', function(e) {
                                             if( this.readyState === 4 ) {
                                                 $(reservationLoader).hide();                                                   
-                                                // window.location.replace('http://localhost/Capstone/reservation-success');
+                                                window.location.replace('http://localhost/Capstone/reservation-success');
                                             }
                                         });
                                     }

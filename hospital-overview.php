@@ -75,8 +75,6 @@
                 <span class="self-center text-lg md:text-2xl font-semibold whitespace-nowrap dark:text-white">Swiftcare PH</span>
                 </a>
 
-                <a href="#" class="hidden md:block">More</a>
-
                 <a href="#" class="hover:underline hidden md:block">About</a>
             </div>
 
@@ -613,7 +611,7 @@
                 </div>
 
                 <!-- Login or signup for booking form -->
-                <form action="includes/booking-login-inc.php?listingID=<?php echo $listingID ?>" method="post" id="login-for-booking">  
+                <form action="user-login?listingID=<?php echo $listingID ?>" method="post" id="login-for-booking">  
                     <p class="mt-6 mb-4 text-gray-900 font-semibold text-md">You need to be Logged in first before you can book a reservation.</p>
                     <button type="submit" name="booking-login" id="booking-login" class="w-40 bg-gray-900 p-4 rounded-md text-white flex justify-center items-center hover:bg-gray-800 text-md uppercase font-semibold tracking-wide">Login</button>
                 </form>

@@ -37,6 +37,7 @@
             $patientConcern = $row['concern'];
             $specifyConcern = $row['specifyconcern'];
             $hospitalName = $row['hospitalname'];
+            $listingID = $row['listing_id'];
 
             // Check IF specify concern is null
             if ($specifyConcern == '') {
@@ -177,7 +178,7 @@
                         <div class="">
                             <div class="mb-4">
                                 <h1 class="text-slate-400">Hospital</h1>
-                                <h1 class="font-medium text-sm">'.$hospitalName.'</h1>
+                                <a href="hospital-overview?listingID='.$listingID.'" target="_blank" class="font-medium text-sm hover:underline">'.$hospitalName.'</a>
                             </div>
                         </div>
                     </div>
@@ -252,7 +253,7 @@
                             <div class="">
                                 <div class="mb-4">
                                     <h1 class="text-slate-400">Hospital</h1>
-                                    <h1 class="font-bold text-sm">'.$hospitalName.'</h1>
+                                    <a href="hospital-overview?listingID='.$listingID.'" target="_blank" class="font-bold text-sm hover:underline">'.$hospitalName.'</a>
                                 </div>
                             </div>
                         </div>
@@ -374,6 +375,7 @@
             $patientConcern = $row['concern'];
             $specifyConcern = $row['specifyconcern'];
             $hospitalName = $row['hospitalname'];
+            $listingID = $row['listing_id'];
 
             // Check IF specify concern is null
             if ($specifyConcern == '') {
@@ -514,7 +516,7 @@
                         <div class="">
                             <div class="mb-4">
                                 <h1 class="text-slate-400">Hospital</h1>
-                                <h1 class="font-medium text-sm">'.$hospitalName.'</h1>
+                                <a href="hospital-overview?listingID='.$listingID.'" target="_blank" class="font-medium text-sm hover:underline">'.$hospitalName.'</a>
                             </div>
                         </div>
                     </div>
@@ -589,7 +591,7 @@
                             <div class="">
                                 <div class="mb-4">
                                     <h1 class="text-slate-400">Hospital</h1>
-                                    <h1 class="font-bold text-sm">'.$hospitalName.'</h1>
+                                    <a href="hospital-overview?listingID='.$listingID.'" target="_blank" class="font-bold text-sm hover:underline">'.$hospitalName.'</a>
                                 </div>
                             </div>
                         </div>
@@ -713,6 +715,7 @@
             $specifyConcern = $row['specifyconcern'];
             $hospitalName = $row['hospitalname'];
             $remarks = $row['remarks'];
+            $listingID = $row['listng_id'];
 
             // Check IF specify concern is null
             if ($specifyConcern == '') {
@@ -876,7 +879,7 @@
                         <div class="">
                             <div class="mb-4">
                                 <h1 class="text-slate-400">Hospital</h1>
-                                <h1 class="font-medium text-sm">'.$hospitalName.'</h1>
+                                <a href="hospital-overview?listingID='.$listingID.'" target="_blank" class="font-medium text-sm hover:underline">'.$hospitalName.'</a>
                             </div>
                         </div>
                     </div>
@@ -967,7 +970,7 @@
                             <div class="">
                                 <div class="mb-4">
                                     <h1 class="text-slate-400">Hospital</h1>
-                                    <h1 class="font-bold text-sm">'.$hospitalName.'</h1>
+                                    <a href="hospital-overview?listingID='.$listingID.'" target="_blank" class="font-bold text-sm hover:underline">'.$hospitalName.'</a>
                                 </div>
                             </div>
                         </div>

@@ -1,33 +1,29 @@
 <?php
-    if (isset($_POST['saveChanges'])) {
-        session_start();
 
-        $newPasswordValue = $_POST['newPasswordValue'];
+    session_start();
 
-        require_once 'dbh-inc.php';
+    $newPasswordValue = $_POST['newPassVal'];
 
-        $currentUser = $_SESSION["sessionPatientPhoneNumber"];
+    require_once 'dbh-inc.php';
 
-        $sql = "UPDATE userpatient SET patientPassword = ? WHERE patientPhoneNumber = '".$currentUser."';";
-        $stmt = mysqli_stmt_init($conn);
+    $currentUser = $_SESSION["sessionPatientPhoneNumber"];
 
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location: ../password-verify.php?error=stmtfailed");
-            exit();
-            echo "STMT FAILED!";
-        }
-        else{
-            $newHashedPassword = password_hash($newPasswordValue, PASSWORD_DEFAULT);
+    $sql = "UPDATE userpatient SET patientPassword = ? WHERE patientPhoneNumber = '".$currentUser."';";
+    $stmt = mysqli_stmt_init($conn);
 
-            mysqli_stmt_bind_param($stmt, "s", $newHashedPassword);
-            mysqli_stmt_execute($stmt);
-
-            mysqli_stmt_close($stmt);
-            echo "";
-        }
-        
-        
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../password-verify.php?error=stmtfailed");
+        exit();
+        echo "STMT FAILED!";
     }
     else{
-        echo "Error!";
+        $newHashedPassword = password_hash($newPasswordValue, PASSWORD_DEFAULT);
+
+        mysqli_stmt_bind_param($stmt, "s", $newHashedPassword);
+        mysqli_stmt_execute($stmt);
+
+        mysqli_stmt_close($stmt);
+        echo "";
     }
+        
+        

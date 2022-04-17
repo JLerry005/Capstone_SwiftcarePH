@@ -16,6 +16,7 @@ module.exports = {
     './pages/edit-details.php',
     './index.php',
     './includes/nav.php',
+    './includes/footer.php',
     './hospital-overview.php',
     './new-hospital-overview.php',
     './reservation-success.php',

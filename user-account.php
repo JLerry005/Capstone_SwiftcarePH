@@ -125,7 +125,7 @@
                                 <div class="verifyPassword mb-3" id="verifyPassword-div" name="verifyPassword">
                                     <div class="mb-4">
                                         <p class="text-xl text-blue-500 font-medium mb-2">Verify your password</p>
-                                        <p class="text-gray-300"><i class="bi bi-info-circle-fill"></i> Type in your old password to make it's you.</p>                                        
+                                        <p class="text-gray-300"><i class="bi bi-info-circle-fill"></i> Type in your current password to verify it's you.</p>                                        
                                     </div>
                                     <form action="includes/userVerifyPassword-inc.php" method="POST" id="editPasswordForm">
                                         <div class="relative mb-3">
@@ -151,7 +151,7 @@
                                         <p class="text-gray-300"><i class="bi bi-info-circle-fill"></i> Type in your new password. (Minimum of 8 Characters)</p>                                        
                                     </div>
                                     <!-- New password and Repeat Password -->
-                                    <form action="" method="POST" id="edit-new-password-form">
+                                    <form id="edit-new-password-form">
                                         <!-- New Password -->
                                         <div class="relative mb-3">
                                             <label for="new-password" class="block mb-2 text-md font-medium text-blue-500">New password</label>
@@ -171,7 +171,7 @@
                                         <p id="passMatchWarning" class="text-rose-600 text-center space-y-2"></p>   
                                         <div class="flex justify-end mt-3">
                                             <!-- <button type="button" class="text-blue-50 border-2 border-gray-500 bg-gray-900 hover:bg-gray-500 px-3 py-2.5 text-center mr-2 mb-2 w-24 rounded-md" id="btnCloseCreate"><i class="bi bi-x-circle"></i>Back</button> -->
-                                            <button type="submit" class="text-white text-sm sm:text-md bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-800 font-medium rounded-lg px-3 py-2 sm:px-5 sm:py-2.5 text-center xl:mr-1 mb-2" id="btnSaveChanges" name="btnSaveChanges"> Save Changes </button>
+                                            <button type="button" class="text-white text-sm sm:text-md bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-800 font-medium rounded-lg px-3 py-2 sm:px-5 sm:py-2.5 text-center xl:mr-1 mb-2" id="btnSaveChanges" name="btnSaveChanges"> Save Changes </button>
                                         </div>
                                     </form>
                                 </div>

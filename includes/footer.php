@@ -1,5 +1,5 @@
 <!-- Footer -->
-<div>   
+<!-- <div>   
         <footer class="p-4 bg-white sm:p-6 dark:bg-gray-800">
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
@@ -159,4 +159,95 @@
 </a>
 </div>
 </div>
-</footer>
+</footer> -->
+
+    <footer class="bg-gray-800 text-gray-200 text-sm p-10 lg:p-20 font-light">
+        <!-- Logo -->
+        <a href="index" class="flex items-center text-center mb-10">
+            <img src="assets/main-logo-transparent.png" class="mr-3 h-8" alt="Swiftcare PH Logo">
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Swiftcare PH</span>
+        </a>
+
+        <!-- Middle Section -->
+        <div class="grid grid-cols-12">
+            <!-- First Column -->
+            <div class="col-span-12 sm:col-span-4 lg:col-span-3 flex flex-col space-y-3 mb-10">
+                <h1 class="mb-3 text-lg font-medium">About</h1>
+
+                <a href="" class="hover:underline text-gray-400">About</a>
+                <a href="" class="hover:underline text-gray-400">References</a>
+                <a href="" class="hover:underline text-gray-400">About the Developers</a>
+                <a href="" class="hover:underline text-gray-400">Our Mission</a>
+            </div>
+
+            <!-- Second Column -->
+            <div class="col-span-12 sm:col-span-4 lg:col-span-3 flex flex-col space-y-3 mb-10">
+                <h1 class="mb-3 text-lg font-medium">Getting Started</h1>
+
+                <a href="" class="hover:underline text-gray-400">how To's</a>
+                <a href="" class="hover:underline text-gray-400">Learn how to manage your bookings</a>
+                <a href="" class="hover:underline text-gray-400">About the Developers</a>
+                <a href="" class="hover:underline text-gray-400">Our Mission</a>
+                <a href="" class="hover:underline text-gray-400">testimonial</a>
+                <a href="" class="hover:underline text-gray-400">Learn how to manage your bookings</a>
+                <a href="" class="hover:underline text-gray-400">About the Developers</a>
+            </div>
+
+            <!-- Third Column -->
+            <div class="col-span-12 sm:col-span-4 lg:col-span-3 flex flex-col space-y-3 mb-10">
+                <h1 class="mb-3 text-lg font-medium">About</h1>
+                <a href="" class="hover:underline text-gray-400">About the Developers</a>
+                <a href="" class="hover:underline text-gray-400">Our Mission</a>
+                <a href="" class="hover:underline text-gray-400">testimonial</a>
+            </div>
+
+            <!-- Fourth Column -->
+            <div class="col-span-12 sm:col-span-4 lg:col-span-3 flex flex-col space-y-3 mb-10">
+                <h1 class="mb-3 text-lg font-medium">Social Media</h1>
+
+                <p class="mb-3 text-gray-300">Follow us on social media to find out the latest update on our website.</p>
+
+                <div class="flex space-x-6">
+                    <a href="#" class="lg:text-xl">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#" class="lg:text-xl">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+
+                    <a href="#" class="lg:text-xl">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" class="lg:text-xl">
+                        <i class="bi bi-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-12 border-t-[1px] border-gray-500 py-6 md:space-x-10">
+            <div class="col-span-12 md:col-span-4  mb-6 md:mb-0">
+                <p class="text-slate-400 text-xs">© <a href="#" class="hover:underline">Swiftcare PH</a>  2022 | All Rights Reserved.</p>
+            </div>
+
+            <div class="col-span-12 md:col-span-8 space-y-3 md:flex items-center md:space-x-6 lg:space-x-16 md:space-y-0">
+                <div>
+                    <a href="#">Terms of Services</a>
+                </div>
+
+                <div>
+                    <a href="#">Privacy Policy</a>
+                </div>
+
+                <div>
+                    <a href="#">Security</a>
+                </div>
+
+                <div>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>

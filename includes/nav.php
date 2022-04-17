@@ -10,9 +10,6 @@
                 <img src="assets/main-logo-transparent.png" class="mr-3 h-8" alt="Swiftcare PH Logo">
                 <span class="self-center text-lg md:text-2xl font-semibold whitespace-nowrap dark:text-white">Swiftcare PH</span>
                 </a>
-
-                <a href="#" class="hidden md:block">More</a>
-
                 <a href="#" class="hover:underline hidden md:block">About</a>
             </div>
             

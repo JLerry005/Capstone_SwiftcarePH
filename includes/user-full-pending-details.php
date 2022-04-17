@@ -16,6 +16,7 @@
     $patientConcern;
     $specifyConcern;
     $hospitalName;
+    $listingID;
 
     $referralFiles;
 
@@ -35,6 +36,7 @@
         $patientConcern = $row['patientConcern'];
         $specifyConcern = $row['patientSpecifyConcern'];
         $hospitalName = $row['patientHospitalName'];
+        $listingID = $row['listing_id'];
     }
 
     // Check IF specify concern is null
@@ -186,7 +188,7 @@
                 <div class="">
                     <div class="mb-4">
                         <h1 class="text-slate-400">Hospital</h1>
-                        <h1 class="font-medium text-sm">'.$hospitalName.'</h1>
+                        <a href="hospital-overview?listingID='.$listingID.'" target="_blank" class="font-medium text-sm hover:underline">'.$hospitalName.'</a>
                     </div>
                 </div>
             </div>
@@ -273,7 +275,7 @@
                     <div class="">
                         <div class="mb-4">
                             <h1 class="text-slate-400">Hospital</h1>
-                            <h1 class="font-bold text-sm">'.$hospitalName.'</h1>
+                            <a href="hospital-overview?listingID='.$listingID.'" target="_blank" class="font-bold text-sm hover:underline">'.$hospitalName.'</a>
                         </div>
                     </div>
                 </div>
