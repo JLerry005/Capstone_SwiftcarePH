@@ -1,5 +1,31 @@
     // alert("Working!");
     
+    const btnBurgerButton = document.getElementById("hamburger-button");
+    const sidebar = document.querySelector('.mobileMenu');
+    const closeMenu = document.getElementById("btn-close-menu");
+    let contentsContainer = document.querySelector('.main-container');
+
+    btnBurgerButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
+
+    closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
+
+    // contentsContainer.addEventListener("click", () => {
+    //     mobileMenu.classList.toggle("hidden");
+    // });
+
+    // btnBurgerButton.addEventListener("click", () => {
+    //     sidebar.classList.toggle("-translate-x-full");
+
+    //     contentsContainer.addEventListener("click", () => {
+    //         sidebar.classList.add("-translate-x-full");
+    //     });
+
+    // });
+
     $("#skeleton-loader").hide();
     showAllLisitng();
     function showAllLisitng() {

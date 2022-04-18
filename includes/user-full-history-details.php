@@ -715,7 +715,7 @@
             $specifyConcern = $row['specifyconcern'];
             $hospitalName = $row['hospitalname'];
             $remarks = $row['remarks'];
-            $listingID = $row['listng_id'];
+            $listingID = $row['listing_id'];
 
             // Check IF specify concern is null
             if ($specifyConcern == '') {

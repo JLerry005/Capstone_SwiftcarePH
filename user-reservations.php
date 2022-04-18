@@ -64,7 +64,7 @@
         </div>
 
         <!-- contents container -->
-        <div class="" id="contents-container">
+        <div class="pb-52" id="contents-container">
 
             <!-- Main Menus -->
             <div id="main-menus" class="space-y-10" style="display: none;">

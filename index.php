@@ -15,7 +15,7 @@
 </head>
 <body class="font-poppins bg-blue-50">
     <!-- Main Container -->
-    <div class="relative flex flex-col">
+    <div class="relative flex flex-col main-container" id="main-container">
 
         <!-- Nav Bar -->
         <?php
@@ -25,10 +25,10 @@
         <!-- hero -->
         <div class="heroContainer md:flex md:flex-col md:justify-between md:items-center text-white text-sm md:text-base md:pt-24 lg:pt-28 lg:pb-20 py-16 px-5 lg:flex-row lg:justify-between lg:px-12 bg-center bg-cover bg-no-repeat" style="background-image: url(assets/headger-bg-ambulance-dark-blurred.png);">
             <div class="leftSection space-y-4 text-center lg:text-left">
-                <h1 class="hidden md:block font-bold text-2xl md:text-3xl text-orange-400">The Power of Heal</h1>
+                <h1 class="hidden md:block font-bold text-2xl md:text-3xl text-orange-400">We Value Your Time</h1>
                 <p class="hidden md:block ">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-                    Aperiam illo quod iure suscipit reprehenderit nostrum alias!
+                    Look for a hospital slot in the comfort of your own home.<br>
+                    Convenient, Safe, and Time Efficient.
                 </p>
 
                 <div>
@@ -62,7 +62,7 @@
                         <!-- Signup section -->
                         <div class="rightSection hidden md:flex flex-col mt-3 lg:mt-0 md:flex-col md:justify-center space-y-4">
                             <div class="transition ease-out hover:-translate-y-1 hover:scale-110 duration-300">
-                                <h1 class="mb-2 font-semibold md:text-lg text-md ">Book your first Reservation Now!</h1>
+                                <h1 class="mb-2 font-semibold md:text-lg text-md">Book your first Reservation Now!</h1>
                                 <!-- <p>Click the button below to Signup:</p> -->
                                 <a href="user-signup.php" class="bg-orange-500 py-4 w-full rounded flex flex-row justify-center items-center hover:bg-orange-400 transition ease-out hover:-translate-y-1 hover:scale-100 duration-300">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -74,12 +74,25 @@
                             </div>
                             <p class="text-center">Already have an Account? <a href="user-login.php" class="hover:underline hover:text-blue-500">Login</a></p>
                         </div>
+
+                        <!-- Hero section for small devices -->
+                        <div class="md:hidden text-left space-y-2">
+                            <h1 class="font-bold text-xl text-orange-400">The Power of Heal</h1>
+                            <p>Lorem ipsum dolor, sit amet. Cum in, quas ut exercitationem provident.</p>
+                            <button class="flex flex-1 items-center p-2 px-4 bg-orange-500 rounded-md text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                    <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                                </svg>
+                                &ensp;Signup
+                            </button>
+                        </div>
                     ';
                 }
 
                 else {
                     echo '
-                        <div class="rightSection hidden md:flex flex-col mt-3 lg:mt-0 md:flex-col md:justify-center space-y-4">
+                        <div class="rightSection md:flex items-center flex-col mt-3 lg:mt-0 md:flex-col md:justify-center space-y-4">
                             <div class="">
                                 <div class="flex items-center">
                                     <p class="font-semibold md:text-2xl text-md">Welcome back, &nbsp;'.$_SESSION['sessionPatientFirstName'].'</p>
@@ -103,19 +116,6 @@
                 }
             ?>
             
-
-            <!-- Hero section for small devices -->
-            <div class="md:hidden text-left space-y-2">
-                <h1 class="font-bold text-xl text-orange-400">The Power of Heal</h1>
-                <p>Lorem ipsum dolor, sit amet. Cum in, quas ut exercitationem provident.</p>
-                <button class="flex flex-1 items-center p-2 px-4 bg-orange-500 rounded-md text-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                        <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
-                      </svg>
-                      &ensp;Signup
-                </button>
-            </div>
         </div>
 
         <!-- Main Content -->

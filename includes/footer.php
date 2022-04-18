@@ -161,7 +161,7 @@
 </div>
 </footer> -->
 
-    <footer class="bg-gray-800 text-gray-200 text-sm p-10 lg:p-20 font-light">
+    <footer class="bg-gray-800 text-gray-200 text-sm p-10 lg:px-20 lg:py-14 font-light">
         <!-- Logo -->
         <a href="index" class="flex items-center text-center mb-10">
             <img src="assets/main-logo-transparent.png" class="mr-3 h-8" alt="Swiftcare PH Logo">
@@ -169,36 +169,38 @@
         </a>
 
         <!-- Middle Section -->
-        <div class="grid grid-cols-12">
+        <div class="grid grid-cols-12 gap-x-5">
             <!-- First Column -->
             <div class="col-span-12 sm:col-span-4 lg:col-span-3 flex flex-col space-y-3 mb-10">
                 <h1 class="mb-3 text-lg font-medium">About</h1>
 
-                <a href="" class="hover:underline text-gray-400">About</a>
-                <a href="" class="hover:underline text-gray-400">References</a>
+                <a href="about#top" target="_blank" class="hover:underline text-gray-400">About Swiftcare PH</a>
+                <a href="" class="hover:underline text-gray-400">Inspiration</a>
+                <a href="" class="hover:underline text-gray-400">Our Story</a>
                 <a href="" class="hover:underline text-gray-400">About the Developers</a>
-                <a href="" class="hover:underline text-gray-400">Our Mission</a>
             </div>
 
             <!-- Second Column -->
             <div class="col-span-12 sm:col-span-4 lg:col-span-3 flex flex-col space-y-3 mb-10">
                 <h1 class="mb-3 text-lg font-medium">Getting Started</h1>
 
-                <a href="" class="hover:underline text-gray-400">how To's</a>
-                <a href="" class="hover:underline text-gray-400">Learn how to manage your bookings</a>
-                <a href="" class="hover:underline text-gray-400">About the Developers</a>
-                <a href="" class="hover:underline text-gray-400">Our Mission</a>
-                <a href="" class="hover:underline text-gray-400">testimonial</a>
-                <a href="" class="hover:underline text-gray-400">Learn how to manage your bookings</a>
-                <a href="" class="hover:underline text-gray-400">About the Developers</a>
+                <a href="" class="hover:underline text-gray-400">Signup / Login as User</a>
+                <a href="" class="hover:underline text-gray-400">Manage your Dashboard</a>
+                <a href="" class="hover:underline text-gray-400">Features</a>
+                <a href="" class="hover:underline text-gray-400">3 Step Reservation Process</a>
+                <a href="" class="hover:underline text-gray-400">How to Book a Reservation</a>
+                <a href="" class="hover:underline text-gray-400">How to monitor your Bookings</a>
             </div>
 
             <!-- Third Column -->
             <div class="col-span-12 sm:col-span-4 lg:col-span-3 flex flex-col space-y-3 mb-10">
-                <h1 class="mb-3 text-lg font-medium">About</h1>
-                <a href="" class="hover:underline text-gray-400">About the Developers</a>
-                <a href="" class="hover:underline text-gray-400">Our Mission</a>
-                <a href="" class="hover:underline text-gray-400">testimonial</a>
+                <h1 class="mb-3 text-lg font-medium">For Hospitals</h1>
+                <a href="" class="hover:underline text-gray-400">Signup as Hospital</a>
+                <a href="" class="hover:underline text-gray-400">Account Verification</a>
+                <a href="" class="hover:underline text-gray-400">Hospital Dashboard Features</a>
+                <a href="" class="hover:underline text-gray-400">How to manage Bookings</a>
+                <a href="" class="hover:underline text-gray-400">How to manage your Listing</a>
+                <a href="" class="hover:underline text-gray-400">Manage your account</a>
             </div>
 
             <!-- Fourth Column -->

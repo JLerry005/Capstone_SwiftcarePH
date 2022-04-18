@@ -212,14 +212,14 @@
                 $patientConcern = $row['concern'];
                 $hospitalName = $row['hospitalname'];
                 $remarks = $row['remarks'];
-                $listingID = ['listing_id'];
+
+                $listingID = $row['listing_id'];
 
                 $type = 'completed';
 
                 if ($remarks == '') {
                     $remarks = 'N/A';
                 }
-     
                  $expired .='
                     <div onclick="historyFullDetails('.$bookingID.', \''.$type.'\')" class="text-xs md:text-sm md:col-span-12 lg:col-span-4 bg-green-600 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out mb-3"> 
                         <div class="bg-green-700 p-2 rounded-t-lg flex items-center justify-between">
@@ -289,9 +289,7 @@
                         <div class="bg-green-700 p-4 rounded-b-lg flex justify-between">
                             <div class="flex flex-row items-center px-2 bg-green-600 rounded-lg">
                                 <p class="text-white">Remarks: <b>'.$remarks.'</b></p>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>     
+                                    
                             </div>
                             
                             <a href="#" class="text-white hover:text-blue-200 hover:underline flex items-center">

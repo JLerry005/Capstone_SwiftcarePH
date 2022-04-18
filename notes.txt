@@ -252,3 +252,34 @@ regionXIIISurigao
 regionXIIIBayugan
 regionXIIICabadbaran
 regionXIIIButuan
+
+
+
+
+
+--------------------------------------
+
+About
+    About Swiftcare ph.
+    Inspiration
+    Our Story
+    About the Developers
+
+
+Getting Started
+    Signup / Login as User
+    Manage your Dashboard
+    Features
+    3 Step Reservation Process
+    How to Book a Reservation
+    How to monitor your Bookings
+
+For hospitals
+    Signup as Hospital
+    Account Verification
+    Hospital Dashboard Features
+    How to manage Bookings
+    how to manage your Listing
+    Manage your account
+
+

@@ -191,11 +191,6 @@
 
         <!-- Container for hospital Details -->
         <div class="my-2 mx-4 space-y-3 px-2">
-            <!-- Hospital Type -->
-            <div class="flex flex-row">
-                <span class="font-bold uppercase"><?php echo $hospitalType?> </span>
-            </div>
-
 
             <!-- Header for Hospital Name and Get Directions Input -->
             <div class="xl:flex xl:items-start xl:justify-between">
@@ -204,7 +199,10 @@
                 <div class="flex flex-col">
                     <!-- Hospital Name -->
                     <p class="text-gray-900 text-xl md:text-2xl lg:text-3xl font-bold uppercase mb-2"><?php echo $hospitalName ?></p>
-
+                    <!-- Hospital Type -->
+                    <div class="flex flex-row">
+                        <span class="font-bold uppercase"><?php echo $hospitalType?> </span>
+                    </div>
                     <!-- Hospital Address -->
                     <div class="flex flex-row mb-2">
                         <i class="bi bi-geo-alt-fill text-red-500"></i>
@@ -357,7 +355,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd" />
                       </svg>
-                    &ensp;About in <?php echo $hospitalName?>&nbsp;
+                    &ensp;About <?php echo $hospitalName?>&nbsp;
                 </h1>
                 <p class="text-justify text-gray-800 font-medium"><?php echo $hospitalDescription?></p>
             </div>

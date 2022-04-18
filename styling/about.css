@@ -1,0 +1,11 @@
+.sidebar::-webkit-scrollbar{
+    background-color: transparent;
+    width: 8px;      
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+    background-color: rgb(79, 77, 77); 
+    opacity: 0.25;
+    border-radius: 50px;
+     
+}
