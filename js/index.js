@@ -6,11 +6,11 @@
     let contentsContainer = document.querySelector('.main-container');
 
     btnBurgerButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+        sidebar.classList.toggle("hidden");
     });
 
     closeMenu.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+        sidebar.classList.toggle("hidden");
     });
 
     // contentsContainer.addEventListener("click", () => {

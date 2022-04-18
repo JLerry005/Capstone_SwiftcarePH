@@ -471,7 +471,7 @@
             <!-- Edit Details Contents -->
             <div class=" editDetailsContent tab-contents" id="editDetailsContent" style="display: none;">
                 <!-- Refresh Button -->
-                <div class="flex flex-1 justify-end space-x-1 text-xs fixed z-10 right-0 mr-16">
+                <div class="flex flex-1 justify-end space-x-1 text-xs fixed z-10 right-0 top-0 pt-6 mr-16">
                     <div class="bg-gray-500 hover:bg-gray-700 drop-shadow-md rounded-3xl h-5 w-5 p-5 flex items-center justify-center text-gray-300 hover:rounded-xl transition-all">
                         <button onclick="refreshEditDetails()"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -479,29 +479,38 @@
                     </div>
                 </div>
                 
+
+                <!--Google Maps -->
+                <div class="col-span-12 xl:col-span-12 mt-16 pb-6 sm:mx-3 md:mx-6 2xl:mx-12 mainDetailsContainer bg-white drop-shadow-md">
+                    <!-- Google Map -->
+                    <div class="map p-2 mb-5">
+                        <iframe class="googleMap w-full rounded-lg h-80" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.9926021403926!2d120.98714038020043!3d14.656361247977395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b429ca9143f7%3A0x7dc98ed31712fe49!2sMCU%20Hospital%20-%20Filemon%20D.%20Tanchoco%2C%20Sr.%20Medical%20Foundation%20Inc.!5e0!3m2!1sen!2sph!4v1637676790012!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    
+                    <h1 class="mx-6 mb-3">Enter the exact location of your hospital below to help users find you more easily.</h1>
+                    
+                    <div class="flex flex:col md:flex-row space-x-3 items-center mx-6 mb-6">
+                        <!-- Location -->
+                        <div class="flex items-center grow space-x-4  bg-gray-700 rounded-lg py-2 px-3">
+                            <input type="text" class=" text-gray-200 text-sm rounded-lg focus:ring-0 focus:border-0 border-0 block bg-gray-700 p-0 w-full" id="hospital-location" name="hospital-location" required>
+                            <button id="get-location" class="bg-green-500 p-2 px-4 drop-shadow-md rounded-md text-white"><i class="bi bi-geo-alt-fill"></i></button>
+                        </div>
+
+                        <div class="w-52">
+                            <button type="button" class="py-4 px-3 flex items-center space-x-3 bg-blue-600 rounded-lg text-white w-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
+                                  </svg>
+                                Save My Location
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <!--Listing Details Form -->
-                <form method="POST" id="details-form">
+                <form id="details-form">
                     <!-- Main Container -->
                     <div class="mainContainer grid grid-cols-12 pt-16 sm:px-3 md:px-6 2xl:px-12 space-y-6 xl:space-y-0 gap-5 text-sm mb-6 text-gray-700" id="main-container">
-                        <!-- Main Details Content -->
-                        <div class="col-span-12 xl:col-span-12 p-6 mainDetailsContainer bg-white drop-shadow-md">
-                            <h1 class="font-bold text-blue-700">Main Details</h1>
-                            <div class="py-6">
-                                <hr class="border-gray-300">     
-                            </div>
-            
-                            <!-- Google Map -->
-                            <div class="map p-2 mb-5">
-                                <iframe class="googleMap w-full rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.9926021403926!2d120.98714038020043!3d14.656361247977395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b429ca9143f7%3A0x7dc98ed31712fe49!2sMCU%20Hospital%20-%20Filemon%20D.%20Tanchoco%2C%20Sr.%20Medical%20Foundation%20Inc.!5e0!3m2!1sen!2sph!4v1637676790012!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
-                            </div>
-                            
-                            <!-- Location -->
-                            <div class="flex justify-end space-x-4">
-                                <input type="text" class="border-1 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-5/6" id="hospital-location" name="hospital-location" required>
-                                <button class="bg-green-500 w-1/6 p-2 drop-shadow-md rounded-md text-white"><i class="bi bi-geo-alt-fill"></i> Get my Location</button>
-                            </div>
-                        </div>
-            
                         <!-- Listing Details Content -->
                         <div class="col-span-12 xl:col-span-12 p-6 listingDetailsContainer bg-white drop-shadow-md space-y-6">
                             <h1 class="font-bold text-blue-700">Listing Details</h1>
@@ -1165,6 +1174,8 @@
     </div>
 
     <?php include_once 'includes/footer.php'; ?>
+
+
 
     <script src="js\hospital-dashboard.js" defer></script>
     <!-- Flowbite -->

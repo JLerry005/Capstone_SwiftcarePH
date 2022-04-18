@@ -98,7 +98,16 @@
                         </div>
 
                         <!-- Burger Menu -->
-                        <div class="hidden md:hidden transition ease-out duration-200" id="">
+                        <div class="z-10 mobileMenu hidden md:hidden bg-gray-900 h-screen w-full p-6 transition ease-out duration-200 space-y-6" id="mobileMenu">
+                            <div class="flex justify-end w-full">
+                                <button class="hover:underline flex items-center btn-close-menu" id="btn-close-menu">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                      </svg>
+                                    &nbsp;Close
+                                </button>
+                            </div>
+
                             <a href="user-login.php" class="hover:bg-green-500 border-2 border-green-500 hover:drop-shadow-md py-1 px-5 rounded-full flex items-center text-sm transition-all">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
@@ -111,7 +120,7 @@
 
                         <!-- Hamburger Button -->
                         <div class="md:hidden flex flex-row items-center">
-                            <button class="" id="">
+                            <button class="hamburger-button" id="hamburger-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                                     </svg>

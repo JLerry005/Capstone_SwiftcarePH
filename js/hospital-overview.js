@@ -5,7 +5,8 @@
     });
 
     let coordinates;
-    btnGetLocation.onclick = function () {
+    btnGetLocation.onclick = function (event) {
+        event.preventDefault();
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(console.log, console.log("Error"));
 

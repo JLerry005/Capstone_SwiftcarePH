@@ -5,6 +5,17 @@
 
     // Hide Skeleton Loader
     $("#skeleton-loader").hide();
+
+    const getLocation = document.getElementById("get-location");
+    getLocation.onclick = function () {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(console.log, console.log("Error"));
+
+            // alert("Lat:"++)
+        } else { 
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
     
     // Load Dashbord First
     show_dashboard();
