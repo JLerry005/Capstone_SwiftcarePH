@@ -5,17 +5,6 @@
 
     // Hide Skeleton Loader
     $("#skeleton-loader").hide();
-
-    const getLocation = document.getElementById("get-location");
-    getLocation.onclick = function () {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(console.log, console.log("Error"));
-
-            // alert("Lat:"++)
-        } else { 
-            alert("Geolocation is not supported by this browser.");
-        }
-    }
     
     // Load Dashbord First
     show_dashboard();
@@ -411,6 +400,9 @@
         getCompletedCount();
     }
     
+
+    // Edit Details ----------------------------------
+
     function show_details() {
         // Get Listing Data
         $.ajax({
@@ -435,6 +427,10 @@
                 $("#website-link").val(fetchedData.website_link);
                 $("#room-slot").val(fetchedData.room_slot);
                 $("#bed-slot").val(fetchedData.bed_slot);
+
+                // Get lat and long
+                $("#lat").val(fetchedData.lat);
+                $("#lng").val(fetchedData.lng);
 
                 // Checkbox
                 let requireDocs = (fetchedData.additional_docs);
@@ -469,9 +465,183 @@
                 lightGallery(lg);
 
             }
-        });   
+        });
       
     }
+
+    // Initialize Google Map-----------------------------------------------
+
+    // Get Location Details
+    
+
+    var map;
+    var marker;
+    const btnsaveLocation = document.getElementById("btn-save-location");
+    function initialize() {
+        btnsaveLocation.classList.add('disable-button');
+        let lat = document.getElementById("lat").value;
+        let lng = document.getElementById("lng").value;
+
+        let defaultLatLng = { 
+            lat: 14.6091, 
+            lng: 121.0223 
+        };
+
+        // update lat lng if available
+        if (lat && lng) {
+            intLat = parseFloat(lat);
+            intLng = parseFloat(lng);
+
+            defaultLatLng.lat = intLat;
+            defaultLatLng.lng = intLng;
+
+            console.log(defaultLatLng);
+        }
+
+        var mapOptions = {
+            zoom: 12,
+            center: defaultLatLng
+        };
+        map = new google.maps.Map(document.getElementById('maps-container'),
+            mapOptions);
+
+        // get places auto-complete when user type in location-text-box
+        var input = /** @type {HTMLInputElement} */
+            (
+            document.getElementById('hospital-location'));
+            
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo('bounds', map);
+
+        var infowindow = new google.maps.InfoWindow();
+
+        marker = new google.maps.Marker({
+            map: map,
+            position: defaultLatLng,
+            draggable: true
+        });
+
+        geocodePosition(marker.getPosition());
+
+        // add dragend Event Listener to Marker -- Not Working
+        google.maps.event.addListener(marker, 'dragend', function () {
+            btnsaveLocation.classList.remove('disable-button');
+            map.setCenter(marker.getPosition());
+            geocodePosition(marker.getPosition());
+            document.getElementById("lat").value = marker.getPosition().lat();
+            document.getElementById("lng").value = marker.getPosition().lng();
+        });
+
+        // Add click event listener to map
+        google.maps.event.addListener(map, 'click', function(event) {
+            btnsaveLocation.classList.remove('disable-button');
+            marker.setPosition(event.latLng);
+            map.setCenter(marker.getPosition());
+            geocodePosition(marker.getPosition());
+            document.getElementById("lat").value = marker.getPosition().lat();
+            document.getElementById("lng").value = marker.getPosition().lng();
+        });
+
+        // Event Listener - When a list from autocomplete is clicked
+        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+            btnsaveLocation.classList.remove('disable-button');
+            infowindow.close();
+            marker.setVisible(false);
+
+            var place = autocomplete.getPlace();
+
+            if (!place.geometry) {
+                return;
+            }
+
+            // If the place has a geometry, then present it on a map.
+            if (place.geometry.viewport) {
+                map.fitBounds(place.geometry.viewport);
+            } 
+            else {
+                map.setCenter(place.geometry.location);
+                map.setZoom(17); // Why 17? Because it looks good.
+            }
+
+            marker.setIcon( /** @type {google.maps.Icon} */ ({
+                url: place.icon,
+                size: new google.maps.Size(71, 71),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(35, 35)
+            }));
+
+            marker.setPosition(place.geometry.location);
+            marker.setVisible(true);
+
+            document.getElementById("lat").value = marker.getPosition().lat();
+            document.getElementById("lng").value = marker.getPosition().lng();
+
+            var address = '';
+            if (place.address_components) {
+                address = [
+                    (place.address_components[0] && place.address_components[0].short_name || ''), (place.address_components[1] && place.address_components[1].short_name || ''), (place.address_components[2] && place.address_components[2].short_name || '')
+                ].join(' ');
+            }
+
+        });
+
+        function geocodePosition(pos) {
+            geocoder = new google.maps.Geocoder();
+            geocoder.geocode({
+                    latLng: pos
+                },
+                function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        document.getElementById("hospital-location").value = results[0].formatted_address;
+                    }else{
+                        //
+                    }
+                }
+            );
+        }
+
+        // Save Location
+        btnsaveLocation.onclick = function () {
+            let locationToSave = document.getElementById("hospital-location").value;
+            let latToSave = document.getElementById("lat").value;
+            let lngTosave = document.getElementById("lng").value;
+
+            $.ajax({
+                method: "POST",
+                url: "includes/save-hospital-location.php",
+                data: {
+                    locationToSave:locationToSave,
+                    latToSave:latToSave,
+                    lngTosave:lngTosave
+                },
+                beforeSend: function () {
+                    btnsaveLocation.classList.add('disable-button');
+                    input.classList.add('disable-button');
+                    // map.classList.add('disable-button');
+                },
+                success: function (data) {
+                    btnsaveLocation.classList.remove('disable-button');
+                    input.classList.remove('disable-button');
+                    // map.classList.remove('disable-button');
+                    alert("Saved!");
+
+                    console.log(data);
+                }
+            });
+        }
+    }
+
+    window.addEventListener('load', (event) => {
+        start();
+    });
+
+    function start() {
+        initialize();
+    }
+
+    // -----------------------------------------------------------------
+    
 
     // Hospital Room Slot | Show and Hide Function
     $(document).ready(function () {

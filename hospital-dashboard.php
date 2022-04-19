@@ -483,21 +483,20 @@
                 <!--Google Maps -->
                 <div class="col-span-12 xl:col-span-12 mt-16 pb-6 sm:mx-3 md:mx-6 2xl:mx-12 mainDetailsContainer bg-white drop-shadow-md">
                     <!-- Google Map -->
-                    <div class="map p-2 mb-5">
-                        <iframe class="googleMap w-full rounded-lg h-80" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.9926021403926!2d120.98714038020043!3d14.656361247977395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b429ca9143f7%3A0x7dc98ed31712fe49!2sMCU%20Hospital%20-%20Filemon%20D.%20Tanchoco%2C%20Sr.%20Medical%20Foundation%20Inc.!5e0!3m2!1sen!2sph!4v1637676790012!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="map p-2 mb-5 w-full h-80 maps-container" id="maps-container">
+                       <p>[Error Loading Google maps!]</p>
                     </div>
                     
                     <h1 class="mx-6 mb-3">Enter the exact location of your hospital below to help users find you more easily.</h1>
                     
                     <div class="flex flex:col md:flex-row space-x-3 items-center mx-6 mb-6">
                         <!-- Location -->
-                        <div class="flex items-center grow space-x-4  bg-gray-700 rounded-lg py-2 px-3">
-                            <input type="text" class=" text-gray-200 text-sm rounded-lg focus:ring-0 focus:border-0 border-0 block bg-gray-700 p-0 w-full" id="hospital-location" name="hospital-location" required>
-                            <button id="get-location" class="bg-green-500 p-2 px-4 drop-shadow-md rounded-md text-white"><i class="bi bi-geo-alt-fill"></i></button>
+                        <div class="bg-gray-700 rounded-lg py-2 px-3 w-full">
+                            <input type="text" class=" text-gray-200 py-2 text-sm rounded-lg focus:ring-0 focus:border-0 border-0 block bg-gray-700 p-0 w-full" id="hospital-location" name="hospital-location" required>
                         </div>
 
-                        <div class="w-52">
-                            <button type="button" class="py-4 px-3 flex items-center space-x-3 bg-blue-600 rounded-lg text-white w-full">
+                        <div class="shrink-0">
+                            <button type="button" id="btn-save-location" class="py-4 px-3 flex items-center space-x-3 bg-blue-600 rounded-lg text-white w-full">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                     <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
                                   </svg>
@@ -505,6 +504,9 @@
                             </button>
                         </div>
                     </div>
+
+                    <input type="text" name="" id="lat">
+                    <input type="text" name="" id="lng">
                 </div>
 
                 <!--Listing Details Form -->
@@ -1175,8 +1177,7 @@
 
     <?php include_once 'includes/footer.php'; ?>
 
-
-
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApEvr9yiQv-yXwXp2HRpzyW5HXwB18BxE&libraries=places"></script>
     <script src="js\hospital-dashboard.js" defer></script>
     <!-- Flowbite -->
     <!-- <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script> -->
