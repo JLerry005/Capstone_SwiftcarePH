@@ -312,6 +312,38 @@
         });
     }
 
+    // Filter Expired Reservation
+    btnExpiredReservation.onclick = function () {
+        let rejectedContainer = document.getElementById("rejected-cards-container");
+        let listingID = document.getElementById("listingID").value;
+
+        rejectedContainer.innerHTML = "";
+        $.ajax({
+            method: "GET",
+            url: "includes/get-completed-rejected.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                rejectedContainer.innerHTML = data;
+            }
+        });
+    }
+
+    // Filter Rejected Reservation
+    btnRejecetedReservation.onclick = function () {
+        let rejectedContainer = document.getElementById("rejected-cards-container");
+        let listingID = document.getElementById("listingID").value;
+
+        rejectedContainer.innerHTML = "";
+        $.ajax({
+            method: "GET",
+            url: "includes/get-completed-expired.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                rejectedContainer.innerHTML = data;
+            }
+        });
+    }
+
     // get pending count
     getPendingCount();
     function getPendingCount() {
