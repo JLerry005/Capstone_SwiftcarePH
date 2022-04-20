@@ -154,6 +154,7 @@
                             <p id="reservation-type" name="reservation-type"><?php echo $reservationType?></p>
                         </div>
                     </div>
+                    <p class="hidden" id="remarks" name="remarks" value="">Rejected</p>
                 </div>
             </div>
             

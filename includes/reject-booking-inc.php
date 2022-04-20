@@ -18,9 +18,10 @@
         $userID = $_POST['userID'];
         $listingID = $_POST['listingID'];
         $hospitalName = $_POST['hospitalName'];
+        $remarks = $_POST['remarks'];
 
-        $moveToRejected = "INSERT INTO rejectedreservations (user_id, listing_id, firstname, lastname, date, time, phonenumber, email, concern, specifyconcern, hospitalName, reservationtype, booking_timestamp)
-                        VALUES ('$userID', '$listingID', '$firstname','$lastname','$date','$time', '$contactNumber', ' $emailAdd', '$patientConcern', '$specifyConcern', '$hospitalName', '$reservationType', '$timeStamp')";
+        $moveToRejected = "INSERT INTO rejectedreservations (user_id, listing_id, firstname, lastname, date, time, phonenumber, email, concern, specifyconcern, hospitalName, reservationtype, booking_timestamp, remarks)
+                        VALUES ('$userID', '$listingID', '$firstname','$lastname','$date','$time', '$contactNumber', ' $emailAdd', '$patientConcern', '$specifyConcern', '$hospitalName', '$reservationType', '$timeStamp', '$remarks')";
 
         $result = mysqli_query($conn, $moveToRejected) or die(mysqli_error($conn));
         

@@ -313,14 +313,14 @@
     }
 
     // Filter Expired Reservation
-    btnExpiredReservation.onclick = function () {
+    btnRejecetedReservation.onclick = function () {
         let rejectedContainer = document.getElementById("rejected-cards-container");
         let listingID = document.getElementById("listingID").value;
 
         rejectedContainer.innerHTML = "";
         $.ajax({
             method: "GET",
-            url: "includes/get-completed-rejected.php",
+            url: "includes/get-rejected.php",
             data: {listingID:listingID},
             success: function (data) {
                 rejectedContainer.innerHTML = data;
@@ -329,14 +329,14 @@
     }
 
     // Filter Rejected Reservation
-    btnRejecetedReservation.onclick = function () {
+    btnExpiredReservation.onclick = function () {
         let rejectedContainer = document.getElementById("rejected-cards-container");
         let listingID = document.getElementById("listingID").value;
 
         rejectedContainer.innerHTML = "";
         $.ajax({
             method: "GET",
-            url: "includes/get-completed-expired.php",
+            url: "includes/get-expired.php",
             data: {listingID:listingID},
             success: function (data) {
                 rejectedContainer.innerHTML = data;

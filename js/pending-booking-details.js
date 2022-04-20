@@ -20,6 +20,7 @@
     let listingID = document.getElementById("listingID").value;
     let bookingID = document.getElementById("bookingID").value;
     let hospitalName = document.getElementById("hospitalName").value;
+    let remarks = document.getElementById("remarks").innerText;
     const reservationLoader = document.getElementById("reservation-loader");
   
     // Accept Button
@@ -75,7 +76,7 @@
         const btnCancel = document.getElementById("btnCancelReject");
   
         btnContinue.onclick = function () {
-            // Insert to upcomingreservations
+
             $.ajax({
                 method: "POST",
                 url: "includes/reject-booking-inc.php",
@@ -93,7 +94,8 @@
                     userID:userID,
                     bookingID:bookingID,
                     listingID:listingID,
-                    hospitalName:hospitalName
+                    hospitalName:hospitalName,
+                    remarks:remarks
                 },
                 success: function () {
                     toggleModal('rejectModal', false);
