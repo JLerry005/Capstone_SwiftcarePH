@@ -292,7 +292,10 @@
     // Show All
     const btnShowAllCompleted = document.getElementById("btn-show-all-completed");
 
-    btnShowAllCompleted.onclick = function () {
+
+    // Rejected and Expired
+
+    showAllRejectedExpired.onclick = function () {
         showCompletedReservations();
     }
 
@@ -313,7 +316,7 @@
     }
 
     // Filter Expired Reservation
-    btnRejecetedReservation.onclick = function () {
+    btnRejectedReservation.onclick = function () {
         let rejectedContainer = document.getElementById("rejected-cards-container");
         let listingID = document.getElementById("listingID").value;
 
@@ -342,6 +345,13 @@
                 rejectedContainer.innerHTML = data;
             }
         });
+    }
+
+    // Show All
+    const btnShowAllRejectedExpired = document.getElementById("btn-show-all-rejected-expired");
+
+    btnShowAllRejectedExpired.onclick = function () {
+        showAllRejectedExpired();
     }
 
     // get pending count

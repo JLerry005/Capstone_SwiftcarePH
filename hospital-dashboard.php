@@ -444,11 +444,11 @@
                         <div class="flex space-x-5">
                             <div class="-space-x-1">
                                 <button id="btnExpiredReservation" class="border-2 border-gray-500 rounded rounded-r-none border-r-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Expired Reservations</button>
-                                <button id="btnRejecetedReservation" class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Rejected</button>
+                                <button id="btnRejectedReservation" class="border-2 border-gray-500 rounded rounded-l-none border-l-0 p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Rejected</button>
                             </div>
 
                             <div>
-                                <button id="btn-show-all-upcoming" class="border-2 border-gray-500 rounded p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Show All</button>
+                                <button id="btn-show-all-rejected-expired" class="border-2 border-gray-500 rounded p-1 drop-shadow-md hover:bg-gray-500 focus:bg-gray-500 focus:text-white hover:text-white transition-all px-3">Show All</button>
                             </div>
 
                             <!-- Toggle Button -->
