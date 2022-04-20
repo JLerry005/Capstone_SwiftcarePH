@@ -487,7 +487,7 @@
                        <p>[Error Loading Google maps!]</p>
                     </div>
                     
-                    <h1 class="mx-6 mb-3">Enter the exact location of your hospital below to help users find you more easily.</h1>
+                    <h1 class="mx-6 mb-3">Drag the marker on the map or use the textbox below to search your exact location.</h1>
                     
                     <div class="flex flex:col md:flex-row space-x-3 items-center mx-6 mb-6">
                         <!-- Location -->
@@ -505,8 +505,17 @@
                         </div>
                     </div>
 
-                    <input type="text" name="" id="lat">
-                    <input type="text" name="" id="lng">
+                    <input type="hidden" name="" id="lat">
+                    <input type="hidden" name="" id="lng">
+
+                    <div class="w-full text-center" id="changes-message">
+                        <p class="text-green-600 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                              </svg>
+                            Location Saved Successfully!
+                        </p>
+                    </div>
                 </div>
 
                 <!--Listing Details Form -->

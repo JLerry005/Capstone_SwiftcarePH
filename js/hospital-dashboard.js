@@ -404,6 +404,7 @@
     // Edit Details ----------------------------------
 
     function show_details() {
+        // start();
         // Get Listing Data
         $.ajax({
             method: "GET",
@@ -479,6 +480,7 @@
     const btnsaveLocation = document.getElementById("btn-save-location");
     function initialize() {
         btnsaveLocation.classList.add('disable-button');
+
         let lat = document.getElementById("lat").value;
         let lng = document.getElementById("lng").value;
 
@@ -487,8 +489,13 @@
             lng: 121.0223 
         };
 
-        // update lat lng if available
-        if (lat && lng) {
+        var mapOptions = {
+            zoom: 12,
+            center: defaultLatLng
+        };
+
+        // update lat & lng if available
+        if (lat !== "" && lng !== "") {
             intLat = parseFloat(lat);
             intLng = parseFloat(lng);
 
@@ -498,10 +505,6 @@
             console.log(defaultLatLng);
         }
 
-        var mapOptions = {
-            zoom: 12,
-            center: defaultLatLng
-        };
         map = new google.maps.Map(document.getElementById('maps-container'),
             mapOptions);
 
@@ -607,6 +610,8 @@
             let latToSave = document.getElementById("lat").value;
             let lngTosave = document.getElementById("lng").value;
 
+            const saveMessage = document.getElementById("changes-message");
+
             $.ajax({
                 method: "POST",
                 url: "includes/save-hospital-location.php",
@@ -618,15 +623,13 @@
                 beforeSend: function () {
                     btnsaveLocation.classList.add('disable-button');
                     input.classList.add('disable-button');
-                    // map.classList.add('disable-button');
                 },
                 success: function (data) {
-                    btnsaveLocation.classList.remove('disable-button');
                     input.classList.remove('disable-button');
-                    // map.classList.remove('disable-button');
-                    alert("Saved!");
 
-                    console.log(data);
+                    var x = saveMessage;
+                    x.className = "fadeIn";
+                    setTimeout(function(){ x.className = x.className.replace("fadeIn", ""); }, 3000);
                 }
             });
         }
@@ -911,6 +914,7 @@
     // Refresh Button
     function refreshEditDetails() {
         show_details();
+        start();
     }
     
     // Show Account When Dashboard Button is clicked.

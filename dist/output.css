@@ -963,10 +963,6 @@ input:checked + .toggle-bg{
   margin: 1rem;
 }
 
-.m-2{
-  margin: 0.5rem;
-}
-
 .mx-6{
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -1461,12 +1457,12 @@ input:checked + .toggle-bg{
   flex-shrink: 1;
 }
 
-.shrink{
-  flex-shrink: 1;
-}
-
 .shrink-0{
   flex-shrink: 0;
+}
+
+.shrink{
+  flex-shrink: 1;
 }
 
 .grow{
@@ -1741,12 +1737,6 @@ input:checked + .toggle-bg{
   margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.space-x-4 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
 .space-y-6 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1787,6 +1777,12 @@ input:checked + .toggle-bg{
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-y-3 > :not([hidden]) ~ :not([hidden]){
@@ -2146,11 +2142,6 @@ input:checked + .toggle-bg{
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
 }
 
-.bg-green-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(14 159 110 / var(--tw-bg-opacity));
-}
-
 .bg-blue-600{
   --tw-bg-opacity: 1;
   background-color: rgb(28 100 242 / var(--tw-bg-opacity));
@@ -2169,6 +2160,11 @@ input:checked + .toggle-bg{
 .bg-green-600{
   --tw-bg-opacity: 1;
   background-color: rgb(5 122 85 / var(--tw-bg-opacity));
+}
+
+.bg-green-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(14 159 110 / var(--tw-bg-opacity));
 }
 
 .bg-transparent{
@@ -2236,6 +2232,11 @@ input:checked + .toggle-bg{
 
 .bg-white\/50{
   background-color: rgb(255 255 255 / 0.5);
+}
+
+.bg-green-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(49 196 141 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50{

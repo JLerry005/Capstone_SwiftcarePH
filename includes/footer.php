@@ -210,7 +210,7 @@
                 <p class="mb-3 text-gray-300">Follow us on social media to find out the latest update on our website.</p>
 
                 <div class="flex space-x-6">
-                    <a href="#" class="lg:text-xl">
+                    <a href="https://www.facebook.com/swiftcareph" class="lg:text-xl">
                         <i class="bi bi-facebook"></i>
                     </a>
 
