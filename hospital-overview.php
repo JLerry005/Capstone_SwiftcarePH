@@ -82,6 +82,51 @@
                 if (isset($_SESSION["sessionpatientUserID"])) {
                     echo '
 
+                    <!-- Hamburger Button -->
+                    <div class="md:hidden flex flex-row items-center">
+                        <button class="hamburger-button" id="hamburger-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                        </button>
+                    </div>
+
+                    <!-- Burger Menu -->
+                    <div class="md:hidden mobileMenu hidden z-10 h-screen w-full bg-gray-900 transition ease-out duration-200 p-10 space-y-6" id="mobileMenu">
+                        <div class="flex justify-end w-full">
+                            <button class="hover:underline flex items-center btn-close-menu" id="btn-close-menu">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                  </svg>
+                                &nbsp;Close
+                            </button>
+                        </div>
+                        
+                        
+                        <div class=" hover:text-blue-400 text-blue-100 transition-all">
+                            <a href="user-reservations" class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                                  </svg>
+                                &ensp;My Reservations
+                            </a>
+                        </div>
+                        
+                        <p class="flex flex-row items-center capitalize hover:text-blue-400 text-blue-100 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                              </svg>
+                              <a href="user-dashboard"> &nbsp;'.$_SESSION['sessionPatientFirstName'].'</a>
+                        </p>
+                        
+                        <a href="includes/logout-inc" class=" hover:bg-red-500 border-2 border-red-500 hover:drop-shadow-md py-1 px-5 rounded-full flex items-center text-sm transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                            </svg>
+                            &nbsp;Logout
+                        </a>
+                    </div>
+
                     <div class="hidden md:flex md:flex-row md:items-center space-x-5">
                         <div class="px-3 hover:text-blue-400 text-blue-100 transition-all">
                             <a href="user-reservations" target="_blank" class="flex items-center">
@@ -117,12 +162,43 @@
                                 &nbsp;Login
                             </a>
                         </div>
+
+
+                        <!-- Burger Menu -->
+                        <div class="z-10 mobileMenu hidden md:hidden bg-gray-900 h-screen w-full p-6 transition ease-out duration-200 space-y-6" id="mobileMenu">
+                            <div class="flex justify-end w-full">
+                                <button class="hover:underline flex items-center btn-close-menu" id="btn-close-menu">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                      </svg>
+                                    &nbsp;Close
+                                </button>
+                            </div>
+
+                            <a href="user-login.php" class="hover:bg-green-500 border-2 border-green-500 hover:drop-shadow-md py-1 px-5 rounded-full flex items-center text-sm transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                                </svg>
+                                &nbsp;Login
+                            </a>
+
+                            <a href="about" class="block py-2 text-sm hover:bg-gray-500">About</a>
+                        </div>
+
+                        <!-- Hamburger Button -->
+                        <div class="md:hidden flex flex-row items-center">
+                            <button class="hamburger-button" id="hamburger-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                            </button>
+                        </div>
                     ';
                 }
             ?>
 
     
-            <!-- Hamburger Button -->
+            <!-- Hamburger Button
             <div class="md:hidden flex flex-row items-center">
                 <button class="hamburger-button id="hamburger-button">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -132,65 +208,79 @@
             </div>
         </div>
 
-        <!-- Burger Menu -->
+        <- Burger Menu -
         <div class="mobileMenu hidden md:hidden transition ease-out duration-200" id="mobileMenu">
             <a href="" class="block py-2 text-sm hover:bg-gray-500">More</a>
             <a href="" class="block py-2 text-sm hover:bg-gray-500">About</a>
             <button class="block py-2 text-sm hover:bg-gray-500">Login</button>
-        </div>
+        </div> -->
     </nav>
 
 
     <!-- Main Container -->
     <div class="container mx-auto flex flex-col lg:p-5">
 
-
-        <!-- Google Map -->
-        <div class="w-full" id="mapsContainer">
-            <div class="map lg:p-2 mb-5">
-                <iframe class="drop-shadow-md w-full h-60 rounded-none lg:h-80 lg:rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.9926021403926!2d120.98714038020043!3d14.656361247977395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b429ca9143f7%3A0x7dc98ed31712fe49!2sMCU%20Hospital%20-%20Filemon%20D.%20Tanchoco%2C%20Sr.%20Medical%20Foundation%20Inc.!5e0!3m2!1sen!2sph!4v1637676790012!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
-            </div>
+        <!-- Google Maps -->
+        <div class="w-full h-[450px]" id="map-canvas">
+            [Google Maps is loading..]
+        </div>
+        <div class="mb-5 text-center">
+            <p class=""><i>Drag the <b>A Marker</b> (this represents your location) or use the Search Field below to find your location to get Directions. </i></p>
         </div>
 
+        <!-- Get directions -->
+        <div class="flex flex-col mb-10 px-5 md:px-0">
+            <div id="getDirectionsInput">
 
-        <!-- Get Directions for small to medium -->
-        <div class="flex flex-col items-center justify-center lg:flex-row lg:justify-start xl:hidden">
-            <div class="flex flex-col justify-center items-center space-y-1 sm:flex-row sm:space-y-0 sm:space-x-2 sm:items-end">
-                <div>
+                <div class="flex items-center justify-between"> 
                     <label for="fromInput" class="flex items-center mb-1">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                          </svg>
+                            </svg>
                         &nbsp;Get Directions
                     </label>
 
-                    <div>
-                        <input class="text-sm border-0 rounded-md focus:ring-2 focus:ring-green-500" type="search" placeholder="enter your current location.." id="fromInput">
+
+                    <div class="flex items-center space-x-4">
+                        <!-- Driving Time -->
+                        <p class="flex items-center font-semibold text-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                              </svg>
+                            Driving Time:&nbsp;<span class="duration-container text-gray-900" id="duration-container">0</span>
+                        </p> 
+        
+                        <!-- Distance In km -->
+                        <p class="flex items-center font-semibold text-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M8 5a1 1 0 100 2h5.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L13.586 5H8zM12 15a1 1 0 100-2H6.414l1.293-1.293a1 1 0 10-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L6.414 15H12z" />
+                              </svg>
+                            Distance (km):&nbsp;<span class="distance-container text-gray-900" id="distance-container">0</span>
+                        </p>
                     </div>
-                    
-                </div>
+                </div>  
                 
-                <p class="self-center pt-4">Or</p>
 
-               <button class="bg-green-500 p-2 sm:p-3 text-white rounded-md flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-                    </svg>
-                    &nbsp;Get My Location
-                </button>
-            </div>
-
-
-            <!-- Hidden Input - Hospital Location -->
-            <div class="hidden">
-                <label for="toInput" class="hidden">Hospital Location</label>
-                <input class="text-sm" type="hidden" placeholder="To:" disabled id="listingID" value="<?php echo $listingID ?>">
+                <div class="border-b-2 bg-white drop-shadow-sm flex flex-row items-center p-1">
+                    <input class="text-sm border-0 rounded-md focus:ring-0 w-full" type="search" placeholder="enter your current location.." id="user-location">
+                    
+                    <!-- get Current location Button -->
+                    <button class="bg-gray-700 p-2 sm:p-3 text-white rounded-md flex items-center" id="getLocationButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        </svg>
+                        
+                    </button>
+                </div>
             </div>
         </div>
 
 
+        <input class="text-sm" type="hidden" placeholder="To:" disabled id="listingID" value="<?php echo $listingID ?>">
+
+
         <!-- Container for hospital Details -->
-        <div class="my-2 mx-4 space-y-3 px-2">
+        <div class="my-2 space-y-3 px-5 md:px-0">
 
             <!-- Header for Hospital Name and Get Directions Input -->
             <div class="xl:flex xl:items-start xl:justify-between">
@@ -273,40 +363,15 @@
                         </div>
                     </div>
                 </div>
-
-
-                <!-- Get directions for x-large devices -->
-                <div class="hidden xl:flex flex-col">
-                    <div id="getDirectionsInput">
-                        <label for="fromInput" class="flex items-center mb-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                                </svg>
-                            &nbsp;Get Directions
-                        </label>
-
-                        <div class="border-b-2 bg-white drop-shadow-sm xl:flex xl:flex-row items-center p-1">
-                            <input class="text-sm border-0 rounded-md focus:ring-0" type="search" placeholder="enter your current location.." id="fromInput">
-                            
-                            <!-- get Current location Button -->
-                            <button class="bg-gray-700 p-2 sm:p-3 text-white rounded-md flex items-center" id="getLocationButton">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-                                </svg>
-                                
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- BOOK NOW Button -->
-                    <div class="pt-4">
-                        <button onclick="anchor_to_form()" class="w-full bg-gray-900 p-4 rounded-md text-white flex justify-center items-center hover:bg-gray-800" type="button" id="book-now-anchor">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                            </svg>
-                            &nbsp;BOOK NOW!
-                        </button>
-                    </div>
+                
+                <!-- BOOK NOW Button -->
+                <div class="pt-4">
+                    <button onclick="anchor_to_form()" class="w-full bg-gray-900 p-4 rounded-md text-white flex justify-center items-center hover:bg-gray-800" type="button" id="book-now-anchor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                        </svg>
+                        &nbsp;BOOK NOW!
+                    </button>
                 </div>
 
                 <!-- Details for smaller screen -->
@@ -394,22 +459,22 @@
                 <!-- Booking Form Content -->
                 <div class="drop-shadow-sm rounded-md mt-32 pt-10" id="booking-form-container">
                     <!-- Booking Header -->
-                    <div class="flex justify-between items-center mb-16">
+                    <div class="lg:flex lg:justify-between lg:items-center mb-16">
                         <div>
-                            <h1 class="font-bold text-gray-700 text-2xl flex items-center mb-3">
+                            <h1 class="font-bold text-gray-700 text-sm md:text-2xl flex items-center mb-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                                     <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                                     <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
                                   </svg>
                                 &ensp;Book a Reservation Now!
                             </h1>
-                            <p class="leading-relaxed w-[600px] text-lg text-gray-600">
+                            <p class="leading-relaxed lg:w-[600px] text-sm md:text-lg text-gray-600">
                                 Conveniently book a <b>Bed</b> or <b>Room</b> for you or your loved ones just
                                 by filling up the form below! Keep yourself safe lessening physical Contact out on the public.
                             </p>
                         </div>
                         
-                        <img src="assets\booking-form\Calendar-with-pencil.svg" class="w-80" alt="">
+                        <img src="assets\booking-form\Calendar-with-pencil.svg" class="w-80 lg:block hidden" alt="">
                     </div>
                     
                     <input type="hidden" name="" value="<?php echo $_SESSION['sessionpatientUserID'] ?>" id="user-id-placeholder">
@@ -498,6 +563,7 @@
                                 </div>
 
                             </div>
+
                             <!-- Select & Specify your concern -->
                             <div class="grid xl:grid-cols-2 xl:gap-6">
                                 <!-- Select concern -->
@@ -515,20 +581,65 @@
                                             </svg>
                                         </div>
                                     </div> 
+                                    
                                     <!-- Select Concern -->
                                     <select id="concern" name="concern" class="bg-blue-50 border-2 font-bold capitalize border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4">
-                                        <option selected disabled value="" class="font-medium text-gray-900">-Select-</option>
-                                        <option value="Covid">Covid</option>
-                                        <option value="Non-Covid">Non - Covid</option>
+                                        <option selected disabled value="" class="font-medium text-gray-900 text-center">-Select-</option> -->
+                                        <!-- <option value="Covid">Covid</option>
+                                        <option value="Non-Covid">Non - Covid</option>  -->
+
+
+                                        <!-- Covid -->
+                                        <optgroup label="Covid">
+                                                <?php
+                                                    $sql = $conn->query("SELECT * FROM patientdata WHERE patientConcern = 'Covid';") or die($conn->error);
+                                                    while ($row = mysqli_fetch_assoc($sql)) {
+                                                        echo '
+                                                            <option value="'.$row["concernType"].'">'.$row["concernType"].'</option>
+                                                        ';
+                                                    }
+                                                ?>
+                                        </optgroup>
+
+                                        
+                                        <!-- Non covid  -->
+                                        <optgroup label="Non - Covid">
+                                                <?php
+                                                    $sql = $conn->query("SELECT * FROM patientdata WHERE patientConcern = 'Non - Covid';") or die($conn->error);
+                                                    while ($row = mysqli_fetch_assoc($sql)) {
+                                                        echo '
+                                                            <option value="'.$row["concernType"].'">'.$row["concernType"].'</option>
+                                                        ';
+                                                    }
+                                                ?>
+                                        </optgroup>
                                     </select>
                                     <div id="selecetConcern-error" class="text-red-500 text-center mt-2 font-medium"></div>
                                 </div>
 
                                 <!-- Specify your concern input -->
-                                <div class="relative z-0 mt-10 w-full group">
-                                    <input type="text" name="specifyConcern" id="specifyConcern" class="mt-1 bg-blue-50 border-2 font-bold capitalize border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" placeholder="Specify your concern">
+                                <div name="specifyConcern" id="specifyConcern" class="relative z-0 mt-10 w-full group">
+                                    <input type="text" class="mt-1 bg-blue-50 border-2 font-bold capitalize border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" placeholder="Specify your concern">
                                     <div id="specifyConcern-error" class="text-red-500 text-center mt-2 font-medium"></div>
                                 </div>
+
+                                <!-- <div class="relative z-0 mt-10 w-full group" id="specifyConcernCovid" name="specifyConcernCovid">
+                                    <select  class="mt-1 bg-blue-50 border-2 font-bold capitalize border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4">
+                                        <option selected disabled value="" class="font-medium text-gray-900 text-center">-Covid Variant-</option> -->
+
+                                        <!-- Non covid  -->
+                                        <!-- <?php
+                                        //     $sql = $conn->query("SELECT * FROM patientdata WHERE patientConcern = 'Covid Variant';") or die($conn->error);
+                                        //     while ($row = mysqli_fetch_assoc($sql)) {
+                                        //         echo '
+                                        //             <option value="'.$row["covidVariant"].'">'.$row["covidVariant"].'</option>
+                                        //         ';
+                                        //     }
+                                        // ?>
+                                    </select>    -->
+                                <!-- </div> -->
+                       
+                            
                             </div>
 
                             <!-- Hospital Details Text -->
@@ -804,6 +915,8 @@
 
     <!-- Light Gallery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApEvr9yiQv-yXwXp2HRpzyW5HXwB18BxE&libraries=places"></script>
 
     <!-- Hospital Overview JS -->
     <script src="js\hospital-overview.js" defer></script>

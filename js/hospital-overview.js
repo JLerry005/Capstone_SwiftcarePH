@@ -1,4 +1,6 @@
     // alert("Working!");
+
+    // Google Maps ----------------------------------------------------------------
     const btnGetLocation =document.getElementById("getLocationButton");
     tippy(btnGetLocation, {
         content: "Get my current location",
@@ -11,10 +13,275 @@
             navigator.geolocation.getCurrentPosition(console.log, console.log("Error"));
 
             // alert("Lat:"++)
+
+
         } else { 
             alert("Geolocation is not supported by this browser.");
         }
     }
+
+
+    let stringLat;
+    let stringLng;
+    getLatLong();
+    function getLatLong() {
+        let listingID = document.getElementById("listingID").value;
+
+        $.ajax({
+            method: "GET",
+            url: "includes/get-hospital-location.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                let fetchedData = JSON.parse(data);
+                let stringLat = fetchedData.lat;
+                let stringLng = fetchedData.lng;
+
+                initMap(stringLat, stringLng)
+
+                // document.getElementById("lat").value = stringLat;
+                // document.getElementById("lng").value = stringLng;
+                // hospitalLat = parseFloat(stringLat);
+                // hospitalLng = parseFloat(stringLng);
+
+                // console.log("Your Lat: "+hospitalLat);
+                // console.log("Your Long: "+hospitalLng);
+                // console.log(stringCoords);
+            }
+        });
+    }
+
+    function initMap(myLat, myLng) {
+
+        let finalLat = parseFloat(myLat);
+        let finalLng = parseFloat(myLng);
+
+        console.log(finalLat);
+        console.log(finalLng);
+
+        let lat = 14.5764;
+        let lng = 121.0851;
+
+        let pointB = {
+            lat: finalLat,
+            lng: finalLng
+        }
+
+        var pointA = {
+            lat: lat,
+            lng: lng
+            },
+
+            myOptions = {
+                zoom: 7,
+                center: pointB,
+                // componentRestrictions: { country: ["ph"] },
+                // fields: ["address_components", "geometry", "icon", "name"],
+                // types: ["address"]
+            },
+
+            map = new google.maps.Map(document.getElementById('map-canvas'), myOptions),
+
+            // Instantiate a directions service.
+            directionsService = new google.maps.DirectionsService,
+            directionsDisplay = new google.maps.DirectionsRenderer({
+                map: map,
+                draggable: true,
+
+                // panel: document.getElementById("panel")
+            }),
+
+            markerA = new google.maps.Marker({
+                position: pointA,
+                title: "point A",
+                label: "A",
+                map: map,
+                draggable: true
+            }),
+
+            markerB = new google.maps.Marker({
+                position: pointB,
+                title: "point B",
+                label: "B",
+                map: map,
+            });
+
+        // get places auto-complete when user type in location-text-box
+        var input = /** @type {HTMLInputElement} */
+            (
+            document.getElementById('user-location'));
+            
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo('bounds', map);
+        // var infowindow = new google.maps.InfoWindow();
+            
+        // Event listener for Directions Dragging
+        directionsDisplay.addListener("directions_changed", () => {
+            const directions = directionsDisplay.getDirections();
+
+            if (directions) {
+                computeTotalDistance(directions);
+            }
+        });
+
+        geocodePosition(markerA.getPosition());
+
+        // add dragend Event Listener to Marker -- Not Working
+        google.maps.event.addListener(markerA, 'dragend', function () {
+            map.setCenter(markerA.getPosition());
+            geocodePosition(markerA.getPosition());
+
+            // Hide Previous Marker
+            markerA.setVisible(false);
+            markerB.setVisible(false);
+
+            pointA.lat = markerA.getPosition().lat();
+            pointA.lng = markerA.getPosition().lng();
+
+            calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
+        });
+
+        // Add click event listener to map
+        google.maps.event.addListener(map, 'click', function(event) {
+            markerA.setPosition(event.latLng);
+            map.setCenter(markerA.getPosition());
+            geocodePosition(markerA.getPosition());
+
+            // Hide Previous Marker
+            markerA.setVisible(false);
+            markerB.setVisible(false);
+
+            pointA.lat = markerA.getPosition().lat();
+            pointA.lng = markerA.getPosition().lng();
+
+            calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
+        });
+            
+        
+        google.maps.event.addListener(autocomplete, 'place_changed', function () {
+            // Hide Previous Marker
+            markerA.setVisible(false);
+            markerB.setVisible(false);
+
+            var enteredLoc = autocomplete.getPlace();
+            
+            // var from_address = enteredLoc.formatted_address;
+            // // $('#origin').val(from_address);
+            // document.getElementById("destination").value = from_address;
+            if (!enteredLoc.geometry) {
+                return;
+            }
+            
+            // If the place has a geometry, then present it on a map.
+            if (enteredLoc.geometry.viewport) {
+                map.fitBounds(enteredLoc.geometry.viewport);
+            } 
+            else {
+                map.setCenter(enteredLoc.geometry.location);
+                map.setZoom(17); // Why 17? Because it looks good.
+            }
+
+            markerA.setPosition(enteredLoc.geometry.location);
+            pointA.lat = markerA.getPosition().lat();
+            pointA.lng = markerA.getPosition().lng();
+
+            console.log(pointA);
+
+            calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB, markerA);
+
+            // document.getElementById("lat").value = marker.getPosition().lat();
+            // document.getElementById("lng").value = marker.getPosition().lng();
+
+            var address = '';
+            if (enteredLoc.address_components) {
+                address = [
+                    (enteredLoc.address_components[0] && enteredLoc.address_components[0].short_name || ''), (enteredLoc.address_components[1] && enteredLoc.address_components[1].short_name || ''), (enteredLoc.address_components[2] && enteredLoc.address_components[2].short_name || '')
+                ].join(' ');
+            }
+            
+        });
+        
+        // Show Driving hours and Distance in km
+        function computeTotalDistance(result) {
+            let total = 0;
+            let duration;
+            const myroute = result.routes[0];
+
+            if (!myroute) {
+                return;
+            }
+
+            for (let i = 0; i < myroute.legs.length; i++) {
+                total += myroute.legs[i].distance.value;
+                duration = myroute.legs[i].duration.text;
+            }
+
+            total = total / 1000;
+            document.getElementById("distance-container").innerHTML = total + " km";
+            document.getElementById("duration-container").innerHTML = duration;
+
+        }
+
+        // Marker Position
+        function geocodePosition(pos) {
+            geocoder = new google.maps.Geocoder();
+            geocoder.geocode({
+                    latLng: pos
+                },
+                function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        document.getElementById("user-location").value = results[0].formatted_address;
+                    }else{
+                        //
+                    }
+                }
+            );
+        }
+
+        // display directions
+        function calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination, markerA) {
+            directionsService.route({
+                origin: origin,
+                destination: destination,
+                travelMode: google.maps.TravelMode.DRIVING
+            }, function(response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                    // let durationContainer = document.getElementById("duration-container");
+                    // durationContainer.innerHTML = response.routes[0].legs[0].duration.text;
+                    // directionsService.distance(response);
+                    // directionsService.duration(response);
+
+                } else {
+                    // window.alert('Directions request failed due to ' + status);
+                }
+            });
+        }
+    }
+
+    window.addEventListener('load', (event) => {
+        initialize();
+    });
+
+    function initialize() {
+        initMap();
+    }
+
+    // ------------------------------------------------------------------------------------------
+
+
+    const btnBurgerButton = document.getElementById("hamburger-button");
+    const sidebar = document.querySelector('.mobileMenu');
+    const closeMenu = document.getElementById("btn-close-menu");
+    let contentsContainer = document.querySelector('.main-container');
+
+    btnBurgerButton.addEventListener("click", () => {
+        sidebar.classList.toggle("hidden");
+    });
+
+    closeMenu.addEventListener("click", () => {
+        sidebar.classList.toggle("hidden");
+    });
+
 
     // flatpickr("input[type=datetime-local]", {});
 
@@ -209,24 +476,81 @@
     }
 
     // Validate Concern
-    let concernInput = document.getElementById("concern");
-    let specifyConcern = document.getElementById("specifyConcern");
-    let concernInputError = document.getElementById("selecetConcern-error");
-    let specifyConcernError = document.getElementById("specifyConcern-error");
-    specifyConcernError.innerHTML="";
-    specifyConcern.classList.add('disabled');
+    // let concernInput = document.getElementById("concern");
+    // let specifyConcern = document.getElementById("specifyConcern");
+    // let specifyConcernCovid = document.getElementById("specifyConcernCovid");
+    // let concernInputError = document.getElementById("selecetConcern-error");
+    // let specifyConcernError = document.getElementById("specifyConcern-error");
+
+    // specifyConcernError.innerHTML="";
+    // specifyConcernCovid.classList.add('disabled');
+    // $(specifyConcern).hide();
+    
     // Enable and Disable Input
-    $("#concern").change(function() {
-        if ($(this).val() == "Covid") {
+    // $("#concern").change(function() {
+    //     if ($(this).val() == "Covid") {
+    //         specifyConcernError.innerHTML="";
+    //         $(specifyConcern).hide();
+    //         specifyConcernCovid.classList.remove('disabled');
+    //         $(specifyConcernCovid).show();
+    //         specifyConcernError.innerHTML="Specify your concern here.";
+    //     }
+        // else if ($(this).val() == "Covid - Severe") {
+        //     specifyConcernError.innerHTML="";
+        //     $(specifyConcern).hide();
+        //     specifyConcernCovid.classList.remove('disabled');
+        //     $(specifyConcernCovid).show();
+        //     specifyConcernError.innerHTML="Specify your concern here.";
+        // }
+        // else if ($(this).val() == "Covid - Asymptomatic") {
+        //     specifyConcernError.innerHTML="";
+        //     $(specifyConcern).hide();
+        //     specifyConcernCovid.classList.remove('disabled');
+        //     $(specifyConcernCovid).show();
+        //     specifyConcernError.innerHTML="Specify your concern here.";
+
+        // }
+    //     else if ($(this).val() == "Non - Covid") {
+    //         specifyConcernError.innerHTML="Specify your concern here.";
+    //         $(specifyConcern).show();
+    //         $(specifyConcernCovid).hide();
+    //     }
+    // }).trigger("change");
+
+     // Validate Concern
+     let concernInput = document.getElementById("concern");
+     let specifyConcern = document.getElementById("specifyConcern");
+     let concernInputError = document.getElementById("selecetConcern-error");
+     let specifyConcernError = document.getElementById("specifyConcern-error");
+     specifyConcernError.innerHTML="";
+     specifyConcern.classList.add('disabled');
+     // Enable and Disable Input
+     $("#concern").change(function() {
+         if ($(this).val() == "Asymptomatic") {
+             specifyConcernError.innerHTML="";
+             specifyConcern.classList.add('disabled');
+             specifyConcern.classList.remove('invalidInput');
+         }
+         else if ($(this).val() == "Mild-to-Moderate") {
             specifyConcernError.innerHTML="";
             specifyConcern.classList.add('disabled');
             specifyConcern.classList.remove('invalidInput');
         }
-        else if ($(this).val() == "Non-Covid") {
-            specifyConcernError.innerHTML="Specify your concern here.";
-            specifyConcern.classList.remove('disabled');
+        else if ($(this).val() == "Severe") {
+            specifyConcernError.innerHTML="";
+            specifyConcern.classList.add('disabled');
+            specifyConcern.classList.remove('invalidInput');
         }
-    }).trigger("change");
+        else if ($(this).val() == "Critical") {
+            specifyConcernError.innerHTML="";
+            specifyConcern.classList.add('disabled');
+            specifyConcern.classList.remove('invalidInput');
+        }
+         else if ($(this).val() == "Non - Covid") {
+             specifyConcernError.innerHTML="Specify your concern here.";
+             specifyConcern.classList.remove('disabled');
+         }
+     }).trigger("change");
 
     function validateConcern() {
         concernInputValue = concernInput.value;
@@ -237,6 +561,7 @@
             concernInputError.innerHTML="⚠️ Please select your Concern!";
             return false;
         }
+
         else if (concernInputValue == 'Covid') {
             specifyConcernError.innerHTML="";
             concernInputError.innerHTML="";
@@ -245,6 +570,33 @@
             concernInput.classList.remove('invalidInput');
             return true;
         }
+
+        // else if (concernInputValue == 'Covid') {
+        //     specifyConcernError.innerHTML="";
+        //     concernInputError.innerHTML="";
+        //     specifyConcern.classList.add('disabled');
+        //     specifyConcern.classList.remove('invalidInput');
+        //     concernInput.classList.remove('invalidInput');
+        //     return true;
+        // }
+
+        // else if (concernInputValue == 'Covid') {
+        //     specifyConcernError.innerHTML="";
+        //     concernInputError.innerHTML="";
+        //     specifyConcern.classList.add('disabled');
+        //     specifyConcern.classList.remove('invalidInput');
+        //     concernInput.classList.remove('invalidInput');
+        //     return true;
+        // }
+
+        // else if (concernInputValue == 'Covid') {
+        //     specifyConcernError.innerHTML="";
+        //     concernInputError.innerHTML="";
+        //     specifyConcern.classList.add('disabled');
+        //     specifyConcern.classList.remove('invalidInput');
+        //     concernInput.classList.remove('invalidInput');
+        //     return true;
+        // }
         else if (concernInputValue == 'Non-Covid') {
             specifyConcern.classList.remove('disabled');
 
@@ -421,7 +773,7 @@
                                     success: function (response) {
                                         toggleModal('reviewDetailsModal', false);
                                         $(reservationLoader).hide();
-                                        window.location.replace('http://localhost/Capstone/reservation-success');
+                                        // window.location.replace('http://localhost/Capstone/reservation-success');
                                         return;
                                     }
                                 }); 
@@ -502,7 +854,7 @@
                                         xhr.addEventListener('readystatechange', function(e) {
                                             if( this.readyState === 4 ) {
                                                 $(reservationLoader).hide();                                                   
-                                                window.location.replace('http://localhost/Capstone/reservation-success');
+                                                // window.location.replace('http://localhost/Capstone/reservation-success');
                                             }
                                         });
                                     }
@@ -541,7 +893,3 @@
     tippy(selectConcernInfo, {
         content: "Leave to zero (0) if there are no slots for Bed.",
     });
-
-    $("#getLocationButton").click(function(){
-        toggleModal('reviewDetailsModal', true);
-      });

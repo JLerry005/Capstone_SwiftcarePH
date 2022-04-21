@@ -183,15 +183,22 @@
         else if ($checkPwd === true) {
             session_start();
 
-            // $sql = 
-
-            // $_SESSION["userID"] = 
             $_SESSION["sessionpatientUserID"] = $verifyPhoneEmail["patientUserID"];
             $_SESSION["sessionPatientPhoneNumber"] = $verifyPhoneEmail["patientPhoneNumber"];
             $_SESSION["sessionPatientFirstName"] = $verifyPhoneEmail["patientFirstname"];
 
             header("location: ../index?succefully-logged-in");
             exit();
+
+            // if (is_null($listingID)) {
+            //     header("location: ../index?succefully-logged-in");
+            //     exit();
+            // }
+            // else{
+            //     header("location: ../hospital-overview?listingID=$listingID");
+            //     exit();
+            // }
+            
         }
     }
 

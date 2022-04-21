@@ -26,7 +26,7 @@
                     </div>
 
                     <!-- Burger Menu -->
-                    <div class="mobileMenu hidden z-10 h-screen w-full bg-gray-900 transition ease-out duration-200 p-10 space-y-6" id="mobileMenu">
+                    <div class="md:hidden mobileMenu hidden z-10 h-screen w-full bg-gray-900 transition ease-out duration-200 p-10 space-y-6" id="mobileMenu">
                         <div class="flex justify-end w-full">
                             <button class="hover:underline flex items-center btn-close-menu" id="btn-close-menu">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

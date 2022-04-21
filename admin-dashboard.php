@@ -290,7 +290,7 @@
 
                                 <div class="d-flex flex-row justify-content-between pb-2">
                                     <label class="font-bold text-xl text-footerColor">Pending Type: &nbsp;</label>
-                                    <p id="modal-approved-type" class="text-lg">Private</p>
+                                    <p id="modal-approved-type" class="text-lg"></p>
                                 </div>
 
                                 <div class="d-flex flex-row justify-content-between pb-2">

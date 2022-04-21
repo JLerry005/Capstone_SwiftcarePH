@@ -1189,6 +1189,14 @@ input:checked + .toggle-bg{
   margin-bottom: 3.5rem;
 }
 
+.mt-20{
+  margin-top: 5rem;
+}
+
+.mt-14{
+  margin-top: 3.5rem;
+}
+
 .block{
   display: block;
 }
@@ -1329,6 +1337,22 @@ input:checked + .toggle-bg{
 
 .h-9{
   height: 2.25rem;
+}
+
+.h-\[1000px\]{
+  height: 1000px;
+}
+
+.h-\[600px\]{
+  height: 600px;
+}
+
+.h-\[500px\]{
+  height: 500px;
+}
+
+.h-\[450px\]{
+  height: 450px;
 }
 
 .max-h-\[500px\]{
@@ -4117,6 +4141,11 @@ input:checked + .toggle-bg{
     padding-right: 5rem;
   }
 
+  .md\:px-0{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
   .md\:pr-5{
     padding-right: 1.25rem;
   }
@@ -4280,6 +4309,10 @@ input:checked + .toggle-bg{
 
   .lg\:h-80{
     height: 20rem;
+  }
+
+  .lg\:w-\[600px\]{
+    width: 600px;
   }
 
   .lg\:grow{

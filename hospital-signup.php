@@ -191,21 +191,21 @@
                                     <div class="mb-3">
                                         <label for="formFile" class="form-label">Upload your Hospital ID</label>
                                         <span class="text-danger ">*</span>
-                                        <input class="form-control imageInput" name="HospitalDocs[]" value="" multiple="" type="file" id="hospitalID">
+                                        <input class="form-control imageInput" name="HospitalDocs[]" value="" multiple="" type="file" id="hospitalID" required>
                                     </div>
 
                                     <!--Hospital Permit-->
                                     <div class="mb-3">
                                         <label for="formFile" class="form-label">Upload your Hospital Permit</label>
                                         <span class="text-danger">*</span>
-                                        <input class="form-control imageInput" name="HospitalDocs[]" value="" multiple="" type="file" id="hospitalPermit">
+                                        <input class="form-control imageInput" name="HospitalDocs[]" value="" multiple="" type="file" id="hospitalPermit" required>
                                     </div>
 
                                     <!--Doctor License-->
                                     <div class="mb-3">
                                         <label for="formFile" class="form-label">Upload your Doctor License</label>
                                         <span class="text-danger  ">*</span>
-                                        <input class="form-control imageInput" name="HospitalDocs[]" value="" multiple="" type="file" id="doctorLicense">
+                                        <input class="form-control imageInput" name="HospitalDocs[]" value="" multiple="" type="file" id="doctorLicense" required>
                                     </div>                    
                                 <!-- </form> -->
                             </div>

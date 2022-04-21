@@ -23,6 +23,7 @@
             $contactNumber = $row['phonenumber'];
             $bookingID = $row['ID'];
             $patientConcern = $row['concern'];
+            $remarks = $row['remarks'];
 
             $rejected .='
                 <a href="rejected-details?bookingID='.$bookingID.'" class=" col-span-4 bg-red-600 rounded-lg text-gray-300 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
@@ -71,7 +72,7 @@
     
                     <div class="bg-red-700 p-4 rounded-b-lg flex justify-between">
                         <div class="bg-white py-1 px-2 rounded-lg">
-                            <p class="text-red-700">Status: <b>Rejected</b></p>
+                            <p class="text-red-700">Status: <span class="capitalize font-bold">'.$remarks.'</span></p>
                         </div>
                         
                         <button class="text-white hover:text-blue-200 hover:underline flex items-center">
@@ -152,7 +153,7 @@
         
                         <div class="bg-red-700 p-4 rounded-b-lg flex justify-between">
                             <div class="bg-white py-1 px-2 rounded-lg">
-                                <p class="text-red-700">Status: <b>Expired</b></p>
+                                <p class="text-red-700">Status: <span class="capitalize font-bold">'.$remarks.'</span></p>
                             </div>
                             <button class="text-white hover:text-blue-200 hover:underline flex items-center">
                                 View Full Details&ensp;
