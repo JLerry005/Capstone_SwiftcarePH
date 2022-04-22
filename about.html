@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +8,16 @@
     <link rel="stylesheet" href="styling\about.css">
     <title>About | Swiftcare PH</title>
 </head>
-<body class="bg-gray-900 text-gray-300">
+<body class="bg-gray-900 text-slate-400 font-poppins">
     
     <div id="top" class="relative container flex mx-auto">
         <!-- Nav bar -->
         <div class="flex justify-between fixed z-10 container mx-auto border-b-[1px] border-gray-800 bg-gray-900 px-10 py-6">
             <!-- About Title -->
-            <div class="flex items-center space-x-3"> 
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-                </svg>
-                <h1 class="text-2xl font-semibold">About</h1>
+            <div class="flex justify-start items-center"> 
+                <img src="assets/main-logo-transparent.png" class="mr-3 h-8" alt="Swiftcare PH Logo">
+                <span class="self-center text-lg md:text-2xl font-semibold whitespace-nowrap dark:text-white">Swiftcare PH</span>
+                <!-- <h1 class="text-2xl font-semibold"> About</h1> -->
             </div>
 
             <!-- Right Side -->
@@ -39,16 +38,188 @@
         </div>
 
         <!-- Sidebar -->
-        <aside class="hidden lg:block fixed sidebar h-screen w-64 overflow-y-scroll mt-16 px-10 pt-16">
-            sidebar
+        <aside class="hidden lg:block fixed sidebar h-screen w-64 overflow-y-scroll mt-16 px-1 pt-16 border-r-[1px] border-gray-800">
+
+            <!-- Sidebar Content -->
+            <div class="space-y-4">
+                
+            <!-- About Swiftcare PH Button -->
+                <div>
+                    <a href="#about-swiftcare-ph" class="flex items-center font-medium hover:border-sky-500 active:underline">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                        </svg>&nbsp; About Swiftcare PH
+                    </a>
+                </div>
+
+            <!-- Inspiration Button -->
+                <div class="">
+                    <a href="#inspiration" class="flex items-center font-medium hover:text-sky-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>&nbsp; Inspiration
+                    </a>
+                </div>
+    
+            <!-- Our StoryButton  -->
+                <div>
+                    <a href="#our-story" class="flex items-center font-medium hover:text-sky-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>&nbsp; Our Story
+                    </a>
+                </div>
+    
+            <!-- About the Developers Button -->
+                <div class="">
+                    <a href="#about-the-developers" class="flex items-center font-medium hover:text-sky-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg> &nbsp; Developers
+                    </a>
+                </div>
+            </div>
         </aside>
 
         <!-- Contents -->
-        <div class=" pl-72 min-h-screen pt-32 pr-10 pb-40">
-            <div class="">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, atque deleniti. Itaque architecto minus repellendus autem, repudiandae, similique veniam ullam hic eligendi illum sed obcaecati tempore perspiciatis esse molestias quod animi. Quibusdam, minima natus. Est, aliquid illum. Inventore facere officiis aut repudiandae ipsam cupiditate cum, tempore et, deserunt blanditiis iusto, maiores nobis rem delectus quo omnis natus veniam sunt quas? Eaque assumenda quibusdam tempore, unde, laborum facere minima quo nam, eum harum reiciendis impedit deserunt? Accusamus pariatur odit repudiandae inventore nemo maiores accusantium quidem rem eos nulla cupiditate aperiam voluptatem tempora, quaerat corporis dignissimos asperiores placeat suscipit voluptatibus non. Debitis aspernatur numquam asperiores totam pariatur quos a? Commodi labore animi nostrum minus eveniet magnam iste aut cumque. Blanditiis voluptas corrupti consectetur quasi inventore aliquid sunt sit natus, ducimus doloribus temporibus alias perspiciatis aliquam maiores modi accusamus aut fugiat. In maiores nemo tempora adipisci totam dolor repellat! Aspernatur delectus repellat deserunt explicabo, inventore, atque veniam alias praesentium, temporibus quibusdam quia necessitatibus harum? Eius at ducimus explicabo repudiandae autem beatae inventore dolorem alias praesentium totam laboriosam deleniti, unde eos ipsum voluptates mollitia voluptate saepe numquam maiores tempore, asperiores quidem impedit laborum quae. Perferendis a alias aliquam atque, dicta, corrupti dolorem ad porro magni nam tenetur voluptates eligendi beatae. Necessitatibus harum rem beatae quis, nostrum voluptates. Unde quod nesciunt velit, eaque sit ad cum adipisci impedit vitae quae quisquam doloribus repudiandae reprehenderit, blanditiis eos! Quasi obcaecati incidunt corporis velit nostrum porro nisi ea ipsum dolore harum atque vel quis repellendus, animi temporibus quidem nam dicta. Iste quibusdam dolores quidem voluptatum doloribus veniam nulla officia nemo eos illo voluptatem asperiores vitae est tempora fuga, ratione fugiat. Sapiente, voluptates impedit? Dolorum repudiandae recusandae minus accusantium quasi quis officia ratione! Ea soluta optio libero consequatur laborum, quasi sint praesentium iure animi aspernatur quibusdam at nam explicabo hic sunt cum eos dolorem et, dolore iusto tenetur voluptatem officia commodi! Esse suscipit, quas minus laboriosam, aliquam repellat sunt hic sed temporibus magnam quos, exercitationem dolorem excepturi culpa odio tempora reprehenderit id? Tempore nesciunt voluptate quisquam iusto? Deleniti illo voluptas perferendis, veniam vero explicabo error dolor impedit, recusandae voluptates quo in consectetur quidem. Minus libero enim perferendis nulla eligendi repellat ipsam provident distinctio autem natus illo rerum voluptatum ipsum quos soluta animi maiores quaerat, alias omnis. Inventore incidunt ipsam similique dolorem dolores, quis porro deserunt non reiciendis debitis sit exercitationem odit unde laborum nemo architecto soluta consequuntur earum excepturi, pariatur iusto a numquam saepe qui. Totam ipsa facilis doloribus distinctio ab. Quisquam fugiat voluptates doloremque assumenda impedit a minus eligendi provident consequatur facilis, libero velit magni harum fuga perferendis earum delectus voluptatibus unde? Provident voluptate, ducimus modi ipsa amet, deleniti nam iste minus est, ea unde reprehenderit officiis nisi impedit iure ad delectus eos ex atque perspiciatis cupiditate maiores corrupti asperiores? Molestias deleniti nobis ipsum a quia exercitationem ea voluptate rerum hic. Fugiat optio sint doloribus explicabo, quos enim nemo animi consequuntur inventore quo voluptatem itaque dicta ab minima modi aspernatur esse odit possimus et? Alias nostrum cupiditate vitae!
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae voluptatum numquam molestiae fuga aperiam. Aut, omnis. Repudiandae, dicta nostrum accusamus consequuntur molestias officiis delectus soluta, animi magnam esse optio saepe ab tenetur quaerat. Iste odio dolore officiis pariatur, quas facilis commodi illo corrupti tempore rem earum quisquam voluptate dolor consequatur, omnis eveniet temporibus. Ut nostrum veniam, aut atque aliquid ea sint hic nemo autem voluptate vel repudiandae dolorum error sunt dolore, enim optio porro vero quidem praesentium! Aperiam, laboriosam optio eligendi beatae quam tempora, recusandae quo dolor voluptatem amet illum necessitatibus at laudantium dignissimos eaque magni dolore et enim. Est, vitae voluptatibus dolorem iste qui quibusdam, alias tempora blanditiis cum molestiae amet possimus numquam quia debitis nostrum nesciunt libero iure ipsam natus! Ducimus fugiat deserunt vero eaque asperiores quidem, adipisci aliquam. Temporibus dolorem minus facere reprehenderit repudiandae alias a voluptatibus ex. Explicabo, accusantium eum. Ratione nemo commodi vero culpa? Quam, accusamus ad minus saepe unde expedita explicabo fugit temporibus, culpa assumenda quidem repellat veritatis numquam eligendi rerum accusantium eum fugiat voluptas illo voluptates labore quae nam dolorem est. Distinctio eveniet tempora obcaecati officiis veniam nemo repellendus saepe minus suscipit necessitatibus quo iste rem, voluptatem perspiciatis alias quidem. Expedita, omnis iusto dolor optio, nobis commodi libero nulla, eligendi consequuntur laboriosam unde facere accusamus iure modi qui laudantium reiciendis non soluta beatae voluptatum dignissimos nesciunt alias provident? Dolores doloribus deserunt ut iste necessitatibus optio velit ullam vitae eaque. Tempora numquam eaque nostrum dicta doloremque repudiandae maxime similique, rem, voluptates nesciunt quibusdam consequatur illo! Assumenda laudantium eius minima et deserunt aspernatur officia vitae obcaecati velit necessitatibus. Omnis quasi expedita fuga officia dolores ratione praesentium explicabo architecto. Fugiat corrupti iure sit tempora explicabo fuga excepturi modi. Ea, corporis nulla! Quasi libero culpa vitae non doloremque officia rem modi, et ullam quidem quas magni repudiandae tempore? Placeat saepe, cupiditate repudiandae molestiae magnam odio fuga fugiat dolore totam sunt doloremque adipisci iusto soluta, aspernatur deleniti id impedit vel dolor voluptatem? Aspernatur culpa tempora molestiae vel expedita hic iusto magnam fugiat sapiente unde voluptas quod perspiciatis adipisci voluptatibus dignissimos similique aut ullam, delectus, facere repudiandae impedit. Ex reiciendis assumenda laborum. Iusto sequi ex a, cumque unde molestias possimus rem soluta earum atque iste provident officiis impedit obcaecati voluptate, numquam sapiente sit labore perferendis, animi ea dicta doloribus praesentium! Quod cumque, repellendus deserunt dolorum pariatur illum debitis sit sapiente blanditiis ratione provident accusamus dolorem eveniet quia minima voluptatibus esse ea quas dolor fuga odio perspiciatis. Perferendis deserunt, quia nam vel aspernatur doloribus repudiandae repellendus voluptas maiores quis, nesciunt eum ea molestias sit commodi, recusandae corporis corrupti dolor mollitia culpa nobis impedit atque ipsam. Rerum ipsa in nisi ad consequuntur cupiditate inventore hic officia totam porro esse labore dolorem distinctio, qui maxime facilis et voluptates quae voluptatem nostrum beatae nemo saepe, iusto iste. Et iusto eveniet sapiente nisi quo veritatis ullam dolor vitae, blanditiis iste fugiat expedita fugit esse, porro voluptas laudantium! Sint dignissimos sit error laudantium, distinctio quo corporis debitis aliquam, ad nostrum et officia, assumenda nihil vel laborum quaerat repellendus minus porro dolor. Officia itaque cumque nesciunt, temporibus autem eum numquam dolores alias laudantium accusamus, ducimus perferendis, aperiam in magnam at sapiente. Maiores nemo, mollitia at sapiente magnam animi ipsum. Nobis aliquid necessitatibus voluptatibus odio cum voluptates magni culpa rem molestiae. Inventore fugiat libero ipsum aliquam commodi dicta rerum placeat, nihil ut consectetur neque magni dignissimos voluptatum quidem earum ab maxime quos magnam praesentium accusantium? Laboriosam nesciunt et accusantium, libero facere earum dolore nam architecto ipsa debitis temporibus fuga recusandae eveniet voluptatem laborum mollitia sequi error dolor nisi quis minima! Inventore ducimus, iusto laborum pariatur deserunt esse nesciunt quod numquam nam accusamus commodi? Est, deleniti. Doloremque id beatae saepe earum ad quis in, ipsam eveniet, autem, sequi nobis! Iure recusandae temporibus molestias soluta. Mollitia, a labore, praesentium accusantium debitis laudantium quae voluptatum odit eveniet suscipit cum facere placeat aspernatur illum. Voluptatum aliquam ducimus inventore voluptate fugiat placeat quos, deserunt, alias ex doloremque cupiditate sint quasi neque delectus modi veniam quia dignissimos! Ratione nulla commodi qui itaque dolore quisquam voluptatibus repudiandae modi asperiores cupiditate nisi, deserunt, sint natus. Quo, a? Alias nam odio magni? Illo cumque architecto natus voluptatem recusandae, culpa repellat iure, labore dolorem officiis, qui porro. Veniam mollitia blanditiis sapiente, illum cupiditate error dolorum deleniti qui nemo provident aspernatur cum placeat architecto. Laboriosam minus at laborum earum, numquam similique eaque a deleniti necessitatibus in vero pariatur delectus veniam placeat tempore reprehenderit explicabo dolor error dolores architecto nihil quasi provident facere. Modi eos perferendis, repudiandae, ipsa odio nihil facilis nesciunt labore ex iste beatae ea corrupti unde? Totam assumenda possimus odio enim eos optio accusantium unde quam, minus consequuntur voluptatum velit modi molestiae cumque ab dolor amet aspernatur labore nam quos. Blanditiis, odio repellendus. Laborum alias mollitia ad in, saepe autem facere ea qui id omnis doloremque nesciunt debitis harum. Eius cum rerum ad corporis sit, odio, asperiores vitae qui veniam consectetur laborum consequatur iure. Molestias, vel dolorem! Asperiores, repellendus quae? Obcaecati consectetur esse quae debitis itaque! Nam ipsum suscipit numquam? Exercitationem, culpa eligendi illum officia, nostrum veniam enim ipsam impedit laborum consequatur ratione officiis earum voluptatibus. Illo omnis odit a, inventore voluptates itaque sequi quam distinctio eum eos blanditiis perferendis? Deserunt facere eius quidem placeat debitis ad corporis aliquam illum, fuga alias. Ex iusto commodi autem. Nemo reiciendis nisi quibusdam, quas aliquid eligendi dolore cumque ipsam amet quod ut. Hic id facilis ad voluptas maxime, voluptatum nobis voluptatem quibusdam suscipit natus commodi assumenda deserunt quidem. Ipsum dicta sequi voluptate similique officiis, corporis illum rerum quisquam! Debitis ipsa eius delectus esse harum maiores eveniet aliquam aut praesentium, a itaque non quisquam nihil placeat velit magnam nesciunt et ab. Aliquid commodi autem ducimus fugit doloribus expedita placeat minus pariatur odio dignissimos nobis cupiditate, voluptates vitae corporis beatae tempora eaque ad repudiandae earum adipisci voluptate in rem architecto. Fugiat temporibus soluta quae ipsum, eos ducimus amet minus, repellendus molestiae neque quidem? Exercitationem odio placeat totam facilis, sit necessitatibus, sapiente, dolore ex soluta assumenda nulla corporis quisquam. Iure, vero est.
-            </div> 
+        <div class="flex flex-col">
+
+        <!-- About Swiftcare PH Contents -->
+            <div id="about-swiftcare-ph" class="pl-72 pt-32 pr-10">
+                <!-- Title -->
+                <div class="">
+                    <p class="flex items-center text-slate-200 font-semibold text-2xl mb-8 uppercase">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-sky-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                          </svg>&ensp;About Swiftcare PH
+                    </p>
+                </div> 
+
+                <!-- Description -->
+                <div class="space-y-4 text-justify mb-6 px-2 indent-16">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla ducimus, facere molestias quos ab autem. In similique quasi voluptatum dolorem veritatis repellendus nihil? Totam eaque eveniet in amet iure dicta velit dolore adipisci. Reprehenderit recusandae ad saepe rem earum illo animi, similique alias quam facere exercitationem ipsam? Placeat neque minima magni. Quasi repudiandae porro aperiam non rem iure suscipit quia quae? Laudantium doloremque perspiciatis nesciunt dolore, repellendus voluptatem beatae aspernatur quam consectetur culpa nemo quas accusamus! Odio alias illo qui blanditiis recusandae hic, omnis ipsam tempora dolor ratione sunt reprehenderit consectetur quasi placeat dicta minima rerum in, necessitatibus, officia mollitia?</p> 
+                </div>
+
+                <div class="space-y-4 text-justify px-2">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla ducimus, facere molestias quos ab autem. In similique quasi voluptatum dolorem veritatis repellendus nihil? Totam eaque eveniet in amet iure dicta velit dolore adipisci. Reprehenderit recusandae ad saepe rem earum illo animi, similique alias quam facere exercitationem ipsam? Placeat neque minima magni. Quasi repudiandae porro aperiam non rem iure suscipit quia quae? Laudantium doloremque perspiciatis nesciunt dolore, repellendus voluptatem beatae aspernatur quam consectetur culpa nemo quas accusamus! Odio alias illo qui blanditiis recusandae hic, omnis ipsam tempora dolor ratione sunt reprehenderit consectetur quasi placeat dicta minima rerum in, necessitatibus, officia mollitia?</p> 
+                </div>
+            </div>
+   
+        <!-- Inspiration Contents -->
+            <div id="inspiration" class="pl-72 pt-32 pr-10">
+                <!-- Title -->
+                <div class="">
+                    <p class="flex items-center text-slate-200 font-semibold text-2xl mb-8 uppercase">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>&ensp;Inspiration
+                    </p>
+                </div> 
+
+                <!-- Description -->
+                <div class="space-y-4 text-justify mb-6 px-2 indent-16">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla ducimus, facere molestias quos ab autem. In similique quasi voluptatum dolorem veritatis repellendus nihil? Totam eaque eveniet in amet iure dicta velit dolore adipisci. Reprehenderit recusandae ad saepe rem earum illo animi, similique alias quam facere exercitationem ipsam? Placeat neque minima magni. Quasi repudiandae porro aperiam non rem iure suscipit quia quae? Laudantium doloremque perspiciatis nesciunt dolore, repellendus voluptatem beatae aspernatur quam consectetur culpa nemo quas accusamus! Odio alias illo qui blanditiis recusandae hic, omnis ipsam tempora dolor ratione sunt reprehenderit consectetur quasi placeat dicta minima rerum in, necessitatibus, officia mollitia?</p> 
+                </div>
+                
+                <div class="space-y-4 text-justify px-2">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla ducimus, facere molestias quos ab autem. In similique quasi voluptatum dolorem veritatis repellendus nihil? Totam eaque eveniet in amet iure dicta velit dolore adipisci. Reprehenderit recusandae ad saepe rem earum illo animi, similique alias quam facere exercitationem ipsam? Placeat neque minima magni. Quasi repudiandae porro aperiam non rem iure suscipit quia quae? Laudantium doloremque perspiciatis nesciunt dolore, repellendus voluptatem beatae aspernatur quam consectetur culpa nemo quas accusamus! Odio alias illo qui blanditiis recusandae hic, omnis ipsam tempora dolor ratione sunt reprehenderit consectetur quasi placeat dicta minima rerum in, necessitatibus, officia mollitia?</p> 
+                </div>
+            </div>
+
+        <!-- Our Story Contents -->
+            <div id="our-story" class="pl-72 pt-32 pr-10">
+                <!-- Title -->
+                <div class="">
+                    <p class="flex items-center text-slate-200 font-semibold text-2xl mb-8 uppercase">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                          </svg>&ensp;Our Story
+                    </p>
+                </div> 
+
+                <!-- Description -->
+                <div class="space-y-4 text-justify mb-6 px-2 indent-16">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla ducimus, facere molestias quos ab autem. In similique quasi voluptatum dolorem veritatis repellendus nihil? Totam eaque eveniet in amet iure dicta velit dolore adipisci. Reprehenderit recusandae ad saepe rem earum illo animi, similique alias quam facere exercitationem ipsam? Placeat neque minima magni. Quasi repudiandae porro aperiam non rem iure suscipit quia quae? Laudantium doloremque perspiciatis nesciunt dolore, repellendus voluptatem beatae aspernatur quam consectetur culpa nemo quas accusamus! Odio alias illo qui blanditiis recusandae hic, omnis ipsam tempora dolor ratione sunt reprehenderit consectetur quasi placeat dicta minima rerum in, necessitatibus, officia mollitia?</p> 
+                </div>
+                
+                <div class="space-y-4 text-justify px-2">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla ducimus, facere molestias quos ab autem. In similique quasi voluptatum dolorem veritatis repellendus nihil? Totam eaque eveniet in amet iure dicta velit dolore adipisci. Reprehenderit recusandae ad saepe rem earum illo animi, similique alias quam facere exercitationem ipsam? Placeat neque minima magni. Quasi repudiandae porro aperiam non rem iure suscipit quia quae? Laudantium doloremque perspiciatis nesciunt dolore, repellendus voluptatem beatae aspernatur quam consectetur culpa nemo quas accusamus! Odio alias illo qui blanditiis recusandae hic, omnis ipsam tempora dolor ratione sunt reprehenderit consectetur quasi placeat dicta minima rerum in, necessitatibus, officia mollitia?</p> 
+                </div>
+            </div>
+
+        <!-- About the Delopers Contents -->
+            <div id="about-the-developers" class="pl-72 pt-32 pr-10 pb-36">
+                <!-- Title -->
+                <div class="mb-20">
+                    <p class="flex items-center text-slate-200 font-semibold text-2xl mb-5 uppercase">                    
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>&ensp;Developers
+                    </p>
+                </div> 
+
+                <!-- Description -->
+                <div class="flex flex-row space-x-10 justify-center">
+
+                    <!-- Larry -->
+                    <div class="w-full bg-gray-800 rounded-xl mx-20">
+                        <!-- Image -->
+                        <div class="flex justify-center">
+                            <img class="w-72 h-72 rounded-full mt-10 border-4 border-gray-900" src="assets/about/img-developer/larry.png">
+                        </div>
+                        <div class="bg-black -mt-28 pt-36 px-10 w-full h-fit py-10 rounded-b-xl">
+                            <!-- Names and Position -->
+                            <div class="flex flex-col items-center mb-8">
+                                <p class="font-semibold text-2xl text-slate-200">Larry B. Mabuti Jr.</p>
+                                <p class="uppercase text-sm text-slate-300">Web Developer</p>
+                            </div>
+
+                            <!-- <div class="flex justify-center space-x-4">
+                                <button class="bg-blue-500 rounded-xl py-2 px-6 text-slate-200">Caloocan City</button>
+                                <button class="bg-blue-500 rounded-xl py-2 px-6 text-slate-200">BSIS</button>
+                            </div> -->
+
+                            <!-- Divider -->
+                            <div class="mt-2 border-t-[1px] border-gray-700 mb-8 mx-2">
+                            </div>
+
+                            <!-- About -->
+                            <div class="text-justify px-2">
+                                <p><span class="font-bold text-slate-300">About: </span> As Toptal's Chief Financial Officer, Andrew is responsible for all Finance operations, working closely with the executive team to ensure sufficient financial resources and thoughtful analytics to drive growth. He is a Finance leader with over 30 years of experience. Before joining Toptal, Andrew was the CFO of Kindle Energy, a Blackstone company, and CFO of Mercuria Energy Americas, the second largest privately held energy trading firm globally. He also worked at Constellation Energy, a Fortune 200 acquired by Exelon, in numerous executive roles, culminating as the head of mergers and acquisitions globally. Andrew earned a BS in Economics from MIT and an MBA from the University of Chicago..</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- lERRY -->
+                    <div class="w-full bg-gray-800 rounded-xl mx-20">
+                        <!-- Image -->
+                        <div class="flex justify-center">
+                            <img class="w-72 h-72 rounded-full mt-10 border-4 border-gray-900" src="assets/about/img-developer/lerry.png">
+                        </div>
+                        <div class="bg-black -mt-28 pt-36 px-10 w-full h-fit py-10 rounded-b-xl">
+                            <!-- Name and Position -->
+                            <div class="flex flex-col items-center mb-8">
+                                <p class="font-semibold text-2xl text-slate-200">John Lerry L. Hapatinga</p>
+                                <p class="uppercase text-sm text-slate-300">Web Developer</p>
+                            </div>
+
+                            <!-- <div class="flex justify-center space-x-4">
+                                <button class="bg-blue-500 rounded-xl py-2 px-6 text-slate-200">Caloocan City</button>
+                                <button class="bg-blue-500 rounded-xl py-2 px-6 text-slate-200">BSIS</button>
+                            </div> -->
+
+                            <!-- Divider -->
+                            <div class="mt-2 border-t-[1px] border-gray-700 mb-8 mx-2">
+                            </div>
+
+                            <!-- About -->
+                            <div class="text-justify px-2 mb-[72px]">
+                                <p><span class="font-bold text-slate-300">About: </span> As Toptal’s Chief Executive Officer, Taso manages Toptal’s core team of hundreds of team members distributed throughout the world, with a focus on innovation. Since Toptal was founded in 2010, Taso has led it to become the largest high-skilled, on-demand talent network in the world. Taso serves on the board of multiple organizations, advising on talent strategy and innovation for Fortune 100s and nonprofits. Taso has guest lectured at Harvard Business School, Wharton, and Oxford on talent management and entrepreneurship.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <!-- Footer -->
@@ -61,6 +232,6 @@
         </div>
     </div>
 
-    
+    <script src="js/about.js"></script>
 </body>
 </html>

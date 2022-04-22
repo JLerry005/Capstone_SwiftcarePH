@@ -174,10 +174,10 @@
             <div class="col-span-12 sm:col-span-4 lg:col-span-3 flex flex-col space-y-3 mb-10">
                 <h1 class="mb-3 text-lg font-medium">About</h1>
 
-                <a href="about#top" target="_blank" class="hover:underline text-gray-400">About Swiftcare PH</a>
-                <a href="" class="hover:underline text-gray-400">Inspiration</a>
-                <a href="" class="hover:underline text-gray-400">Our Story</a>
-                <a href="" class="hover:underline text-gray-400">About the Developers</a>
+                <a href="about#about-swiftcare-ph" target="_blank" class="hover:underline text-gray-400">About Swiftcare PH</a>
+                <a href="about#inspiration" target="_blank" class="hover:underline text-gray-400">Inspiration</a>
+                <a href="about#our-story" target="_blank" class="hover:underline text-gray-400">Our Story</a>
+                <a href="about#about-the-developers" target="_blank" class="hover:underline text-gray-400">About the Developers</a>
             </div>
 
             <!-- Second Column -->
