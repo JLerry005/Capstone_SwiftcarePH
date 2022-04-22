@@ -8,7 +8,8 @@
     $time = $_POST["time"];
     $phoneNumber = $_POST["phoneNumber"];
     $email = $_POST["email"];
-    $concern = $_POST["concern"];
+    $concern = $_POST["severity"];
+    $severity = $_POST["concern"]; 
     $specifyConcern = $_POST["specifyConcern"];
     $hospitalName = $_POST["hospitalName"];
     $reservationType = $_POST["reservationType"];
@@ -17,13 +18,13 @@
 
     $finalPhoneNumber = sprintf("%011s", $phoneNumber);
 
-    $sql = "INSERT INTO userbooking (user_id, listing_id, patientFirstName, patientLastName, patientDate, patientTime, patientEmail, patientPhoneNumber, patientConcern, patientSpecifyConcern, patientHospitalName, patientReservationType)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+    $sql = "INSERT INTO userbooking (user_id, listing_id, patientFirstName, patientLastName, patientDate, patientTime, patientEmail, patientPhoneNumber, patientConcern, severity, patientSpecifyConcern, patientHospitalName, patientReservationType)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
     $stmt = mysqli_stmt_init($conn);
 
     mysqli_stmt_prepare($stmt, $sql);
-    mysqli_stmt_bind_param($stmt, "ssssssssssss", $userID, $listingID, $firstName, $lastName, $date, $time, $email, $finalPhoneNumber, $concern, $specifyConcern, $hospitalName, $reservationType);
+    mysqli_stmt_bind_param($stmt, "sssssssssssss", $userID, $listingID, $firstName, $lastName, $date, $time, $email, $finalPhoneNumber, $concern, $severity, $specifyConcern, $hospitalName, $reservationType);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 

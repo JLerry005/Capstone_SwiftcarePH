@@ -1038,11 +1038,6 @@ input:checked + .toggle-bg{
   margin-bottom: 0.5rem;
 }
 
-.mx-4{
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .mx-64{
   margin-left: 16rem;
   margin-right: 16rem;
@@ -1189,12 +1184,8 @@ input:checked + .toggle-bg{
   margin-bottom: 3.5rem;
 }
 
-.mt-20{
-  margin-top: 5rem;
-}
-
-.mt-14{
-  margin-top: 3.5rem;
+.ml-5{
+  margin-left: 1.25rem;
 }
 
 .block{
@@ -1301,8 +1292,8 @@ input:checked + .toggle-bg{
   height: 16rem;
 }
 
-.h-60{
-  height: 15rem;
+.h-\[450px\]{
+  height: 450px;
 }
 
 .h-36{
@@ -1339,20 +1330,12 @@ input:checked + .toggle-bg{
   height: 2.25rem;
 }
 
-.h-\[1000px\]{
-  height: 1000px;
+.h-\[300px\]{
+  height: 300px;
 }
 
-.h-\[600px\]{
-  height: 600px;
-}
-
-.h-\[500px\]{
-  height: 500px;
-}
-
-.h-\[450px\]{
-  height: 450px;
+.h-\[350px\]{
+  height: 350px;
 }
 
 .max-h-\[500px\]{
@@ -1439,10 +1422,6 @@ input:checked + .toggle-bg{
 
 .w-64{
   width: 16rem;
-}
-
-.w-\[600px\]{
-  width: 600px;
 }
 
 .w-40{
@@ -1647,6 +1626,10 @@ input:checked + .toggle-bg{
   align-items: center;
 }
 
+.justify-start{
+  justify-content: flex-start;
+}
+
 .justify-end{
   justify-content: flex-end;
 }
@@ -1815,12 +1798,6 @@ input:checked + .toggle-bg{
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
 
-.space-y-1 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
-}
-
 .space-y-7 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
   margin-top: calc(1.75rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1831,6 +1808,12 @@ input:checked + .toggle-bg{
   --tw-space-x-reverse: 0;
   margin-right: calc(5rem * var(--tw-space-x-reverse));
   margin-left: calc(5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-1 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
 
 .self-end{
@@ -1901,10 +1884,6 @@ input:checked + .toggle-bg{
 
 .rounded-xl{
   border-radius: 0.75rem;
-}
-
-.rounded-none{
-  border-radius: 0px;
 }
 
 .rounded-r-none{
@@ -2646,6 +2625,10 @@ input:checked + .toggle-bg{
 
 .pt-1{
   padding-top: 0.25rem;
+}
+
+.pl-5{
+  padding-left: 1.25rem;
 }
 
 .text-left{
@@ -3770,10 +3753,6 @@ input:checked + .toggle-bg{
     flex-direction: column;
   }
 
-  .sm\:items-end{
-    align-items: flex-end;
-  }
-
   .sm\:items-center{
     align-items: center;
   }
@@ -3794,18 +3773,6 @@ input:checked + .toggle-bg{
     --tw-space-y-reverse: 0;
     margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
-  }
-
-  .sm\:space-y-0 > :not([hidden]) ~ :not([hidden]){
-    --tw-space-y-reverse: 0;
-    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(0px * var(--tw-space-y-reverse));
-  }
-
-  .sm\:space-x-2 > :not([hidden]) ~ :not([hidden]){
-    --tw-space-x-reverse: 0;
-    margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .sm\:space-x-3 > :not([hidden]) ~ :not([hidden]){
@@ -4095,6 +4062,12 @@ input:checked + .toggle-bg{
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
+  .md\:space-x-4 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
   .md\:p-6{
     padding: 1.5rem;
   }
@@ -4126,6 +4099,11 @@ input:checked + .toggle-bg{
     padding-right: 6rem;
   }
 
+  .md\:px-0{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
   .md\:px-5{
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -4139,11 +4117,6 @@ input:checked + .toggle-bg{
   .md\:px-20{
     padding-left: 5rem;
     padding-right: 5rem;
-  }
-
-  .md\:px-0{
-    padding-left: 0px;
-    padding-right: 0px;
   }
 
   .md\:pr-5{
@@ -4307,8 +4280,8 @@ input:checked + .toggle-bg{
     height: 100vh;
   }
 
-  .lg\:h-80{
-    height: 20rem;
+  .lg\:h-\[450px\]{
+    height: 450px;
   }
 
   .lg\:w-\[600px\]{
@@ -4384,10 +4357,6 @@ input:checked + .toggle-bg{
     align-self: flex-end;
   }
 
-  .lg\:rounded-lg{
-    border-radius: 0.5rem;
-  }
-
   .lg\:border-2{
     border-width: 2px;
   }
@@ -4399,10 +4368,6 @@ input:checked + .toggle-bg{
 
   .lg\:p-5{
     padding: 1.25rem;
-  }
-
-  .lg\:p-2{
-    padding: 0.5rem;
   }
 
   .lg\:px-8{

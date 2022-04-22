@@ -192,7 +192,7 @@
                         <option value="Mild-to-moderate">Mild-to-moderate</option>
                         <option value="Severe">Severe</option>
                         <option value="Critical">Critical</option>
-                        <option value="Non - Covid">Non - Covid</option>
+                        <option value="Non-Covid">Non-Covid</option>
                     </select>
                 </div>
 

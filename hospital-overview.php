@@ -67,9 +67,9 @@
 </head>
 <body class="bg-blue-50 text-gray-700 text-xs sm:text-sm md:text-md font-poppins">
     <!-- Nav Bar -->
-    <nav class="text-white py-5 px-5 lg:px-12 w-full bg-gray-900">
-        <div class="flex flex-row justify-between items-center   border-slate-600">
-            <div class="flex flex-row items-center space-x-4">
+    <nav class="text-white py-5 lg:px-12 w-full bg-gray-900">
+        <div class="relative flex flex-row justify-between items-center border-slate-600">
+            <div class="flex flex-row items-center space-x-4 pl-5">
             <a href="index" class="flex items-center text-center">
                 <img src="assets/main-logo-transparent.png" class="mr-3 h-8" alt="Swiftcare PH Logo">
                 <span class="self-center text-lg md:text-2xl font-semibold whitespace-nowrap dark:text-white">Swiftcare PH</span>
@@ -83,7 +83,7 @@
                     echo '
 
                     <!-- Hamburger Button -->
-                    <div class="md:hidden flex flex-row items-center">
+                    <div class="md:hidden flex flex-row items-center pr-5">
                         <button class="hamburger-button" id="hamburger-button">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -92,7 +92,7 @@
                     </div>
 
                     <!-- Burger Menu -->
-                    <div class="md:hidden mobileMenu hidden z-10 h-screen w-full bg-gray-900 transition ease-out duration-200 p-10 space-y-6" id="mobileMenu">
+                    <div class="absolute text-lg top-0 right-0 md:hidden mobileMenu hidden z-10 h-screen w-full bg-gray-900 transition ease-out duration-200 p-10 space-y-6" id="mobileMenu">
                         <div class="flex justify-end w-full">
                             <button class="hover:underline flex items-center btn-close-menu" id="btn-close-menu">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -119,7 +119,7 @@
                               <a href="user-dashboard"> &nbsp;'.$_SESSION['sessionPatientFirstName'].'</a>
                         </p>
                         
-                        <a href="includes/logout-inc" class=" hover:bg-red-500 border-2 border-red-500 hover:drop-shadow-md py-1 px-5 rounded-full flex items-center text-sm transition-all">
+                        <a href="includes/logout-inc" class="hover:bg-red-500 border-2 border-red-500 hover:drop-shadow-md py-1 px-5 rounded-full flex justify-center items-center transition-all">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                             </svg>
@@ -127,7 +127,7 @@
                         </a>
                     </div>
 
-                    <div class="hidden md:flex md:flex-row md:items-center space-x-5">
+                    <div class="hidden md:flex md:flex-row md:items-center space-x-5 pr-5">
                         <div class="px-3 hover:text-blue-400 text-blue-100 transition-all">
                             <a href="user-reservations" target="_blank" class="flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -221,18 +221,18 @@
     <div class="container mx-auto flex flex-col lg:p-5">
 
         <!-- Google Maps -->
-        <div class="w-full h-[450px]" id="map-canvas">
+        <div class="w-full h-[350px] lg:h-[450px]" id="map-canvas">
             [Google Maps is loading..]
         </div>
-        <div class="mb-5 text-center">
+        <div class="mb-5 text-center hidden md:block">
             <p class=""><i>Drag the <b>A Marker</b> (this represents your location) or use the Search Field below to find your location to get Directions. </i></p>
         </div>
 
         <!-- Get directions -->
-        <div class="flex flex-col mb-10 px-5 md:px-0">
+        <div class="flex flex-col mb-10 px-5 mt-5 md:mt-0 md:px-0">
             <div id="getDirectionsInput">
 
-                <div class="flex items-center justify-between"> 
+                <div class="flex items-end md:items-center justify-between"> 
                     <label for="fromInput" class="flex items-center mb-1">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
@@ -241,7 +241,7 @@
                     </label>
 
 
-                    <div class="flex items-center space-x-4">
+                    <div class="flex flex-col items-start md:flex-row md:items-center space-y-1 md:space-y-0 md:space-x-4">
                         <!-- Driving Time -->
                         <p class="flex items-center font-semibold text-gray-500">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
@@ -290,7 +290,7 @@
                     <!-- Hospital Name -->
                     <p class="text-gray-900 text-xl md:text-2xl lg:text-3xl font-bold uppercase mb-2"><?php echo $hospitalName ?></p>
                     <!-- Hospital Type -->
-                    <div class="flex flex-row">
+                    <div class="flex flex-row mb-5">
                         <span class="font-bold uppercase"><?php echo $hospitalType?> </span>
                     </div>
                     <!-- Hospital Address -->
@@ -375,7 +375,7 @@
                 </div>
 
                 <!-- Details for smaller screen -->
-                <div class="xl:hidden">
+                <div class="xl:hidden space-y-2 mt-3">
                     <!-- Hospital Phone Number -->
                     <div class="flex flex-row">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500" viewBox="0 0 20 20" fill="currentColor">
@@ -416,8 +416,8 @@
 
             <!-- Hospital Description -->
             <div class="pt-3 pb-1 xl:w-[800px]">
-                <h1 class="flex items-center mb-2 font-bold text-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <h1 class="flex items-start lg:items-center mb-2 font-bold text-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-1 lg:mt-0 viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd" />
                       </svg>
                     &ensp;About <?php echo $hospitalName?>&nbsp;
@@ -605,7 +605,7 @@
                                         <!-- Non covid  -->
                                         <optgroup label="Non - Covid">
                                                 <?php
-                                                    $sql = $conn->query("SELECT * FROM patientdata WHERE patientConcern = 'Non - Covid';") or die($conn->error);
+                                                    $sql = $conn->query("SELECT * FROM patientdata WHERE patientConcern = 'Non-Covid';") or die($conn->error);
                                                     while ($row = mysqli_fetch_assoc($sql)) {
                                                         echo '
                                                             <option value="'.$row["concernType"].'">'.$row["concernType"].'</option>
@@ -617,9 +617,10 @@
                                     <div id="selecetConcern-error" class="text-red-500 text-center mt-2 font-medium"></div>
                                 </div>
 
+                                <input type="hidden" name="hidden-variable" id="hidden-variable">
                                 <!-- Specify your concern input -->
-                                <div name="specifyConcern" id="specifyConcern" class="relative z-0 mt-10 w-full group">
-                                    <input type="text" class="mt-1 bg-blue-50 border-2 font-bold capitalize border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" placeholder="Specify your concern">
+                                <div name="" id="" class="relative z-0 mt-10 w-full group">
+                                    <input id="specifyConcern" type="text" class="mt-1 bg-blue-50 border-2 font-bold capitalize border-gray-500 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-4" placeholder="Specify your concern">
                                     <div id="specifyConcern-error" class="text-red-500 text-center mt-2 font-medium"></div>
                                 </div>
 

@@ -21,6 +21,8 @@
             $contactNumber = $row['patientPhoneNumber'];
             $bookingID = $row['ID'];
             $patientConcern = $row['patientConcern'];
+            $severity = $row['severity'];
+
             
     
             $output .='

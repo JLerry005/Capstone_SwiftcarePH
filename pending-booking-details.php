@@ -29,6 +29,7 @@
         $time = $row['patientTime'];
         $contactNumber = $row['patientPhoneNumber'];
         $patientConcern = $row['patientConcern'];
+        $severity = $row["severity"];
         $specifyConcern = $row["patientSpecifyConcern"];
         $emailAddress = $row["patientEmail"];
         $listingID = $row["listing_id"];
@@ -144,6 +145,13 @@
                         <div>
                             <h1 class="font-bold">Specify Concern</h1>
                             <p id="specify-concern" name="specify-concern" ><?php echo $specifyConcern?></p>
+
+                            <?php
+                                if ($patientConcern == "Covid") {
+                                    echo '<p id="specify-concern" name="specify-concern" >'.$severity.'</p>';
+                                }
+                            ?>
+                            <!-- <p id="specify-concern" name="specify-concern" ><?php echo $severity?></p> -->
                         </div>
                     </div>
 

@@ -524,31 +524,44 @@
      let specifyConcernError = document.getElementById("specifyConcern-error");
      specifyConcernError.innerHTML="";
      specifyConcern.classList.add('disabled');
+     let hiddenvariable = document.getElementById("hidden-variable");
      // Enable and Disable Input
      $("#concern").change(function() {
          if ($(this).val() == "Asymptomatic") {
-             specifyConcernError.innerHTML="";
-             specifyConcern.classList.add('disabled');
-             specifyConcern.classList.remove('invalidInput');
-         }
-         else if ($(this).val() == "Mild-to-Moderate") {
+            specifyConcern.value = '';
             specifyConcernError.innerHTML="";
             specifyConcern.classList.add('disabled');
             specifyConcern.classList.remove('invalidInput');
+            hiddenvariable.value = "Covid";
+            console.log(hiddenvariable.value);
+         }
+         else if ($(this).val() == "Mild-to-moderate") {
+            specifyConcernError.innerHTML="";
+            specifyConcern.classList.add('disabled');
+            specifyConcern.classList.remove('invalidInput');
+            hiddenvariable.value = "Covid";
+            console.log(hiddenvariable.value);
         }
         else if ($(this).val() == "Severe") {
             specifyConcernError.innerHTML="";
             specifyConcern.classList.add('disabled');
             specifyConcern.classList.remove('invalidInput');
+            hiddenvariable.value = "Covid";
+            console.log(hiddenvariable.value);
         }
         else if ($(this).val() == "Critical") {
             specifyConcernError.innerHTML="";
             specifyConcern.classList.add('disabled');
             specifyConcern.classList.remove('invalidInput');
+            hiddenvariable.value = "Covid";
+            console.log(hiddenvariable.value);
         }
-         else if ($(this).val() == "Non - Covid") {
+         else if ($(this).val() == "Non-Covid") {
              specifyConcernError.innerHTML="Specify your concern here.";
              specifyConcern.classList.remove('disabled');
+             hiddenvariable.value = "Non-Covid";
+             console.log(hiddenvariable.value);
+            
          }
      }).trigger("change");
 
@@ -562,7 +575,7 @@
             return false;
         }
 
-        else if (concernInputValue == 'Covid') {
+        else if (concernInputValue == 'Asymptomatic') {
             specifyConcernError.innerHTML="";
             concernInputError.innerHTML="";
             specifyConcern.classList.add('disabled');
@@ -571,32 +584,32 @@
             return true;
         }
 
-        // else if (concernInputValue == 'Covid') {
-        //     specifyConcernError.innerHTML="";
-        //     concernInputError.innerHTML="";
-        //     specifyConcern.classList.add('disabled');
-        //     specifyConcern.classList.remove('invalidInput');
-        //     concernInput.classList.remove('invalidInput');
-        //     return true;
-        // }
+        else if (concernInputValue == 'Mild-to-moderate') {
+            specifyConcernError.innerHTML="";
+            concernInputError.innerHTML="";
+            specifyConcern.classList.add('disabled');
+            specifyConcern.classList.remove('invalidInput');
+            concernInput.classList.remove('invalidInput');
+            return true;
+        }
 
-        // else if (concernInputValue == 'Covid') {
-        //     specifyConcernError.innerHTML="";
-        //     concernInputError.innerHTML="";
-        //     specifyConcern.classList.add('disabled');
-        //     specifyConcern.classList.remove('invalidInput');
-        //     concernInput.classList.remove('invalidInput');
-        //     return true;
-        // }
+        else if (concernInputValue == 'Severe') {
+            specifyConcernError.innerHTML="";
+            concernInputError.innerHTML="";
+            specifyConcern.classList.add('disabled');
+            specifyConcern.classList.remove('invalidInput');
+            concernInput.classList.remove('invalidInput');
+            return true;
+        }
 
-        // else if (concernInputValue == 'Covid') {
-        //     specifyConcernError.innerHTML="";
-        //     concernInputError.innerHTML="";
-        //     specifyConcern.classList.add('disabled');
-        //     specifyConcern.classList.remove('invalidInput');
-        //     concernInput.classList.remove('invalidInput');
-        //     return true;
-        // }
+        else if (concernInputValue == 'Critical') {
+            specifyConcernError.innerHTML="";
+            concernInputError.innerHTML="";
+            specifyConcern.classList.add('disabled');
+            specifyConcern.classList.remove('invalidInput');
+            concernInput.classList.remove('invalidInput');
+            return true;
+        }
         else if (concernInputValue == 'Non-Covid') {
             specifyConcern.classList.remove('disabled');
 
@@ -679,12 +692,12 @@
         let phoneNumber = document.getElementById("phoneNumber").value;
         let email = document.getElementById("emailAddress").value;
         let concern = document.getElementById("concern").value;
+        let severity  = document.getElementById("hidden-variable").value;
         let specifyConcern = document.getElementById("specifyConcern").value;
         let hospitalName = document.getElementById("hospitalName").value;
         let reservationType = document.getElementById("reservationType").value;
         let listingID = document.getElementById("listingID").value;
         let userID = document.getElementById("user-id-placeholder").value;
-        
         let firstnameContainer = document.getElementById("firstnameContainer");
         firstnameContainer.innerHTML = firstName;
 
@@ -744,8 +757,8 @@
                             return;
                         }else {
                             toggleModal('reviewDetailsModal', true);
-
                             btnSubmit.onclick = function () {
+                                
                                 // Insert Details
                                 $.ajax({
                                     method: "POST",
@@ -758,6 +771,7 @@
                                         phoneNumber:phoneNumber,
                                         email:email,
                                         concern:concern,
+                                        severity:severity,
                                         specifyConcern:specifyConcern,
                                         hospitalName:hospitalName,
                                         reservationType:reservationType,
@@ -773,7 +787,7 @@
                                     success: function (response) {
                                         toggleModal('reviewDetailsModal', false);
                                         $(reservationLoader).hide();
-                                        // window.location.replace('http://localhost/Capstone/reservation-success');
+                                        window.location.replace('http://localhost/Capstone/reservation-success');
                                         return;
                                     }
                                 }); 
@@ -817,6 +831,7 @@
                                     phoneNumber:phoneNumber,
                                     email:email,
                                     concern:concern,
+                                    severity:severity,
                                     specifyConcern:specifyConcern,
                                     hospitalName:hospitalName,
                                     reservationType:reservationType,
@@ -854,7 +869,7 @@
                                         xhr.addEventListener('readystatechange', function(e) {
                                             if( this.readyState === 4 ) {
                                                 $(reservationLoader).hide();                                                   
-                                                // window.location.replace('http://localhost/Capstone/reservation-success');
+                                                window.location.replace('http://localhost/Capstone/reservation-success');
                                             }
                                         });
                                     }

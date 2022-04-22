@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2022 at 05:35 PM
+-- Generation Time: Apr 22, 2022 at 08:48 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -428,9 +428,9 @@ CREATE TABLE `hospitallisting` (
 --
 
 INSERT INTO `hospitallisting` (`listing_id`, `hospitalID`, `hospital_location`, `lat`, `lng`, `hospital_city`, `hospital_name`, `hospital_description`, `hospital_type`, `room`, `room_slot`, `bed`, `bed_slot`, `additional_docs`, `website_link`, `hospital_phone`) VALUES
-(8, 183, 'Amang Rodriguez Medical Center, Sumulong Highway Sto. Nino, Marikina, Metro Manila, Philippines', '14.6358837', '121.0982344', 'Marikina', 'Amang Rodriguez Memorial Medical Center', 'This is a sample description.', 'Private Hospital', '', 86, '', 65, 'Yes', 'amangrodriguezhospital.ph', '+639886756677'),
+(8, 183, 'Amang Rodriguez Medical Center, Sumulong Highway Sto. Nino, Marikina, Metro Manila, Philippines', '14.6358837', '121.0982344', 'Marikina', 'Amang Rodriguez Memorial Medical Center', 'This is a sample description.', 'Private Hospital', '', 86, '', 49, 'Yes', 'amangrodriguezhospital.ph', '+639886756677'),
 (9, 184, 'Mount Banawe General Hospital, Quezon Ave, Quiapo, Quezon City, Metro Manila, Philippines', '14.5981304', '120.9841946', 'Quezon', 'Mount Banawe General Hospital', 'Mt. Banawe General Hospital is located in Quezon City, Philippines. Company is working in Doctors and Clinics, Health Care business activities. Visit our company website for more information about us : http://www.philippinenursingdirectory.com', 'Public Hospital', '', 13, '', 13, 'Yes', 'http://www.philippinenursingdirectory.com', '+638675586755'),
-(10, 185, 'Cebu City Sports Center, Osmeña Blvd, Cebu City, Cebu, Philippines', '', '', 'Cebu', 'Cebu Doctors University Hospital', 'Cebu Doctors\' University Hospital is a leading tertiary level hospital in the Southern Phillipines. It was founded in 1972 and today has 300 beds and 1200 employees, 326 of which are medical doctors. The hospital is also a comprehensive medical education ', 'Public Hospital', '', 95, '', 82, 'Yes', 'https://cebudocgroup.com.ph/', '+638675576866'),
+(10, 185, 'Cebu City Sports Center, Osmeña Blvd, Cebu City, Cebu, Philippines', '', '', 'Cebu', 'Cebu Doctors University Hospital', 'Cebu Doctors\' University Hospital is a leading tertiary level hospital in the Southern Phillipines. It was founded in 1972 and today has 300 beds and 1200 employees, 326 of which are medical doctors. The hospital is also a comprehensive medical education ', 'Public Hospital', '', 94, '', 78, 'Yes', 'https://cebudocgroup.com.ph/', '+638675576866'),
 (13, 188, 'Philippine Heart Center, East Avenue, Diliman, Quezon City, Metro Manila, Philippines', '14.6440237', '121.0481304', 'Quezon', 'Philippine Heart Center', 'The Philippine Heart Center is a hospital in Central, Quezon City, Philippines, specializing in the treatment of heart ailments. It was established in 1975', 'Public Hospital', '', 10, '', 10, '', 'https://www.phc.gov.ph/', '+639123456789'),
 (14, 189, '1001 Mindanao Avenue, Brgy, Quezon City, 1106 Metro Manila', '', '', '', 'Metro North Medical Center Hospital', '', 'Private Hospital', '', 60, '', 48, '', '0', '+631513513513'),
 (15, 190, 'Metro Iloilo Hospital and Medical Center, Inc., Metropolis Avenue, Jaro, Iloilo City, Iloilo, Philippines', '10.762569', '122.5806212', 'Iloilo', 'Metro Iloilo Hospital and Medical Center, Inc.', 'MIHMCI PROVIDES THE HIGHEST QUALITY PATIENT-FOCUSED HEALTHCARE THROUGH A HOLISTIC, SCIENTIFIC, AND EVIDENCE-BASED APPROACH, AND DELIVERED BY COMPETENT, ETHICAL AND COMPASSIONATE HEALTHCARE PROFESSIONALS UTILIZING STATE-OF-THE-ART MEDICAL TECHNOLOGY, EQUIP', 'Private Hospital', '', 10, '', 20, '', 'https://www.metroiloilohospital.com', '+639856758867'),
@@ -533,7 +533,9 @@ INSERT INTO `patientdata` (`ID`, `concernType`, `covidVariant`, `patientConcern`
 (49, 'Mild-to-moderate', '', 'Covid'),
 (51, 'Severe', '', 'Covid'),
 (52, 'Critical', '', 'Covid'),
-(53, 'Non - Covid', '', 'Non - Covid');
+(53, 'Non - Covid', '', 'Non - Covid'),
+(54, 'Non-Covid', '', 'Covid'),
+(55, 'Non-Covid', '', 'Non-Covid');
 
 -- --------------------------------------------------------
 
@@ -586,7 +588,13 @@ INSERT INTO `referralfiles` (`referral_id`, `booking_id`, `file_name`, `file_dir
 (124, 234, 'Banner User Login', '../web/referral-images/banner-user-login.jpg'),
 (125, 234, 'Swiftcare Ph Logo', '../web/referral-images/swiftcare-ph-logo.png'),
 (126, 234, 'Swiftcare Ph Logo Bg', '../web/referral-images/swiftcare-ph-logo-bg.png'),
-(127, 234, 'Your Health, Our Priority', '../web/referral-images/Your Health, Our Priority.png');
+(127, 234, 'Your Health, Our Priority', '../web/referral-images/Your Health, Our Priority.png'),
+(167, 251, 'Makati Medical Center', '../web/referral-images/Makati-Medical-Center.jpg'),
+(168, 252, 'Patient Referral', '../web/referral-images/patient referral.png'),
+(169, 253, '73_big', '../web/referral-images/73_big.jpg'),
+(170, 254, 'Bg3 (1)', '../web/referral-images/bg3 (1).jpg'),
+(171, 255, 'Patient Referral', '../web/referral-images/patient referral.png'),
+(172, 256, 'Metro North Medical Center And Hospital Metro Manila 1460981885 5714d07d8f551', '../web/referral-images/metro-north-medical-center-and-hospital-metro-manila-1460981885-5714d07d8f551.jpg');
 
 -- --------------------------------------------------------
 
@@ -719,6 +727,7 @@ CREATE TABLE `userbooking` (
   `patientPhoneNumber` varchar(55) NOT NULL,
   `patientEmail` varchar(100) NOT NULL,
   `patientConcern` varchar(50) NOT NULL,
+  `severity` varchar(255) NOT NULL,
   `patientSpecifyConcern` varchar(50) NOT NULL,
   `patientHospitalName` varchar(50) NOT NULL,
   `patientReservationType` varchar(50) NOT NULL,
@@ -729,13 +738,19 @@ CREATE TABLE `userbooking` (
 -- Dumping data for table `userbooking`
 --
 
-INSERT INTO `userbooking` (`ID`, `user_id`, `listing_id`, `patientFirstName`, `patientLastName`, `patientDate`, `patientTime`, `patientPhoneNumber`, `patientEmail`, `patientConcern`, `patientSpecifyConcern`, `patientHospitalName`, `patientReservationType`, `bookingTimestamp`) VALUES
-(214, 95, 9, 'Fermin', 'Pablo', '2022-04-21', '09:00', '09887868878', 'nior3210@gmail.com', 'Covid', '', 'Mount Banawe General Hospital', 'bed', '2022-04-21 12:27:17'),
-(215, 95, 9, 'Rizaldo', 'Andres', '2022-04-21', '09:00', '09887868878', 'nior3210@gmail.com', 'Covid', '', 'Mount Banawe General Hospital', 'bed', '2022-04-21 12:27:40'),
-(230, 98, 8, 'Joshua', 'Montreal', '2022-04-23', '09:00', '09123456789', 'nior3210@gmail.com', 'Non-Covid', 'Fractured Ribs', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-16 07:59:31'),
-(234, 96, 10, 'Restituto', 'Pena', '2022-04-30', '09:00', '09125253535', 'hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-21 12:27:56'),
-(238, 96, 10, 'Igme', 'Lucas', '2022-04-30', '09:00', '09123232323', 'hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-21 12:28:18'),
-(242, 99, 10, 'Sherwin', 'Legazpi', '2022-04-28', '09:00', '09123232323', 'hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-21 12:28:30');
+INSERT INTO `userbooking` (`ID`, `user_id`, `listing_id`, `patientFirstName`, `patientLastName`, `patientDate`, `patientTime`, `patientPhoneNumber`, `patientEmail`, `patientConcern`, `severity`, `patientSpecifyConcern`, `patientHospitalName`, `patientReservationType`, `bookingTimestamp`) VALUES
+(214, 95, 9, 'Fermin', 'Pablo', '2022-04-21', '09:00', '09887868878', 'nior3210@gmail.com', 'Covid', '', '', 'Mount Banawe General Hospital', 'bed', '2022-04-21 12:27:17'),
+(215, 95, 9, 'Rizaldo', 'Andres', '2022-04-21', '09:00', '09887868878', 'nior3210@gmail.com', 'Covid', '', '', 'Mount Banawe General Hospital', 'bed', '2022-04-21 12:27:40'),
+(230, 98, 8, 'Joshua', 'Montreal', '2022-04-23', '09:00', '09123456789', 'nior3210@gmail.com', 'Non-Covid', '', 'Fractured Ribs', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-16 07:59:31'),
+(234, 96, 10, 'Restituto', 'Pena', '2022-04-30', '09:00', '09125253535', 'hapatingajohnlerry@gmail.com', 'Covid', '', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-21 12:27:56'),
+(238, 96, 10, 'Igme', 'Lucas', '2022-04-30', '09:00', '09123232323', 'hapatingajohnlerry@gmail.com', 'Covid', '', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-21 12:28:18'),
+(242, 99, 10, 'Sherwin', 'Legazpi', '2022-04-28', '09:00', '09123232323', 'hapatingajohnlerry@gmail.com', 'Covid', '', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-21 12:28:30'),
+(251, 99, 10, 'Spongebob', 'Squarepants', '2022-04-30', '09:00', '09123513535', 'hapatingajohnlerry@gmail.com', 'Asymptomatic', 'Covid', '', 'Cebu Doctors University Hospital', 'room', '2022-04-22 05:35:36'),
+(252, 98, 8, 'Nicole', 'Marquez', '2022-04-23', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', 'Asymptomatic', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-22 06:02:50'),
+(253, 99, 10, 'William', 'Morales', '2022-04-30', '09:00', '09123513535', 'hapatingajohnlerry@gmail.com', 'Covid', 'Mild-to-moderate', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-22 06:05:30'),
+(254, 99, 10, 'Roger', 'Chua', '2022-04-30', '09:00', '09123513535', 'hapatingajohnlerry@gmail.com', 'Non - Covid', 'Non - Covid', 'Kapogian', 'Cebu Doctors University Hospital', 'bed', '2022-04-22 06:07:22'),
+(255, 98, 8, 'Nicole', 'Marquez', '2022-04-23', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Non-Covid', 'Non-Covid', 'Mild tuberculosis', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-22 06:19:43'),
+(256, 99, 10, 'Spongebob', 'Squarepants', '2022-04-30', '09:00', '09123513535', 'hapatingajohnlerry@gmail.com', 'Non-Covid', 'Non-Covid', 'Bone Fracture', 'Cebu Doctors University Hospital', 'bed', '2022-04-22 06:22:22');
 
 -- --------------------------------------------------------
 
@@ -1036,7 +1051,7 @@ ALTER TABLE `otpstorage`
 -- AUTO_INCREMENT for table `patientdata`
 --
 ALTER TABLE `patientdata`
-  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `pendingadminsignup`
@@ -1048,7 +1063,7 @@ ALTER TABLE `pendingadminsignup`
 -- AUTO_INCREMENT for table `referralfiles`
 --
 ALTER TABLE `referralfiles`
-  MODIFY `referral_id` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `referral_id` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
 
 --
 -- AUTO_INCREMENT for table `rejectedhospital`
@@ -1078,7 +1093,7 @@ ALTER TABLE `upcomingreservations`
 -- AUTO_INCREMENT for table `userbooking`
 --
 ALTER TABLE `userbooking`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=257;
 
 --
 -- AUTO_INCREMENT for table `userpatient`
