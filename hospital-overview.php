@@ -692,8 +692,9 @@
                                 <?php
                                 if($referral == "Yes"){
                                     echo '
-                                        <div class="flex flex-rows">
-                                            <label class="block mb-2 text-gray-900 text-sm font-bold uppercase" for="user_avatar">Attachment for Referral</label><span class="text-red-600">&nbsp;*</span>
+                                        <div class="flex flex-col lg:flex-row lg:items-center mb-2">
+                                            <label class="block text-gray-900 text-sm font-bold uppercase mb-1 lg:mb-0" for="user_avatar">Attachment for Referral<span class="text-red-600">&nbsp;*</span></label>
+                                            <p>&nbsp;This Hospital requires a proof of your referral certificate from your last hospital. Please attach a clear copy.</p>
                                         </div>
                                         <input class="block w-full text-md text-gray-900 bg-blue-50 rounded-lg border-2 border-gray-500 cursor-pointer focus:outline-none focus:border-transparent" id="referralFilesInput" type="file" multiple>
                                         <div id="referralFiles-error" class="text-red-500 text-center mt-2 font-medium"></div>
@@ -721,9 +722,11 @@
                 </div>
 
                 <!-- Login or signup for booking form -->
-                <form action="user-login?listingID=<?php echo $listingID ?>" method="post" id="login-for-booking">  
-                    <p class="mt-6 mb-4 text-gray-900 font-semibold text-md">You need to be Logged in first before you can book a reservation.</p>
-                    <button type="submit" name="booking-login" id="booking-login" class="w-40 bg-gray-900 p-4 rounded-md text-white flex justify-center items-center hover:bg-gray-800 text-md uppercase font-semibold tracking-wide">Login</button>
+                <form action="user-login?listingID=<?php echo $listingID ?>" method="post" id="login-for-booking" class="h-52 py-16"> 
+                    <div class="flex flex-col items-center justify-center">
+                        <p class="mb-4 text-gray-900 text-lg">You need to be <b>Logged in</b> first before you can book a reservation.</p>
+                        <button type="submit" name="booking-login" id="booking-login" class="w-40 bg-gray-900 p-4 rounded-md text-white flex justify-center items-center hover:bg-gray-800 text-md uppercase font-semibold tracking-wide">Login</button>
+                    </div> 
                 </form>
             </div>
 
