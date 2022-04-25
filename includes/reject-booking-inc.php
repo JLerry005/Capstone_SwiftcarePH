@@ -11,6 +11,7 @@
         $contactNumber = $_POST['contactNumber'];
         $emailAdd = $_POST['emailAdd'];
         $patientConcern = $_POST['patientConcern'];
+        $severity = $_POST['severity'];
         $specifyConcern = $_POST['specifyConcern'];
         $patientConcern = $_POST['patientConcern'];
         $reservationType = $_POST['reservationType'];
@@ -20,8 +21,8 @@
         $hospitalName = $_POST['hospitalName'];
         $remarks = $_POST['remarks'];
 
-        $moveToRejected = "INSERT INTO rejectedreservations (user_id, listing_id, firstname, lastname, date, time, phonenumber, email, concern, specifyconcern, hospitalName, reservationtype, booking_timestamp, remarks)
-                        VALUES ('$userID', '$listingID', '$firstname','$lastname','$date','$time', '$contactNumber', ' $emailAdd', '$patientConcern', '$specifyConcern', '$hospitalName', '$reservationType', '$timeStamp', '$remarks')";
+        $moveToRejected = "INSERT INTO rejectedreservations (user_id, listing_id, firstname, lastname, date, time, phonenumber, email, concern, severity, specifyconcern, hospitalName, reservationtype, booking_timestamp, remarks)
+                        VALUES ('$userID', '$listingID', '$firstname','$lastname','$date','$time', '$contactNumber', ' $emailAdd', '$patientConcern', '$severity', '$specifyConcern', '$hospitalName', '$reservationType', '$timeStamp', '$remarks')";
 
         $result = mysqli_query($conn, $moveToRejected) or die(mysqli_error($conn));
         
@@ -31,7 +32,7 @@
 
         if ($moveToRejected) {
             require_once '../PHPMailer/user-booking-rejected.php';
-            sendEmailConfirmation($conn, $userID, $listingID, $firstname, $lastname, $date, $time, $contactNumber, $emailAdd, $patientConcern, $specifyConcern, $hospitalName, $reservationType, $timeStamp);
+            sendEmailConfirmation($conn, $userID, $listingID, $firstname, $lastname, $date, $time, $contactNumber, $emailAdd, $patientConcern, $severity, $specifyConcern, $hospitalName, $reservationType, $timeStamp);
 
             $getImageDir = $conn->query("SELECT * FROM referralfiles WHERE booking_id = $bookingID;") or die($conn->error);
             while ($row = mysqli_fetch_assoc($getImageDir)) {

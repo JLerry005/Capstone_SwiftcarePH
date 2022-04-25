@@ -2,9 +2,10 @@
 
     include_once 'dbh-inc.php';
     $searchValue = $_GET["searchInputVal"];
+    $listingID = $_GET["listingID"];
     $output = '';
 
-    $result = $conn->query("SELECT * FROM upcomingreservations WHERE firstname LIKE '%".$searchValue."%' OR lastname LIKE '%".$searchValue."%' OR fullname LIKE '%".$searchValue."%' OR reservation_code LIKE '%".$searchValue."%'") or die($conn->error);
+    $result = $conn->query("SELECT * FROM (SELECT * FROM upcomingreservations WHERE listing_id = $listingID) upcomingreservations WHERE firstname LIKE '%".$searchValue."%' OR lastname LIKE '%".$searchValue."%' OR fullname LIKE '%".$searchValue."%' OR reservation_code LIKE '%".$searchValue."%'") or die($conn->error);
     
     if (mysqli_num_rows($result)==0) {
         $output = '

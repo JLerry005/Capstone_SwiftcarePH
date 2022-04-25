@@ -26,7 +26,7 @@
             
 
             $output .='
-                <a href="completed-booking-details?bookingID='.$bookingID.'" class="col-span-4 bg-green-600  rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
+                <a href="completed-booking-details?bookingID='.$bookingID.'" class="col-span-4 bg-green-600  rounded-lg text-gray-400 hover:scale-105 hover:shadow-md hover:shadow-gray-900 hover:cursor-pointer transition duration-700 ease-out"> 
                     <div class="bg-green-700 p-2 rounded-t-lg flex items-center justify-between">
                         <div>
                             <p class="flex items-center cursor-default py-0.5 px-2 w-fit text-blue-50 font-medium tracking-wider">

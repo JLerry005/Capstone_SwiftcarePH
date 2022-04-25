@@ -40,7 +40,10 @@
                     <!-- Hospital Admin Password -->
                     <div class="mb-3 md:mb-6">
                         <label for="passwordInput" class="block mb-2 text-sm md:text-md font-medium text-blue-500">Password</label>
-                        <input type="password" id="passwordInput" name="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="••••••••" class="userPassword bg-gray-900 focus:bg-slate-800 border border-blue-50 text-blue-50 text-lg rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                        <input type="password" id="passwordInput" name="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="••••••••" class="passwordInput bg-gray-900 focus:bg-slate-800 border border-blue-50 text-blue-50 text-lg rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                        <i id="passwordToggle" class="bi bi-eye-slash text-gray-300 absolute cursor-pointer 2xl:right-0 2xl:top-[515px] 2xl:mr-[79rem] xl:right-0 xl:top-[513px] xl:mr-[55.5rem] lg:right-0 lg:top-[417px] lg:mr-[100px] md:right-0 md:top-[415px] md:mr-[70px] sm:right-0 sm:top-[400px] sm:mr-[65px] right-0 top-[400px] mr-14"></i>
+                        <div id="passwordHelpBlock" class="form-text">
+                        </div>
                         <!-- <a class="text-xs flex justify-end mt-1 mr-2 hover:underline" href="...">Forgot Password?</a> -->
                     </div>
             </div>
@@ -64,5 +67,8 @@
             <img src="assets/hospital-login/hospital-login-img.svg" alt="" class="xl:w-screen xl:h-screen">
         </div>
     </div>
+
+    <!-- JavaScript Link -->
+    <script src="js/hospital-login.js" defer></script>
 </body>
 </html>

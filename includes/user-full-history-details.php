@@ -16,6 +16,7 @@
     $email;
     $bookingID;
     $patientConcern;
+    // $severity;
     $specifyConcern;
     $hospitalName;
     $remarks;
@@ -35,6 +36,7 @@
             $email = $row["email"];
             $bookingID = $row['ID'];
             $patientConcern = $row['concern'];
+            $severity = $row['severity'];
             $specifyConcern = $row['specifyconcern'];
             $hospitalName = $row['hospitalname'];
             $listingID = $row['listing_id'];
@@ -150,7 +152,7 @@
                         <div class="">
                             <div class="mb-4">
                                 <h1 class="text-slate-400">Concern</h1>
-                                <h1 class="font-bold text-lg">'.$patientConcern.'</h1>
+                                <h1 class="font-bold text-lg">'.$patientConcern.' - '.$severity.'</h1>
                             </div>
                         </div>
                     </div>
@@ -279,7 +281,7 @@
                             <div class="">
                                 <div class="mb-4">
                                     <h1 class="text-slate-400">Concern</h1>
-                                    <h1 class="font-bold text-sm">'.$patientConcern.'</h1>
+                                    <h1 class="font-bold text-sm">'.$patientConcern.' - '.$severity.'</h1>
                                 </div>
                             </div>
                         </div>
@@ -373,6 +375,7 @@
             $email = $row["email"];
             $bookingID = $row['ID'];
             $patientConcern = $row['concern'];
+            $severity = $row['severity'];
             $specifyConcern = $row['specifyconcern'];
             $hospitalName = $row['hospitalname'];
             $listingID = $row['listing_id'];
@@ -488,7 +491,7 @@
                         <div class="">
                             <div class="mb-4">
                                 <h1 class="text-slate-400">Concern</h1>
-                                <h1 class="font-bold text-lg">'.$patientConcern.'</h1>
+                                <h1 class="font-bold text-lg">'.$patientConcern.' - '.$severity.'</h1>
                             </div>
                         </div>
                     </div>
@@ -617,7 +620,7 @@
                             <div class="">
                                 <div class="mb-4">
                                     <h1 class="text-slate-400">Concern</h1>
-                                    <h1 class="font-bold text-sm">'.$patientConcern.'</h1>
+                                    <h1 class="font-bold text-sm">'.$patientConcern.' - '.$severity.'</h1>
                                 </div>
                             </div>
                         </div>
@@ -712,6 +715,7 @@
             $email = $row["email"];
             $bookingID = $row['ID'];
             $patientConcern = $row['concern'];
+            $severity = $row['severity'];
             $specifyConcern = $row['specifyconcern'];
             $hospitalName = $row['hospitalname'];
             $remarks = $row['remarks'];
@@ -851,7 +855,7 @@
                         <div class="">
                             <div class="mb-4">
                                 <h1 class="text-slate-400">Concern</h1>
-                                <h1 class="font-bold text-lg">'.$patientConcern.'</h1>
+                                <h1 class="font-bold text-lg">'.$patientConcern.' - '.$severity.'</h1>
                             </div>
                         </div>
                     </div>
@@ -996,7 +1000,7 @@
                             <div class="">
                                 <div class="mb-4">
                                     <h1 class="text-slate-400">Concern</h1>
-                                    <h1 class="font-bold text-sm">'.$patientConcern.'</h1>
+                                    <h1 class="font-bold text-sm">'.$patientConcern.' - '.$severity.'</h1>
                                 </div>
                             </div>
                         </div>

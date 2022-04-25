@@ -8,7 +8,7 @@
     //Load Composer's autoloader
     require 'vendor/autoload.php';
 
-    function sendEmailConfirmation($conn, $reservationCode, $userID, $listingID, $firstname, $lastname, $date, $time, $contactNumber, $emailAdd, $patientConcern, $specifyConcern, $hospitalName, $reservationType, $timeStamp){
+    function sendEmailConfirmation($conn, $reservationCode, $userID, $listingID, $firstname, $lastname, $date, $time, $contactNumber, $emailAdd, $patientConcern, $severity, $specifyConcern, $hospitalName, $reservationType, $timeStamp){
         //Create an instance; passing `true` enables exceptions
         $mail = new PHPMailer(true);
 
@@ -594,7 +594,7 @@
                                           <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:\'Open Sans\',sans-serif;" align="left">
               
                                             <div class="v-line-height" style="line-height: 140%; text-align: left; word-wrap: break-word;">
-                                              <p style="font-size: 14px; line-height: 140%;"><span style="color: #cfd5d9; font-size: 14px; line-height: 19.6px;">Concern: <strong><span style="color: #3498da; font-size: 14px; line-height: 19.6px;">'.$patientConcern.'</span></strong>
+                                              <p style="font-size: 14px; line-height: 140%;"><span style="color: #cfd5d9; font-size: 14px; line-height: 19.6px;">Concern: <strong><span style="color: #3498da; font-size: 14px; line-height: 19.6px;">'.$patientConcern.' - '.$severity.'</span></strong>
                                                 </span>
                                               </p>
                                             </div>

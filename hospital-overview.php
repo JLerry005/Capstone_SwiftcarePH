@@ -165,7 +165,7 @@
 
 
                         <!-- Burger Menu -->
-                        <div class="z-10 mobileMenu hidden md:hidden bg-gray-900 h-screen w-full p-6 transition ease-out duration-200 space-y-6" id="mobileMenu">
+                        <div class="absolute text-lg top-0 right-0 md:hidden mobileMenu hidden z-10 h-screen w-full bg-gray-900 transition ease-out duration-200 p-10 space-y-6" id="mobileMenu">
                             <div class="flex justify-end w-full">
                                 <button class="hover:underline flex items-center btn-close-menu" id="btn-close-menu">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -186,7 +186,7 @@
                         </div>
 
                         <!-- Hamburger Button -->
-                        <div class="md:hidden flex flex-row items-center">
+                        <div class="md:hidden flex flex-row items-center pr-5">
                             <button class="hamburger-button" id="hamburger-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />

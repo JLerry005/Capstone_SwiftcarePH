@@ -131,7 +131,7 @@
                                         <div class="relative mb-3">
                                             <label for="userPassword" class="block mb-2 text-md font-medium text-blue-500">Current Password</label>
                                             <input type="password" id="userPassword" name="userPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="••••••••" class="userPassword bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
-                                            <i class="bi bi-eye-slash text-gray-300 absolute cursor-pointer 2xl:right-0 2xl:top-12 2xl:pr-5 xl:right-0 xl:top-12 xl:pr-5 lg:right-0 lg:top-12 lg:pr-5 md:right-0 md:top-12 md:pr-5 sm:right-0 sm:top-12 sm:pr-5 right-0 top-12 pr-5" id="verifyTogglePass"></i>
+                                            <i class="bi bi-eye-slash text-gray-300 absolute cursor-pointer 2xl:right-0 2xl:top-12 2xl:pr-5 xl:right-0 xl:top-12 xl:pr-5 lg:right-0 lg:top-12 lg:pr-5 md:right-0 md:top-12 md:pr-5 sm:right-0 sm:top-12 sm:pr-5 right-0 top-12 pr-5" id="passwordTogglePass"></i>
                                             <div id="passwordHelpBlock" class="form-text">
                                             </div>
                                         </div>

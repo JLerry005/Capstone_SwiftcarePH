@@ -121,11 +121,11 @@
                     
                 </div>
                 
-                <div class="grid grid-cols-12 gap-3 md:p-6 2xl:px-16 xl:gap-6">
+                <div class="grid grid-cols-12 gap-3 md:p-6 2xl:px-16 xl:gap-6 ">
                     
 
                     <!-- Pending Reservations Banner -->
-                    <div id="pending-reservations" onclick="anchor_to_pending()" class="bg-white p-5 md:p-8 col-span-12  lg:col-span-4 2xl:col-start-1 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out flex items-center justify-between relative">
+                    <div id="pending-reservations" onclick="anchor_to_pending()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-start-1 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:shadow-md hover:shadow-blue-500 hover:cursor-pointer transition duration-700 ease-out flex items-center justify-between relative">
                         
                         <!-- Notification Ping -->
                         <!-- <div class="">
@@ -143,7 +143,7 @@
                     </div>
 
                     <!-- Upcoming Reservations Banner -->
-                    <div id="upcoming-reservations" onclick="anchor_to_upcoming()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out flex items-center justify-between">
+                    <div id="upcoming-reservations" onclick="anchor_to_upcoming()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:shadow-md hover:shadow-blue-500 hover:cursor-pointer transition duration-700 ease-out flex items-center justify-between">
                         <div class="hover:text-blue-500 transition duration-200 ease-in-out">
                             <h1 class="text-5xl font-bold" id="upcomingCountContainer"></h1>
                             <h1>Upcoming Reservations</h1>
@@ -154,7 +154,7 @@
                     </div>
 
                     <!-- Completed Banner -->
-                    <div id="history-reservations" onclick="anchor_to_history()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out flex items-center justify-between">
+                    <div id="history-reservations" onclick="anchor_to_history()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:shadow-md hover:shadow-blue-500 hover:cursor-pointer transition duration-700 ease-out flex items-center justify-between">
                         <div class="hover:text-blue-500 transition duration-200 ease-in-out">
                             <h1 class="text-5xl font-bold" id="completedCountContainer"></h1>
                             <h1>Completed</h1>
@@ -195,7 +195,7 @@
                     <!-- Hospital Listing ID -->
                     <input type="hidden" name="listingID" id="listingID" value="<?php echo $_SESSION["listing-id"] ?>">
                     <!-- Cards go here -->
-                    <div class="px-5 py-5 lg:grid grid-cols-12 gap-4 min-h-[200px]" id="pending-cards-container">
+                    <div class="px-5 py-5 lg:grid grid-cols-12 gap-x-6 gap-y-5 min-h-[200px]" id="pending-cards-container">
 
                         <!-- Cards -->
                         <!-- <div class="col-span-3 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
@@ -290,7 +290,7 @@
                     <!-- <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse beatae.</p> -->
 
                     <!-- Cards go here -->
-                    <div class="px-5 py-5 lg:grid grid-cols-12 gap-4 min-h-[200px]" id="upcoming-cards-container">
+                    <div class="px-5 py-5 lg:grid grid-cols-12 gap-x-6 gap-y-5 min-h-[200px]" id="upcoming-cards-container">
 
                         <!-- Cards -->
                         <!-- <div class="col-span-3 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
@@ -379,10 +379,10 @@
                     <hr class="border-slate-200 my-3">
 
                     <!-- Cards go here -->
-                    <div class="px-5 lg:grid grid-cols-12 gap-4 min-h-[200px]" id="completed-cards-container">
+                    <div class="px-5 lg:grid grid-cols-12 gap-x-6 gap-y-5 min-h-[200px]" id="completed-cards-container">
 
                         <!-- Cards -->
-                        <div class="col-span-3 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:drop-shadow-md hover:cursor-pointer transition duration-100 ease-out"> 
+                        <div class="col-span-3 bg-gray-900 rounded-lg text-gray-400 hover:scale-105 hover:shadow-md hover:shadow-gray-900 hover:cursor-pointer transition duration-700 ease-out"> 
                             <div class="p-4 flex items-center justify-between">
                                 <h1 class="bg-blue-700 hover:bg-blue-800 rounded-full w-fit py-0.5 px-2 text-white flex items-center">
                                     <i class="ri-door-open-fill"></i> &nbsp; <span class="cursor-pointer">Bed</span>
@@ -461,7 +461,7 @@
                     <hr class="border-slate-200 my-3">
 
                     <!-- Cards go here -->
-                    <div class="px-5 py-5 lg:grid grid-cols-12 gap-4 min-h-[200px]" id="rejected-cards-container">
+                    <div class="px-5 py-5 lg:grid grid-cols-12 gap-x-6 gap-y-5 min-h-[200px]" id="rejected-cards-container">
 
                     </div>
                 </div>
@@ -926,7 +926,7 @@
                             <!-- Modal header -->
                             <div class="flex justify-between items-center p-5 rounded-t border-b dark:border-gray-600">
                                 <h3 class="text-xl font-medium text-gray-900 dark:text-white">
-                                    Delete Images | Why not?
+                                    Delete Images
                                 </h3>
                                 <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" onclick="buttonClose()">
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
@@ -941,7 +941,7 @@
                             
                             <!-- Modal footer -->
                             <div class="flex justify-end p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                                <button type="button" class="text-white bg-red-600 hover:bg-red-900 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Delete All</button>
+                                <!-- <button type="button" class="text-white bg-red-600 hover:bg-red-900 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Delete All</button> -->
                                 <button type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600" onclick="buttonClose()">Cancel</button>
                             </div>
                         </div>
@@ -1184,7 +1184,7 @@
         </div>
     </div>
 
-    <?php include_once 'includes/footer.php'; ?>
+    
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApEvr9yiQv-yXwXp2HRpzyW5HXwB18BxE&libraries=places"></script>
     <script src="js\hospital-dashboard.js" defer></script>

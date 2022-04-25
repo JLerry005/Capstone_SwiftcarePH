@@ -142,12 +142,13 @@
 
     searchInput.onkeyup = function () {
         let searchInputVal = document.getElementById("inp-search-upcoming").value;
+        let listingID = document.getElementById("listingID").value;
 
         if (searchInputVal !="") {
             $.ajax({
                 type: "GET",
                 url: "includes/search-upcoming-reservations.php",
-                data: {searchInputVal:searchInputVal},
+                data: {searchInputVal:searchInputVal, listingID:listingID},
                 success: function (data) {
                     upcomingContainer.innerHTML = data;
                     // console.log(data);
@@ -291,7 +292,9 @@
 
     // Show All
     const btnShowAllCompleted = document.getElementById("btn-show-all-completed");
-
+    btnShowAllCompleted.onclick = function () {
+        showCompletedReservations();
+    }
 
     // Rejected and Expired
 

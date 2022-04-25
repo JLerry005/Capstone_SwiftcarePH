@@ -16,7 +16,7 @@
     // $reservationType = $_POST["reservationType"];
     // $email = $_POST["email"];
 
-    function sendEmailConfirmation($conn, $userID, $listingID, $firstname, $lastname, $date, $time, $contactNumber, $emailAdd, $patientConcern, $specifyConcern, $hospitalName, $reservationType, $timeStamp){
+    function sendEmailConfirmation($conn, $userID, $listingID, $firstname, $lastname, $date, $time, $contactNumber, $emailAdd, $patientConcern, $severity, $specifyConcern, $hospitalName, $reservationType, $timeStamp){
         //Create an instance; passing `true` enables exceptions
         $mail = new PHPMailer(true);
 

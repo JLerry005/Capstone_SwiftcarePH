@@ -11,10 +11,11 @@
     let time = document.getElementById("time").innerHTML;
     let contactNumber = document.getElementById("contact-number").innerHTML;
     let emailAdd = document.getElementById("email-add").innerHTML;
-    let patientConcern = document.getElementById("patient-concern").innerHTML;
+    let patientConcern = document.getElementById("hidden-val-concern").value;
     let specifyConcern = document.getElementById("specify-concern").innerHTML;
     let reservationType = document.getElementById("reservation-type").innerHTML;
     let timeStamp = document.getElementById("time-stamp").innerHTML;
+    let severity = document.getElementById("severity").value;
 
     let userID = document.getElementById("userID").value;
     let listingID = document.getElementById("listingID").value;
@@ -44,6 +45,7 @@
                     contactNumber:contactNumber,
                     emailAdd:emailAdd,
                     patientConcern:patientConcern,
+                    severity:severity,
                     specifyConcern:specifyConcern,
                     reservationType:reservationType,
                     timeStamp:timeStamp,
@@ -88,6 +90,7 @@
                     contactNumber:contactNumber,
                     emailAdd:emailAdd,
                     patientConcern:patientConcern,
+                    severity:severity,
                     specifyConcern:specifyConcern,
                     reservationType:reservationType,
                     timeStamp:timeStamp,
@@ -109,5 +112,6 @@
         }
     }
     
+    // Lightgallery
     // Lightgallery
     lightGallery(document.querySelector('.image-gallery'));

@@ -62,6 +62,7 @@
         $phonenumber = $results["patientPhoneNumber"];
         $email = $results["patientEmail"];
         $concern = $results["patientConcern"];
+        $severity = $results["severity"];
         $specifyconcern = $results["patientSpecifyConcern"];
         $hospitalname = $results["patientHospitalName"];
         $reservationtype = $results["patientReservationType"];
@@ -69,8 +70,8 @@
         $booking_timestamp = $results["bookingTimestamp"];
 
         if ($date < $currentDate) {
-            $insertToExpired = $conn->query("INSERT INTO expiredreservations (user_id, listing_id, firstname, lastname, date, time, phonenumber, email, concern, specifyconcern, hospitalname, reservationtype, booking_timestamp, remarks)
-                            VALUES('$user_id', '$listing_id', '$firstname', '$lastname', '$date', '$time', '$phonenumber', '$email', '$concern', '$specifyconcern', '$hospitalname', '$reservationtype', '$booking_timestamp', '$remarks');") or die($conn->error);
+            $insertToExpired = $conn->query("INSERT INTO expiredreservations (user_id, listing_id, firstname, lastname, date, time, phonenumber, email, concern, severity, specifyconcern, hospitalname, reservationtype, booking_timestamp, remarks)
+                            VALUES('$user_id', '$listing_id', '$firstname', '$lastname', '$date', '$time', '$phonenumber', '$email', '$concern', '$severity', '$specifyconcern', '$hospitalname', '$reservationtype', '$booking_timestamp', '$remarks');") or die($conn->error);
 
             // Delete Images
             if ($insertToExpired) {

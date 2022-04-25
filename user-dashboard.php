@@ -63,8 +63,8 @@
                         </div>
                         <!-- Home Button -->
                         <a href="index">
-                            <div class="hidden mx-20 items-center xl:block">
-                                <button class="relative inline-flex text-xs items-center justify-center p-0.5 w-full mt-10 mr-2 overflow-hidden font-medium text-blue-50 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-cyan-800">
+                            <div class="hidden mx-28 items-center xl:block">
+                                <button class="relative inline-flex text-md items-center justify-center p-0.5 w-full mt-10 mr-2 overflow-hidden font-medium text-blue-50 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-cyan-800 transition duration-700 hover:scale-105 ease-in-out">
                                     <span class="relative px-5 py-2.5 transition-all ease-in duration-75 w-full bg-gray-900 rounded-md group-hover:bg-opacity-0">
                                     <i class="bi bi-house-door"></i> Home
                                     </span>
@@ -79,7 +79,7 @@
                         <div id="reservation-card" class="card card-reservation 2xl:p-5">
                             <a href="user-reservations">
                                 <!-- Card Body -->
-                                <div class="flex justify-between items-center p-4 sm:p-4 sm:px-10 sm:py-8 2xl:px-12">
+                                <div class="flex justify-between items-center p-4 sm:p-4 sm:px-10 sm:py-8 2xl:px-12 transition duration-700 hover:scale-110 ease-in-out">
 
                                     <!-- Left Side Content -->
                                     <div class="flex items-center">
@@ -110,7 +110,7 @@
                         <div id="account-card" class="card card-account 2xl:p-5">
                             <a href="user-account">
                                 <!-- Card Body -->
-                                <div class="flex justify-between items-center p-2 sm:p-4 sm:px-10 sm:py-8">
+                                <div class="flex justify-between items-center p-2 sm:p-4 sm:px-10 sm:py-8 transition duration-700 hover:scale-110 ease-in-out">
 
                                     <!-- Left Side Content -->
                                     <div class="flex items-center">

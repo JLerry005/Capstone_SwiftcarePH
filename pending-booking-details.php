@@ -55,14 +55,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Flowbite minified stylesheet -->
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css"/>
-    <!--lightGallery CSS CDN-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
     <!-- TAILWIND CSS Link -->
     <link rel="stylesheet" href="dist/output.css">
     <!-- CSS Link -->
     <link rel="stylesheet" href="styling/_pending-booking-details.css">
     <!--Bootstrap Icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+    <!--lightGallery CSS CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
     <!-- Remix Icon CDN Link -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- TITLE -->
@@ -71,6 +71,7 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!-- HEADER ICON -->
     <link rel="icon" href="assets/main-logo-line.png" type="image/x-icon">
+
 </head>
 <body class="text-gray-700 bg-blue-50 font-poppins">
     <input type="hidden" name="userID" id="userID" value="<?php echo $userID ?>">
@@ -135,7 +136,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-12 w-12"><path fill="none" d="M0 0H24V24H0z"/><path d="M8 3v2H6v4c0 2.21 1.79 4 4 4s4-1.79 4-4V5h-2V3h3c.552 0 1 .448 1 1v5c0 2.973-2.162 5.44-5 5.917V16.5c0 1.933 1.567 3.5 3.5 3.5 1.497 0 2.775-.94 3.275-2.263C16.728 17.27 16 16.22 16 15c0-1.657 1.343-3 3-3s3 1.343 3 3c0 1.371-.92 2.527-2.176 2.885C19.21 20.252 17.059 22 14.5 22 11.462 22 9 19.538 9 16.5v-1.583C6.162 14.441 4 11.973 4 9V4c0-.552.448-1 1-1h3zm11 11c-.552 0-1 .448-1 1s.448 1 1 1 1-.448 1-1-.448-1-1-1z" fill="rgba(50,152,219,1)"/></svg>
                         <div>
                             <h1 class="font-bold">Concern</h1>
-                            <p id="patient-concern" name="patient-concern"><?php echo $patientConcern?></p>
+                            <p id="patient-concern" name="patient-concern"><?php echo $patientConcern, " - ", $severity?></p>
+                            <input type="hidden" value="<?php echo $patientConcern ?>" id="hidden-val-concern">
+                            <input type="hidden" value="<?php echo $severity ?>" id="severity">
                         </div>
                     </div>
 
@@ -144,14 +147,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-12 w-12"><path fill="none" d="M0 0H24V24H0z"/><path d="M17 5v2c1.657 0 3 1.343 3 3v11c0 .552-.448 1-1 1H5c-.552 0-1-.448-1-1V10c0-1.657 1.343-3 3-3V5h10zm-4 6h-2v2H9v2h1.999L11 17h2l-.001-2H15v-2h-2v-2zm6-9v2H5V2h14z" fill="rgba(24,49,77,1)"/></svg>
                         <div>
                             <h1 class="font-bold">Specify Concern</h1>
-                            <p id="specify-concern" name="specify-concern" ><?php echo $specifyConcern?></p>
-
-                            <?php
-                                if ($patientConcern == "Covid") {
-                                    echo '<p id="specify-concern" name="specify-concern" >'.$severity.'</p>';
-                                }
-                            ?>
-                            <!-- <p id="specify-concern" name="specify-concern" ><?php echo $severity?></p> -->
+                            <p id="specify-concern" name="specify-concern" ><?php echo $specifyConcern ?></p>
                         </div>
                     </div>
 
@@ -222,15 +218,14 @@
 
             <!---------- This is the fourth row of Container ---------->
             <!-- Refferal Image -->
-            <div class=" col-span-7 bg-white px-10 py-10 drop-shadow-md rounded-3xl" >
+            <div class="col-span-7 bg-white px-10 py-10 drop-shadow-md rounded-3xl" >
                 
                 <!-- Referral Content -->
                 <div class="items-center text-md text-blue-700 font-bold border-b border-gray-300 pb-2">
                     <h1>Referral Files</h1>
                 </div>
 
-                <div class="grid grid-cols-4 gap-x-4 gap-y-4 p-2 mr-2 mt-4" >
-                <!-- <div id="image-gallery" class="image-gallery grid grid-cols-4 gap-x-4 gap-y-4 p-2 mr-6 mt-4" > -->
+                <div class="image-gallery grid grid-cols-4 gap-y-8 mx-6 mt-6" id="image-gallery">
                     <?php
 
                         $imageDir;
@@ -238,7 +233,7 @@
                         $getImages = $conn->query("SELECT * FROM referralfiles WHERE booking_id = $bookingID") or die($conn->error);
 
                         if (mysqli_num_rows($getImages)==0) {
-                            $output = '<p class="col-span-4 text-center font-bold text-gray-600 self-center "><i class="bi bi-emoji-frown-fill"></i> The hospital will not required a Referral.</p> ';
+                            $output = '<p class="col-span-4 text-center font-bold text-gray-600 self-center "><i class="bi bi-emoji-frown-fill"></i> Referral proof wasn\'t required to this booking..</p> ';
                         }
                         else{
 
@@ -247,11 +242,9 @@
         
                                 $output .='
 
-                                    <div class="col-span-1"> 
-                                        <a href="/Capstone'.$imageDir.'" target="_blank" class="fetched-image col-span-1 bg-gray-900 rounded-lg">
-                                            <img id="" class="card-img w-full h-36 border-solid border-2 border-gray-800 rounded-md hover:scale-105 transition duration-200" alt="..." src="/Capstone'.$imageDir.'"/>
-                                        </a>
-                                    </div>
+                                    <a href="/Capstone'.$imageDir.'" class="col-span-1 transition duration-700 hover:scale-105 ease-in-out ">
+                                        <img class="w-56 h-48 bg-gray-900 border-4 border-gray-800 transition duration-700 hover:shadow-lg hover:shadow-gray-900 rounded-xl" alt="..." src="/Capstone'.$imageDir.'"/>
+                                    </a>
                                
                                 ';
         
@@ -267,9 +260,9 @@
         <!-- Accept and Reject Button -->
         <div class="flex justify-end space-x-2 mr-52 mt-5">
             <!-- Accept Button -->
-            <button type="submit" id="btn-accept" name="btn-accept" class="p-3 px-7 rounded-lg font-bold bg-gray-900 hover:bg-gray-800 text-white">Accept</button>
+            <button type="submit" id="btn-accept" name="btn-accept" class="p-3 px-7 rounded-lg font-bold bg-gray-900 hover:bg-gray-800 text-white transition duration-700 hover:scale-105 ease-in-out">Accept</button>
             <!-- Reject Button -->            
-            <button type="submit" id="btn-reject" name="btn-reject" class="p-3 px-7 rounded-lg font-bold bg-red-600 hover:bg-red-500 text-white">Reject</button>
+            <button type="submit" id="btn-reject" name="btn-reject" class="p-3 px-7 rounded-lg font-bold bg-red-600 hover:bg-red-500 text-white transition duration-700 hover:scale-105 ease-in-out">Reject</button>
         </div> 
     </div>
 
@@ -288,9 +281,9 @@
                     <h3 class="mb-5 text-lg font-normal text-gray-300">Are you sure you want to <span class="text-blue-500 font-bold">accept</span>  this booking request?</h3>
 
                     <!-- Cancel Button -->
-                    <button type="button" id="btnCancelAccept"  class="text-gray-300 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-600 rounded-lg border border-gray-500 font-medium px-5 py-2.5 hover:text-white focus:z-10 mr-2 mb-2">Cancel</button>
+                    <button type="button" id="btnCancelAccept"  class="text-gray-300 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-600 rounded-lg border border-gray-500 font-medium px-5 py-2.5 hover:text-white focus:z-10 mr-2 mb-2 transition duration-700 hover:scale-105 ease-in-out">Cancel</button>
                     <!-- Continue Button       -->
-                    <button type="button" id="btnContinueAccept"  class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2">
+                    <button type="button" id="btnContinueAccept"  class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2 transition duration-700 hover:scale-105 ease-in-out">
                         Continue
                     </button>
                     <button type="hidden" data-modal-toggle="AcceptModal"></button>
@@ -320,9 +313,9 @@
                     <svg class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     <h3 class="mb-5 text-lg font-normal text-gray-300">Are you sure you want to <span class="text-red-600 font-bold">reject</span>  this booking request?</h3>
                     <!-- Cancel Button -->
-                        <button type="button" id="btnCancelReject" class="text-gray-300 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-600 rounded-lg border border-gray-500 font-medium px-5 py-2.5 hover:text-white focus:z-10 mr-2 mb-2">Cancel</button>
+                        <button type="button" id="btnCancelReject" class="text-gray-300 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-600 rounded-lg border border-gray-500 font-medium px-5 py-2.5 hover:text-white focus:z-10 mr-2 mb-2 transition duration-700 hover:scale-105 ease-in-out">Cancel</button>
                     <!-- Continue Button -->
-                        <button type="button" id="btnContinueReject" class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark: dark: dark:focus:ring-red-900">
+                        <button type="button" id="btnContinueReject" class="focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-900 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 transition duration-700 hover:scale-105 ease-in-out">
                             Continue
                         </button>
                     <button type="hidden" id="btnCancelReject"data-modal-toggle="rejectModal"></button>

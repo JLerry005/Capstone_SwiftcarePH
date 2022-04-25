@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2022 at 04:08 PM
+-- Generation Time: Apr 25, 2022 at 04:05 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -270,6 +270,7 @@ CREATE TABLE `completedreservations` (
   `phonenumber` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `concern` varchar(255) NOT NULL,
+  `severity` varchar(255) NOT NULL,
   `specifyconcern` varchar(255) NOT NULL,
   `hospitalname` varchar(255) NOT NULL,
   `reservationtype` varchar(255) NOT NULL,
@@ -281,10 +282,12 @@ CREATE TABLE `completedreservations` (
 -- Dumping data for table `completedreservations`
 --
 
-INSERT INTO `completedreservations` (`ID`, `reservation_code`, `user_id`, `listing_id`, `remarks`, `firstname`, `lastname`, `date`, `time`, `phonenumber`, `email`, `concern`, `specifyconcern`, `hospitalname`, `reservationtype`, `timestamp`, `booking_timestamp`) VALUES
-(90, 'SCPHRES241629', 95, 8, 'Successful', 'Benjie', 'Castaneda', '2022-04-13', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:31:11', '2022-04-15 12:29:07'),
-(91, 'SCPHRES860395', 95, 8, 'Successful', 'Lerma', 'Delarosa', '2022-04-14', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:31:35', '2022-04-15 12:31:31'),
-(92, 'SCPHRES241629', 98, 8, 'Successful', 'Rubilyn', 'Gonzales', '2022-04-13', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:31:51', '2022-04-15 12:29:07');
+INSERT INTO `completedreservations` (`ID`, `reservation_code`, `user_id`, `listing_id`, `remarks`, `firstname`, `lastname`, `date`, `time`, `phonenumber`, `email`, `concern`, `severity`, `specifyconcern`, `hospitalname`, `reservationtype`, `timestamp`, `booking_timestamp`) VALUES
+(90, 'SCPHRES241629', 95, 8, 'Successful', 'Benjie', 'Castaneda', '2022-04-13', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:31:11', '2022-04-15 12:29:07'),
+(91, 'SCPHRES860395', 95, 8, 'Successful', 'Lerma', 'Delarosa', '2022-04-14', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:31:35', '2022-04-15 12:31:31'),
+(92, 'SCPHRES241629', 98, 8, 'Successful', 'Rubilyn', 'Gonzales', '2022-04-13', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:31:51', '2022-04-15 12:29:07'),
+(111, 'SCPHRES396669', 98, 8, 'Unsuccessful', 'Amor', 'Dela Cruz', '2022-04-23', '09:00', '09123456789', 'nior3210@gmail.com', 'Non-Covid', '', 'for referral', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-24 04:36:15', '2022-04-16 10:00:05'),
+(112, 'SCPHRES296516', 98, 8, '', 'Marife ', 'Mercado', '2022-04-23', '09:00', '09123456789', 'nior3210@gmail.com', 'Covid', '', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-24 04:26:23', '2022-04-16 21:15:06');
 
 -- --------------------------------------------------------
 
@@ -304,6 +307,7 @@ CREATE TABLE `expiredreservations` (
   `phonenumber` varchar(120) NOT NULL,
   `email` varchar(255) NOT NULL,
   `concern` varchar(255) NOT NULL,
+  `severity` varchar(255) NOT NULL,
   `specifyconcern` varchar(255) NOT NULL,
   `hospitalname` varchar(255) NOT NULL,
   `reservationtype` varchar(255) NOT NULL,
@@ -316,10 +320,13 @@ CREATE TABLE `expiredreservations` (
 -- Dumping data for table `expiredreservations`
 --
 
-INSERT INTO `expiredreservations` (`ID`, `user_id`, `listing_id`, `firstname`, `lastname`, `fullname`, `date`, `time`, `phonenumber`, `email`, `concern`, `specifyconcern`, `hospitalname`, `reservationtype`, `timestamp`, `booking_timestamp`, `remarks`) VALUES
-(1, 95, 8, 'Narding', 'Alcantara', '', '2022-04-14', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:36:33', '2022-04-15 13:42:46', 'expired'),
-(2, 98, 8, 'Rizaldo', 'Castro', 'kyle Dimaguiba', '2022-04-14', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:36:43', '2022-04-15 13:42:46', 'expired'),
-(4, 98, 8, 'Arvin', 'Santos', '', '2022-04-19', '09:00', '09123456789', 'nior3210@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:36:54', '2022-04-16 16:08:59', 'expired');
+INSERT INTO `expiredreservations` (`ID`, `user_id`, `listing_id`, `firstname`, `lastname`, `fullname`, `date`, `time`, `phonenumber`, `email`, `concern`, `severity`, `specifyconcern`, `hospitalname`, `reservationtype`, `timestamp`, `booking_timestamp`, `remarks`) VALUES
+(1, 95, 8, 'Narding', 'Alcantara', '', '2022-04-14', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:36:33', '2022-04-15 13:42:46', 'expired'),
+(2, 98, 8, 'Rizaldo', 'Castro', 'kyle Dimaguiba', '2022-04-14', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:36:43', '2022-04-15 13:42:46', 'expired'),
+(4, 98, 8, 'Arvin', 'Santos', '', '2022-04-19', '09:00', '09123456789', 'nior3210@gmail.com', 'Covid', '', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:36:54', '2022-04-16 16:08:59', 'expired'),
+(6, 98, 8, 'Joshua', 'Montreal', '', '2022-04-23', '09:00', '09123456789', 'nior3210@gmail.com', 'Non-Covid', '', 'Fractured Ribs', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-24 04:26:23', '2022-04-16 15:59:31', 'expired'),
+(7, 98, 8, 'Nicole', 'Marquez', '', '2022-04-23', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-24 04:26:24', '2022-04-22 14:02:50', 'expired'),
+(8, 98, 8, 'Nicole', 'Marquez', '', '2022-04-23', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Non-Covid', '', 'Mild tuberculosis', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-24 04:26:24', '2022-04-22 14:19:43', 'expired');
 
 -- --------------------------------------------------------
 
@@ -430,8 +437,8 @@ CREATE TABLE `hospitallisting` (
 INSERT INTO `hospitallisting` (`listing_id`, `hospitalID`, `hospital_location`, `lat`, `lng`, `hospital_city`, `hospital_name`, `hospital_description`, `hospital_type`, `room`, `room_slot`, `bed`, `bed_slot`, `additional_docs`, `website_link`, `hospital_phone`) VALUES
 (8, 183, 'Amang Rodriguez Medical Center, Sumulong Highway Sto. Nino, Marikina, Metro Manila, Philippines', '14.6358837', '121.0982344', 'Marikina', 'Amang Rodriguez Memorial Medical Center', 'This is a sample description.', 'Private Hospital', '', 86, '', 49, 'Yes', 'amangrodriguezhospital.ph', '+639886756677'),
 (9, 184, 'Mount Banawe General Hospital, Quezon Ave, Quiapo, Quezon City, Metro Manila, Philippines', '14.5981304', '120.9841946', 'Quezon', 'Mount Banawe General Hospital', 'Mt. Banawe General Hospital is located in Quezon City, Philippines. Company is working in Doctors and Clinics, Health Care business activities. Visit our company website for more information about us : http://www.philippinenursingdirectory.com', 'Public Hospital', '', 13, '', 13, 'Yes', 'http://www.philippinenursingdirectory.com', '+638675586755'),
-(10, 185, 'Cebu City Sports Center, Osmeña Blvd, Cebu City, Cebu, Philippines', '', '', 'Cebu', 'Cebu Doctors University Hospital', 'Cebu Doctors\' University Hospital is a leading tertiary level hospital in the Southern Phillipines. It was founded in 1972 and today has 300 beds and 1200 employees, 326 of which are medical doctors. The hospital is also a comprehensive medical education ', 'Public Hospital', '', 94, '', 78, 'Yes', 'https://cebudocgroup.com.ph/', '+638675576866'),
-(13, 188, 'Philippine Heart Center, East Avenue, Diliman, Quezon City, Metro Manila, Philippines', '14.6440237', '121.0481304', 'Quezon', 'Philippine Heart Center', 'The Philippine Heart Center is a hospital in Central, Quezon City, Philippines, specializing in the treatment of heart ailments. It was established in 1975', 'Public Hospital', '', 10, '', 10, '', 'https://www.phc.gov.ph/', '+639123456789'),
+(10, 185, 'Cebu City Sports Center, Osmeña Blvd, Cebu City, Cebu, Philippines', '', '', 'Cebu', 'Cebu Doctors University Hospital', 'Cebu Doctors\' University Hospital is a leading tertiary level hospital in the Southern Phillipines. It was founded in 1972 and today has 300 beds and 1200 employees, 326 of which are medical doctors. The hospital is also a comprehensive medical education ', 'Public Hospital', '', 94, '', 77, 'Yes', 'https://cebudocgroup.com.ph/', '+638675576866'),
+(13, 188, 'Philippine Heart Center, East Ave, Diliman, Quezon City, Metro Manila, Philippines', '14.6440237', '121.0481304', 'Quezon', 'Philippine Heart Center', 'The Philippine Heart Center is a hospital in Central, Quezon City, Philippines, specializing in the treatment of heart ailments. It was established in 1975', 'Public Hospital', '', 9, '', 8, '', 'https://www.phc.gov.ph/', '+639123456789'),
 (14, 189, '1001 Mindanao Avenue, Brgy, Quezon City, 1106 Metro Manila', '', '', '', 'Metro North Medical Center Hospital', '', 'Private Hospital', '', 60, '', 48, '', '0', '+631513513513'),
 (15, 190, 'Metro Iloilo Hospital and Medical Center, Inc., Metropolis Avenue, Jaro, Iloilo City, Iloilo, Philippines', '10.762569', '122.5806212', 'Iloilo', 'Metro Iloilo Hospital and Medical Center, Inc.', 'MIHMCI PROVIDES THE HIGHEST QUALITY PATIENT-FOCUSED HEALTHCARE THROUGH A HOLISTIC, SCIENTIFIC, AND EVIDENCE-BASED APPROACH, AND DELIVERED BY COMPETENT, ETHICAL AND COMPASSIONATE HEALTHCARE PROFESSIONALS UTILIZING STATE-OF-THE-ART MEDICAL TECHNOLOGY, EQUIP', 'Private Hospital', '', 10, '', 20, '', 'https://www.metroiloilohospital.com', '+639856758867'),
 (16, 191, '2 Amorsolo Street, Legazpi Village, Makati, Kalakhang Maynila, Philippines', '14.559025', '121.0146004', 'Makati', 'Makati Medical Center', 'Makati Medical Center, also known as Makati Med, is a tertiary hospital in Makati, Metro Manila, Philippines with more than 600 beds. The hospital was founded on May 31, 1969. ', 'Private Hospital', '', 44, '', 62, '', 'https://www.makatimed.net.ph/', '+630897089156'),
@@ -588,9 +595,7 @@ INSERT INTO `referralfiles` (`referral_id`, `booking_id`, `file_name`, `file_dir
 (126, 234, 'Swiftcare Ph Logo Bg', '../web/referral-images/swiftcare-ph-logo-bg.png'),
 (127, 234, 'Your Health, Our Priority', '../web/referral-images/Your Health, Our Priority.png'),
 (167, 251, 'Makati Medical Center', '../web/referral-images/Makati-Medical-Center.jpg'),
-(168, 252, 'Patient Referral', '../web/referral-images/patient referral.png'),
 (170, 254, 'Bg3 (1)', '../web/referral-images/bg3 (1).jpg'),
-(171, 255, 'Patient Referral', '../web/referral-images/patient referral.png'),
 (172, 256, 'Metro North Medical Center And Hospital Metro Manila 1460981885 5714d07d8f551', '../web/referral-images/metro-north-medical-center-and-hospital-metro-manila-1460981885-5714d07d8f551.jpg');
 
 -- --------------------------------------------------------
@@ -639,6 +644,7 @@ CREATE TABLE `rejectedreservations` (
   `phonenumber` varchar(250) NOT NULL,
   `email` varchar(250) NOT NULL,
   `concern` varchar(250) NOT NULL,
+  `severity` varchar(255) NOT NULL,
   `specifyconcern` varchar(250) NOT NULL,
   `hospitalname` varchar(250) NOT NULL,
   `reservationtype` varchar(250) NOT NULL,
@@ -651,14 +657,14 @@ CREATE TABLE `rejectedreservations` (
 -- Dumping data for table `rejectedreservations`
 --
 
-INSERT INTO `rejectedreservations` (`ID`, `user_id`, `listing_id`, `firstname`, `lastname`, `date`, `time`, `phonenumber`, `email`, `concern`, `specifyconcern`, `hospitalname`, `reservationtype`, `timestamp`, `booking_timestamp`, `remarks`) VALUES
-(44, 96, 10, 'Lame', 'Prince', '2022-04-27', '09:04', '09125253535', ' hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-21 02:53:02', '2022-04-16 17:32:22', 'Rejected'),
-(46, 98, 8, 'Makisig', 'Morales', '2022-04-30', '09:00', '09123456789', ' nior3210@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'room', '2022-04-21 12:32:46', '2022-04-16 10:35:29', 'Rejected'),
-(50, 95, 8, 'Jose', 'Alvarez', '2022-04-23', '09:00', '09887868878', ' larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:32:59', '2022-04-15 13:16:50', ''),
-(54, 96, 10, 'Robin', 'Hood', '2022-04-28', '00:00', '09125253535', ' hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-16 13:18:20', '2022-04-16 17:59:08', ''),
-(55, 96, 10, 'Dalisay', 'Velasco', '2022-04-21', '06:00', '09125253535', ' hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-21 12:35:53', '2022-04-16 21:39:29', ''),
-(56, 110, 8, 'Honesto', 'Rodriguez\n\n', '2022-04-20', '09:00', '09123456789', ' nior3210@gmail.com', 'Non-Covid', 'for referral', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:33:19', '2022-04-17 16:02:31', ''),
-(58, 99, 10, 'Sherwin', 'Legazpi', '2022-04-28', '09:00', '09123232323', ' hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-23 08:52:30', '2022-04-21 20:28:30', 'Rejected');
+INSERT INTO `rejectedreservations` (`ID`, `user_id`, `listing_id`, `firstname`, `lastname`, `date`, `time`, `phonenumber`, `email`, `concern`, `severity`, `specifyconcern`, `hospitalname`, `reservationtype`, `timestamp`, `booking_timestamp`, `remarks`) VALUES
+(44, 96, 10, 'Lame', 'Prince', '2022-04-27', '09:04', '09125253535', ' hapatingajohnlerry@gmail.com', 'Covid', 'Severe', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-25 05:40:54', '2022-04-16 17:32:22', 'Rejected'),
+(46, 98, 8, 'Makisig', 'Morales', '2022-04-30', '09:00', '09123456789', ' nior3210@gmail.com', 'Covid', '', '', 'Amang Rodriguez Memorial Medical Center', 'room', '2022-04-21 12:32:46', '2022-04-16 10:35:29', 'Rejected'),
+(50, 95, 8, 'Jose', 'Alvarez', '2022-04-23', '09:00', '09887868878', ' larry.mabuti.jr@gmail.com', 'Covid', '', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:32:59', '2022-04-15 13:16:50', ''),
+(54, 96, 10, 'Robin', 'Hood', '2022-04-28', '00:00', '09125253535', ' hapatingajohnlerry@gmail.com', 'Covid', '', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-16 13:18:20', '2022-04-16 17:59:08', ''),
+(55, 96, 10, 'Dalisay', 'Velasco', '2022-04-21', '06:00', '09125253535', ' hapatingajohnlerry@gmail.com', 'Covid', '', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-21 12:35:53', '2022-04-16 21:39:29', ''),
+(56, 110, 8, 'Honesto', 'Rodriguez\n\n', '2022-04-20', '09:00', '09123456789', ' nior3210@gmail.com', 'Non-Covid', '', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-25 05:40:15', '2022-04-17 16:02:31', ''),
+(58, 99, 10, 'Sherwin', 'Legazpi', '2022-04-28', '09:00', '09123232323', ' hapatingajohnlerry@gmail.com', 'Covid', '', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-23 08:52:30', '2022-04-21 20:28:30', 'Rejected');
 
 -- --------------------------------------------------------
 
@@ -699,6 +705,7 @@ CREATE TABLE `upcomingreservations` (
   `phonenumber` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `concern` varchar(255) NOT NULL,
+  `severity` varchar(255) NOT NULL,
   `specifyconcern` varchar(255) NOT NULL,
   `hospitalname` varchar(255) NOT NULL,
   `reservationtype` varchar(255) NOT NULL,
@@ -710,12 +717,13 @@ CREATE TABLE `upcomingreservations` (
 -- Dumping data for table `upcomingreservations`
 --
 
-INSERT INTO `upcomingreservations` (`ID`, `reservation_code`, `user_id`, `listing_id`, `firstname`, `lastname`, `fullname`, `date`, `time`, `phonenumber`, `email`, `concern`, `specifyconcern`, `hospitalname`, `reservationtype`, `timestamp`, `booking_timestamp`) VALUES
-(47, 'SCPHRES860395', 95, 8, 'Riza', 'Harris', 'Riza Harris', '2022-04-29', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:32:24', '2022-04-15 12:31:31'),
-(49, 'SCPHRES396669', 98, 8, 'Amor', 'Dela Cruz', 'Amor Dela cruz', '2022-04-23', '09:00', '09123456789', 'nior3210@gmail.com', 'Non-Covid', 'for referral', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:32:32', '2022-04-16 10:00:05'),
-(51, 'SCPHRES400164', 96, 10, 'Flordeliza ', 'Rodrigues', 'Flordeliza Rodriguez', '2022-04-27', '09:00', '09125253535', 'hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-21 12:32:48', '2022-04-15 22:40:32'),
-(55, 'SCPHRES296516', 98, 8, 'Marife ', 'Mercado', 'Marife Mercado', '2022-04-23', '09:00', '09123456789', 'nior3210@gmail.com', 'Covid', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:32:58', '2022-04-16 21:15:06'),
-(56, 'SCPHRES666259', 99, 10, 'William', 'Morales', 'William Morales', '2022-04-30', '09:00', '09123513535', 'hapatingajohnlerry@gmail.com', 'Covid', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-23 08:49:56', '2022-04-22 14:05:30');
+INSERT INTO `upcomingreservations` (`ID`, `reservation_code`, `user_id`, `listing_id`, `firstname`, `lastname`, `fullname`, `date`, `time`, `phonenumber`, `email`, `concern`, `severity`, `specifyconcern`, `hospitalname`, `reservationtype`, `timestamp`, `booking_timestamp`) VALUES
+(47, 'SCPHRES860395', 95, 8, 'Riza', 'Harris', 'Riza Harris', '2022-04-29', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', '', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-21 12:32:24', '2022-04-15 12:31:31'),
+(51, 'SCPHRES400164', 96, 10, 'Flordeliza ', 'Rodrigues', 'Flordeliza Rodriguez', '2022-04-27', '09:00', '09125253535', 'hapatingajohnlerry@gmail.com', 'Covid', '', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-21 12:32:48', '2022-04-15 22:40:32'),
+(56, 'SCPHRES666259', 99, 10, 'William', 'Morales', 'William Morales', '2022-04-30', '09:00', '09123513535', 'hapatingajohnlerry@gmail.com', 'Covid', '', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-23 08:49:56', '2022-04-22 14:05:30'),
+(57, 'SCPHRES146709', 98, 13, 'Michael', 'magsaya', 'Michael magsaya', '2022-04-27', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', 'Severe', '', 'Philippine Heart Center', 'bed', '2022-04-25 03:57:55', '2022-04-25 11:27:18'),
+(58, 'SCPHRES983501', 98, 13, 'Jona', 'Carbungco', 'Jona Carbungco', '2022-04-29', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', 'Asymptomatic', '', 'Philippine Heart Center', 'room', '2022-04-25 03:57:37', '2022-04-25 11:56:44'),
+(59, 'SCPHRES263420', 99, 10, 'Spongebob', 'Squarepants', 'Spongebob Squarepants', '2022-05-06', '09:00', '09123513535', 'hapatingajohnlerry@gmail.com', 'Covid', 'Asymptomatic', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-25 05:39:26', '2022-04-25 13:21:31');
 
 -- --------------------------------------------------------
 
@@ -748,14 +756,12 @@ CREATE TABLE `userbooking` (
 INSERT INTO `userbooking` (`ID`, `user_id`, `listing_id`, `patientFirstName`, `patientLastName`, `patientDate`, `patientTime`, `patientPhoneNumber`, `patientEmail`, `patientConcern`, `severity`, `patientSpecifyConcern`, `patientHospitalName`, `patientReservationType`, `bookingTimestamp`) VALUES
 (214, 95, 9, 'Fermin', 'Pablo', '2022-04-21', '09:00', '09887868878', 'nior3210@gmail.com', 'Covid', '', '', 'Mount Banawe General Hospital', 'bed', '2022-04-21 12:27:17'),
 (215, 95, 9, 'Rizaldo', 'Andres', '2022-04-21', '09:00', '09887868878', 'nior3210@gmail.com', 'Covid', '', '', 'Mount Banawe General Hospital', 'bed', '2022-04-21 12:27:40'),
-(230, 98, 8, 'Joshua', 'Montreal', '2022-04-23', '09:00', '09123456789', 'nior3210@gmail.com', 'Non-Covid', '', 'Fractured Ribs', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-16 07:59:31'),
-(234, 96, 10, 'Restituto', 'Pena', '2022-04-30', '09:00', '09125253535', 'hapatingajohnlerry@gmail.com', 'Covid', '', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-21 12:27:56'),
+(234, 96, 10, 'Restituto', 'Pena', '2022-04-30', '09:00', '09125253535', 'hapatingajohnlerry@gmail.com', 'Covid', 'Severe', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-25 05:19:45'),
 (238, 96, 10, 'Igme', 'Lucas', '2022-04-30', '09:00', '09123232323', 'hapatingajohnlerry@gmail.com', 'Covid', '', '', 'Cebu Doctors University Hospital', 'bed', '2022-04-21 12:28:18'),
 (251, 99, 10, 'Spongebob', 'Squarepants', '2022-04-30', '09:00', '09123513535', 'hapatingajohnlerry@gmail.com', 'Asymptomatic', 'Covid', '', 'Cebu Doctors University Hospital', 'room', '2022-04-22 05:35:36'),
-(252, 98, 8, 'Nicole', 'Marquez', '2022-04-23', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', 'Asymptomatic', '', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-22 06:02:50'),
 (254, 99, 10, 'Roger', 'Chua', '2022-04-30', '09:00', '09123513535', 'hapatingajohnlerry@gmail.com', 'Non - Covid', 'Non - Covid', 'Kapogian', 'Cebu Doctors University Hospital', 'bed', '2022-04-22 06:07:22'),
-(255, 98, 8, 'Nicole', 'Marquez', '2022-04-23', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Non-Covid', 'Non-Covid', 'Mild tuberculosis', 'Amang Rodriguez Memorial Medical Center', 'bed', '2022-04-22 06:19:43'),
-(256, 99, 10, 'Spongebob', 'Squarepants', '2022-04-30', '09:00', '09123513535', 'hapatingajohnlerry@gmail.com', 'Non-Covid', 'Non-Covid', 'Bone Fracture', 'Cebu Doctors University Hospital', 'bed', '2022-04-22 06:22:22');
+(256, 99, 10, 'Spongebob', 'Squarepants', '2022-04-30', '09:00', '09123513535', 'hapatingajohnlerry@gmail.com', 'Non-Covid', 'Non-Covid', 'Bone Fracture', 'Cebu Doctors University Hospital', 'bed', '2022-04-22 06:22:22'),
+(258, 98, 13, 'mark', 'Tenejeros', '2022-04-29', '09:00', '09887868878', 'larry.mabuti.jr@gmail.com', 'Covid', 'Mild-to-moderate', '', 'Philippine Heart Center', 'bed', '2022-04-25 03:50:37');
 
 -- --------------------------------------------------------
 
@@ -1002,13 +1008,13 @@ ALTER TABLE `citydata`
 -- AUTO_INCREMENT for table `completedreservations`
 --
 ALTER TABLE `completedreservations`
-  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT for table `expiredreservations`
 --
 ALTER TABLE `expiredreservations`
-  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `hospitalaccount`
@@ -1068,7 +1074,7 @@ ALTER TABLE `pendingadminsignup`
 -- AUTO_INCREMENT for table `referralfiles`
 --
 ALTER TABLE `referralfiles`
-  MODIFY `referral_id` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
+  MODIFY `referral_id` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
 
 --
 -- AUTO_INCREMENT for table `rejectedhospital`
@@ -1092,13 +1098,13 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT for table `upcomingreservations`
 --
 ALTER TABLE `upcomingreservations`
-  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `ID` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `userbooking`
 --
 ALTER TABLE `userbooking`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=257;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=261;
 
 --
 -- AUTO_INCREMENT for table `userpatient`
