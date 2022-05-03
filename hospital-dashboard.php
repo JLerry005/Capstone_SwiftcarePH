@@ -125,7 +125,7 @@
                     
 
                     <!-- Pending Reservations Banner -->
-                    <div id="pending-reservations" onclick="anchor_to_pending()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-start-1 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:shadow-md hover:shadow-blue-500 hover:cursor-pointer transition duration-700 ease-out flex items-center justify-between relative">
+                    <div id="pending-reservations" onclick="anchor_to_pending()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-start-1 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:shadow-md hover:cursor-pointer transition duration-200 ease-out flex items-center justify-between relative">
                         
                         <!-- Notification Ping -->
                         <!-- <div class="">
@@ -143,7 +143,7 @@
                     </div>
 
                     <!-- Upcoming Reservations Banner -->
-                    <div id="upcoming-reservations" onclick="anchor_to_upcoming()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:shadow-md hover:shadow-blue-500 hover:cursor-pointer transition duration-700 ease-out flex items-center justify-between">
+                    <div id="upcoming-reservations" onclick="anchor_to_upcoming()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:shadow-md hover:cursor-pointer transition duration-200 ease-out flex items-center justify-between">
                         <div class="hover:text-blue-500 transition duration-200 ease-in-out">
                             <h1 class="text-5xl font-bold" id="upcomingCountContainer"></h1>
                             <h1>Upcoming Reservations</h1>
@@ -154,7 +154,7 @@
                     </div>
 
                     <!-- Completed Banner -->
-                    <div id="history-reservations" onclick="anchor_to_history()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:shadow-md hover:shadow-blue-500 hover:cursor-pointer transition duration-700 ease-out flex items-center justify-between">
+                    <div id="history-reservations" onclick="anchor_to_history()" class="bg-white p-5 md:p-8 col-span-12 lg:col-span-4 2xl:col-span-4 rounded drop-shadow-md hover:scale-105 hover:shadow-md hover:cursor-pointer transition duration-200 ease-out flex items-center justify-between">
                         <div class="hover:text-blue-500 transition duration-200 ease-in-out">
                             <h1 class="text-5xl font-bold" id="completedCountContainer"></h1>
                             <h1>Completed</h1>

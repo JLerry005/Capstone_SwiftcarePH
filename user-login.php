@@ -45,7 +45,7 @@
                     <!-- User Password -->
                     <div class="mb-3 md:mb-6">
                         <label for="userPassword" class="block mb-2 text-sm md:text-md font-medium text-blue-500">Password</label>
-                        <input type="password" id="userPassword" name="userPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="••••••••" class="userPassword bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                        <input type="password" id="userPassword" name="userPassword" placeholder="••••••••" class="userPassword bg-gray-900 border border-blue-50 text-blue-50 text-lg rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                         <i id="passwordToggle" class="bi bi-eye-slash text-gray-300 absolute cursor-pointer 2xl:right-0 2xl:top-[520px] 2xl:mr-52 xl:right-0 xl:top-[490px] xl:mr-24 lg:right-0 lg:top-[490px] lg:mr-[95px] md:right-0 md:top-[490px] md:mr-[95px] sm:right-0 sm:top-[453px] sm:mr-[73px] right-0 top-[396px] mr-12"></i>
                         <div id="passwordHelpBlock" class="form-text">
                         </div>

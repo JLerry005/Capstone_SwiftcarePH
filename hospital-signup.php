@@ -270,8 +270,8 @@
                 </div>
 
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-danger btnTerms text-center" data-bs-dismiss="modal">Decline</button>
-                  <button type="button" class="btn btn-success btnTerms">Accept</button>
+                  <button type="button" class="btn btn-danger btnTerms text-center" data-bs-dismiss="modal">Close</button>
+                  <!-- <button type="button" class="btn btn-success btnTerms" data-bs-dismiss="modal">Accept</button> -->
                 </div>
               </div>
             </div>

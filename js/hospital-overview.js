@@ -717,7 +717,7 @@
         emailContainer.innerHTML = email;
 
         let selectConcernContainer = document.getElementById("selectConcernContainer");
-        selectConcernContainer.innerHTML = concern;
+        selectConcernContainer.innerHTML = hiddenvariable.value+' - '+concern;
 
         let specifyConcernContainer = document.getElementById("specifyConcernContainer");
         specifyConcernContainer.innerHTML = specifyConcern;
