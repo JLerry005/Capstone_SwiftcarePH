@@ -77,8 +77,8 @@
 
                         <!-- Hero section for small devices -->
                         <div class="md:hidden text-left space-y-2">
-                            <h1 class="font-bold text-xl text-orange-400">The Power of Heal</h1>
-                            <p>Lorem ipsum dolor, sit amet. Cum in, quas ut exercitationem provident.</p>
+                            <h1 class="font-bold text-xl text-orange-400">We Value Your Time.</h1>
+                            <p>Look for a hospital slot in the comfort of your own home.<br>Convenient, Safe, and Time Efficient.</p>
                             <button class="flex flex-1 items-center p-2 px-4 bg-orange-500 rounded-md text-sm">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                                     <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
