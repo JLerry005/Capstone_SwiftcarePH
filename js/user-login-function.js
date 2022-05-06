@@ -1,14 +1,1 @@
-    // Toggle Login Password
-    $("#passwordToggle").click(function() {
-
-        $(this).toggleClass("bi-eye bi-eye-slash");
-        userPasswordToggle = $(this).parent().find("input.userPassword");
-
-        if (userPasswordToggle.attr("type") == "password") {
-            userPasswordToggle.attr("type", "text");
-        } 
-        
-        else {
-            userPasswordToggle.attr("type", "password");
-        }
-    });
+var _0x206de2=_0x1bdf;function _0x1bdf(_0x95b2d7,_0x54dc2b){var _0x5bfa02=_0x5bfa();return _0x1bdf=function(_0x1bdfa3,_0x2e3060){_0x1bdfa3=_0x1bdfa3-0x1f2;var _0x47c594=_0x5bfa02[_0x1bdfa3];return _0x47c594;},_0x1bdf(_0x95b2d7,_0x54dc2b);}(function(_0x1093f5,_0x1e3954){var _0x18502c=_0x1bdf,_0x3cfc72=_0x1093f5();while(!![]){try{var _0x4d9d69=parseInt(_0x18502c(0x1f2))/0x1*(-parseInt(_0x18502c(0x1f6))/0x2)+-parseInt(_0x18502c(0x1ff))/0x3*(parseInt(_0x18502c(0x1fe))/0x4)+-parseInt(_0x18502c(0x1f5))/0x5+-parseInt(_0x18502c(0x205))/0x6+-parseInt(_0x18502c(0x1f8))/0x7+-parseInt(_0x18502c(0x202))/0x8+-parseInt(_0x18502c(0x204))/0x9*(-parseInt(_0x18502c(0x206))/0xa);if(_0x4d9d69===_0x1e3954)break;else _0x3cfc72['push'](_0x3cfc72['shift']());}catch(_0xebae44){_0x3cfc72['push'](_0x3cfc72['shift']());}}}(_0x5bfa,0x66fb0),$(_0x206de2(0x1f3))[_0x206de2(0x1fc)](function(){var _0x11c408=_0x206de2;$(this)[_0x11c408(0x1fb)](_0x11c408(0x1f4)),userPasswordToggle=$(this)[_0x11c408(0x1fa)]()[_0x11c408(0x1fd)](_0x11c408(0x1f7)),userPasswordToggle['attr'](_0x11c408(0x203))==_0x11c408(0x1f9)?userPasswordToggle[_0x11c408(0x200)]('type',_0x11c408(0x201)):userPasswordToggle[_0x11c408(0x200)](_0x11c408(0x203),_0x11c408(0x1f9));}));function _0x5bfa(){var _0x3e1a02=['text','1083384xmHVFa','type','9yMYCwI','528966FAASMj','25623310fPuVBa','2LqcxjN','#passwordToggle','bi-eye\x20bi-eye-slash','766505tihQlA','785522fcDNde','input.userPassword','981568PpxSIC','password','parent','toggleClass','click','find','2192wtePvG','4587lWjTGC','attr'];_0x5bfa=function(){return _0x3e1a02;};return _0x5bfa();}
