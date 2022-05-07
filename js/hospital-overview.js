@@ -1,1 +1,910 @@
-const _0x129f72=_0x1be4;(function(_0x5c8310,_0x1e4604){const _0x1986bc=_0x1be4,_0x57c098=_0x5c8310();while(!![]){try{const _0x1ff058=-parseInt(_0x1986bc(0x151))/0x1+-parseInt(_0x1986bc(0x130))/0x2*(parseInt(_0x1986bc(0x10e))/0x3)+parseInt(_0x1986bc(0xfc))/0x4*(-parseInt(_0x1986bc(0x114))/0x5)+-parseInt(_0x1986bc(0x156))/0x6+-parseInt(_0x1986bc(0x140))/0x7+parseInt(_0x1986bc(0xe2))/0x8*(parseInt(_0x1986bc(0x141))/0x9)+parseInt(_0x1986bc(0x17f))/0xa;if(_0x1ff058===_0x1e4604)break;else _0x57c098['push'](_0x57c098['shift']());}catch(_0x5142c0){_0x57c098['push'](_0x57c098['shift']());}}}(_0x5b0c,0x29d19));function _0x5b0c(){const _0x58a614=['\x20-\x20','duration-container','⚠️\x20Invalid\x20Mobile\x20Number!','DirectionsRenderer','show','latLng','test','Autocomplete','DRIVING','date_picker','lat','includes/insert-referral-images.php','select-concern-info','Get\x20my\x20current\x20location','36VSPoiH','File\x20type\x20not\x20allowed!','.image-gallery','concern','Leave\x20to\x20zero\x20(0)\x20if\x20there\x20are\x20no\x20slots\x20for\x20Bed.','classList','referralFilesInput','setVisible','specifyConcern','room-slot-info','Geolocation\x20is\x20not\x20supported\x20by\x20this\x20browser.','.mobileMenu','GET','Marker','short_name','disabled','2197573xRMlHS','27riZxZx','trim','addEventListener','value','includes/get-hospital-location.php','selecetConcern-error','legs','hidden','user-id-placeholder','geocode','reservationType','viewport','DirectionsStatus','getDirections','setZoom','firstName','135858SyrVHW','reviewDetailsModal','specifyConcern-error','Map','open','678282YlCqWo','load','maps','setPosition','\x20km','getMonth','⚠️\x20Email\x20Address\x20is\x20required!','dragend','getFullYear','preventDefault','Choose\x20your\x20file\x20first!','address_components','geometry','append','emailAddress','replace','GeocoderStatus','ajax','lastName','getCurrentPosition','toggle','images[]','display','submitButton','Specify\x20your\x20concern\x20here.','setCenter','hamburger-button','⚠️\x20Invalid\x20Mobile\x20number!','phoneNumber','get','hidden-variable','TravelMode','Asymptomatic','lng','remove','innerHTML','⚠️\x20Mobile\x20Number\x20is\x20required','selectConcernContainer','invalidInput','querySelector','#concern','9212610EUWPnW','location','disabled-blurred','hide','log','geolocation','⚠️\x20Reservation\x20date\x20is\x20required!','⚠️\x20Firstname\x20is\x20required!','distance','listingID','onclick','⚠️\x20You\x20can\x27t\x20choose\x20the\x20Date\x20today!','length','files','referral-placeholder','min','val','bounds','⚠️\x20Firstname\x20must\x20not\x20contain\x20any\x20Numbers\x20or\x20Special\x20Characters!','point\x20B','specifyConcernContainer','lastnameContainer','248568EqaRcd','http://localhost/Capstone/reservation-success','includes/user-booking-form-inc.php','dateInput-error','referral-slot-info','Geocoder','Non-Covid','trigger','getElementById','block','⚠️\x20Lastname\x20must\x20not\x20contain\x20any\x20Numbers\x20or\x20Special\x20Characters!','login-for-booking','style','POST','Severe','hospitalNameContainer','dateContainer','click','bindTo','getLocationButton','DirectionsService','join','none','place_changed','change','10\x20uploads\x20lang!','36OHifJP','#date_picker','btn-close-menu','alertModal','setDirections','duration','readyState','addListener','timeContainer','.main-container','parse','Critical','Mild-to-moderate','post','reservation-loader','getPosition','send','includes/get-booking-count-inc.php','31128KFTMid','hospitalName','exec','reservationType-error','user-location','readystatechange','51985vQtwYE','booking-modal-body','text','event','firstName-error','booking-form-login-container','lastName-error','route','add','phoneNumber-error','time','getDate','Covid','#btnBookingNow'];_0x5b0c=function(){return _0x58a614;};return _0x5b0c();}const btnGetLocation=document['getElementById'](_0x129f72(0xf5));tippy(btnGetLocation,{'content':_0x129f72(0x12f)});let coordinates;btnGetLocation['onclick']=function(_0x499ce4){const _0x3f76bb=_0x129f72;_0x499ce4[_0x3f76bb(0x15f)](),navigator[_0x3f76bb(0x184)]?navigator[_0x3f76bb(0x184)][_0x3f76bb(0x169)](console['log'],console[_0x3f76bb(0x183)]('Error')):alert(_0x3f76bb(0x13a));};let stringLat,stringLng;getLatLong();function getLatLong(){const _0x466137=_0x129f72;let _0x55a95b=document[_0x466137(0xea)](_0x466137(0xd5))[_0x466137(0x144)];$[_0x466137(0x167)]({'method':_0x466137(0x13c),'url':_0x466137(0x145),'data':{'listingID':_0x55a95b},'success':function(_0x519966){const _0x152eaf=_0x466137;let _0x375497=JSON[_0x152eaf(0x106)](_0x519966),_0x3690ae=_0x375497[_0x152eaf(0x12c)],_0x149dbb=_0x375497[_0x152eaf(0x177)];initMap(_0x3690ae,_0x149dbb);}});}function initMap(_0xfca678,_0x1cd5ab){const _0x4a05a5=_0x129f72;let _0x31772c=parseFloat(_0xfca678),_0x4c85c3=parseFloat(_0x1cd5ab);console[_0x4a05a5(0x183)](_0x31772c),console['log'](_0x4c85c3);let _0x52d290=14.5764,_0x5735e2=121.0851,_0x6b7f6a={'lat':_0x31772c,'lng':_0x4c85c3};var _0xefbb2={'lat':_0x52d290,'lng':_0x5735e2},_0x54c1c8={'zoom':0x7,'center':_0x6b7f6a},_0x501975=new google[(_0x4a05a5(0x158))][(_0x4a05a5(0x154))](document[_0x4a05a5(0xea)]('map-canvas'),_0x54c1c8),_0x473c2b=new google[(_0x4a05a5(0x158))][(_0x4a05a5(0xf6))](),_0x42a7af=new google[(_0x4a05a5(0x158))][(_0x4a05a5(0x125))]({'map':_0x501975,'draggable':!![]}),_0x1e091d=new google[(_0x4a05a5(0x158))][(_0x4a05a5(0x13d))]({'position':_0xefbb2,'title':'point\x20A','label':'A','map':_0x501975,'draggable':!![]}),_0x100a64=new google[(_0x4a05a5(0x158))][(_0x4a05a5(0x13d))]({'position':_0x6b7f6a,'title':_0x4a05a5(0xdf),'label':'B','map':_0x501975}),_0x50213c=document['getElementById'](_0x4a05a5(0x112)),_0x5a69d4=new google[(_0x4a05a5(0x158))]['places'][(_0x4a05a5(0x129))](_0x50213c);_0x5a69d4[_0x4a05a5(0xf4)](_0x4a05a5(0xdd),_0x501975),_0x42a7af[_0x4a05a5(0x103)]('directions_changed',()=>{const _0x5d635f=_0x4a05a5,_0x405053=_0x42a7af[_0x5d635f(0x14e)]();_0x405053&&_0x36322b(_0x405053);}),_0x5183a7(_0x1e091d[_0x4a05a5(0x10b)]()),google[_0x4a05a5(0x158)][_0x4a05a5(0x117)]['addListener'](_0x1e091d,_0x4a05a5(0x15d),function(){const _0x1768f4=_0x4a05a5;_0x501975[_0x1768f4(0x16f)](_0x1e091d['getPosition']()),_0x5183a7(_0x1e091d['getPosition']()),_0x1e091d['setVisible'](![]),_0x100a64[_0x1768f4(0x137)](![]),_0xefbb2[_0x1768f4(0x12c)]=_0x1e091d[_0x1768f4(0x10b)]()[_0x1768f4(0x12c)](),_0xefbb2[_0x1768f4(0x177)]=_0x1e091d[_0x1768f4(0x10b)]()[_0x1768f4(0x177)](),_0x22de93(_0x473c2b,_0x42a7af,_0xefbb2,_0x6b7f6a);}),google[_0x4a05a5(0x158)][_0x4a05a5(0x117)][_0x4a05a5(0x103)](_0x501975,_0x4a05a5(0xf3),function(_0x5128cd){const _0x20c263=_0x4a05a5;_0x1e091d[_0x20c263(0x159)](_0x5128cd[_0x20c263(0x127)]),_0x501975[_0x20c263(0x16f)](_0x1e091d[_0x20c263(0x10b)]()),_0x5183a7(_0x1e091d[_0x20c263(0x10b)]()),_0x1e091d[_0x20c263(0x137)](![]),_0x100a64[_0x20c263(0x137)](![]),_0xefbb2[_0x20c263(0x12c)]=_0x1e091d[_0x20c263(0x10b)]()[_0x20c263(0x12c)](),_0xefbb2[_0x20c263(0x177)]=_0x1e091d[_0x20c263(0x10b)]()[_0x20c263(0x177)](),_0x22de93(_0x473c2b,_0x42a7af,_0xefbb2,_0x6b7f6a);}),google['maps'][_0x4a05a5(0x117)][_0x4a05a5(0x103)](_0x5a69d4,_0x4a05a5(0xf9),function(){const _0x134d2f=_0x4a05a5;_0x1e091d[_0x134d2f(0x137)](![]),_0x100a64[_0x134d2f(0x137)](![]);var _0x5cbc3f=_0x5a69d4['getPlace']();if(!_0x5cbc3f[_0x134d2f(0x162)])return;_0x5cbc3f['geometry'][_0x134d2f(0x14c)]?_0x501975['fitBounds'](_0x5cbc3f[_0x134d2f(0x162)]['viewport']):(_0x501975[_0x134d2f(0x16f)](_0x5cbc3f[_0x134d2f(0x162)][_0x134d2f(0x180)]),_0x501975[_0x134d2f(0x14f)](0x11));_0x1e091d['setPosition'](_0x5cbc3f[_0x134d2f(0x162)][_0x134d2f(0x180)]),_0xefbb2['lat']=_0x1e091d[_0x134d2f(0x10b)]()[_0x134d2f(0x12c)](),_0xefbb2[_0x134d2f(0x177)]=_0x1e091d['getPosition']()[_0x134d2f(0x177)](),console[_0x134d2f(0x183)](_0xefbb2),_0x22de93(_0x473c2b,_0x42a7af,_0xefbb2,_0x6b7f6a,_0x1e091d);var _0x2015f1='';_0x5cbc3f[_0x134d2f(0x161)]&&(_0x2015f1=[_0x5cbc3f[_0x134d2f(0x161)][0x0]&&_0x5cbc3f['address_components'][0x0][_0x134d2f(0x13e)]||'',_0x5cbc3f[_0x134d2f(0x161)][0x1]&&_0x5cbc3f[_0x134d2f(0x161)][0x1][_0x134d2f(0x13e)]||'',_0x5cbc3f[_0x134d2f(0x161)][0x2]&&_0x5cbc3f[_0x134d2f(0x161)][0x2][_0x134d2f(0x13e)]||''][_0x134d2f(0xf7)]('\x20'));});function _0x36322b(_0x3ec88f){const _0x29163a=_0x4a05a5;let _0x2f88fe=0x0,_0x55604f;const _0x5582fa=_0x3ec88f['routes'][0x0];if(!_0x5582fa)return;for(let _0x31b1f2=0x0;_0x31b1f2<_0x5582fa['legs'][_0x29163a(0xd8)];_0x31b1f2++){_0x2f88fe+=_0x5582fa[_0x29163a(0x147)][_0x31b1f2][_0x29163a(0x187)][_0x29163a(0x144)],_0x55604f=_0x5582fa[_0x29163a(0x147)][_0x31b1f2][_0x29163a(0x101)][_0x29163a(0x116)];}_0x2f88fe=_0x2f88fe/0x3e8,document[_0x29163a(0xea)]('distance-container')[_0x29163a(0x179)]=_0x2f88fe+_0x29163a(0x15a),document['getElementById'](_0x29163a(0x123))['innerHTML']=_0x55604f;}function _0x5183a7(_0x5746ef){const _0x27ce36=_0x4a05a5;geocoder=new google[(_0x27ce36(0x158))][(_0x27ce36(0xe7))](),geocoder[_0x27ce36(0x14a)]({'latLng':_0x5746ef},function(_0x42cece,_0x39a165){const _0x1b8ac6=_0x27ce36;if(_0x39a165==google['maps'][_0x1b8ac6(0x166)]['OK'])document[_0x1b8ac6(0xea)](_0x1b8ac6(0x112))[_0x1b8ac6(0x144)]=_0x42cece[0x0]['formatted_address'];else{}});}function _0x22de93(_0x438764,_0x8a5d31,_0x5c4ab6,_0x103040,_0x46c11f){const _0x336394=_0x4a05a5;_0x438764[_0x336394(0x11b)]({'origin':_0x5c4ab6,'destination':_0x103040,'travelMode':google['maps'][_0x336394(0x175)][_0x336394(0x12a)]},function(_0x465fb7,_0x344b8f){const _0x56d83c=_0x336394;if(_0x344b8f==google[_0x56d83c(0x158)][_0x56d83c(0x14d)]['OK'])_0x8a5d31[_0x56d83c(0x100)](_0x465fb7);else{}});}}window[_0x129f72(0x143)](_0x129f72(0x157),_0x2ca24b=>{initialize();});function initialize(){initMap();}const btnBurgerButton=document['getElementById'](_0x129f72(0x170)),sidebar=document[_0x129f72(0x17d)](_0x129f72(0x13b)),closeMenu=document[_0x129f72(0xea)](_0x129f72(0xfe));let contentsContainer=document[_0x129f72(0x17d)](_0x129f72(0x105));btnBurgerButton['addEventListener'](_0x129f72(0xf3),()=>{const _0x375e11=_0x129f72;sidebar[_0x375e11(0x135)][_0x375e11(0x16a)]('hidden');}),closeMenu[_0x129f72(0x143)](_0x129f72(0xf3),()=>{const _0xadd026=_0x129f72;sidebar[_0xadd026(0x135)][_0xadd026(0x16a)](_0xadd026(0x148));});var today=new Date(),dd=String(today[_0x129f72(0x11f)]())['padStart'](0x2,'0'),mm=String(today[_0x129f72(0x15b)]()+0x1)['padStart'](0x2,'0'),yyyy=today[_0x129f72(0x15e)]();today=yyyy+'-'+mm+'-'+dd,$(_0x129f72(0xfd))['attr'](_0x129f72(0xdb),today);function _0x1be4(_0x3169cc,_0x51b58a){const _0x5b0c0c=_0x5b0c();return _0x1be4=function(_0x1be442,_0x108065){_0x1be442=_0x1be442-0xd5;let _0x26c279=_0x5b0c0c[_0x1be442];return _0x26c279;},_0x1be4(_0x3169cc,_0x51b58a);}let datePicked;$(function(){const _0x5ea20d=_0x129f72;$('#date_picker')['on'](_0x5ea20d(0xfa),function(){const _0x3a5ea6=_0x5ea20d;datePicked=$(this)[_0x3a5ea6(0xdc)]();});});function anchor_to_form(){const _0x50bb75=_0x129f72;document[_0x50bb75(0xea)](_0x50bb75(0x119))['scrollIntoView']();}getBookingForm();function getBookingForm(){const _0x196f5f=_0x129f72;let _0x52491d=document[_0x196f5f(0xea)](_0x196f5f(0x149)),_0x17c5e6=document[_0x196f5f(0xea)]('booking-form-container'),_0x26a12e=document[_0x196f5f(0xea)](_0x196f5f(0xed));_0x52491d?(_0x17c5e6['style'][_0x196f5f(0x16c)]=_0x196f5f(0xeb),_0x26a12e[_0x196f5f(0xee)][_0x196f5f(0x16c)]=_0x196f5f(0xf8)):(_0x17c5e6[_0x196f5f(0xee)][_0x196f5f(0x16c)]=_0x196f5f(0xf8),_0x26a12e[_0x196f5f(0xee)][_0x196f5f(0x16c)]=_0x196f5f(0xeb));}function validateInputs(){}function validateFirstname(){const _0x3576d1=_0x129f72;let _0x4e5016=document[_0x3576d1(0xea)]('firstName');firstNameValue=_0x4e5016[_0x3576d1(0x144)][_0x3576d1(0x142)](),validFirstName=/^[A-Za-z\s]+$/,firstNameError=document[_0x3576d1(0xea)](_0x3576d1(0x118));if(firstNameValue=='')return _0x4e5016[_0x3576d1(0x135)][_0x3576d1(0x11c)]('invalidInput'),firstNameError['innerHTML']=_0x3576d1(0x186),![];else return!validFirstName['test'](firstNameValue)?(_0x4e5016['classList'][_0x3576d1(0x11c)]('invalidInput'),firstNameError[_0x3576d1(0x179)]=_0x3576d1(0xde),![]):(firstNameError['innerHTML']='',_0x4e5016[_0x3576d1(0x135)]['remove'](_0x3576d1(0x17c)),!![]);}function validateLastname(){const _0xa2fa9f=_0x129f72;let _0x423478=document[_0xa2fa9f(0xea)](_0xa2fa9f(0x168));lastNameValue=_0x423478[_0xa2fa9f(0x144)]['trim'](),validLastName=/^[A-Za-z\s]+$/,lastNameError=document[_0xa2fa9f(0xea)](_0xa2fa9f(0x11a));if(firstNameValue=='')return _0x423478['classList'][_0xa2fa9f(0x11c)](_0xa2fa9f(0x17c)),lastNameError[_0xa2fa9f(0x179)]='⚠️\x20Firstname\x20is\x20required!',![];else return!validLastName[_0xa2fa9f(0x128)](lastNameValue)?(_0x423478['classList'][_0xa2fa9f(0x11c)](_0xa2fa9f(0x17c)),lastNameError[_0xa2fa9f(0x179)]=_0xa2fa9f(0xec),![]):(lastNameError['innerHTML']='',_0x423478[_0xa2fa9f(0x135)]['remove'](_0xa2fa9f(0x17c)),!![]);}function invalidDate(){const _0x23fb4a=_0x129f72;let _0x1a2086=document['getElementById'](_0x23fb4a(0x12b)),_0x540768=document[_0x23fb4a(0xea)](_0x23fb4a(0xe5));if(datePicked==today)return _0x1a2086[_0x23fb4a(0x135)][_0x23fb4a(0x11c)](_0x23fb4a(0x17c)),_0x540768['innerHTML']=_0x23fb4a(0xd7),![];else return _0x1a2086[_0x23fb4a(0x144)]==''?(_0x1a2086[_0x23fb4a(0x135)][_0x23fb4a(0x11c)]('invalidInput'),_0x540768['innerHTML']=_0x23fb4a(0x185),![]):(_0x540768['innerHTML']='',_0x1a2086[_0x23fb4a(0x135)][_0x23fb4a(0x178)](_0x23fb4a(0x17c)),!![]);}function validateMobileNumber(){const _0x18a995=_0x129f72;let _0x5827d4=document['getElementById'](_0x18a995(0x172));mobileNumberValue=_0x5827d4[_0x18a995(0x144)]['trim'](),validMobileNumber=/^[0-9]*$/,mobileNumberErr=document['getElementById'](_0x18a995(0x11d));if(mobileNumberValue=='')return _0x5827d4[_0x18a995(0x135)]['add']('invalidInput'),mobileNumberErr[_0x18a995(0x179)]=_0x18a995(0x17a),![];else{if(mobileNumberValue[_0x18a995(0xd8)]>0xb||mobileNumberValue[_0x18a995(0xd8)]<0xa)return _0x5827d4['classList'][_0x18a995(0x11c)](_0x18a995(0x17c)),mobileNumberErr[_0x18a995(0x179)]=_0x18a995(0x171),![];else return!validMobileNumber[_0x18a995(0x128)](mobileNumberValue)?(_0x5827d4[_0x18a995(0x135)][_0x18a995(0x11c)](_0x18a995(0x17c)),mobileNumberErr[_0x18a995(0x179)]=_0x18a995(0x124),![]):(mobileNumberErr[_0x18a995(0x179)]='',_0x5827d4[_0x18a995(0x135)][_0x18a995(0x178)](_0x18a995(0x17c)),!![]);}}function validateEmail(){const _0x9922a=_0x129f72;let _0x47b095=document[_0x9922a(0xea)](_0x9922a(0x164));emailAddressValue=_0x47b095[_0x9922a(0x144)][_0x9922a(0x142)](),validEmailAddress=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,emailAddressError=document[_0x9922a(0xea)]('emailAddress-error');if(emailAddressValue=='')return _0x47b095[_0x9922a(0x135)]['add'](_0x9922a(0x17c)),emailAddressError[_0x9922a(0x179)]=_0x9922a(0x15c),![];else return!validEmailAddress[_0x9922a(0x128)](emailAddressValue)?(_0x47b095[_0x9922a(0x135)][_0x9922a(0x11c)](_0x9922a(0x17c)),emailAddressError[_0x9922a(0x179)]='⚠️\x20The\x20Email\x20Address\x20you\x20provided\x20is\x20invalid!',![]):(_0x47b095['classList'][_0x9922a(0x178)](_0x9922a(0x17c)),emailAddressError['innerHTML']='',!![]);}let concernInput=document[_0x129f72(0xea)]('concern'),specifyConcern=document[_0x129f72(0xea)](_0x129f72(0x138)),concernInputError=document[_0x129f72(0xea)](_0x129f72(0x146)),specifyConcernError=document[_0x129f72(0xea)](_0x129f72(0x153));specifyConcernError[_0x129f72(0x179)]='',specifyConcern[_0x129f72(0x135)][_0x129f72(0x11c)](_0x129f72(0x13f));let hiddenvariable=document[_0x129f72(0xea)](_0x129f72(0x174));$(_0x129f72(0x17e))[_0x129f72(0xfa)](function(){const _0x1d0e6a=_0x129f72;if($(this)[_0x1d0e6a(0xdc)]()==_0x1d0e6a(0x176))specifyConcern[_0x1d0e6a(0x144)]='',specifyConcernError[_0x1d0e6a(0x179)]='',specifyConcern[_0x1d0e6a(0x135)]['add'](_0x1d0e6a(0x13f)),specifyConcern[_0x1d0e6a(0x135)]['remove'](_0x1d0e6a(0x17c)),hiddenvariable[_0x1d0e6a(0x144)]=_0x1d0e6a(0x120),console[_0x1d0e6a(0x183)](hiddenvariable[_0x1d0e6a(0x144)]);else{if($(this)[_0x1d0e6a(0xdc)]()==_0x1d0e6a(0x108))specifyConcernError['innerHTML']='',specifyConcern[_0x1d0e6a(0x135)]['add'](_0x1d0e6a(0x13f)),specifyConcern[_0x1d0e6a(0x135)][_0x1d0e6a(0x178)](_0x1d0e6a(0x17c)),hiddenvariable[_0x1d0e6a(0x144)]=_0x1d0e6a(0x120),console[_0x1d0e6a(0x183)](hiddenvariable['value']);else{if($(this)[_0x1d0e6a(0xdc)]()==_0x1d0e6a(0xf0))specifyConcernError[_0x1d0e6a(0x179)]='',specifyConcern[_0x1d0e6a(0x135)][_0x1d0e6a(0x11c)](_0x1d0e6a(0x13f)),specifyConcern[_0x1d0e6a(0x135)][_0x1d0e6a(0x178)](_0x1d0e6a(0x17c)),hiddenvariable[_0x1d0e6a(0x144)]='Covid',console['log'](hiddenvariable[_0x1d0e6a(0x144)]);else{if($(this)[_0x1d0e6a(0xdc)]()==_0x1d0e6a(0x107))specifyConcernError['innerHTML']='',specifyConcern[_0x1d0e6a(0x135)]['add']('disabled'),specifyConcern[_0x1d0e6a(0x135)][_0x1d0e6a(0x178)]('invalidInput'),hiddenvariable[_0x1d0e6a(0x144)]=_0x1d0e6a(0x120),console['log'](hiddenvariable[_0x1d0e6a(0x144)]);else $(this)['val']()==_0x1d0e6a(0xe8)&&(specifyConcernError['innerHTML']=_0x1d0e6a(0x16e),specifyConcern[_0x1d0e6a(0x135)]['remove'](_0x1d0e6a(0x13f)),hiddenvariable['value']='Non-Covid',console[_0x1d0e6a(0x183)](hiddenvariable[_0x1d0e6a(0x144)]));}}}})[_0x129f72(0xe9)]('change');function validateConcern(){const _0x3948e5=_0x129f72;concernInputValue=concernInput['value'],specifyConcernValue=specifyConcern['value'];if(concernInputValue=='')return concernInput[_0x3948e5(0x135)][_0x3948e5(0x11c)](_0x3948e5(0x17c)),concernInputError[_0x3948e5(0x179)]='⚠️\x20Please\x20select\x20your\x20Concern!',![];else{if(concernInputValue==_0x3948e5(0x176))return specifyConcernError[_0x3948e5(0x179)]='',concernInputError['innerHTML']='',specifyConcern[_0x3948e5(0x135)][_0x3948e5(0x11c)](_0x3948e5(0x13f)),specifyConcern[_0x3948e5(0x135)][_0x3948e5(0x178)](_0x3948e5(0x17c)),concernInput[_0x3948e5(0x135)]['remove']('invalidInput'),!![];else{if(concernInputValue=='Mild-to-moderate')return specifyConcernError[_0x3948e5(0x179)]='',concernInputError[_0x3948e5(0x179)]='',specifyConcern[_0x3948e5(0x135)][_0x3948e5(0x11c)](_0x3948e5(0x13f)),specifyConcern[_0x3948e5(0x135)]['remove']('invalidInput'),concernInput[_0x3948e5(0x135)]['remove'](_0x3948e5(0x17c)),!![];else{if(concernInputValue==_0x3948e5(0xf0))return specifyConcernError[_0x3948e5(0x179)]='',concernInputError[_0x3948e5(0x179)]='',specifyConcern[_0x3948e5(0x135)]['add'](_0x3948e5(0x13f)),specifyConcern['classList']['remove']('invalidInput'),concernInput[_0x3948e5(0x135)][_0x3948e5(0x178)](_0x3948e5(0x17c)),!![];else{if(concernInputValue==_0x3948e5(0x107))return specifyConcernError[_0x3948e5(0x179)]='',concernInputError[_0x3948e5(0x179)]='',specifyConcern[_0x3948e5(0x135)][_0x3948e5(0x11c)](_0x3948e5(0x13f)),specifyConcern['classList'][_0x3948e5(0x178)](_0x3948e5(0x17c)),concernInput[_0x3948e5(0x135)][_0x3948e5(0x178)](_0x3948e5(0x17c)),!![];else{if(concernInputValue=='Non-Covid')return specifyConcern['classList'][_0x3948e5(0x178)](_0x3948e5(0x13f)),specifyConcernValue==''?(specifyConcern[_0x3948e5(0x135)][_0x3948e5(0x11c)]('invalidInput'),specifyConcernError[_0x3948e5(0x179)]='⚠️\x20Please\x20specify\x20your\x20concern!',![]):(specifyConcern[_0x3948e5(0x135)][_0x3948e5(0x178)](_0x3948e5(0x17c)),specifyConcernError['innerHTML']='',!![]);}}}}}}function validateReservationType(){const _0x2f336a=_0x129f72;let _0x2a8054=document[_0x2f336a(0xea)](_0x2f336a(0x14b)),_0x3587f7=document[_0x2f336a(0xea)](_0x2f336a(0x111));return reservationTypeValue=_0x2a8054['value'],reservationTypeValue==''?(_0x2a8054[_0x2f336a(0x135)][_0x2f336a(0x11c)](_0x2f336a(0x17c)),_0x3587f7['innerHTML']='⚠️\x20Please\x20select\x20your\x20Reservation\x20Type!',![]):(_0x2a8054[_0x2f336a(0x135)][_0x2f336a(0x178)]('invalidInput'),_0x3587f7['innerHTML']='',!![]);}function validateImages(){const _0xad4002=_0x129f72,_0xb1f881=document[_0xad4002(0xea)](_0xad4002(0x136));let _0x3d6a94=_0xb1f881[_0xad4002(0x144)];const _0x10d727=new XMLHttpRequest(),_0x9f5be2=new FormData();let _0x10268b=/(\.jpg|\.jpeg|\.png|\.gif)$/i;for(let _0x2fd74b of _0xb1f881[_0xad4002(0xd9)]){_0x9f5be2[_0xad4002(0x163)](_0xad4002(0x16b),_0x2fd74b);}let _0x119424=$(_0xb1f881)[_0xad4002(0x173)](0x0)['files'][_0xad4002(0xd8)],_0x161921=parseInt(_0x119424);if(_0x161921<0x1)return alert(_0xad4002(0x160)),![];else{if(!_0x10268b[_0xad4002(0x110)](_0x3d6a94))return alert(_0xad4002(0x131)),![];else return _0x161921>0xa?(alert(_0xad4002(0xfb)),![]):!![];}}$(_0x129f72(0x121))[_0x129f72(0xf3)](function(){const _0xac74a2=_0x129f72;let _0x98c897=document[_0xac74a2(0xea)](_0xac74a2(0x150))[_0xac74a2(0x144)],_0x392232=document[_0xac74a2(0xea)](_0xac74a2(0x168))[_0xac74a2(0x144)],_0x45e343=document[_0xac74a2(0xea)](_0xac74a2(0x12b))[_0xac74a2(0x144)],_0x1d7950=document['getElementById'](_0xac74a2(0x11e))[_0xac74a2(0x144)],_0x1571ad=document[_0xac74a2(0xea)](_0xac74a2(0x172))[_0xac74a2(0x144)],_0x44381d=document[_0xac74a2(0xea)](_0xac74a2(0x164))[_0xac74a2(0x144)],_0x321f0b=document[_0xac74a2(0xea)](_0xac74a2(0x133))[_0xac74a2(0x144)],_0x528097=document[_0xac74a2(0xea)](_0xac74a2(0x174))[_0xac74a2(0x144)],_0x179ac9=document[_0xac74a2(0xea)]('specifyConcern')['value'],_0x514115=document[_0xac74a2(0xea)](_0xac74a2(0x10f))[_0xac74a2(0x144)],_0x36f697=document['getElementById']('reservationType')[_0xac74a2(0x144)],_0x413565=document[_0xac74a2(0xea)](_0xac74a2(0xd5))[_0xac74a2(0x144)],_0xb2c9e=document[_0xac74a2(0xea)](_0xac74a2(0x149))[_0xac74a2(0x144)],_0xe36797=document['getElementById']('firstnameContainer');_0xe36797[_0xac74a2(0x179)]=_0x98c897;let _0x4fe1b7=document[_0xac74a2(0xea)](_0xac74a2(0xe1));_0x4fe1b7[_0xac74a2(0x179)]=_0x392232;let _0x1ccf14=document[_0xac74a2(0xea)](_0xac74a2(0xf2));_0x1ccf14[_0xac74a2(0x179)]=_0x45e343;let _0x47140f=document['getElementById'](_0xac74a2(0x104));_0x47140f[_0xac74a2(0x179)]=_0x1d7950;let _0x3e45b2=document['getElementById']('phoneNuberContainer');_0x3e45b2[_0xac74a2(0x179)]=_0x1571ad;let _0x11b993=document[_0xac74a2(0xea)]('emailContainer');_0x11b993['innerHTML']=_0x44381d;let _0x5a5fc9=document[_0xac74a2(0xea)](_0xac74a2(0x17b));_0x5a5fc9[_0xac74a2(0x179)]=hiddenvariable[_0xac74a2(0x144)]+_0xac74a2(0x122)+_0x321f0b;let _0x1d6501=document[_0xac74a2(0xea)](_0xac74a2(0xe0));_0x1d6501[_0xac74a2(0x179)]=_0x179ac9;let _0x4ee427=document[_0xac74a2(0xea)](_0xac74a2(0xf1));_0x4ee427['innerHTML']=_0x514115;let _0xf15b44=document[_0xac74a2(0xea)]('reservationTypeContainer');_0xf15b44[_0xac74a2(0x179)]=_0x36f697;let _0x22d4cb=document[_0xac74a2(0xea)](_0xac74a2(0xda))['value'];if(_0x22d4cb){if(!validateImages())return;}if(!validateFirstname()||!validateLastname()||!invalidDate()||!validateMobileNumber()||!validateEmail()||!validateConcern()||!validateReservationType())return;else{const _0x3a577b=document[_0xac74a2(0xea)](_0xac74a2(0x16d)),_0x280e02=document[_0xac74a2(0xea)]('cancelButton'),_0x4d319d=document[_0xac74a2(0xea)](_0xac74a2(0x115)),_0x13304c=document[_0xac74a2(0xea)](_0xac74a2(0x10a));if(!_0x22d4cb)$['ajax']({'method':_0xac74a2(0xef),'url':_0xac74a2(0x10d),'data':{'userID':_0xb2c9e},'success':function(_0x4c387c){const _0x4339be=_0xac74a2;let _0x2ac967=parseInt(_0x4c387c);if(_0x2ac967>=0x5){alertModalError()[_0x4339be(0x126)]();return;}else toggleModal('reviewDetailsModal',!![]),_0x3a577b[_0x4339be(0xd6)]=function(){const _0x321a3f=_0x4339be;$['ajax']({'method':_0x321a3f(0xef),'url':_0x321a3f(0xe4),'data':{'firstName':_0x98c897,'lastName':_0x392232,'date_picker':_0x45e343,'time':_0x1d7950,'phoneNumber':_0x1571ad,'email':_0x44381d,'concern':_0x321f0b,'severity':_0x528097,'specifyConcern':_0x179ac9,'hospitalName':_0x514115,'reservationType':_0x36f697,'listingID':_0x413565,'userID':_0xb2c9e},'beforeSend':function(){const _0x5a597a=_0x321a3f;_0x3a577b[_0x5a597a(0x135)]['add']('disabled'),_0x280e02['classList'][_0x5a597a(0x11c)](_0x5a597a(0x13f)),_0x4d319d[_0x5a597a(0x135)][_0x5a597a(0x11c)]('disabled-blurred'),$(_0x13304c)[_0x5a597a(0x126)]();},'success':function(_0x3af51f){const _0x187c77=_0x321a3f;toggleModal(_0x187c77(0x152),![]),$(_0x13304c)[_0x187c77(0x182)](),window[_0x187c77(0x180)][_0x187c77(0x165)](_0x187c77(0xe3));return;}});},_0x280e02[_0x4339be(0xd6)]=function(){const _0x53aae7=_0x4339be;toggleModal(_0x53aae7(0x152),![]);};}});else _0x22d4cb&&$[_0xac74a2(0x167)]({'method':_0xac74a2(0xef),'url':_0xac74a2(0x10d),'data':{'userID':_0xb2c9e},'success':function(_0x51ca1d){let _0xb070c2=parseInt(_0x51ca1d);if(_0xb070c2>=0x5){alert('Max\x20Bookings\x20Exceeded!');return;}else toggleModal('reviewDetailsModal',!![]),_0x3a577b['onclick']=function(){const _0x5476d4=_0x1be4;$[_0x5476d4(0x167)]({'method':_0x5476d4(0xef),'url':_0x5476d4(0xe4),'data':{'firstName':_0x98c897,'lastName':_0x392232,'date_picker':_0x45e343,'time':_0x1d7950,'phoneNumber':_0x1571ad,'email':_0x44381d,'concern':_0x321f0b,'severity':_0x528097,'specifyConcern':_0x179ac9,'hospitalName':_0x514115,'reservationType':_0x36f697,'listingID':_0x413565,'userID':_0xb2c9e},'beforeSend':function(){const _0x22fbf2=_0x5476d4;_0x3a577b[_0x22fbf2(0x135)]['add'](_0x22fbf2(0x13f)),_0x280e02[_0x22fbf2(0x135)][_0x22fbf2(0x11c)](_0x22fbf2(0x13f)),_0x4d319d['classList'][_0x22fbf2(0x11c)](_0x22fbf2(0x181)),$(_0x13304c)[_0x22fbf2(0x126)]();},'success':function(_0x10e6e0){const _0x9774e3=_0x5476d4,_0xd1014c=document['getElementById']('referralFilesInput'),_0x5cad1e=new XMLHttpRequest(),_0x3e2530=new FormData();for(let _0x4b459e of _0xd1014c['files']){_0x3e2530[_0x9774e3(0x163)](_0x9774e3(0x16b),_0x4b459e);}_0x5cad1e[_0x9774e3(0x155)](_0x9774e3(0x109),_0x9774e3(0x12d)),_0x5cad1e[_0x9774e3(0x10c)](_0x3e2530),_0x5cad1e['addEventListener'](_0x9774e3(0x113),function(_0x498a37){const _0x1aa508=_0x9774e3;this[_0x1aa508(0x102)]===0x4&&($(_0x13304c)[_0x1aa508(0x182)](),window[_0x1aa508(0x180)][_0x1aa508(0x165)](_0x1aa508(0xe3)));});}});},_0x280e02['onclick']=function(){const _0xed7c4d=_0x1be4;toggleModal(_0xed7c4d(0x152),![]);};}});}}),lightGallery(document[_0x129f72(0x17d)](_0x129f72(0x132)));function alertModalError(){toggleModal('alertModal',!![]);}function btnClose(){const _0x26be8f=_0x129f72;toggleModal(_0x26be8f(0xff),![]);}let selectConcernInfo=document[_0x129f72(0xea)](_0x129f72(0x12e)),roomSlotInfo=document['getElementById'](_0x129f72(0x139)),referralSlotInfo=document['getElementById'](_0x129f72(0xe6)),cityinfo=document[_0x129f72(0xea)]('city-info');tippy(selectConcernInfo,{'content':_0x129f72(0x134)});
+    // alert("Working!");
+
+    // Google Maps ----------------------------------------------------------------
+    const btnGetLocation =document.getElementById("getLocationButton");
+    tippy(btnGetLocation, {
+        content: "Get my current location",
+    });
+
+    let coordinates;
+    btnGetLocation.onclick = function (event) {
+        event.preventDefault();
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(console.log, console.log("Error"));
+
+            // alert("Lat:"++)
+
+
+        } else { 
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+
+    let stringLat;
+    let stringLng;
+    getLatLong();
+    function getLatLong() {
+        let listingID = document.getElementById("listingID").value;
+
+        $.ajax({
+            method: "GET",
+            url: "includes/get-hospital-location.php",
+            data: {listingID:listingID},
+            success: function (data) {
+                let fetchedData = JSON.parse(data);
+                let stringLat = fetchedData.lat;
+                let stringLng = fetchedData.lng;
+
+                initMap(stringLat, stringLng)
+
+                // document.getElementById("lat").value = stringLat;
+                // document.getElementById("lng").value = stringLng;
+                // hospitalLat = parseFloat(stringLat);
+                // hospitalLng = parseFloat(stringLng);
+
+                // console.log("Your Lat: "+hospitalLat);
+                // console.log("Your Long: "+hospitalLng);
+                // console.log(stringCoords);
+            }
+        });
+    }
+
+    function initMap(myLat, myLng) {
+
+        let finalLat = parseFloat(myLat);
+        let finalLng = parseFloat(myLng);
+
+        console.log(finalLat);
+        console.log(finalLng);
+
+        let lat = 14.5764;
+        let lng = 121.0851;
+
+        let pointB = {
+            lat: finalLat,
+            lng: finalLng
+        }
+
+        var pointA = {
+            lat: lat,
+            lng: lng
+            },
+
+            myOptions = {
+                zoom: 7,
+                center: pointB,
+                // componentRestrictions: { country: ["ph"] },
+                // fields: ["address_components", "geometry", "icon", "name"],
+                // types: ["address"]
+            },
+
+            map = new google.maps.Map(document.getElementById('map-canvas'), myOptions),
+
+            // Instantiate a directions service.
+            directionsService = new google.maps.DirectionsService,
+            directionsDisplay = new google.maps.DirectionsRenderer({
+                map: map,
+                draggable: true,
+
+                // panel: document.getElementById("panel")
+            }),
+
+            markerA = new google.maps.Marker({
+                position: pointA,
+                title: "point A",
+                label: "A",
+                map: map,
+                draggable: true
+            }),
+
+            markerB = new google.maps.Marker({
+                position: pointB,
+                title: "point B",
+                label: "B",
+                map: map,
+            });
+
+        // get places auto-complete when user type in location-text-box
+        var input = /** @type {HTMLInputElement} */
+            (
+            document.getElementById('user-location'));
+            
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo('bounds', map);
+        // var infowindow = new google.maps.InfoWindow();
+            
+        // Event listener for Directions Dragging
+        directionsDisplay.addListener("directions_changed", () => {
+            const directions = directionsDisplay.getDirections();
+
+            if (directions) {
+                computeTotalDistance(directions);
+            }
+        });
+
+        geocodePosition(markerA.getPosition());
+
+        // add dragend Event Listener to Marker -- Not Working
+        google.maps.event.addListener(markerA, 'dragend', function () {
+            map.setCenter(markerA.getPosition());
+            geocodePosition(markerA.getPosition());
+
+            // Hide Previous Marker
+            markerA.setVisible(false);
+            markerB.setVisible(false);
+
+            pointA.lat = markerA.getPosition().lat();
+            pointA.lng = markerA.getPosition().lng();
+
+            calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
+        });
+
+        // Add click event listener to map
+        google.maps.event.addListener(map, 'click', function(event) {
+            markerA.setPosition(event.latLng);
+            map.setCenter(markerA.getPosition());
+            geocodePosition(markerA.getPosition());
+
+            // Hide Previous Marker
+            markerA.setVisible(false);
+            markerB.setVisible(false);
+
+            pointA.lat = markerA.getPosition().lat();
+            pointA.lng = markerA.getPosition().lng();
+
+            calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
+        });
+            
+        
+        google.maps.event.addListener(autocomplete, 'place_changed', function () {
+            // Hide Previous Marker
+            markerA.setVisible(false);
+            markerB.setVisible(false);
+
+            var enteredLoc = autocomplete.getPlace();
+            
+            // var from_address = enteredLoc.formatted_address;
+            // // $('#origin').val(from_address);
+            // document.getElementById("destination").value = from_address;
+            if (!enteredLoc.geometry) {
+                return;
+            }
+            
+            // If the place has a geometry, then present it on a map.
+            if (enteredLoc.geometry.viewport) {
+                map.fitBounds(enteredLoc.geometry.viewport);
+            } 
+            else {
+                map.setCenter(enteredLoc.geometry.location);
+                map.setZoom(17); // Why 17? Because it looks good.
+            }
+
+            markerA.setPosition(enteredLoc.geometry.location);
+            pointA.lat = markerA.getPosition().lat();
+            pointA.lng = markerA.getPosition().lng();
+
+            console.log(pointA);
+
+            calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB, markerA);
+
+            // document.getElementById("lat").value = marker.getPosition().lat();
+            // document.getElementById("lng").value = marker.getPosition().lng();
+
+            var address = '';
+            if (enteredLoc.address_components) {
+                address = [
+                    (enteredLoc.address_components[0] && enteredLoc.address_components[0].short_name || ''), (enteredLoc.address_components[1] && enteredLoc.address_components[1].short_name || ''), (enteredLoc.address_components[2] && enteredLoc.address_components[2].short_name || '')
+                ].join(' ');
+            }
+            
+        });
+        
+        // Show Driving hours and Distance in km
+        function computeTotalDistance(result) {
+            let total = 0;
+            let duration;
+            const myroute = result.routes[0];
+
+            if (!myroute) {
+                return;
+            }
+
+            for (let i = 0; i < myroute.legs.length; i++) {
+                total += myroute.legs[i].distance.value;
+                duration = myroute.legs[i].duration.text;
+            }
+
+            total = total / 1000;
+            document.getElementById("distance-container").innerHTML = total + " km";
+            document.getElementById("duration-container").innerHTML = duration;
+
+        }
+
+        // Marker Position
+        function geocodePosition(pos) {
+            geocoder = new google.maps.Geocoder();
+            geocoder.geocode({
+                    latLng: pos
+                },
+                function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        document.getElementById("user-location").value = results[0].formatted_address;
+                    }else{
+                        //
+                    }
+                }
+            );
+        }
+
+        // display directions
+        function calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination, markerA) {
+            directionsService.route({
+                origin: origin,
+                destination: destination,
+                travelMode: google.maps.TravelMode.DRIVING
+            }, function(response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                    // let durationContainer = document.getElementById("duration-container");
+                    // durationContainer.innerHTML = response.routes[0].legs[0].duration.text;
+                    // directionsService.distance(response);
+                    // directionsService.duration(response);
+
+                } else {
+                    // window.alert('Directions request failed due to ' + status);
+                }
+            });
+        }
+    }
+
+    window.addEventListener('load', (event) => {
+        initialize();
+    });
+
+    function initialize() {
+        initMap();
+    }
+
+    // ------------------------------------------------------------------------------------------
+
+
+    const btnBurgerButton = document.getElementById("hamburger-button");
+    const sidebar = document.querySelector('.mobileMenu');
+    const closeMenu = document.getElementById("btn-close-menu");
+    let contentsContainer = document.querySelector('.main-container');
+
+    btnBurgerButton.addEventListener("click", () => {
+        sidebar.classList.toggle("hidden");
+    });
+
+    closeMenu.addEventListener("click", () => {
+        sidebar.classList.toggle("hidden");
+    });
+
+
+    // flatpickr("input[type=datetime-local]", {});
+
+    // var today = new Date();
+    // var dd = String(today.getDate()).padStart(2, '0');
+    // var mm = String(today.getMonth() + 1).padStart(2, '0');
+    // var yyyy = today.getFullYear();
+
+    // today = yyyy + '-' + mm + '-' + dd;
+    // $('#date_picker').attr('min',today);
+
+
+
+
+    // Date
+    var today = new Date();
+    // var numberOfDaysToAdd = parseInt(parts[0], 10);
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd;
+    $('#date_picker').attr('min',today);
+
+    // Check the date user picked
+    let datePicked;
+    $(function() {
+        $("#date_picker").on("change",function(){
+            datePicked = $(this).val();
+            // alert(datePicked);
+        });
+    });
+
+    // Anchor to booking form
+    function anchor_to_form() {
+        document.getElementById("booking-form-login-container").scrollIntoView();
+    }
+
+    // Get Booking Form
+    getBookingForm();
+
+    function getBookingForm() {
+        let userID = document.getElementById("user-id-placeholder");
+        let formContainer = document.getElementById("booking-form-container");
+        let loginForBooking = document.getElementById("login-for-booking");
+
+        if (userID) {
+            formContainer.style.display = "block";
+            loginForBooking.style.display = "none";
+        }else{
+            formContainer.style.display = "none";
+            loginForBooking.style.display = "block";
+        }
+    }
+
+    // Run Validate Functions
+    function validateInputs() {
+
+        // return validateFirstname() && validateLastname() && invalidDate();
+
+        // if (validateFirstname() && validateLastname() && invalidDate()) {
+        //     return true;
+        // }else{
+        //     return false;
+        // }
+    }
+
+    // Validate Firstname
+    function validateFirstname() {
+        let firstName = document.getElementById("firstName"); 
+
+        firstNameValue=firstName.value.trim(); 
+        validFirstName=/^[A-Za-z\s]+$/;
+        firstNameError=document.getElementById("firstName-error");
+
+        if(firstNameValue==""){
+            firstName.classList.add('invalidInput');
+            firstNameError.innerHTML="⚠️ Firstname is required!";
+            return false;
+        }
+        else if(!validFirstName.test(firstNameValue)){
+            firstName.classList.add('invalidInput');
+            firstNameError.innerHTML="⚠️ Firstname must not contain any Numbers or Special Characters!";
+            return false;
+        }
+        else{
+            firstNameError.innerHTML="";
+            firstName.classList.remove('invalidInput');
+            return true;   
+        }
+    }
+
+    // Validate Lastname
+    function validateLastname() {
+        let lastName = document.getElementById("lastName"); 
+
+        lastNameValue=lastName.value.trim(); 
+        validLastName=/^[A-Za-z\s]+$/;
+        lastNameError=document.getElementById("lastName-error");
+
+        if(firstNameValue==""){
+            lastName.classList.add('invalidInput');
+            lastNameError.innerHTML="⚠️ Firstname is required!";
+            return false;
+        }
+        else if(!validLastName.test(lastNameValue)){
+            lastName.classList.add('invalidInput');
+            lastNameError.innerHTML="⚠️ Lastname must not contain any Numbers or Special Characters!";
+            return false;
+        }
+        else{
+            lastNameError.innerHTML="";
+            lastName.classList.remove('invalidInput');
+            return true;   
+        }
+    }
+
+    // if picked date is invalid
+    function invalidDate() {
+        let dateInput = document.getElementById("date_picker"); 
+        let dateInputError = document.getElementById("dateInput-error"); 
+
+        if (datePicked == today) {
+            dateInput.classList.add('invalidInput');
+            dateInputError.innerHTML="⚠️ You can't choose the Date today!";
+            return false;
+        }
+        else if (dateInput.value == '') {
+            dateInput.classList.add('invalidInput');
+            dateInputError.innerHTML="⚠️ Reservation date is required!";
+            return false;
+        }else{
+            dateInputError.innerHTML="";
+            dateInput.classList.remove('invalidInput');
+            return true;
+        }
+    }
+
+    // Validate Mobile Number
+    function validateMobileNumber() {
+        let mobileNumber = document.getElementById("phoneNumber");
+
+        mobileNumberValue=mobileNumber.value.trim(); 
+        validMobileNumber=/^[0-9]*$/;
+        mobileNumberErr=document.getElementById('phoneNumber-error');
+
+        if(mobileNumberValue==""){
+            mobileNumber.classList.add('invalidInput');
+            mobileNumberErr.innerHTML="⚠️ Mobile Number is required";
+            return false;
+        }
+        else if(mobileNumberValue.length > 11 || mobileNumberValue.length < 10 ){
+            mobileNumber.classList.add('invalidInput');
+            mobileNumberErr.innerHTML="⚠️ Invalid Mobile number!";
+            return false;
+        }
+        else if(!validMobileNumber.test(mobileNumberValue)){
+            mobileNumber.classList.add('invalidInput');
+            mobileNumberErr.innerHTML="⚠️ Invalid Mobile Number!";
+            return false;
+        }
+        else{
+          mobileNumberErr.innerHTML="";
+          mobileNumber.classList.remove('invalidInput');
+          return true;
+        }
+    }
+
+    // Validate Email Address
+    function validateEmail() {
+        let emailInput = document.getElementById("emailAddress");
+
+        emailAddressValue=emailInput.value.trim(); 
+        validEmailAddress=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        emailAddressError=document.getElementById('emailAddress-error');
+
+        if(emailAddressValue==""){
+            emailInput.classList.add('invalidInput');
+            emailAddressError.innerHTML="⚠️ Email Address is required!";
+            return false;
+        }
+        else if(!validEmailAddress.test(emailAddressValue)){
+            emailInput.classList.add('invalidInput');
+            emailAddressError.innerHTML="⚠️ The Email Address you provided is invalid!";
+            return false;
+        }
+        else{
+            emailInput.classList.remove('invalidInput');
+            emailAddressError.innerHTML="";
+            return true;
+        }  
+    }
+
+    // Validate Concern
+    // let concernInput = document.getElementById("concern");
+    // let specifyConcern = document.getElementById("specifyConcern");
+    // let specifyConcernCovid = document.getElementById("specifyConcernCovid");
+    // let concernInputError = document.getElementById("selecetConcern-error");
+    // let specifyConcernError = document.getElementById("specifyConcern-error");
+
+    // specifyConcernError.innerHTML="";
+    // specifyConcernCovid.classList.add('disabled');
+    // $(specifyConcern).hide();
+    
+    // Enable and Disable Input
+    // $("#concern").change(function() {
+    //     if ($(this).val() == "Covid") {
+    //         specifyConcernError.innerHTML="";
+    //         $(specifyConcern).hide();
+    //         specifyConcernCovid.classList.remove('disabled');
+    //         $(specifyConcernCovid).show();
+    //         specifyConcernError.innerHTML="Specify your concern here.";
+    //     }
+        // else if ($(this).val() == "Covid - Severe") {
+        //     specifyConcernError.innerHTML="";
+        //     $(specifyConcern).hide();
+        //     specifyConcernCovid.classList.remove('disabled');
+        //     $(specifyConcernCovid).show();
+        //     specifyConcernError.innerHTML="Specify your concern here.";
+        // }
+        // else if ($(this).val() == "Covid - Asymptomatic") {
+        //     specifyConcernError.innerHTML="";
+        //     $(specifyConcern).hide();
+        //     specifyConcernCovid.classList.remove('disabled');
+        //     $(specifyConcernCovid).show();
+        //     specifyConcernError.innerHTML="Specify your concern here.";
+
+        // }
+    //     else if ($(this).val() == "Non - Covid") {
+    //         specifyConcernError.innerHTML="Specify your concern here.";
+    //         $(specifyConcern).show();
+    //         $(specifyConcernCovid).hide();
+    //     }
+    // }).trigger("change");
+
+     // Validate Concern
+     let concernInput = document.getElementById("concern");
+     let specifyConcern = document.getElementById("specifyConcern");
+     let concernInputError = document.getElementById("selecetConcern-error");
+     let specifyConcernError = document.getElementById("specifyConcern-error");
+     specifyConcernError.innerHTML="";
+     specifyConcern.classList.add('disabled');
+     let hiddenvariable = document.getElementById("hidden-variable");
+     // Enable and Disable Input
+     $("#concern").change(function() {
+         if ($(this).val() == "Asymptomatic") {
+            specifyConcern.value = '';
+            specifyConcernError.innerHTML="";
+            specifyConcern.classList.add('disabled');
+            specifyConcern.classList.remove('invalidInput');
+            hiddenvariable.value = "Covid";
+            console.log(hiddenvariable.value);
+         }
+         else if ($(this).val() == "Mild-to-moderate") {
+            specifyConcernError.innerHTML="";
+            specifyConcern.classList.add('disabled');
+            specifyConcern.classList.remove('invalidInput');
+            hiddenvariable.value = "Covid";
+            console.log(hiddenvariable.value);
+        }
+        else if ($(this).val() == "Severe") {
+            specifyConcernError.innerHTML="";
+            specifyConcern.classList.add('disabled');
+            specifyConcern.classList.remove('invalidInput');
+            hiddenvariable.value = "Covid";
+            console.log(hiddenvariable.value);
+        }
+        else if ($(this).val() == "Critical") {
+            specifyConcernError.innerHTML="";
+            specifyConcern.classList.add('disabled');
+            specifyConcern.classList.remove('invalidInput');
+            hiddenvariable.value = "Covid";
+            console.log(hiddenvariable.value);
+        }
+         else if ($(this).val() == "Non-Covid") {
+             specifyConcernError.innerHTML="Specify your concern here.";
+             specifyConcern.classList.remove('disabled');
+             hiddenvariable.value = "Non-Covid";
+             console.log(hiddenvariable.value);
+            
+         }
+     }).trigger("change");
+
+    function validateConcern() {
+        concernInputValue = concernInput.value;
+        specifyConcernValue = specifyConcern.value;
+
+        if (concernInputValue =='') {
+            concernInput.classList.add('invalidInput');
+            concernInputError.innerHTML="⚠️ Please select your Concern!";
+            return false;
+        }
+
+        else if (concernInputValue == 'Asymptomatic') {
+            specifyConcernError.innerHTML="";
+            concernInputError.innerHTML="";
+            specifyConcern.classList.add('disabled');
+            specifyConcern.classList.remove('invalidInput');
+            concernInput.classList.remove('invalidInput');
+            return true;
+        }
+
+        else if (concernInputValue == 'Mild-to-moderate') {
+            specifyConcernError.innerHTML="";
+            concernInputError.innerHTML="";
+            specifyConcern.classList.add('disabled');
+            specifyConcern.classList.remove('invalidInput');
+            concernInput.classList.remove('invalidInput');
+            return true;
+        }
+
+        else if (concernInputValue == 'Severe') {
+            specifyConcernError.innerHTML="";
+            concernInputError.innerHTML="";
+            specifyConcern.classList.add('disabled');
+            specifyConcern.classList.remove('invalidInput');
+            concernInput.classList.remove('invalidInput');
+            return true;
+        }
+
+        else if (concernInputValue == 'Critical') {
+            specifyConcernError.innerHTML="";
+            concernInputError.innerHTML="";
+            specifyConcern.classList.add('disabled');
+            specifyConcern.classList.remove('invalidInput');
+            concernInput.classList.remove('invalidInput');
+            return true;
+        }
+        else if (concernInputValue == 'Non-Covid') {
+            specifyConcern.classList.remove('disabled');
+
+            if (specifyConcernValue == '') {
+                specifyConcern.classList.add('invalidInput');
+                specifyConcernError.innerHTML="⚠️ Please specify your concern!";
+                return false;
+            }
+            else{
+                specifyConcern.classList.remove('invalidInput');
+                specifyConcernError.innerHTML="";
+                return true;
+            }
+        }
+    }
+    // ------------------------------
+
+    function validateReservationType() {
+        let reservationType = document.getElementById("reservationType");
+        let reservationTypeError = document.getElementById("reservationType-error");
+
+        reservationTypeValue = reservationType.value;
+
+        if (reservationTypeValue =='') {
+            reservationType.classList.add('invalidInput');
+            reservationTypeError.innerHTML="⚠️ Please select your Reservation Type!";
+            return false;
+        }else{
+            reservationType.classList.remove('invalidInput');
+            reservationTypeError.innerHTML="";
+            return true;
+        }
+    }
+
+    // Validate Images
+    function validateImages() {
+        // Send image to server to process
+        const fileInput = document.getElementById("referralFilesInput");
+
+        let filePath = fileInput.value;
+        // let filePath = document.getElementById("referralFilesInput");
+
+        const xhr = new XMLHttpRequest();
+        const formData = new FormData();
+
+        // Allowing file type
+        let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+
+        for (let file of fileInput.files) {
+            formData.append("images[]", file);
+        }   
+
+        let length = $(fileInput).get(0).files.length;
+        let finalLength = parseInt(length);
+
+        if (finalLength < 1) {  // If no files are selected
+            alert("Choose your file first!");
+            return false;
+        }
+        else if (!allowedExtensions.exec(filePath)) {  // if file type is not allowed
+            alert("File type not allowed!");
+            return false;
+        }
+        else if(finalLength > 10) {  // if max upload exceeded
+            alert("10 uploads lang!");
+            return false;
+        }
+        else{
+            // reservationType.classList.remove('invalidInput');
+            // reservationTypeError.innerHTML="";
+            return true;
+        }
+    }
+    
+    $("#btnBookingNow").click(function () {
+        let firstName = document.getElementById("firstName").value;
+        let lastName = document.getElementById("lastName").value;
+        let date_picker = document.getElementById("date_picker").value;
+        let time = document.getElementById("time").value;
+        let phoneNumber = document.getElementById("phoneNumber").value;
+        let email = document.getElementById("emailAddress").value;
+        let concern = document.getElementById("concern").value;
+        let severity  = document.getElementById("hidden-variable").value;
+        let specifyConcern = document.getElementById("specifyConcern").value;
+        let hospitalName = document.getElementById("hospitalName").value;
+        let reservationType = document.getElementById("reservationType").value;
+        let listingID = document.getElementById("listingID").value;
+        let userID = document.getElementById("user-id-placeholder").value;
+        let firstnameContainer = document.getElementById("firstnameContainer");
+        firstnameContainer.innerHTML = firstName;
+
+        let lastnameContainer = document.getElementById("lastnameContainer");
+        lastnameContainer.innerHTML = lastName;
+
+        let dateContainer = document.getElementById("dateContainer");
+        dateContainer.innerHTML = date_picker;
+
+        let timeContainer = document.getElementById("timeContainer");
+        timeContainer.innerHTML = time;
+
+        let phoneNuberContainer = document.getElementById("phoneNuberContainer");
+        phoneNuberContainer.innerHTML = phoneNumber;
+
+        let emailContainer = document.getElementById("emailContainer");
+        emailContainer.innerHTML = email;
+
+        let selectConcernContainer = document.getElementById("selectConcernContainer");
+        selectConcernContainer.innerHTML = hiddenvariable.value+' - '+concern;
+
+        let specifyConcernContainer = document.getElementById("specifyConcernContainer");
+        specifyConcernContainer.innerHTML = specifyConcern;
+
+        let hospitalNameContainer = document.getElementById("hospitalNameContainer");
+        hospitalNameContainer.innerHTML = hospitalName;
+
+        let reservationTypeContainer = document.getElementById("reservationTypeContainer");
+        reservationTypeContainer.innerHTML = reservationType;
+
+        let referralValue = document.getElementById("referral-placeholder").value;
+        if (referralValue) {
+            if (!validateImages()) {
+                return;
+            } 
+        }
+        if (!validateFirstname() || !validateLastname() || !invalidDate() || !validateMobileNumber() || !validateEmail() || !validateConcern() || !validateReservationType()) {
+            return;
+        }else{
+            const btnSubmit = document.getElementById("submitButton");
+            const btnCancel = document.getElementById("cancelButton");
+            const bookingModalBody = document.getElementById("booking-modal-body");
+            const reservationLoader = document.getElementById("reservation-loader");
+            
+            // run if referral is not required
+            if (!referralValue){
+                $.ajax({
+                    method: "POST",
+                    url: "includes/get-booking-count-inc.php",
+                    data: {userID:userID},
+                    success: function (data) {
+                        let pendingbookingsCount = parseInt(data);
+
+                        // Check if pending reservations is == 5
+                        if (pendingbookingsCount >= 5) {
+                            alertModalError().show();
+                            return;
+                        }else {
+                            toggleModal('reviewDetailsModal', true);
+                            btnSubmit.onclick = function () {
+                                
+                                // Insert Details
+                                $.ajax({
+                                    method: "POST",
+                                    url: "includes/user-booking-form-inc.php",
+                                    data: {
+                                        firstName:firstName,
+                                        lastName:lastName,
+                                        date_picker:date_picker,
+                                        time:time,
+                                        phoneNumber:phoneNumber,
+                                        email:email,
+                                        concern:concern,
+                                        severity:severity,
+                                        specifyConcern:specifyConcern,
+                                        hospitalName:hospitalName,
+                                        reservationType:reservationType,
+                                        listingID:listingID,
+                                        userID:userID
+                                    },
+                                    beforeSend: function () {
+                                        btnSubmit.classList.add("disabled");
+                                        btnCancel.classList.add("disabled");
+                                        bookingModalBody.classList.add("disabled-blurred");
+                                        $(reservationLoader).show();
+                                    },
+                                    success: function (response) {
+                                        toggleModal('reviewDetailsModal', false);
+                                        $(reservationLoader).hide();
+                                        window.location.replace('http://localhost/Capstone/reservation-success');
+                                        return;
+                                    }
+                                }); 
+                            }
+
+                            btnCancel.onclick = function () {
+                                toggleModal('reviewDetailsModal', false);
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Run if referral is required
+            else if (referralValue) {
+                $.ajax({
+                    method: "POST",
+                    url: "includes/get-booking-count-inc.php",
+                    data: {userID:userID},
+                    success: function (data) {
+                        let pendingbookingsCount = parseInt(data);
+
+                        // Check if pending reservations is == 5
+                        if (pendingbookingsCount >= 5) {
+                            // alertModalError().show();
+                            alert("Max Bookings Exceeded!");
+                            return;
+                        }else {
+                            toggleModal('reviewDetailsModal', true);
+
+                            btnSubmit.onclick = function () {
+                                // Insert Details
+                                $.ajax({
+                                    method: "POST",
+                                    url: "includes/user-booking-form-inc.php",
+                                    data: {
+                                    firstName:firstName,
+                                    lastName:lastName,
+                                    date_picker:date_picker,
+                                    time:time,
+                                    phoneNumber:phoneNumber,
+                                    email:email,
+                                    concern:concern,
+                                    severity:severity,
+                                    specifyConcern:specifyConcern,
+                                    hospitalName:hospitalName,
+                                    reservationType:reservationType,
+                                    listingID:listingID,
+                                    userID:userID
+                                    },
+                                    beforeSend: function () {
+                                        btnSubmit.classList.add("disabled");
+                                        btnCancel.classList.add("disabled");
+                                        bookingModalBody.classList.add("disabled-blurred");
+                                        $(reservationLoader).show();
+                                    },
+                                    success: function (response) {
+                                        // Send image to server to process
+                                        const fileInput = document.getElementById("referralFilesInput");
+
+                                        // let filePath = fileInput.value;
+                                        // let filePath = document.getElementById("referralFilesInput");
+
+                                        // Allowing file type
+                                        // let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+
+                                        const xhr = new XMLHttpRequest();
+                                        const formData = new FormData();
+
+                                        for (let file of fileInput.files) {
+                                            formData.append("images[]", file);
+                                        }
+
+                                        // if upload is valid
+                                        xhr.open("post", "includes/insert-referral-images.php");
+                                        xhr.send(formData);
+
+                                        // Complete function
+                                        xhr.addEventListener('readystatechange', function(e) {
+                                            if( this.readyState === 4 ) {
+                                                $(reservationLoader).hide();                                                   
+                                                window.location.replace('http://localhost/Capstone/reservation-success');
+                                            }
+                                        });
+                                    }
+                                }); 
+                            }
+
+                            btnCancel.onclick = function () {
+                                toggleModal('reviewDetailsModal', false);
+                            }
+                        }
+                    }
+                });            
+            }
+        }
+
+    });
+
+    // Lightgallery
+    lightGallery(document.querySelector('.image-gallery'));
+
+    // Show Alert Message Modal
+    function alertModalError(){
+        toggleModal('alertModal', true);
+    }
+
+    // Hide Alert Message Modal
+    function btnClose(){
+        toggleModal('alertModal', false);
+    }
+    
+    let selectConcernInfo = document.getElementById("select-concern-info");
+    let roomSlotInfo = document.getElementById("room-slot-info");
+    let referralSlotInfo = document.getElementById("referral-slot-info");
+    let cityinfo = document.getElementById("city-info");
+    
+    tippy(selectConcernInfo, {
+        content: "Leave to zero (0) if there are no slots for Bed.",
+    });

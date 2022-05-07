@@ -1,1 +1,53 @@
-var _0xb8bb5e=_0x193d;function _0xf0d3(){var _0x2f6ad0=['hide','display','2737224dKtmoI','close','208046HLTpxx','GET','parse','getElementById','#skeleton-loader','996065yWCgmO','none','val','myModal','5kTTEGY','hospitalName','#hospital-designation','3259324CBJZNL','log','designation','6703650liRLXp','6qvtUjU','style','1064547cdRKZW','#hospital-email','18WtVitH','supervisorName','#hospital-representative','16635340hMDjyZ','onclick','show','btn-editPassword','fadeIn','target','block'];_0xf0d3=function(){return _0x2f6ad0;};return _0xf0d3();}(function(_0x3e0536,_0x36bc7c){var _0x4b1b60=_0x193d,_0x24a95b=_0x3e0536();while(!![]){try{var _0x33385b=-parseInt(_0x4b1b60(0x108))/0x1+-parseInt(_0x4b1b60(0xf6))/0x2*(-parseInt(_0x4b1b60(0x106))/0x3)+parseInt(_0x4b1b60(0x102))/0x4*(parseInt(_0x4b1b60(0xff))/0x5)+-parseInt(_0x4b1b60(0x10a))/0x6*(parseInt(_0x4b1b60(0xfb))/0x7)+parseInt(_0x4b1b60(0x116))/0x8+-parseInt(_0x4b1b60(0x105))/0x9+parseInt(_0x4b1b60(0x10d))/0xa;if(_0x33385b===_0x36bc7c)break;else _0x24a95b['push'](_0x24a95b['shift']());}catch(_0x3dcf31){_0x24a95b['push'](_0x24a95b['shift']());}}}(_0xf0d3,0xc16da),get_details());function get_details(){var _0x363da0=_0x193d;$['ajax']({'method':_0x363da0(0xf7),'url':'includes/get-account-details-inc.php','beforeSend':function(){var _0x137f46=_0x363da0;$('#skeleton-loader')[_0x137f46(0x10f)]()[_0x137f46(0x111)](0x12c);},'success':function(_0x519ddf,_0x1988ba){var _0x54fecf=_0x363da0;$(_0x54fecf(0xfa))[_0x54fecf(0x114)]();let _0x159914=JSON[_0x54fecf(0xf8)](_0x519ddf);console[_0x54fecf(0x103)](_0x159914),$('#hospital-name')[_0x54fecf(0xfd)](_0x159914[_0x54fecf(0x100)]),$(_0x54fecf(0x109))[_0x54fecf(0xfd)](_0x159914['email']),$('#hospital-phoneNumber')[_0x54fecf(0xfd)](_0x159914['phoneNumber']),$('#hospital-location')[_0x54fecf(0xfd)](_0x159914['hospitalAddress']),$(_0x54fecf(0x10c))['val'](_0x159914['representativeName']),$(_0x54fecf(0x101))[_0x54fecf(0xfd)](_0x159914[_0x54fecf(0x104)]),$('#hospital-supervisor')[_0x54fecf(0xfd)](_0x159914[_0x54fecf(0x10b)]);}});}var modal=document[_0xb8bb5e(0xf9)](_0xb8bb5e(0xfe)),btn=document[_0xb8bb5e(0xf9)](_0xb8bb5e(0x110)),span=document['getElementsByClassName'](_0xb8bb5e(0xf5))[0x0];function _0x193d(_0x167de5,_0x516d0d){var _0xf0d3b=_0xf0d3();return _0x193d=function(_0x193d4a,_0x3c2969){_0x193d4a=_0x193d4a-0xf5;var _0x320c7d=_0xf0d3b[_0x193d4a];return _0x320c7d;},_0x193d(_0x167de5,_0x516d0d);}btn[_0xb8bb5e(0x10e)]=function(){var _0x568e92=_0xb8bb5e;modal['style'][_0x568e92(0x115)]=_0x568e92(0x113);},span[_0xb8bb5e(0x10e)]=function(){var _0x1ef1e5=_0xb8bb5e;modal[_0x1ef1e5(0x107)]['display']=_0x1ef1e5(0xfc);},window[_0xb8bb5e(0x10e)]=function(_0x2029b8){var _0x181ca5=_0xb8bb5e;_0x2029b8[_0x181ca5(0x112)]==modal&&(modal['style'][_0x181ca5(0x115)]=_0x181ca5(0xfc));};
+    // alert('Working!');
+
+    get_details();
+    function get_details() {
+        $.ajax({
+            method: "GET",
+            url: "includes/get-account-details-inc.php",
+            beforeSend: function () {
+                $("#skeleton-loader").show().fadeIn(300);
+            },
+            success: function (data, status) {
+                $("#skeleton-loader").hide();
+                let fetchedData = JSON.parse(data);
+
+                console.log(fetchedData);
+
+                $("#hospital-name").val(fetchedData.hospitalName);
+                $("#hospital-email").val(fetchedData.email);
+                $("#hospital-phoneNumber").val(fetchedData.phoneNumber); 
+
+                $("#hospital-location").val(fetchedData.hospitalAddress);
+                $("#hospital-representative").val(fetchedData.representativeName);
+                $("#hospital-designation").val(fetchedData.designation);
+                $("#hospital-supervisor").val(fetchedData.supervisorName);
+            }
+        });
+    }
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("btn-editPassword");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+    modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+    modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    }

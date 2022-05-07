@@ -1,1 +1,372 @@
-function _0x2d3e(_0x593ed3,_0x271262){var _0xa9e579=_0xa9e5();return _0x2d3e=function(_0x2d3e55,_0x28853a){_0x2d3e55=_0x2d3e55-0x12c;var _0x179928=_0xa9e579[_0x2d3e55];return _0x179928;},_0x2d3e(_0x593ed3,_0x271262);}function _0xa9e5(){var _0x19a809=['300','328iIJhsS','toggleClass','.btnNext','698166amgqmX','[ar-data-ticks-date-submitted]','disabled','34280YbqcoG','submit','querySelectorAll','.grid-item','data-sort-direction','attr','call','querySelector','4845176jtIvcy','.pr-sort-patient-name','forEach','show','checkValidity','[pr-data-ticks-date-submitted]','1014328qXMshH','.ar-patient-name','[rh-data-ticks-date-submitted]','removeClass','[rh-data-ticks-reservation-date]','2919906szOyka','is-checked','[pr-data-ticks-reservation-date]','prototype','hide','.grid-pending-reservations','#buttons','.needs-validation','.gallery','asc','812483tqAYLe','desc','text','294360XjGzCy','.pr-patient-name','data-filter','data-sort-value','.grid-approved-reservations','.ar-sort-patient-name','find','scrollTop','isotope','addClass','.rh-sort-date-submitted','fitRows','animate','html,\x20body','click','prop','stopPropagation','.bootstrapIcon','.rh-sort-patient-name','.rh-sort-reservation-date','.filters-button-group','[ar-data-ticks-reservation-date]','.btn-edit-slot','button','preventDefault','bi-chevron-up\x20bi-chevron-down'];_0xa9e5=function(){return _0x19a809;};return _0xa9e5();}(function(_0x21177e,_0x2f6223){var _0x1bf39f=_0x2d3e,_0x6ef22a=_0x21177e();while(!![]){try{var _0x129297=-parseInt(_0x1bf39f(0x166))/0x1+parseInt(_0x1bf39f(0x169))/0x2+parseInt(_0x1bf39f(0x146))/0x3+-parseInt(_0x1bf39f(0x143))/0x4*(-parseInt(_0x1bf39f(0x149))/0x5)+-parseInt(_0x1bf39f(0x15c))/0x6+parseInt(_0x1bf39f(0x151))/0x7+parseInt(_0x1bf39f(0x157))/0x8;if(_0x129297===_0x2f6223)break;else _0x6ef22a['push'](_0x6ef22a['shift']());}catch(_0x436797){_0x6ef22a['push'](_0x6ef22a['shift']());}}}(_0xa9e5,0x70c5f),$(document)['ready'](function(){var _0x152e7b=_0x2d3e,_0x457613=$(_0x152e7b(0x161))[_0x152e7b(0x130)]({'itemSelector':_0x152e7b(0x14c),'layoutMode':_0x152e7b(0x133),'masonry':{'columnWidth':0xc8},'getSortData':{'dateSubmitted':_0x152e7b(0x156),'reservationDate':_0x152e7b(0x15e),'patientName':_0x152e7b(0x16a),'name':function(_0x54c9c1){var _0xd0a537=_0x152e7b;return $(_0x54c9c1)[_0xd0a537(0x168)]();}}});$('.pr-sort-date-submitted')['on'](_0x152e7b(0x136),'button',function(){var _0x52e8ff=_0x152e7b,_0x27cfec=$(this)[_0x52e8ff(0x14e)](_0x52e8ff(0x16c)),_0x273ef2=$(this)[_0x52e8ff(0x14e)](_0x52e8ff(0x14d)),_0x224678=_0x273ef2==_0x52e8ff(0x165),_0x4d56aa=_0x224678?_0x52e8ff(0x167):_0x52e8ff(0x165);_0x457613[_0x52e8ff(0x130)]({'sortBy':_0x27cfec,'sortAscending':_0x224678}),$(this)['attr'](_0x52e8ff(0x14d),_0x4d56aa);var _0x3985ee=$(this)[_0x52e8ff(0x12e)]('.bootstrapIcon');_0x3985ee[_0x52e8ff(0x144)]('bi-chevron-up\x20bi-chevron-down');}),$('.pr-sort-reservation-date')['on'](_0x152e7b(0x136),_0x152e7b(0x13f),function(){var _0x54dede=_0x152e7b,_0x38cd67=$(this)[_0x54dede(0x14e)](_0x54dede(0x16c)),_0x3a90a7=$(this)[_0x54dede(0x14e)]('data-sort-direction'),_0x5a77cd=_0x3a90a7==_0x54dede(0x165),_0x8a8359=_0x5a77cd?_0x54dede(0x167):_0x54dede(0x165);_0x457613[_0x54dede(0x130)]({'sortBy':_0x38cd67,'sortAscending':_0x5a77cd}),$(this)['attr'](_0x54dede(0x14d),_0x8a8359);var _0xf8b82=$(this)['find'](_0x54dede(0x139));_0xf8b82['toggleClass'](_0x54dede(0x141));}),$(_0x152e7b(0x152))['on'](_0x152e7b(0x136),'button',function(){var _0x4e89af=_0x152e7b,_0x490082=$(this)[_0x4e89af(0x14e)](_0x4e89af(0x16c)),_0x2646e1=$(this)[_0x4e89af(0x14e)]('data-sort-direction'),_0x30f145=_0x2646e1==_0x4e89af(0x165),_0x23d32e=_0x30f145?_0x4e89af(0x167):_0x4e89af(0x165);_0x457613['isotope']({'sortBy':_0x490082,'sortAscending':_0x30f145}),$(this)[_0x4e89af(0x14e)](_0x4e89af(0x14d),_0x23d32e);var _0x57b2da=$(this)[_0x4e89af(0x12e)](_0x4e89af(0x139));_0x57b2da[_0x4e89af(0x144)](_0x4e89af(0x141));});var _0x4668db=$(_0x152e7b(0x12c))[_0x152e7b(0x130)]({'itemSelector':_0x152e7b(0x14c),'layoutMode':'fitRows','masonry':{'columnWidth':0xc8},'getSortData':{'dateSubmitted':_0x152e7b(0x147),'reservationDate':_0x152e7b(0x13d),'patientName':_0x152e7b(0x158)}});$('.ar-sort-date-submitted')['on'](_0x152e7b(0x136),_0x152e7b(0x13f),function(){var _0x58c44d=_0x152e7b,_0x1bee20=$(this)['attr']('data-sort-value'),_0x3c4387=$(this)[_0x58c44d(0x14e)](_0x58c44d(0x14d)),_0x83be3f=_0x3c4387==_0x58c44d(0x165),_0x2023a6=_0x83be3f?'desc':_0x58c44d(0x165);_0x4668db[_0x58c44d(0x130)]({'sortBy':_0x1bee20,'sortAscending':_0x83be3f}),$(this)[_0x58c44d(0x14e)](_0x58c44d(0x14d),_0x2023a6);var _0xc32d4f=$(this)[_0x58c44d(0x12e)]('.bootstrapIcon');_0xc32d4f[_0x58c44d(0x144)](_0x58c44d(0x141));}),$('.ar-sort-reservation-date')['on']('click',_0x152e7b(0x13f),function(){var _0x2e9b60=_0x152e7b,_0x1ed630=$(this)[_0x2e9b60(0x14e)](_0x2e9b60(0x16c)),_0x2672c0=$(this)[_0x2e9b60(0x14e)]('data-sort-direction'),_0xda9ed5=_0x2672c0==_0x2e9b60(0x165),_0x1e8e97=_0xda9ed5?_0x2e9b60(0x167):_0x2e9b60(0x165);_0x4668db[_0x2e9b60(0x130)]({'sortBy':_0x1ed630,'sortAscending':_0xda9ed5}),$(this)['attr'](_0x2e9b60(0x14d),_0x1e8e97);var _0x676249=$(this)[_0x2e9b60(0x12e)](_0x2e9b60(0x139));_0x676249[_0x2e9b60(0x144)](_0x2e9b60(0x141));}),$(_0x152e7b(0x12d))['on']('click',_0x152e7b(0x13f),function(){var _0x5934c6=_0x152e7b,_0x33efed=$(this)[_0x5934c6(0x14e)]('data-sort-value'),_0x5a8cab=$(this)[_0x5934c6(0x14e)](_0x5934c6(0x14d)),_0x3fef9e=_0x5a8cab==_0x5934c6(0x165),_0x429181=_0x3fef9e?_0x5934c6(0x167):_0x5934c6(0x165);_0x4668db[_0x5934c6(0x130)]({'sortBy':_0x33efed,'sortAscending':_0x3fef9e}),$(this)[_0x5934c6(0x14e)]('data-sort-direction',_0x429181);var _0x944e33=$(this)[_0x5934c6(0x12e)](_0x5934c6(0x139));_0x944e33[_0x5934c6(0x144)](_0x5934c6(0x141));});var _0x2c4731=$('.grid-reservations-history')[_0x152e7b(0x130)]({'itemSelector':_0x152e7b(0x14c),'layoutMode':_0x152e7b(0x133),'masonry':{'columnWidth':0xc8},'getSortData':{'dateSubmitted':_0x152e7b(0x159),'reservationDate':_0x152e7b(0x15b),'patientName':'.rh-patient-name'}});$(_0x152e7b(0x13c))['on']('click',_0x152e7b(0x13f),function(){var _0x79bd39=_0x152e7b,_0x5210ed=$(this)[_0x79bd39(0x14e)](_0x79bd39(0x16b));_0x2c4731['isotope']({'filter':_0x5210ed});}),$(_0x152e7b(0x132))['on'](_0x152e7b(0x136),'button',function(){var _0x1b52ea=_0x152e7b,_0x1375a0=$(this)[_0x1b52ea(0x14e)]('data-sort-value'),_0x443d75=$(this)[_0x1b52ea(0x14e)](_0x1b52ea(0x14d)),_0xc04190=_0x443d75=='asc',_0xc751cb=_0xc04190?_0x1b52ea(0x167):_0x1b52ea(0x165);_0x2c4731[_0x1b52ea(0x130)]({'sortBy':_0x1375a0,'sortAscending':_0xc04190}),$(this)['attr'](_0x1b52ea(0x14d),_0xc751cb);var _0x498f75=$(this)['find']('.bootstrapIcon');_0x498f75['toggleClass']('bi-chevron-up\x20bi-chevron-down');}),$(_0x152e7b(0x13b))['on']('click',_0x152e7b(0x13f),function(){var _0x2f0440=_0x152e7b,_0x2ea82c=$(this)[_0x2f0440(0x14e)](_0x2f0440(0x16c)),_0x4f501a=$(this)['attr'](_0x2f0440(0x14d)),_0x2380bc=_0x4f501a=='asc',_0x3edb09=_0x2380bc?'desc':_0x2f0440(0x165);_0x2c4731[_0x2f0440(0x130)]({'sortBy':_0x2ea82c,'sortAscending':_0x2380bc}),$(this)[_0x2f0440(0x14e)](_0x2f0440(0x14d),_0x3edb09);var _0x41673c=$(this)['find'](_0x2f0440(0x139));_0x41673c[_0x2f0440(0x144)](_0x2f0440(0x141));}),$(_0x152e7b(0x13a))['on']('click','button',function(){var _0x3ebc9e=_0x152e7b,_0x4ef16f=$(this)['attr'](_0x3ebc9e(0x16c)),_0x2bda82=$(this)['attr'](_0x3ebc9e(0x14d)),_0x2852d2=_0x2bda82==_0x3ebc9e(0x165),_0x4b78e2=_0x2852d2?'desc':'asc';_0x2c4731['isotope']({'sortBy':_0x4ef16f,'sortAscending':_0x2852d2}),$(this)[_0x3ebc9e(0x14e)](_0x3ebc9e(0x14d),_0x4b78e2);var _0x145a9e=$(this)['find']('.bootstrapIcon');_0x145a9e[_0x3ebc9e(0x144)](_0x3ebc9e(0x141));}),$(_0x152e7b(0x13c))['each'](function(_0x527b6d,_0x52ccd9){var _0xd7b41b=_0x152e7b,_0x1cf84b=$(_0x52ccd9);_0x1cf84b['on'](_0xd7b41b(0x136),'button',function(){var _0x1d3653=_0xd7b41b;_0x1cf84b[_0x1d3653(0x12e)]('.is-checked')[_0x1d3653(0x15a)]('is-checked'),$(this)[_0x1d3653(0x131)](_0x1d3653(0x15d));});}),lightGallery(document[_0x152e7b(0x150)](_0x152e7b(0x164))),$(_0x152e7b(0x13e))['on'](_0x152e7b(0x136),function(){var _0x362f03=_0x152e7b;$('.slot-type-radio')[_0x362f03(0x137)](_0x362f03(0x148),![]);});var _0x3faf51=$(_0x152e7b(0x162));$(window)['scroll'](function(){var _0x1b7c64=_0x152e7b;$(window)[_0x1b7c64(0x12f)]()>0x12c?_0x3faf51[_0x1b7c64(0x131)](_0x1b7c64(0x154)):_0x3faf51[_0x1b7c64(0x15a)](_0x1b7c64(0x154));}),_0x3faf51['on'](_0x152e7b(0x136),function(_0x67b29b){var _0x5a3862=_0x152e7b;_0x67b29b[_0x5a3862(0x140)](),$(_0x5a3862(0x135))[_0x5a3862(0x134)]({'scrollTop':0x0},_0x5a3862(0x142));}),$(_0x152e7b(0x145))[_0x152e7b(0x160)](),(function(){'use strict';var _0x454c6c=_0x152e7b;var _0x209ff0=document[_0x454c6c(0x14b)](_0x454c6c(0x163));Array[_0x454c6c(0x15f)]['slice'][_0x454c6c(0x14f)](_0x209ff0)[_0x454c6c(0x153)](function(_0x147171){var _0x314c70=_0x454c6c;_0x147171['addEventListener'](_0x314c70(0x14a),function(_0x15db2a){var _0x2e5ab2=_0x314c70;!_0x147171[_0x2e5ab2(0x155)]()&&(_0x15db2a['preventDefault'](),_0x15db2a[_0x2e5ab2(0x138)]()),_0x147171['classList']['add']('was-validated');},![]);});}());}));
+// external js: isotope.pkgd.js
+
+$(document).ready(function() {
+
+    //--------------Pending Reservations - Isotope Sorting-------------//
+    // init Isotope
+    var $grid = $('.grid-pending-reservations').isotope({
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows',
+        masonry: {
+            columnWidth: 200
+          },
+        getSortData: {
+            //date: '.date parseInt',
+            dateSubmitted: '[pr-data-ticks-date-submitted]',
+            reservationDate: '[pr-data-ticks-reservation-date]',
+            patientName: '.pr-patient-name',
+            //category: '[data-category]',
+            /*date: function(dateElement) {
+                var weight = $(dateElement).find('.date').text();
+                return parseFloat( date.replace( /[\(\)]/g, '') );
+              },*/
+
+            name: function (element) {
+                return $(element).text();
+            }
+        }
+    });
+
+    /*$('.filter button').on("click", function (){
+        var value = $(this).attr('data-name');
+            $grid.isotope({
+                filter: value
+            });
+    });*/
+
+    /*$('.sort button').on("click", function (){
+        var value = $(this).attr('data-name');
+        $grid.isotope({
+            sortBy: value
+        });
+    });*/
+
+    /*$('.sort').on('click', 'button', function (){
+        var sortValue = $(this).attr('data-sort-value');
+        $grid.isotope({
+            sortBy: sortValue
+        });
+        //$(this).addClass('active');
+    });*/
+
+    // Sort By: Date Submitted
+    $('.pr-sort-date-submitted').on( 'click', 'button', function() {
+
+        /* Get the element name to sort */
+        var sortValue = $(this).attr('data-sort-value');
+
+        /* Get the sorting direction: asc||desc */
+        var direction = $(this).attr('data-sort-direction');
+
+        /* convert it to a boolean */
+        var isAscending = (direction == 'asc');
+        var newDirection = (isAscending) ? 'desc' : 'asc';
+
+        /* pass it to isotope */
+        $grid.isotope({ sortBy: sortValue, sortAscending: isAscending });
+
+        $(this).attr('data-sort-direction', newDirection);
+
+        var span = $(this).find('.bootstrapIcon');
+        span.toggleClass('bi-chevron-up bi-chevron-down');
+
+    });
+
+    // Sort By: Reservation Date
+    $('.pr-sort-reservation-date').on( 'click', 'button', function() {
+
+        /* Get the element name to sort */
+        var sortValue = $(this).attr('data-sort-value');
+
+        /* Get the sorting direction: asc||desc */
+        var direction = $(this).attr('data-sort-direction');
+
+        /* convert it to a boolean */
+        var isAscending = (direction == 'asc');
+        var newDirection = (isAscending) ? 'desc' : 'asc';
+
+        /* pass it to isotope */
+        $grid.isotope({ sortBy: sortValue, sortAscending: isAscending });
+
+        $(this).attr('data-sort-direction', newDirection);
+
+        var span = $(this).find('.bootstrapIcon');
+        span.toggleClass('bi-chevron-up bi-chevron-down');
+
+    });
+
+    // Sort By: Patient Name
+    $('.pr-sort-patient-name').on( 'click', 'button', function() {
+
+        /* Get the element name to sort */
+        var sortValue = $(this).attr('data-sort-value');
+
+        /* Get the sorting direction: asc||desc */
+        var direction = $(this).attr('data-sort-direction');
+
+        /* convert it to a boolean */
+        var isAscending = (direction == 'asc');
+        var newDirection = (isAscending) ? 'desc' : 'asc';
+
+        /* pass it to isotope */
+        $grid.isotope({ sortBy: sortValue, sortAscending: isAscending });
+
+        $(this).attr('data-sort-direction', newDirection);
+
+        var span = $(this).find('.bootstrapIcon');
+        span.toggleClass('bi-chevron-up bi-chevron-down');
+
+    });
+    //----------------------------------------------------------------------//
+    
+    //Button Check and Active !Important
+    /*$('.btn-group').each( function( i, buttonGroup ) {
+        var $buttonGroup = $( buttonGroup );
+        $buttonGroup.on( 'click', 'button', function() {
+          $buttonGroup.find('.is-checked').removeClass('is-checked');
+          $( this ).addClass('is-checked');
+        });
+      });*/
+      
+
+    //--------------Approved Reservations - Isotope Sorting-------------//
+    // init Isotope
+    var $gridAR = $('.grid-approved-reservations').isotope({
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows',
+        masonry: {
+            columnWidth: 200
+          },
+        getSortData: {
+            dateSubmitted: '[ar-data-ticks-date-submitted]',
+            reservationDate: '[ar-data-ticks-reservation-date]',
+            patientName: '.ar-patient-name',
+        }
+    });
+
+    // Sort By: Date Submitted
+    $('.ar-sort-date-submitted').on( 'click', 'button', function() {
+
+        /* Get the element name to sort */
+        var sortValue = $(this).attr('data-sort-value');
+
+        /* Get the sorting direction: asc||desc */
+        var direction = $(this).attr('data-sort-direction');
+
+        /* convert it to a boolean */
+        var isAscending = (direction == 'asc');
+        var newDirection = (isAscending) ? 'desc' : 'asc';
+
+        /* pass it to isotope */
+        $gridAR.isotope({ sortBy: sortValue, sortAscending: isAscending });
+
+        $(this).attr('data-sort-direction', newDirection);
+
+        var span = $(this).find('.bootstrapIcon');
+        span.toggleClass('bi-chevron-up bi-chevron-down');
+
+    });
+
+    // Sort By: Reservation Date
+    $('.ar-sort-reservation-date').on( 'click', 'button', function() {
+
+        /* Get the element name to sort */
+        var sortValue = $(this).attr('data-sort-value');
+
+        /* Get the sorting direction: asc||desc */
+        var direction = $(this).attr('data-sort-direction');
+
+        /* convert it to a boolean */
+        var isAscending = (direction == 'asc');
+        var newDirection = (isAscending) ? 'desc' : 'asc';
+
+        /* pass it to isotope */
+        $gridAR.isotope({ sortBy: sortValue, sortAscending: isAscending });
+
+        $(this).attr('data-sort-direction', newDirection);
+
+        var span = $(this).find('.bootstrapIcon');
+        span.toggleClass('bi-chevron-up bi-chevron-down');
+
+    });
+
+    // Sort By: Patient Name
+    $('.ar-sort-patient-name').on( 'click', 'button', function() {
+
+        /* Get the element name to sort */
+        var sortValue = $(this).attr('data-sort-value');
+
+        /* Get the sorting direction: asc||desc */
+        var direction = $(this).attr('data-sort-direction');
+
+        /* convert it to a boolean */
+        var isAscending = (direction == 'asc');
+        var newDirection = (isAscending) ? 'desc' : 'asc';
+
+        /* pass it to isotope */
+        $gridAR.isotope({ sortBy: sortValue, sortAscending: isAscending });
+
+        $(this).attr('data-sort-direction', newDirection);
+
+        var span = $(this).find('.bootstrapIcon');
+        span.toggleClass('bi-chevron-up bi-chevron-down');
+
+    });
+    //----------------------------------------------------------------------//
+
+
+    //--------------Reservations History - Isotope Sorting-------------//
+    // init Isotope
+    var $gridRH = $('.grid-reservations-history').isotope({
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows',
+        masonry: {
+            columnWidth: 200
+          },
+        getSortData: {
+            dateSubmitted: '[rh-data-ticks-date-submitted]',
+            reservationDate: '[rh-data-ticks-reservation-date]',
+            patientName: '.rh-patient-name',
+        }
+    });
+
+    $('.filters-button-group').on('click', 'button', function () {
+        var filterValue = $(this).attr('data-filter');
+        $gridRH.isotope({ filter: filterValue });
+      });
+
+    // Sort By: Date Submitted
+    $('.rh-sort-date-submitted').on( 'click', 'button', function() {
+
+        /* Get the element name to sort */
+        var sortValue = $(this).attr('data-sort-value');
+
+        /* Get the sorting direction: asc||desc */
+        var direction = $(this).attr('data-sort-direction');
+
+        /* convert it to a boolean */
+        var isAscending = (direction == 'asc');
+        var newDirection = (isAscending) ? 'desc' : 'asc';
+
+        /* pass it to isotope */
+        $gridRH.isotope({ sortBy: sortValue, sortAscending: isAscending });
+
+        $(this).attr('data-sort-direction', newDirection);
+
+        var span = $(this).find('.bootstrapIcon');
+        span.toggleClass('bi-chevron-up bi-chevron-down');
+
+    });
+
+    // Sort By: Reservation Date
+    $('.rh-sort-reservation-date').on( 'click', 'button', function() {
+
+        /* Get the element name to sort */
+        var sortValue = $(this).attr('data-sort-value');
+
+        /* Get the sorting direction: asc||desc */
+        var direction = $(this).attr('data-sort-direction');
+
+        /* convert it to a boolean */
+        var isAscending = (direction == 'asc');
+        var newDirection = (isAscending) ? 'desc' : 'asc';
+
+        /* pass it to isotope */
+        $gridRH.isotope({ sortBy: sortValue, sortAscending: isAscending });
+
+        $(this).attr('data-sort-direction', newDirection);
+
+        var span = $(this).find('.bootstrapIcon');
+        span.toggleClass('bi-chevron-up bi-chevron-down');
+
+    });
+
+    // Sort By: Patient Name
+    $('.rh-sort-patient-name').on( 'click', 'button', function() {
+
+        /* Get the element name to sort */
+        var sortValue = $(this).attr('data-sort-value');
+
+        /* Get the sorting direction: asc||desc */
+        var direction = $(this).attr('data-sort-direction');
+
+        /* convert it to a boolean */
+        var isAscending = (direction == 'asc');
+        var newDirection = (isAscending) ? 'desc' : 'asc';
+
+        /* pass it to isotope */
+        $gridRH.isotope({ sortBy: sortValue, sortAscending: isAscending });
+
+        $(this).attr('data-sort-direction', newDirection);
+
+        var span = $(this).find('.bootstrapIcon');
+        span.toggleClass('bi-chevron-up bi-chevron-down');
+
+    });
+
+
+    $('.filters-button-group').each( function( i, buttonGroup ) {
+        var $buttonGroup = $( buttonGroup );
+        $buttonGroup.on( 'click', 'button', function() {
+          $buttonGroup.find('.is-checked').removeClass('is-checked');
+          $( this ).addClass('is-checked');
+        });
+      });
+    //----------------------------------------------------------------------//
+
+    // -----------------lightGallery--------------------------------//
+    
+    lightGallery(document.querySelector('.gallery'));
+
+    //------------------------------------------------------------------//
+
+      $('.btn-edit-slot').on('click', function () {
+        $(".slot-type-radio").prop("disabled", false);
+      });
+
+    //Back To Top Button//
+    var btn = $('#buttons');
+
+    $(window).scroll(function() {
+    if ($(window).scrollTop() > 300) {
+        btn.addClass('show');
+    } else {
+        btn.removeClass('show');
+    }
+    });
+
+    btn.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '300');
+    });
+
+    // -----------------Form Validation--------------------------------//
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+
+    $('.btnNext').hide();
+
+    (function () {
+        'use strict'
+    
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+    
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+    
+            form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+    // -------------------------------------------------// 
+
+});
+
+
+    

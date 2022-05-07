@@ -1,1 +1,270 @@
-const _0x53023a=_0x505a;(function(_0xf23035,_0x204884){const _0x1ae899=_0x505a,_0x1f57e3=_0xf23035();while(!![]){try{const _0x3728a1=-parseInt(_0x1ae899(0xf9))/0x1*(parseInt(_0x1ae899(0xe3))/0x2)+parseInt(_0x1ae899(0xd8))/0x3+-parseInt(_0x1ae899(0xea))/0x4+-parseInt(_0x1ae899(0xf0))/0x5*(-parseInt(_0x1ae899(0xe1))/0x6)+-parseInt(_0x1ae899(0xfe))/0x7*(-parseInt(_0x1ae899(0xf8))/0x8)+-parseInt(_0x1ae899(0xe7))/0x9*(-parseInt(_0x1ae899(0xd3))/0xa)+-parseInt(_0x1ae899(0xf3))/0xb*(parseInt(_0x1ae899(0x101))/0xc);if(_0x3728a1===_0x204884)break;else _0x1f57e3['push'](_0x1f57e3['shift']());}catch(_0x1bb4b4){_0x1f57e3['push'](_0x1f57e3['shift']());}}}(_0x4bd5,0x685b1));const contentsContainer=document[_0x53023a(0xd0)](_0x53023a(0xeb));let userID=document[_0x53023a(0xd0)]('userID')['value'],menus=document[_0x53023a(0xd0)](_0x53023a(0xd4)),pendingContents=document[_0x53023a(0xd0)](_0x53023a(0xed)),upcomingContents=document[_0x53023a(0xd0)](_0x53023a(0xe6)),historyContents=document[_0x53023a(0xd0)](_0x53023a(0xdd));const pendingButton=document['getElementById'](_0x53023a(0xf7)),upcomingButton=document[_0x53023a(0xd0)](_0x53023a(0xe8)),historyButton=document[_0x53023a(0xd0)](_0x53023a(0xda)),backToMenu=document[_0x53023a(0xdb)](_0x53023a(0xce));function back(){const _0x1a59d6=_0x53023a;$(pendingContents)[_0x1a59d6(0xd1)](),$(upcomingContents)[_0x1a59d6(0xd1)](),$(historyContents)['hide'](),$(menus)[_0x1a59d6(0xf5)]();}showMainMenu();function showMainMenu(){const _0x139c07=_0x53023a;$(menus)[_0x139c07(0xf5)]();}getPendingCount();function getPendingCount(){const _0x59607c=_0x53023a;let _0x50b8f1=document[_0x59607c(0xd0)](_0x59607c(0xe2));$[_0x59607c(0xf2)]({'method':_0x59607c(0xfb),'url':_0x59607c(0xdc),'data':{'userID':userID},'success':function(_0x1d2766){_0x50b8f1['innerHTML']=_0x1d2766;}});}getUpcomingCount();function _0x505a(_0x5c813d,_0x2bc401){const _0x4bd59c=_0x4bd5();return _0x505a=function(_0x505aad,_0x53e9ec){_0x505aad=_0x505aad-0xce;let _0x2c8c70=_0x4bd59c[_0x505aad];return _0x2c8c70;},_0x505a(_0x5c813d,_0x2bc401);}function getUpcomingCount(){const _0x311486=_0x53023a;let _0x2ed4b1=document[_0x311486(0xd0)](_0x311486(0xf6));$[_0x311486(0xf2)]({'method':_0x311486(0xfb),'url':_0x311486(0xdf),'data':{'userID':userID},'success':function(_0x532d94){const _0x2bb88c=_0x311486;_0x2ed4b1[_0x2bb88c(0xd6)]=_0x532d94;}});}getHistoryCount();function getHistoryCount(){const _0x4d48a3=_0x53023a;let _0x143bd8=document[_0x4d48a3(0xd0)]('history-count');$[_0x4d48a3(0xf2)]({'method':_0x4d48a3(0xfb),'url':_0x4d48a3(0xd9),'data':{'userID':userID},'success':function(_0x307203){const _0x1b8bed=_0x4d48a3;_0x143bd8[_0x1b8bed(0xd6)]=_0x307203;}});}pendingButton[_0x53023a(0xfc)]=function(){const _0x433034=_0x53023a;let _0x1a30cf=document[_0x433034(0xd0)](_0x433034(0xd5));$(menus)[_0x433034(0xd1)](),$(upcomingContents)[_0x433034(0xd1)](),$(historyContents)[_0x433034(0xd1)](),$(pendingContents)[_0x433034(0xf5)](),$[_0x433034(0xf2)]({'method':'GET','url':_0x433034(0xd2),'data':{'userID':userID},'beforeSend':function(){const _0x278c5e=_0x433034;_0x1a30cf[_0x278c5e(0xd6)]='<div\x20class=\x22col-span-12\x20animate-pulse\x20text-xl\x20text-center\x20my-60\x22>Please\x20wait..</div>';},'success':function(_0x597c64){const _0x355f14=_0x433034;_0x1a30cf[_0x355f14(0xd6)]=_0x597c64;}});};const fullDetailsModal=document[_0x53023a(0xd0)]('full-details-modal'),closeModalButton=document[_0x53023a(0xd0)]('cancelButton');let modalBody=document[_0x53023a(0xd0)](_0x53023a(0xee));closeModalButton['onclick']=function(){const _0x41fec9=_0x53023a;modalBody['innerHTML']='',toggleModal(_0x41fec9(0xf4),![]);};function fullDetails(_0x205449){const _0x1de38b=_0x53023a;let _0x4f51e0=_0x205449;modalBody[_0x1de38b(0xd6)]='',toggleModal(_0x1de38b(0xf4),!![]),$[_0x1de38b(0xf2)]({'method':'GET','url':'includes/user-full-pending-details.php','data':{'bookingID':_0x4f51e0},'beforeSend':function(){const _0x510a1a=_0x1de38b;modalBody[_0x510a1a(0xd6)]=_0x510a1a(0xef);},'success':function(_0x9129ea){modalBody['innerHTML']=_0x9129ea;}});}function showImages(_0x5a4887){const _0xfe6336=_0x53023a;let _0x4bfdc8=_0x5a4887;modalBody[_0xfe6336(0xd6)]='',$[_0xfe6336(0xf2)]({'method':_0xfe6336(0xfb),'url':_0xfe6336(0xcf),'data':{'bookingID':_0x4bfdc8},'success':function(_0x3e8078){const _0x26c9ab=_0xfe6336;modalBody[_0x26c9ab(0xd6)]=_0x3e8078;}});}function backToPendingDetails(_0xe32d6){const _0x1b0c9a=_0x53023a;toggleModal(_0x1b0c9a(0xf4),![]),fullDetails(_0xe32d6);}upcomingButton[_0x53023a(0xfc)]=function(){const _0x749674=_0x53023a;let _0x484649=document[_0x749674(0xd0)](_0x749674(0xe9));$(menus)['hide'](),$(pendingContents)[_0x749674(0xd1)](),$(historyContents)[_0x749674(0xd1)](),$(upcomingContents)['fadeIn'](),$[_0x749674(0xf2)]({'method':'GET','url':_0x749674(0x100),'data':{'userID':userID},'beforeSend':function(){const _0x3079a7=_0x749674;_0x484649[_0x3079a7(0xd6)]=_0x3079a7(0xec);},'success':function(_0x5cdb1f){_0x484649['innerHTML']=_0x5cdb1f;}});};const btnCloseUpcomingModal=document[_0x53023a(0xd0)](_0x53023a(0xd7));function _0x4bd5(){const _0x2814e0=['754cYzJnJ','history-close-button','upcoming-modal-body','upcoming-contents','2718cxiLkT','upcoming-button','upcoming-cards-container','356736tzWVjX','contents-container','<div\x20class=\x22col-span-12\x20animate-pulse\x20text-xl\x20text-center\x20my-60\x22>Please\x20wait..</div>','pending-contents','details-modal-body','<div\x20class=\x22animate-pulse\x20text-xl\x20text-center\x20my-14\x22>Details\x20are\x20being\x20loaded..</div>','5505ZdiPon','history-modal-body','ajax','14418811ZxDBXV','full-details-modal','fadeIn','upcoming-count','pending-button','3299288LIhAdq','973rDcnZY','includes/user-full-upcoming-details.php','GET','onclick','log','14BiqaPM','includes/user-history-inc.php','includes/user-upcoming-inc.php','12GLkQjz','completed-cards-container','.btn-back-to-menu','includes/get-user-referral-images.php','getElementById','hide','includes/user-pending-inc.php','15220oSXlNX','main-menus','pending-cards-container','innerHTML','upcoming-close-button','909390vIFIJZ','includes/get-user-history-count.php','history-button','querySelectorAll','includes/get-user-pending-count.php','history-contents','upcoming-details-modal','includes/get-user-upcoming-count.php','history-details-modal','3306tDltOh','pending-count'];_0x4bd5=function(){return _0x2814e0;};return _0x4bd5();}let upcomingModalbody=document[_0x53023a(0xd0)](_0x53023a(0xe5));btnCloseUpcomingModal[_0x53023a(0xfc)]=function(){const _0x35e56e=_0x53023a;upcomingModalbody[_0x35e56e(0xd6)]='',toggleModal(_0x35e56e(0xde),![]);};function upcomingFullDetails(_0x78ff16){const _0x357b45=_0x53023a;let _0x4d0dd0=_0x78ff16;upcomingModalbody[_0x357b45(0xd6)]='',toggleModal('upcoming-details-modal',!![]),$[_0x357b45(0xf2)]({'method':'GET','url':_0x357b45(0xfa),'data':{'bookingID':_0x4d0dd0},'beforeSend':function(){const _0xac8de5=_0x357b45;upcomingModalbody['innerHTML']=_0xac8de5(0xef);},'success':function(_0x2ad759){const _0x25c16c=_0x357b45;upcomingModalbody[_0x25c16c(0xd6)]=_0x2ad759;}});}historyButton[_0x53023a(0xfc)]=function(){const _0x4feaf0=_0x53023a;let _0x4fa2fd=document[_0x4feaf0(0xd0)](_0x4feaf0(0x102));$(menus)[_0x4feaf0(0xd1)](),$(upcomingContents)[_0x4feaf0(0xd1)](),$(pendingContents)[_0x4feaf0(0xd1)](),$(historyContents)['fadeIn'](),$[_0x4feaf0(0xf2)]({'method':_0x4feaf0(0xfb),'url':_0x4feaf0(0xff),'data':{'userID':userID},'beforeSend':function(){const _0x41b6f4=_0x4feaf0;_0x4fa2fd[_0x41b6f4(0xd6)]=_0x41b6f4(0xec);},'success':function(_0x34d09e){const _0x353fcf=_0x4feaf0;_0x4fa2fd[_0x353fcf(0xd6)]=_0x34d09e;}});};const btnCloseHistoryModal=document[_0x53023a(0xd0)](_0x53023a(0xe4));let historyModalbody=document['getElementById'](_0x53023a(0xf1));btnCloseHistoryModal[_0x53023a(0xfc)]=function(){const _0x1382aa=_0x53023a;historyModalbody[_0x1382aa(0xd6)]='',toggleModal('history-details-modal',![]);};function historyFullDetails(_0x4181b5,_0x2f4877){const _0x44d13f=_0x53023a;let _0x1d8ddb=_0x4181b5,_0x13dafc=_0x2f4877;console[_0x44d13f(0xfd)](_0x1d8ddb),console[_0x44d13f(0xfd)](_0x13dafc),historyModalbody['innerHTML']='',toggleModal(_0x44d13f(0xe0),!![]),$[_0x44d13f(0xf2)]({'method':_0x44d13f(0xfb),'url':'includes/user-full-history-details.php','data':{'bookingID':_0x1d8ddb,'type':_0x13dafc},'beforeSend':function(){const _0x507679=_0x44d13f;historyModalbody[_0x507679(0xd6)]=_0x507679(0xef);},'success':function(_0x1f87c0){const _0x13e76e=_0x44d13f;historyModalbody[_0x13e76e(0xd6)]=_0x1f87c0;}});}
+// alert ("Working na!");
+
+    const contentsContainer = document.getElementById("contents-container");
+
+    // USer ID
+    let userID = document.getElementById("userID").value;
+
+    // Contents
+    let menus = document.getElementById("main-menus");
+    let pendingContents = document.getElementById("pending-contents");
+    let upcomingContents = document.getElementById("upcoming-contents");
+    let historyContents = document.getElementById("history-contents");
+
+    // Menu Buttons
+    const pendingButton = document.getElementById("pending-button");
+    const upcomingButton = document.getElementById("upcoming-button");
+    const historyButton = document.getElementById("history-button");
+
+    // back to menu button
+    const backToMenu = document.querySelectorAll('.btn-back-to-menu');
+
+    function back() {
+        $(pendingContents).hide();
+        $(upcomingContents).hide();
+        $(historyContents).hide();
+        $(menus).fadeIn();
+    }
+
+    // Load Main Menus First
+    showMainMenu();
+    function showMainMenu() {
+        $(menus).fadeIn();
+    }
+
+    // Get Pending Count
+    getPendingCount();
+    function getPendingCount() {
+        let pendingCount = document.getElementById("pending-count");
+
+        $.ajax({
+            method: 'GET',
+            url: "includes/get-user-pending-count.php",
+            data: {userID:userID},
+            success: function (data) {
+                pendingCount.innerHTML = data;
+            }
+        });
+    }
+
+    // Get Upcoming Count
+    getUpcomingCount();
+    function getUpcomingCount() {
+        let upcomingCount = document.getElementById("upcoming-count");
+
+        $.ajax({
+            method: 'GET',
+            url: "includes/get-user-upcoming-count.php",
+            data: {userID:userID},
+            success: function (data) {
+                upcomingCount.innerHTML = data;
+            }
+        });
+    }
+
+    // Get history Count
+    getHistoryCount();
+    function getHistoryCount() {
+        let historyCount = document.getElementById("history-count");
+
+        $.ajax({
+            method: 'GET',
+            url: "includes/get-user-history-count.php",
+            data: {userID:userID},
+            success: function (data) {
+                historyCount.innerHTML = data;
+            }
+        });
+    }
+
+
+    // ----------------------Show Pending Contents------------------------------
+
+    pendingButton.onclick = function () {
+        let pendingCardsContainer = document.getElementById("pending-cards-container");
+
+        $(menus).hide();
+        $(upcomingContents).hide();
+        $(historyContents).hide();
+        $(pendingContents).fadeIn();
+
+        // Get Pending List
+        $.ajax({
+            method: "GET",
+            url: "includes/user-pending-inc.php",
+            data: {userID:userID},
+            beforeSend: function () {
+                pendingCardsContainer.innerHTML = '<div class="col-span-12 animate-pulse text-xl text-center my-60">Please wait..</div>';
+            },
+            success: function (data) {
+                pendingCardsContainer.innerHTML = data;
+            }
+        });
+    }
+
+    // Dismiss Modal When Clicked outside
+    const fullDetailsModal = document.getElementById("full-details-modal");
+    // let mainContainer = document.querySelector("main-container");
+    const closeModalButton = document.getElementById("cancelButton");
+    let modalBody = document.getElementById("details-modal-body");
+
+    closeModalButton.onclick = function () {
+        modalBody.innerHTML = '';
+        toggleModal('full-details-modal', false);
+    }
+
+    // View Pending Reservation Full Details
+    function fullDetails(data) {
+        let bookingID = data;
+        modalBody.innerHTML = '';
+        toggleModal('full-details-modal', true);
+
+        $.ajax({
+            method: "GET",
+            url: "includes/user-full-pending-details.php",
+            data: {bookingID:bookingID},
+            beforeSend: function () {
+                modalBody.innerHTML = '<div class="animate-pulse text-xl text-center my-14">Details are being loaded..</div>';
+            },
+            success: function (data) {
+                modalBody.innerHTML = data;
+            }
+        });
+    }
+
+    // View Referral Files
+    function showImages(bookingIDData) {
+        let bookingID = bookingIDData;
+        modalBody.innerHTML = '';
+
+        $.ajax({
+            method: "GET",
+            url: "includes/get-user-referral-images.php",
+            data: {bookingID:bookingID},
+            success: function (data) {
+                modalBody.innerHTML = data;
+            }
+        });
+    }
+
+    function backToPendingDetails(backbuttonData) {
+        toggleModal('full-details-modal', false);
+        fullDetails(backbuttonData);
+    }
+    // ----------------------------------------------------------------------
+
+
+
+
+    // -----------------------------Show upcoming Contents--------------------------------------------
+    upcomingButton.onclick = function () {
+        let upcomingCardsContainer = document.getElementById("upcoming-cards-container");
+
+        $(menus).hide();
+        $(pendingContents).hide();
+        $(historyContents).hide();
+        $(upcomingContents).fadeIn();
+
+        // Get Upcoming List
+        $.ajax({
+            method: "GET",
+            url: "includes/user-upcoming-inc.php",
+            data: {userID:userID},
+            beforeSend: function () {
+                upcomingCardsContainer.innerHTML = '<div class="col-span-12 animate-pulse text-xl text-center my-60">Please wait..</div>';
+            },
+            success: function (data) {
+                upcomingCardsContainer.innerHTML = data;
+            }
+        });
+    }
+
+    // Dismiss Modal When Clicked outside
+    // const upcomingDetailsModal = document.getElementById("upcoming-details-modal");
+    // let mainContainer = document.querySelector("main-container");
+    const btnCloseUpcomingModal = document.getElementById("upcoming-close-button");
+    let upcomingModalbody = document.getElementById("upcoming-modal-body");
+
+    btnCloseUpcomingModal.onclick = function () {
+        upcomingModalbody.innerHTML = '';
+        toggleModal('upcoming-details-modal', false);
+    }
+
+    // View Pending Reservation Full Details
+    function upcomingFullDetails(data) {
+        let bookingID = data;
+        upcomingModalbody.innerHTML = '';
+        toggleModal('upcoming-details-modal', true);
+
+        $.ajax({
+            method: "GET",
+            url: "includes/user-full-upcoming-details.php",
+            data: {bookingID:bookingID},
+            beforeSend: function () {
+                upcomingModalbody.innerHTML = '<div class="animate-pulse text-xl text-center my-14">Details are being loaded..</div>';
+            },
+            success: function (data) {
+                upcomingModalbody.innerHTML = data;
+            }
+        });
+    }
+
+    // -----------------------------------------------------------
+
+
+    // -----------------------------Show History Contents--------------------------------------------
+    historyButton.onclick = function () {
+        let historyCardsContainer = document.getElementById("completed-cards-container");
+
+        $(menus).hide();
+        $(upcomingContents).hide();
+        $(pendingContents).hide();
+        $(historyContents).fadeIn();
+
+        // Get Upcoming List
+        $.ajax({
+            method: "GET",
+            url: "includes/user-history-inc.php",
+            data: {userID:userID},
+            beforeSend: function () {
+                historyCardsContainer.innerHTML = '<div class="col-span-12 animate-pulse text-xl text-center my-60">Please wait..</div>';
+            },
+            success: function (data) {
+                historyCardsContainer.innerHTML = data;
+            }
+        });
+    }
+
+    const btnCloseHistoryModal = document.getElementById("history-close-button");
+    let historyModalbody = document.getElementById("history-modal-body");
+
+    btnCloseHistoryModal.onclick = function () {
+        historyModalbody.innerHTML = '';
+        toggleModal('history-details-modal', false);
+    }
+
+    // View Pending Reservation Full Details
+    function historyFullDetails(dataBookingID, bookingType) {
+        let bookingID = dataBookingID;
+        let type = bookingType;
+
+        console.log(bookingID);
+        console.log(type);
+        
+        historyModalbody.innerHTML = '';
+        toggleModal('history-details-modal', true);
+
+        $.ajax({
+            method: "GET",
+            url: "includes/user-full-history-details.php",
+            data: {bookingID:bookingID, type:type},
+            beforeSend: function () {
+                historyModalbody.innerHTML = '<div class="animate-pulse text-xl text-center my-14">Details are being loaded..</div>';
+            },
+            success: function (data) {
+                historyModalbody.innerHTML = data;
+            }
+        });
+    }
+
+    // -----------------------------------------------------------

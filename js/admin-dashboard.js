@@ -1,1 +1,402 @@
-const _0x25d2eb=_0x21c9;function _0x21c9(_0x3983d6,_0x591fa9){const _0x360250=_0x3602();return _0x21c9=function(_0x21c98e,_0x51297f){_0x21c98e=_0x21c98e-0x128;let _0x23c118=_0x360250[_0x21c98e];return _0x23c118;},_0x21c9(_0x3983d6,_0x591fa9);}(function(_0x249482,_0x2a1871){const _0x46dce2=_0x21c9,_0x3e301b=_0x249482();while(!![]){try{const _0x5b140a=-parseInt(_0x46dce2(0x132))/0x1*(-parseInt(_0x46dce2(0x16b))/0x2)+parseInt(_0x46dce2(0x136))/0x3*(-parseInt(_0x46dce2(0x13f))/0x4)+-parseInt(_0x46dce2(0x171))/0x5+-parseInt(_0x46dce2(0x14c))/0x6*(parseInt(_0x46dce2(0x137))/0x7)+parseInt(_0x46dce2(0x192))/0x8*(parseInt(_0x46dce2(0x15c))/0x9)+parseInt(_0x46dce2(0x184))/0xa+parseInt(_0x46dce2(0x191))/0xb;if(_0x5b140a===_0x2a1871)break;else _0x3e301b['push'](_0x3e301b['shift']());}catch(_0x203410){_0x3e301b['push'](_0x3e301b['shift']());}}}(_0x3602,0x471cb));function openCity(_0x20dfe6,_0x35dbfd){const _0x21e690=_0x21c9;var _0x1fe36a,_0x1bed48,_0x42e01d;_0x1bed48=document[_0x21e690(0x186)]('tabcontent');for(_0x1fe36a=0x0;_0x1fe36a<_0x1bed48[_0x21e690(0x143)];_0x1fe36a++){_0x1bed48[_0x1fe36a][_0x21e690(0x150)]['display']=_0x21e690(0x16f);}_0x42e01d=document[_0x21e690(0x186)](_0x21e690(0x128));for(_0x1fe36a=0x0;_0x1fe36a<_0x42e01d['length'];_0x1fe36a++){_0x42e01d[_0x1fe36a][_0x21e690(0x14b)]=_0x42e01d[_0x1fe36a]['className']['replace'](_0x21e690(0x15f),'');}document[_0x21e690(0x183)](_0x35dbfd)['style'][_0x21e690(0x159)]=_0x21e690(0x196),_0x20dfe6['currentTarget'][_0x21e690(0x14b)]+=_0x21e690(0x15f);}let spinner=document[_0x25d2eb(0x183)](_0x25d2eb(0x182)),pendingCardsContainer=document[_0x25d2eb(0x183)](_0x25d2eb(0x190));load_pending_cards();function load_pending_cards(){const _0x5edfe8=_0x25d2eb;$[_0x5edfe8(0x189)]({'method':_0x5edfe8(0x15e),'url':_0x5edfe8(0x177),'beforeSend':function(){const _0x5f3885=_0x5edfe8;$(spinner)[_0x5f3885(0x157)]();},'success':function(_0x1b0aea){const _0x50252c=_0x5edfe8;$(_0x50252c(0x131))[_0x50252c(0x157)](),$('#pending')[_0x50252c(0x172)](_0x1b0aea);},'complete':function(_0x1f312f){const _0x10c945=_0x5edfe8;$(spinner)[_0x10c945(0x18c)]();}});}function showFullDetails(_0x1a90df){const _0x354d1c=_0x25d2eb;$('#pending-modal')['modal'](_0x354d1c(0x157)),$['post']('includes/pending-modal-inc.php',{'pending_id':_0x1a90df},function(_0x4c48e1,_0x5cc6b8){const _0x532b1b=_0x354d1c;let _0x2202ec=JSON[_0x532b1b(0x13a)](_0x4c48e1),_0x3052a8=_0x2202ec[_0x532b1b(0x16c)],_0x58b4f5=_0x2202ec[_0x532b1b(0x158)];get_image_dir(_0x58b4f5),$(_0x532b1b(0x13d))[_0x532b1b(0x194)](_0x3052a8),$(_0x532b1b(0x16a))[_0x532b1b(0x194)](_0x2202ec[_0x532b1b(0x158)]),$(_0x532b1b(0x134))['text'](_0x2202ec[_0x532b1b(0x175)]),$('#modal-pending-address')['text'](_0x2202ec['pendingAddress']),$(_0x532b1b(0x16d))[_0x532b1b(0x194)](_0x2202ec[_0x532b1b(0x151)]),$('#modal-pending-supervisor')['text'](_0x2202ec[_0x532b1b(0x185)]),$(_0x532b1b(0x197))[_0x532b1b(0x194)](_0x2202ec[_0x532b1b(0x168)]),$(_0x532b1b(0x179))['text'](_0x2202ec[_0x532b1b(0x162)]),$(_0x532b1b(0x138))[_0x532b1b(0x194)](_0x2202ec['pendingEmail']),$(_0x532b1b(0x155))[_0x532b1b(0x194)](_0x2202ec[_0x532b1b(0x18a)]),$(_0x532b1b(0x17e))['text'](_0x2202ec[_0x532b1b(0x166)]);});}function showImages(){const _0x402690=_0x25d2eb;$(_0x402690(0x141))[_0x402690(0x12f)](_0x402690(0x18c)),$(_0x402690(0x187))[_0x402690(0x12f)](_0x402690(0x157));}function backToPending(){const _0x5e9b69=_0x25d2eb;$('#modal-image')[_0x5e9b69(0x12f)](_0x5e9b69(0x18c)),$(_0x5e9b69(0x141))[_0x5e9b69(0x12f)](_0x5e9b69(0x157));}function hide_modal_images(){const _0x5ee76c=_0x25d2eb;$('#modal-image')[_0x5ee76c(0x12f)](_0x5ee76c(0x18c));}function get_image_dir(_0x2a9052){const _0x44a6fe=_0x25d2eb;$(_0x44a6fe(0x160))[_0x44a6fe(0x172)](''),$[_0x44a6fe(0x161)](_0x44a6fe(0x17f),{'current_id':_0x2a9052},function(_0x23d60d,_0x79c4bf){const _0x3884b6=_0x44a6fe;let _0x328cb1=JSON[_0x3884b6(0x13a)](_0x23d60d);for(var _0x2d7be6=0x0;_0x2d7be6<_0x328cb1[_0x3884b6(0x143)];_0x2d7be6++){var _0x351e4c=_0x328cb1[_0x2d7be6];$(_0x3884b6(0x160))[_0x3884b6(0x12d)](_0x3884b6(0x153)+_0x351e4c[_0x3884b6(0x14e)]+'\x22>\x20<img\x20class=\x22card-img\x22\x20alt=\x22...\x22\x20src=\x22'+_0x351e4c[_0x3884b6(0x14e)]+_0x3884b6(0x156)+_0x351e4c['imageName']+'</a>');}let _0x3690c0=document['getElementById'](_0x3884b6(0x129));_0x3690c0['addEventListener'](_0x3884b6(0x146),function(){const _0x5a6f17=_0x3884b6;$(_0x5a6f17(0x187))[_0x5a6f17(0x12f)]('show');},![]),lightGallery(_0x3690c0);});}function acceptPending(){const _0x354a92=_0x25d2eb;let _0x5b8f57=$('#modal-pending-id')[_0x354a92(0x194)](),_0xe11c66=$(_0x354a92(0x13d))[_0x354a92(0x194)](),_0x26b071=$('#modal-pending-type')[_0x354a92(0x194)](),_0x3e5c12=$(_0x354a92(0x16e))[_0x354a92(0x194)](),_0x4eed0f=$(_0x354a92(0x16d))[_0x354a92(0x194)](),_0x13211b=$(_0x354a92(0x178))[_0x354a92(0x194)](),_0x5f4d78=$('#modal-pending-phone')[_0x354a92(0x194)](),_0x5dcde0=$('#modal-pending-designation')['text'](),_0x46ff0f=$('#modal-pending-email')[_0x354a92(0x194)](),_0x3722b3=$(_0x354a92(0x155))[_0x354a92(0x194)](),_0x2960c3=$(_0x354a92(0x17e))[_0x354a92(0x194)]();$(_0x354a92(0x141))[_0x354a92(0x12f)]('hide'),$(_0x354a92(0x173))[_0x354a92(0x12f)](_0x354a92(0x157)),$(_0x354a92(0x17a))[_0x354a92(0x154)](function(){const _0x417581=_0x354a92;alert(_0x417581(0x14f)),$[_0x417581(0x161)]('includes/accept-request-inc.php',{'requestID':_0x5b8f57,'name':_0xe11c66,'type':_0x26b071,'address':_0x3e5c12,'representative':_0x4eed0f,'supervisor':_0x13211b,'phone':_0x5f4d78,'designation':_0x5dcde0,'email':_0x46ff0f,'password':_0x3722b3,'timestamp':_0x2960c3},function(_0x252f1d,_0x489981){const _0x4663f4=_0x417581;$(_0x4663f4(0x173))[_0x4663f4(0x12f)](_0x4663f4(0x18c)),location[_0x4663f4(0x17b)](),load_pending_cards();});}),$(_0x354a92(0x15d))[_0x354a92(0x154)](function(){const _0x55f29c=_0x354a92;$(_0x55f29c(0x173))[_0x55f29c(0x12f)]('hide'),$('#pending-modal')[_0x55f29c(0x12f)](_0x55f29c(0x157));});}function rejectPending(){const _0x524830=_0x25d2eb;let _0x492806=$('#modal-pending-id')[_0x524830(0x194)](),_0x42fb04=$(_0x524830(0x13d))[_0x524830(0x194)](),_0xa3597f=$('#modal-pending-type')['text'](),_0x329b22=$('#modal-pending-address')[_0x524830(0x194)](),_0x56d7dc=$(_0x524830(0x16d))[_0x524830(0x194)](),_0xfa03d1=$(_0x524830(0x178))[_0x524830(0x194)](),_0x515006=$(_0x524830(0x197))['text'](),_0x1235a4=$(_0x524830(0x179))[_0x524830(0x194)](),_0x119f92=$('#modal-pending-email')[_0x524830(0x194)](),_0xdbb903=$(_0x524830(0x155))['text'](),_0x36febd=$(_0x524830(0x17e))[_0x524830(0x194)]();$(_0x524830(0x141))['modal'](_0x524830(0x18c)),$('#modal-reject')[_0x524830(0x12f)](_0x524830(0x157)),$('#reject-modal-cancel')[_0x524830(0x154)](function(){const _0x1005da=_0x524830;$(_0x1005da(0x174))['modal'](_0x1005da(0x18c)),$(_0x1005da(0x141))[_0x1005da(0x12f)](_0x1005da(0x157));}),$(_0x524830(0x176))[_0x524830(0x154)](function(){const _0x891f37=_0x524830;$['post'](_0x891f37(0x18d),{'requestID':_0x492806,'name':_0x42fb04,'type':_0xa3597f,'address':_0x329b22,'representative':_0x56d7dc,'supervisor':_0xfa03d1,'phone':_0x515006,'designation':_0x1235a4,'email':_0x119f92,'password':_0xdbb903,'timestamp':_0x36febd},function(_0x3919f7,_0x2e2d56){const _0x25bafe=_0x891f37;$(_0x25bafe(0x174))[_0x25bafe(0x12f)](_0x25bafe(0x18c)),alert(_0x25bafe(0x167)),location[_0x25bafe(0x17b)](),load_pending_cards();});});}load_approved_cards();function load_approved_cards(){const _0xc7d1d6=_0x25d2eb;$[_0xc7d1d6(0x189)]({'method':_0xc7d1d6(0x15e),'url':_0xc7d1d6(0x15a),'beforeSend':function(){const _0xbd213a=_0xc7d1d6;$(spinner)[_0xbd213a(0x157)]();},'success':function(_0x39db68){const _0x57e63f=_0xc7d1d6;$(_0x57e63f(0x169))['hide'](),$(_0x57e63f(0x152))[_0x57e63f(0x172)](_0x39db68);},'complete':function(_0x28b0b5){const _0x30c7d7=_0xc7d1d6;$(spinner)[_0x30c7d7(0x18c)]();}});}function _0x3602(){const _0x20c0f6=['#modal-pending-address','none','email','623365dqpaux','html','#modal-accept','#modal-reject','pendingType','#reject-modal-yes','includes/load-pending-list-inc.php','#modal-pending-supervisor','#modal-pending-designation','#accept-modal-yes','reload','hospitalName','rejectedType','#modal-pending-timestamp','includes/get-image-inc.php','rejectTimestamp','#modal-rejected-timestamp','spinner','getElementById','2513030mIfjzU','pendingSupervisorName','getElementsByClassName','#modal-image','includes/rejected-modal-inc.php','ajax','pendingPassword','#rejected','hide','includes/reject-request-inc.php','#modal-approved-designation','phoneNumber','pending-cards-container','1664839dUOCdC','107728hovUOZ','rejectedDesignation','text','timestamp','block','#modal-pending-phone','tablinks','attachments-gallery','#rejected-hospital-name','#modal-approved-phone','rejectedEmail','append','rejectedName','modal','#modal-rejected-id','#pending-cards-container','8BTvWDW','rejectedAddress','#modal-pending-type','supervisorName','177zaHrNr','617372invijy','#modal-pending-email','#modal-approved-timestamp','parse','representativeName','#modal-rejected-phone','#hospital-name','includes/load-rejected-list-inc.php','664FvBZgS','designation','#pending-modal','#modal-approved-address','length','#modal-approved-supervisor','#modal-rejected-address','onCloseAfter','hospitalAddress','#approved-modal','includes/approved-modal-inc.php','hospitalType','className','12VmMOtP','#modal-approved-representative','image_dir','The\x20card\x20will\x20be\x20transfer\x20into\x20Approved\x20Section.','style','pendingRepresentativeName','#approved','<a\x20class=\x22col-xl-3\x20mx-2\x20my-2\x20uploaded-hospital-images\x22\x20onclick=\x22hide_modal_images()\x22\x20href=\x22','click','#modal-pending-password','\x22\x20height=\x2210%\x22\x20width=\x2210%\x22/>','show','pendingID','display','includes/load-approved-list-inc.php','#approved-hospital-name','9BCDPLZ','#accept-modal-cancel','POST','\x20active','#attachments-gallery','post','pendingDesignation','#modal-rejected-supervisor','#modal-rejected-email','#modal-approved-id','pendingTimestamp','The\x20card\x20will\x20be\x20transfer\x20into\x20Rejected\x20Section.','pendingPhoneNumber','#approved-cards-container','#modal-pending-id','46504SmAUZp','pendingName','#modal-pending-representative'];_0x3602=function(){return _0x20c0f6;};return _0x3602();}function approvedFullDetails(_0x1c17da){const _0x3cba83=_0x25d2eb;$(_0x3cba83(0x148))[_0x3cba83(0x12f)](_0x3cba83(0x157)),$[_0x3cba83(0x161)](_0x3cba83(0x149),{'ID':_0x1c17da},function(_0x5d7e82,_0x32f9d0){const _0x1e841d=_0x3cba83;let _0x47e09f=JSON[_0x1e841d(0x13a)](_0x5d7e82),_0x16b2aa=_0x47e09f[_0x1e841d(0x17c)];$(_0x1e841d(0x15b))[_0x1e841d(0x194)](_0x16b2aa),$(_0x1e841d(0x165))[_0x1e841d(0x194)](_0x47e09f['ID']),$('#modal-approved-type')[_0x1e841d(0x194)](_0x47e09f[_0x1e841d(0x14a)]),$(_0x1e841d(0x142))[_0x1e841d(0x194)](_0x47e09f[_0x1e841d(0x147)]),$(_0x1e841d(0x14d))[_0x1e841d(0x194)](_0x47e09f[_0x1e841d(0x13b)]),$(_0x1e841d(0x144))['text'](_0x47e09f[_0x1e841d(0x135)]),$(_0x1e841d(0x12b))[_0x1e841d(0x194)](_0x47e09f[_0x1e841d(0x18f)]),$(_0x1e841d(0x18e))[_0x1e841d(0x194)](_0x47e09f[_0x1e841d(0x140)]),$('#modal-approved-email')[_0x1e841d(0x194)](_0x47e09f[_0x1e841d(0x170)]),$(_0x1e841d(0x139))[_0x1e841d(0x194)](_0x47e09f[_0x1e841d(0x195)]);});}load_rejected_cards();function load_rejected_cards(){const _0xbb6d6c=_0x25d2eb;$[_0xbb6d6c(0x189)]({'method':_0xbb6d6c(0x15e),'url':_0xbb6d6c(0x13e),'beforeSend':function(){$(spinner)['show']();},'success':function(_0x325cac){const _0x1c0cb8=_0xbb6d6c;$(_0x1c0cb8(0x18b))[_0x1c0cb8(0x172)](_0x325cac),$('#rejected-cards-container')[_0x1c0cb8(0x18c)];},'complete':function(_0x553626){const _0x5ee7a6=_0xbb6d6c;$(spinner)[_0x5ee7a6(0x18c)]();}});}function rejectedFullDetails(_0x34592c){const _0x8a229a=_0x25d2eb;$('#rejected-modal')[_0x8a229a(0x12f)](_0x8a229a(0x157)),$[_0x8a229a(0x161)](_0x8a229a(0x188),{'ID':_0x34592c},function(_0x9d5ad3,_0x589db4){const _0x5131da=_0x8a229a;let _0x28edf5=JSON[_0x5131da(0x13a)](_0x9d5ad3),_0x3a95e5=_0x28edf5[_0x5131da(0x12e)];$(_0x5131da(0x12a))[_0x5131da(0x194)](_0x3a95e5),$(_0x5131da(0x130))[_0x5131da(0x194)](_0x28edf5['ID']),$('#modal-rejected-type')['text'](_0x28edf5[_0x5131da(0x17d)]),$(_0x5131da(0x145))['text'](_0x28edf5[_0x5131da(0x133)]),$('#modal-rejected-representative')[_0x5131da(0x194)](_0x28edf5[_0x5131da(0x13b)]),$(_0x5131da(0x163))[_0x5131da(0x194)](_0x28edf5['rejectedSupervisor']),$(_0x5131da(0x13c))['text'](_0x28edf5['rejectedphoneNumber']),$('#modal-rejected-designation')[_0x5131da(0x194)](_0x28edf5[_0x5131da(0x193)]),$(_0x5131da(0x164))['text'](_0x28edf5[_0x5131da(0x12c)]),$(_0x5131da(0x181))['text'](_0x28edf5[_0x5131da(0x180)]);});}
+    // START TABS CONTENT FUNCTION
+
+    function openCity(evt, admin) {
+
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        
+        document.getElementById(admin).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    
+    // END TABS CONTENT FUNCTION
+
+    // START APPROVED REQUEST
+
+    let spinner = document.getElementById("spinner");
+    let pendingCardsContainer = document.getElementById("pending-cards-container");
+    
+    load_pending_cards();
+    
+    // window.setInterval(function() {
+    //     load_pending_cards();
+    //  }, 1000);
+
+    // Function to load all pending cards.
+    function load_pending_cards() {
+        $.ajax({
+            method: "POST",
+            url: "includes/load-pending-list-inc.php",
+            beforeSend: function () {
+                $(spinner).show();
+            },
+            success: function (data) {
+                $('#pending-cards-container').show();
+                $('#pending').html(data);
+            },
+            complete: function (data) {
+                $(spinner).hide();
+            },
+        });
+    }
+
+    // Load Pending Cards full details.
+    function showFullDetails(pending_id) {
+        $('#pending-modal').modal("show");
+
+        $.post("includes/pending-modal-inc.php",{pending_id:pending_id},
+            function (data, status){
+                let pendingID = JSON.parse(data);
+                let hospitalName = (pendingID.pendingName);
+                let currentID = (pendingID.pendingID);
+
+                // let image_dir = (pendingID.image_dir);
+
+                // Pass image_dir to get_image_dir function
+                get_image_dir(currentID);
+
+                // $("#images-container").html('<img src="'+image_dir+'" Height="100" width="100"></img>');
+
+                $('#hospital-name').text(hospitalName);
+                $('#modal-pending-id').text(pendingID.pendingID);
+                $('#modal-pending-type').text(pendingID.pendingType);
+                $('#modal-pending-address').text(pendingID.pendingAddress);
+                $('#modal-pending-representative').text(pendingID.pendingRepresentativeName);
+                $('#modal-pending-supervisor').text(pendingID.pendingSupervisorName);
+                $('#modal-pending-phone').text(pendingID.pendingPhoneNumber);
+                $('#modal-pending-designation').text(pendingID.pendingDesignation);
+                $('#modal-pending-email').text(pendingID.pendingEmail);
+                $('#modal-pending-password').text(pendingID.pendingPassword);
+                $('#modal-pending-timestamp').text(pendingID.pendingTimestamp);
+            });
+    }
+
+    function showImages(){
+        $('#pending-modal').modal("hide");
+        $('#modal-image').modal("show");
+    }
+
+    function backToPending() {
+        $('#modal-image').modal("hide");
+        $('#pending-modal').modal("show");
+    }
+
+    function hide_modal_images() {
+        $('#modal-image').modal("hide");
+    }
+    
+    // Show Images
+    function get_image_dir(current_id){
+
+        $("#attachments-gallery").html("");
+        $.post("includes/get-image-inc.php", {current_id:current_id},
+        function(data, status) {
+
+            let fetchedData = JSON.parse(data);
+
+            for(var i = 0; i < fetchedData.length; i++) {
+                var obj = fetchedData[i];
+            
+                // console.log(obj.image_dir);
+                // let image_directory = (obj.image_dir);
+                // $("#images-container").append('<img src="'+(obj.image_dir)+'" height="100" width="100"></img>');
+                $("#attachments-gallery").append('<a class="col-xl-3 mx-2 my-2 uploaded-hospital-images" onclick="hide_modal_images()" href="'+(obj.image_dir)+'"> <img class="card-img" alt="..." src="'+(obj.image_dir)+'" height="10%" width="10%"/>'+(obj.imageName)+'</a>');
+            }
+            let lg = document.getElementById('attachments-gallery');
+            lg.addEventListener('onCloseAfter', function(){
+                $('#modal-image').modal("show");
+            }, false);
+            lightGallery(lg);
+        });
+    }  
+
+    // Accept Pending request
+    function acceptPending() {
+        let requestID = $('#modal-pending-id').text();
+        let name = $('#hospital-name').text();
+        let type = $('#modal-pending-type').text();
+        let address = $('#modal-pending-address').text();
+        let representative = $('#modal-pending-representative').text();
+        let supervisor = $('#modal-pending-supervisor').text();
+        let phone = $('#modal-pending-phone').text();
+        let designation = $('#modal-pending-designation').text();
+        let email = $('#modal-pending-email').text();
+        let password = $('#modal-pending-password').text();
+        let timestamp = $('#modal-pending-timestamp').text();
+
+        $('#pending-modal').modal("hide");
+        $('#modal-accept').modal("show");
+
+        // Accept pending registration request
+        $('#accept-modal-yes').click(function () {
+            alert("The card will be transfer into Approved Section.");
+            // alert("working!");
+            $.post("includes/accept-request-inc.php", {
+                requestID:requestID,
+                name:name,
+                type:type,
+                address:address,
+                representative:representative,
+                supervisor:supervisor,
+                phone:phone,
+                designation:designation,
+                email:email,
+                password:password,
+                timestamp:timestamp
+            },
+                function (data, status) {
+                    // let pendingID = JSON.parse(data);
+                    $('#modal-accept').modal("hide");
+                    location.reload()
+                    load_pending_cards();
+                });
+        });
+
+        $('#accept-modal-cancel').click(function () {
+            $('#modal-accept').modal("hide");
+            $('#pending-modal').modal("show");
+        });
+    }
+
+    // Reject Pending Request.
+    function rejectPending() {
+        let requestID = $('#modal-pending-id').text();
+        let name = $('#hospital-name').text();
+        let type = $('#modal-pending-type').text();
+        let address = $('#modal-pending-address').text();
+        let representative = $('#modal-pending-representative').text();
+        let supervisor = $('#modal-pending-supervisor').text();
+        let phone = $('#modal-pending-phone').text();
+        let designation = $('#modal-pending-designation').text();
+        let email = $('#modal-pending-email').text();
+        let password = $('#modal-pending-password').text();
+        let timestamp = $('#modal-pending-timestamp').text();
+
+        $('#pending-modal').modal("hide");
+        $('#modal-reject').modal("show");
+
+        $('#reject-modal-cancel').click(function () {
+            $('#modal-reject').modal("hide");
+            $('#pending-modal').modal("show");
+        });
+
+        $("#reject-modal-yes").click(function () {
+            // alert("Working!");
+            $.post("includes/reject-request-inc.php",{
+                requestID:requestID,
+                name:name,
+                type:type,
+                address:address,
+                representative:representative,
+                supervisor:supervisor,
+                phone:phone,
+                designation:designation,
+                email:email,
+                password:password,
+                timestamp:timestamp
+            }, function (data, status) {
+                // let pendingID = JSON.parse(data);
+                $('#modal-reject').modal("hide");
+                alert("The card will be transfer into Rejected Section.");
+                location.reload();
+                load_pending_cards();
+            });
+        });
+    }
+
+    // // END PENDING REQUEST
+
+    // ==========================================================
+
+    // // START APPROVED REQUEST
+    
+    load_approved_cards();
+    
+    function load_approved_cards() {
+        $.ajax({
+            method: "POST",
+            url: "includes/load-approved-list-inc.php",
+            beforeSend: function () {
+                $(spinner).show();
+            },
+            success: function (data) {
+                $('#approved-cards-container').hide();
+                $('#approved').html(data);
+            },
+            complete: function (data) {
+                $(spinner).hide();
+            },
+        });
+    }
+   
+    function approvedFullDetails(ID) {
+        $('#approved-modal').modal("show");
+
+        $.post("includes/approved-modal-inc.php",{ID:ID},
+            function (data, status){
+                let ID = JSON.parse(data);
+                let approvedHospital = (ID.hospitalName);
+           
+                $('#approved-hospital-name').text(approvedHospital);
+                $('#modal-approved-id').text(ID.ID);
+                $('#modal-approved-type').text(ID.hospitalType);
+                $('#modal-approved-address').text(ID.hospitalAddress);
+                $('#modal-approved-representative').text(ID.representativeName);
+                $('#modal-approved-supervisor').text(ID.supervisorName);
+                $('#modal-approved-phone').text(ID.phoneNumber);
+                $('#modal-approved-designation').text(ID.designation);
+                $('#modal-approved-email').text(ID.email);
+                $('#modal-approved-timestamp').text(ID.timestamp);
+            });
+    }
+
+    // function undoApproved() {
+    //     let requestID = $('#modal-approved-id').text();
+    //     let name = $('#approved-hospital-name').text();
+    //     let type = $('#modal-approved-type').text();
+    //     let address = $('#modal-approved-address').text();
+    //     let representative = $('#modal-approved-representative').text();
+    //     let supervisor = $('#modal-approved-supervisor').text();
+    //     let phone = $('#modal-approved-phone').text();
+    //     let designation = $('#modal-approved-designation').text();
+    //     let email = $('#modal-approved-email').text();
+    //     let timestamp = $('#modal-approved-timestamp').text();
+
+    //     $('#approved-modal').modal("hide");
+    //     $('#modal-undo-approved').modal("show");
+
+    //     // Accept pending registration request
+    //     $('#undo-modal-yes-approved').click(function(){
+    //         // alert("working!");
+    //         $.post("includes/undo-approved-inc.php", {
+    //             requestID:requestID,
+    //             name:name,
+    //             type:type,
+    //             address:address,
+    //             representative:representative,
+    //             supervisor:supervisor,
+    //             phone:phone,
+    //             designation:designation,
+    //             email:email,
+    //             timestamp:timestamp,
+    //         },
+            
+    //         function (data, status) {
+    //             // let pendingID = JSON.parse(data);
+                
+    //             $('#modal-undo-approved').modal("hide");
+    //             alert("The card will be back into Pending Section.");
+    //             location.reload()
+    //             load_approved_cards();
+    //         });
+
+    //     });
+
+    //     $('#undo-modal-cancel-approve').click(function () {
+    //         $('#modal-undo-approved').modal("hide");
+    //         $('#approved-modal').modal("show");
+    //     });
+    // }
+
+    
+
+    // // END APPROVED REQUEST
+
+    // // ==========================================================
+    
+    // // START REJECTED REQUEST
+
+    load_rejected_cards();
+    
+    function load_rejected_cards() {
+        $.ajax({
+            method: "POST",
+            url: "includes/load-rejected-list-inc.php",
+            beforeSend: function () {
+                $(spinner).show();
+            },
+            success: function (data) {
+                $('#rejected').html(data);               
+                $('#rejected-cards-container').hide;
+            },
+            complete: function (data) {
+                $(spinner).hide();
+            },
+        });
+    }
+
+    function rejectedFullDetails(ID) {
+        $('#rejected-modal').modal("show");
+
+        $.post("includes/rejected-modal-inc.php",{ID:ID},
+            function (data, status){
+                let ID = JSON.parse(data);
+                let rejectedHospitalname = (ID.rejectedName);
+                
+                $('#rejected-hospital-name').text(rejectedHospitalname);
+                $('#modal-rejected-id').text(ID.ID);
+                $('#modal-rejected-type').text(ID.rejectedType);
+                $('#modal-rejected-address').text(ID.rejectedAddress);
+                $('#modal-rejected-representative').text(ID.representativeName);
+                $('#modal-rejected-supervisor').text(ID. rejectedSupervisor );
+                $('#modal-rejected-phone').text(ID.rejectedphoneNumber);
+                $('#modal-rejected-designation').text(ID.rejectedDesignation);
+                $('#modal-rejected-email').text(ID.rejectedEmail);
+                $('#modal-rejected-timestamp').text(ID.rejectTimestamp);
+            });
+    }
+
+    // function undoRejected() {
+    //     let requestID = $('#modal-rejected-id').text();
+    //     let name = $('#rejected-hospital-name').text();
+    //     let type = $('#modal-rejected-type').text();
+    //     let address = $('#modal-rejected-address').text();
+    //     let representative = $('#modal-rejected-representative').text();
+    //     let supervisor = $('#modal-rejected-supervisor').text();
+    //     let phone = $('#modal-rejected-phone').text();
+    //     let designation = $('#modal-rejected-designation').text();
+    //     let email = $('#modal-rejected-email').text();
+    //     let timestamp = $('#modal-rejected-timestamp').text();
+
+    //     $('#rejected-modal').modal("hide");
+    //     $('#modal-undo-rejected').modal("show");
+
+    //     // Accept pending registration request
+    //     $('#undo-modal-yes-rejected').click(function () {
+    //         // alert("working!");
+    //         $.post("includes/undo-rejected-inc.php", {
+    //             requestID:requestID,
+    //             name:name,
+    //             type:type,
+    //             address:address,
+    //             representative:representative,
+    //             supervisor:supervisor,
+    //             phone:phone,
+    //             designation:designation,
+    //             email:email,
+    //             timestamp:timestamp,
+    //         },
+    //             function (data, status) {
+    //                 // let pendingID = JSON.parse(data);
+                    
+    //                 $('#modal-undo-rejected').modal("hide");
+    //                 location.reload()
+    //                 load_approved_cards();
+    //             });
+    //     });
+
+    //     $('#undo-modal-cancel').click(function () {
+    //         $('#modal-undo-rejected').modal("hide");
+    //         $('#rejected-modal').modal("show");
+    //     });
+    // }
+   
+    // END REJECTED REQUEST

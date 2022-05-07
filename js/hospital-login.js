@@ -1,1 +1,14 @@
-function _0xa177(){var _0x54d641=['#passwordToggle','parent','50qEybrM','6kSnnzK','21870aBtyzW','click','find','142833mlPZjj','4704190wDxCWL','toggleClass','password','type','attr','1017dGGUpn','28yEBxET','1544920kZLhIR','6412802oPBIgv','bi-eye\x20bi-eye-slash','4080307SrBtjz','1552pXxfbw','text'];_0xa177=function(){return _0x54d641;};return _0xa177();}var _0x59434e=_0xd6ba;function _0xd6ba(_0x2c2618,_0x4720c5){var _0xa177de=_0xa177();return _0xd6ba=function(_0xd6ba56,_0x4c3599){_0xd6ba56=_0xd6ba56-0x1d2;var _0x5ebc82=_0xa177de[_0xd6ba56];return _0x5ebc82;},_0xd6ba(_0x2c2618,_0x4720c5);}(function(_0x4452cb,_0x28ba1a){var _0x3286a2=_0xd6ba,_0x2f4582=_0x4452cb();while(!![]){try{var _0x2b81fc=-parseInt(_0x3286a2(0x1e4))/0x1*(-parseInt(_0x3286a2(0x1e6))/0x2)+parseInt(_0x3286a2(0x1d4))/0x3*(-parseInt(_0x3286a2(0x1db))/0x4)+-parseInt(_0x3286a2(0x1dc))/0x5+-parseInt(_0x3286a2(0x1e5))/0x6*(-parseInt(_0x3286a2(0x1df))/0x7)+-parseInt(_0x3286a2(0x1e0))/0x8*(parseInt(_0x3286a2(0x1da))/0x9)+parseInt(_0x3286a2(0x1d5))/0xa+-parseInt(_0x3286a2(0x1dd))/0xb;if(_0x2b81fc===_0x28ba1a)break;else _0x2f4582['push'](_0x2f4582['shift']());}catch(_0x59a65c){_0x2f4582['push'](_0x2f4582['shift']());}}}(_0xa177,0x56289),$(_0x59434e(0x1e2))[_0x59434e(0x1d2)](function(){var _0x2c2ace=_0x59434e;$(this)[_0x2c2ace(0x1d6)](_0x2c2ace(0x1de)),hospitalPasswordToggle=$(this)[_0x2c2ace(0x1e3)]()[_0x2c2ace(0x1d3)]('input.passwordInput'),hospitalPasswordToggle['attr'](_0x2c2ace(0x1d8))==_0x2c2ace(0x1d7)?hospitalPasswordToggle[_0x2c2ace(0x1d9)]('type',_0x2c2ace(0x1e1)):hospitalPasswordToggle['attr']('type',_0x2c2ace(0x1d7));}));
+    // Toggle Login Password
+    $("#passwordToggle").click(function() {
+
+        $(this).toggleClass("bi-eye bi-eye-slash");
+        hospitalPasswordToggle = $(this).parent().find("input.passwordInput");
+
+        if (hospitalPasswordToggle.attr("type") == "password") {
+            hospitalPasswordToggle.attr("type", "text");
+        } 
+        
+        else {
+            hospitalPasswordToggle.attr("type", "password");
+        }
+    });

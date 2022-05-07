@@ -1,1 +1,132 @@
-const _0x2967f6=_0x3e80;(function(_0x13275c,_0x3f1e00){const _0x1f0b21=_0x3e80,_0x10cbce=_0x13275c();while(!![]){try{const _0x1d6c9a=-parseInt(_0x1f0b21(0x16a))/0x1*(-parseInt(_0x1f0b21(0x16b))/0x2)+-parseInt(_0x1f0b21(0x168))/0x3+-parseInt(_0x1f0b21(0x170))/0x4+-parseInt(_0x1f0b21(0x172))/0x5*(parseInt(_0x1f0b21(0x17d))/0x6)+parseInt(_0x1f0b21(0x17a))/0x7*(-parseInt(_0x1f0b21(0x164))/0x8)+parseInt(_0x1f0b21(0x177))/0x9+-parseInt(_0x1f0b21(0x17c))/0xa*(-parseInt(_0x1f0b21(0x167))/0xb);if(_0x1d6c9a===_0x3f1e00)break;else _0x10cbce['push'](_0x10cbce['shift']());}catch(_0x10232f){_0x10cbce['push'](_0x10cbce['shift']());}}}(_0x2083,0xb77f4));var interval;let minutes=0x1,currentTime=localStorage[_0x2967f6(0x16f)]('currentTime'),targetTime=localStorage['getItem'](_0x2967f6(0x179)),expired=![];targetTime==null&&currentTime==null?(currentTime=new Date(),targetTime=new Date(currentTime[_0x2967f6(0x171)]()+minutes*0x493e0),localStorage[_0x2967f6(0x184)](_0x2967f6(0x17e),currentTime),localStorage[_0x2967f6(0x184)](_0x2967f6(0x179),targetTime)):(currentTime=new Date(currentTime),targetTime=new Date(targetTime));!checkComplete()&&(interval=setInterval(checkComplete,0x3e8));function checkComplete(){const _0x159633=_0x2967f6;currentTime>targetTime?(clearInterval(interval),expired=!![]):(currentTime=new Date(),expired=![],console['log'](_0x159633(0x16e)+(targetTime-currentTime)/0x3e8+_0x159633(0x17f)));}document[_0x2967f6(0x183)]=function(){const _0x2ca176=_0x2967f6;localStorage[_0x2ca176(0x161)](currentTime);},$(_0x2967f6(0x16c))[_0x2967f6(0x162)](function(){localStorage['clear']();}),$('#new-signup')[_0x2967f6(0x162)](function(){localStorage['clear']();});function _0x3e80(_0x5d3054,_0x56b00e){const _0x2083a0=_0x2083();return _0x3e80=function(_0x3e804c,_0x31a1a8){_0x3e804c=_0x3e804c-0x15e;let _0x32da8f=_0x2083a0[_0x3e804c];return _0x32da8f;},_0x3e80(_0x5d3054,_0x56b00e);}let otpCode=$('#otp-code')[_0x2967f6(0x173)]();function _0x2083(){const _0x1adfcd=['getItem','5317456iPSAxn','getTime','50XSfiYj','val','#code-expired','clear','serialize','11075526BKeYwT','POST','targetTime','7QJErAh','Code\x20Matched!\x20Congrats!','2980390vdHwkI','176844wflZWF','currentTime','</font>','preventDefault','replace','ajax','onbeforeunload','setItem','text','#loading-message','Code\x20Did\x20not\x20match!\x20Sorry!!','removeItem','click','includes/verify-otp-inc.php','1525736QBCVAq','location','http://localhost/Capstone/index','55OKNosp','2403768CpHdSp','#otp-form','12RKtciu','107812TpryXI','#send-new-code','#wrong-code','\x0a\x20<font\x20color=\x22white\x22>\x20Seconds\x20Remaining:'];_0x2083=function(){return _0x1adfcd;};return _0x2083();}$('#submit')[_0x2967f6(0x162)](function(_0x18c1f0){const _0x4c5a03=_0x2967f6;_0x18c1f0[_0x4c5a03(0x180)](),expired==!![]?$(_0x4c5a03(0x174))['text']('Code\x20Expired!\x20Please\x20try\x20sending\x20a\x20new\x20code.'):$[_0x4c5a03(0x182)]({'method':_0x4c5a03(0x178),'url':_0x4c5a03(0x163),'data':$(_0x4c5a03(0x169))[_0x4c5a03(0x176)](),'dataType':_0x4c5a03(0x15e),'success':function(_0x151d85){const _0xc527e0=_0x4c5a03;if(_0x151d85==_0xc527e0(0x17b))localStorage[_0xc527e0(0x175)](),window[_0xc527e0(0x165)][_0xc527e0(0x181)](_0xc527e0(0x166));else _0x151d85==_0xc527e0(0x160)&&$(_0xc527e0(0x16d))[_0xc527e0(0x15e)](_0x151d85);},'error':function(_0x3d2109,_0x592772,_0x38f1f4){const _0x364058=_0x4c5a03;alert(_0x3d2109['responseText']),$(_0x364058(0x15f))[_0x364058(0x15e)](response);}});});
+
+    // alert("Working!");'
+    // if (!<?php echo isset($_SESSION['tempUserID'])?'true':'false'; ?>) {
+    //     localStorage.clear();
+    // }
+    
+    // Code Expiration Timer
+    var interval;
+    let minutes = 1;
+    let currentTime = localStorage.getItem('currentTime');
+    let targetTime = localStorage.getItem('targetTime');
+    let expired = false;
+
+    if (targetTime == null && currentTime == null) {
+    currentTime = new Date();
+    targetTime = new Date(currentTime.getTime() + (minutes * 300000));
+    localStorage.setItem('currentTime', currentTime);
+    localStorage.setItem('targetTime', targetTime);
+    }
+    else{
+        currentTime = new Date(currentTime);
+        targetTime = new Date(targetTime);
+    }
+
+    if(!checkComplete()){
+        interval = setInterval(checkComplete, 1000);
+    }
+
+    function checkComplete() {
+        if (currentTime > targetTime) {
+            clearInterval(interval);
+            expired = true;
+            // alert("Time is up");
+            // $("#alert-container").html("<b>Your code has expired!</b>");
+        } 
+        else {
+            currentTime = new Date();
+            expired = false;
+            console.log("\n <font color=\"white\"> Seconds Remaining:" + ((targetTime - currentTime) / 1000) + "</font>");
+            
+            // document.write(
+            // "\n <font color=\"white\"> Seconds Remaining:" + ((targetTime - currentTime) / 1000) + "</font>");
+        }
+    }
+
+    document.onbeforeunload = function(){
+        // localStorage.setItem('currentTime', currentTime);
+        localStorage.removeItem(currentTime);
+    }
+    // ----------------------------------
+
+
+    // Send new Code
+    $("#send-new-code").click(function () {
+        // alert("Working!");
+        localStorage.clear();
+        // $("#header-title").text("We have sent you a new code. Please enter the new code below.");
+        
+        // $.ajax({
+        //     method: "POST",
+        //     url: "PHPMailer/send-new-otp.php",
+        //     // data: $('#otp-form').serialize(),
+        //     // dataType: "text",
+        //     success: function (response) {
+        //         if (response == "We sent you a new Code.") {
+        //             alert(response);
+        //             $("#new-code-container").show();
+        //             $("#new-code-message").text(response);
+        //         }
+        //     }
+        // });
+    });
+
+    $("#new-signup").click(function () {
+        localStorage.clear();
+    });
+    
+    // -------------------------
+
+
+    // Verify entered Code
+    let otpCode = $('#otp-code').val();
+
+    $('#submit').click(function (e) {
+        e.preventDefault();
+        // alert("Working!");
+
+        if (expired == true) {
+            // alert("Time is up");
+            $('#code-expired').text("Code Expired! Please try sending a new code.");
+        }
+        else{
+
+            $.ajax({
+                method: "POST",
+                url: "includes/verify-otp-inc.php",
+                data: $('#otp-form').serialize(),
+                dataType: "text",
+                success: function (response) {
+                    if (response == "Code Matched! Congrats!") {
+                        // window.location = "http://localhost/tailwindDemo/loader";
+                        // if (requestedNewCode) {
+                        //     $("#header-title").html("<b>We have sent you a new code. Please enter the new code below.</b>");
+                        // }
+                        localStorage.clear();
+                        window.location.replace('http://localhost/Capstone/index');
+                    }
+                    else if(response == "Code Did not match! Sorry!!") {
+                        // $('#loading-message').hide();
+                        // $('#loading-message').show();
+                        $('#wrong-code').text(response);
+                    }
+                    // else if(response == "Code Expired!") {
+                    //     $('#loading-message').text(response);
+                    // }
+                    // $('#loading-message').text(response);
+    
+    
+                    // function redirect() {
+                    //     window.location = "../index.php";
+                    // }
+                    // redirect();
+                    // return;
+                },
+                error:function(xhr, status, error){
+                    alert(xhr.responseText);
+                    $('#loading-message').text(response);
+                },
+            });
+
+        }
+    })
