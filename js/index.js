@@ -1,1 +1,819 @@
-function _0x234a(_0x986582,_0x3b1c57){var _0x4a9950=_0x4a99();return _0x234a=function(_0x234a4e,_0x566bc2){_0x234a4e=_0x234a4e-0x133;var _0x1c3fc7=_0x4a9950[_0x234a4e];return _0x1c3fc7;},_0x234a(_0x986582,_0x3b1c57);}var _0x4eed70=_0x234a;(function(_0x254622,_0x4eef94){var _0x53432e=_0x234a,_0x38e2df=_0x254622();while(!![]){try{var _0x2cecba=-parseInt(_0x53432e(0x16f))/0x1+parseInt(_0x53432e(0x1f4))/0x2*(parseInt(_0x53432e(0x15c))/0x3)+parseInt(_0x53432e(0x19b))/0x4+parseInt(_0x53432e(0x200))/0x5*(parseInt(_0x53432e(0x1b8))/0x6)+-parseInt(_0x53432e(0x1cb))/0x7*(parseInt(_0x53432e(0x186))/0x8)+-parseInt(_0x53432e(0x1ac))/0x9+-parseInt(_0x53432e(0x1ee))/0xa*(parseInt(_0x53432e(0x208))/0xb);if(_0x2cecba===_0x4eef94)break;else _0x38e2df['push'](_0x38e2df['shift']());}catch(_0x2e4411){_0x38e2df['push'](_0x38e2df['shift']());}}}(_0x4a99,0xb3c19));const btnBurgerButton=document[_0x4eed70(0x15f)]('hamburger-button'),sidebar=document[_0x4eed70(0x1db)]('.mobileMenu'),closeMenu=document[_0x4eed70(0x15f)](_0x4eed70(0x20d));let contentsContainer=document[_0x4eed70(0x1db)](_0x4eed70(0x1b0));btnBurgerButton[_0x4eed70(0x153)](_0x4eed70(0x1b3),()=>{var _0x145343=_0x4eed70;sidebar['classList'][_0x145343(0x16b)](_0x145343(0x1fa));}),closeMenu[_0x4eed70(0x153)](_0x4eed70(0x1b3),()=>{var _0x22a14e=_0x4eed70;sidebar[_0x22a14e(0x134)]['toggle'](_0x22a14e(0x1fa));}),$(_0x4eed70(0x1e8))[_0x4eed70(0x156)](),showAllLisitng();function _0x4a99(){var _0x542acf=['#regionIBatac:checkbox:checked','#regionIVCalamba:checkbox:checked','#regionXIIICabadbaran:checkbox:checked','bi-chevron-up\x20bi-chevron-down','214BPCVyx','.checkbox:checked','#MIMAROPAPuertoPrincesa:checkbox:checked','\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</h1>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22flex\x20flex-row\x20items-center\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20class=\x22h-4\x20w-4\x22\x20fill=\x22none\x22\x20viewBox=\x220\x200\x2024\x2024\x22\x20stroke=\x22currentColor\x22\x20stroke-width=\x222\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20stroke-linecap=\x22round\x22\x20stroke-linejoin=\x22round\x22\x20d=\x22M19\x2011H5m14\x200a2\x202\x200\x20012\x202v6a2\x202\x200\x2001-2\x202H5a2\x202\x200\x2001-2-2v-6a2\x202\x200\x20012-2m14\x200V9a2\x202\x200\x2000-2-2M5\x2011V9a2\x202\x200\x20012-2m0\x200V5a2\x202\x200\x20012-2h6a2\x202\x200\x20012\x202v2M7\x207h10\x22\x20/>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</svg>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20&nbsp;','#mindanao-region-checkbox','checkAllRegionIVA','hidden','#regionIIISanJose:checkbox:checked','#filter-content','.regionIX','.SOCCSKSARGENRegion','#regionVISipalay:checkbox:checked','19940JwKEhv','.regionXI','#regionXIIIBayugan:checkbox:checked','#regionIXDipolog:checkbox:checked','#regionXValencia:checkbox:checked','#regionXIDavao:checkbox:checked','.visayas-dropdown-icon','\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22flex\x20flex-row\x20cursor-text\x20mb-5\x20text-xs\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20class=\x22h-5\x20w-5\x20text-red-500\x22\x20viewBox=\x220\x200\x2020\x2020\x22\x20fill=\x22currentColor\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20fill-rule=\x22evenodd\x22\x20d=\x22M5.05\x204.05a7\x207\x200\x20119.9\x209.9L10\x2018.9l-4.95-4.95a7\x207\x200\x20010-9.9zM10\x2011a2\x202\x200\x20100-4\x202\x202\x200\x20000\x204z\x22\x20clip-rule=\x22evenodd\x22\x20/>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</svg>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22line-clamp-2\x20text-ellipsis\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20&nbsp;','11hfhuXL','#regionIIIPalayan:checkbox:checked','#regionIVSantaRosa:checkbox:checked','add','clear-selection','btn-close-menu','#NCRManila:checkbox:checked','bottom','#regionXOroquieta:checkbox:checked','classList','onclick','#regionIIISanFernando:checkbox:checked','#regionVIILapuLapu:checkbox:checked','#regionIVLipa:checkbox:checked','#regionVIIITacloban:checkbox:checked','#visayas-toggle-button','#listing-cards-container','.hospitalType:checked','#NCRMandaluyong:checkbox:checked','#regionVIIDanaoati:checkbox:checked','#regionVLegazpi:checkbox:checked','checkAllRegionVIII','#regionVIITalisay:checkbox:checked','hospital_location','#regionIXPagadian:checkbox:checked','#regionXITagum:checkbox:checked','#regionIITuguegarao:checkbox:checked','GET','#hospital-name','#regionIIIAngelesCity:checkbox:checked','#clear-selection','append','<a\x20href=\x22hospital-overview?listingID=','#regionIDagupan:checkbox:checked','checked','.regionVI','#discard-changes','search-hospital-input','\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22flex\x20flex-row\x20justify-between\x20items-center\x20mb-2\x20text-xs\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h1\x20class=\x22flex\x20flex-row\x20items-center\x20hover:underline\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20class=\x22h-4\x20w-4\x22\x20fill=\x22none\x22\x20viewBox=\x220\x200\x2024\x2024\x22\x20stroke=\x22currentColor\x22\x20stroke-width=\x222\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20stroke-linecap=\x22round\x22\x20stroke-linejoin=\x22round\x22\x20d=\x22M19\x2021V5a2\x202\x200\x2000-2-2H7a2\x202\x200\x2000-2\x202v16m14\x200h2m-2\x200h-5m-9\x200H3m2\x200h5M9\x207h1m-1\x204h1m4-4h1m-1\x204h1m-5\x2010v-5a1\x201\x200\x20011-1h2a1\x201\x200\x20011\x201v5m-4\x200h4\x22\x20/>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</svg>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20&nbsp;','html','addEventListener','#regionXElSalvador:checkbox:checked','#regionIVSanPablo:checkbox:checked','hide','hospital_name','.regionV','#regionVIIIBorongan:checkbox:checked','#regionVMasbate:checkbox:checked','#NCRLasPiñas:checkbox:checked','38811EwFQuh','room_slot','innerHTML','getElementById','#regionVIIIBaybay:checkbox:checked','includes/get-cover-photo-inc.php','#regionVIICanlaon:checkbox:checked','#regionIIIMalolos:checkbox:checked','#regionXTangub:checkbox:checked','#NCRSanJuan:checkbox:checked','#regionIVigan:checkbox:checked','.regionI','#regionVIriga:checkbox:checked','onkeyup','#NCRCaloocan:checkbox:checked','toggle','#regionVIHimamaylan:checkbox:checked','.regionX','includes/filter-list-inc.php','1197214AJThnk','mouseup','#regionXIIKoronadal:checkbox:checked','toggleClass','#regionIVTagaytay:checkbox:checked','#MIMAROPACalapan:checkbox:checked','#regionVTabaco:checkbox:checked','#regionIVBacoor:checkbox:checked','checkAllRegionX','#regionVIICarcar:checkbox:checked','getElementsByName','mindanao','#regionVLigao:checkbox:checked','#regionICandon:checkbox:checked','I\x27m\x20a\x20Tippy\x20tooltip!','#regionISanCarlos:checkbox:checked','#regionVIIIOrmoc:checkbox:checked','#NCRMuntinlupa:checkbox:checked','visayas','#regionIVAntipolo:checkbox:checked','ajax','image_dir','#apply-filter-button','984QzVTDt','#regionIVGeneralTrias:checkbox:checked','#BARMMCotabato:checkbox:checked','#regionIISantiago:checkbox:checked','.mindanao-dropdown-icon','#NCRPasay:checkbox:checked','#regionIIIMeycauayan:checkbox:checked','#regionIVBiñan:checkbox:checked','#regionIXDapitan:checkbox:checked','results-loader','#regionVIBago:checkbox:checked','val','checkAllBARMMRegion','\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</h1>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22text-green-400\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20class=\x22h-5\x20w-5\x22\x20viewBox=\x220\x200\x2020\x2020\x22\x20fill=\x22currentColor\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20fill-rule=\x22evenodd\x22\x20d=\x22M6.267\x203.455a3.066\x203.066\x200\x20001.745-.723\x203.066\x203.066\x200\x20013.976\x200\x203.066\x203.066\x200\x20001.745.723\x203.066\x203.066\x200\x20012.812\x202.812c.051.643.304\x201.254.723\x201.745a3.066\x203.066\x200\x20010\x203.976\x203.066\x203.066\x200\x2000-.723\x201.745\x203.066\x203.066\x200\x2001-2.812\x202.812\x203.066\x203.066\x200\x2000-1.745.723\x203.066\x203.066\x200\x2001-3.976\x200\x203.066\x203.066\x200\x2000-1.745-.723\x203.066\x203.066\x200\x2001-2.812-2.812\x203.066\x203.066\x200\x2000-.723-1.745\x203.066\x203.066\x200\x20010-3.976\x203.066\x203.066\x200\x2000.723-1.745\x203.066\x203.066\x200\x20012.812-2.812zm7.44\x205.252a1\x201\x200\x2000-1.414-1.414L9\x2010.586\x207.707\x209.293a1\x201\x200\x2000-1.414\x201.414l2\x202a1\x201\x200\x20001.414\x200l4-4z\x22\x20clip-rule=\x22evenodd\x22\x20/>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</svg>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</button>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22hidden\x20md:block\x20text-xs\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22flex\x20flex-row\x20items-center\x20cursor-text\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20class=\x22h-4\x20w-4\x20text-green-500\x22\x20viewBox=\x220\x200\x2020\x2020\x22\x20fill=\x22currentColor\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M2\x203a1\x201\x200\x20011-1h2.153a1\x201\x200\x2001.986.836l.74\x204.435a1\x201\x200\x2001-.54\x201.06l-1.548.773a11.037\x2011.037\x200\x20006.105\x206.105l.774-1.548a1\x201\x200\x20011.059-.54l4.435.74a1\x201\x200\x2001.836.986V17a1\x201\x200\x2001-1\x201h-2C7.82\x2018\x202\x2012.18\x202\x205V3z\x22\x20/>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</svg>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20&nbsp;','luzon','checkAllRegionII','log','#regionIIITarlac:checkbox:checked','#NCRValenzuela:checkbox:checked','.regionXIII','POST','4862484NFdUiJ','#regionIAlaminos:checkbox:checked','#regionVIIloilo:checkbox:checked','#regionIVBatangas:checkbox:checked','#luzon-region-checkbox','#filter-loader','#regionVIICebu:checkbox:checked','checkAllRegionVII','discard-changes','parse','#regionVIIBogo:checkbox:checked','#regionXIDigos:checkbox:checked','#regionVISilay:checkbox:checked','#luzon-toggle-button','querySelectorAll','#regionXIIITandag:checkbox:checked','#regionXMalaybalay:checkbox:checked','2395188qMwMiB','checkAllRegionVI',');\x22\x20id=\x22card-image-container\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22flex\x20flex-row\x20justify-between\x20md:items-center\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h1\x20class=\x22font-bold\x20flex\x20flex-row\x20items-center\x20hover:underline\x20text-sm\x20text-ellipsis\x20line-clamp-1\x20text-orange-500\x22\x20id=\x22hospital-name\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','mouseover','.main-container','#regionVICadiz:checkbox:checked','#regionIVDasmariñas:checkbox:checked','click','#regionXCagayandeOro:checkbox:checked','#NCRMakati:checkbox:checked','#regionVISagay:checkbox:checked','length','600HjHgqe','#regionIVTayabas:checkbox:checked','#close-filter-options','body\x20*:not(#searchInput)','#NCRTaguig:checkbox:checked','#regionVSorsogon:checkbox:checked','checkAllRegionI','#regionVIBacolod:checkbox:checked','#regionIVTreceMartires:checkbox:checked','#NCRNavotas:checkbox:checked','.checkbox','#regionILaoag:checkbox:checked','#regionIIICabanatuan:checkbox:checked','\x22\x20class=\x22border-[1px]\x20border-gray-300\x20xl:col-span-3\x202xl:col-span-2\x20lg:col-span-4\x20md:col-span-6\x20sm:col-span-6\x20col-span-6\x20rounded-md\x20bg-white\x20drop-shadow-md\x20p-2\x20lg:p-5\x20md:min-h-[20rem]\x20text-sm\x20hover:scale-105\x20transition-all\x20cursor-pointer\x22><div\x20id=\x22listing-card\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22mb-2\x20bg-red-300\x20h-28\x20md:h-36\x20bg-clip-border\x20bg-center\x20bg-cover\x20bg-no-repeat\x20rounded-md\x22\x20style=\x22background-image:\x20url(Capstone/','#mindanao-toggle-button','.CAR','checkAllRegionIII','hospital_type','#regionIVTanauan:checkbox:checked','21154UcQKAO','find','#regionVIIGuihulngan:checkbox:checked','hospital_phone','#regionXIIIBislig:checkbox:checked','#CARBaguio:checkbox:checked','#regionIIIGapan:checkbox:checked','#regionVIIToledo:checkbox:checked','show','#visayas-region-checkbox','#regionVIIICatbalogan:checkbox:checked','\x22</b></p>','#regionXOzamiz:checkbox:checked','#BARMMLamitan:checkbox:checked','#regionXIPanabo:checkbox:checked','#regionVIIBayawan:checkbox:checked','querySelector','#regionVIVictorias:checkbox:checked','\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22flex\x20flex-col\x20space-y-2\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22\x20flex\x20flex-row\x20justify-center\x20bg-gray-900\x20text-white\x20p-1\x20md:p-2\x20rounded-lg\x20hover:bg-gray-800\x20transition-all\x20hover:scale-105\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20class=\x22h-5\x20w-5\x22\x20viewBox=\x220\x200\x2020\x2020\x22\x20fill=\x22currentColor\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20fill-rule=\x22evenodd\x22\x20d=\x22M6\x202a1\x201\x200\x2000-1\x201v1H4a2\x202\x200\x2000-2\x202v10a2\x202\x200\x20002\x202h12a2\x202\x200\x20002-2V6a2\x202\x200\x2000-2-2h-1V3a1\x201\x200\x2010-2\x200v1H7V3a1\x201\x200\x2000-1-1zm0\x205a1\x201\x200\x20000\x202h8a1\x201\x200\x20100-2H6z\x22\x20clip-rule=\x22evenodd\x22\x20/>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</svg>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20&nbsp;Book\x20Now\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</button>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22flex\x20flex-row\x20justify-center\x20bg-gray-900\x20text-white\x20p-1\x20md:p-2\x20rounded-lg\x20hover:bg-gray-800\x20transition-all\x20hover:scale-105\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20class=\x22h-5\x20w-5\x22\x20viewBox=\x220\x200\x2020\x2020\x22\x20fill=\x22currentColor\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M11\x203a1\x201\x200\x20100\x202h2.586l-6.293\x206.293a1\x201\x200\x20101.414\x201.414L15\x206.414V9a1\x201\x200\x20102\x200V4a1\x201\x200\x2000-1-1h-5z\x22\x20/>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M5\x205a2\x202\x200\x2000-2\x202v8a2\x202\x200\x20002\x202h8a2\x202\x200\x20002-2v-3a1\x201\x200\x2010-2\x200v3H5V7h3a1\x201\x200\x20000-2H5z\x22\x20/>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</svg>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20&nbsp;Full\x20Details\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</button>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div></a>','#regionIVCabuyao:checkbox:checked','#regionVIIICalbayog:checkbox:checked','.MIMAROPARegion','#regionXIIKidapawan:checkbox:checked','#NCRMarikina:checkbox:checked','includes/all-listing-inc.php','.regionIVA','#regionXIIIButuan:checkbox:checked','.luzon-dropdown-icon','bed_slot','#skeleton-loader','#regionXISamal:checkbox:checked','value','#regionXIligan:checkbox:checked','#regionXIMati:checkbox:checked','checkAllRegionV','4273470YmTWtl','#regionIXIsabela:checkbox:checked'];_0x4a99=function(){return _0x542acf;};return _0x4a99();}function showAllLisitng(){var _0x21b3f3=_0x4eed70;$[_0x21b3f3(0x183)]({'method':_0x21b3f3(0x146),'url':_0x21b3f3(0x1e3),'beforeSend':function(){var _0x1688f4=_0x21b3f3;$(_0x1688f4(0x1e8))[_0x1688f4(0x1d3)]();},'success':function(_0x25b51b,_0x14043f){var _0x25128b=_0x21b3f3;$(_0x25128b(0x1e8))[_0x25128b(0x156)]();let _0x31840c=JSON[_0x25128b(0x1a4)](_0x25b51b);$(_0x25128b(0x13b))[_0x25128b(0x152)]('');for(let _0x594a5c=0x0;_0x594a5c<_0x31840c['length'];_0x594a5c++){let _0xc1bf44=_0x31840c[_0x594a5c],_0x5de775=_0xc1bf44[_0x25128b(0x157)],_0x173105=_0xc1bf44[_0x25128b(0x142)],_0x3e1ba4=_0xc1bf44[_0x25128b(0x1c9)],_0x19362c=_0xc1bf44[_0x25128b(0x15d)],_0x743d3f=_0xc1bf44[_0x25128b(0x1e7)],_0x13bafa=_0xc1bf44[_0x25128b(0x1ce)],_0x41dff5=parseInt(_0x19362c),_0x1fcd58=parseInt(_0x743d3f),_0x4ae3c3=_0x41dff5+_0x1fcd58,_0x108398=_0xc1bf44['listing_id'];$[_0x25128b(0x183)]({'method':_0x25128b(0x19a),'url':_0x25128b(0x161),'data':{'listingID':_0x108398},'success':function(_0x2c3156,_0x155abd){var _0x2368b9=_0x25128b;let _0xd74a3e=JSON[_0x2368b9(0x1a4)](_0x2c3156),_0x217e40=_0xd74a3e[0x0][_0x2368b9(0x184)];_0x4ed3ec(_0x217e40);}});function _0x4ed3ec(_0x5c95da){var _0x131e5d=_0x25128b;let _0x21996d=_0x5c95da;console[_0x131e5d(0x196)](_0x21996d);let _0x46be86=$(_0x131e5d(0x14b)+_0x108398+_0x131e5d(0x1c5)+_0x21996d+');\x22\x20id=\x22card-image-container\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22flex\x20flex-row\x20justify-between\x20md:items-center\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h1\x20class=\x22font-bold\x20flex\x20flex-row\x20items-center\x20hover:underline\x20text-sm\x20text-ellipsis\x20line-clamp-1\x20text-orange-500\x22\x20id=\x22hospital-name\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x5de775+'\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</h1>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22text-green-400\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20class=\x22h-5\x20w-5\x22\x20viewBox=\x220\x200\x2020\x2020\x22\x20fill=\x22currentColor\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20fill-rule=\x22evenodd\x22\x20d=\x22M6.267\x203.455a3.066\x203.066\x200\x20001.745-.723\x203.066\x203.066\x200\x20013.976\x200\x203.066\x203.066\x200\x20001.745.723\x203.066\x203.066\x200\x20012.812\x202.812c.051.643.304\x201.254.723\x201.745a3.066\x203.066\x200\x20010\x203.976\x203.066\x203.066\x200\x2000-.723\x201.745\x203.066\x203.066\x200\x2001-2.812\x202.812\x203.066\x203.066\x200\x2000-1.745.723\x203.066\x203.066\x200\x2001-3.976\x200\x203.066\x203.066\x200\x2000-1.745-.723\x203.066\x203.066\x200\x2001-2.812-2.812\x203.066\x203.066\x200\x2000-.723-1.745\x203.066\x203.066\x200\x20010-3.976\x203.066\x203.066\x200\x2000.723-1.745\x203.066\x203.066\x200\x20012.812-2.812zm7.44\x205.252a1\x201\x200\x2000-1.414-1.414L9\x2010.586\x207.707\x209.293a1\x201\x200\x2000-1.414\x201.414l2\x202a1\x201\x200\x20001.414\x200l4-4z\x22\x20clip-rule=\x22evenodd\x22\x20/>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</svg>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</button>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22hidden\x20md:block\x20text-xs\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22flex\x20flex-row\x20items-center\x20cursor-text\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20class=\x22h-4\x20w-4\x20text-green-500\x22\x20viewBox=\x220\x200\x2020\x2020\x22\x20fill=\x22currentColor\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M2\x203a1\x201\x200\x20011-1h2.153a1\x201\x200\x2001.986.836l.74\x204.435a1\x201\x200\x2001-.54\x201.06l-1.548.773a11.037\x2011.037\x200\x20006.105\x206.105l.774-1.548a1\x201\x200\x20011.059-.54l4.435.74a1\x201\x200\x2001.836.986V17a1\x201\x200\x2001-1\x201h-2C7.82\x2018\x202\x2012.18\x202\x205V3z\x22\x20/>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</svg>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20&nbsp;'+_0x13bafa+_0x131e5d(0x207)+_0x173105+_0x131e5d(0x151)+_0x3e1ba4+'\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</h1>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22flex\x20flex-row\x20items-center\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20class=\x22h-4\x20w-4\x22\x20fill=\x22none\x22\x20viewBox=\x220\x200\x2024\x2024\x22\x20stroke=\x22currentColor\x22\x20stroke-width=\x222\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20stroke-linecap=\x22round\x22\x20stroke-linejoin=\x22round\x22\x20d=\x22M19\x2011H5m14\x200a2\x202\x200\x20012\x202v6a2\x202\x200\x2001-2\x202H5a2\x202\x200\x2001-2-2v-6a2\x202\x200\x20012-2m14\x200V9a2\x202\x200\x2000-2-2M5\x2011V9a2\x202\x200\x20012-2m0\x200V5a2\x202\x200\x20012-2h6a2\x202\x200\x20012\x202v2M7\x207h10\x22\x20/>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</svg>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20&nbsp;'+_0x4ae3c3+_0x131e5d(0x1dd));_0x46be86[_0x131e5d(0x1cc)](_0x131e5d(0x147))['on'](_0x131e5d(0x1af),()=>_0x417d53());function _0x417d53(){var _0x55323a=_0x131e5d;tippy(_0x55323a(0x147),{'content':_0x5de775,'followCursor':![],'placement':_0x55323a(0x20f)});}$('#listing-cards-container')[_0x131e5d(0x14a)](_0x46be86);}}}});}const findIcon=document[_0x4eed70(0x15f)]('find-icon');tippy(findIcon,{'content':_0x4eed70(0x17d)});let searchInput=document[_0x4eed70(0x15f)](_0x4eed70(0x150)),resultContainer=document['getElementById']('search-result-container'),loaderMessage=document[_0x4eed70(0x15f)](_0x4eed70(0x18f));$(loaderMessage)['hide'](),$(resultContainer)[_0x4eed70(0x156)](),searchInput[_0x4eed70(0x169)]=function(){var _0x288b9f=_0x4eed70;let _0x5b9318=document[_0x288b9f(0x15f)]('search-hospital-input')[_0x288b9f(0x1ea)];_0x5b9318!=''?$[_0x288b9f(0x183)]({'type':_0x288b9f(0x146),'url':'includes/search-hospital-inc.php','data':{'searchInputVal':_0x5b9318},'beforeSend':function(){$(loaderMessage)['show']();},'success':function(_0x37ba96){var _0x4aeef3=_0x288b9f;$(loaderMessage)[_0x4aeef3(0x156)](),$(resultContainer)[_0x4aeef3(0x1d3)](),resultContainer[_0x4aeef3(0x15e)]='<p\x20class=\x22m-4\x20text-sm\x20xl:text-lg\x22>Showing\x20results\x20for:\x20<b>\x22'+_0x5b9318+_0x4aeef3(0x1d6)+_0x37ba96;}}):($(resultContainer)[_0x288b9f(0x156)](),resultContainer['innerHTML']='');},$(_0x4eed70(0x1bb))[_0x4eed70(0x170)](function(){var _0x533e85=_0x4eed70;$(resultContainer)[_0x533e85(0x156)]();}),searchInput[_0x4eed70(0x135)]=function(){var _0x39e7ab=_0x4eed70;$(resultContainer)[_0x39e7ab(0x1d3)](),searchInput[_0x39e7ab(0x134)][_0x39e7ab(0x20b)]('bg-blue-400');},$(_0x4eed70(0x185))[_0x4eed70(0x1b3)](function(){var _0x53dd1c=_0x4eed70;$(_0x53dd1c(0x14f))[_0x53dd1c(0x1d3)](),$[_0x53dd1c(0x183)]({'method':_0x53dd1c(0x19a),'url':_0x53dd1c(0x16e),'data':{'alaminos':$(_0x53dd1c(0x19c))[_0x53dd1c(0x191)](),'batac':$(_0x53dd1c(0x1f0))[_0x53dd1c(0x191)](),'candon':$(_0x53dd1c(0x17c))[_0x53dd1c(0x191)](),'laoag':$(_0x53dd1c(0x1c3))[_0x53dd1c(0x191)](),'sanCarlos':$(_0x53dd1c(0x17e))[_0x53dd1c(0x191)](),'sanFernando':$('#regionISanFernando:checkbox:checked')['val'](),'urdaneta':$('#regionIUrdaneta:checkbox:checked')['val'](),'vigan':$(_0x53dd1c(0x166))['val'](),'dagupan':$(_0x53dd1c(0x14c))[_0x53dd1c(0x191)](),'cauayan':$('#regionIICauayan:checkbox:checked')[_0x53dd1c(0x191)](),'ilagan':$('#regionIIIlagan:checkbox:checked')['val'](),'santiago':$(_0x53dd1c(0x189))['val'](),'tuguegarao':$(_0x53dd1c(0x145))[_0x53dd1c(0x191)](),'balanga':$('#regionIIIBalanga:checkbox:checked')[_0x53dd1c(0x191)](),'malolos':$(_0x53dd1c(0x163))[_0x53dd1c(0x191)](),'meycauayan':$(_0x53dd1c(0x18c))[_0x53dd1c(0x191)](),'sanJosedelMonte':$('#regionIIISanJosedelMonte:checkbox:checked')['val'](),'cabanatuan':$(_0x53dd1c(0x1c4))[_0x53dd1c(0x191)](),'gapan':$(_0x53dd1c(0x1d1))['val'](),'muñoz':$('#regionIIIMuñoz:checkbox:checked')[_0x53dd1c(0x191)](),'palayan':$(_0x53dd1c(0x209))[_0x53dd1c(0x191)](),'sanJose':$(_0x53dd1c(0x1fb))[_0x53dd1c(0x191)](),'AngelesCity':$(_0x53dd1c(0x148))[_0x53dd1c(0x191)](),'mabalacat':$('#regionIIIMabalacat:checkbox:checked')[_0x53dd1c(0x191)](),'sanFernando':$(_0x53dd1c(0x136))[_0x53dd1c(0x191)](),'tarlac':$(_0x53dd1c(0x197))['val'](),'olongapo':$('#regionIIIOlongapo:checkbox:checked')['val'](),'antipolo':$(_0x53dd1c(0x182))[_0x53dd1c(0x191)](),'bacoor':$(_0x53dd1c(0x176))['val'](),'batangas':$(_0x53dd1c(0x19e))['val'](),'biñan':$(_0x53dd1c(0x18d))[_0x53dd1c(0x191)](),'cabuyao':$(_0x53dd1c(0x1de))[_0x53dd1c(0x191)](),'calamba':$(_0x53dd1c(0x1f1))['val'](),'cavite':$('#regionIVCavite:checkbox:checked')[_0x53dd1c(0x191)](),'dasmariñas':$(_0x53dd1c(0x1b2))['val'](),'generalTrias':$(_0x53dd1c(0x187))['val'](),'imus':$('#regionIVImus:checkbox:checked')[_0x53dd1c(0x191)](),'lipa':$(_0x53dd1c(0x138))[_0x53dd1c(0x191)](),'lucena':$('#regionIVLucena:checkbox:checked')[_0x53dd1c(0x191)](),'sanPablo':$(_0x53dd1c(0x155))['val'](),'sanPedro':$('#regionIVSanPedro:checkbox:checked')['val'](),'santaRosa':$(_0x53dd1c(0x20a))[_0x53dd1c(0x191)](),'santoTomas':$('#regionIVSantoTomas:checkbox:checked')['val'](),'tagaytay':$(_0x53dd1c(0x173))[_0x53dd1c(0x191)](),'tanauan':$(_0x53dd1c(0x1ca))[_0x53dd1c(0x191)](),'tayabas':$(_0x53dd1c(0x1b9))['val'](),'treceMartires':$(_0x53dd1c(0x1c0))[_0x53dd1c(0x191)](),'legazpi':$(_0x53dd1c(0x13f))[_0x53dd1c(0x191)](),'naga':$('#regionVNaga:checkbox:checked')['val'](),'iriga':$(_0x53dd1c(0x168))[_0x53dd1c(0x191)](),'tabaco':$(_0x53dd1c(0x175))[_0x53dd1c(0x191)](),'ligao':$(_0x53dd1c(0x17b))[_0x53dd1c(0x191)](),'sorsogon':$(_0x53dd1c(0x1bd))['val'](),'masbate':$(_0x53dd1c(0x15a))['val'](),'caloocan':$(_0x53dd1c(0x16a))[_0x53dd1c(0x191)](),'marikina':$(_0x53dd1c(0x1e2))[_0x53dd1c(0x191)](),'makati':$(_0x53dd1c(0x1b5))[_0x53dd1c(0x191)](),'mandaluyong':$(_0x53dd1c(0x13d))[_0x53dd1c(0x191)](),'muntinlupa':$(_0x53dd1c(0x180))[_0x53dd1c(0x191)](),'manila':$(_0x53dd1c(0x20e))[_0x53dd1c(0x191)](),'navotas':$(_0x53dd1c(0x1c1))[_0x53dd1c(0x191)](),'malabon':$('#NCRMalabon:checkbox:checked')['val'](),'valenzuela':$(_0x53dd1c(0x198))['val'](),'pasay':$(_0x53dd1c(0x18b))[_0x53dd1c(0x191)](),'pasig':$('#NCRPasig:checkbox:checked')[_0x53dd1c(0x191)](),'parañaque':$('#NCRParañaque:checkbox:checked')[_0x53dd1c(0x191)](),'quezon':$('#NCRQuezon:checkbox:checked')[_0x53dd1c(0x191)](),'sanJuan':$(_0x53dd1c(0x165))['val'](),'lasPiñas':$(_0x53dd1c(0x15b))['val'](),'taguig':$(_0x53dd1c(0x1bc))[_0x53dd1c(0x191)](),'tabuk':$('#CARTabuk:checkbox:checked')['val'](),'baguio':$(_0x53dd1c(0x1d0))[_0x53dd1c(0x191)](),'puertoPrincesa':$(_0x53dd1c(0x1f6))[_0x53dd1c(0x191)](),'calapan':$(_0x53dd1c(0x174))[_0x53dd1c(0x191)](),'victorias':$(_0x53dd1c(0x1dc))[_0x53dd1c(0x191)](),'talisay':$('#regionVITalisay:checkbox:checked')['val'](),'sipalay':$(_0x53dd1c(0x1ff))[_0x53dd1c(0x191)](),'silay':$(_0x53dd1c(0x1a7))[_0x53dd1c(0x191)](),'sanCarlos':$('#regionVISanCarlos:checkbox:checked')[_0x53dd1c(0x191)](),'sagay':$(_0x53dd1c(0x1b6))[_0x53dd1c(0x191)](),'carlota':$('#regionVILaCarlota:checkbox:checked')[_0x53dd1c(0x191)](),'kabankalan':$('#regionVIKabankalan:checkbox:checked')['val'](),'himamaylan':$(_0x53dd1c(0x16c))[_0x53dd1c(0x191)](),'escalante':$('#regionVIEscalante:checkbox:checked')[_0x53dd1c(0x191)](),'cadiz':$(_0x53dd1c(0x1b1))[_0x53dd1c(0x191)](),'bago':$(_0x53dd1c(0x190))[_0x53dd1c(0x191)](),'bacolod':$(_0x53dd1c(0x1bf))[_0x53dd1c(0x191)](),'calapan':$('#regionVIPassi:checkbox:checked')[_0x53dd1c(0x191)](),'iloilo':$(_0x53dd1c(0x19d))['val'](),'roxas':$('#regionVIRoxas:checkbox:checked')['val'](),'toledo':$(_0x53dd1c(0x1d2))[_0x53dd1c(0x191)](),'tanjay':$('#regionVIITanjay:checkbox:checked')['val'](),'guihulngan':$(_0x53dd1c(0x1cd))[_0x53dd1c(0x191)](),'dumaguete':$('#regionVIIDumaguete:checkbox:checked')[_0x53dd1c(0x191)](),'canlaon':$(_0x53dd1c(0x162))[_0x53dd1c(0x191)](),'bayawan':$(_0x53dd1c(0x1da))[_0x53dd1c(0x191)](),'bais':$('#regionVIIBais:checkbox:checked')['val'](),'talisay':$(_0x53dd1c(0x141))[_0x53dd1c(0x191)](),'naga':$('#regionVIINaga:checkbox:checked')[_0x53dd1c(0x191)](),'mandaue':$('#regionVIIMandaue:checkbox:checked')[_0x53dd1c(0x191)](),'lapuLapu':$(_0x53dd1c(0x137))['val'](),'danaoati':$(_0x53dd1c(0x13e))['val'](),'cebu':$(_0x53dd1c(0x1a1))[_0x53dd1c(0x191)](),'carcar':$(_0x53dd1c(0x178))[_0x53dd1c(0x191)](),'bogo':$(_0x53dd1c(0x1a5))[_0x53dd1c(0x191)](),'tagbilaran':$('#regionVIITagbilaran:checkbox:checked')['val'](),'maasin':$('#regionVIIIMaasin:checkbox:checked')[_0x53dd1c(0x191)](),'catbalogan':$(_0x53dd1c(0x1d5))[_0x53dd1c(0x191)](),'calbayog':$(_0x53dd1c(0x1df))[_0x53dd1c(0x191)](),'tacloban':$(_0x53dd1c(0x139))['val'](),'ormoc':$(_0x53dd1c(0x17f))[_0x53dd1c(0x191)](),'baybay':$(_0x53dd1c(0x160))['val'](),'borongan':$(_0x53dd1c(0x159))[_0x53dd1c(0x191)](),'zamboanga':$('#regionIXZamboanga:checkbox:checked')[_0x53dd1c(0x191)](),'pagadian':$(_0x53dd1c(0x143))[_0x53dd1c(0x191)](),'dipolog':$(_0x53dd1c(0x203))['val'](),'dapitan':$(_0x53dd1c(0x18e))[_0x53dd1c(0x191)](),'isabela':$(_0x53dd1c(0x1ef))[_0x53dd1c(0x191)](),'gingoog':$('#regionXGingoog:checkbox:checked')[_0x53dd1c(0x191)](),'salvador':$(_0x53dd1c(0x154))[_0x53dd1c(0x191)](),'cagayandeOro':$(_0x53dd1c(0x1b4))[_0x53dd1c(0x191)](),'tangub':$(_0x53dd1c(0x164))['val'](),'ozamiz':$(_0x53dd1c(0x1d7))[_0x53dd1c(0x191)](),'oroquieta':$(_0x53dd1c(0x133))['val'](),'iligan':$(_0x53dd1c(0x1eb))[_0x53dd1c(0x191)](),'valencia':$(_0x53dd1c(0x204))[_0x53dd1c(0x191)](),'malaybalay':$(_0x53dd1c(0x1ab))[_0x53dd1c(0x191)](),'mati':$(_0x53dd1c(0x1ec))[_0x53dd1c(0x191)](),'digos':$(_0x53dd1c(0x1a6))[_0x53dd1c(0x191)](),'davao':$(_0x53dd1c(0x205))[_0x53dd1c(0x191)](),'tagum':$(_0x53dd1c(0x144))['val'](),'samal':$(_0x53dd1c(0x1e9))[_0x53dd1c(0x191)](),'panabo':$(_0x53dd1c(0x1d9))[_0x53dd1c(0x191)](),'kidapawan':$(_0x53dd1c(0x1e1))[_0x53dd1c(0x191)](),'generalSantos':$('#regionXIIGeneralSantos:checkbox:checked')['val'](),'koronadal':$(_0x53dd1c(0x171))[_0x53dd1c(0x191)](),'tacurong':$('#regionXIITacurong:checkbox:checked')['val'](),'marawi':$('#BARMMMarawi:checkbox:checked')[_0x53dd1c(0x191)](),'lamitan':$(_0x53dd1c(0x1d8))[_0x53dd1c(0x191)](),'cotabato':$(_0x53dd1c(0x188))[_0x53dd1c(0x191)](),'tandag':$(_0x53dd1c(0x1aa))[_0x53dd1c(0x191)](),'bislig':$(_0x53dd1c(0x1cf))[_0x53dd1c(0x191)](),'surigao':$('#regionXIIISurigao:checkbox:checked')[_0x53dd1c(0x191)](),'bayugan':$(_0x53dd1c(0x202))[_0x53dd1c(0x191)](),'cabadbaran':$(_0x53dd1c(0x1f2))[_0x53dd1c(0x191)](),'butuan':$(_0x53dd1c(0x1e5))['val'](),'hospitalType':$(_0x53dd1c(0x13c))[_0x53dd1c(0x191)]()},'beforeSend':function(){var _0x332a5f=_0x53dd1c;$('#filter-loader')[_0x332a5f(0x1d3)]();},'success':function(_0x4f1fbf){var _0x343363=_0x53dd1c;$(_0x343363(0x1a0))[_0x343363(0x156)]();let _0x3be310=JSON['parse'](_0x4f1fbf);$('#listing-cards-container')['html'](''),$(_0x343363(0x1fc))[_0x343363(0x16b)](0x154);for(let _0x32bddc=0x0;_0x32bddc<_0x3be310['length'];_0x32bddc++){let _0x2cf72b=_0x3be310[_0x32bddc],_0xb9fd7c=_0x2cf72b['hospital_name'],_0x56819f=_0x2cf72b['listing_id'],_0x4e963e=_0x2cf72b[_0x343363(0x142)],_0xb9f79b=_0x2cf72b[_0x343363(0x1c9)],_0x5b93f5=_0x2cf72b[_0x343363(0x15d)],_0x4fb7c3=_0x2cf72b[_0x343363(0x1e7)],_0xcb1b65=_0x2cf72b['hospital_phone'],_0x3c95ef=parseInt(_0x5b93f5),_0x2ac7e7=parseInt(_0x4fb7c3),_0x366adc=_0x3c95ef+_0x2ac7e7;$[_0x343363(0x183)]({'method':_0x343363(0x19a),'url':_0x343363(0x161),'data':{'listingID':_0x56819f},'success':function(_0x320b00,_0x1e00e4){var _0x2e0836=_0x343363;let _0x422ce9=JSON[_0x2e0836(0x1a4)](_0x320b00),_0x1dc164=_0x422ce9[0x0][_0x2e0836(0x184)];_0x221e7d(_0x1dc164);}});function _0x221e7d(_0x28b7d6){var _0x43c5fa=_0x343363;let _0x523a91=_0x28b7d6,_0xb33b3=$(_0x43c5fa(0x14b)+_0x56819f+_0x43c5fa(0x1c5)+_0x523a91+_0x43c5fa(0x1ae)+_0xb9fd7c+_0x43c5fa(0x193)+_0xcb1b65+_0x43c5fa(0x207)+_0x4e963e+_0x43c5fa(0x151)+_0xb9f79b+_0x43c5fa(0x1f7)+_0x366adc+_0x43c5fa(0x1dd));_0xb33b3['find'](_0x43c5fa(0x147))['on'](_0x43c5fa(0x1af),()=>_0x4a970a());function _0x4a970a(){var _0x3bf94e=_0x43c5fa;tippy(_0x3bf94e(0x147),{'content':_0xb9fd7c,'followCursor':![],'placement':'bottom'});}$(_0x43c5fa(0x13b))[_0x43c5fa(0x14a)](_0xb33b3);}}}});}),$('#discard-changes')[_0x4eed70(0x156)](),document[_0x4eed70(0x15f)](_0x4eed70(0x1a3))[_0x4eed70(0x135)]=function(){var _0x52561f=_0x4eed70;showAllLisitng(),$(_0x52561f(0x1fc))[_0x52561f(0x16b)](0x154),$(_0x52561f(0x14f))[_0x52561f(0x156)](),$(_0x52561f(0x149))[_0x52561f(0x156)](),$(_0x52561f(0x185))[_0x52561f(0x156)]();var _0x15a2ba=document['querySelectorAll'](_0x52561f(0x1c2));for(var _0x59ac75 of _0x15a2ba){_0x59ac75[_0x52561f(0x14d)]=this[_0x52561f(0x14d)]=![];}},$(_0x4eed70(0x149))[_0x4eed70(0x156)](),$(_0x4eed70(0x185))[_0x4eed70(0x156)](),$(_0x4eed70(0x1c2))['click'](function(){var _0x45f21e=_0x4eed70;$('#clear-selection')['toggle']($('.checkbox:checked')['length']>0x0),$(_0x45f21e(0x185))[_0x45f21e(0x16b)]($(_0x45f21e(0x1f5))[_0x45f21e(0x1b7)]>0x0);}),document[_0x4eed70(0x15f)](_0x4eed70(0x20c))['onclick']=function(){var _0x229a17=_0x4eed70,_0x149d4c=document[_0x229a17(0x1a9)]('.checkbox');$(_0x229a17(0x149))['fadeOut'](),$(_0x229a17(0x185))['fadeOut']();for(var _0x45d7c of _0x149d4c){_0x45d7c[_0x229a17(0x14d)]=this['checked']=![];}},$(_0x4eed70(0x1fc))['hide'](),$('#toggle-filter')[_0x4eed70(0x1b3)](function(){var _0x43fd23=_0x4eed70;$(_0x43fd23(0x1fc))['toggle'](0x154);}),$(_0x4eed70(0x1ba))[_0x4eed70(0x1b3)](function(){var _0x11ae31=_0x4eed70;$(_0x11ae31(0x1fc))['toggle'](0x154);}),$(_0x4eed70(0x19f))[_0x4eed70(0x156)](),$(_0x4eed70(0x1d4))[_0x4eed70(0x1d3)](),$(_0x4eed70(0x1f8))[_0x4eed70(0x156)](),$(_0x4eed70(0x1a8))[_0x4eed70(0x1b3)](function(){var _0x570b5e=_0x4eed70;$(_0x570b5e(0x19f))[_0x570b5e(0x16b)](0x154),$(_0x570b5e(0x1e6))[_0x570b5e(0x172)](_0x570b5e(0x1f3));}),$(_0x4eed70(0x13a))[_0x4eed70(0x1b3)](function(){var _0x361f31=_0x4eed70;$('#visayas-region-checkbox')[_0x361f31(0x16b)](0x154),$(_0x361f31(0x206))['toggleClass'](_0x361f31(0x1f3));}),$(_0x4eed70(0x1c6))[_0x4eed70(0x1b3)](function(){var _0xe4d3a8=_0x4eed70;$(_0xe4d3a8(0x1f8))[_0xe4d3a8(0x16b)](0x154),$(_0xe4d3a8(0x18a))['toggleClass']('bi-chevron-up\x20bi-chevron-down');});function toggle(_0xe5c93e){var _0xd7b0=_0x4eed70;checkboxes=document[_0xd7b0(0x179)](_0xd7b0(0x194));for(var _0x59be03=0x0,_0x437147=checkboxes[_0xd7b0(0x1b7)];_0x59be03<_0x437147;_0x59be03++){checkboxes[_0x59be03]['checked']=_0xe5c93e[_0xd7b0(0x14d)];}}function selectAllVisayas(_0x5cf6d7){var _0xa10556=_0x4eed70;checkboxes=document['getElementsByName'](_0xa10556(0x181));for(var _0x58188d=0x0,_0x35a30f=checkboxes[_0xa10556(0x1b7)];_0x58188d<_0x35a30f;_0x58188d++){checkboxes[_0x58188d][_0xa10556(0x14d)]=_0x5cf6d7['checked'];}}function selectAllMindanao(_0x39f042){var _0x1b3ebe=_0x4eed70;checkboxes=document['getElementsByName'](_0x1b3ebe(0x17a));for(var _0x1b4b11=0x0,_0x6ed30c=checkboxes['length'];_0x1b4b11<_0x6ed30c;_0x1b4b11++){checkboxes[_0x1b4b11][_0x1b3ebe(0x14d)]=_0x39f042[_0x1b3ebe(0x14d)];}}document[_0x4eed70(0x15f)](_0x4eed70(0x1be))[_0x4eed70(0x135)]=function(){var _0x52a742=_0x4eed70,_0x67713=document[_0x52a742(0x1a9)](_0x52a742(0x167));for(var _0x13537f of _0x67713){_0x13537f['checked']=this[_0x52a742(0x14d)];}},document['getElementById'](_0x4eed70(0x195))[_0x4eed70(0x135)]=function(){var _0x4f7156=_0x4eed70,_0x355535=document[_0x4f7156(0x1a9)]('.regionII');for(var _0x18bb64 of _0x355535){_0x18bb64[_0x4f7156(0x14d)]=this['checked'];}},document[_0x4eed70(0x15f)](_0x4eed70(0x1c8))[_0x4eed70(0x135)]=function(){var _0x52c9a2=_0x4eed70,_0x26d0b0=document[_0x52c9a2(0x1a9)]('.regionIII');for(var _0x21116a of _0x26d0b0){_0x21116a['checked']=this[_0x52c9a2(0x14d)];}},document[_0x4eed70(0x15f)](_0x4eed70(0x1f9))[_0x4eed70(0x135)]=function(){var _0x17dbfd=_0x4eed70,_0x217888=document[_0x17dbfd(0x1a9)](_0x17dbfd(0x1e4));for(var _0x53f9e1 of _0x217888){_0x53f9e1[_0x17dbfd(0x14d)]=this[_0x17dbfd(0x14d)];}},document[_0x4eed70(0x15f)](_0x4eed70(0x1ed))[_0x4eed70(0x135)]=function(){var _0x2fbc37=_0x4eed70,_0x3cb055=document[_0x2fbc37(0x1a9)](_0x2fbc37(0x158));for(var _0x4fc1b1 of _0x3cb055){_0x4fc1b1['checked']=this[_0x2fbc37(0x14d)];}},document[_0x4eed70(0x15f)]('checkAllRegionNCR')[_0x4eed70(0x135)]=function(){var _0x4511a7=_0x4eed70,_0x282b42=document[_0x4511a7(0x1a9)]('.NCR');for(var _0x432dd6 of _0x282b42){_0x432dd6[_0x4511a7(0x14d)]=this[_0x4511a7(0x14d)];}},document[_0x4eed70(0x15f)]('checkAllRegionCAR')['onclick']=function(){var _0x126a6c=_0x4eed70,_0x2d8310=document[_0x126a6c(0x1a9)](_0x126a6c(0x1c7));for(var _0x4d8d5a of _0x2d8310){_0x4d8d5a[_0x126a6c(0x14d)]=this[_0x126a6c(0x14d)];}},document['getElementById']('checkAllRegionMIMAROPA')[_0x4eed70(0x135)]=function(){var _0x4ce195=_0x4eed70,_0x19a2b8=document[_0x4ce195(0x1a9)](_0x4ce195(0x1e0));for(var _0x530910 of _0x19a2b8){_0x530910[_0x4ce195(0x14d)]=this[_0x4ce195(0x14d)];}},document[_0x4eed70(0x15f)](_0x4eed70(0x1ad))[_0x4eed70(0x135)]=function(){var _0x55dfa7=_0x4eed70,_0x521f5b=document['querySelectorAll'](_0x55dfa7(0x14e));for(var _0xf4aece of _0x521f5b){_0xf4aece[_0x55dfa7(0x14d)]=this[_0x55dfa7(0x14d)];}},document[_0x4eed70(0x15f)](_0x4eed70(0x1a2))[_0x4eed70(0x135)]=function(){var _0x4a3f08=_0x4eed70,_0x49048d=document[_0x4a3f08(0x1a9)]('.regionVII');for(var _0x363447 of _0x49048d){_0x363447[_0x4a3f08(0x14d)]=this[_0x4a3f08(0x14d)];}},document['getElementById'](_0x4eed70(0x140))['onclick']=function(){var _0x524259=_0x4eed70,_0xfd8b82=document[_0x524259(0x1a9)]('.regionVIII');for(var _0x588449 of _0xfd8b82){_0x588449['checked']=this[_0x524259(0x14d)];}},document[_0x4eed70(0x15f)]('checkAllRegionIX')[_0x4eed70(0x135)]=function(){var _0x25638e=_0x4eed70,_0x594a4a=document[_0x25638e(0x1a9)](_0x25638e(0x1fd));for(var _0x5104d4 of _0x594a4a){_0x5104d4[_0x25638e(0x14d)]=this[_0x25638e(0x14d)];}},document[_0x4eed70(0x15f)](_0x4eed70(0x177))[_0x4eed70(0x135)]=function(){var _0x5a66ca=_0x4eed70,_0x38d8a7=document[_0x5a66ca(0x1a9)](_0x5a66ca(0x16d));for(var _0x490668 of _0x38d8a7){_0x490668['checked']=this[_0x5a66ca(0x14d)];}},document[_0x4eed70(0x15f)]('checkAllRegionXI')['onclick']=function(){var _0x1c9e06=_0x4eed70,_0x13b5b4=document[_0x1c9e06(0x1a9)](_0x1c9e06(0x201));for(var _0x2e5033 of _0x13b5b4){_0x2e5033[_0x1c9e06(0x14d)]=this[_0x1c9e06(0x14d)];}},document['getElementById']('checkAllSOCCSKSARGEN')[_0x4eed70(0x135)]=function(){var _0x46ea30=_0x4eed70,_0x4e06a0=document['querySelectorAll'](_0x46ea30(0x1fe));for(var _0x329770 of _0x4e06a0){_0x329770[_0x46ea30(0x14d)]=this[_0x46ea30(0x14d)];}},document[_0x4eed70(0x15f)](_0x4eed70(0x192))['onclick']=function(){var _0x3279b1=_0x4eed70,_0xe5f167=document[_0x3279b1(0x1a9)]('.BARMMRegion');for(var _0x13f39e of _0xe5f167){_0x13f39e[_0x3279b1(0x14d)]=this[_0x3279b1(0x14d)];}},document[_0x4eed70(0x15f)]('checkAllRegionXIII')[_0x4eed70(0x135)]=function(){var _0x3cb5ad=_0x4eed70,_0x147f8c=document[_0x3cb5ad(0x1a9)](_0x3cb5ad(0x199));for(var _0x46c4ed of _0x147f8c){_0x46c4ed[_0x3cb5ad(0x14d)]=this['checked'];}};
+    // alert("Working!");
+    
+    const btnBurgerButton = document.getElementById("hamburger-button");
+    const sidebar = document.querySelector('.mobileMenu');
+    const closeMenu = document.getElementById("btn-close-menu");
+    let contentsContainer = document.querySelector('.main-container');
+
+    btnBurgerButton.addEventListener("click", () => {
+        sidebar.classList.toggle("hidden");
+    });
+
+    closeMenu.addEventListener("click", () => {
+        sidebar.classList.toggle("hidden");
+    });
+
+    // contentsContainer.addEventListener("click", () => {
+    //     mobileMenu.classList.toggle("hidden");
+    // });
+
+    // btnBurgerButton.addEventListener("click", () => {
+    //     sidebar.classList.toggle("-translate-x-full");
+
+    //     contentsContainer.addEventListener("click", () => {
+    //         sidebar.classList.add("-translate-x-full");
+    //     });
+
+    // });
+
+    $("#skeleton-loader").hide();
+    showAllLisitng();
+    function showAllLisitng() {
+        $.ajax({
+            method: "GET",
+            url: "includes\all-listing-inc.php",
+            beforeSend: function () {
+                $("#skeleton-loader").show();
+            },
+            success: function (data, status) {
+                $("#skeleton-loader").hide();
+                // $("#listing-cards-container").html(data);
+                let listingData = JSON.parse(data);
+
+                $('#listing-cards-container').html("");
+                
+                for (let i = 0; i < listingData.length; i++) {
+                    let data = listingData[i];
+                    
+                    let hospitalName = (data.hospital_name);
+                    let hospitalAddress = (data.hospital_location);
+                    let hospitalType = (data.hospital_type);
+                    let roomSlot = (data.room_slot);
+                    let bedSlot = (data.bed_slot);
+                    let hospitalPhoneNumber = (data.hospital_phone);
+
+                    let roomSlotInt = parseInt(roomSlot);
+                    let bedSlotInt  = parseInt(bedSlot);
+
+                    let totalSlot = roomSlotInt + bedSlotInt;
+
+                    // Pass Listing ID to getCoverPhoto Function
+                    let listingID = (data.listing_id);
+                    // let finalImage;
+                    // getCoverPhoto(listingID, finalImage);
+                    // get_image_dir(listingID);
+
+                    $.ajax({
+                        method: "POST",
+                        url: "includes/get-cover-photo-inc.php",
+                        data: {listingID:listingID},
+                        success: function (data, status) {
+                            let finalImage = JSON.parse(data);
+
+                            // console.log(finalImage);
+                            let imageData = finalImage[0].image_dir;
+                            // console.log(finalImage);
+                            // return finalImage;
+            
+                            callback(imageData);
+                        }
+                    });
+
+                    // let image = finalImage;
+                    // console.log(image);
+
+                    function callback(imageData) {
+                        let data = imageData;
+                        console.log(data);
+                        
+
+                        let card = $('<a href="hospital-overview?listingID='+listingID+'" class="border-[1px] border-gray-300 xl:col-span-3 2xl:col-span-2 lg:col-span-4 md:col-span-6 sm:col-span-6 col-span-6 rounded-md bg-white drop-shadow-md p-2 lg:p-5 md:min-h-[20rem] text-sm hover:scale-105 transition-all cursor-pointer"><div id="listing-card">\
+                                        <div class="mb-2 bg-red-300 h-28 md:h-36 bg-clip-border bg-center bg-cover bg-no-repeat rounded-md" style="background-image: url(Capstone/'+data+');" id="card-image-container">\
+                                        </div>\
+                                        <div class="flex flex-row justify-between md:items-center">\
+                                            <h1 class="font-bold flex flex-row items-center hover:underline text-sm text-ellipsis line-clamp-1 text-orange-500" id="hospital-name">\
+                                            '+hospitalName+'\
+                                            </h1>\
+                                            <button class="text-green-400">\
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">\
+                                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />\
+                                                </svg>\
+                                            </button>\
+                                        </div>\
+                                        <div class="hidden md:block text-xs">\
+                                            <p class="flex flex-row items-center cursor-text">\
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500" viewBox="0 0 20 20" fill="currentColor">\
+                                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />\
+                                                </svg>\
+                                                &nbsp;'+hospitalPhoneNumber+'\
+                                            </p>\
+                                        </div>\
+                                        <div class="flex flex-row cursor-text mb-5 text-xs">\
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">\
+                                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />\
+                                            </svg>\
+                                            <p class="line-clamp-2 text-ellipsis">\
+                                                &nbsp;'+hospitalAddress+'\
+                                            </p>\
+                                        </div>\
+                                        <div class="flex flex-row justify-between items-center mb-2 text-xs">\
+                                            <h1 class="flex flex-row items-center hover:underline">\
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">\
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />\
+                                            </svg>\
+                                                &nbsp;'+hospitalType+'\
+                                            </h1>\
+                                            <p class="flex flex-row items-center">\
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">\
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />\
+                                                </svg>\
+                                                &nbsp;'+totalSlot+'\
+                                            </p>\
+                                        </div>\
+                                        <div class="flex flex-col space-y-2">\
+                                            <button class=" flex flex-row justify-center bg-gray-900 text-white p-1 md:p-2 rounded-lg hover:bg-gray-800 transition-all hover:scale-105">\
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">\
+                                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />\
+                                                </svg>\
+                                                &nbsp;Book Now\
+                                            </button>\
+                                            <button class="flex flex-row justify-center bg-gray-900 text-white p-1 md:p-2 rounded-lg hover:bg-gray-800 transition-all hover:scale-105">\
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">\
+                                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />\
+                                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />\
+                                                </svg>\
+                                                &nbsp;Full Details\
+                                            </button>\
+                                        </div>\
+                                    </div></a>');
+
+                        // let hospitalNameText = document.getElementById("hospital-name");
+                        // tippy(hospitalNameText, {
+                        //     content: hospitalName,
+                        // });
+
+                        card.find('#hospital-name').on('mouseover', () => showToolTip());
+                        
+                        function showToolTip(){
+                            tippy('#hospital-name', {
+                            content: hospitalName,
+                            followCursor: false,
+                            placement: 'bottom'
+                            });
+                        }
+                                         
+                        $('#listing-cards-container').append(card);
+                    } 
+                }
+            }
+                    
+        });
+    }
+
+    const findIcon = document.getElementById("find-icon");
+
+    tippy(findIcon, {
+        content: "I'm a Tippy tooltip!",
+      });
+
+    // Search Funtion
+    let searchInput = document.getElementById("search-hospital-input");
+    let resultContainer = document.getElementById("search-result-container");
+    let loaderMessage = document.getElementById("results-loader");
+
+    $(loaderMessage).hide();
+    $(resultContainer).hide();
+
+    searchInput.onkeyup = function () {
+        let searchInputVal = document.getElementById("search-hospital-input").value;
+        // console.log(searchInputVal);
+
+        if (searchInputVal !="") {
+            $.ajax({
+                type: "GET",
+                url: "includes/search-hospital-inc.php",
+                data: {searchInputVal:searchInputVal},
+                beforeSend: function () {
+                    $(loaderMessage).show();
+                },
+                success: function (data) {
+                    $(loaderMessage).hide();
+                    $(resultContainer).show();
+                    resultContainer.innerHTML = '<p class="m-4 text-sm xl:text-lg">Showing results for: <b>"'+searchInputVal +'"</b></p>' +data;
+                    // console.log(data);
+                }
+            });
+        }else{
+            $(resultContainer).hide();
+            resultContainer.innerHTML = '';
+        }
+    }
+
+    // Dismiss Search Results when clicked outside
+    $('body *:not(#searchInput)').mouseup(function () { 
+        $(resultContainer).hide();
+    });
+
+    // Show Results when input is clicked
+    searchInput.onclick = function () {
+        $(resultContainer).show();
+        searchInput.classList.add("bg-blue-400");
+    }
+
+    // Filter Ajax Funtion
+    $("#apply-filter-button").click(function () {
+        // alert("Working!");
+        $("#discard-changes").show();
+        $.ajax({
+            method: "POST",
+            url: "includes/filter-list-inc.php",
+            data: {
+
+                // -------------------------- Luzon ------------------------------------ //
+
+                // -------- Region I -------- //
+                alaminos:$('#regionIAlaminos:checkbox:checked').val(),
+                batac:$('#regionIBatac:checkbox:checked').val(),
+                candon:$('#regionICandon:checkbox:checked').val(),
+                laoag:$('#regionILaoag:checkbox:checked').val(),
+                sanCarlos:$('#regionISanCarlos:checkbox:checked').val(),
+                sanFernando:$('#regionISanFernando:checkbox:checked').val(),
+                urdaneta:$('#regionIUrdaneta:checkbox:checked').val(),
+                vigan:$('#regionIVigan:checkbox:checked').val(),
+                dagupan:$('#regionIDagupan:checkbox:checked').val(),
+
+                // -------- Region II -------- //
+                cauayan:$('#regionIICauayan:checkbox:checked').val(),
+                ilagan:$('#regionIIIlagan:checkbox:checked').val(),
+                santiago:$('#regionIISantiago:checkbox:checked').val(),
+                tuguegarao:$('#regionIITuguegarao:checkbox:checked').val(),
+
+                 // -------- Region III -------- //
+                 balanga:$('#regionIIIBalanga:checkbox:checked').val(),
+                 malolos:$('#regionIIIMalolos:checkbox:checked').val(),
+                 meycauayan:$('#regionIIIMeycauayan:checkbox:checked').val(),
+                 sanJosedelMonte:$('#regionIIISanJosedelMonte:checkbox:checked').val(),
+                 cabanatuan:$('#regionIIICabanatuan:checkbox:checked').val(),
+                 gapan:$('#regionIIIGapan:checkbox:checked').val(),
+                 muñoz:$('#regionIIIMuñoz:checkbox:checked').val(),
+                 palayan:$('#regionIIIPalayan:checkbox:checked').val(),
+                 sanJose:$('#regionIIISanJose:checkbox:checked').val(),
+                 AngelesCity:$('#regionIIIAngelesCity:checkbox:checked').val(),
+                 mabalacat:$('#regionIIIMabalacat:checkbox:checked').val(),
+                 sanFernando:$('#regionIIISanFernando:checkbox:checked').val(),
+                 tarlac:$('#regionIIITarlac:checkbox:checked').val(),
+                 olongapo:$('#regionIIIOlongapo:checkbox:checked').val(),
+
+                 // -------- Region IV-A -------- //
+                 antipolo:$('#regionIVAntipolo:checkbox:checked').val(),
+                 bacoor:$('#regionIVBacoor:checkbox:checked').val(),
+                 batangas:$('#regionIVBatangas:checkbox:checked').val(),
+                 biñan:$('#regionIVBiñan:checkbox:checked').val(),   
+                 cabuyao:$('#regionIVCabuyao:checkbox:checked').val(),
+                 calamba:$('#regionIVCalamba:checkbox:checked').val(),
+                 cavite:$('#regionIVCavite:checkbox:checked').val(),
+                 dasmariñas:$('#regionIVDasmariñas:checkbox:checked').val(),
+                 generalTrias:$('#regionIVGeneralTrias:checkbox:checked').val(),
+                 imus:$('#regionIVImus:checkbox:checked').val(),
+                 lipa:$('#regionIVLipa:checkbox:checked').val(),
+                 lucena:$('#regionIVLucena:checkbox:checked').val(),
+                 sanPablo:$('#regionIVSanPablo:checkbox:checked').val(),
+                 sanPedro:$('#regionIVSanPedro:checkbox:checked').val(),
+                 santaRosa:$('#regionIVSantaRosa:checkbox:checked').val(),
+                 santoTomas:$('#regionIVSantoTomas:checkbox:checked').val(),
+                 tagaytay:$('#regionIVTagaytay:checkbox:checked').val(),
+                 tanauan:$('#regionIVTanauan:checkbox:checked').val(),
+                 tayabas:$('#regionIVTayabas:checkbox:checked').val(),
+                 treceMartires:$('#regionIVTreceMartires:checkbox:checked').val(),
+
+                // -------- Region V -------- //
+                legazpi:$('#regionVLegazpi:checkbox:checked').val(),
+                naga:$('#regionVNaga:checkbox:checked').val(),
+                iriga:$('#regionVIriga:checkbox:checked').val(),
+                tabaco:$('#regionVTabaco:checkbox:checked').val(),
+                ligao:$('#regionVLigao:checkbox:checked').val(),
+                sorsogon:$('#regionVSorsogon:checkbox:checked').val(),
+                masbate:$('#regionVMasbate:checkbox:checked').val(),
+
+                // -------- Region NCR -------- //
+                caloocan:$('#NCRCaloocan:checkbox:checked').val(),
+                marikina:$('#NCRMarikina:checkbox:checked').val(),
+                makati:$('#NCRMakati:checkbox:checked').val(),
+                mandaluyong:$('#NCRMandaluyong:checkbox:checked').val(),
+                muntinlupa:$('#NCRMuntinlupa:checkbox:checked').val(),
+                manila:$('#NCRManila:checkbox:checked').val(),
+                navotas:$('#NCRNavotas:checkbox:checked').val(),
+                malabon:$('#NCRMalabon:checkbox:checked').val(),
+                valenzuela:$('#NCRValenzuela:checkbox:checked').val(),
+                pasay:$('#NCRPasay:checkbox:checked').val(),
+                pasig:$('#NCRPasig:checkbox:checked').val(),
+                parañaque:$('#NCRParañaque:checkbox:checked').val(),
+                quezon:$('#NCRQuezon:checkbox:checked').val(),
+                sanJuan:$('#NCRSanJuan:checkbox:checked').val(),
+                lasPiñas:$('#NCRLasPiñas:checkbox:checked').val(),
+                taguig:$('#NCRTaguig:checkbox:checked').val(),
+
+                // -------- Region CAR -------- //
+                tabuk:$('#CARTabuk:checkbox:checked').val(),
+                baguio:$('#CARBaguio:checkbox:checked').val(),
+
+                // -------- Region MIMAROPA -------- //
+                puertoPrincesa:$('#MIMAROPAPuertoPrincesa:checkbox:checked').val(),
+                calapan:$('#MIMAROPACalapan:checkbox:checked').val(),
+
+
+                // --------------------------- Visayas ----------------------------------- //
+
+                // ------------- RegionVI ------------ //
+
+                victorias:$('#regionVIVictorias:checkbox:checked').val(),
+                talisay:$('#regionVITalisay:checkbox:checked').val(),
+                sipalay:$('#regionVISipalay:checkbox:checked').val(),
+                silay:$('#regionVISilay:checkbox:checked').val(),
+                sanCarlos:$('#regionVISanCarlos:checkbox:checked').val(),
+                sagay:$('#regionVISagay:checkbox:checked').val(),
+                carlota:$('#regionVILaCarlota:checkbox:checked').val(),
+                kabankalan:$('#regionVIKabankalan:checkbox:checked').val(),
+                himamaylan:$('#regionVIHimamaylan:checkbox:checked').val(),
+                escalante:$('#regionVIEscalante:checkbox:checked').val(),
+                cadiz:$('#regionVICadiz:checkbox:checked').val(),
+                bago:$('#regionVIBago:checkbox:checked').val(),
+                bacolod:$('#regionVIBacolod:checkbox:checked').val(),
+                calapan:$('#regionVIPassi:checkbox:checked').val(),
+                iloilo:$('#regionVIIloilo:checkbox:checked').val(),
+                roxas:$('#regionVIRoxas:checkbox:checked').val(),
+
+                // ------------- RegionVII ------------ //
+                toledo:$('#regionVIIToledo:checkbox:checked').val(),
+                tanjay:$('#regionVIITanjay:checkbox:checked').val(),
+                guihulngan:$('#regionVIIGuihulngan:checkbox:checked').val(),
+                dumaguete:$('#regionVIIDumaguete:checkbox:checked').val(),
+                canlaon:$('#regionVIICanlaon:checkbox:checked').val(),
+                bayawan:$('#regionVIIBayawan:checkbox:checked').val(),
+                bais:$('#regionVIIBais:checkbox:checked').val(),
+                talisay:$('#regionVIITalisay:checkbox:checked').val(),
+                naga:$('#regionVIINaga:checkbox:checked').val(),
+                mandaue:$('#regionVIIMandaue:checkbox:checked').val(),
+                lapuLapu:$('#regionVIILapuLapu:checkbox:checked').val(),
+                danaoati:$('#regionVIIDanaoati:checkbox:checked').val(),
+                cebu:$('#regionVIICebu:checkbox:checked').val(),
+                carcar:$('#regionVIICarcar:checkbox:checked').val(),
+                bogo:$('#regionVIIBogo:checkbox:checked').val(),
+                tagbilaran:$('#regionVIITagbilaran:checkbox:checked').val(),
+
+                // ------------- Region VIII --------- //
+
+                maasin:$('#regionVIIIMaasin:checkbox:checked').val(),
+                catbalogan:$('#regionVIIICatbalogan:checkbox:checked').val(),
+                calbayog:$('#regionVIIICalbayog:checkbox:checked').val(),
+                tacloban:$('#regionVIIITacloban:checkbox:checked').val(),
+                ormoc:$('#regionVIIIOrmoc:checkbox:checked').val(),
+                baybay:$('#regionVIIIBaybay:checkbox:checked').val(),
+                borongan:$('#regionVIIIBorongan:checkbox:checked').val(),
+
+                // --------------------------- Mindanao ----------------------------------- //
+
+                // ------------- Region IX --------- //
+                zamboanga:$('#regionIXZamboanga:checkbox:checked').val(),
+                pagadian:$('#regionIXPagadian:checkbox:checked').val(),
+                dipolog:$('#regionIXDipolog:checkbox:checked').val(),
+                dapitan:$('#regionIXDapitan:checkbox:checked').val(),
+                isabela:$('#regionIXIsabela:checkbox:checked').val(),
+
+                // ------------- Region X --------- //
+                gingoog:$('#regionXGingoog:checkbox:checked').val(),
+                salvador:$('#regionXElSalvador:checkbox:checked').val(),
+                cagayandeOro:$('#regionXCagayandeOro:checkbox:checked').val(),
+                tangub:$('#regionXTangub:checkbox:checked').val(),
+                ozamiz:$('#regionXOzamiz:checkbox:checked').val(),
+                oroquieta:$('#regionXOroquieta:checkbox:checked').val(),
+                iligan:$('#regionXIligan:checkbox:checked').val(),
+                valencia:$('#regionXValencia:checkbox:checked').val(),
+                malaybalay:$('#regionXMalaybalay:checkbox:checked').val(),
+
+                // ------------- Region XI --------- //
+                mati:$('#regionXIMati:checkbox:checked').val(),
+                digos:$('#regionXIDigos:checkbox:checked').val(),
+                davao:$('#regionXIDavao:checkbox:checked').val(),
+                tagum:$('#regionXITagum:checkbox:checked').val(),
+                samal:$('#regionXISamal:checkbox:checked').val(),
+                panabo:$('#regionXIPanabo:checkbox:checked').val(),
+
+                // ------------- Region XII --------- //
+                kidapawan:$('#regionXIIKidapawan:checkbox:checked').val(),
+                generalSantos:$('#regionXIIGeneralSantos:checkbox:checked').val(),
+                koronadal:$('#regionXIIKoronadal:checkbox:checked').val(),
+                tacurong:$('#regionXIITacurong:checkbox:checked').val(),
+
+                // ------------- BARMM --------- //
+                marawi:$('#BARMMMarawi:checkbox:checked').val(),
+                lamitan:$('#BARMMLamitan:checkbox:checked').val(),
+                cotabato:$('#BARMMCotabato:checkbox:checked').val(),
+
+                // ------------- Region XIII --------- //
+                tandag:$('#regionXIIITandag:checkbox:checked').val(),
+                bislig:$('#regionXIIIBislig:checkbox:checked').val(),
+                surigao:$('#regionXIIISurigao:checkbox:checked').val(),
+                bayugan:$('#regionXIIIBayugan:checkbox:checked').val(),
+                cabadbaran:$('#regionXIIICabadbaran:checkbox:checked').val(),
+                butuan:$('#regionXIIIButuan:checkbox:checked').val(),
+
+                // -------------------------- Hospital Type ---------------------------- //
+                hospitalType:$(".hospitalType:checked").val()
+
+            },
+            beforeSend: function () {
+                $("#filter-loader").show();  
+            },
+            success: function (data) {
+                $("#filter-loader").hide();
+                // console.log(data);
+                // allListing.innerHTML = data;
+                let filteredData = JSON.parse(data);
+                $('#listing-cards-container').html("");
+                $("#filter-content").toggle(340);
+                for (let i = 0; i < filteredData.length; i++) {
+                    let data = filteredData[i];
+
+                    let hospitalName = (data.hospital_name);
+                    let listingID = (data.listing_id);
+
+                    let hospitalAddress = (data.hospital_location);
+                    let hospitalType = (data.hospital_type);
+                    let roomSlot = (data.room_slot);
+                    let bedSlot = (data.bed_slot);
+                    let hospitalPhoneNumber = (data.hospital_phone);
+
+                    let roomSlotInt = parseInt(roomSlot);
+                    let bedSlotInt  = parseInt(bedSlot);
+
+                    let totalSlot = roomSlotInt + bedSlotInt;
+
+                    // Get Cover Images for each listing
+                    $.ajax({
+                        method: "POST",
+                        url: "includes/get-cover-photo-inc.php",
+                        data: {listingID:listingID},
+                        success: function (data, status) {
+                            let finalImage = JSON.parse(data);
+
+                            // console.log(finalImage);
+                            let imageData = finalImage[0].image_dir;
+                            // console.log(finalImage);
+                            // return finalImage;
+            
+                            callback(imageData);
+                        }
+                    });
+
+                    function callback(imageData) {
+                        let data = imageData;
+                        let card = $('<a href="hospital-overview?listingID='+listingID+'" class="border-[1px] border-gray-300 xl:col-span-3 2xl:col-span-2 lg:col-span-4 md:col-span-6 sm:col-span-6 col-span-6 rounded-md bg-white drop-shadow-md p-2 lg:p-5 md:min-h-[20rem] text-sm hover:scale-105 transition-all cursor-pointer"><div id="listing-card">\
+                                        <div class="mb-2 bg-red-300 h-28 md:h-36 bg-clip-border bg-center bg-cover bg-no-repeat rounded-md" style="background-image: url(Capstone/'+data+');" id="card-image-container">\
+                                        </div>\
+                                        <div class="flex flex-row justify-between md:items-center">\
+                                            <h1 class="font-bold flex flex-row items-center hover:underline text-sm text-ellipsis line-clamp-1 text-orange-500" id="hospital-name">\
+                                            '+hospitalName+'\
+                                            </h1>\
+                                            <button class="text-green-400">\
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">\
+                                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />\
+                                                </svg>\
+                                            </button>\
+                                        </div>\
+                                        <div class="hidden md:block text-xs">\
+                                            <p class="flex flex-row items-center cursor-text">\
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500" viewBox="0 0 20 20" fill="currentColor">\
+                                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />\
+                                                </svg>\
+                                                &nbsp;'+hospitalPhoneNumber+'\
+                                            </p>\
+                                        </div>\
+                                        <div class="flex flex-row cursor-text mb-5 text-xs">\
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">\
+                                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />\
+                                            </svg>\
+                                            <p class="line-clamp-2 text-ellipsis">\
+                                                &nbsp;'+hospitalAddress+'\
+                                            </p>\
+                                        </div>\
+                                        <div class="flex flex-row justify-between items-center mb-2 text-xs">\
+                                            <h1 class="flex flex-row items-center hover:underline">\
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">\
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />\
+                                            </svg>\
+                                                &nbsp;'+hospitalType+'\
+                                            </h1>\
+                                            <p class="flex flex-row items-center">\
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">\
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />\
+                                                </svg>\
+                                                &nbsp;'+totalSlot+'\
+                                            </p>\
+                                        </div>\
+                                        <div class="flex flex-col space-y-2">\
+                                            <button class=" flex flex-row justify-center bg-gray-900 text-white p-1 md:p-2 rounded-lg hover:bg-gray-800 transition-all hover:scale-105">\
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">\
+                                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />\
+                                                </svg>\
+                                                &nbsp;Book Now\
+                                            </button>\
+                                            <button class="flex flex-row justify-center bg-gray-900 text-white p-1 md:p-2 rounded-lg hover:bg-gray-800 transition-all hover:scale-105">\
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">\
+                                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />\
+                                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />\
+                                                </svg>\
+                                                &nbsp;Full Details\
+                                            </button>\
+                                        </div>\
+                                    </div></a>');
+
+                        // let hospitalNameText = document.getElementById("hospital-name");
+                        // tippy(hospitalNameText, {
+                        //     content: hospitalName,
+                        // });
+
+                        card.find('#hospital-name').on('mouseover', () => showToolTip());
+                        
+                        function showToolTip(){
+                            tippy('#hospital-name', {
+                            content: hospitalName,
+                            followCursor: false,
+                            placement: 'bottom'
+                            });
+                        }              
+                        $('#listing-cards-container').append(card);
+                    } 
+                }
+            }
+        });
+    });
+
+    // Discard Changes
+    $("#discard-changes").hide();
+    
+     // Clear Filter 
+     document.getElementById('discard-changes').onclick = function() {
+        showAllLisitng();
+        $("#filter-content").toggle(340);
+        $("#discard-changes").hide();
+        $("#clear-selection").hide();
+        $("#apply-filter-button").hide();
+        var checkboxes = document.querySelectorAll('.checkbox');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked=false;
+        }
+    }
+
+    // Show clear & apply filter selection if a checkbox is checked.
+    $("#clear-selection").hide();
+    $("#apply-filter-button").hide();
+    $(".checkbox").click(function() {
+        $('#clear-selection').toggle( $(".checkbox:checked").length > 0 );
+        $('#apply-filter-button').toggle( $(".checkbox:checked").length > 0 );
+    });
+
+     // Show apply filter button if a checkbox is checked.
+
+    //  $(".checkbox").click(function() {
+    //      if($(this).is(":checked")) {
+    //          $("#apply-filter-button").fadeIn();
+    //      } else {
+    //          $("#apply-filter-button").fadeOut();
+    //      }
+    //  });
+
+    // Show clear selection if a checkbox is checked.
+    // $("#clear-selection").hide();
+    // $(".checkbox").click(function() {
+    //     if($(this).is(":checked")) {
+    //         $("#clear-selection").fadeIn();
+    //     } else {
+    //         $("#clear-selection").fadeOut();
+    //     }
+    // });
+
+    // $("input[type='checkbox']").change(function(){
+    //     var a = $("input[type='checkbox']");
+    //     if(a.length == a.filter(":checked").length){
+    //         alert('all checked');
+    //     } else {
+    //         alert('not all checked');
+    //     }
+    // });
+   
+    
+    // Clear All Selection
+    document.getElementById('clear-selection').onclick = function() {
+        var checkboxes = document.querySelectorAll('.checkbox');
+        $("#clear-selection").fadeOut();
+        $("#apply-filter-button").fadeOut();
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked=false;
+        }
+    }
+
+    // Toggle Filter Button
+    $("#filter-content").hide();
+
+    $("#toggle-filter").click(function () {
+        $("#filter-content").toggle(340);
+    });
+
+    $("#close-filter-options").click(function () {
+        $("#filter-content").toggle(340);
+    });
+
+    $("#luzon-region-checkbox").hide();
+    $("#visayas-region-checkbox").show();
+    $("#mindanao-region-checkbox").hide();
+    // --------------------------------
+    // Toggle Luzon Contents
+    $("#luzon-toggle-button").click(function () {
+        $("#luzon-region-checkbox").toggle(340);
+        $(".luzon-dropdown-icon").toggleClass("bi-chevron-up bi-chevron-down");
+    });
+
+    // Toggle Visayas Contents
+    $("#visayas-toggle-button").click(function () {
+        $("#visayas-region-checkbox").toggle(340);
+        $(".visayas-dropdown-icon").toggleClass("bi-chevron-up bi-chevron-down");
+    });
+
+    // Toggle Mindanao Contents
+    $("#mindanao-toggle-button").click(function () {
+        $("#mindanao-region-checkbox").toggle(340);
+        $(".mindanao-dropdown-icon").toggleClass("bi-chevron-up bi-chevron-down");
+    });
+    // -------------------------------
+
+    // Checkbox - Select All From Luzon
+    function toggle(source) {
+        checkboxes = document.getElementsByName('luzon');
+        for(var i=0, n=checkboxes.length;i<n;i++) {
+          checkboxes[i].checked = source.checked;
+        }
+    }
+
+    // Select All Visayas Toggle Button
+    // $("#visayas-toggle-button").click(function () {
+    //     $("#visayas-region-checkbox").toggle(340);
+    // });
+
+    // Checkbox - Select All From Visayas
+    function selectAllVisayas(source) {
+        checkboxes = document.getElementsByName('visayas');
+        for(var i=0, n=checkboxes.length;i<n;i++) {
+            checkboxes[i].checked = source.checked;
+        }
+    }
+
+    // Checkbox - Select All From mindanao
+    function selectAllMindanao(source) {
+        checkboxes = document.getElementsByName('mindanao');
+        for(var i=0, n=checkboxes.length;i<n;i++) {
+            checkboxes[i].checked = source.checked;
+        }
+    }
+
+    // -----------------------Luzon - Select all by Region--------------------- //
+
+    // Check All Region 1
+    document.getElementById('checkAllRegionI').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionI');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All Region 2
+    document.getElementById('checkAllRegionII').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionII');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All Region 3
+    document.getElementById('checkAllRegionIII').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionIII');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All Region 4-A
+    document.getElementById('checkAllRegionIVA').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionIVA');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All Region 5
+    document.getElementById('checkAllRegionV').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionV');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All NCR
+    document.getElementById('checkAllRegionNCR').onclick = function() {
+        var checkboxes = document.querySelectorAll('.NCR');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All CAR
+    document.getElementById('checkAllRegionCAR').onclick = function() {
+        var checkboxes = document.querySelectorAll('.CAR');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All MIMAROPA
+    document.getElementById('checkAllRegionMIMAROPA').onclick = function() {
+        var checkboxes = document.querySelectorAll('.MIMAROPARegion');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+
+    // -----------------------Visayas - Select all by Region------------------- //
+    // Check All Region VI
+    document.getElementById('checkAllRegionVI').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionVI');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All RegionVII
+    document.getElementById('checkAllRegionVII').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionVII');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All RegionVIII
+    document.getElementById('checkAllRegionVIII').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionVIII');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // -----------------------MIndanao - Select all by Region------------------- //
+    // Check All RegionIX
+    document.getElementById('checkAllRegionIX').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionIX');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All RegionX
+    document.getElementById('checkAllRegionX').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionX');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All RegionXI
+    document.getElementById('checkAllRegionXI').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionXI');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+    
+    // Check All SOCCSKSARGEN
+    document.getElementById('checkAllSOCCSKSARGEN').onclick = function() {
+        var checkboxes = document.querySelectorAll('.SOCCSKSARGENRegion');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All BARMM Region
+    document.getElementById('checkAllBARMMRegion').onclick = function() {
+        var checkboxes = document.querySelectorAll('.BARMMRegion');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
+    // Check All Region XIII
+    document.getElementById('checkAllRegionXIII').onclick = function() {
+        var checkboxes = document.querySelectorAll('.regionXIII');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+
