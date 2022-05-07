@@ -38,7 +38,6 @@
             success: function (data, status) {
                 $("#skeleton-loader").hide();
                 console.log(data);
-                // $("#listing-cards-container").html(data);
                 let listingData = JSON.parse(data);
 
                 $('#listing-cards-container').html("");
