@@ -31,7 +31,7 @@
     function showAllLisitng() {
         $.ajax({
             method: "GET",
-            url: "https://swiftcareph.herokuapp.com/includes/all-listing-inc.php",
+            url: "includes/all-listing-inc.php",
             beforeSend: function () {
                 $("#skeleton-loader").show();
             },
