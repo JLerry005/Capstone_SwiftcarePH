@@ -2,8 +2,6 @@
 
     require_once 'dbh-inc.php';
 
-    
-
     $rows = array();
     $result = $conn->query("SELECT * FROM hospitallisting WHERE bed_slot > 0 OR room_slot > 0;") or die($conn->error);
     while ($data = mysqli_fetch_assoc($result)) {
