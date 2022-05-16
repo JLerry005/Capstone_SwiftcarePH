@@ -37,7 +37,8 @@
             },
             success: function (data, status) {
                 $("#skeleton-loader").hide();
-                console.log(data);
+                // console.log(data);
+
                 let listingData = JSON.parse(data);
 
                 $('#listing-cards-container').html("");
