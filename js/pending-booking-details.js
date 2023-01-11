@@ -1,5 +1,3 @@
-// alert("Working!");
-
     // Here the buttons function of pending booking details
     const btnAccept = document.getElementById("btn-accept");
     const btnReject = document.getElementById("btn-reject");

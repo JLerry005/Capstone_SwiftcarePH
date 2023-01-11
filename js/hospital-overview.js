@@ -1,5 +1,3 @@
-    // alert("Working!");
-
     // Google Maps ----------------------------------------------------------------
     const btnGetLocation =document.getElementById("getLocationButton");
     tippy(btnGetLocation, {

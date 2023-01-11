@@ -1,5 +1,3 @@
-
-    // alert("working!");
     let userEmail = $('#userEmail').val();
     let userPassword = $('#userPassword').val();
     let submit = $('#submit');

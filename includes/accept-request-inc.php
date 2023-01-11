@@ -1,9 +1,6 @@
 <?php
 
-    require_once 'dbh-inc.php';
-
-    // $query = "SELECT * FROM pendingadminsignup;";
-    
+    require_once 'dbh-inc.php';    
 
     if (isset($_POST['requestID'])) {
         $pendingID = $_POST['requestID'];
@@ -52,9 +49,6 @@
                     }
             }
         }      
-        
-        
-
 
         // Send email conformation
         require_once '../PHPMailer/hospital-request-accepted.php';

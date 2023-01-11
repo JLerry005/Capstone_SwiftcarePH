@@ -1,15 +1,3 @@
-
-
-    
-    // let mainCards = document.getElementById("main-cards");
-    // let reservations = document.getElementById("reservations-card");
-    // let account = document.getElementById("account-card");
-    // let reservationsContent = document.getElementById("reservations-content");
-    // let accountContent = document.getElementById("account-content");
-    // let reservationsBackToDashboard = document.getElementById("reservations-back-to-dashboard");
-    // let accountBackToDashboard = document.getElementById("account-back-to-dashboard");
-    // let sampleButton = document.getElementById("sampleButton");
-
     // ==========================================================
 
 

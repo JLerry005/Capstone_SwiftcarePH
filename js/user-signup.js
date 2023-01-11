@@ -1,6 +1,3 @@
-
-    // alert('working!');
-
     let userPassword = document.getElementById("userPassword");
     let userPasswordRepeat = document.getElementById("userPasswordRepeat");
     let passwordWarning = document.getElementById("passwordWarning");

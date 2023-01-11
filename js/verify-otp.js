@@ -1,9 +1,3 @@
-
-    // alert("Working!");'
-    // if (!<?php echo isset($_SESSION['tempUserID'])?'true':'false'; ?>) {
-    //     localStorage.clear();
-    // }
-    
     // Code Expiration Timer
     var interval;
     let minutes = 1;

@@ -1,5 +1,3 @@
-    // alert('Working!');
-
     get_details();
     // disableForm();
     function get_details() {

@@ -1,5 +1,3 @@
-    // alert("Working!");
-    
     // Get Skeleton Loader and Dashboard contents container.
     let skeletonLoader = document.getElementById("skeleton-loader");
 

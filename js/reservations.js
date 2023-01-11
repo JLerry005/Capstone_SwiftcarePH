@@ -1,5 +1,3 @@
-    // alert("Working!");
-
     // Skeleton Loader
     $("#skeleton-loader").hide();
 

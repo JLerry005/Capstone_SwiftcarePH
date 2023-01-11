@@ -1,5 +1,3 @@
-// alert ("Working na!");
-
     const contentsContainer = document.getElementById("contents-container");
 
     // USer ID

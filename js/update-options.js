@@ -1,4 +1,3 @@
-    // alert("Working!");
     fetchCities();
 
     const btnSaveCity = document.getElementById("btn-save");

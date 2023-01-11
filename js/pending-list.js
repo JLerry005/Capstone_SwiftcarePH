@@ -1,6 +1,3 @@
-
-
-    //  alert("Working!");
     let modal = document.getElementById("list-modal");
     let toggleModal = document.getElementById("list-card");
     let pendingListContainer = document.getElementById("pending-cards-container");
@@ -26,5 +23,3 @@
             }
         });
     }
-
-    // loadPendingList();

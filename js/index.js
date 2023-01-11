@@ -1,5 +1,3 @@
-    // alert("Working!");
-    
     const btnBurgerButton = document.getElementById("hamburger-button");
     const sidebar = document.querySelector('.mobileMenu');
     const closeMenu = document.getElementById("btn-close-menu");
